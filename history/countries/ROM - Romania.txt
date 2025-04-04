@@ -1,0 +1,215 @@
+﻿capital = 46
+oob = "ROM_1936"
+set_naval_oob = "ROM_1936_naval_mtg"
+create_intelligence_agency = yes
+add_to_tech_sharing_group = axis_research 
+set_research_slots = 3
+set_stability = 0.6
+set_war_support = 0.3
+set_rule = { can_be_spymaster = no }
+set_variable = {
+    var = min_fuel
+    value = 0.800
+}
+ROM = {
+	#Pick from list of the sane events first
+	random_list = {
+		100 = { country_event = { id = romania.7 days = 2 random_days = 20 } }
+	}
+}
+
+recruit_character = ROM_corneliu_codreanu
+recruit_character = ROM_octavian_goga
+recruit_character = ROM_armand_calinescu
+recruit_character = ROM_constantin_sanatescu
+recruit_character = ROM_ion_antonescu
+recruit_character = ROM_gheorghe_avramescu
+recruit_character = ROM_gheorghe_tatarescu
+recruit_character = ROM_constantin_ion_parhon
+# recruit_character = ROM_charles_huntziger
+# recruit_character = ROM_maurice_gamelin
+# recruit_character = ROM_maxime_weygand
+# recruit_character = ROM_vicente_rojo_lluch
+# recruit_character = ROM_francisco_franco
+# recruit_character = ROM_emilio_mola
+recruit_character = ROM_petre_dumitrescu
+# recruit_character = ROM_miguel_cabanellas
+# recruit_character = ROM_josé_miaja
+recruit_character = ROM_ioan_mihail_racovita
+# recruit_character = ROM_alphonse_georges
+# recruit_character = ROM_gastonhenri_billotte
+# recruit_character = ROM_henry_freydenberg
+# recruit_character = ROM_rene_olry
+# recruit_character = ROM_josé_millan_astray
+# recruit_character = ROM_juan_yague
+# recruit_character = ROM_mohamed_meziane
+# recruit_character = ROM_nicolae_ciuperca
+# recruit_character = ROM_jose_enrique_varela
+# recruit_character = ROM_gonzalo_queipo_de_llano
+# recruit_character = ROM_barbu_paraianu
+# recruit_character = ROM_agustín_muñoz_grandes
+# recruit_character = ROM_air_tacticalbombing
+recruit_character = ROM_gheorghe_potopeanu
+# recruit_character = ROM_chief_entrenchment
+recruit_character = ROM_gheorghe_mihail
+# recruit_character = ROM_chief_planning
+recruit_character = ROM_ermil_gheorghiu
+# recruit_character = ROM_army_logistics
+recruit_character = ROM_nicolae_sova
+# recruit_character = ROM_stabber_rom
+# recruit_character = ROM_orggg
+# recruit_character = ROM_gentlemen_rom
+recruit_character = ROM_gheorghe_argeseanu
+# recruit_character = ROM_army_regrouping
+recruit_character = ROM_gheorghe_vasiliu
+# recruit_character = ROM_armaments_rom
+# recruit_character = ROM_smooth_rom
+# recruit_character = ROM_army_concealment
+recruit_character = ROM_nicolae_malaxa
+# recruit_character = ROM_chief_manuever
+# recruit_character = ROM_crusader_rom
+recruit_character = ROM_mihail_sturdza
+recruit_character = ROM_paul_teodorescu
+
+# Navy Leaders
+# recruit_character = ROM_marijan_polic
+# recruit_character = ROM_miguel_buiza_fernandez_palacios
+# recruit_character = ROM_luis_carrero_blanco
+recruit_character = ROM_horia_macellariu
+# recruit_character = ROM_atanas_shalapatov
+
+set_fuel_ratio = 1
+
+
+# Starting tech
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	marines  = 1
+	paratroopers = 1 
+	tech_trucks = 1
+	motorised_infantry = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+	}
+}
+
+add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 11000 }
+add_equipment_to_stockpile = { type = support_equipment_1 amount = 300 }
+add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 100 }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 }
+
+#####SUPPLY EQUIPMENT ADDED TO GIVE MINORS A BASIC STOCKPILE TO WORK WITH EARLY GAME#####
+add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 200 }
+#########################################################################################
+
+
+add_ideas = ROM_agrarian_economy 
+add_ideas = ROM_the_resource_curse_1
+add_ideas = ROM_waning_influence_of_democracy
+add_ideas = ROM_romanian_officers
+add_ideas = ROM_iron_guard
+add_ideas = ROM_king_carol_ii_hedonist
+
+set_convoys = 60
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1933.12.20"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 60
+	fascism = 18
+	communism = 2
+	neutrality = 20
+}
+
+	create_equipment_variant = {
+		name = "Delfinul Class"				
+		type = ship_hull_submarine_2
+		name_group = ROM_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Marasti Class"				
+		type = ship_hull_light_1
+		name_group = ROM_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Regele Ferdinand Class"	
+		type = ship_hull_light_1
+		name_group = ROM_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}

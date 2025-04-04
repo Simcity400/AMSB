@@ -1,0 +1,499 @@
+JAP_propaganda_campaigns = {
+	JAP_china_prop = { # ID = 2
+		priority = 12
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			compliance_gain = 0.02
+			resistance_target = -0.05
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 2 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 2 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	JAP_tech_prop = { # ID = 3
+		priority = 11
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			research_speed_factor = 0.075
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 3 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 3 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	JAP_air_prop = { # ID = 4
+		priority = 10
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			has_war = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			air_power_projection_factor = 0.25
+			air_untrained_pilots_penalty_factor = -0.5
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 4 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 4 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	JAP_tank_prop = { # ID = 5
+		priority = 9
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			has_war = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = 0.05
+			production_lack_of_resource_penalty_factor = -0.2
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 5 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 5 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	JAP_strike_prop = { # ID = 6
+		priority = 8
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			has_war_with = USA
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			navy_max_range_factor = 0.25
+			naval_strike = 0.1
+			naval_speed_factor = 0.05
+			naval_has_potf_in_combat_attack = 0.1
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 6 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 6 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	JAP_bombing_prop = { # ID = 7
+		priority = 7
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			OR = {
+				has_war_with = USA
+				has_war_with = ENG
+			}
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			industry_air_damage_factor = -0.25
+			static_anti_air_hit_chance_factor = 0.1
+			industry_repair_factor = 0.25
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 7 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 7 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+	
+	JAP_big_china_prop = { # ID = 8
+		priority = 6
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			MAN = { has_completed_focus = MAN_the_two_emperors}
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			max_command_power = 25
+			command_power_gain_mult = 0.25
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 8 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 8 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+
+		}
+	}
+
+	JAP_air2_prop = { # ID = 9
+		priority = 5
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			OR = {
+				has_completed_focus = JAP_the_zero
+			}
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 9 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+			add_ideas = AUS_domestic_air_production
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 9 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			remove_ideas = AUS_domestic_air_production
+		}
+	}	
+
+	JAP_commonwealth_prop = { # ID = 10
+		priority = 4
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			has_war_with = ENG
+			has_war_with = USA
+			NOT = {
+				has_idea = JAP_tora_tora_tora_idea
+				has_idea = for_the_emperor_idea
+			}
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = ENG
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = AST
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = RAJ
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = NZL
+			attack_bonus_against = 0.05
+		}
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 10 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 10 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}	
+
+	JAP_intel_prop = { # ID = 11
+		priority = 3
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			intelligence_agency_defense = 0.5
+			civilian_intel_to_others = -10
+			airforce_intel_to_others = -10
+			navy_intel_to_others = -10
+			army_intel_to_others = -10
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 11 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 11 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}	
+
+	JAP_tank2_prop = { # ID = 12
+		priority = 2
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			has_completed_focus = JAP_supremacy_of_technology
+
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			army_armor_attack_factor = 0.15
+			army_armor_defence_factor = 0.1
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 12 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+			
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 12 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			
+		}
+	}	
+
+	JAP_usa_prop = { # ID = 13
+		priority = 1
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			JAP_propaganda_poster_slot_available = yes
+			has_war_with = ENG
+			has_war_with = USA
+			NOT = {
+				has_idea = JAP_tora_tora_tora_idea
+				has_idea = for_the_emperor_idea
+			}
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = ENG
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = AST
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = RAJ
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = NZL
+			attack_bonus_against = -0.05
+		}
+
+		complete_effect = {
+			set_variable = { JAP_new_propaganda_campaign = 13 }
+			JAP_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { JAP_propaganda_campaign_to_remove = 13 }
+			JAP_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+}

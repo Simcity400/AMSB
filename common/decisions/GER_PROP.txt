@@ -1,0 +1,528 @@
+
+
+GER_propaganda_campaigns = {
+	GER_german_students = { # ID = 2
+		priority = 12
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			research_speed_factor = 0.075
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 2 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 2 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	GER_german_workers = { # ID = 3
+		priority = 11
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.1
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 3 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 3 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	GER_german_radio = { # ID = 4
+		priority = 10
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			stability_weekly = 0.001
+			war_support_weekly = 0.001
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 4 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 4 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	GER_reichsarbeit_prop = { # ID = 5
+		priority = 9
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+			has_completed_focus = GER_kdf_wagen_factories
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			industry_free_repair_factor = 0.25
+			industry_repair_factor = 0.25
+			production_speed_infrastructure_factor = 0.15
+			production_speed_rail_way_factor = 0.15
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 5 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 5 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	GER_jugend_prop = { # ID = 6
+		priority = 8
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+			has_war = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			industry_air_damage_factor = -0.2
+			production_speed_anti_air_building_factor = 0.1
+			training_time_factor = -0.2
+			minimum_training_level = -0.1
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 6 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 6 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	GER_ensieg_prop = { # ID = 7
+		priority = 7
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+			surrender_progress = 0.95
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.1
+			war_support_factor = 0.3
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 7 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 7 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	GER_weapons_prop = { # ID = 8 # schafft waffen für die front
+		priority = 6
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+			has_war = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			production_factory_max_efficiency_factor = 0.05
+
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 8 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+			
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 8 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			
+		}
+	}	
+	
+	GER_sov_prop = { # ID = 9
+		priority = 5
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+			has_war_with = ENG
+			has_war_with = SOV
+			NOT = { has_idea = GER_barbarossa }
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = MON
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = ENG
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = SAF
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = CAN
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = IRE
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = BRA
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = MEX
+			attack_bonus_against = -0.05
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 9 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 9 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}	
+	
+	GER_intel_prop = { # ID = 10 # pst! feind hört mit
+		priority = 4
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+			OR = {
+				has_completed_focus = GER_reorganize_secret_services
+				has_completed_focus = GER_expand_gestapo
+				has_completed_focus = GER_expand_ss_security_duties
+			}
+			
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			enemy_operative_capture_chance_factor = 0.1
+			enemy_operative_detection_chance_factor = 0.1
+			enemy_operative_forced_into_hiding_time_factor = 0.1
+			own_operative_intel_extraction_rate = -0.1
+			operative_death_on_capture_chance = 0.25
+			agency_upgrade_time = -0.10
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 10 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 10 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}	
+	
+	GER_UK_prop = { # ID = 11 #Deutschland wird siegen
+		priority = 3
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+			has_war_with = ENG
+			has_war_with = SOV
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = MON
+			attack_bonus_against = -0.05
+		}
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = ENG
+			attack_bonus_against =0.05
+		}
+		targeted_modifier = {
+			tag = SAF
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = CAN
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = IRE
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = BRA
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = MEX
+			attack_bonus_against = 0.05
+		}
+
+
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 11 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 11 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}	
+	
+	GER_plow_prop = { # ID = 12 #Soll friedrich der Pflug durchfurchen das feld
+		priority = 2
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = -0.15
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 12 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 12 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}	
+	
+	GER_police_prop = { # ID = 13 #Die Polizei dein freund dein helfer
+		priority = 1
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = GER
+		}
+
+		available = {
+			GER_propaganda_poster_slot_available = yes
+			has_war = yes 
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			root_out_resistance_effectiveness_factor = 0.2
+			compliance_gain = 0.01
+			#occupation_cost = -0.1 This seems to have been removed by Paradox
+			resistance_damage_to_garrison = -0.1
+			resistance_growth = -0.1
+			resistance_target = -0.05
+		}
+
+		complete_effect = {
+			set_variable = { GER_new_propaganda_campaign = 13 }
+			GER_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { GER_propaganda_campaign_to_remove = 13 }
+			GER_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}	
+}

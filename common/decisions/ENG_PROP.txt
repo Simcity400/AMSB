@@ -1,0 +1,464 @@
+
+
+ENG_propaganda_campaigns = {
+	ENG_together_prop = { # ID = 2
+		priority = 12
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_completed_focus = uk_commonwealth_focus
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			research_sharing_per_country_bonus_factor = 0.5
+			command_power_gain_mult = 0.25
+			subjects_autonomy_gain = 0.5
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 2 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 2 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	ENG_women_prop = { # ID = 3
+		priority = 11
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			production_factory_start_efficiency_factor = 0.1
+			line_change_production_efficiency_factor = 0.05
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 3 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 3 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	ENG_finest_hour_prop = { # ID = 4
+		priority = 10
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_country_flag = this_was_their_finest_hour_speech
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			air_home_defence_factor = 0.25
+			army_core_attack_factor = 0.2
+			army_core_defence_factor = 0.2
+			minimum_training_level = -0.2
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 4 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 4 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	ENG_careless_talk_prop = { # ID = 5
+		priority = 9
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			civilian_intel_to_others = -15
+			airforce_intel_to_others = -15
+			navy_intel_to_others = -15
+			#army_intel_to_others = -15 Can't have this because too low intel makes units invis
+			intel_from_combat_factor = 0.15
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 5 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 5 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	ENG_wings_victory_prop = { # ID = 6
+		priority = 8
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_completed_focus = air_rearmament_focus
+			has_war = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			air_intercept_efficiency = 0.05
+			air_mission_efficiency = 0.1
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 6 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 6 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	ENG_dig_victory_prop = { # ID = 7
+		priority = 7
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_war = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			local_resources_factor = 0.1
+			min_export = -0.1
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 7 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 7 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+
+	ENG_japan_prop = { # ID = 8
+		priority = 6
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_war_with = JAP
+			has_war_with = GER
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.1
+		}
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = -0.1
+		}
+
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 8 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 8 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+	
+	ENG_oil_prop = { # ID = 9
+		priority = 5
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_war = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			fuel_gain_factor = 0.20
+			air_fuel_consumption_factor = -0.10
+			army_fuel_consumption_factor = -0.10
+			navy_fuel_consumption_factor = -0.10
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 9 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 9 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+	
+	ENG_air_production_prop = { # ID = 10
+		priority = 4
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_completed_focus = aircraft_production_focus
+			has_war_with = JAP
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 10 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+			add_ideas = ROM_local_development
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 10 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			remove_ideas = ROM_local_development
+		}
+	}
+	
+	ENG_blood_prop = { # ID = 11
+		priority = 3
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_war = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			experience_loss_factor = -0.10
+			army_morale_factor = 0.05
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 11 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 11 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+	
+	ENG_german_prop = { # ID = 12
+		priority = 2
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+			has_war_with = GER
+			OR = {
+				has_war_with = JAP
+				JAP = { has_capitulated = yes }
+			}
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.1
+		}
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = -0.1
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 12 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 12 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+	
+	ENG_war_savings_prop = { # ID = 13
+		priority = 1
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			ENG_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = -0.15
+		}
+
+		complete_effect = {
+			set_variable = { ENG_new_propaganda_campaign = 13 }
+			ENG_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { ENG_propaganda_campaign_to_remove = 13 }
+			ENG_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+		}
+	}
+}

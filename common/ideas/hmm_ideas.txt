@@ -1,0 +1,375 @@
+ideas = {
+	country = {
+		peace_training = {
+			allowed = {
+				always = no
+			}
+			cancel = {
+				OR = {
+					has_war = yes
+					AND = {
+						tag = SPR
+						any_country = {
+							has_volunteers_amount_from = {
+								tag = SPR
+								count > 0
+							} 
+						}
+						
+					}
+				}
+			}
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				experience_gain_army = 0.3
+				training_time_army_factor = -0.89
+				air_training_xp_gain_factor = 10
+				experience_gain_navy_unit_factor = 10
+				air_accidents_factor = -2
+				naval_accidents_chance = -2
+				mobilization_speed = 2
+				army_fuel_consumption_factor = -0.9
+				air_fuel_consumption_factor = -0.9
+				navy_fuel_consumption_factor = -0.99
+			}
+		}
+		WAR_join = {
+			allowed = {
+				always = no
+			}
+			cancel = {
+			}
+			removal_cost = -1
+			picture = MEX_politicised_army
+			modifier = {
+			}
+			on_remove = {
+					add_to_war = {
+						targeted_alliance = GER
+						enemy = ENG
+						hostility_reason = asked_to_join
+					}
+			}
+			}
+		
+	}
+	hidden_ideas = {
+		novols = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				send_volunteer_size = -100
+				air_volunteer_cap = -1000
+			}
+		}
+		no_faction = {
+            allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+						
+			modifier = {
+
+			}  
+            on_add = {
+				set_rule = { 
+					desc = NO_Faction
+					can_create_factions = no
+					can_join_factions = no
+					can_send_volunteers = yes
+				}
+			}
+
+        }
+		Spies_no_capture = {
+			removal_cost = -1
+			modifier = {
+				enemy_operative_detection_chance = -200
+				enemy_operative_capture_chance_factor = -2
+			}
+		}
+		ai_tradelaw ={
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				trade_laws_cost_factor = 10000
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+			}
+			
+		}
+		ai_annex = {
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = 100
+				conscription = -1
+				industrial_capacity_factory = -1
+				production_factory_max_efficiency_factor = -1
+				industrial_capacity_dockyard = -1
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+			}
+		}
+		ai_war = {
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = 100
+				industrial_capacity_factory = -1
+				production_factory_max_efficiency_factor = -1
+				industrial_capacity_dockyard = -1
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+			}
+		}
+		air_war_plans_division_focus_hidden = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+		
+			equipment_bonus = {
+				small_plane_naval_bomber_airframe = {
+					build_cost_ic = 0.1 instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = 0.1 instant = yes
+				}
+			}
+		} 
+        air_support_focus_hidden = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				medium_plane_fighter_airframe = {
+					build_cost_ic = 0.1 instant = yes
+				}
+			}
+		}
+		USA_strategic_bombing_hidden = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			equipment_bonus = {
+				large_plane_maritime_patrol_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.1
+				}
+			}
+		}
+        british_fighter_discount_hidden = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_air_bonus
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				small_plane_naval_bomber_airframe = {
+					build_cost_ic = 0.1 instant = yes
+				}
+				small_plane_cas_airframe = {
+					build_cost_ic = 0.1 instant = yes
+				}
+				cv_small_plane_naval_bomber_airframe = {
+					build_cost_ic = 0.1 instant = yes
+				}
+				cv_small_plane_cas_airframe = {
+					build_cost_ic = 0.1 instant = yes
+				}
+			}
+		}
+		JAP_prioritize_naval_aircraft_construction_hidden = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_air_research
+			
+			
+
+			equipment_bonus = {
+				cv_small_plane_cas_airframe = {
+					build_cost_ic = 0.2 instant = yes
+				}
+				cv_small_plane_naval_bomber_airframe = {
+					build_cost_ic = 0.2 instant = yes
+				}
+			}
+		}
+
+		JAP_prioritize_army_aircraft_construction_hidden = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_air_research
+			
+			
+
+			equipment_bonus = {
+				medium_plane_fighter_airframe = {
+					instant = yes
+					build_cost_ic = 0.1
+				}
+				medium_plane_scout_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.1
+				}
+			}
+		}
+
+		ITA_hidden_standardization_ns_hidden = { #Hidden idea to apply arty production bonuses. Communicated in ITA_regia_aeronautica_dynamic_modifier (used as NS)
+ 			name = ITA_standardization #Just in case it shows up anywhere
+			removal_cost = -1
+
+			picture = GFX_idea_ITA_regia_aeronautica_3 #Icon needs to match the one in ITA_regia_aeronautica_dynamic_modifier modifiers (NS icon shows up in tech tab)
+				
+			allowed = {
+				original_tag = ITA
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+					
+			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
+
+				small_plane_cas_airframe = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+				cv_small_plane_cas_airframe = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+				small_plane_naval_bomber_airframe = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+				cv_small_plane_naval_bomber_airframe = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+
+				medium_plane_fighter_airframe = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+				medium_plane_scout_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+
+				large_plane_maritime_patrol_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.05
+				}
+
+			}
+		}
+		
+		ITA_hidden_specialization_ns_hidden = { #Hidden idea to apply arty production bonuses. Communicated in ITA_regia_aeronautica_dynamic_modifier (used as NS)
+ 			name = ITA_specialization #Just in case it shows up anywhere
+			removal_cost = -1
+
+			picture = GFX_idea_ITA_regia_aeronautica_3 #Icon needs to match the one in ITA_regia_aeronautica_dynamic_modifier modifiers (NS icon shows up in tech tab)
+				
+			allowed = {
+				original_tag = ITA
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+					
+			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
+
+				small_plane_cas_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				cv_small_plane_cas_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				small_plane_naval_bomber_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				cv_small_plane_naval_bomber_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+
+				medium_plane_fighter_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				medium_plane_scout_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+				large_plane_maritime_patrol_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.05
+				}
+
+			}
+		}
+	}
+}

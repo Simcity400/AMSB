@@ -1,0 +1,255 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+
+USA_marmon_herrington_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_marmon_herrington
+	allowed = {	
+		OR = {
+			original_tag = ENG	 
+			original_tag = CAN
+			original_tag = NZL
+			original_tag = SAF
+			original_tag = RAJ
+			original_tag = MEX
+			original_tag = USA
+			original_tag = BRA	
+		}
+	}
+}
+
+USA_chrysler_organization = {
+	include = generic_medium_tank_organization
+	icon = GFX_idea_chrysler
+	
+	allowed = {	
+		OR = {
+			original_tag = USA 
+			AND = {
+				original_tag = MEX 
+				has_dlc = "Man the Guns"
+			}
+			NOR_AAT = yes 
+		}
+	}
+
+
+}
+
+USA_army_ordnance_department_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_army_ordnance_department
+	
+	allowed = {	
+		tag = USA
+	}
+
+}
+
+USA_detroit_arsenal_organization = {
+	name = detroit_arsenal
+	include = generic_tank_organization
+	icon = GFX_idea_generic_industrial_concern_1
+	allowed = {	
+		
+			OR = {
+				original_tag = ENG	 
+				original_tag = AST
+				original_tag = CAN
+				original_tag = NZL
+				original_tag = SAF
+				original_tag = RAJ
+				original_tag = MEX
+				original_tag = USA
+				original_tag = BRA	
+				original_tag = FRA
+			}
+			
+			
+		NOT = { tag = FRA }
+	}
+}
+
+USA_tank_destroyer_board_organization = {
+	name = tank_destroyer_board
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_usa_tank_destroyer_board
+	allowed = {	
+		tag = USA 
+	}
+	available = {
+		FROM = { has_completed_focus = USA_tank_destroyer_doctrine }
+	}
+		initial_trait = {
+		name = ROM_mio_trait_mobile_tank_destroyers
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_tank_destroyers
+		}
+		
+		equipment_bonus = {
+			maximum_speed = 0.10
+			reliability = 0.05
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
+	}
+}
+
+
+
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+
+USA_norfolk_naval_yard_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_norfolk_naval_yard
+	allowed = {	
+		tag = USA 
+	}
+}
+
+USA_electric_boat_company_organization = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_electric_boat_company
+	allowed = {	
+		tag = USA 
+	}
+}
+
+USA_brooklyn_naval_yard_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_brooklyn_naval_yard
+	allowed = {	
+		tag = USA 
+	}
+}
+
+USA_newport_news_shipbuilding_organization = {
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_newport_news_shipbuilding
+	allowed = {	
+		tag = USA 
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+USA_north_american_aviation_organization = {
+	include = generic_range_focused_aircraft_organization
+	icon = GFX_idea_north_american_aviation
+	
+	allowed = {	
+		tag = USA 
+	}
+}
+
+USA_lockheed_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_lockheed
+	
+	allowed = {	
+		tag = USA 
+	}
+	
+	equipment_type = {
+		mio_cat_eq_all_medium_plane 
+		transport_plane_equipment
+	}
+}
+
+USA_douglas_aircraft_company_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_douglas_aircraft_company
+	
+	allowed = {	
+		tag = USA 
+	}
+}
+
+USA_boeing_organization = {
+	include = generic_heavy_aircraft_organization
+	icon = GFX_idea_boeing
+	
+	allowed = {	
+		tag = USA 
+	}
+}
+
+USA_grumman_organization = {
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_grumman
+	
+	allowed = {	 
+		tag = USA 
+	}
+}
+
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+USA_springfield_armory_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_springfield_armory
+	
+	allowed = {	 
+			original_tag = USA
+			}
+}
+
+USA_ford_motor_company_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_ford_motor_company
+	
+	allowed = {	 
+		OR = {
+			original_tag = USA 
+			original_tag = MEX
+		}
+	}
+}
+
+
+
+USA_rock_island_arsenal_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_rock_island_arsenal
+	
+	allowed = {	 
+			original_tag = USA
+	}
+}

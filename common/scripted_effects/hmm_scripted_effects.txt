@@ -1,0 +1,572 @@
+hmm_capitulations_on_actions = {
+	if = {
+		limit = {
+			original_tag = POL
+			POL = { has_war_with = GER }
+		}
+		ENG = {
+			country_event = { id = britain.9 days = 1 }
+		}
+		SOV = {
+			transfer_state = 784
+			transfer_state = 96
+			transfer_state = 95
+			transfer_state = 94
+			transfer_state = 93
+			transfer_state = 91
+			transfer_state = 89
+			transfer_state = 97
+		}
+		
+	}
+
+	if = {
+		limit = {
+				original_tag = FRA
+				FRA = { has_war_with = GER }
+		}
+		FRA = {
+			set_capital = {
+				state = 461
+			}
+		}
+		
+		GER = {
+			country_event = france.69420
+		}
+		set_global_flag = fall_of_france
+		every_country = {
+			limit = { is_in_faction_with = GER
+						NOT = {has_war_with= ENG}}
+			add_timed_idea = {
+				idea = WAR_join
+				days = 90
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			original_tag = HOL
+			GER = { has_war_with = HOL }
+			NOT = {
+				JAP = {
+					has_war_with = HOL
+				}
+			}
+		}
+		HOL = {
+			add_stability = 1.0
+			add_equipment_to_stockpile = {
+                type = convoy_1
+                amount = 1000
+            }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 20000
+				producer = HOL
+			}
+			transfer_state = 672
+			transfer_state = 334
+			transfer_state = 335
+			transfer_state = 667
+			transfer_state = 673
+			transfer_state = 668
+			transfer_state = 669
+			transfer_state = 309
+			transfer_state = 695
+		}
+	}
+
+	if = {
+		limit = { 
+				original_tag = YUG 
+				OR = {
+					ITA = { has_war_with = YUG }
+					BUL = { has_war_with = YUG }
+					GER = { has_war_with = YUG }
+				}
+		} 
+		YUG = {
+			transfer_navy = { target = ITA }
+		}
+
+		ITA = {
+				add_named_threat = { 
+					threat = 9
+					name = hmm_yug
+				}
+			transfer_state = 103
+			transfer_state = 102
+			transfer_state = 104
+			transfer_state = 105
+			transfer_state = 109
+			transfer_state = 107
+			transfer_state = 108
+			transfer_state = 802
+			transfer_state = 804
+            transfer_state = 853
+		}
+		BUL = {
+			transfer_state = 106
+			transfer_state = 970
+			transfer_state = 803
+		
+		}
+		HUN = {
+			transfer_state = 764
+			transfer_state = 45
+		
+		}
+	} 
+	# Albania
+	if = {
+		limit = { 
+			original_tag = ALB 
+			ITA = { has_war_with = ALB }
+		} 
+		ITA = {
+			add_named_threat = { 
+				threat = -0.7 
+				name = hmm_alb
+			}
+			annex_country = {
+				target = ALB
+				transfer_troops = no
+			}
+		}
+	} 
+	# Greece
+	if = {
+		limit = { 
+			original_tag = GRE 
+			OR = {
+				ITA = { has_war_with = GRE }
+				BUL = { has_war_with = GRE }
+				GER = { has_war_with = YUG }
+			}
+		} 
+		
+		GRE = {
+			transfer_navy = { target = ITA }
+		}
+		ITA = {
+			transfer_state = 185
+			transfer_state = 47
+			transfer_state = 186
+			transfer_state = 187
+			transfer_state = 182
+		
+		}
+		BUL = {
+			add_named_threat = { 
+				threat = 4.3
+				name = hmm_gre
+			}
+			transfer_state = 731
+			transfer_state = 184
+		
+		}
+	
+	} 
+	# China
+	if = {
+		limit = { 
+			original_tag = CHI
+			JAP = { has_war_with = CHI }
+		} 
+		JAP = {
+			add_named_threat = { 
+				threat = 21.7
+				name = hmm_chi
+			}
+			annex_country = {
+				target = CHI
+				transfer_troops = no
+			}
+		}
+	}
+
+	# Japan
+	if = {
+		limit = { 
+			original_tag = JAP
+			USA = { has_war_with = JAP }
+		} 
+		JAP = {
+			transfer_navy = { target = USA }
+		}
+		USA = {
+			annex_country = {
+				target = JAP
+				transfer_troops = no
+			}
+		}
+	}
+
+	# Soviet Union
+	if = {
+		limit = { 
+			original_tag = SOV
+			GER = { has_war_with = SOV }
+		} 
+		SOV = {
+			transfer_navy = { target = GER }
+		}
+		GER = {
+			annex_country = {
+				target = SOV
+				transfer_troops = no
+			}
+		}
+	}
+	if = {
+		limit = { 
+			OR = {
+				tag = BEL
+				tag = HOL
+				tag = POL
+				tag = NOR
+				tag = DEN
+				tag = LUX
+			}
+		} 
+		ROOT = {
+			remove_ideas = {
+				ai_war
+			}
+			delete_unit = {}
+		}
+		
+	}
+
+
+
+}
+
+
+initilize_victory_system = {
+	# state = 613 #Nanjing
+	# state = 439 #Dehli
+	# state = 447 #Alexandria
+	# state = 450 #Benghasi
+	# state = 7 #Amsterdam
+	# state = 16 #Paris
+	# state = 20 #Lyon
+	# state = 224 #Bryansk
+	# state = 219 #Moscow
+	# state = 217 #Stalingrad
+	set_global_flag = victory_system_active
+	set_variable = {
+		var = global.axis_score
+		value = 0
+	}
+	set_variable = {
+		var = global.allies_score
+		value = 0
+	}
+	every_country = {
+		limit = {
+			axis = yes
+		}
+		if = {
+			limit = {
+				controls_state = 613 #Nanjing
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 439 #Dehli
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 447 #Alexandria
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 450 #Benghasi
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 7 #Amsterdam
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 16 #Paris
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 20 #Lyon
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 224 #Bryansk
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 219 #Moscow
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 217 #Stalingrad
+			}
+			add_to_variable = {
+				var = global.axis_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.axis_score
+				min = 0
+				max = 10
+			}
+		}
+	}
+
+	every_country = {
+		limit = {
+			allies = yes
+		}
+		if = {
+			limit = {
+				controls_state = 613 #Nanjing
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 439 #Dehli
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 447 #Alexandria
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 450 #Benghasi
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 7 #Amsterdam
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 16 #Paris
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 20 #Lyon
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 224 #Bryansk
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 219 #Moscow
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+		if = {
+			limit = {
+				controls_state = 217 #Stalingrad
+			}
+			add_to_variable = {
+				var = global.allies_score
+				value = 1
+			}
+			clamp_variable = {
+				var = global.allies_score
+				min = 0
+				max = 10
+			}
+		}
+	}
+
+}		
+
+air_to_england = {
+	if = { limit = { tag = USA }
+		send_equipment = { equipment = small_plane_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = small_plane_cas_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = medium_plane_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = medium_plane_fighter_airframe amount = 100000 target = ENG }	
+		send_equipment = { equipment = large_plane_airframe amount = 100000 target = ENG }	
+	}
+}
+
+		
