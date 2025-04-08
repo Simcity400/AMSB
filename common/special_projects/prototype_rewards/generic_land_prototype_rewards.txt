@@ -1,0 +1,65 @@
+@base_reward_weight = 5 #Base Reward weight value
+@reward_weight_factor_theme = 0 # Applied to factor - Used to reduce chances of repeating the same reward theme within the same project (ie. Failure 1 & Failure 2)
+
+sp_land_generic_reward_always = {
+
+	threshold = {
+		min = 0
+		max = 100
+	}
+	
+	# ROOT is the project
+	# FROM is the Country
+	# var:facility_state is the State where the facility is (ensured to be set in this case)
+	# var:facility_province_id is the province ID where the facility is (ensured to be set in this case)
+	# var:scientist is the Scientist (ensured to be set in this case)
+	weight = {
+		base = @base_reward_weight
+	}
+	
+	option = {
+		token = sp_land_generic_reward_option_always
+		
+		iteration_output = {
+			country_effects = {
+
+				add_breakthrough_progress = {
+					specialization = specialization_land
+					value = sp_breakthrough_progress.low
+				}
+
+				army_experience = constant:sp_military_xp_gain.low
+			}
+
+			scientist_effects = {
+				if = {
+					limit = {
+						has_scientist_level = {
+							level < 5
+							specialization = specialization_land
+						}
+					}
+					add_scientist_xp = {
+						experience = constant:sp_scientist_xp_gain.low
+						specialization = specialization_land
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+#OBSOLETE translated strings: 
+#sp_land_generic_reward_scientist_xp_1_desc
+#sp_land_generic_reward_army_xp_1_desc
+#sp_land_generic_reward_major_progress_1_desc
+#sp_land_generic_reward_test_failure_1_desc
+#sp_land_generic_reward_resource_scarcity_desc
+
+#sp_land_generic_reward_armor_tech_1_desc
+#sp_land_generic_reward_armor_bonus_1_desc
+#sp_land_generic_reward_engine_bonus_1_desc
+
+#sp_land_generic_reward_artillery_tech_1_desc

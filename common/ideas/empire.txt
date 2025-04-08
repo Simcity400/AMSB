@@ -1,0 +1,522 @@
+ideas = {
+
+	country = {
+
+		MOR_Desert = {
+			
+			allowed = {
+				original_tag = MOR
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+			available = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			picture = por_colonial_army
+			
+			modifier = {
+				acclimatization_hot_climate_gain_factor = 0.50
+				ai_focus_defense_factor = 0.5
+				dig_in_speed_factor = 0.05
+				attrition = -0.15
+				conscription_factor = -0.5
+				}
+		}
+		VIN_war_production = {
+			picture = generic_production_bonus
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+				tag = VIN
+			}
+						
+			available = {
+				has_capitulated = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = -0.02
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		VIN_agrian_colony = {
+			
+			allowed = {
+				original_tag = VIN
+				always = yes
+			}
+
+			allowed_civil_war = {
+			}
+			available = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_society
+			
+			modifier = {
+				ai_desired_divisions_factor = -0.40
+				conscription_factor = -0.40
+				local_resources_factor = -0.10
+				industrial_capacity_factory = -0.25
+				industrial_capacity_dockyard = -0.50
+				}
+		}
+		VIN_culture_respected = {
+			picture = generic_morale_bonus
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+						
+			available = {
+				has_capitulated = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				local_resources_factor = 0.15
+			}
+		}
+		VIN_preparation_thailand = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			available = {
+				has_capitulated = no
+			}
+
+			removal_cost = -1
+
+			picture = ast_volunteer_defence_corps
+			
+			targeted_modifier = {
+				tag = SIA
+				defense_bonus_against = 0.15
+			}
+
+		}
+		VIC_no_factions = {
+			picture = neutrality_idea
+			
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = { 
+			}
+			removal_cost = -1
+			rule = {
+				can_join_factions = no
+			}
+			modifier = {
+			ai_get_ally_desire_factor = -900
+			ai_join_ally_desire_factor = -800
+			ai_call_ally_desire_factor = -900
+			join_faction_tension = 0.95
+			industrial_capacity_factory = 0.05
+			fascism_acceptance = -15
+			}
+		}
+		VIN_yen_bai = {
+			
+			allowed = {
+				original_tag = VIN
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+			available = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_war_of_resistance3
+			
+			modifier = {
+				stability_factor = -0.05
+				party_popularity_stability_factor = -0.05
+				}
+		}
+		MOR_less_divisions = {
+			
+			allowed = {
+				original_tag = MOR
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+			available = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_forced_conscription
+			
+			modifier = {
+				ai_desired_divisions_factor = -0.65
+				}
+		}
+		VIN_china = {
+			
+			allowed = {
+				original_tag = VIN
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+			available = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_chinese_unity
+			
+			modifier = {
+				trade_opinion_factor = 0.15
+				political_power_gain = 0.05
+				opinion_gain_monthly_factor = 0.10
+				request_lease_tension = -0.25
+				send_volunteer_divisions_required = -0.5
+				send_volunteers_tension = -0.20
+				embargo_cost_factor = -0.3
+				}
+		}
+		VIN_china2 = {
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_chinese_unity
+			
+			cancel = {
+				OR = {
+					VIN = {
+						OR = {
+							has_government = fascism
+							has_government = communism
+						}
+					}
+					CHI = {
+						OR = {
+							has_government = fascism
+							has_government = communism
+						}
+					}
+					CHI = {
+						exists = no
+					}
+					VIN = {
+						exists = no
+					}
+					VIN = {
+						has_war_with = CHI
+					}
+					CHI = {
+						has_war_with = VIN
+					}
+				}
+			}
+			
+			targeted_modifier = {
+    				tag = CHI
+    				trade_cost_for_target_factor = -0.40
+				extra_trade_to_target_factor = 0.35
+			}
+			targeted_modifier = {
+    				tag = PRC
+    				trade_cost_for_target_factor = -0.35
+				extra_trade_to_target_factor = 0.15
+			}
+			targeted_modifier = {
+    				tag = GXC
+    				trade_cost_for_target_factor = -0.35
+				extra_trade_to_target_factor = 0.15
+			}
+			targeted_modifier = {
+    				tag = YUN
+    				trade_cost_for_target_factor = -0.35
+				extra_trade_to_target_factor = 0.15
+			}
+			targeted_modifier = {
+    				tag = XSM
+    				trade_cost_for_target_factor = -0.35
+				extra_trade_to_target_factor = 0.15
+			}
+			targeted_modifier = {
+    				tag = SHX
+    				trade_cost_for_target_factor = -0.35
+				extra_trade_to_target_factor = 0.15
+			}
+			targeted_modifier = {
+    				tag = SIK
+    				trade_cost_for_target_factor = -0.35
+				extra_trade_to_target_factor = 0.15
+			}
+			modifier = {
+				trade_opinion_factor = 0.15
+				political_power_gain = 0.05
+				request_lease_tension = -0.25
+				embargo_cost_factor = -0.3
+				}
+		}
+		FRA_colonies2 = {
+			
+			allowed = {
+				original_tag = FRA
+				always = yes
+			}
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			available = {
+				has_capitulated = no
+			}
+
+			removal_cost = -1
+
+			picture = ast_abandon_the_westminster_system
+			
+			modifier = {
+				drift_defence_factor = 0.5
+				neutrality_acceptance = 80
+				democratic_acceptance = -50 
+				fascism_acceptance = -90
+				neutrality_drift = 0.02
+				}
+		}
+		SYR_weygand = {
+			
+			allowed = {
+				original_tag = MOR
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+
+			removal_cost = -1
+
+			picture = maxime_weygand
+			
+			modifier = {
+				democratic_acceptance = 20 
+				}
+		}
+		VIN_pearl = {
+			
+			allowed = {
+				original_tag = VIN
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = VIN
+			}
+			available = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			picture = jap_supremacy_of_technology
+			
+			targeted_modifier = {
+    				tag = FRA
+    				extra_trade_to_target_factor = 0.85
+    				trade_cost_for_target_factor = -0.80
+				cic_to_target_factor = 0.10
+			}
+			modifier = {
+				political_advisor_cost_factor = -0.2
+				can_master_build_for_us = 1
+				min_export = 0.5
+				industrial_capacity_factory = 0.1
+				local_resources_factor = 0.20
+				autonomy_gain_trade = -0.10
+				}
+		}
+		VIN_communist = {
+			
+			allowed = {
+				original_tag = FRA
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+
+			removal_cost = -1
+
+			picture = trotskyite_plot
+			
+			modifier = {
+				stability_factor = -0.10
+				communism_drift = 0.01
+				required_garrison_factor = 0.05
+			}
+		}
+		VIN_soldier = {
+			
+			allowed = {
+				original_tag = FRA
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+			available = {
+				is_subject = yes
+			}
+			removal_cost = -1
+
+			picture = por_colonial_army
+			
+			modifier = {
+				attrition = -0.2
+				heat_attrition = -0.5
+				army_core_defence_factor = 0.03
+				}
+		}
+		FRA_developpement = {
+			
+			allowed = {
+				original_tag = FRA
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+			available = {
+				is_subject = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_undividable
+			
+			modifier = {
+				production_speed_buildings_factor = 0.10 
+				overlord_trade_cost_factor = -0.15
+				consumer_goods_factor = -0.05
+				}
+		}
+		MDN_sdn = {
+			
+			allowed = {
+				original_tag = FRA
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+
+			removal_cost = -1
+
+			picture = generic_constitutional_guarantees
+			
+			modifier = {
+				can_master_build_for_us = 1
+				autonomy_gain = 0.1
+				master_ideology_drift = 0.05
+				stability_factor = 0.10
+				compliance_growth_on_our_occupied_states = -0.08
+				}
+		}
+		MDN_revolts = {
+			
+			allowed = {
+				original_tag = FRA
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+
+			removal_cost = -1
+
+			picture = tur_coordinated_balkan_armed_forces
+			
+			modifier = {
+				ai_desired_divisions_factor = -0.40
+				conscription_factor = -0.05
+				}
+		}
+		MOR_rif = {
+			
+			allowed = {
+				original_tag = FRA
+				always = yes
+			}
+
+			allowed_civil_war = {
+				original_tag = MOR
+			}
+			available = {
+				is_subject = yes
+			}
+			removal_cost = -1
+
+			picture = MEX_revolutionary_army
+			
+			modifier = {
+				ai_desired_divisions_factor = -0.40
+				conscription_factor = -0.10
+				}
+		}
+	}
+}

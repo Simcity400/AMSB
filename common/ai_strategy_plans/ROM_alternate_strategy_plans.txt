@@ -1,0 +1,21 @@
+ROM_allies = {
+	name = "Romanian plan to join allies"
+	desc = ""
+
+	allowed = {
+		original_tag = ROM
+		has_dlc = "Death or Dishonor"
+	}
+	enable = {
+		OR = {
+			has_country_flag = ROM_AI_RANDOM_DEMOCRATIC
+			has_game_rule = {
+				rule = ROM_ai_behavior
+				option = DEMOCRATIC
+			}
+		}
+	}
+	
+
+}
+

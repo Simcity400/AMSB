@@ -1,0 +1,585 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					is_playable_country = yes
+				}
+				add_ideas = {
+					peace_training
+				}
+			}
+			every_country = {
+				every_army_leader = {
+					limit = {
+						NOT = { 
+							has_trait = no_grind
+						}
+					}
+				add_unit_leader_trait = no_grind
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						ai_annex = yes
+						ai_rk = yes
+						ai_manpower = yes
+						ai_black = yes
+					}
+				}
+				country_lock_all_division_template = yes
+				add_ideas = {
+					ai_tradelaw
+				}
+			}
+			SOV = { 
+				add_ideas = SOV_collectivized_society
+				country_event = {
+					id = mexico.21 # Mexico returns trotsky
+					days = 396 # Feb 37
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						ai_annex = yes
+						ai_black = yes
+					}
+				}
+				add_ideas = {
+					ai_annex
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						ai_manpower = yes
+					}
+				}
+				add_ideas = {
+					ai_war
+				}
+			}
+
+			every_country = {
+				limit = {
+					AND = {
+						is_playable_country = yes
+						NOT = {
+							tag = SPR
+						}
+					}
+
+				}
+				add_ideas = {
+					novols
+				}
+			}
+			SPR = {
+				add_ideas = {
+					no_faction
+				}
+			}
+			every_country = {
+				add_ideas = {
+					Spies_no_capture
+				}
+			}
+			GER = {
+				country_event = {
+					id = DOD_yugoslavia.20
+					days = 912
+				}
+			}
+			FRA = {
+				country_event = {
+					id = DOD_yugoslavia.20
+					days = 912
+				}
+			}
+			##### Turning King Edward's abdication into an on_startup event instead of MTTH to help performance####
+			ENG = {
+				country_event = {
+					id = britain.16
+					days = 20
+				}
+				country_event = {
+					id = mtg_britain.1
+					days = 190
+				}
+				country_event = {
+					id = britain.22
+					days = 513
+				}
+				country_event = {
+					id = DOD_yugoslavia.20
+					days = 912
+				}
+			}
+			ITA = {
+				country_event = {
+					id = DOD_yugoslavia.20
+					days = 912
+				}
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {date > 1941.12.31
+				NOT = { GER = {has_war_with = SOV}}
+			}
+				GER = {
+					declare_war_on = {
+					target = SOV
+					type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1941.12.31
+					NOT = { JAP = {has_war_with = USA}}
+				}
+				JAP = {
+					declare_war_on = {
+					target = USA
+					type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+						BEL = {
+							has_capitulated = yes
+						}
+						HOL = {
+							has_capitulated = yes
+						}
+						LUX = {
+							has_capitulated = yes
+						}
+						DEN = {
+							has_capitulated = yes
+						}
+						NOR = {
+							has_capitulated = yes
+						}
+						POL = {
+							has_capitulated = yes
+						}
+				}
+				every_country = {
+					limit = {
+						axis = yes
+					}
+					every_army_leader = {
+						remove_unit_leader_trait = no_grind
+					}
+					set_global_flag = grind_allowed
+				}
+			}
+			every_country = {
+				limit = {
+					is_playable_country = yes
+					NOT = {
+						OR = {
+							has_war = yes
+							has_idea = peace_training
+							AND = {
+								tag = SPR
+								any_country = {
+									has_volunteers_amount_from = {
+										tag = SPR
+										count > 0
+									} 
+								}	
+							}
+						}
+					}
+				}
+				add_ideas = peace_training
+			}
+			if = {
+				limit = {
+					HOL = {
+						has_equipment = {
+							convoy_1 < 1000
+						}
+						has_capitulated = yes
+					}
+				}
+				HOL = {
+					add_equipment_to_stockpile = {
+						type = convoy
+						amount = 1000
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR={
+						BEL = {
+							has_capitulated = no
+						}
+						HOL = {
+							has_capitulated = no
+						}
+						LUX = {
+							has_capitulated = no
+						}
+						DEN = {
+							has_capitulated = no
+						}
+						NOR = {
+							has_capitulated = no
+						}
+						POL = {
+							has_capitulated = no
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						axis = yes
+						NOT = {
+							has_global_flag = grind_allowed
+						}
+					}
+					every_army_leader = {
+						limit = {
+							NOT = { 
+								has_trait = no_grind
+							}
+						}
+						add_unit_leader_trait = no_grind
+					}
+				}
+			}
+			if = {
+				limit = {
+					GER = {has_war = no }
+				}
+				every_country = {
+					limit = {
+						allies = yes
+					}
+					every_army_leader = {
+						limit = {
+							NOT = { 
+								has_trait = no_grind
+							}
+						}
+						add_unit_leader_trait = no_grind
+					}
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			hmm_capitulations_on_actions = yes
+
+			
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+
+
+			#VP System
+
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 613 #Nanjing
+							state = 439 #Dehli
+							state = 447 #Alexandria
+							state = 450 #Benghasi
+							state = 7 #Amsterdam
+							state = 16 #Paris
+							state = 20 #Lyon
+							state = 224 #Bryansk
+							state = 219 #Moscow
+							state = 217 #Stalingrad
+						}
+					}
+				}
+				ROOT = { #gained controll (add var)
+					if = {
+						limit = {
+							allies = yes
+						}
+						add_to_variable = {
+							var = global.allies_score
+							value = 1
+						}
+						clamp_variable = {
+							var = global.allies_score
+							min = 0
+							max = 10
+						}
+					}
+					else_if = {
+						limit = { 
+							axis = yes
+						}
+						add_to_variable = {
+							var = global.axis_score
+							value = 1
+						}
+						clamp_variable = {
+							var = global.axis_score
+							min = 0
+							max = 10
+						}
+					}
+				}
+				FROM = { #lost controll (sub var)
+					if = {
+						limit = {
+							allies = yes
+						}
+						subtract_from_variable = {
+							var = global.allies_score
+							value = 1
+						}
+						clamp_variable = {
+							var = global.allies_score
+							min = 0
+							max = 10
+						}
+					}
+					else_if = {
+						limit = { 
+							axis = yes
+						}
+						subtract_from_variable = {
+							var = global.axis_score
+							value = 1
+						}
+						clamp_variable = {
+							var = global.axis_score
+							min = 0
+							max = 10
+						}
+					}
+				}
+			}
+
+		}
+	}
+	on_war_relation_added = {
+        effect = {
+            if = {
+                limit = {
+                    tag = JAP
+                    FROM = {
+                        is_in_faction_with = ENG
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = ENG
+                    }
+                    add_to_war = {
+                        targeted_alliance = FROM
+                        enemy = JAP
+                        hostility_reason = asked_to_join
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = JAP
+                    }
+                    add_to_war = {
+                        targeted_alliance = ROOT
+                        enemy = FROM
+                        hostility_reason = asked_to_join
+                    }
+                }
+            }
+			#VP System
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+					}
+				}
+				initilize_victory_system = yes
+			}
+			if = {
+                limit = {
+                    tag = GER
+                    FROM = {
+                       tag = SOV
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = GER
+                    }
+                    add_to_war = {
+                        targeted_alliance = ROOT
+                        enemy = SOV
+                        hostility_reason = asked_to_join
+                    }
+                }
+            }
+        }
+    }
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						tag = POL
+					}
+				}
+				
+				every_country = {
+					limit = {
+						allies = yes
+					}
+					every_army_leader = {
+						remove_unit_leader_trait = no_grind
+					}
+				}
+				ENG = {
+					puppet = IRE
+					set_autonomy = {
+						target = IRE
+						autonomy_state = autonomy_integrated_puppet
+					}
+				}
+				
+
+			}
+			if = {
+				limit = {
+					FROM = {
+						allies = yes
+						NOT = { tag = SOV}
+					}
+				}
+				ENG = {
+					add_to_faction = FROM
+				}
+			}
+			if = {
+                limit = {
+                    FROM = {
+                        tag = ALB
+                    }
+                }
+                ALB = {
+                    load_oob = "ALB_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = BEL
+                    }
+                }
+                BEL = {
+                    load_oob = "BEL_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = DEN
+                    }
+                }
+                DEN = {
+                    load_oob = "DEN_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = HOL
+                    }
+                }
+                HOL = {
+                    load_oob = "HOL_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = LUX
+                    }
+                }
+                LUX = {
+                    load_oob = "LUX_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = NOR
+                    }
+                }
+                NOR = {
+                    load_oob = "NOR_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = POL
+                    }
+                }
+                POL = {
+                   load_oob = "POL_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = YUG
+                    }
+                }
+                YUG = {
+                    load_oob = "YUG_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = GRE
+                    }
+                }
+                GRE = {
+                    load_oob = "GRE_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = CHI
+                    }
+                }
+                CHI = {
+                    load_oob = "CHI_CHROM_SPAWN"
+                }
+            }
+			
+		}
+	}
+	
+	on_startup = {
+		effect = {
+			FRA = {
+				transfer_navy = {
+					target = ITA
+				}
+			}
+		}
+	}
+}

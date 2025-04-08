@@ -1,0 +1,35 @@
+ROM_oil_production = {
+
+	ROM_more_oil = {
+		icon = oil
+		allowed = {	original_tag = ROM	}
+		available = {	has_completed_focus = ROM_autarky	}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			46 = {
+                add_resource = {
+                type = oil
+                amount = 16
+                }
+            }
+		}
+	}	
+	
+	ROM_more_oil_2 = {
+		icon = oil
+		allowed = {	original_tag = ROM	}
+		available = {	has_completed_focus = ROM_german_romanian_oil_exploitation_company	}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			46 = {
+                add_resource = {
+                type = oil
+                amount = 12
+                }
+            }
+		}
+	}	
+
+}

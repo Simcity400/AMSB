@@ -1,0 +1,271 @@
+
+########    ###    ##    ## ##    ##  ######  
+   ##      ## ##   ###   ## ##   ##  ##    ## 
+   ##     ##   ##  ####  ## ##  ##   ##       
+   ##    ##     ## ## ## ## #####     ######  
+   ##    ######### ##  #### ##  ##         ## 
+   ##    ##     ## ##   ### ##   ##  ##    ## 
+   ##    ##     ## ##    ## ##    ##  ######  
+
+ENG_vickers_armstrong_eng_organization = {
+	include = generic_medium_tank_organization
+	icon = GFX_idea_vickers_armstrong_eng
+	
+	allowed = {	
+		OR = {
+			tag = ENG 
+			tag = POL
+			AND = {
+				tag = GRE
+				has_dlc = "Battle for the Bosporus"
+			}
+		}
+	}
+}
+
+ENG_vauxhall_organization = {
+	include = generic_infantry_tank_organization
+	icon = GFX_idea_vauxhall
+
+	allowed = {	
+		OR = {
+			original_tag = ENG	 
+			original_tag = AST
+			original_tag = CAN
+			original_tag = NZL
+			original_tag = SAF
+			original_tag = RAJ
+			original_tag = MEX
+			original_tag = USA
+			original_tag = BRA	
+		}
+		
+	}
+}
+
+
+ ######  ##     ## #### ########   ######  
+##    ## ##     ##  ##  ##     ## ##    ## 
+##       ##     ##  ##  ##     ## ##       
+ ######  #########  ##  ########   ######  
+      ## ##     ##  ##  ##              ## 
+##    ## ##     ##  ##  ##        ##    ## 
+ ######  ##     ## #### ##         ######  
+
+
+
+ENG_harland_wolff_organization = {
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_harland_wolff
+	
+	allowed = {	
+		tag = ENG
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+
+ENG_cammell_laird_organization = {
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_cammell_laird
+	
+	allowed = {	
+		tag = ENG
+		has_dlc = "Arms Against Tyranny"
+	}
+
+
+}
+
+ENG_yarrow_shipbuilders_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_idea_yarrow_shipbuilders
+	
+	allowed = {	
+			tag = ENG 
+	}
+	
+}
+ENG_john_brown_organization = {
+	include = generic_raider_ship_organization
+	icon = GFX_idea_john_brown_company
+	
+	allowed = {	
+			tag = ENG
+	}
+}
+
+
+
+########  ##          ###    ##    ## ########  ######  
+##     ## ##         ## ##   ###   ## ##       ##    ## 
+##     ## ##        ##   ##  ####  ## ##       ##       
+########  ##       ##     ## ## ## ## ######    ######  
+##        ##       ######### ##  #### ##             ## 
+##        ##       ##     ## ##   ### ##       ##    ## 
+##        ######## ##     ## ##    ## ########  ######  
+
+
+ENG_supermarine_organization = {
+	include = generic_high_agility_fighter_aircraft_organization
+	icon = GFX_idea_supermarine
+	
+	allowed = {	
+		OR = {
+		original_tag=  SAF
+		original_tag=  ENG
+		original_tag = NOR
+		}
+		has_dlc = "Arms Against Tyranny"
+	}
+
+	equipment_type = {
+		mio_cat_eq_all_small_plane
+		maritime_patrol_plane
+	}	
+
+	research_categories = {	
+		mio_cat_all_light_fighter_and_modules 
+#		mio_cat_all_naval_bomber_and_modules 
+	}
+}
+
+ENG_hawker_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_hawker
+	allowed = {	
+		OR = {
+		original_tag=  SAF
+		original_tag=  ENG
+		original_tag = NOR
+		}
+		has_dlc = "Arms Against Tyranny"
+	}
+}
+
+ENG_de_havilland_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_de_havilland
+	allowed = {	
+		has_dlc = "Arms Against Tyranny"
+		OR = {
+		original_tag=  SAF
+		original_tag=  ENG
+		original_tag = NOR
+		}
+	}
+
+
+}
+
+ENG_fairey_aviation_organization = {
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_fairey_aviation
+	
+	allowed = {	
+	OR = { 
+			tag = ENG 
+			original_tag=  SAF
+			}
+	}
+
+}
+
+ENG_avro_organization = {
+	include = generic_heavy_aircraft_organization
+	icon = GFX_idea_avro
+		allowed = {	
+
+		OR = {
+		original_tag=  SAF
+		original_tag=  ENG
+		original_tag = NOR
+		}
+		}
+}
+
+
+
+
+##     ##    ###    ######## ######## ########  #### ######## ##       
+###   ###   ## ##      ##    ##       ##     ##  ##  ##       ##       
+#### ####  ##   ##     ##    ##       ##     ##  ##  ##       ##       
+## ### ## ##     ##    ##    ######   ########   ##  ######   ##       
+##     ## #########    ##    ##       ##   ##    ##  ##       ##       
+##     ## ##     ##    ##    ##       ##    ##   ##  ##       ##       
+##     ## ##     ##    ##    ######## ##     ## #### ######## ######## 
+
+ENG_rsaf_enfield_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_rsaf_enfield
+
+	allowed = {	
+		OR = {
+			original_tag = ENG
+			original_tag = SAF
+		}
+	}
+}
+
+ENG_vauxhall_tank_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_vauxhall
+	name = ENG_vauxhall_organization
+	allowed = {	OR = {original_tag=  POL original_tag = MEX original_tag = FRA original_TAG = BRA original_TAG = HOL original_tag = ENG  original_tag = SAF  original_tag = AST  original_tag = CAN original_tag = RAJ   original_tag = NOR  original_tag = GRE  }	}
+
+		available = { 
+		IF = { 
+			limit = {
+				FROM = { original_tag = POL }
+			}
+			FROM = {
+				NOT = { has_completed_focus = POL_adaptive_designs }
+			}
+		}
+	}
+}
+
+		
+ENG_vauxhall_automotive_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_vauxhall
+	name = ENG_vauxhall_organization
+	
+	allowed = {	
+		OR = {
+			original_tag = CAN
+			original_tag = ENG
+			original_tag = POL # If Poland sets up a local one
+			original_tag = RAJ
+			original_tag = SAF
+			original_tag = AST
+		}
+	}
+	
+	visible = {
+		IF = { 
+			limit = {
+				FROM = { original_tag = POL }
+			}
+			FROM = {
+				has_country_flag = POL_vauxhall_motors
+				NOT = { has_completed_focus = POL_adaptive_designs }
+			}
+		}
+	}
+}
+
+ENG_royal_arsenal_organization = {
+	include = generic_artillery_organization
+	icon = GFX_idea_royal_arsenal
+	allowed = {
+			OR = { 
+			original_tag = ENG 
+			original_tag = NZL 
+			original_tag = AST 
+			original_tag = CAN 
+			original_tag = SAF
+			original_tag = GRE
+		}
+	}
+}

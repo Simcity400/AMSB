@@ -1,0 +1,120 @@
+on_action = {
+	on_startup = {
+		effect = {
+			FRA = {
+				#set_variable = { FRA_poster_center_icon_frame = 1 }
+				 set_variable = { FRA_new_propaganda_campaign = 0 } #Used to pick a poster slot
+				set_variable = { FRA_propaganda_campaign_to_remove = 0 } #Used to reset a poster slot
+				#set_variable = { SOV_propaganda_locked_slot_index = 1 } #### === INSERT LOCKED SLOT INDEX IN STRIPE HERE === ####
+				set_variable = { FRA_propaganda_empty_slot_index = 1 } #### === INSERT EMPTY SLOT INDEX IN STRIPE HERE === ####
+				set_variable = { FRA_poster_left_icon_frame = FRA_propaganda_empty_slot_index } #Set up the appropriate empty slot GFX
+				set_variable = { FRA_poster_center_icon_frame = FRA_propaganda_empty_slot_index } #Set up the appropriate locked slot GFX
+				#set_variable = { SOV_poster_right_icon_frame = SOV_propaganda_locked_slot_index } #Set up the appropriate locked slot GFX
+				set_variable = { allies_poster_center_icon_frame = 1 }
+
+			}
+			GER = {
+				set_variable = { GER_new_propaganda_campaign = 0 } #Used to pick a poster slot
+                set_variable = { GER_propaganda_campaign_to_remove = 0 } #Used to reset a poster slot
+                #set_variable = { SOV_propaganda_locked_slot_index = 1 } #### === INSERT LOCKED SLOT INDEX IN STRIPE HERE === ####
+                set_variable = { GER_propaganda_empty_slot_index = 1 } #### === INSERT EMPTY SLOT INDEX IN STRIPE HERE === ####
+                set_variable = { GER_poster_left_icon_frame = GER_propaganda_empty_slot_index } #Set up the appropriate empty slot GFX
+                set_variable = { GER_poster_center_icon_frame = GER_propaganda_empty_slot_index } #Set up the appropriate locked slot GFX
+                #set_variable = { SOV_poster_right_icon_frame = SOV_propaganda_locked_slot_index } #Set up the appropriate locked slot GFX
+			}
+			ITA = {
+				#set_variable = { ITA_poster_center_icon_frame = 1 }
+				set_variable = { ITA_new_propaganda_campaign = 0 } #Used to pick a poster slot
+				set_variable = { ITA_propaganda_campaign_to_remove = 0 } #Used to reset a poster slot
+				#set_variable = { SOV_propaganda_locked_slot_index = 1 } #### === INSERT LOCKED SLOT INDEX IN STRIPE HERE === ####
+				set_variable = { ITA_propaganda_empty_slot_index = 1 } #### === INSERT EMPTY SLOT INDEX IN STRIPE HERE === ####
+				set_variable = { ITA_poster_left_icon_frame = ITA_propaganda_empty_slot_index } #Set up the appropriate empty slot GFX
+				set_variable = { ITA_poster_center_icon_frame = ITA_propaganda_empty_slot_index } #Set up the appropriate locked slot GFX
+				#set_variable = { SOV_poster_right_icon_frame = SOV_propaganda_locked_slot_index } #Set up the appropriate locked slot GFX
+			}
+			JAP = {
+				#set_variable = { JAP_poster_center_icon_frame = 1 }
+					set_variable = { JAP_new_propaganda_campaign = 0 } #Used to pick a poster slot
+					set_variable = { JAP_propaganda_campaign_to_remove = 0 } #Used to reset a poster slot
+					#set_variable = { SOV_propaganda_locked_slot_index = 1 } #### === INSERT LOCKED SLOT INDEX IN STRIPE HERE === ####
+					set_variable = { JAP_propaganda_empty_slot_index = 1 } #### === INSERT EMPTY SLOT INDEX IN STRIPE HERE === ####
+					set_variable = { JAP_poster_left_icon_frame = JAP_propaganda_empty_slot_index } #Set up the appropriate empty slot GFX
+					set_variable = { JAP_poster_center_icon_frame = JAP_propaganda_empty_slot_index } #Set up the appropriate locked slot GFX
+					#set_variable = { SOV_poster_right_icon_frame = SOV_propaganda_locked_slot_index } #Set up the appropriate locked slot GFX
+			}
+			ENG = {
+				set_variable = { ENG_new_propaganda_campaign = 0 } #Used to pick a poster slot
+				set_variable = { ENG_propaganda_campaign_to_remove = 0 } #Used to reset a poster slot
+				#set_variable = { SOV_propaganda_locked_slot_index = 1 } #### === INSERT LOCKED SLOT INDEX IN STRIPE HERE === ####
+				set_variable = { ENG_propaganda_empty_slot_index = 1 } #### === INSERT EMPTY SLOT INDEX IN STRIPE HERE === ####
+				set_variable = { ENG_poster_left_icon_frame = ENG_propaganda_empty_slot_index } #Set up the appropriate empty slot GFX
+				set_variable = { ENG_poster_center_icon_frame = ENG_propaganda_empty_slot_index } #Set up the appropriate locked slot GFX
+				#set_variable = { SOV_poster_right_icon_frame = SOV_propaganda_locked_slot_index } #Set up the appropriate locked slot GFX
+			}
+			USA = {
+				#set_variable = { USA_poster_center_icon_frame = 1 }
+				set_variable = { USA_new_propaganda_campaign = 0 } #Used to pick a poster slot
+				set_variable = { USA_propaganda_campaign_to_remove = 0 } #Used to reset a poster slot
+				#set_variable = { SOV_propaganda_locked_slot_index = 1 } #### === INSERT LOCKED SLOT INDEX IN STRIPE HERE === ####
+				set_variable = { USA_propaganda_empty_slot_index = 1 } #### === INSERT EMPTY SLOT INDEX IN STRIPE HERE === ####
+				set_variable = { USA_poster_left_icon_frame = USA_propaganda_empty_slot_index } #Set up the appropriate empty slot GFX
+				set_variable = { USA_poster_center_icon_frame = USA_propaganda_empty_slot_index } #Set up the appropriate locked slot GFX
+				#set_variable = { SOV_poster_right_icon_frame = SOV_propaganda_locked_slot_index } #Set up the appropriate locked slot GFX
+			}
+			CAN = {
+				set_variable = { COM_poster_center_icon_frame = 1 }
+			}
+			SAF = {
+				set_variable = { COM_poster_center_icon_frame = 1 }
+			}
+			RAJ = {
+				set_variable = { COM_poster_center_icon_frame = 1 }
+			}
+			NZL = {
+				set_variable = { COM_poster_center_icon_frame = 1 }
+			}
+			AST = {
+				set_variable = { COM_poster_center_icon_frame = 1 }
+			}
+			BUL ={
+				set_variable = { axis_poster_center_icon_frame = 1 }
+			}
+			ROM = {
+				set_variable = { axis_poster_center_icon_frame = 1 }
+			}
+			SPR = {
+				set_variable = { axis_poster_center_icon_frame = 1 }
+			}
+			SIA = {
+				set_variable = { axis_poster_center_icon_frame = 1 }
+
+			}
+			HUN = {
+				set_variable = { axis_poster_center_icon_frame = 1 }
+
+			}		
+			FIN = {
+				set_variable = { axis_poster_center_icon_frame = 1 }
+
+			}	
+			MEX = {
+				set_variable = { allies_poster_center_icon_frame = 1 }
+
+			}
+			PHI = {
+				set_variable = { allies_poster_center_icon_frame = 1 }
+
+			}
+			BRA = {
+				set_variable = { allies_poster_center_icon_frame = 1 }
+
+			}
+			
+			
+
+
+		}
+		
+	}
+
+}
