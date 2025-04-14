@@ -2442,6 +2442,9 @@ focus_tree = {
 
 		cost = 10
 
+		available = {
+			date > 1941.1.1 }
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -2546,6 +2549,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = ROM_acquire_modern_tanks
 		cost = 10
+	
+		available = {
+			date > 1941.1.1 }
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -2572,7 +2578,6 @@ focus_tree = {
 	focus = {
 		id = ROM_haide_haide_haide
 		icon = GFX_focus_generic_army_doctrines_2
-		prerequisite = { focus = ROM_the_R_series }
 		prerequisite = { focus = ROM_mechanized_soldiers }
 		x = 1
 		y = 1

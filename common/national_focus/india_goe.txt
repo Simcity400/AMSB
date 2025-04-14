@@ -15812,7 +15812,7 @@ focus_tree = {
                 name = RAJ_for_the_people_by_the_people
                 bonus = 0.75
                 uses = 2
-                category = infantry_tech
+                category = infantry_weapons
             }
             add_tech_bonus = {
                 name = RAJ_for_the_people_by_the_people
@@ -18105,17 +18105,12 @@ focus_tree = {
                     has_dlc = "Arms Against Tyranny"
                 }
 
-                mio:RAJ_ammunition_factory_khadki_organization = {
-                    add_mio_size = 1
-                    unlock_mio_trait_tooltip = {
-                        trait = RAJ_mio_trait_gun_and_shell_facatory_cassiopore
-                    }
-                }
             }
             else = {
                 upgrade_ordance_factories_art_no_aat = yes
             }
 
+            try_build_mil_in_core_otherwise_build_in_controlled = yes
             try_build_mil_in_core_otherwise_build_in_controlled = yes
         }
     }
@@ -19186,9 +19181,6 @@ focus_tree = {
                     has_dlc = "Arms Against Tyranny"
                 }
 
-                unlock_mio_policy_tooltip = {
-                    policy = mio_policy_RAJ_general_ordnance_factory_board
-                }
             }
             else = {
                 try_build_mil_in_core_otherwise_build_in_controlled_2_mil = yes
