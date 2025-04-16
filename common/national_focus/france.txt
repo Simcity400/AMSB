@@ -1412,11 +1412,6 @@
 		available_if_capitulated = yes
 
 	completion_reward = {
-			custom_effect_tooltip = FRA_mobilize_railway_guns_tt
-			if = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
 				#Required techs for railway guns
 				if = {
 					limit = {
@@ -1430,11 +1425,9 @@
 					}
 					set_technology = { railway_gun = 1 }
 				}
-
-				FRA_mobilize_railway_guns = yes
 			}
 		}
-	}
+		
 	focus = {
 		id = FRA_heavy_armor_focus
 		icon = GFX_goal_generic_army_tanks
