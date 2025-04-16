@@ -1,0 +1,15 @@
+on_actions = {
+	on_monthly_JAP = {
+		effect = { 
+
+			if = {
+				limit = {
+					JAP = {is_ai = yes}
+					date > 1937.12.31
+					tag = JAP
+				}
+				add_ideas = china_war_ai_skill_issue
+			}
+		}
+	}	
+}
