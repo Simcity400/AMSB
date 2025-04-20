@@ -296,8 +296,8 @@ GER_seize_gold_reserves_cat = {
 		target_trigger = {
 			FROM = {
 				has_country_flag = GER_has_capitulated_to_germany
-				NOT = { #Don't seize France's gold reserves too soon; set up Vichy France first. Set in event France.10 and cleared in event france.14
-					has_country_flag = GER_dont_seize_gold_reserves_flag
+				#  NOT = { #Don't seize France's gold reserves too soon; set up Vichy France first. Set in event France.10 and cleared in event france.14. #This line was removed to fix France seize gold not working (definatly a hack)#
+					 #has_country_flag = GER_dont_seize_gold_reserves_flag
 				}
 				any_core_state = {
 					is_controlled_by = ROOT
