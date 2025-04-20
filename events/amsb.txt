@@ -1,57 +1,66 @@
 # SEALION (Germany)
 add_namespace = sealion
 news_event = {
-	id = sealion.1
-	title = sealion.1.t
-	desc = sealion.1.d
-	picture = GFX_news_event_german_soldiers
-	
-	trigger = {
-		NOT = {
-			ENG = {
-				controls_province = 540
-				controls_province = 3369
-				controls_province = 377
-				controls_province = 6384
-				controls_province = 6395
-				controls_province = 3311
-				controls_province = 3379
-				controls_province = 11064
-				controls_province = 6300
-				controls_province = 351
-				controls_province = 11297
-				controls_province = 271
-				controls_province = 11374
-				controls_province = 3501
-				controls_province = 9458
-			}
+    id = sealion.1
+    title = sealion.1.t
+    desc = sealion.1.d
+    picture = GFX_news_event_german_soldiers
+    
+    trigger = {
+        NOT = {
+            ENG = {
+                controls_province = 540
+                controls_province = 3369
+                controls_province = 377
+                controls_province = 6384
+                controls_province = 6395
+                controls_province = 3311
+                controls_province = 3379
+                controls_province = 11064
+                controls_province = 6300
+                controls_province = 351
+                controls_province = 11297
+                controls_province = 271
+                controls_province = 11374
+                controls_province = 3501
+                controls_province = 9458
+            }
         }
-		NOT = { has_global_flag = sealion }
-	}
-	
-	immediate = {
-		set_global_flag = sealion
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	option = {
-		name = sealion.1.a
-		trigger = { 
-			OR = {
-				is_ally_with = GER
-				is_ally_with = JAP }
-		}
-	}
-	option = {
-		name = sealion.1.b
-		trigger = { is_ally_with = ENG }
-	}
+        NOT = { has_global_flag = sealion }
+    }
+    
+    immediate = {
+        set_global_flag = sealion
+    }
+    
+    mean_time_to_happen = {
+        days = 2
+    }
+    
+    option = {
+        name = sealion.1.a
+        trigger = { 
+            OR = {
+                is_ally_with = GER
+                is_ally_with = JAP
+                tag = SPA
+            }
+        }
+    }
+    option = {
+        name = sealion.1.b
+        trigger = { 
+            OR = {
+                is_ally_with = ENG 
+                tag = BRA
+                tag = MEX
+            }
+			NOT = {tag = USA}
+        }
+    }
     option = {
         name = sealion.1.c
-        trigger = { TAG = SOV }
+        trigger = { tag = SOV }
         SOV = {
             create_wargoal = {
                 target = GER
@@ -60,13 +69,19 @@ news_event = {
             }
         }
     }
-	option = {
-		name = sealion.1.d
-		trigger = { TAG = USA }
+    option = {
+        name = sealion.1.e
+        trigger = { tag = USA }
         USA = {
             create_wargoal = {
                 target = GER
                 type = puppet_wargoal_focus
                 expire = 0
-		}
+            }
+            if = {
+                limit = { NOT = { is_ally_with = ENG } }
+                ENG = { add_to_faction = USA }
+            }
+        }
+    }
 }

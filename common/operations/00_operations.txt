@@ -1643,23 +1643,43 @@ operation_collaboration_government = { ### 10 2/55
 			target = FROM
 			value < 1.0
 		}
-	}
+		ROOT = { is_major = yes }
+
+		custom_trigger_tooltip = {
+        	tooltip = GER_SOV_COLLAB_LIMIT_TT
+			NOT = {ROOT = { has_country_flag = ger_completed_sov_collab_op }}
+			}
+		}
 	risk_chance = 0.1
 	experience = 1.5
 	outcome_extra_chance = 0.33
-	outcome_execute = { # SCOPE_OPERATION
+	outcome_execute = { 
 		ROOT = {
 			add_collaboration = {
 				target = FROM
 				value = 0.35
 			}
+		if = {
+				limit = {
+					FROM = { tag = SOV }            
+				}
+				GER = { set_country_flag = ger_completed_sov_collab_op }
+				ITA = { set_country_flag = ger_completed_sov_collab_op }
+				JAP = { set_country_flag = ger_completed_sov_collab_op }
 		}
 	}
-	outcome_extra_execute = { # SCOPE_OPERATION
+	outcome_extra_execute = { 
 		ROOT = {
 			add_collaboration = {
 				target = FROM
 				value = 0.35
+			}
+		if = {
+				limit = {
+					FROM = { tag = SOV }  
+					tag = GER            
+				}
+				set_country_flag = ger_completed_sov_collab_op 
 			}
 		}
 	}
