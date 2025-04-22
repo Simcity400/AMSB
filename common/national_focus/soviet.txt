@@ -725,6 +725,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+			add_ideas = SOV_new_floor_managers
 			add_to_variable = { SOV_fyp_production_factory_efficiency_gain_factor = 0.05 } #Add efficiency gain
 			add_to_variable = { SOV_fyp_production_factory_start_efficiency_factor = 0.05 } #Add efficiency start
 			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.02 } #Add small output bonus
@@ -3818,7 +3819,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_pc_of_mechanical_engineering
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -4465,7 +4466,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 10
+		cost = 5
 
 		available = {
 			has_full_control_of_state = 219 #MOSCOW
@@ -5627,81 +5628,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SOV_restore_cossack_units
-		icon = GFX_focus_SOV_restore_cossack_units
-		prerequisite = { focus = SOV_strengthen_the_mobilization_plan }
-		x = -1
-		y = 1
-		relative_position_id = SOV_strengthen_the_mobilization_plan
-		cost = 5
-
-		mutually_exclusive = { focus = SOV_cohesion_first }
-
-		available = {
-
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			add_to_variable = { SOV_the_red_army_modifier_army_sub_unit_cavalry_speed_factor = 0.05 }
-			add_to_variable = { SOV_the_red_army_cavalry_attack_factor = 0.05 }
-			custom_effect_tooltip = SOV_restore_cossack_units_ns_tt
-
-			show_unit_leaders_tooltip = SOV_lev_dovator
-
-			#Spawn Cossack divisions
-			custom_effect_tooltip = SOV_restore_cossack_units_spawn_tt
-			hidden_effect = {
-				division_template = {
-					name = "Kazachya Kavaleryskaya Diviziya"
-					division_names_group = SOV_CAV_02
-					template_counter = 05
-
-					regiments = {
-						cavalry = { x = 0 y = 0 }
-						cavalry = { x = 0 y = 1 }
-						cavalry = { x = 1 y = 0 }
-						cavalry = { x = 1 y = 1 }
-						mot_artillery_brigade = { x = 2 y = 0 }
-						light_armor = { x = 3 y = 0 }
-					}
-					support = {
-						engineer = { x = 0 y = 0 }
-						artillery = { x = 0 y = 1 }
-						recon = { x = 0 y = 2 }
-					}
-				}
-
-				capital_scope = {
-					#Cossack Cavalry
-					create_unit = { 
-						division = "name = \"4ya Donskaya Kazachya Kav. Div.\" division_template = \"Kazachya Kavaleryskaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
-					}
-					create_unit = { 
-						division = "name = \"6ya Kubansko-Terskaya Kazachya Kav. Div.\" division_template = \"Kazachya Kavaleryskaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
-					}
-					create_unit = { 
-						division = "name = \"10ya Tersko-Stavropolskaya Kazachya Kav. Div\" division_template = \"Kazachya Kavaleryskaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
-					}
-					create_unit = { 
-						division = "name = \"12ya Kubanskaya Kazachya Kav. Div.\" division_template = \"Kazachya Kavaleryskaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
-					}
-
-					#Cossack Infantry
-					create_unit = {
-						division = "name = \"13ya Donskaya Kazachya Div.\" division_template = \"Strelkovaya Diviziya\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = ROOT
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
 		id = SOV_cohesion_first
 		icon = GFX_SOV_cohesion_first_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_strengthen_the_mobilization_plan }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = SOV_strengthen_the_mobilization_plan
 		cost = 5
@@ -5747,7 +5677,8 @@ focus_tree = {
 		id = SOV_military_reorganization
 		icon = GFX_SOV_military_reorganization_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_rehabilitated_military }
-		x = 0
+		mutually_exclusive = { focus = SOV_military_reorganization_longer }
+		x = -1
 		y = 2
 		relative_position_id = SOV_rehabilitated_military
 		cost = 10
@@ -5757,7 +5688,9 @@ focus_tree = {
 		}
 
 		available = {
-
+			any_enemy_country = {
+				SOV_is_major_not_original_sov = yes
+			}
 		}
 		
 		search_filters = {FOCUS_FILTER_ARMY_XP}
@@ -5785,13 +5718,57 @@ focus_tree = {
 	}
 
 	focus = {
+		id = SOV_military_reorganization_longer
+		icon = GFX_SOV_military_reorganization_ccp_2d_sov_compatibility
+		prerequisite = { focus = SOV_rehabilitated_military }
+		x = 1
+		y = 2
+		relative_position_id = SOV_rehabilitated_military
+		cost = 15
+
+		select_effect = {
+			add_ideas = SOV_military_reorganization_ns
+		}
+
+		available = {
+			any_enemy_country = {
+				SOV_is_major_not_original_sov = yes
+			}
+		}
+		
+		search_filters = {FOCUS_FILTER_ARMY_XP}
+
+		completion_reward = {
+			add_ideas = SOV_new_officer_core
+			#Tooltip purposes (Select Effect)
+			custom_effect_tooltip = SOV_focus_select_effect_tt
+			effect_tooltip = {
+				add_ideas = SOV_military_reorganization_ns	
+			}
+
+			#(Complete Effect)
+			custom_effect_tooltip = SOV_focus_complete_effect_tt
+			hidden_effect = {
+				remove_ideas = SOV_military_reorganization_ns
+			}
+
+			add_to_variable = { SOV_the_red_army_unit_infantry_design_cost_factor = -0.1 }
+			add_to_variable = { SOV_the_red_army_unit_artillery_brigade_design_cost_factor = -0.1 }
+			custom_effect_tooltip = SOV_military_reorganization_ns_tt
+
+			army_experience = 50
+			add_command_power = 25
+		}
+	}
+
+	focus = {
 		id = SOV_desperate_measures
 		icon = GFX_SOV_desperate_measures_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_strengthen_the_mobilization_plan }
 		x = 3
 		y = 2
 		relative_position_id = SOV_strengthen_the_mobilization_plan
-		cost = 5
+		cost = 1
 
 		available = {
 			any_enemy_country = {
@@ -5816,11 +5793,10 @@ focus_tree = {
 	focus = {
 		id = SOV_an_adaptable_army
 		icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_rehabilitated_military }
-		prerequisite = { focus = SOV_desperate_measures }
+		prerequisite = { focus = SOV_military_reorganization focus = SOV_military_reorganization_longer} 
 		x = 1
 		y = 1
-		relative_position_id = SOV_rehabilitated_military
+		relative_position_id = SOV_military_reorganization
 		cost = 10
 
 		available = {
@@ -5937,10 +5913,10 @@ focus_tree = {
 	focus = {
 		id = SOV_organization_of_the_partisans
 		icon = GFX_focus_focus_fra_maquis
-		prerequisite = { focus = SOV_lessons_of_war }
-		x = -1
+		prerequisite = { focus = SOV_smersh }
+		x = 0
 		y = 1
-		relative_position_id = SOV_lessons_of_war
+		relative_position_id = SOV_smersh
 		cost = 10
 
 		available = {
@@ -6014,7 +5990,7 @@ focus_tree = {
 		id = SOV_smersh
 		icon = GFX_SOV_smersh_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_lessons_of_war }
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = SOV_lessons_of_war
 		cost = 10
@@ -6054,10 +6030,10 @@ focus_tree = {
 	focus = {
 		id = SOV_barrier_troops
 		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_smersh }
+		prerequisite = { focus = SOV_lessons_of_war }
 		x = 0
 		y = 1
-		relative_position_id = SOV_smersh
+		relative_position_id = SOV_lessons_of_war
 		cost = 5
 
 		available = {
@@ -6075,14 +6051,13 @@ focus_tree = {
 	focus = {
 		id = SOV_experts_in_camouflage
 		icon = GFX_SOV_experts_in_camouflage_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_military_reorganization }
-		x = -1
+		prerequisite = { focus = SOV_an_adaptable_army}
+		x = 0
 		y = 1
-		relative_position_id = SOV_military_reorganization
+		relative_position_id = SOV_an_adaptable_army
 		cost = 5
 
 		available = {
-
 		}
 		
 		search_filters = {}
@@ -6098,11 +6073,10 @@ focus_tree = {
 	focus = {
 		id = SOV_keep_commissars_organization
 		icon = GFX_SOV_keep_commissars_organization_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_military_reorganization }
-		prerequisite = { focus = SOV_lessons_of_war }
-		x = 1
+		prerequisite = { focus = SOV_barrier_troops }
+		x = -1
 		y = 1
-		relative_position_id = SOV_military_reorganization
+		relative_position_id = SOV_barrier_troops
 		cost = 10
 
 		mutually_exclusive = { focus = SOV_swap_to_political_advisors }
@@ -6204,11 +6178,10 @@ focus_tree = {
 	focus = {
 		id = SOV_swap_to_political_advisors
 		icon = GFX_SOV_swap_to_political_advisors_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_military_reorganization }
-		prerequisite = { focus = SOV_lessons_of_war }
-		x = 3
+		prerequisite = { focus = SOV_barrier_troops}
+		x = 1
 		y = 1
-		relative_position_id = SOV_military_reorganization
+		relative_position_id = SOV_barrier_troops
 		cost = 10
 
 		mutually_exclusive = { focus = SOV_keep_commissars_organization focus = SOV_adjoined_battle_priests }
