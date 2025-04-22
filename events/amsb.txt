@@ -6,25 +6,26 @@ news_event = {
     desc = sealion.1.d
     picture = GFX_news_event_german_soldiers
     
+    major = yes
+
     trigger = {
-        NOT = {
-            ENG = {
-                controls_province = 540
-                controls_province = 3369
-                controls_province = 377
-                controls_province = 6384
-                controls_province = 6395
-                controls_province = 3311
-                controls_province = 3379
-                controls_province = 11064
-                controls_province = 6300
-                controls_province = 351
-                controls_province = 11297
-                controls_province = 271
-                controls_province = 11374
-                controls_province = 3501
-                controls_province = 9458
-            }
+        OR = { 
+            NOT = { ENG = {controls_province = 540} }
+            NOT = {  ENG = {controls_province = 3369} }
+            NOT = {  ENG = {controls_province = 377} }
+            NOT = {  ENG = {controls_province = 6384} }
+            NOT = {  ENG = {controls_province = 6395} }
+            NOT = {  ENG = {controls_province = 3311} }
+            NOT = {  ENG = {controls_province = 3379} }
+            NOT = {  ENG = {controls_province = 11064} }
+            NOT = {  ENG = {controls_province = 6300} }
+            NOT = {  ENG = {controls_province = 351} }
+            NOT = {  ENG = {controls_province = 11297} }
+            NOT = {  ENG = {controls_province = 271} }
+            NOT = {  ENG = {controls_province = 11374} }
+            NOT = {  ENG = {controls_province = 11374} }
+            NOT = {  ENG = {controls_province = 3501} }
+            NOT = {  ENG = {controls_province = 9458} }
         }
         NOT = { has_global_flag = sealion }
     }
