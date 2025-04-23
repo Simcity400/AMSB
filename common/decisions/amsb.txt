@@ -1,0 +1,56 @@
+war_measures = {		#Name of category that decisions will appear under, decisions MUST have a category to work properly.
+	###############################################
+	#### DECISIONS WITH TIMERS BECOME MISSIONS ####
+	###############################################
+	
+	retake_UK = {		#ID of the mission, must not contain spaces!
+
+		icon = generic_operation
+		available = {
+			ENG = {has_capitulated = yes}
+			ROOT = {has_war_with = GER}
+		}
+		visible = {
+			always = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		fire_only_once = yes
+	
+		complete_effect = { 
+			ENG = {
+				every_owned_state = {
+				limit = {
+					is_core_of = PREV
+				}
+				add_dynamic_modifier = {
+					modifier = preperations_for_British_liberation
+					scope = ENG
+					days = 50
+					}
+				}
+			}
+			USA = {
+				add_state_core = 123
+				add_state_core = 338
+				add_state_core = 127
+				add_state_core = 126
+				add_state_core = 125
+				add_state_core = 129
+				add_state_core = 128
+				add_state_core = 122
+				add_state_core = 132
+				add_state_core = 130
+				add_state_core = 931
+				add_state_core = 131
+				add_state_core = 121
+				add_state_core = 133
+				add_state_core = 136
+				add_state_core = 120
+				add_state_core = 119
+				add_state_core = 932
+			}
+		}
+	}
+}
