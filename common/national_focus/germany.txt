@@ -8052,7 +8052,267 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = GER_self_defense
+		icon = GFX_SOV_fortify_mongolian_border_ccp_2d_sov_compatibility
+		prerequisite = { 
+			focus = GER_expand_ss_recruitment
+		}
+		x = 0
+		y = 1
+		relative_position_id = GER_expand_ss_recruitment
+
+		cost = 5
+
+		available = {
+			date > 1941.1.1
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {		
+			custom_effect_tooltip = GER_create_unit_mainland_tt
+			hidden_effect = {	
+				division_template = {
+					name = "Defenders of the Mainland"
+					priority = 2
+					division_names_group = GER_INF_01
+					is_locked = yes
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+		
+		        		infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+					}
+					support = {
+						anti_tank = { x = 0 y = 0 }
+						anti_air = { x = 0 y = 1 }
+					}
+				}
 	
+				random_owned_controlled_state = {
+					prioritize = { 16 }
+					create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				create_unit = {
+						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = GER
+					}	
+				}
+			}
+
+		}
+	}
 	focus = {
 		id = GER_demand_sudetenland
 

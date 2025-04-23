@@ -31,7 +31,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = free_trade
+			add_tech_bonus = {
+				category = industry
+				uses = 1
+				bonus = 0.25
+				name = ROM_bucharest_technical_institute
+			}
 		}
 	}
 
@@ -202,8 +207,8 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		prerequisite = { focus = ROM_german_romanian_oil_exploitation_company }
 		mutually_exclusive = { focus = ROM_reichswerke_subsidiary }
-		x = -1
-		y = 3
+		x = 0
+		y = 1
 		relative_position_id = ROM_german_romanian_oil_exploitation_company
 
 
@@ -222,30 +227,6 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ROM_reichswerke_subsidiary
-		icon = GFX_focus_GER_vereinigte_stahlwerke
-		prerequisite = { focus = ROM_german_romanian_oil_exploitation_company }
-		mutually_exclusive = { focus = ROM_nationalize_the_oil }
-		x = 1
-		y = 3
-		relative_position_id = ROM_german_romanian_oil_exploitation_company
-
-
-		cost = 5
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		complete_tooltip = {
-
-		}
-
-		completion_reward = {
-			show_ideas_tooltip = ROM_reichswerke_hermann_goring 
-			
-		}
-	}
 
 	focus = {
 		id = ROM_autarky
