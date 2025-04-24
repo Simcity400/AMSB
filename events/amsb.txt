@@ -74,14 +74,16 @@ news_event = {
         name = sealion.1.e
         trigger = { tag = USA }
         USA = {
-            create_wargoal = {
-                target = GER
-                type = puppet_wargoal_focus
-                expire = 0
-            }
             if = {
                 limit = { NOT = { is_ally_with = ENG } }
                 ENG = { add_to_faction = USA }
+            }
+            if = {
+                limit = { NOT = { has_war_with = GER } }
+                add_to_war = {
+                    targeted_alliance = ENG
+                    enemy = GER
+                }
             }
         }
     }
