@@ -6,12 +6,17 @@ war_measures = {		#Name of category that decisions will appear under, decisions 
 	retake_UK = {		#ID of the mission, must not contain spaces!
 
 		icon = generic_operation
+
+		allowed = {
+			ROOT = {tag = USA}
+		}
+
 		available = {
 			ENG = {has_capitulated = yes}
 			ROOT = {has_war_with = GER}
 		}
 		visible = {
-			ROOT = USA
+			ROOT = {tag = USA} 
 		}
 		ai_will_do = {
 			factor = 1
