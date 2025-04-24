@@ -3,6 +3,7 @@ war_measures = {		#Name of category that decisions will appear under, decisions 
 	#### DECISIONS WITH TIMERS BECOME MISSIONS ####
 	###############################################
 	
+
 	retake_UK = {		#ID of the mission, must not contain spaces!
 
 		icon = generic_operation
@@ -58,4 +59,94 @@ war_measures = {		#Name of category that decisions will appear under, decisions 
 			}
 		}
 	}
+}
+SOV_great_patriotic_war = {
+	SOV_dynamite_the_dnieper_dam = { 
+		icon = GFX_decision_hol_inundate_water_lines
+		
+		allowed = {
+			ROOT = {tag = SOV}
+			NOT  = {has_global_flag = dnieper_blown}
+		}
+
+		available = {
+			ROOT = {has_war_with = GER}
+			ROOT = {
+				OR = {
+					AND = {
+						controls_province = 11405
+						NOT = {controls_province = 11437} # controls Zaporozhe and not Dnipropetrovsk
+					}
+					AND = {
+						controls_province = 11405
+						NOT = {controls_province = 525} # controls Zaporozhe and not Kiev
+					}
+					AND = {
+						controls_province = 11437
+						NOT = {controls_province = 11405} # controls Dnipropetrovsk and not Zaporozhe
+					}
+				}
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 200
+				state = 196
+			} 
+		}
+		
+		visible = {
+			controls_state = 226
+		}
+		
+		fire_only_once = yes
+		
+		cost = 0
+		
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 200
+						state = 196
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = yellow_river_blown
+					days = 200
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 4
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 20
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 20
+				}
+				damage_building = {
+					type = air_base
+					damage = 10
+				}
+				damage_building = {
+					type = anti_air_building
+					damage = 10
+				}
+				
+				damage_building = {
+					tags = dam_building
+					damage = 1
+					repair_speed_modifier = -0.90
+				}
+			}		
+			hidden_effect = { 
+				news_event = { id = dnieper.1 } 
+				set_global_flag = dnieper_blown
+			}
+		}
+	}
+	
 }
