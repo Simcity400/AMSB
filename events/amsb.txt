@@ -88,3 +88,60 @@ news_event = {
         }
     }
 }
+# Dniepr dam blown
+news_event = {
+	id = dnieper.1
+	title = dnieper.1.title
+	desc = dnieper.1.desc
+	picture = GFX_news_event_074
+	
+	major = yes
+	
+	is_triggered_only = yes
+	option = {
+		name = dnieper.1.a
+		trigger = {
+			OR = {
+				TAG = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+	option = {
+		name = dnieper.1.b
+		trigger = {
+			OR = {
+				TAG = GER
+				is_in_faction_with = GER
+			}
+		}
+	}
+	option = {
+		name = dnieper.1.c
+		trigger = {
+			OR = {
+				TAG = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = dnieper.1.d
+		trigger = {
+			OR = {
+				TAG = SOV
+				is_in_faction_with = SOV
+			}
+		}
+	}
+	option = {
+		name = dnieper.1.e
+		trigger = {
+			AND = {
+				TAG = USA
+				NOT = {is_in_faction_with = ENG}
+			}
+		}
+	}
+
+
