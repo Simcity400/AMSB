@@ -205,4 +205,366 @@ GER_seize_gold_reserves_cat = {
 			factor = 0			
 		}
 	}
+	
+}
+
+GER_seize_gold_reserves_cat = {	
+	seize_egypt = {		
+
+		icon = GFX_decision_generic_confiscation		
+		
+		available = {		
+		}
+
+		target_trigger = {
+			FROM = {tag = ENG}
+		}
+		
+		fire_only_once = yes		
+		
+		visible = {		
+			ROOT = { tag = GER }
+			OR = {
+			any_allied_country = {
+				AND = {
+				controls_state = 446
+				controls_state = 447
+				controls_state = 907 
+				}
+			}
+			GER = {
+				AND = {
+				controls_state = 446
+				controls_state = 447
+				controls_state = 907 
+				}
+			}
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = GER_economy_of_conquest_modifier_consumer_goods_tt
+					check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				}
+			}
+		}		
+
+		cost = 25		
+
+		complete_effect = {		
+			GER_modify_industrial_modifier = yes
+			add_to_variable = { 
+				GER_industrial_consumer_goods_factor = -0.25
+				tooltip = consumer_goods_factor_tt
+				}
+				GER_reduce_mefo_bills_penalty = yes
+			446 = { 
+				add_compliance = -5
+				add_resistance = 10
+				add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+				}
+			447 = {
+				add_compliance = -5
+				add_resistance = 10
+				add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+				}
+			907 = {
+				add_compliance = -5
+				add_resistance = 10
+				add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+				}
+		}
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
+	seize_france = {		
+
+		icon = GFX_decision_generic_confiscation		
+		
+		available = {		
+		}
+
+		target_trigger = {
+			FROM = {tag = FRA}
+		}
+		
+		fire_only_once = yes		
+		
+		visible = {		
+			ROOT = { tag = GER }
+			OR = {
+			any_allied_country = {
+				AND = {
+				controls_state = 16 
+				}
+			}
+			GER = {
+				AND = {
+				controls_state = 16 
+				}
+			}
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = GER_economy_of_conquest_modifier_consumer_goods_tt
+					check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				}
+			}
+		}		
+
+		cost = 25		
+
+		complete_effect = {		
+			GER_modify_industrial_modifier = yes
+				add_to_variable = { 
+					GER_industrial_consumer_goods_factor = -0.165
+					tooltip = consumer_goods_factor_tt
+					}
+			GER_reduce_mefo_bills_penalty = yes
+			FROM = {
+				every_core_state = {
+					add_compliance = -5
+					add_resistance = 10
+					add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+				}
+			}
+		}
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
+
+	seize_poland = {		
+
+		icon = GFX_decision_generic_confiscation		
+		
+		available = {		
+		}
+		
+		target_trigger = {
+			FROM = {tag = POL}
+		}
+
+		fire_only_once = yes		
+		
+		visible = {		
+			ROOT = { tag = GER }
+			OR = {
+			any_allied_country = {
+				AND = {
+				controls_state = 10
+				}
+			}
+			GER = {
+				AND = {
+				controls_state = 10 
+				}
+			}
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = GER_economy_of_conquest_modifier_consumer_goods_tt
+					check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				}
+			}
+		}		
+
+		cost = 25		
+
+		complete_effect = {		
+			GER_modify_industrial_modifier = yes
+			add_to_variable = { 
+				GER_industrial_consumer_goods_factor = -0.245
+				tooltip = consumer_goods_factor_tt
+				}
+			GER_reduce_mefo_bills_penalty = yes
+			FROM = {
+			every_core_state = {
+				add_compliance = -5
+				add_resistance = 10
+				add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+					}
+				}
+			}
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
+
+	seize_belgium = {		
+
+		icon = GFX_decision_generic_confiscation		
+		
+		available = {		
+		}
+		
+		target_trigger = {
+			FROM = {tag = BEL}
+		}
+
+		fire_only_once = yes		
+		
+		visible = {		
+			ROOT = { tag = GER }
+			OR = {
+			any_allied_country = {
+				AND = {
+				controls_state = 6 
+				}
+			}
+			GER = {
+				AND = {
+				controls_state = 6 
+				}
+			}
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = GER_economy_of_conquest_modifier_consumer_goods_tt
+					check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				}
+			}
+		}		
+
+		cost = 25		
+
+		complete_effect = {		
+			GER_modify_industrial_modifier = yes
+				add_to_variable = { 
+					GER_industrial_consumer_goods_factor = -0.165
+					tooltip = consumer_goods_factor_tt
+					}
+				GER_reduce_mefo_bills_penalty = yes
+				FROM = {
+				every_core_state = {
+					add_compliance = -5
+					add_resistance = 10
+					add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+				}
+			}
+		}
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
+
+	seize_denmark = {		
+
+		icon = GFX_decision_generic_confiscation		
+		
+		available = {		
+		}
+		
+		target_trigger = {
+			FROM = {tag = DEN}
+		}
+
+		fire_only_once = yes		
+		
+		visible = {		
+			ROOT = { tag = GER }
+			OR = {
+				any_allied_country = {
+					AND = {
+						controls_state = 911 
+					}
+				}
+				GER = {
+					AND = {
+						controls_state = 911
+						}
+					}
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = GER_economy_of_conquest_modifier_consumer_goods_tt
+					check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				}
+			}
+		}		
+
+		cost = 25		
+
+		complete_effect = {		
+			GER_modify_industrial_modifier = yes
+			add_to_variable = { 
+					GER_industrial_consumer_goods_factor = -0.12
+					tooltip = consumer_goods_factor_tt
+					}
+			GER_reduce_mefo_bills_penalty = yes
+			FROM = {
+				every_core_state = {
+					add_compliance = -5
+					add_resistance = 10
+					add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+				}
+			}
+		}
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
+
+	seize_norway = {		
+
+		icon = GFX_decision_generic_confiscation		
+		
+		available = {		
+		}
+		
+		target_trigger = {
+			FROM = {tag = NOR}
+		}
+
+		fire_only_once = yes		
+		
+		visible = {		
+			ROOT = { tag = GER }
+			OR = {
+			any_allied_country = {
+				AND = {
+				controls_state = 143
+				}
+			}
+			GER = {
+				AND = {
+				controls_state = 143 
+				}
+			}
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = GER_economy_of_conquest_modifier_consumer_goods_tt
+					check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				}
+			}
+		}		
+
+		cost = 25		
+
+		complete_effect = {		
+			GER_modify_industrial_modifier = yes
+				add_to_variable = { 
+					GER_industrial_consumer_goods_factor = -0.17
+					tooltip = consumer_goods_factor_tt
+					}
+				GER_reduce_mefo_bills_penalty = yes
+				FROM = {
+				every_core_state = {
+					add_compliance = -5
+					add_resistance = 10
+					add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+					}
+				}
+			}
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
 	}
