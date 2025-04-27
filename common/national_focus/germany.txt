@@ -7897,172 +7897,18 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = GER_expand_ss_recruitment
-		icon = GFX_focus_generic_fascist_troops
-		prerequisite = { focus = GER_uplift_the_rosenberg_office }
-
-		x = 0
-		y = 1
-		relative_position_id = GER_uplift_the_rosenberg_office
-		cost = 5
-		available = {
-			has_government = fascism
-			OR = {
-				any_controlled_state = {
-					NOT = {
-						is_core_of = ROOT
-					}
-					is_on_continent = europe
-				}
-				any_subject_country = {
-					capital_scope = {
-						is_on_continent = europe
-					}
-				}
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_MANPOWER }
-
-		completion_reward = {
-			custom_effect_tooltip = GER_SS_recruitment_tt
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = {
-					NOT = { has_template = "Waffen-SS Division" }
-				}
-				division_template = {
-					name = "Waffen-SS Division"
-					priority = 2
-					division_names_group = GER_SS_01
-					template_counter = 101
-					is_locked = yes #Unlocked in Strengthen the Waffen-SS focus under Himmler
-					regiments = {
-						militia = { x = 0 y = 0 }
-						militia = { x = 0 y = 1 }
-						militia = { x = 0 y = 2 }
-					
-						militia = { x = 1 y = 0 }
-						militia = { x = 1 y = 1 }
-						militia = { x = 1 y = 2 }
-					}
-					support = {
-						artillery = { x = 0 y = 0 }
-						engineer = { x = 0 y = 1 }
-						mot_recon = { x = 0 y = 2 }
-					}
-					override_model = GER_militia
-				}
-			}
-			if = {
-				limit = {
-					64 = {
-						is_fully_controlled_by = ROOT
-					}
-				}
-				64 = {
-					custom_effect_tooltip = GER_create_four_militia_units_tt
-					hidden_effect = {
-						create_unit = {
-							division = "division_template =\"Waffen-SS Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
-							owner = ROOT
-							count = 4
-						}
-					}
-				}
-			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_fully_controlled_by = ROOT
-					}
-					custom_effect_tooltip = GER_create_four_militia_units_tt
-					hidden_effect = {
-						create_unit = {
-							division = "division_template =\"Waffen-SS Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
-							owner = ROOT
-							count = 4
-						}
-					}
-				}
-			}
-
-
-			if = {
-				limit = {
-					NOT = { has_template = "SS-Verfügungstruppe" }
-				}
-				division_template = {
-					name = "SS-Verfügungstruppe"
-					priority = 2
-					division_names_group = GER_SS_01
-					is_locked = yes
-					regiments = {
-						motorized = { x = 0 y = 0 }
-						motorized = { x = 0 y = 1 }
-						motorized = { x = 0 y = 2 }
-
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-
-					}
-					support = {
-						artillery = { x = 0 y = 0 }
-						engineer = { x = 0 y = 1 }
-						mot_recon = { x = 0 y = 2 }
-					}
-					override_model = GER_infantry_alt_0_entity
-				}
-			}
-			if = {
-				limit = {
-					64 = {
-						is_fully_controlled_by = ROOT
-					}
-				}
-				64 = {
-					custom_effect_tooltip = GER_create_two_motorized_units_tt
-					hidden_effect = {
-						create_unit = {
-							division = "division_template =\"SS-Verfügungstruppe\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
-							owner = ROOT
-							count = 2
-						}
-					}
-				}
-			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_fully_controlled_by = ROOT
-					}
-					custom_effect_tooltip = GER_create_two_motorized_units_tt
-					hidden_effect = {
-						create_unit = {
-							division = "division_template =\"SS-Verfügungstruppe\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
-							owner = ROOT
-							count = 2
-						}
-					}
-				}
-			}
-		}
-	}
+	
 	focus = {
 		id = GER_Volkssturm
 		icon = GFX_SOV_fortify_mongolian_border_ccp_2d_sov_compatibility
 		prerequisite = { 
-			focus = GER_expand_ss_recruitment
+			focus = GER_uplift_the_rosenberg_office
 		}
 		x = 0
 		y = 1
-		relative_position_id = GER_expand_ss_recruitment
+		relative_position_id = GER_uplift_the_rosenberg_office
 
-		cost = 5
+		cost = 10
 
 		available = {
 			date > 1941.1.1
