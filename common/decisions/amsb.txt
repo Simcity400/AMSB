@@ -197,7 +197,7 @@ GER_seize_gold_reserves_cat = {
 		complete_effect = {		
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = -0.25
+				GER_industrial_consumer_goods_factor = -0.15
 				tooltip = consumer_goods_factor_tt
 				}
 				GER_reduce_mefo_bills_penalty = yes
@@ -495,6 +495,64 @@ GER_seize_gold_reserves_cat = {
 			GER_modify_industrial_modifier = yes
 				add_to_variable = { 
 					GER_industrial_consumer_goods_factor = -0.17
+					tooltip = consumer_goods_factor_tt
+					}
+				GER_reduce_mefo_bills_penalty = yes
+				FROM = {
+				every_core_state = {
+					add_compliance = -5
+					add_resistance = 10
+					add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+					}
+				}
+			}
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
+
+	seize_netherlands = {		
+
+		icon = GFX_decision_generic_confiscation		
+		
+		available = {		
+		}
+		
+		target_trigger = {
+			FROM = {tag = HOL}
+		}
+
+		fire_only_once = yes		
+		
+		visible = {		
+			ROOT = { tag = GER }
+			OR = {
+			any_allied_country = {
+				AND = {
+				controls_state = 7
+				}
+			}
+			GER = {
+				AND = {
+				controls_state = 7 
+				}
+			}
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = GER_economy_of_conquest_modifier_consumer_goods_tt
+					check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				}
+			}
+		}		
+
+		cost = 25		
+
+		complete_effect = {		
+			GER_modify_industrial_modifier = yes
+				add_to_variable = { 
+					GER_industrial_consumer_goods_factor = -0.145
 					tooltip = consumer_goods_factor_tt
 					}
 				GER_reduce_mefo_bills_penalty = yes
