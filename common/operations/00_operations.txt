@@ -1643,7 +1643,10 @@ operation_collaboration_government = { ### 10 2/55
 			target = FROM
 			value < 1.0
 		}
-		ROOT = { is_major = yes }
+		OR = {
+			ROOT = { is_major = yes }
+			ROOT = {tag = JAP}
+		}
 
 		custom_trigger_tooltip = {
         	tooltip = GER_SOV_COLLAB_LIMIT_TT
