@@ -2,7 +2,6 @@ war_measures = {		#Name of category that decisions will appear under, decisions 
 	###############################################
 	#### DECISIONS WITH TIMERS BECOME MISSIONS ####
 	###############################################
-	
 
 	retake_UK = {		#ID of the mission, must not contain spaces!
 
@@ -60,8 +59,23 @@ war_measures = {		#Name of category that decisions will appear under, decisions 
 		}
 	}
 }
+political_actions = {
+	propose_franco_british_union = {
+		allowed = {tag = FRA}
+		available = { 
+			tag = FRA
+			FRA = {has_capitulated = yes}
+			EFR = {controls_province = 3594} #just to make sure you don't click it before Vichy spawns in, causes surrender limit issues with ENG
+		}
+		complete_effect = {
+			ENG = { 
+				country_event = fruk.11
+			}
+		}
+	}
+}
 SOV_great_patriotic_war = {
-	SOV_dynamite_the_dnieper_dam = { 
+	SOV_dynamite_the_dnieper_dam = {  #the very symbol of the five-year plan!
 		icon = GFX_decision_hol_inundate_water_lines
 		
 		allowed = {
