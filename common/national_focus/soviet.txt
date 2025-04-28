@@ -5888,53 +5888,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SOV_penal_battalions
-		icon = GFX_focus_SOV_penal_battalions
-		prerequisite = { focus = SOV_desperate_measures }
-		x = 2
-		y = 1
-		relative_position_id = SOV_desperate_measures
-		cost = 5
-
-		available = {
-			has_war = yes
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			#Spawn Penal divisions
-			custom_effect_tooltip = SOV_penal_battalions_spawn_tt
-			hidden_effect = {
-				#set_technology = { penal_infantry = 1 popup = no } #Note: Granting tech will make the penal battalion available for any template
-
-				division_template = {
-					name = "Shtrafnaya Chast"
-					division_names_group = SOV_PEN_01
-					is_locked = yes
-
-					regiments = {
-						penal_battalion = { x = 0 y = 0 }
-						penal_battalion = { x = 0 y = 1 }
-						penal_battalion = { x = 0 y = 2 }
-						penal_battalion = { x = 1 y = 0 }
-						penal_battalion = { x = 1 y = 1 }
-						penal_battalion = { x = 1 y = 2 }
-						penal_battalion = { x = 2 y = 0 }
-						penal_battalion = { x = 2 y = 1 }
-						penal_battalion = { x = 2 y = 2 }
-					}
-					support = {
-						artillery = { x = 0 y = 0 }
-					}
-				}
-
-				SOV_spawn_penal_divisions_effect = yes
-			}
-		}
-	}
-
-	focus = {
 		id = SOV_organization_of_the_partisans
 		icon = GFX_focus_focus_fra_maquis
 		prerequisite = { focus = SOV_lessons_of_war }
@@ -7778,7 +7731,7 @@ focus = {
 	id = SOV_nkvd_primacy
 	icon = GFX_SOV_nkvd_primacy_ccp_2d_sov_compatibility
 	prerequisite = { focus = SOV_addressing_internal_affairs }
-	x = -2
+	x = -3
 	y = 1
 	relative_position_id = SOV_addressing_internal_affairs
 	cost = 5
@@ -7794,6 +7747,53 @@ focus = {
 		SOV_paranoia_medium_increase_effect = yes
 	}
 }
+
+focus = {
+		id = SOV_penal_battalions
+		icon = GFX_focus_SOV_penal_battalions
+		prerequisite = { focus = SOV_nkvd_primacy }
+		x = 0
+		y = 1
+		relative_position_id = SOV_nkvd_primacy
+		cost = 5
+
+		available = {
+			has_war = yes
+		}
+		
+		search_filters = {}
+
+		completion_reward = {
+			#Spawn Penal divisions
+			custom_effect_tooltip = SOV_penal_battalions_spawn_tt
+			hidden_effect = {
+				set_technology = { penal_infantry = 1 popup = no } #Note: Granting tech will make the penal battalion available for any template
+
+				division_template = {
+					name = "Shtrafnaya Chast"
+					division_names_group = SOV_PEN_01
+					is_locked = yes
+
+					regiments = {
+						penal_battalion = { x = 0 y = 0 }
+						penal_battalion = { x = 0 y = 1 }
+						penal_battalion = { x = 0 y = 2 }
+						penal_battalion = { x = 1 y = 0 }
+						penal_battalion = { x = 1 y = 1 }
+						penal_battalion = { x = 1 y = 2 }
+						penal_battalion = { x = 2 y = 0 }
+						penal_battalion = { x = 2 y = 1 }
+						penal_battalion = { x = 2 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+					}
+				}
+
+				SOV_spawn_penal_divisions_effect = yes
+			}
+		}
+	}
 
 focus = {
 	id = SOV_the_new_soviet_woman
@@ -7853,7 +7853,7 @@ focus = {
 	id = SOV_positive_heroism
 	icon = GFX_SOV_positive_heroism_ccp_2d_sov_compatibility
 	prerequisite = { focus = SOV_expand_the_agitprop }
-	x = -2
+	x = -1
 	y = 1
 	relative_position_id = SOV_expand_the_agitprop
 	cost = 10
@@ -7993,7 +7993,7 @@ focus = {
 	id = SOV_collectivist_propaganda
 	icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
 	prerequisite = { focus = SOV_expand_the_agitprop }
-	x = 0
+	x = 1
 	y = 1
 	relative_position_id = SOV_expand_the_agitprop
 	cost = 10
@@ -8064,7 +8064,7 @@ focus = {
 	id = SOV_the_komsomol
 	icon = GFX_SOV_the_komsomol_ccp_2d_sov_compatibility
 	prerequisite = { focus = SOV_expand_the_agitprop }
-	x = 2
+	x = 3
 	y = 1
 	relative_position_id = SOV_expand_the_agitprop
 	cost = 5
