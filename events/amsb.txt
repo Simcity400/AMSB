@@ -1,4 +1,5 @@
 # SEALION (Germany)
+add_namespace = fruk
 add_namespace = sealion
 add_namespace = dnieper
 add_namespace = uktanks
@@ -147,6 +148,128 @@ news_event = {
 				TAG = USA
 				NOT = {is_in_faction_with = ENG}
 			}
+		}
+	}
+}
+## France moves to UK coop
+country_event = {
+	id = fruk.11
+	title = france.11.t
+	desc = france.11.d
+	picture = GFX_report_event_degaulle_churchill
+	
+	is_triggered_only = yes
+	
+	option = { # Refuse Union
+		name = france.11.a
+		ai_chance = {
+			factor = 10
+		}
+		FRA = {
+			country_event = { hours = 6 id = france.13 }
+		}
+	}
+	option = { # Agree to Union
+		name = france.11.b
+		ai_chance = {
+			factor = 90
+		}
+		FRA = {
+			country_event = { hours = 6 id = fruk.12 }
+		}
+	}
+}
+country_event = {
+		id = fruk.12
+		title = france.12.t
+		desc = france.12.d
+		picture = GFX_report_event_chamberlain_announce
+		
+		is_triggered_only = yes
+		set_global_flag = flag_franco_british_union
+		option = {
+			name = france.12.a
+			# Franco-British Union created
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = FRA
+					}
+					ENG = {
+						add_state_core = PREV
+					}
+				}
+			}
+		FRA = {
+			every_unit_leader = {
+				set_unit_leader_flag = flag_former_french_general
+				set_nationality = ENG
+			}
+		}
+		ENG = {
+			annex_country = { target = FRA transfer_troops = yes }
+		}
+		custom_effect_tooltip = FRA_franco_british_cores
+		hidden_effect = {
+			ENG = { 
+				set_cosmetic_tag = FRA_UK 
+				country_event = { hours = 12 id = fruk.35 }
+			}
+		}
+		}
+	}
+	
+news_event = {
+	id = fruk.35
+	title = news.35.t
+	desc = news.35.d
+	picture = GFX_news_event_churchill_degaulle
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = news.35.a
+		trigger = {
+			NOT = { TAG = GER	}
+			NOT = { TAG = ENG	}
+			NOT = { is_in_faction_with = GER }
+			NOT = { is_in_faction_with = ENG }
+		}
+	}
+	option = {
+		name = news.35.b
+		trigger = {
+			OR = {
+				is_in_faction_with = GER
+				TAG = GER 
+			}
+		}
+	}
+	option = {
+		name = news.35.c
+		trigger = {
+				TAG = ENG
+		}
+		hidden_effect = {
+			every_owned_state = {
+				limit = {
+					not = { is_core_of = ROOT }
+					not = { is_on_continent = europe }
+				}
+				add_compliance = 50
+			}
+		}
+	}
+	option = {
+		name = news.35.c
+		trigger = {
+			AND = {
+				is_in_faction_with = ENG
+				NOT = {TAG = ENG}
+			}
+		}
 		}
 	}
 }
