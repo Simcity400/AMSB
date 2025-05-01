@@ -83,23 +83,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 	#Garrison
 	#Garrison
 
-	udk_Cheat_Division_Templates_via_Decisions_Garrison_title = {
-		#Explanation in Desc
-		available = {
-			always = no
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Garrison_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-		}
-	}
+	
 
 	udk_Cheat_Division_Templates_via_Decisions_Garrison_Cheap = {
 		#Garrison Division - Cheap - Cavalry - No MP
@@ -117,7 +101,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "Garrison Cheap (Not Cost Effective) (Cavalry Only, No MP)"
+				name = "Garrison Cheap (50 width) (Cavalry Only, No MP)"
 				priority = 2
 				regiments = {
 					cavalry = { x = 0 y = 0 }
@@ -145,110 +129,6 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					cavalry = { x = 4 y = 2 }
 					cavalry = { x = 4 y = 3 }
 					cavalry = { x = 4 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Garrison_Medium_Term_Cost_Effective = {
-		#Garrison Division - Medium Term Cost Effective - Cavalry - MP
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Garrison_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "Garrison Medium Term Cost Effective (Cavalry+MP)"
-				priority = 2
-				regiments = {
-					cavalry = { x = 0 y = 0 }
-					cavalry = { x = 0 y = 1 }
-					cavalry = { x = 0 y = 2 }
-					cavalry = { x = 0 y = 3 }
-					cavalry = { x = 0 y = 4 }
-					cavalry = { x = 1 y = 0 }
-					cavalry = { x = 1 y = 1 }
-					cavalry = { x = 1 y = 2 }
-					cavalry = { x = 1 y = 3 }
-					cavalry = { x = 1 y = 4 }
-					cavalry = { x = 2 y = 0 }
-					cavalry = { x = 2 y = 1 }
-					cavalry = { x = 2 y = 2 }
-					cavalry = { x = 2 y = 3 }
-					cavalry = { x = 2 y = 4 }
-					cavalry = { x = 3 y = 0 }
-					cavalry = { x = 3 y = 1 }
-					cavalry = { x = 3 y = 2 }
-					cavalry = { x = 3 y = 3 }
-					cavalry = { x = 3 y = 4 }
-					cavalry = { x = 4 y = 0 }
-					cavalry = { x = 4 y = 1 }
-					cavalry = { x = 4 y = 2 }
-					cavalry = { x = 4 y = 3 }
-					cavalry = { x = 4 y = 4 }
-				}
-				support = {
-					military_police = { x = 0 y = 0 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Garrison_Long_Term_Cost_Effective = {
-		#Garrison Division - Long Term Cost Effective - L. Tank - MP
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Garrison_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "Garrison Long Term Cost Effective (L.Tank)"
-				priority = 2
-				regiments = {
-					light_armor = { x = 0 y = 0 }
-					light_armor = { x = 0 y = 1 }
-					light_armor = { x = 0 y = 2 }
-					light_armor = { x = 0 y = 3 }
-					light_armor = { x = 0 y = 4 }
-					light_armor = { x = 1 y = 0 }
-					light_armor = { x = 1 y = 1 }
-					light_armor = { x = 1 y = 2 }
-					light_armor = { x = 1 y = 3 }
-					light_armor = { x = 1 y = 4 }
-					light_armor = { x = 2 y = 0 }
-					light_armor = { x = 2 y = 1 }
-					light_armor = { x = 2 y = 2 }
-					light_armor = { x = 2 y = 3 }
-					light_armor = { x = 2 y = 4 }
-					light_armor = { x = 3 y = 0 }
-					light_armor = { x = 3 y = 1 }
-					light_armor = { x = 3 y = 2 }
-					light_armor = { x = 3 y = 3 }
-					light_armor = { x = 3 y = 4 }
-					light_armor = { x = 4 y = 0 }
-					light_armor = { x = 4 y = 1 }
-					light_armor = { x = 4 y = 2 }
-					light_armor = { x = 4 y = 3 }
-					light_armor = { x = 4 y = 4 }
-				}
-				support = {
-					military_police = { x = 0 y = 0 }
 				}
 			}
 		}
@@ -332,7 +212,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "10W Coast Defense Cheap (No Support)"
+				name = "16W Coast Defense Cheap (No Support / Battleplan the naval invasion)"
 				priority = 0
 				regiments = {
 					infantry = { x = 0 y = 0 }
@@ -340,6 +220,9 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					infantry = { x = 0 y = 2 }
 					infantry = { x = 0 y = 3 }
 					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
 				}
 			}
 		}
@@ -361,7 +244,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "10W Coast Defense Cost Effective v1"
+				name = "16W Coast Defense + (Engineer+Anti_air)"
 				priority = 0
 				regiments = {
 					infantry = { x = 0 y = 0 }
@@ -369,10 +252,14 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					infantry = { x = 0 y = 2 }
 					infantry = { x = 0 y = 3 }
 					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
+					anti_air = { x = 0 y = 1 }
+					anti_tank = { x = 0 y = 2 }
 				}
 			}
 		}
@@ -394,7 +281,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "10W Coast Defense Cost Effective v2 (Rocket)"
+				name = "36W PORT infantry bricks + (Engineer+Anti_air)"
 				priority = 0
 				regiments = {
 					infantry = { x = 0 y = 0 }
@@ -402,11 +289,24 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					infantry = { x = 0 y = 2 }
 					infantry = { x = 0 y = 3 }
 					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					rocket_artillery = { x = 0 y = 4 }
+					anti_air = { x = 0 y = 1 }
+					anti_tank = { x = 0 y = 2 }
 				}
 			}
 		}
@@ -428,56 +328,32 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "10W Coast Defense Expensive v1 (AA + AT)"
+				name = "35W PORT Defense Mech w/mot line AT (AA + AT)"
 				priority = 0
 				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 0 y = 4 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					mechanized = { x = 1 y = 4 }
+					mechanized = { x = 2 y = 0 }
+					mechanized = { x = 2 y = 1 }
+					mechanized = { x = 2 y = 2 }
+					mechanized = { x = 2 y = 3 }
+					mechanized = { x = 2 y = 4 }
+					mechanized = { x = 3 y = 0 }
+					mechanized = { x = 3 y = 1 }
+					mot_anti_tank_brigade = { x = 3 y = 2 }
+					mot_anti_air_brigade = { x = 3 y = 3 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Coast_Defense_Expensive_v2 = {
-		#Coast Defense - Expensive - Infantry - ENG - S.ART - S.AA - S.AT - S.Rocket
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Coast_Defense_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "10W Coast Defense Expensive v2 (AA + AT + Rocket)"
-				priority = 0
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					rocket_artillery = { x = 0 y = 4 }
+					anti_air = { x = 0 y = 1 }
 				}
 			}
 		}
@@ -561,7 +437,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "27W Infantry Cheap (Only ENG + S.ART)"
+				name = "16W Frontline Infantry (Only ENG + AT + AA)"
 				priority = 1
 				regiments = {
 					infantry = { x = 0 y = 0 }
@@ -572,14 +448,11 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					infantry = { x = 1 y = 0 }
 					infantry = { x = 1 y = 1 }
 					infantry = { x = 1 y = 2 }
-					infantry = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
+					anti_air = { x = 0 y = 1 }
+					anti_tank = { x = 0 y = 2 }
 				}
 			}
 		}
@@ -601,282 +474,33 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "27W Infantry Cost Effective v1.a (No Logistics)"
+				name = "35W Mech Last Stand spam for supply hubs"
 				priority = 1
 				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
+					mechanized = { x = 0 y = 0 }
+					mechanized = { x = 0 y = 1 }
+					mechanized = { x = 0 y = 2 }
+					mechanized = { x = 0 y = 3 }
+					mechanized = { x = 0 y = 4 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					mechanized = { x = 1 y = 4 }
+					mechanized = { x = 2 y = 0 }
+					mechanized = { x = 2 y = 1 }
+					mechanized = { x = 2 y = 2 }
+					mechanized = { x = 2 y = 3 }
+					mechanized = { x = 2 y = 4 }
+					mot_anti_tank_brigade = { x = 3 y = 0 }
+					mot_anti_tank_brigade = { x = 3 y = 1 }
+					mot_anti_tank_brigade = { x = 3 y = 2 }
+					mot_anti_tank_brigade = { x = 3 y = 3 }
+					mot_anti_tank_brigade = { x = 3 y = 4 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Infantry_Cost_Effective_v1_b = {
-		#Infantry - Cost Effective - Infantry - Artillery - ENG - S.ART - S.AA - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Infantry_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Infantry Cost Effective v1.b (Logistics)"
-				priority = 1
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					logistics_company = { x = 0 y = 3 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Infantry_Cost_Effective_v2_a = {
-		#Infantry - Cost Effective - Infantry - Artillery - ENG - S.ART - S.AA - S.Rocket
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Infantry_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Infantry Cost Effective v2.a (Rocket, No Logistics)"
-				priority = 1
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Infantry_Cost_Effective_v2_b = {
-		#Infantry - Cost Effective - Infantry - Artillery - ENG - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Infantry_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Infantry Cost Effective v2.b (Rocket + Logistics)"
-				priority = 1
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Infantry_Expensive_v1_a = {
-		#Infantry - Expensive - Infantry - Artillery - ENG - S.ART - S.AA - S.AT
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Infantry_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Infantry Expensive v1.a (AT, No Logistics)"
-				priority = 1
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Infantry_Expensive_v1_b = {
-		#Infantry - Expensive - Infantry - Artillery - ENG - S.ART - S.AA - S.AT - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Infantry_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Infantry Expensive v1.b (AT + Logistics)"
-				priority = 1
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Infantry_Expensive_v2 = {
-		#Infantry - Expensive - Infantry - Artillery - ENG - S.ART - S.AA - S.AT - S.Rocket
-		#Doesn't have an LOG version, use Cost Effective 2.b, only replaces S.AT with Logistics.
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Infantry_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Infantry Expensive v2 (AT+Rocket, No Logistics)"
-				priority = 1
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
-					infantry = { x = 0 y = 4 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					rocket_artillery = { x = 0 y = 4 }
+					anti_air = { x = 0 y = 1 }
 				}
 			}
 		}
@@ -978,7 +602,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "10W Amphibious Assault Marines Cheap v1"
+				name = "35W Marines + 5 mech + 1 line AA"
 				priority = 2
 				regiments = {
 					marine = { x = 0 y = 0 }
@@ -986,13 +610,24 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					marine = { x = 0 y = 2 }
 					marine = { x = 0 y = 3 }
 					marine = { x = 0 y = 4 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 1 y = 3 }
+					marine = { x = 1 y = 4 }
+					marine = { x = 2 y = 0 }
+					marine = { x = 2 y = 1 }
+					mechanized = { x = 3 y = 0 }
+					mechanized = { x = 3 y = 1 }
+					mechanized = { x = 3 y = 2 }
+					mechanized = { x = 3 y = 3 }
+					mechanized = { x = 3 y = 4 }
+					anti_air_brigade = { x = 4 y = 0 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
+					anti_air = { x = 0 y = 1 }
+					anti_tank = { x = 0 y = 2 }
 				}
 			}
 		}
@@ -1014,7 +649,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "10W Amphibious Assault Marines Cheap v2.a (Rocket + AT)"
+				name = "35W Marines no mech force attack"
 				priority = 2
 				regiments = {
 					marine = { x = 0 y = 0 }
@@ -1022,13 +657,24 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					marine = { x = 0 y = 2 }
 					marine = { x = 0 y = 3 }
 					marine = { x = 0 y = 4 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 1 y = 3 }
+					marine = { x = 1 y = 4 }
+					marine = { x = 2 y = 0 }
+					marine = { x = 2 y = 1 }
+					marine = { x = 3 y = 0 }
+					marine = { x = 3 y = 1 }
+					marine = { x = 3 y = 2 }
+					marine = { x = 3 y = 3 }
+					marine = { x = 3 y = 4 }
+					anti_air_brigade = { x = 4 y = 0 }
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					rocket_artillery = { x = 0 y = 4 }
+					anti_air = { x = 0 y = 1 }
+					anti_tank = { x = 0 y = 2 }
 				}
 			}
 		}
@@ -1050,783 +696,33 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "10W Amphibious Assault Marines Cheap v2.b (Rocket + Logistics)"
+				name = "36/32W Mountaineer Cheap"
 				priority = 2
 				regiments = {
-					marine = { x = 0 y = 0 }
-					marine = { x = 0 y = 1 }
-					marine = { x = 0 y = 2 }
-					marine = { x = 0 y = 3 }
-					marine = { x = 0 y = 4 }
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 0 y = 2 }
+					mountaineers = { x = 0 y = 3 }
+					mountaineers = { x = 0 y = 4 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+					mountaineers = { x = 1 y = 2 }
+					mountaineers = { x = 1 y = 3 }
+					mountaineers = { x = 1 y = 4 }
+					mountaineers = { x = 2 y = 0 }
+					mountaineers = { x = 2 y = 1 }
+					mountaineers = { x = 2 y = 2 }
+					mountaineers = { x = 3 y = 0 }
+					mountaineers = { x = 3 y = 1 }
+					mountaineers = { x = 3 y = 2 }
+					mountaineers = { x = 3 y = 3 }
+					mountaineers = { x = 3 y = 4 }
+					
 				}
 				support = {
 					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Cost_Effective_v1 = {
-		#Amphibious Assault - Cost Effective - Marines - Artillery - ENG - S.ART - S.AA - S.AT - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault Marines+ART Cost Effective v1"
-				priority = 2
-				regiments = {
-					marine = { x = 0 y = 0 }
-					marine = { x = 0 y = 1 }
-					marine = { x = 0 y = 2 }
-					marine = { x = 0 y = 3 }
-					marine = { x = 0 y = 4 }
-					marine = { x = 1 y = 0 }
-					marine = { x = 1 y = 1 }
-					marine = { x = 1 y = 2 }
-					marine = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-					artillery_brigade = { x = 2 y = 3 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Cost_Effective_v2_a = {
-		#Amphibious Assault - Cost Effective - Marines - Artillery - ENG - S.ART - S.AA - S.AT - S.Rocket
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault Marines+ART Cost Effective v2.a (Rocket + AT)"
-				priority = 2
-				regiments = {
-					marine = { x = 0 y = 0 }
-					marine = { x = 0 y = 1 }
-					marine = { x = 0 y = 2 }
-					marine = { x = 0 y = 3 }
-					marine = { x = 0 y = 4 }
-					marine = { x = 1 y = 0 }
-					marine = { x = 1 y = 1 }
-					marine = { x = 1 y = 2 }
-					marine = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-					artillery_brigade = { x = 2 y = 3 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					rocket_artillery = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Cost_Effective_v2_b = {
-		#Amphibious Assault - Cost Effective - Marines - Artillery - ENG - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault Marines+ART Cost Effective v2.b (Rocket + Logistics)"
-				priority = 2
-				regiments = {
-					marine = { x = 0 y = 0 }
-					marine = { x = 0 y = 1 }
-					marine = { x = 0 y = 2 }
-					marine = { x = 0 y = 3 }
-					marine = { x = 0 y = 4 }
-					marine = { x = 1 y = 0 }
-					marine = { x = 1 y = 1 }
-					marine = { x = 1 y = 2 }
-					marine = { x = 1 y = 3 }
-					artillery_brigade = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
-					artillery_brigade = { x = 2 y = 3 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Expensive_v1_a = {
-		#Amphibious Assault - Expensive - Medium Amphibious Tank (Amphibious Drive) - Motorized Infantry - MAINT - S.ART - S.AA - S.AT - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault M.Amph.Tank+Mot. Expensive v1.a (AT)"
-				priority = 2
-				regiments = {
-					amphibious_medium_armor = { x = 0 y = 0 }
-					amphibious_medium_armor = { x = 0 y = 1 }
-					amphibious_medium_armor = { x = 0 y = 2 }
-					amphibious_medium_armor = { x = 0 y = 3 }
-					amphibious_medium_armor = { x = 0 y = 4 }
-					amphibious_medium_armor = { x = 1 y = 0 }
-					amphibious_medium_armor = { x = 1 y = 1 }
-					amphibious_medium_armor = { x = 1 y = 2 }
-					motorized = { x = 2 y = 0 }
-					motorized = { x = 2 y = 1 }
-					motorized = { x = 2 y = 2 }
-					motorized = { x = 2 y = 3 }
-					motorized = { x = 2 y = 4 }
-					motorized = { x = 3 y = 0 }
-					motorized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Expensive_v1_b = {
-		#Amphibious Assault - Expensive - Medium Amphibious Tank (Amphibious Drive) - Motorized Infantry - MAINT - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault M.Amph.Tank+Mot. Expensive v1.b (Rocket)"
-				priority = 2
-				regiments = {
-					amphibious_medium_armor = { x = 0 y = 0 }
-					amphibious_medium_armor = { x = 0 y = 1 }
-					amphibious_medium_armor = { x = 0 y = 2 }
-					amphibious_medium_armor = { x = 0 y = 3 }
-					amphibious_medium_armor = { x = 0 y = 4 }
-					amphibious_medium_armor = { x = 1 y = 0 }
-					amphibious_medium_armor = { x = 1 y = 1 }
-					amphibious_medium_armor = { x = 1 y = 2 }
-					motorized = { x = 2 y = 0 }
-					motorized = { x = 2 y = 1 }
-					motorized = { x = 2 y = 2 }
-					motorized = { x = 2 y = 3 }
-					motorized = { x = 2 y = 4 }
-					motorized = { x = 3 y = 0 }
-					motorized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Super_Expensive_v1_a = {
-		#Amphibious Assault - Super Expensive - Medium Amphibious Tank (Amphibious Drive) - Mechanized - MAINT - S.ART - S.AA - S.AT - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault M.Amph.Tank+Mech. Super Expensive v1.a (AT)"
-				priority = 2
-				regiments = {
-					amphibious_medium_armor = { x = 0 y = 0 }
-					amphibious_medium_armor = { x = 0 y = 1 }
-					amphibious_medium_armor = { x = 0 y = 2 }
-					amphibious_medium_armor = { x = 0 y = 3 }
-					amphibious_medium_armor = { x = 0 y = 4 }
-					amphibious_medium_armor = { x = 1 y = 0 }
-					amphibious_medium_armor = { x = 1 y = 1 }
-					amphibious_medium_armor = { x = 1 y = 2 }
-					mechanized = { x = 2 y = 0 }
-					mechanized = { x = 2 y = 1 }
-					mechanized = { x = 2 y = 2 }
-					mechanized = { x = 2 y = 3 }
-					mechanized = { x = 2 y = 4 }
-					mechanized = { x = 3 y = 0 }
-					mechanized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Super_Expensive_v1_b = {
-		#Amphibious Assault - Super Expensive - Medium Amphibious Tank (Amphibious Drive) - Mechanized - MAINT - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault M.Amph.Tank+Mech. Super Expensive v1.b (Rocket)"
-				priority = 2
-				regiments = {
-					amphibious_medium_armor = { x = 0 y = 0 }
-					amphibious_medium_armor = { x = 0 y = 1 }
-					amphibious_medium_armor = { x = 0 y = 2 }
-					amphibious_medium_armor = { x = 0 y = 3 }
-					amphibious_medium_armor = { x = 0 y = 4 }
-					amphibious_medium_armor = { x = 1 y = 0 }
-					amphibious_medium_armor = { x = 1 y = 1 }
-					amphibious_medium_armor = { x = 1 y = 2 }
-					mechanized = { x = 2 y = 0 }
-					mechanized = { x = 2 y = 1 }
-					mechanized = { x = 2 y = 2 }
-					mechanized = { x = 2 y = 3 }
-					mechanized = { x = 2 y = 4 }
-					mechanized = { x = 3 y = 0 }
-					mechanized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Super_Expensive_v1_c = {
-		#Amphibious Assault - Super Expensive - Medium Amphibious Tank (Amphibious Drive) - Amtrac - MAINT - S.ART - S.AA - S.AT - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault M.Amph.Tank+Amtrac Super Expensive v1.c (AT)"
-				priority = 2
-				regiments = {
-					amphibious_medium_armor = { x = 0 y = 0 }
-					amphibious_medium_armor = { x = 0 y = 1 }
-					amphibious_medium_armor = { x = 0 y = 2 }
-					amphibious_medium_armor = { x = 0 y = 3 }
-					amphibious_medium_armor = { x = 0 y = 4 }
-					amphibious_medium_armor = { x = 1 y = 0 }
-					amphibious_medium_armor = { x = 1 y = 1 }
-					amphibious_medium_armor = { x = 1 y = 2 }
-					amphibious_mechanized = { x = 2 y = 0 }
-					amphibious_mechanized = { x = 2 y = 1 }
-					amphibious_mechanized = { x = 2 y = 2 }
-					amphibious_mechanized = { x = 2 y = 3 }
-					amphibious_mechanized = { x = 2 y = 4 }
-					amphibious_mechanized = { x = 3 y = 0 }
-					amphibious_mechanized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Marines_Super_Expensive_v1_d = {
-		#Amphibious Assault - Super Expensive - Medium Amphibious Tank (Amphibious Drive) - Amtrac - MAINT - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Marines_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W Amphibious Assault M.Amph.Tank+Amtrac Super Expensive v1.d (Rocket)"
-				priority = 2
-				regiments = {
-					amphibious_medium_armor = { x = 0 y = 0 }
-					amphibious_medium_armor = { x = 0 y = 1 }
-					amphibious_medium_armor = { x = 0 y = 2 }
-					amphibious_medium_armor = { x = 0 y = 3 }
-					amphibious_medium_armor = { x = 0 y = 4 }
-					amphibious_medium_armor = { x = 1 y = 0 }
-					amphibious_medium_armor = { x = 1 y = 1 }
-					amphibious_medium_armor = { x = 1 y = 2 }
-					amphibious_mechanized = { x = 2 y = 0 }
-					amphibious_mechanized = { x = 2 y = 1 }
-					amphibious_mechanized = { x = 2 y = 2 }
-					amphibious_mechanized = { x = 2 y = 3 }
-					amphibious_mechanized = { x = 2 y = 4 }
-					amphibious_mechanized = { x = 3 y = 0 }
-					amphibious_mechanized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	#Mobile Infantry
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on = {
-		#Toggle On
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			NOT = {
-				has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-			}
-		}
-		ai_will_do = {
-			factor = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			set_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_off = {
-		#Toggle Off
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			factor = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			clr_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-	}
-
-	#Mobile Infantry
-	#Mobile Infantry
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_title = {
-		#Explanation in Desc
-		available = {
-			always = no
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_Cheap = {
-		#Mobile Infantry - Cheap - Motorized Infantry - Motorized Artillery - ENG - S.ART
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "13W Exploit&Def. Mot. Cheap"
-				priority = 2
-				regiments = {
-					motorized = { x = 0 y = 0 }
-					motorized = { x = 0 y = 1 }
-					motorized = { x = 0 y = 2 }
-					motorized = { x = 0 y = 3 }
-					motorized = { x = 0 y = 4 }
-					mot_artillery_brigade = { x = 1 y = 0 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_Cost_Effective_v1 = {
-		#Mobile Infantry - Cost Effective - Motorized Infantry - Motorized Artillery - ENG - S.ART - S.AA - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Exploit&Def. Mot. Cost Effective v1"
-				priority = 2
-				regiments = {
-					motorized = { x = 0 y = 0 }
-					motorized = { x = 0 y = 1 }
-					motorized = { x = 0 y = 2 }
-					motorized = { x = 0 y = 3 }
-					motorized = { x = 0 y = 4 }
-					motorized = { x = 1 y = 0 }
-					motorized = { x = 1 y = 1 }
-					motorized = { x = 1 y = 2 }
-					motorized = { x = 1 y = 3 }
-					mot_artillery_brigade = { x = 2 y = 0 }
-					mot_artillery_brigade = { x = 2 y = 1 }
-					mot_artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					logistics_company = { x = 0 y = 3 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_Cost_Effective_v2 = {
-		#Mobile Infantry - Cost Effective - Motorized Infantry - Motorized Artillery - ENG - S.ART - S.AA - LOG - S.Rocket
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Exploit&Def. Mot. Cost Effective v2 (Rocket)"
-				priority = 2
-				regiments = {
-					motorized = { x = 0 y = 0 }
-					motorized = { x = 0 y = 1 }
-					motorized = { x = 0 y = 2 }
-					motorized = { x = 0 y = 3 }
-					motorized = { x = 0 y = 4 }
-					motorized = { x = 1 y = 0 }
-					motorized = { x = 1 y = 1 }
-					motorized = { x = 1 y = 2 }
-					motorized = { x = 1 y = 3 }
-					mot_artillery_brigade = { x = 2 y = 0 }
-					mot_artillery_brigade = { x = 2 y = 1 }
-					mot_artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					logistics_company = { x = 0 y = 3 }
-					rocket_artillery = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_Expensive = {
-		#Mobile Infantry - Expensive - Motorized Infantry - Motorized Artillery - ENG - S.ART - S.AA - S.AT - LOG
-		#Doesn't have an S.Rocket version, use Cost Effective 2, only removes S.AT
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Exploit&Def. Mot. Expensive (AT, No Rocket)"
-				priority = 2
-				regiments = {
-					motorized = { x = 0 y = 0 }
-					motorized = { x = 0 y = 1 }
-					motorized = { x = 0 y = 2 }
-					motorized = { x = 0 y = 3 }
-					motorized = { x = 0 y = 4 }
-					motorized = { x = 1 y = 0 }
-					motorized = { x = 1 y = 1 }
-					motorized = { x = 1 y = 2 }
-					motorized = { x = 1 y = 3 }
-					mot_artillery_brigade = { x = 2 y = 0 }
-					mot_artillery_brigade = { x = 2 y = 1 }
-					mot_artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_Super_Expensive_v1_a = {
-		#Mobile Infantry - Super Expensive - Mechanized Infantry - Motorized Artillery - ENG - S.ART - S.AA - LOG - MAINT
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Exploit&Def. Mech. Super Expensive v1.a (Maintenance)"
-				priority = 2
-				regiments = {
-					mechanized = { x = 0 y = 0 }
-					mechanized = { x = 0 y = 1 }
-					mechanized = { x = 0 y = 2 }
-					mechanized = { x = 0 y = 3 }
-					mechanized = { x = 0 y = 4 }
-					mechanized = { x = 1 y = 0 }
-					mechanized = { x = 1 y = 1 }
-					mechanized = { x = 1 y = 2 }
-					mechanized = { x = 1 y = 3 }
-					mot_artillery_brigade = { x = 2 y = 0 }
-					mot_artillery_brigade = { x = 2 y = 1 }
-					mot_artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					logistics_company = { x = 0 y = 3 }
-					maintenance_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_Super_Expensive_v1_b = {
-		#Mobile Infantry - Super Expensive - Mechanized Infantry - Motorized Artillery - ENG - S.ART - S.AA - LOG - S.AT
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Exploit&Def. Mech. Super Expensive v1.b (AT)"
-				priority = 2
-				regiments = {
-					mechanized = { x = 0 y = 0 }
-					mechanized = { x = 0 y = 1 }
-					mechanized = { x = 0 y = 2 }
-					mechanized = { x = 0 y = 3 }
-					mechanized = { x = 0 y = 4 }
-					mechanized = { x = 1 y = 0 }
-					mechanized = { x = 1 y = 1 }
-					mechanized = { x = 1 y = 2 }
-					mechanized = { x = 1 y = 3 }
-					mot_artillery_brigade = { x = 2 y = 0 }
-					mot_artillery_brigade = { x = 2 y = 1 }
-					mot_artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Mobile_Super_Expensive_v1_c = {
-		#Mobile Infantry - Super Expensive - Mechanized Infantry - Motorized Artillery - ENG - S.ART - S.AA - LOG - S.Rocket
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Mobile_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "27W Exploit&Def. Mech. Super Expensive v1.c (Rocket)"
-				priority = 2
-				regiments = {
-					mechanized = { x = 0 y = 0 }
-					mechanized = { x = 0 y = 1 }
-					mechanized = { x = 0 y = 2 }
-					mechanized = { x = 0 y = 3 }
-					mechanized = { x = 0 y = 4 }
-					mechanized = { x = 1 y = 0 }
-					mechanized = { x = 1 y = 1 }
-					mechanized = { x = 1 y = 2 }
-					mechanized = { x = 1 y = 3 }
-					mot_artillery_brigade = { x = 2 y = 0 }
-					mot_artillery_brigade = { x = 2 y = 1 }
-					mot_artillery_brigade = { x = 2 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					logistics_company = { x = 0 y = 3 }
-					rocket_artillery = { x = 0 y = 4 }
+					anti_air = { x = 0 y = 1 }
+					anti_tank = { x = 0 y = 2 }
 				}
 			}
 		}
@@ -1910,7 +806,7 @@ udk_Cheat_Division_Templates_via_Decisions = {
 		cost = 0
 		complete_effect = {
 			division_template = {
-				name = "30W 40_ORG Armor Med.Tank Mot. Cost Effective v1.a (AT)"
+				name = "General purpose tank"
 				priority = 2
 				regiments = {
 					medium_armor = { x = 0 y = 0 }
@@ -1921,190 +817,8 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					medium_armor = { x = 1 y = 0 }
 					medium_armor = { x = 1 y = 1 }
 					medium_armor = { x = 1 y = 2 }
-					motorized = { x = 2 y = 0 }
-					motorized = { x = 2 y = 1 }
-					motorized = { x = 2 y = 2 }
-					motorized = { x = 2 y = 3 }
-					motorized = { x = 2 y = 4 }
-					motorized = { x = 3 y = 0 }
-					motorized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Armored_Cost_Effective_v1_b = {
-		#Armored Assault - Cost Effective - Medium Tank - Motorized Infantry - MAINT - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Armored_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W 40_ORG Armor Med.Tank Mot. Cost Effective v1.b (Rocket)"
-				priority = 2
-				regiments = {
-					medium_armor = { x = 0 y = 0 }
-					medium_armor = { x = 0 y = 1 }
-					medium_armor = { x = 0 y = 2 }
-					medium_armor = { x = 0 y = 3 }
-					medium_armor = { x = 0 y = 4 }
-					medium_armor = { x = 1 y = 0 }
-					medium_armor = { x = 1 y = 1 }
-					medium_armor = { x = 1 y = 2 }
-					motorized = { x = 2 y = 0 }
-					motorized = { x = 2 y = 1 }
-					motorized = { x = 2 y = 2 }
-					motorized = { x = 2 y = 3 }
-					motorized = { x = 2 y = 4 }
-					motorized = { x = 3 y = 0 }
-					motorized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Armored_Cost_Effective_v2_a = {
-		#Armored Assault - Cost Effective - Modern Tank - Motorized Infantry - MAINT - S.ART - S.AA - S.AT - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Armored_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W 40_ORG Armor Mod.Tank Mot. Cost Effective v2.a (AT)"
-				priority = 2
-				regiments = {
-					modern_armor = { x = 0 y = 0 }
-					modern_armor = { x = 0 y = 1 }
-					modern_armor = { x = 0 y = 2 }
-					modern_armor = { x = 0 y = 3 }
-					modern_armor = { x = 0 y = 4 }
-					modern_armor = { x = 1 y = 0 }
-					modern_armor = { x = 1 y = 1 }
-					modern_armor = { x = 1 y = 2 }
-					motorized = { x = 2 y = 0 }
-					motorized = { x = 2 y = 1 }
-					motorized = { x = 2 y = 2 }
-					motorized = { x = 2 y = 3 }
-					motorized = { x = 2 y = 4 }
-					motorized = { x = 3 y = 0 }
-					motorized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Armored_Cost_Effective_v2_b = {
-		#Armored Assault - Cost Effective - Modern Tank - Motorized Infantry - MAINT - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Armored_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W 40_ORG Armor Mod.Tank Mot. Cost Effective v2.b (Rocket)"
-				priority = 2
-				regiments = {
-					modern_armor = { x = 0 y = 0 }
-					modern_armor = { x = 0 y = 1 }
-					modern_armor = { x = 0 y = 2 }
-					modern_armor = { x = 0 y = 3 }
-					modern_armor = { x = 0 y = 4 }
-					modern_armor = { x = 1 y = 0 }
-					modern_armor = { x = 1 y = 1 }
-					modern_armor = { x = 1 y = 2 }
-					motorized = { x = 2 y = 0 }
-					motorized = { x = 2 y = 1 }
-					motorized = { x = 2 y = 2 }
-					motorized = { x = 2 y = 3 }
-					motorized = { x = 2 y = 4 }
-					motorized = { x = 3 y = 0 }
-					motorized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Armored_Expensive_v1_a = {
-		#Armored Assault - Expensive - Medium Tank - Mechanized Infantry - MAINT - S.ART - S.AA - S.AT - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Armored_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W 40_ORG Armor Med.Tank Mech. Expensive v1.a (AT)"
-				priority = 2
-				regiments = {
-					medium_armor = { x = 0 y = 0 }
-					medium_armor = { x = 0 y = 1 }
-					medium_armor = { x = 0 y = 2 }
-					medium_armor = { x = 0 y = 3 }
-					medium_armor = { x = 0 y = 4 }
-					medium_armor = { x = 1 y = 0 }
-					medium_armor = { x = 1 y = 1 }
-					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					medium_armor = { x = 1 y = 4 }
 					mechanized = { x = 2 y = 0 }
 					mechanized = { x = 2 y = 1 }
 					mechanized = { x = 2 y = 2 }
@@ -2112,151 +826,12 @@ udk_Cheat_Division_Templates_via_Decisions = {
 					mechanized = { x = 2 y = 4 }
 					mechanized = { x = 3 y = 0 }
 					mechanized = { x = 3 y = 1 }
+					mechanized = { x = 3 y = 2 }
 				}
 				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Armored_Expensive_v1_b = {
-		#Armored Assault - Expensive - Medium Tank - Mechanized Infantry - MAINT - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Armored_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W 40_ORG Armor Med.Tank Mech. Expensive v1.b (Rocket)"
-				priority = 2
-				regiments = {
-					medium_armor = { x = 0 y = 0 }
-					medium_armor = { x = 0 y = 1 }
-					medium_armor = { x = 0 y = 2 }
-					medium_armor = { x = 0 y = 3 }
-					medium_armor = { x = 0 y = 4 }
-					medium_armor = { x = 1 y = 0 }
-					medium_armor = { x = 1 y = 1 }
-					medium_armor = { x = 1 y = 2 }
-					mechanized = { x = 2 y = 0 }
-					mechanized = { x = 2 y = 1 }
-					mechanized = { x = 2 y = 2 }
-					mechanized = { x = 2 y = 3 }
-					mechanized = { x = 2 y = 4 }
-					mechanized = { x = 3 y = 0 }
-					mechanized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Armored_Expensive_v2_a = {
-		#Armored Assault - Cost Effective - Modern Tank - Mechanized Infantry - MAINT - S.ART - S.AA - S.AT - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Armored_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W 40_ORG Armor Mod.Tank Mech. Expensive v2.a (AT)"
-				priority = 2
-				regiments = {
-					modern_armor = { x = 0 y = 0 }
-					modern_armor = { x = 0 y = 1 }
-					modern_armor = { x = 0 y = 2 }
-					modern_armor = { x = 0 y = 3 }
-					modern_armor = { x = 0 y = 4 }
-					modern_armor = { x = 1 y = 0 }
-					modern_armor = { x = 1 y = 1 }
-					modern_armor = { x = 1 y = 2 }
-					mechanized = { x = 2 y = 0 }
-					mechanized = { x = 2 y = 1 }
-					mechanized = { x = 2 y = 2 }
-					mechanized = { x = 2 y = 3 }
-					mechanized = { x = 2 y = 4 }
-					mechanized = { x = 3 y = 0 }
-					mechanized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					anti_tank = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
-				}
-			}
-		}
-	}
-
-	udk_Cheat_Division_Templates_via_Decisions_Armored_Expensive_v2_b = {
-		#Armored Assault - Cost Effective - Modern Tank - Mechanized Infantry - MAINT - S.ART - S.AA - S.Rocket - LOG
-		available = {
-			always = yes
-		}
-		visible = {
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_toggle_on_flag
-			has_global_flag = udk_Cheat_Division_Templates_via_Decisions_Armored_toggle_on_flag
-		}
-		ai_will_do = {
-			base = 0
-		}
-		fire_only_once = no
-		cost = 0
-		complete_effect = {
-			division_template = {
-				name = "30W 40_ORG Armor Mod.Tank Mech. Expensive v2.b (Rocket)"
-				priority = 2
-				regiments = {
-					modern_armor = { x = 0 y = 0 }
-					modern_armor = { x = 0 y = 1 }
-					modern_armor = { x = 0 y = 2 }
-					modern_armor = { x = 0 y = 3 }
-					modern_armor = { x = 0 y = 4 }
-					modern_armor = { x = 1 y = 0 }
-					modern_armor = { x = 1 y = 1 }
-					modern_armor = { x = 1 y = 2 }
-					mechanized = { x = 2 y = 0 }
-					mechanized = { x = 2 y = 1 }
-					mechanized = { x = 2 y = 2 }
-					mechanized = { x = 2 y = 3 }
-					mechanized = { x = 2 y = 4 }
-					mechanized = { x = 3 y = 0 }
-					mechanized = { x = 3 y = 1 }
-				}
-				support = {
-					maintenance_company = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					anti_air = { x = 0 y = 2 }
-					rocket_artillery = { x = 0 y = 3 }
-					logistics_company = { x = 0 y = 4 }
+					engineer = { x = 0 y = 0 }
+					anti_air = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
 				}
 			}
 		}
