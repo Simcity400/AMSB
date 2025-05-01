@@ -1716,7 +1716,7 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = wuw_HUN_demand_southern_slovakia }
 		mutually_exclusive = { focus = wuw_HUN_demand_the_return_of_slovakia }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = wuw_HUN_demand_southern_slovakia
 
@@ -1732,27 +1732,19 @@ focus_tree = {
 
 			is_subject = no
 
-			OR = {
-				SLO = {
-					exists = yes
-					NOT = { is_puppet_of = ROOT }
-				}
-				any_other_country = {
+			any_other_country = {
+				OR = {
 					owns_state = 70
 					owns_state = 71
 					#owns_state = 72
 					owns_state = 73
-					NOT = {
-						has_war_with = ROOT
-					}
+				}
+				NOT = {
+					has_war_with = ROOT
 				}
 			}
-			IF = {
-				limit = { country_exists = SLO }
-				strength_ratio = { tag = SLO ratio > 0.75 }
-				NOT = { has_war_with = SLO }
-			}
-		
+
+	
 
 		}
 
@@ -1839,120 +1831,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = wuw_HUN_demand_the_return_of_slovakia
-		icon = GFX_focus_generic_attack_slovakia
-		prerequisite = { focus = wuw_HUN_demand_southern_slovakia }
-		mutually_exclusive = { focus = wuw_HUN_claim_overlordship_over_slovakia }
-		x = 1
-		y = 1
-		relative_position_id = wuw_HUN_demand_southern_slovakia
-
-		will_lead_to_war_with = SLO
-		will_lead_to_war_with = CZE
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 5
-		}
-
-		available = {
-
-			is_subject = no
-
-			any_other_country = {
-				OR = {
-					owns_state = 70
-					owns_state = 71
-					#owns_state = 72
-					owns_state = 73
-				}
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-
-	
-
-		}
-
-		bypass = {
-
-			AND = {
-				owns_state = 70
-				owns_state = 71
-				#owns_state = 72
-				owns_state = 73
-			}
-
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-
-		completion_reward = {
-
-			IF = {
-				limit = {
-					SLO = {
-						exists = yes
-						is_subject = yes
-						NOT = {
-							is_subject_of = ROOT
-						}
-						is_ai = yes
-					}
-				}
-				every_country = {
-					limit = {
-						has_subject = SLO
-					}
-					country_event = {
-						id = WW_hungary.96
-						days = 2
-						random_days = 3
-					}
-				}
-			}
-			ELSE = {
-				custom_effect_tooltip = HUN_demands_tt
-				every_country = {
-					limit = {
-						AND = {
-							OR = {
-								owns_state = 70
-								owns_state = 71
-								#owns_state = 72
-								owns_state = 73
-							}
-							NOT = {
-								OR = {
-									has_war_with = ROOT
-									original_tag = ROOT
-									is_subject_of = ROOT
-								}
-							}
-						}
-					}
-					country_event = {
-						id = WW_hungary.11
-						days = 2
-						random_days = 3
-					}
-				}
-			}
-
-		}
-	}
-
-	focus = {
 		id = wuw_HUN_proclaim_greater_hungary
 		icon = GFX_focus_HUN_proclaim_greater_hungary
 		prerequisite = { focus = wuw_HUN_demand_carpathian_ruthenia }
-		prerequisite = { focus = wuw_HUN_demand_the_vojvodina focus = wuw_HUN_demand_burgenland focus = wuw_HUN_demand_the_return_of_slovakia }
+		prerequisite = { focus = wuw_HUN_demand_the_vojvodina focus = wuw_HUN_demand_burgenland focus = wuw_HUN_claim_overlordship_over_slovakia }
 		#mutually_exclusive = { focus = wuw_HUN_claim_overlordship_over_slovakia }
 		x = 0
 		y = 2
@@ -5114,8 +4996,6 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = wuw_HUN_initiate_army_maneuvers
-		available = {
-			date > 1941.1.1 }
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
 
 		cost = 5
@@ -5768,8 +5648,6 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = wuw_HUN_doctrinal_studies
-		available = {
-			date > 1941.1.1 }
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		cost = 10
