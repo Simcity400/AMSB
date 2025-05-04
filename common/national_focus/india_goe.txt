@@ -15323,7 +15323,12 @@ focus_tree = {
         completion_reward = {
             if = {
                 limit = {
-                    NOT = { has_idea = war_economy }
+                    NOT = { 
+						OR = {
+							has_idea = tot_economic_mobilisation 
+							has_idea = war_economy 
+						}
+					}
                 }
                 add_ideas = war_economy
             }
