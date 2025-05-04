@@ -392,8 +392,14 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-		if = { limit = { has_idea = war_economy }
-			add_political_power = 150
+		if = { 
+			limit = {
+				OR = {
+					has_idea = war_economy
+					has_idea = tot_economic_mobilisation
+				}
+			}
+		add_political_power = 150
 		}
 		else = {
 			add_ideas = war_economy
