@@ -10258,11 +10258,6 @@ focus_tree = {
 		relative_position_id = ITA_foreign_affairs
 		cost = 5
 
-		bypass = {
-			is_in_faction = yes
-			is_in_faction_with = ITA
-		}
-
 		available = {
 			NOT = { has_war_with = ITA }
 			custom_trigger_tooltip = {
@@ -10270,10 +10265,6 @@ focus_tree = {
 				ITA = { has_government = ROOT }
 			}
 			is_in_faction = no
-			ITA = {
-				is_faction_leader = yes
-				is_subject = no
-			}
 			is_subject = no
 			NOT = { has_country_flag = ENG_ditched_by_the_germans_flag }
 		}
