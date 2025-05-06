@@ -34,13 +34,11 @@ ROM_oil_production = {
 	ROM_is_ai = {
 		icon = oil
 		allowed = {	
-			original_tag = ROM
-			ROM = {is_ai = yes}	
+				original_tag = ROM
+				ROM = {is_ai = yes}
 		}
-		available = {
-			tag = ROM
-			ROM = {is_ai = yes}
-		}
+		visible = {is_ai = yes}
+		available = {is_ai = yes}
 		cost = 0
 		fire_only_once = yes
 		complete_effect = {
@@ -48,8 +46,7 @@ ROM_oil_production = {
         }
 		ai_will_do = {
 			base = 4000
-			}	
-		}
+		}	
 	}
 }
 
