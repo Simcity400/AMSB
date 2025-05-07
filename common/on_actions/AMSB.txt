@@ -1,7 +1,30 @@
 on_actions = {
 	on_monthly_JAP = {
 		effect = { 
-
+#Auto war for Barb and Pacific
+if = {
+				limit = {date > 1941.12.30
+				NOT = { GER = {has_war_with = SOV}}
+			}
+				GER = {
+					declare_war_on = {
+					target = SOV
+					type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1941.12.30
+					NOT = { JAP = {has_war_with = USA}}
+				}
+				JAP = {
+					declare_war_on = {
+					target = USA
+					type = annex_everything
+					}
+				}
+			}
 			if = {
 				limit = {
 					JAP = {is_ai = yes}
