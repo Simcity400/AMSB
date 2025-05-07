@@ -3921,6 +3921,81 @@ focus = {
             idea = FRA_post_cap_boost
             days = 60
         }
+			# FRA SPAWN INS
+
+				division_template = {
+					name = "40w"
+					priority = 2
+					division_names_group = FRA_INF_01
+					is_locked = no
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+		
+		        		infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 3 y = 3 }
+
+						infantry = { x = 4 y = 0 }
+						infantry = { x = 4 y = 1 }
+						infantry = { x = 4 y = 2 }
+						infantry = { x = 4 y = 3 }
+						
+					}
+					support = {
+						
+					}
+				}
+
+			random_owned_controlled_state = {
+					prioritize = { 539 }
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}	
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}	
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}
+					create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}	
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}	
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}
+			
+				}
 			EFR = {
 				every_army_leader = {
 					set_nationality = FRA
