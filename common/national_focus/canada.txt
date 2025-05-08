@@ -1080,7 +1080,179 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = CAN_a_motorized_army
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = CAN_cmp_truck }
+		x = 0
+		y = 1
+		relative_position_id = CAN_cmp_truck
 
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAN_a_motorized_army
+				bonus = 1.0
+				uses = 1
+				category = motorized_equipment
+				technology = tech_field_hospital
+				technology = tech_field_hospital2
+				technology = tech_field_hospital3
+				technology = tech_field_hospital4
+				technology = tech_logistics_company
+				technology = tech_logistics_company2
+				technology = tech_logistics_company3
+				technology = tech_logistics_company4
+				technology = tech_signal_company
+				technology = tech_signal_company2
+				technology = tech_signal_company3
+				technology = tech_signal_company4
+			}
+		}
+	}
+	focus = {
+		id = CAN_red_deer_training_camp
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = CAN_royal_regiment_of_canadian_artillery focus = CAN_a_motorized_army }
+		x = 0
+		y = 1
+		relative_position_id = CAN_a_motorized_army
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			army_experience = 30
+			add_doctrine_cost_reduction = {
+				name = CAN_red_deer_training_camp
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_the_black_devils
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = CAN_red_deer_training_camp }
+		x = 0
+		y = 1
+		relative_position_id = CAN_red_deer_training_camp
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAN_the_black_devils
+				bonus = 1.00
+				uses = 1
+				category = marine_tech
+				category = para_tech
+			}
+		}
+	}
+focus = {
+		id = CAN_the_valentine_tank
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = CAN_the_black_devils }
+		x = 0
+		y = 1
+		relative_position_id = CAN_the_black_devils
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}
+
+			add_tech_bonus = {
+				name = CAN_the_valentine_tank
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+			add_tech_bonus = {
+				name = CAN_the_valentine_tank
+				ahead_reduction = 2
+				bonus = 1.0
+				uses = 1
+				category = cat_light_armor
+			}
+
+		}
+	}
 	############################
 	#### GO WITH UK SECTION ####
 	############################
