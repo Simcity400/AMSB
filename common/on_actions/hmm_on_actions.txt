@@ -437,7 +437,7 @@ on_actions = {
 				limit = {
 					FROM = {
 						tag = POL
-					}
+					}				
 				}
 				
 				every_country = {
@@ -484,6 +484,7 @@ on_actions = {
                     FROM = {
                         tag = BEL
                     }
+					date < 1940.8.31 #these dates are to fix the Vichy dec causing spawn-ins, it's easier to fix it here than do anything else.
                 }
                 BEL = {
                     load_oob = "BEL_CHROM_SPAWN"
@@ -504,6 +505,7 @@ on_actions = {
                     FROM = {
                         tag = HOL
                     }
+					date < 1940.8.31
                 }
                 HOL = {
                     load_oob = "HOL_CHROM_SPAWN"
@@ -514,6 +516,7 @@ on_actions = {
                     FROM = {
                         tag = LUX
                     }
+					date < 1940.8.31
                 }
                 LUX = {
                     load_oob = "LUX_CHROM_SPAWN"
@@ -534,6 +537,7 @@ on_actions = {
                     FROM = {
                         tag = POL
                     }
+					date < 1940.8.31
                 }
                 POL = {
                    load_oob = "POL_CHROM_SPAWN"
