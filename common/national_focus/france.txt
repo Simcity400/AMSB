@@ -74,214 +74,19 @@
 	}
 
 	focus = {
-	id = FRA_develop_the_countryside
-	icon = GFX_focus_ARG_capitalize_the_beef_industry
-	x = -1
-	y = 1
-	offset = {
-		x = 0
-		y = 0
-	}
-	prerequisite = { focus = FRA_devalue_the_franc }
-	mutually_exclusive = { }
-	relative_position_id = FRA_devalue_the_franc
-	cost = 5
-
-	ai_will_do = {
-		factor = 40
-	}
-
-	available = {
-		
-	}
-	
-	bypass = {
-		NOT = {
-			any_core_state = {
-				is_on_continent = europe
-				is_owned_by = ROOT
-				infrastructure < 4
-			}
-		}
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_INDUSTRY }
-	completion_reward = {
-		every_core_state = {
-			limit = {
-				is_on_continent = europe
-				is_owned_by = ROOT
-				infrastructure < 4
-			}
-			random_select_amount = 4
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_extra_state_shared_building_slots = 1
-			}
-		}
-	}
-	focus = {
-	id = FRA_expand_the_salau_mine
-	icon = GFX_focus_generic_tungsten
-	x = 0
-	y = 1
-	offset = {
-		x = 0
-		y = 0
-	}
-	prerequisite = { focus = FRA_develop_the_countryside }
-	mutually_exclusive = { }
-	relative_position_id = FRA_develop_the_countryside
-	cost = 5
-
-	ai_will_do = {
-		factor = 40
-	}
-
-	available = {
-		owns_state = 31
-	}
-	
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_INDUSTRY }
-	completion_reward = {
-		31 = {
-			add_resource = {
-				type = tungsten
-				amount = 14
-			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-				}
-			}
-		}
-	}		
-	focus = {
-	id = FRA_develop_the_potash_mines
-	icon = GFX_focus_generic_mining_industry
-	x = -1
-	y = 2
-	offset = {
-		x = 0
-		y = 0
-	}
-	prerequisite = { focus = FRA_develop_the_countryside }
-	mutually_exclusive = { }
-	relative_position_id = FRA_develop_the_countryside
-	cost = 5
-
-	ai_will_do = {
-		factor = 40
-	}
-
-	available = {
-		owns_state = 28
-	}
-	
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_INDUSTRY }
-	completion_reward = {
-		28 = {
-			add_resource = {
-				type = steel
-				amount = 12
-			}
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-	id = FRA_the_baux_de_provence_mine
-	icon = GFX_focus_generic_aluminum
-	x = 1
-	y = 2
-	offset = {
-		x = 0
-		y = 0
-	}
-	prerequisite = { focus = FRA_develop_the_countryside }
-	mutually_exclusive = { }
-	relative_position_id = FRA_develop_the_countryside
-	cost = 5
-
-	ai_will_do = {
-		factor = 40
-	}
-
-	available = {
-		owns_state = 21
-	}
-	
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_INDUSTRY }
-	completion_reward = {
-		21 = {
-			add_resource = {
-				type = aluminium
-				amount = 12
-			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-				}
-			}
-		}
-	}	
-	focus = {
 	id = FRA_develop_synthetic_ressources
 	icon = GFX_goal_generic_oil_refinery
-	x = 1
+	x = -1
 	y = 1
 	offset = {
 		x = 0
 		y = 0
 	}
 	prerequisite = { 
-		focus = FRA_develop_the_potash_mines
-		focus = FRA_expand_the_salau_mine
-		focus = FRA_the_baux_de_provence_mine
+		focus = FRA_devalue_the_franc
 	}
 	mutually_exclusive = { }
-	relative_position_id = FRA_develop_the_potash_mines
+	relative_position_id = FRA_devalue_the_franc
 	cost = 5
 
 	ai_will_do = {
@@ -385,63 +190,11 @@
 				}
 		}
 	}
-
-	focus = {
-	id = FRA_hydroelectricity
-	icon = GFX_focus_generic_hydroelectric_energy
-	offset = {
-		x = 0
-		y = 0
-	}
-	
-	prerequisite = { focus = FRA_conseil_national_economique }
-	
-	x = -4
-	y = 1
-	relative_position_id = FRA_conseil_national_economique
-	mutually_exclusive = { }
-	cost = 5
-
-	ai_will_do = {
-		factor = 1
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = no
-
-	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
-	completion_reward = {
-		random_owned_state = {
-			limit = {
-				is_controlled_by = ROOT
-				is_core_of = ROOT
-			}
-			add_extra_state_shared_building_slots = 2
-			set_state_flag = FRA_hydro_heavy_water
-			851 = {
-				add_building_construction = {
-					type = dam
-					level = 1
-					instant_build = yes
-					province = {
-						id = 3961
-					}
-				}
-			}
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-				}
-			}
-		}  
-	}
 	
 	focus = {
 		id = FRA_devalue_the_franc
 		icon = GFX_focus_fra_devalue_the_franc
-		x = -8
+		x = -7
 		y = 1
 		offset = {
 			x = 0
@@ -477,7 +230,7 @@
 	focus = {
 			id = FRA_invest_in_the_metropole
 			icon = GFX_focus_SWE_urbanization
-			x = -6
+			x = -5
 			y = 1
 			offset = {
 				x = 0
@@ -752,7 +505,7 @@
 				}
 			}
 		}
-		x = -5
+		x = -4
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -826,7 +579,7 @@
 	focus = {
 		id = FRA_invest_in_west_africa
 		icon = GFX_focus_generic_industry_1
-		x = -3
+		x = -2
 		y = 1
 		offset = {
 			x = 0
@@ -929,7 +682,7 @@
 	focus = {
 		id = FRA_invest_in_indochina
 		icon = GFX_focus_generic_industry_1
-		x = -1
+		x = 00
 		y = 1
 		offset = {
 			x = 0
@@ -995,7 +748,7 @@
 	focus = {
 		id = FRA_invest_in_syria
 		icon = GFX_focus_generic_industry_1
-		x = 1
+		x = 2
 		y = 1
 		offset = {
 			x = 0
@@ -2194,7 +1947,7 @@
 	focus = {
 		id = FRA_reform_the_labour_laws
 		icon = GFX_goal_generic_production
-		x = 0
+		x = 1
 		y = 1
 		
 		prerequisite = {
@@ -3295,11 +3048,21 @@ q
 				limit = {
 					has_dlc = "Man the Guns"
 				}
+
+				if = {
+					limit = {
+						NOT = { has_tech = sp:sp_naval_modern_carrier }
+					}
+					complete_special_project = sp:sp_naval_modern_carrier
+				
+				}
+
 				custom_effect_tooltip = FRA_prioritize_the_joffre_tt
+
 				hidden_effect = {
 					create_equipment_variant = {
 						name = "Joffre Class"
-						type = ship_hull_carrier_1
+						type = ship_hull_carrier_modern
 						name_group = FRA_CV_HISTORICAL
 						parent_version = 0
 						modules = {
@@ -3314,7 +3077,7 @@ q
 					}
 					add_equipment_production = {
 						equipment = {
-							type = ship_hull_carrier_1
+							type = ship_hull_carrier_modern
 							creator = "FRA" 
 							version_name = "Joffre Class"
 						}
