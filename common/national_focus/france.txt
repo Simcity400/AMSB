@@ -3051,9 +3051,9 @@ q
 
 				if = {
 					limit = {
-						NOT = { has_tech = sp:sp_naval_modern_carrier }
+						NOT = { has_tech = basic_ship_hull_carrier }
 					}
-					complete_special_project = sp:sp_naval_modern_carrier
+					set_technology = { basic_ship_hull_carrier = 1}
 				
 				}
 
@@ -3062,7 +3062,7 @@ q
 				hidden_effect = {
 					create_equipment_variant = {
 						name = "Joffre Class"
-						type = ship_hull_carrier_modern
+						type = ship_hull_carrier_1
 						name_group = FRA_CV_HISTORICAL
 						parent_version = 0
 						modules = {
@@ -3077,7 +3077,7 @@ q
 					}
 					add_equipment_production = {
 						equipment = {
-							type = ship_hull_carrier_modern
+							type = ship_hull_carrier_1
 							creator = "FRA" 
 							version_name = "Joffre Class"
 						}
