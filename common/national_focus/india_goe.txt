@@ -62,7 +62,7 @@ focus = {
 	}
 
 	offset = {
-		x = -40
+		x = 0
 		y = 0
 		trigger = {
 			has_game_rule = {
@@ -816,7 +816,7 @@ focus = {
 			add_idea = RAJ_imperial_industry_initiative
 		}
 
-		every_owned_state = {
+		every_core_state = {
 			limit = {
 				is_fully_controlled_by = ROOT
 				free_building_slots = {
@@ -890,7 +890,7 @@ focus = {
 		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
-		every_owned_state = {
+		every_core_state = {
 			limit = {
 				is_fully_controlled_by = ROOT
 				arms_factory > 0
@@ -908,7 +908,7 @@ focus = {
 				instant_build = yes
 			}
 		}
-		every_owned_state = {
+		every_core_state = {
 			limit = {
 				is_fully_controlled_by = ROOT
 				industrial_complex > 0
@@ -926,7 +926,7 @@ focus = {
 				instant_build = yes
 			}
 		}
-		every_owned_state = {
+		every_core_state = {
 			limit = {
 				is_fully_controlled_by = ROOT
 				dockyard > 0
@@ -1077,7 +1077,7 @@ focus = {
 	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
 	completion_reward = {
-		random_owned_state = {
+		random_core_state = {
 			limit = {
 				is_fully_controlled_by = ROOT
 				free_building_slots = {
@@ -23358,7 +23358,7 @@ focus = {
         id = RAJ_madras_ship_repair_factories
         icon = GFX_focus_generic_refit_civilian_ships
         prerequisite = { focus = RAJ_indian_marine_corps }
-        x = 4
+        x = 2
         y = 2
         relative_position_id = RAJ_royal_indian_navy_dlc
 
@@ -23398,7 +23398,7 @@ focus = {
         id = RAJ_found_scindia_shipyard_dlc
         icon = GFX_goal_generic_construct_naval_dockyard
         prerequisite = { focus = RAJ_black_swan_sloops focus = RAJ_expand_mazagon_dock_dlc }
-        x = 1
+        x = 0
         y = 2
         relative_position_id = RAJ_royal_indian_navy_dlc
 
@@ -23506,7 +23506,7 @@ focus = {
         id = RAJ_increase_funding_for_the_GRSE
         icon = GFX_focus_generic_economic_recovery
         prerequisite = { focus =RAJ_found_scindia_shipyard_dlc }
-        x = 1
+        x = 0
         y = 3
         relative_position_id = RAJ_royal_indian_navy_dlc
 
@@ -23674,7 +23674,7 @@ focus = {
         icon = GFX_focus_generic_naval_invasion
         prerequisite = { focus = RAJ_obtain_modern_ship_contracts focus = RAJ_increase_funding_for_the_GRSE }
         x = 0
-        y = 5
+        y = 4
         relative_position_id = RAJ_royal_indian_navy_dlc
 
         cost = 10
