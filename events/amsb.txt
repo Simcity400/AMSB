@@ -284,6 +284,35 @@ country_event = {
 
     option = {
         name = uktanks.1.eng
+        ENG = {country_event = uktanks.2}    
+    }
+    option = {
+        name = uktanks.1.can
+        ENG = {remove_ideas = motorized_army}
+        CAN = {country_event = uktanks.2}
+    }
+    option = {
+        name = uktanks.1.saf
+        ENG = {remove_ideas = motorized_army}
+        SAF = {country_event = uktanks.2}
+    }
+    option = {
+        name = uktanks.1.ast
+        ENG = {remove_ideas = motorized_army}
+        AST = {country_event = uktanks.2}
+    }
+}
+
+country_event = {
+    id = uktanks.2
+    title = uktanks.2.t
+    desc = uktanks.2.d
+    picture = GFX_news_event_canadian_tanks
+
+    is_triggered_only = yes
+
+    option = {
+        name = uktanks.2.hev
 
         add_tech_bonus = {
 			name = armor_bonus
@@ -350,130 +379,32 @@ country_event = {
 
     }
     option = {
-        name = uktanks.1.can
-        ENG = {remove_ideas = motorized_army}
-        CAN = {country_event = givetankscan.1}
-    }
-    option = {
-        name = uktanks.1.saf
-        ENG = {remove_ideas = motorized_army}
-        SAF = {country_event = givetankssaf.1}
-    }
-    option = {
-        name = uktanks.1.ast
-        ENG = {remove_ideas = motorized_army}
-        AST = {country_event = givetanksast.1}
-    }
-}
+        name = uktanks.2.med
 
-country_event = {
-    id = givetankscan.1
-    title = givetankscan.1.t
-    desc = givetankscan.1.d
-    picture = GFX_news_event_canadian_tanks
-
-    is_triggered_only = yes
-    
-    option = {
-        name = givetankscan.y
-        trigger = { tag = CAN }
         add_tech_bonus = {
-				name = armor_bonus
-				bonus = 1.0
-				uses = 1
-				category = armor
+			name = armor_bonus
+			bonus = 1.0
+			uses = 1
+			category = armor
 			}
-			
-		add_ideas = motorized_army_two
-			
+		swap_ideas = {
+            remove_idea = motorized_army
+			add_idea = motorized_army_two
+			}
 		division_template = {
-				name = "Royal Tank Regiment" 	
+			name = "Royal Tank Regiment" 	
 
 				regiments = {		
-					heavy_armor = { x = 0 y = 0 }		
-					heavy_armor = { x = 0 y = 1 }		
-					heavy_armor = { x = 0 y = 2 }	
-					heavy_armor = { x = 0 y = 3 }
-					heavy_armor = { x = 0 y = 4 }		
-					heavy_armor = { x = 1 y = 0 }		
-					heavy_armor = { x = 1 y = 1 }
-					heavy_armor = { x = 1 y = 2 }		
-					heavy_armor = { x = 1 y = 3 }
-					heavy_armor = { x = 1 y = 4 }		
-					mechanized = { x = 2 y = 0 }			
-					mechanized = { x = 2 y = 1 }
-					mechanized = { x = 2 y = 2 }
-					mechanized = { x = 2 y = 3 }	
-					mechanized = { x = 2 y = 4 }		
-					mechanized = { x = 3 y = 0 }
-					mechanized = { x = 3 y = 1 }			
-					mechanized = { x = 3 y = 2 }
-					mechanized = { x = 3 y = 3 }
-					mechanized = { x = 3 y = 4 }
-				}
-				support = {  		
-					artillery = { x = 0 y = 0 }
-					anti_air = { x = 0 y = 1 }
-					engineer = { x = 0 y = 2 }
-
-				}
-			}
-		
-		capital_scope = {
-				create_unit = {
-						division = "name = \"1st Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = CAN
-					}
-				create_unit = {
-						division = "name = \"2nd Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = CAN
-					}
-				create_unit = {
-						division = "name = \"3rd Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = CAN
-					}
-				create_unit = {
-						division = "name = \"4th Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = CAN
-					}
-				}
-    }
-}
-
-country_event = {
-    id = givetankssaf.1
-    title = givetankscan.1.t
-    desc = givetankscan.1.d
-    picture = GFX_news_event_canadian_tanks
-
-    is_triggered_only = yes
-    
-    option = {
-        name = givetankscan.y
-        trigger = { tag = SAF }
-        add_tech_bonus = {
-				name = armor_bonus
-				bonus = 1.0
-				uses = 1
-				category = armor
-			}
-			
-			add_ideas = motorized_army_two
-			
-			division_template = {
-				name = "Royal Tank Regiment" 	
-
-				regiments = {		
-					heavy_armor = { x = 0 y = 0 }		
-					heavy_armor = { x = 0 y = 1 }		
-					heavy_armor = { x = 0 y = 2 }	
-					heavy_armor = { x = 0 y = 3 }
-					heavy_armor = { x = 0 y = 4 }		
-					heavy_armor = { x = 1 y = 0 }		
-					heavy_armor = { x = 1 y = 1 }
-					heavy_armor = { x = 1 y = 2 }		
-					heavy_armor = { x = 1 y = 3 }
-					heavy_armor = { x = 1 y = 4 }		
+					medium_armor = { x = 0 y = 0 }		
+					medium_armor = { x = 0 y = 1 }		
+					medium_armor = { x = 0 y = 2 }	
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 0 y = 4 }		
+					medium_armor = { x = 1 y = 0 }		
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }		
+					medium_armor = { x = 1 y = 3 }
+					medium_armor = { x = 1 y = 4 }		
 					mechanized = { x = 2 y = 0 }			
 					mechanized = { x = 2 y = 1 }
 					mechanized = { x = 2 y = 2 }
@@ -496,59 +427,51 @@ country_event = {
 				capital_scope = {
 					create_unit = {
 						division = "name = \"1st Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = SAF
+						owner = FROM
 					}
 					create_unit = {
 						division = "name = \"2nd Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = SAF
+						owner = FROM
 					}
 						create_unit = {
 						division = "name = \"3rd Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = SAF
+						owner = FROM
 					}
 					create_unit = {
 						division = "name = \"4th Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = SAF
+						owner = FROM
 					}
 				}
+            
 
     }
-}
+	option = {
+        name = uktanks.2.lit
 
-country_event = {
-    id = givetanksast.1
-    title = givetankscan.1.t
-    desc = givetankscan.1.d
-    picture = GFX_news_event_canadian_tanks
-
-    is_triggered_only = yes
-    
-    option = {
-        name = givetankscan.y
-        trigger = { tag = AST }
         add_tech_bonus = {
-				name = armor_bonus
-				bonus = 1.0
-				uses = 1
-				category = armor
+			name = armor_bonus
+			bonus = 1.0
+			uses = 1
+			category = armor
 			}
-			
-			 add_ideas = motorized_army_two
-			
-			division_template = {
-				name = "Royal Tank Regiment" 	
+		swap_ideas = {
+            remove_idea = motorized_army
+			add_idea = motorized_army_two
+			}
+		division_template = {
+			name = "Royal Tank Regiment" 	
 
 				regiments = {		
-					heavy_armor = { x = 0 y = 0 }		
-					heavy_armor = { x = 0 y = 1 }		
-					heavy_armor = { x = 0 y = 2 }	
-					heavy_armor = { x = 0 y = 3 }
-					heavy_armor = { x = 0 y = 4 }		
-					heavy_armor = { x = 1 y = 0 }		
-					heavy_armor = { x = 1 y = 1 }
-					heavy_armor = { x = 1 y = 2 }		
-					heavy_armor = { x = 1 y = 3 }
-					heavy_armor = { x = 1 y = 4 }		
+					light_armor = { x = 0 y = 0 }		
+					light_armor = { x = 0 y = 1 }		
+					light_armor = { x = 0 y = 2 }	
+					light_armor = { x = 0 y = 3 }
+					light_armor = { x = 0 y = 4 }		
+					light_armor = { x = 1 y = 0 }		
+					light_armor = { x = 1 y = 1 }
+					light_armor = { x = 1 y = 2 }		
+					light_armor = { x = 1 y = 3 }
+					light_armor = { x = 1 y = 4 }		
 					mechanized = { x = 2 y = 0 }			
 					mechanized = { x = 2 y = 1 }
 					mechanized = { x = 2 y = 2 }
@@ -571,21 +494,22 @@ country_event = {
 				capital_scope = {
 					create_unit = {
 						division = "name = \"1st Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = AST
+						owner = FROM
 					}
 					create_unit = {
 						division = "name = \"2nd Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = AST
+						owner = FROM
 					}
 						create_unit = {
 						division = "name = \"3rd Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = AST
+						owner = FROM
 					}
 					create_unit = {
 						division = "name = \"4th Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = AST
+						owner = FROM
 					}
 				}
+            
 
     }
 }
