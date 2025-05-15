@@ -1499,7 +1499,7 @@ focus = {
 			add_idea = RAJ_the_zamindari_system_3
 		}
 
-		every_owned_state = {
+		every_core_state = {
 			limit = {
 				is_fully_controlled_by = ROOT
 				free_building_slots = {
@@ -1591,6 +1591,14 @@ focus = {
 				instant_build = yes
 			}
 		}
+        336 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
 
 		if = {
 			limit = {
@@ -1604,7 +1612,7 @@ focus = {
 				}
 				event_option_tooltip = GOE_RAJ_loyalist.02.a
 			}
-
+            
 			hidden_effect = {
 				ENG = {
 					if = {
