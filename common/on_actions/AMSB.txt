@@ -39,28 +39,23 @@ if = {
 	on_startup = {
 		effect = {
 			every_country = {
+				limit = {
+					NOT = {tag = USA}
+					NOT = {tag = ENG}
+					NOT = {tag = SOV}
+					NOT = {tag = GER}
+					NOT = {tag = ITA}
+					NOT = {tag = JAP}
+				}
+				add_ideas = no_planes
+			}
+			every_country = {
 				add_equipment_to_stockpile = {
 					type = convoy
 					amount = 100
 				}
-			}
-			on_startup = {
-				effect = {
-					if = {
-						limit = { tag = ENG }
-						add_equipment_to_stockpile = {
-							type = infantry_equipment_1
-							amount = 10000
-						}
-						add_equipment_to_stockpile = {
-							type = support_equipment_1
-							amount = 1500
-						}
-					}
-				}
-			}
-division_template = {
-					name = "Quick convert division"
+				division_template = {
+					name = "Quick Convert Division"
 					division_names_group = AFG_ARM_01
 					regiments = {
 						infantry = {
@@ -166,6 +161,19 @@ division_template = {
 					}
 					priority = 2
 				}
+			}
+					
+			ENG = {
+				add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 10000
+						
+				add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 1500
+							}
+						}
+					}
 
 			514 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
 			459 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
