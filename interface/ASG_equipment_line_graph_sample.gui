@@ -1,6 +1,6 @@
 guiTypes = {
 	containerWindowType = {
-		name = "ASG_civilian_line_graph_SAMPLE_gui"
+		name = "ASG_equipment_line_graph_SAMPLE_gui"
 		position = { x = 0 y = 0}	
 		size = { width = 900 height= 558 }
 		orientation = center
@@ -21,7 +21,7 @@ guiTypes = {
 
 		# Container which will hold each of our line segments
 		gridboxtype = {
-			name = "ASG_civilian_line_segments_green"
+			name = "ASG_equipment_line_segments_green"
 			position = { x = 132 y = 380 }
 			size = { width = 0 height = 200 }
 			slotsize = { width = 5 height = 200 }
@@ -30,7 +30,7 @@ guiTypes = {
 		}
 
 		gridboxtype = {
-			name = "ASG_civilian_line_segments_red"
+			name = "ASG_equipment_line_segments_red"
 			position = { x = 132	 y = 380 }
 			size = { width = 0 height = 200 }
 			slotsize = { width = 5 height = 200 }
@@ -39,7 +39,7 @@ guiTypes = {
 		}
 
 		gridboxtype = {
-			name = "ASG_civilian_line_segments_light_red"
+			name = "ASG_equipment_line_segments_light_red"
 			position = { x = 132	 y = 380 }
 			size = { width = 0 height = 200 }
 			slotsize = { width = 5 height = 200 }
@@ -48,7 +48,7 @@ guiTypes = {
 		}
 
 		gridboxtype = {
-			name = "ASG_civilian_line_segments_light_blue"
+			name = "ASG_equipment_line_segments_light_blue"
 			position = { x = 132	 y = 380 }
 			size = { width = 0 height = 200 }
 			slotsize = { width = 5 height = 200 }
@@ -57,7 +57,7 @@ guiTypes = {
 		}
 
 		gridboxtype = {
-			name = "ASG_civilian_line_segments_light_white"
+			name = "ASG_equipment_line_segments_light_white"
 			position = { x = 132	 y = 380 }
 			size = { width = 0 height = 200 }
 			slotsize = { width = 5 height = 200 }
@@ -66,7 +66,7 @@ guiTypes = {
 		}
 
 		gridboxtype = {
-			name = "ASG_civilian_line_segments_grey"
+			name = "ASG_equipment_line_segments_grey"
 			position = { x = 132	 y = 380 }
 			size = { width = 0 height = 200 }
 			slotsize = { width = 5 height = 200 }
@@ -75,7 +75,7 @@ guiTypes = {
 		}
 
 		gridboxtype = {
-			name = "ASG_civilian_line_segments_blue"
+			name = "ASG_equipment_line_segments_blue"
 			position = { x = 132	 y = 380 }
 			size = { width = 0 height = 200 }
 			slotsize = { width = 5 height = 200 }
@@ -85,61 +85,43 @@ guiTypes = {
 		# y-axis labels, very optional
 
 		instantTextboxType = {
-			name = "700"
-			position = { x= 65 y = 47}
+			name = "100%"
+			position = { x= 40 y = 167}
 			font = "cg_18b"
-			text = "700"
-			maxWidth = 50
-			format = right
-		}
-
-		instantTextboxType = {
-			name = "600"
-			position = { x= 65 y = 107}
-			font = "cg_18b"
-			text = "600"
-			maxWidth = 50
-			format = right
-		}
-
-		instantTextboxType = {
-			name = "500"
-			position = { x= 65 y = 167}
-			font = "cg_18b"
-			text = "500"
-			maxWidth = 50
+			text = "100%"
+			maxWidth = 80
 			format = right
 		}
 		instantTextboxType = {
-			name = "400"
-			position = { x= 65 y = 227}
+			name = "80%"
+			position = { x= 40 y = 227}
 			font = "cg_18b"
-			text = "400"
-			maxWidth = 50
+			text = "80%"
+			maxWidth = 80
 			format = right
 		}
 		instantTextboxType = {
-			name = "300"
-			position = { x= 65 y = 287}
+			name = "60%"
+			position = { x= 40 y = 287}
 			font = "cg_18b"
-			text = "300"
-			maxWidth = 50
+			text = "60%"
+			maxWidth = 80
 			format = right
 		}
 		instantTextboxType = {
-			name = "200"
-			position = { x= 65 y = 347}
+			name = "40%"
+			position = { x= 40 y = 347}
 			font = "cg_18b"
-			text = "200"
-			maxWidth = 50
+			text = "40%"
+			maxWidth = 80
 			format = right
 		}
 		instantTextboxType = {
-			name = "100"
-			position = { x= 65 y = 407}
+			name = "20%"
+			position = { x= 40 y = 407}
 			font = "cg_18b"
-			text = "100"
-			maxWidth = 50
+			text = "20%"
+			maxWidth = 80
 			format = right
 		}
 		instantTextboxType = {
@@ -157,78 +139,67 @@ guiTypes = {
 			spriteType = "GFX_closebutton"
 			position = { x = 870 y = 20 }
 		}
-		buttonType = {
-			name = "add_button"
-			spriteType = "GFX_NV_btn_add"
-			position = { x = 20 y = 20 }
-		}
-		buttonType = {
-			name = "remove_button"
-			spriteType = "GFX_naval_decrease_amount"
-			position = { x = 20 y = 50 }
-		}
-		instantTextboxType = {
-			name = "SCALE_FACTOR"
-			position = { x = 15 y = 90}
-			font = "cg_18b"
-			text = ASG_civilian_scale_factor
-			maxWidth = 55
-			format = center
-		}
+
+		# buttonType = {
+		# 	name = "add_button"
+		# 	spriteType = "GFX_NV_btn_add"
+		# 	position = { x = 20 y = 20 }
+		# }
+
 		instantTextboxType = {
 			name = "GER_legend"
 			position = { x = 200 y = 510}
 			font = "cg_18b"
-			text = ASG_civilian_graph_legend_GER
-			maxWidth = 55
+			text = ASG_equipment_graph_legend_GER
+			maxWidth = 60
 			format = center
 		}
 		instantTextboxType = {
 			name = "USA_legend"
 			position = { x = 280 y = 510}
 			font = "cg_18b"
-			text = ASG_civilian_graph_legend_USA
-			maxWidth = 55
+			text = ASG_equipment_graph_legend_USA
+			maxWidth = 60
 			format = center
 		}
 		instantTextboxType = {
 			name = "SOV_legend"
 			position = { x = 360 y = 510}
 			font = "cg_18b"
-			text = ASG_civilian_graph_legend_SOV
-			maxWidth = 55
+			text = ASG_equipment_graph_legend_SOV
+			maxWidth = 60
 			format = center
 		}
 		instantTextboxType = {
 			name = "FRA_legend"
 			position = { x = 440 y = 510}
 			font = "cg_18b"
-			text = ASG_civilian_graph_legend_FRA
-			maxWidth = 55
+			text = ASG_equipment_graph_legend_FRA
+			maxWidth = 60
 			format = center
 		}
 		instantTextboxType = {
 			name = "ITA_legend"
 			position = { x = 520 y = 510}
 			font = "cg_18b"
-			text = ASG_civilian_graph_legend_ITA
-			maxWidth = 55
+			text = ASG_equipment_graph_legend_ITA
+			maxWidth = 60
 			format = center
 		}
 		instantTextboxType = {
 			name = "JAP_legend"
 			position = { x = 600 y = 510}
 			font = "cg_18b"
-			text = ASG_civilian_graph_legend_JAP
-			maxWidth = 55
+			text = ASG_equipment_graph_legend_JAP
+			maxWidth = 60
 			format = center
 		}
 		instantTextboxType = {
 			name = "ENG_legend"
 			position = { x = 680 y = 510}
 			font = "cg_18b"
-			text = ASG_civilian_graph_legend_ENG
-			maxWidth = 55
+			text = ASG_equipment_graph_legend_ENG
+			maxWidth = 60
 			format = center
 		}
 
@@ -237,7 +208,7 @@ guiTypes = {
 			position = { x = 110 y = 485}
 			font = "cg_18b"
 			text = "'36"
-			maxWidth = 55
+			maxWidth = 60
 			format = center
 		}
 
@@ -351,17 +322,17 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "TITLE"
-			position = { x = 105 y = 20}
+			position = { x = 250 y = 20}
 			font = "cg_18b"
-			text = "CIVILIAN PRODUCTION (AVAILABLE CIVS x CONSTRUCTION SPEED / SCALE FACTOR) FOR MAJOR COUNTRIES"
-			maxWidth = 750
+			text = "RATIO OF FIELDED EQUIPMENT (IN %) FOR MAJOR COUNTRIES"
+			maxWidth = 500
 			format = center
 		}
 	}
 
 	# Line segment container, very important
 	containerWindowType = {
-		name = "ASG_civilian_line_graph_line_segment_green"
+		name = "ASG_equipment_line_graph_line_segment_green"
 		size = { width = 5 height = 200 }
 		position = { x = 0 y = 0 }
 
@@ -376,7 +347,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "ASG_civilian_line_graph_line_segment_red"
+		name = "ASG_equipment_line_graph_line_segment_red"
 		size = { width = 5 height = 200 }
 		position = { x = 0 y = 0 }
 
@@ -390,7 +361,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "ASG_civilian_line_graph_line_segment_light_red"
+		name = "ASG_equipment_line_graph_line_segment_light_red"
 		size = { width = 5 height = 200 }
 		position = { x = 0 y = 0 }
 
@@ -404,7 +375,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "ASG_civilian_line_graph_line_segment_light_blue"
+		name = "ASG_equipment_line_graph_line_segment_light_blue"
 		size = { width = 5 height = 200 }
 		position = { x = 0 y = 0 }
 
@@ -418,7 +389,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "ASG_civilian_line_graph_line_segment_blue"
+		name = "ASG_equipment_line_graph_line_segment_blue"
 		size = { width = 5 height = 200 }
 		position = { x = 0 y = 0 }
 
@@ -432,7 +403,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "ASG_civilian_line_graph_line_segment_light_white"
+		name = "ASG_equipment_line_graph_line_segment_light_white"
 		size = { width = 5 height = 200 }
 		position = { x = 0 y = 0 }
 
@@ -446,7 +417,7 @@ guiTypes = {
 	}
 
 	containerWindowType = {
-		name = "ASG_civilian_line_graph_line_segment_grey"
+		name = "ASG_equipment_line_graph_line_segment_grey"
 		size = { width = 5 height = 200 }
 		position = { x = 0 y = 0 }
 
