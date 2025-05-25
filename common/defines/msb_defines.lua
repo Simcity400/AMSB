@@ -236,10 +236,10 @@ NDefines.NNavy.MISSION_SUPREMACY_RATIOS = { -- supremacy multipliers for differe
 NDefines.NNavy.SUPREMACY_PER_SHIP_PER_MANPOWER = 0.05
 NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 50
 NDefines.NProduction.FLOATING_HARBOR_MAX_NAV_FACTORIES_PER_LINE = 50
-NDefines.NProduction.CONVOY_MAX_NAV_FACTORIES_PER_LINE = 100 
+NDefines.NProduction.CONVOY_MAX_NAV_FACTORIES_PER_LINE = 150 
 NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 10
 NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 4.50
-
+NDefines.NAir.AIR_MORE_GROUND_CREWS_COST = 0.0
 NDefines.NMilitary.COMBAT_OVER_WIDTH_PENALTY = -1.5	
 
 NDefines.NGeography.MEDITERRANEAN_SEA_REGIONS = { 15, 29, 68, 69, 168, 169, 202, 299, 300, 301, } -- The sea regions that are considered as part of the Mediterranean sea
