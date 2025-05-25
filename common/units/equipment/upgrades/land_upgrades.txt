@@ -6,8 +6,8 @@ upgrades = {
 		cost = land
 
 		linear_cost = {
-			cost_by_level = 0 #SPTChange set to 0
-			cost_by_level_for_licensed_equipment = 5
+			cost_by_level = 0
+			cost_by_level_for_licensed_equipment = 0
 		}
 
 		level_requirements = {
@@ -27,15 +27,16 @@ upgrades = {
 
 		resource_cost_thresholds = {
 			10 = { #higher level engines do require more strategic resources
-				chromium = 1
+				#chromium = 0
 			}
 		}
 
-		maximum_speed = 0.1
-		reliability = -0.02
+		#maximum_speed = 0.1
+		reliability = -0.015
 		add_stats = {
 			fuel_consumption = 0.05
 			build_cost_ic = 0.1
+			maximum_speed = 0.1
 		}
 	}
 
@@ -45,8 +46,8 @@ upgrades = {
 		cost = land
 
 		linear_cost = {
-			cost_by_level = 0 #SPTChange set to 0
-			cost_by_level_for_licensed_equipment = 2
+			cost_by_level = 0
+			cost_by_level_for_licensed_equipment = 0
 		}
 
 		level_requirements = {
@@ -66,23 +67,25 @@ upgrades = {
 
 		resource_cost_thresholds = { # resource values defined here are TOTAL added cost, not cumulative
 			5 = { #more armor requires more resources
-				steel = 1 
+				steel = 0
 			}
 			10 = {
-				steel = 2
-				chromium = 1
+				steel = 1
+				#chromium = 0
 			}
 			15 = {
-				steel = 2
-				chromium = 2
+				steel = 1
+				#chromium = 0
 			}
 		}
 
-		maximum_speed = -0.05
-		reliability = -0.02
-		armor_value = 0.05
+		reliability = -0.015
+		#armor_value = 0.085
 		add_stats = {
+			maximum_speed = -0.1
+			breakthrough = 1.25
 			build_cost_ic = 0.2
+			armor_value = 2.5
 
 		}
 	}
@@ -96,6 +99,7 @@ upgrades = {
 		ap_attack = 0.05
 		maximum_speed = -0.02
 		reliability = -0.05
+		build_cost_ic = 0.05
 	}
 	tank_armor_upgrade = {
 		max_level = 5
@@ -104,11 +108,13 @@ upgrades = {
 		armor_value = 0.05
 		maximum_speed = -0.02
 		reliability = -0.05
+		build_cost_ic = 0.05
 	}
 	tank_engine_upgrade = {
 		max_level = 5
 		cost = land
 		maximum_speed = 0.04
+		build_cost_ic = 0.05
 	}	
 	ac_engine_upgrade = {
 		max_level = 5
@@ -119,11 +125,12 @@ upgrades = {
 		max_level = 5
 		cost = land
 		reliability = 0.1
+		build_cost_ic = 0.05
 	}
 	mech_cost_upgrade = {
 		max_level = 5
 		cost = land
-		build_cost_ic = -0.05
+		build_cost_ic = -0.1
 		reliability = -0.05
 	}
 	tank_aa_upgrade = {
