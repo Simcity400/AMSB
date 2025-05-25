@@ -4,7 +4,6 @@ equipments = {
 	### require that the module slots for their equipment archetype are defined in operational order for AI + historical templates.
 	### tldr; If your gun requires a specific turret: define the turret slot first.
 	
-	#SPT change 0,1 chassis have two slots locked. Chassis 2 has one slot locked. Chassis 3 has no slots locked
 	light_tank_chassis = {
 		year = 1922
 		is_archetype = yes
@@ -76,9 +75,7 @@ equipments = {
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
-					tank_special_module
 					tank_radio_module
-					tank_secondary_turret
 				}
 			}
 
@@ -86,37 +83,41 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					tank_special_module
-					tank_radio_module
+					tank_secondary_turret
+				}
+			}
+
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
+
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
+
+			special_type_slot_5 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
 					tank_secondary_turret
 				}
 			}
 			
-			# special_type_slot_3 = {
-			# 	required = no
-			# 	allowed_module_categories = {
-			# 		tank_special_module
-			# 		tank_radio_module
-			# 		tank_secondary_turret
-			# 	}
-			# }
-
-			# special_type_slot_4 = {
-			# 	required = no
-			# 	allowed_module_categories = {
-			# 		tank_special_module
-			# 		tank_radio_module
-			# 		tank_secondary_turret
-			# 	}
-			# }
-
-			#SPT change, removed special_type_slot_3 and special_type_slot_4 from base chassis
-		}
-		module_count_limit = { #SPTChange added limit for ammo
-			module = extra_ammo_storage
-			count < 2
 		}
 		module_count_limit = {
 			module = sloped_armor
+			count < 2
+		}	
+		module_count_limit = {
+			module = smoke_launchers
 			count < 2
 		}	
 		module_count_limit = {
@@ -195,21 +196,12 @@ equipments = {
 		year = 1922
 		archetype = light_tank_chassis
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-		}
+		module_slots = inherit
 
 		upgrades = {
 			tank_nsb_engine_upgrade
 			tank_nsb_armor_upgrade
 		}
-		build_cost_ic = 0.7 #SPTchange 1 -> 0.7
 	}
 
 	light_tank_chassis_1 = {
@@ -220,17 +212,9 @@ equipments = {
 		archetype = light_tank_chassis
 		parent = light_tank_chassis_0
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit 
-		} 
-		maximum_speed = 4 #SPT change 5 -> 4
-		build_cost_ic = 0.95 #SPTchange 1.25 -> 0.95
+		module_slots = inherit
+		maximum_speed = 5
+		build_cost_ic = 1.25
 		reliability = 0.95
 		armor_value = 15
 	}
@@ -243,27 +227,14 @@ equipments = {
 		archetype = light_tank_chassis
 		parent = light_tank_chassis_1
 		priority = 2000
-		module_slots = { #SPT change, added slot on top of other inherited slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_secondary_turret
-					tank_radio_module
-				}
-			}
-		}
-		build_cost_ic = 1.3 #SPT change 1.6 -> 1.3
-		maximum_speed = 4.5 #SPT change 6 -> 4.5 
+		module_slots = inherit
+		build_cost_ic = 1.6
+		maximum_speed = 6
 		reliability = 1.1
 		armor_value = 20
+		soft_attack = 2
+		hard_attack = 1
+		breakthrough = 5
 		resources = {
 			steel = 1
 		}
@@ -277,35 +248,14 @@ equipments = {
 		archetype = light_tank_chassis
 		parent = light_tank_chassis_2
 		priority = 2000
-		module_slots = {  #SPT change, added 2 slots on top of other inherited slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_secondary_turret
-					tank_radio_module
-				}
-			}
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_secondary_turret
-					tank_radio_module
-				}
-			}
-		}
-		build_cost_ic = 1.7 #SPT change 2 -> 1.7
-		maximum_speed = 5 #SPT change 7 -> 5
+		module_slots = inherit
+		build_cost_ic = 2
+		maximum_speed = 7
 		reliability = 1.3
 		armor_value = 25
+		soft_attack = 3.2
+		hard_attack = 2
+		breakthrough = 5
 		resources = {
 			steel = 2
 		}
@@ -343,7 +293,7 @@ equipments = {
 			turret_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					# tank_light_turret_type # SPTChange mediums use medium turret
+					tank_light_turret_type
 					tank_medium_turret_type
 				}
 			}
@@ -353,7 +303,6 @@ equipments = {
 				allowed_module_categories = {
 					tank_small_main_armament
 					tank_flamethrower
-					tank_medium_main_armament #SPTChange added medium armanment - to mediums? guh?
 				}
 			}
 
@@ -382,8 +331,6 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					tank_radio_module
-					tank_special_module
-					tank_secondary_turret
 				}
 			}
 
@@ -392,34 +339,33 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_secondary_turret
-					tank_radio_module
 				}
 			}
 
-			# special_type_slot_3 = {
-			# 	required = no
-			# 	allowed_module_categories = {
-			# 		tank_special_module
-			# 		tank_secondary_turret
-			# 		tank_radio_module
-			# 	}
-			# }
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
 
-			# special_type_slot_4 = {
-			# 	required = no
-			# 	allowed_module_categories = {
-			# 		tank_special_module
-			# 		tank_secondary_turret
-			# 		tank_radio_module
-			# 	}
-			# }
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
 
-			#SPT change, removed special_type_slot_4 and special_type_slot_3
+			special_type_slot_5 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
 			
-		}
-		module_count_limit = { #SPTChange added limit for ammo
-			module = extra_ammo_storage
-			count < 2
 		}
 		module_count_limit = {
 			module = sloped_armor
@@ -427,6 +373,10 @@ equipments = {
 		}	
 		module_count_limit = {
 			category = tank_radio_module
+			count < 2
+		}
+		module_count_limit = {
+			module = smoke_launchers
 			count < 2
 		}
 		module_count_limit = {
@@ -480,7 +430,7 @@ equipments = {
 		fuel_consumption = 0
 		maximum_speed = 4
 		build_cost_ic = 2
-		reliability = 1 #SPT change 0.5 -> 1
+		reliability = 0.5
 		armor_value = 20
 		hardness = 0.85
 		resources = {
@@ -499,22 +449,14 @@ equipments = {
 		year = 1922
 		archetype = medium_tank_chassis
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-		}
+		module_slots = inherit
 		upgrades = {
 			tank_nsb_engine_upgrade
 			tank_nsb_armor_upgrade
 		}
 		maximum_speed = 4
-		build_cost_ic = 1.5 #SPT change 2.5 -> 1.5
-		reliability = 0.7 #SPT change 0.75 -> 0.7
+		build_cost_ic = 2.5
+		reliability = 0.75
 		armor_value = 20
 		resources = {
 			steel = 1
@@ -529,19 +471,14 @@ equipments = {
 		archetype = medium_tank_chassis
 		parent = medium_tank_chassis_0
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-		}
+		module_slots = inherit
 		armor_value = 30
 		build_cost_ic = 2.5
-		reliability = 0.8 #SPT change to set new reliability from default
-		maximum_speed = 5 #SPT change to set new max speed from default
+		reliability = 0.8
+		maximum_speed = 5
+		soft_attack = 2
+		hard_attack = 1.4
+		breakthrough = 2
 	}
 	medium_tank_chassis_2 = {
 		abbreviation = "mt2"
@@ -551,27 +488,14 @@ equipments = {
 		parent = medium_tank_chassis_1
 		archetype = medium_tank_chassis
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots + 1 extra special slot
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_secondary_turret
-					tank_radio_module
-				}
-			}
-		}
-		maximum_speed = 4 #SPT change 6 -> 4
+		module_slots = inherit
+		maximum_speed = 6
 		build_cost_ic = 3.2
-		reliability = 1.2 #SPT change 1 -> 1.2
+		reliability = 1
 		armor_value = 40
+		soft_attack = 3.5
+		hard_attack = 2.8
+		breakthrough = 5
 		resources = {
 			steel = 1
 		}
@@ -584,35 +508,14 @@ equipments = {
 		parent = medium_tank_chassis_2
 		archetype = medium_tank_chassis
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots + 2 extra special slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_secondary_turret
-					tank_radio_module
-				}
-			}
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_secondary_turret
-					tank_radio_module
-				}
-			}
-		}
-		maximum_speed = 4.5 #SPT change 6 -> 4.5
+		module_slots = inherit
+		maximum_speed = 6
 		build_cost_ic = 4
-		reliability = 1.4 #SPT change 1.2 -> 1.4
+		reliability = 1.2
 		armor_value = 50
+		soft_attack = 4.2
+		hard_attack = 3.5
+		breakthrough = 5
 		resources = {
 			steel = 2
 		}
@@ -648,9 +551,8 @@ equipments = {
 			turret_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					#SPT change, removed light and medium turrets
-					#tank_light_turret_type
-					#tank_medium_turret_type
+					tank_light_turret_type
+					tank_medium_turret_type
 					tank_heavy_turret_type
 				}
 			}
@@ -660,9 +562,6 @@ equipments = {
 				allowed_module_categories = {
 					tank_small_main_armament
 					tank_flamethrower
-					#SPT Change, added medium and heavy armament
-					tank_medium_main_armament 
-					tank_heavy_main_armament
 				}
 			}
 
@@ -690,9 +589,7 @@ equipments = {
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
-					tank_special_module
 					tank_radio_module
-					tank_secondary_turret
 				}
 			}
 
@@ -701,39 +598,45 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_secondary_turret
-					tank_radio_module
 				}
 			}
 
-			# special_type_slot_3 = {
-			# 	required = no
-			# 	allowed_module_categories = {
-			# 		tank_special_module
-			# 		tank_secondary_turret
-			# 		tank_radio_module
-			# 	}
-			# }
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
 
-			# special_type_slot_4 = {
-			# 	required = no
-			# 	allowed_module_categories = {
-			# 		tank_special_module
-			# 		tank_secondary_turret
-			# 		tank_radio_module
-			# 	}
-			# }
-
-			#SPT change removed special_type_slot 3 and special_type_slot_4
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
+			special_type_slot_5 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
 
 		}
-		module_count_limit = { #SPTChange added limit for ammo
-			module = extra_ammo_storage
-			count < 2
+		module_count_limit = {
+			category = tank_secondary_turret
+			count < 4 #three secondary turrets only
 		}
 		module_count_limit = {
 			module = sloped_armor
 			count < 2
 		}	
+		module_count_limit = {
+			module = smoke_launchers
+			count < 2
+		}
 		module_count_limit = {
 			category = tank_radio_module
 			count < 2
@@ -784,9 +687,9 @@ equipments = {
 		}
 
 		fuel_consumption = 0
-		maximum_speed = 3.5 #SPT change 3 -> 3.5
+		maximum_speed = 3
 		build_cost_ic = 10
-		reliability = 1 #SPT change 0.75 -> 1
+		reliability = 0.75
 		armor_value = 30
 		hardness = 0.95
 		resources = {
@@ -806,22 +709,14 @@ equipments = {
 		year = 1922
 		archetype = heavy_tank_chassis
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-		}
+		module_slots = inherit
 		upgrades = {
 			tank_nsb_engine_upgrade
 			tank_nsb_armor_upgrade
 		}
-		maximum_speed = 4 #SPT change 3 -> 4
-		build_cost_ic = 6.5 #SPT change 10 -> 6.5
-		reliability = 0.95 #SPT change 0.75 - 0.95
+		maximum_speed = 3
+		build_cost_ic = 10
+		reliability = 0.75
 		armor_value = 35
 	}
 
@@ -829,23 +724,17 @@ equipments = {
 		abbreviation = "hv1"
 		derived_variant_name = heavy_tank_equipment_1
 		visual_level = 0
-		year = 1936 #SPT change 1934 -> 1936
+		year = 1934
 		archetype = heavy_tank_chassis
 		parent = heavy_tank_chassis_0
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-		}
+		module_slots = inherit
 		armor_value = 55
-		build_cost_ic = 8.5 #SPT change, added ic cost
-		maximum_speed = 5 #SPT change to 5 -> 4
-		#reliability = 0.8 #SPT change, removed reliability modifier
+		maximum_speed = 5
+		reliability = 0.8
+		soft_attack = 2
+		hard_attack = 2
+		breakthrough = 2
 	}
 
 	heavy_tank_chassis_2 = {
@@ -856,27 +745,14 @@ equipments = {
 		archetype = heavy_tank_chassis
 		parent = heavy_tank_chassis_1
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots + 1 special slot
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_radio_module
-					tank_secondary_turret
-				}
-			}
-		}
-		build_cost_ic = 9.5 #SPT change 10 -> 9.5
-		maximum_speed = 4 #SPT change 5 -> 4
-		reliability = 1.15 #SPT change 1.1 -> 1.15
+		module_slots = inherit
+		build_cost_ic = 10
+		maximum_speed = 5
+		reliability = 1.1
 		armor_value = 60
+		soft_attack = 4
+		hard_attack = 4
+		breakthrough = 5
 		resources = {
 			steel = 1
 			chromium = 1
@@ -891,35 +767,14 @@ equipments = {
 		archetype = heavy_tank_chassis
 		parent = heavy_tank_chassis_2
 		priority = 2000
-		module_slots = { #SPT change to inherit certain slots, + 2 special slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-			special_type_slot_3 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_radio_module
-					tank_secondary_turret
-				}
-			}
-			special_type_slot_4 = {
-				required = no
-				allowed_module_categories = {
-					tank_special_module
-					tank_radio_module
-					tank_secondary_turret
-				}
-			}
-		}
-		build_cost_ic = 11 #SPT change 12 -> 11
-		maximum_speed = 4 #SPT change 5 -> 4
-		reliability = 1.25 #SPT change 1.2 -> 1.25
+		module_slots = inherit
+		build_cost_ic = 12
+		maximum_speed = 5
+		reliability = 1.2
 		armor_value = 75
+		soft_attack = 5.6
+		hard_attack = 5.6
+		breakthrough = 5
 		resources = {
 			steel = 2
 			chromium = 1
@@ -994,9 +849,7 @@ equipments = {
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
-					tank_special_module
 					tank_radio_module
-					tank_secondary_turret #SPT change, allowed secondary turrets
 				}
 			}
 
@@ -1005,7 +858,7 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_radio_module
-					tank_secondary_turret #SPT change, allowed secondary turrets
+					tank_secondary_turret
 				}
 			}
 
@@ -1014,7 +867,7 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_radio_module
-					tank_secondary_turret #SPT change, allowed secondary turrets
+					tank_secondary_turret
 				}
 			}
 
@@ -1023,19 +876,25 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_radio_module
-					tank_secondary_turret #SPT change, allowed secondary turrets
+					tank_secondary_turret
+				}
+			}
+			special_type_slot_5 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
 				}
 			}
 
-		}
-		module_count_limit = { #SPTChange added limit for ammo
-			module = extra_ammo_storage
-			count < 2
 		}
 		module_count_limit = {
 			module = sloped_armor
 			count < 2
 		}	
+		module_count_limit = {
+			module = smoke_launchers
+			count < 2
+		}
 		module_count_limit = {
 			category = tank_radio_module
 			count < 2
@@ -1088,11 +947,15 @@ equipments = {
 		}
 
 		fuel_consumption = 0
-		maximum_speed = 4.5 #SPT change 7 -> 4.5
+		maximum_speed = 7
 		build_cost_ic = 6
-		reliability = 1.6 #SPT change 1.2 -> 1.6
+		reliability = 1.2
 		armor_value = 65
 		hardness = 0.95
+		soft_attack = 10
+		hard_attack = 10
+		breakthrough = 20
+		
 		resources = {
 			steel = 2
 			chromium = 1
@@ -1148,11 +1011,6 @@ equipments = {
 			turret_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					#SPT change to allow light, medium, and heavy turrets
-					#SPT change, reverted block on turrets lower than super heavy
-					# tank_light_turret_type
-					# tank_medium_turret_type
-					# tank_heavy_turret_type
 					tank_super_heavy_turret_type
 				}
 			}
@@ -1185,12 +1043,10 @@ equipments = {
 				}
 			}
 
-			special_type_slot_1 = {
+				special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
-					tank_special_module
 					tank_radio_module
-					tank_secondary_turret
 				}
 			}
 
@@ -1220,16 +1076,22 @@ equipments = {
 					tank_radio_module
 				}
 			}
+			special_type_slot_5 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+				}
+			}
 
-		}
-		module_count_limit = { #SPTChange added limit for ammo
-			module = extra_ammo_storage
-			count < 2
 		}
 		module_count_limit = {
 			module = sloped_armor
 			count < 2
 		}	
+		module_count_limit = {
+			module = smoke_launchers
+			count < 2
+		}
 		module_count_limit = {
 			category = tank_radio_module
 			count < 2
@@ -1279,11 +1141,11 @@ equipments = {
 		}
 
 		fuel_consumption = 0
-		maximum_speed = 2.5 #SPT change 4 -> 2.5
-		build_cost_ic = 24 #SPT change 28 -> 24
-		reliability = 1.3 #SPT change 1 -> 1.3
+		maximum_speed = 4
+		build_cost_ic = 28
+		reliability = 1
 		armor_value = 90
-		hardness = 0 #Hardness doesn't apply to support comapanies, this must be changed if they every become a line battalion. #Was 1
+		hardness = 0 #Hardness doesn't apply to support comapnies, this must be changed if they every become a line battalion. #Was 1
 		
 		resources = {
 			steel = 3
@@ -1340,8 +1202,7 @@ equipments = {
 			turret_type_slot = {
 				required = yes
 				allowed_module_categories = {
-					#tank_light_turret_type #SPT change, blocked light turrets from being used
-					tank_medium_turret_type #SPT change to allow medium turrets
+					tank_light_turret_type
 				}
 			}
 			
@@ -1376,9 +1237,7 @@ equipments = {
 			special_type_slot_1 = {
 				required = no
 				allowed_module_categories = {
-					tank_special_module
 					tank_radio_module
-					tank_secondary_turret #SPT change, added secondary turrets to amph tanks
 				}
 			}
 
@@ -1387,7 +1246,7 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_radio_module
-					tank_secondary_turret #SPT change, added secondary turrets to amph tanks
+					tank_secondary_turret
 				}
 			}
 
@@ -1396,32 +1255,35 @@ equipments = {
 				allowed_module_categories = {
 					tank_special_module
 					tank_radio_module
-					tank_secondary_turret #SPT change, added secondary turrets to amph tanks
+					tank_secondary_turret
 				}
 			}
 
-			# special_type_slot_4 = {
-			# 	required = no
-			# 	allowed_module_categories = {
-			# 		tank_special_module
-			# 		tank_radio_module
-			# 	}
-			# }
-			#SPT change, removed special_type_slot_4
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+					tank_radio_module
+				}
+			}
+			special_type_slot_5 = {
+				required = no
+				allowed_module_categories = {
+					tank_special_module
+					tank_secondary_turret
+				}
+			}
 
-		}
-		module_count_limit = { #SPTChange added limit for ammo
-			module = extra_ammo_storage
-			count < 2
-		}
-		module_count_limit = { #SPT change to limit secondary turrets
-			category = tank_secondary_turret
-			count < 3 #two secondary turrets only
 		}
 		module_count_limit = {
 			module = sloped_armor
 			count < 2
 		}	
+		module_count_limit = {
+			module = smoke_launchers
+			count < 2
+		}
 		module_count_limit = {
 			category = tank_radio_module
 			count < 2
@@ -1474,8 +1336,8 @@ equipments = {
 		}
 
 		fuel_consumption = 0
-		maximum_speed = 4 #SPT change 5 -> 4
-		build_cost_ic = 6 #SPT change 4.5 -> 6
+		maximum_speed = 5
+		build_cost_ic = 4.5
 		reliability = 1.1
 		armor_value = 15
 		hardness = 0.85
@@ -1500,16 +1362,7 @@ equipments = {
 			tank_nsb_engine_upgrade
 			tank_nsb_armor_upgrade
 		}
-		module_slots = { #SPT change to inherit certain slots
-			turret_type_slot = inherit
-			main_armament_slot = inherit
-			suspension_type_slot = inherit
-			armor_type_slot = inherit
-			engine_type_slot = inherit
-			special_type_slot_1 = inherit
-			special_type_slot_2 = inherit
-			special_type_slot_3 = inherit
-		}
+		module_slots = inherit
 	}
 
 
@@ -1590,7 +1443,7 @@ equipments = {
 					lc_structural_features
 				}
 			}
-
+				
 			lc_additional_armament_slot_1 = {
 				required = no
 				allowed_module_categories = {
@@ -1624,7 +1477,7 @@ equipments = {
 			module = lc_assault_gun
 			count < 2
 		}
-
+		
 		module_count_limit = {
 			module = lc_high_velocity_cannon_turret
 			count < 3
@@ -1651,10 +1504,10 @@ equipments = {
 		}
 
 		module_count_limit = {
-			module = lc_aerial_deployment
+			category = lc_aerial_deployment
 			count < 2
 		}
-
+		
 		module_count_limit = {
 			module = lc_armored_skirts
 			count < 2
@@ -1678,7 +1531,7 @@ equipments = {
 		module_count_limit = {
 			module = lc_stabilizers
 			count < 2
-		}
+		}	
 
 		default_modules = {
 			lc_main_armament_slot = lc_heavy_naval_guns
@@ -1687,12 +1540,12 @@ equipments = {
 
 		fuel_consumption = 12
 		maximum_speed = 5 #shouldn't be slower than infantry, or we ran into problems
-		build_cost_ic = 500 #SPTchange 250->500
+		build_cost_ic = 250
 		reliability = 1
 		armor_value = 150
 		defense = 12
 		hardness = 0 #Hardness doesn't apply to support comapnies, this must be changed if they every become a line battalion. #Was 10
-
+		
 		resources = {
 			steel = 8
 			chromium = 4
