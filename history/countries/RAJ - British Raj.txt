@@ -46,6 +46,9 @@ set_technology = {
 	fuel_refining = 1
 	basic_train = 1
 	gw_artillery = 1
+	tech_mountaineers = 1
+	marines  = 1
+	paratroopers = 1 
 }
 
 recruit_character = RAJ_lord_linlithgow
@@ -486,6 +489,13 @@ if = {
 	}
 	
 }
+if = {
+	limit = { is_historical_focus_on = no }
+	random_owned_state = {
+		set_variable = { global.famine_state = THIS }	
+		
+	}
+}
 
 if = {
 	limit = {
@@ -503,22 +513,6 @@ if = {
 		NOT = { has_dlc = "Graveyard of Empires" }
 	}
 	every_owned_state = {
-		limit = {
-			NOT = {
-				state = 992
-				state = 441
-				state = 787
-				state = 442
-				state = 987
-				state = 440
-				state = 445
-				state = 444
-				state = 1012
-				state = 432
-				state = 434
-				state = 990
-			}
-		}
 		add_core_of = RAJ
 	}
 }
@@ -548,17 +542,6 @@ set_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_redu
 set_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction_display = RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction }
 multiply_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction_display = 100 }
 set_variable = { RAJ_railway_focuses = 0 }
-
-set_variable = { RAJ_railway_default_increase = 0.03 }
-set_variable = { RAJ_railway_default_increase_tt = RAJ_railway_default_increase }
-multiply_variable = { RAJ_railway_default_increase_tt = 100 }
-
-set_variable = { RAJ_railway_default_decrease = -0.02 }
-set_variable = { RAJ_railway_default_decrease_tt = RAJ_railway_default_decrease }
-multiply_variable = { RAJ_railway_default_decrease_tt = 100 }
-
-set_variable = { RAJ_communism_drift_independence_movement = 0 }
-set_variable = { RAJ_royal_indian_navy_mutiny_threshold = 0.75 }
 #multiply_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction_display = -1 }
 
 
