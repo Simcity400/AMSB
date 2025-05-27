@@ -4583,56 +4583,6 @@ country_event = {
 		}
 		complete_national_focus = SPA_the_phalanx_ascendant
 	}
-	option = { # Option for Nationalists - Carlism
-		name = lar_spain.2.c
-		trigger = { 
-			has_completed_focus = SPA_a_great_spain
-			is_ai = yes
-		}
-	
-		ai_chance = {
-			base = 30
-			modifier = {
-				factor = 0
-				OR = {
-					has_country_flag = SPR_AI_RANDOM_FALANGIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = FALANGIST
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					AND = {
-						is_historical_focus_on = yes
-						has_game_rule = {
-							rule = SPR_ai_behavior 
-							option = DEFAULT
-						}
-					}
-					has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = NATIONALIST_HISTORICAL
-					}
-				}
-			}
-		}
-		# Remove Spirits that will no longer be relevant
-		custom_effect_tooltip = nationalists_chosen
-		remove_ideas = SPR_military_disloyalty
-		remove_ideas = SPR_political_violence
-		SPR_clr_national_strikes = yes
-		effect_tooltip = {
-			add_timed_idea = { idea = SPA_death_before_surrender days = 900 }
-			SPD = { add_timed_idea = { idea = SPR_death_before_surrender days = 900 } }
-			set_party_name = { ideology = neutrality long_name = SPR_neutrality_military_junta_party_long name = SPR_neutrality_military_junta_party }
-			kill_ideology_leader = fascism
-		}
-		complete_national_focus = SPA_supremacy_of_the_communion
-	}
 	option = { # Option for Republicans - Democratic
 		name = lar_spain.2.d
 		trigger = { has_completed_focus = SPR_the_popular_front }

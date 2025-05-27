@@ -60,10 +60,6 @@ technologies = {
 		}
 
 		on_research_complete = {
-			custom_effect_tooltip = {
-				localization_key = SP_UNLOCK_PROJECT
-				PROJECT = sp_air_radar	
-			}
 		}
 
 		special_project_specialization = { specialization_air specialization_nuclear }
@@ -218,7 +214,6 @@ technologies = {
 	radio_detection = {
 		allow = {
 	 		ROOT = {
-				is_special_project_completed = sp:sp_air_radar
 			}
 		}
 
@@ -258,11 +253,10 @@ technologies = {
 		# can build radars/radar boost in air/sea combat depends on radar level
 		allow = {
 	 		ROOT = {
-				is_special_project_completed = sp:sp_air_radar
 			}
 		}
 
-		is_special_project_tech = yes
+		is_special_project_tech = no
 		
 		coordination_bonus = 0.01
 		research_cost = 1.25
@@ -360,7 +354,6 @@ technologies = {
 
 		allow = {
 	 		ROOT = {
-				is_special_project_completed = sp:sp_air_radar
 			}
 		}
 		# radar boost in air/sea combat depends on radar level
@@ -368,7 +361,7 @@ technologies = {
 			building = radar_station
 			level = 4
 		}
-		is_special_project_tech = yes
+		is_special_project_tech = no
 		special_project_specialization = { specialization_air specialization_nuclear }
 		coordination_bonus = 0.02
 		static_anti_air_hit_chance_factor = 0.05
@@ -414,11 +407,10 @@ technologies = {
 	}
 	
 	phased_array = {
-		is_special_project_tech = yes
+		is_special_project_tech = no
 		# radar boost in air/sea combat depends on radar level
 		allow = {
 			ROOT = {
-				is_special_project_completed = sp:sp_air_radar
 			}
 		}
 		enable_building = {
@@ -471,11 +463,10 @@ technologies = {
 	}
 	
 	monopulse_radar = {
-		is_special_project_tech = yes
+		is_special_project_tech = no
 		# radar boost in air/sea combat depends on radar level
 		allow = {
 			ROOT = {
-				is_special_project_completed = sp:sp_air_radar
 			}
 		}
 		enable_building = {
@@ -612,7 +603,6 @@ technologies = {
 		# small boost to research speed
 		research_speed_factor = 0.08
 		enable_equipment_modules = {
-			stabilizer
 			bomb_sights_2
 		}
 		path = {

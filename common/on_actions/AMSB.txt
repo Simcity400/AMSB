@@ -1,0 +1,222 @@
+on_actions = {
+	on_monthly_JAP = {
+		effect = { 
+#Auto war for Barb and Pacific
+if = {
+				limit = {date > 1941.12.30
+				NOT = { GER = {has_war_with = SOV}}
+			}
+				GER = {
+					declare_war_on = {
+					target = SOV
+					type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1941.12.30
+					NOT = { JAP = {has_war_with = USA}}
+				}
+				JAP = {
+					declare_war_on = {
+					target = USA
+					type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					JAP = {is_ai = yes}
+					date > 1937.12.31
+					tag = JAP
+				}
+				add_ideas = china_war_ai_skill_issue
+			}
+		}
+	}
+
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					NOT = {tag = USA}
+					NOT = {tag = ENG}
+					NOT = {tag = SOV}
+					NOT = {tag = GER}
+					NOT = {tag = ITA}
+					NOT = {tag = JAP}
+				}
+				add_ideas = no_planes
+			}
+			every_country = {
+				add_equipment_to_stockpile = {
+					type = convoy
+					amount = 100
+				}
+				division_template = {
+					name = "Quick Convert Division"
+					division_names_group = AFG_ARM_01
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 0
+							y = 3
+						}
+						infantry = {
+							x = 0
+							y = 4
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 2
+						}
+						infantry = {
+							x = 1
+							y = 3
+						}
+						infantry = {
+							x = 1
+							y = 4
+						}
+						infantry = {
+							x = 2
+							y = 0
+						}
+						infantry = {
+							x = 2
+							y = 1
+						}
+						infantry = {
+							x = 2
+							y = 2
+						}
+						infantry = {
+							x = 2
+							y = 3
+						}
+						infantry = {
+							x = 2
+							y = 4
+						}
+						infantry = {
+							x = 3
+							y = 0
+						}
+						infantry = {
+							x = 3
+							y = 1
+						}
+						infantry = {
+							x = 3
+							y = 2
+						}
+						infantry = {
+							x = 3
+							y = 3
+						}
+						infantry = {
+							x = 3
+							y = 4
+						}
+						infantry = {
+							x = 4
+							y = 0
+						}
+						infantry = {
+							x = 4
+							y = 1
+						}
+						infantry = {
+							x = 4
+							y = 2
+						}
+						infantry = {
+							x = 4
+							y = 3
+						}
+						infantry = {
+							x = 4
+							y = 4
+						}
+					}
+					priority = 2
+				}
+			}
+					
+			ENG = {
+				add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 10000
+						
+				add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 1500
+							}
+						}
+					}
+
+			514 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			459 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			32 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			28 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			19 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			26 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			21 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			27 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			14 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			461 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			24 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			33 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			18 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			460 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			16 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			25 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			30 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			462 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			31 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			29 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			15 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			785 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			23 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			806 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			20 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			735 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			458 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			851 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			513 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			665 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			22 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			17 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			286 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			741 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			670 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			671 = {add_dynamic_modifier = {modifier = no_building_in_french_mainland}}
+			78 = {add_dynamic_modifier = {modifier = no_building_in_soviet_territory}}
+			766 = {add_dynamic_modifier = {modifier = no_building_in_soviet_territory}}
+			80 = {add_dynamic_modifier = {modifier = no_building_in_soviet_territory}}
+			}
+			
+		}
+	}
+
+
