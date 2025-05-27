@@ -74,19 +74,214 @@
 	}
 
 	focus = {
-	id = FRA_develop_synthetic_ressources
-	icon = GFX_goal_generic_oil_refinery
+	id = FRA_develop_the_countryside
+	icon = GFX_focus_ARG_capitalize_the_beef_industry
 	x = -1
 	y = 1
 	offset = {
 		x = 0
 		y = 0
 	}
-	prerequisite = { 
-		focus = FRA_devalue_the_franc
-	}
+	prerequisite = { focus = FRA_devalue_the_franc }
 	mutually_exclusive = { }
 	relative_position_id = FRA_devalue_the_franc
+	cost = 5
+
+	ai_will_do = {
+		factor = 40
+	}
+
+	available = {
+		
+	}
+	
+	bypass = {
+		NOT = {
+			any_core_state = {
+				is_on_continent = europe
+				is_owned_by = ROOT
+				infrastructure < 4
+			}
+		}
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		every_core_state = {
+			limit = {
+				is_on_continent = europe
+				is_owned_by = ROOT
+				infrastructure < 4
+			}
+			random_select_amount = 4
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+	id = FRA_expand_the_salau_mine
+	icon = GFX_focus_generic_tungsten
+	x = 0
+	y = 1
+	offset = {
+		x = 0
+		y = 0
+	}
+	prerequisite = { focus = FRA_develop_the_countryside }
+	mutually_exclusive = { }
+	relative_position_id = FRA_develop_the_countryside
+	cost = 5
+
+	ai_will_do = {
+		factor = 40
+	}
+
+	available = {
+		owns_state = 31
+	}
+	
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		31 = {
+			add_resource = {
+				type = tungsten
+				amount = 14
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+	}		
+	focus = {
+	id = FRA_develop_the_potash_mines
+	icon = GFX_focus_generic_mining_industry
+	x = -1
+	y = 2
+	offset = {
+		x = 0
+		y = 0
+	}
+	prerequisite = { focus = FRA_develop_the_countryside }
+	mutually_exclusive = { }
+	relative_position_id = FRA_develop_the_countryside
+	cost = 5
+
+	ai_will_do = {
+		factor = 40
+	}
+
+	available = {
+		owns_state = 28
+	}
+	
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		28 = {
+			add_resource = {
+				type = steel
+				amount = 12
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+	id = FRA_the_baux_de_provence_mine
+	icon = GFX_focus_generic_aluminum
+	x = 1
+	y = 2
+	offset = {
+		x = 0
+		y = 0
+	}
+	prerequisite = { focus = FRA_develop_the_countryside }
+	mutually_exclusive = { }
+	relative_position_id = FRA_develop_the_countryside
+	cost = 5
+
+	ai_will_do = {
+		factor = 40
+	}
+
+	available = {
+		owns_state = 21
+	}
+	
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY }
+	completion_reward = {
+		21 = {
+			add_resource = {
+				type = aluminium
+				amount = 12
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+			}
+		}
+	}	
+	focus = {
+	id = FRA_develop_synthetic_ressources
+	icon = GFX_goal_generic_oil_refinery
+	x = 1
+	y = 1
+	offset = {
+		x = 0
+		y = 0
+	}
+	prerequisite = { 
+		focus = FRA_develop_the_potash_mines
+		focus = FRA_expand_the_salau_mine
+		focus = FRA_the_baux_de_provence_mine
+	}
+	mutually_exclusive = { }
+	relative_position_id = FRA_develop_the_potash_mines
 	cost = 5
 
 	ai_will_do = {
@@ -190,11 +385,63 @@
 				}
 		}
 	}
+
+	focus = {
+	id = FRA_hydroelectricity
+	icon = GFX_focus_generic_hydroelectric_energy
+	offset = {
+		x = 0
+		y = 0
+	}
+	
+	prerequisite = { focus = FRA_conseil_national_economique }
+	
+	x = -4
+	y = 1
+	relative_position_id = FRA_conseil_national_economique
+	mutually_exclusive = { }
+	cost = 5
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+	completion_reward = {
+		random_owned_state = {
+			limit = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 2
+			set_state_flag = FRA_hydro_heavy_water
+			851 = {
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 3961
+					}
+				}
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+			}
+		}  
+	}
 	
 	focus = {
 		id = FRA_devalue_the_franc
 		icon = GFX_focus_fra_devalue_the_franc
-		x = -7
+		x = -8
 		y = 1
 		offset = {
 			x = 0
@@ -230,7 +477,7 @@
 	focus = {
 			id = FRA_invest_in_the_metropole
 			icon = GFX_focus_SWE_urbanization
-			x = -5
+			x = -6
 			y = 1
 			offset = {
 				x = 0
@@ -505,7 +752,7 @@
 				}
 			}
 		}
-		x = -4
+		x = -5
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -579,7 +826,7 @@
 	focus = {
 		id = FRA_invest_in_west_africa
 		icon = GFX_focus_generic_industry_1
-		x = -2
+		x = -3
 		y = 1
 		offset = {
 			x = 0
@@ -682,7 +929,7 @@
 	focus = {
 		id = FRA_invest_in_indochina
 		icon = GFX_focus_generic_industry_1
-		x = 00
+		x = -1
 		y = 1
 		offset = {
 			x = 0
@@ -748,7 +995,7 @@
 	focus = {
 		id = FRA_invest_in_syria
 		icon = GFX_focus_generic_industry_1
-		x = 2
+		x = 1
 		y = 1
 		offset = {
 			x = 0
@@ -934,7 +1181,7 @@
 		}
 
 		available = {
-			has_war_support > 0.12
+			has_war_support > 0.17
 		}
 		cancel_if_invalid = no
 		continue_if_invalid = yes
@@ -1064,9 +1311,9 @@
 			}
 			add_doctrine_cost_reduction = {
 				name = FRA_methodical_battle
-				category = land_doctrine
-				uses = 2
-				cost_reduction = 1
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_grand_battle_plan
 			}
 		}
 	}
@@ -1165,6 +1412,11 @@
 		available_if_capitulated = yes
 
 	completion_reward = {
+			custom_effect_tooltip = FRA_mobilize_railway_guns_tt
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
 				#Required techs for railway guns
 				if = {
 					limit = {
@@ -1178,10 +1430,11 @@
 					}
 					set_technology = { railway_gun = 1 }
 				}
+
 				FRA_mobilize_railway_guns = yes
 			}
 		}
-		
+	}
 	focus = {
 		id = FRA_heavy_armor_focus
 		icon = GFX_goal_generic_army_tanks
@@ -1947,7 +2200,7 @@
 	focus = {
 		id = FRA_reform_the_labour_laws
 		icon = GFX_goal_generic_production
-		x = 1
+		x = 0
 		y = 1
 		
 		prerequisite = {
@@ -3048,17 +3301,7 @@ q
 				limit = {
 					has_dlc = "Man the Guns"
 				}
-
-				if = {
-					limit = {
-						NOT = { has_tech = basic_ship_hull_carrier }
-					}
-					set_technology = { basic_ship_hull_carrier = 1}
-				
-				}
-
 				custom_effect_tooltip = FRA_prioritize_the_joffre_tt
-
 				hidden_effect = {
 					create_equipment_variant = {
 						name = "Joffre Class"
@@ -3680,10 +3923,47 @@ focus = {
 	
 		search_filters = { FOCUS_FILTER_POLITICAL  }
 		completion_reward = {
-			add_timed_idea = {
-            idea = FRA_post_cap_boost
-            days = 60
-        }
+			
+			EFR = {
+				every_army_leader = {
+					set_nationality = FRA
+					limit = {
+						NOT = {
+							has_trait = old_guard
+						}
+					}
+				}
+			}
+			hidden_effect = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4
+			}
+				add_timed_idea = { idea = FRA_eco_post_cap_idea days = 60 }
+				add_ideas = SPA_death_before_surrender
+				add_state_core = 730
+				EFR = {
+					give_resource_rights = {
+						receiver = GER
+						state = 22
+					}
+					give_resource_rights = {
+						receiver = GER
+						state = 20
+					}
+					give_resource_rights = {
+						receiver = GER
+						state = 32
+					}
+					give_resource_rights = {
+						receiver = GER
+						state = 21
+					}
+					give_resource_rights = {
+						receiver = ITA
+						state = 459
+					}
+				}
 			# FRA SPAWN INS
 
 				division_template = {
@@ -3759,48 +4039,16 @@ focus = {
 					}
 			
 				}
-			EFR = {
-				every_army_leader = {
-					set_nationality = FRA
-					limit = {
-						NOT = {
-							has_trait = old_guard
-						}
-					}
-				}
-			}
-			hidden_effect = {
-				add_ideas = SPA_death_before_surrender
-				add_state_core = 730
-				EFR = {
-					give_resource_rights = {
-						receiver = GER
-						state = 22
-					}
-					give_resource_rights = {
-						receiver = GER
-						state = 20
-					}
-					give_resource_rights = {
-						receiver = GER
-						state = 32
-					}
-					give_resource_rights = {
-						receiver = GER
-						state = 21
-					}
-					give_resource_rights = {
-						receiver = ITA
-						state = 459
-					}
-				}
+			# FRA SPAWN INS POST CAP END
+
 			}
 		}
 	}
+
 	focus = {
 		id = FRA_appeal_to_the_french_nation
 		icon = GFX_focus_fra_french_union
-		x = 3
+		x = 10
 		y = 1
 		offset = {
 			x = 0
@@ -3864,7 +4112,7 @@ focus = {
 	focus = {
 		id = FRA_london_provisional_gov
 		icon = GFX_focus_eng_the_sun_never_sets
-		x = 3
+		x = 7
 		y = 1
 		offset = {
 			x = 0
@@ -3875,7 +4123,7 @@ focus = {
 		}
 		relative_position_id = FRA_appeal_to_the_french_nation
 		
-		cost = 4
+		cost = 1
 		ai_will_do = {
 			factor = 1
 		}
@@ -3934,7 +4182,7 @@ focus = {
 		id = FRA_form_the_national_committee
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 0
-		y = 2
+		y = 3
 		offset = {
 			x = 0
 			y = 0
@@ -3981,8 +4229,8 @@ focus = {
 	focus = {
 		id = FRA_form_the_provisional_government_of_the_republic
 		icon = GFX_focus_focus_fra_orleans_restoration
-		x = -1
-		y = 2
+		x = 0
+		y = 5
 		offset = {
 			x = 0
 			y = 0
@@ -4024,7 +4272,7 @@ focus = {
 	focus = {
 		id = FRA_continue_the_fight
 		icon = GFX_focus_ARG_join_the_allies
-		x = 7
+		x = 12
 		y = 1
 		offset = {
 			x = 0
@@ -4096,7 +4344,7 @@ focus = {
 		id = FRA_hidden_weapons
 		icon = GFX_focus_FIN_weapon_caches
 		x = 1
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4135,7 +4383,7 @@ focus = {
 		id = FRA_path_to_liberation
 		icon = GFX_focus_attack_germany
 		x = 3
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4249,7 +4497,7 @@ focus = {
 		id = FRA_army_of_africa
 		icon = GFX_focus_generic_full_social_mobilization
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4290,7 +4538,7 @@ focus = {
 		id = FRA_CEF1
 		icon = GFX_focus_attack_italy
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4328,7 +4576,7 @@ focus = {
 		id = FRA_army_of_liberation1
 		icon = GFX_focus_hol_liberation
 		x = -3
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4372,7 +4620,7 @@ focus = {
 		id = FRA_the_free_french_navy
 		icon = GFX_focus_generic_navy_battleship2
 		x = -3
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4408,7 +4656,7 @@ focus = {
 		id = FRA_FAFL
 		icon = GFX_goal_poland_goal
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4445,7 +4693,7 @@ focus = {
 		id = FRA_bir_hakeim
 		icon = GFX_focus_chi_army_reform
 		x = -1
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4481,7 +4729,7 @@ focus = {
 		id = FRA_colonial_recruitment
 		icon = GFX_focus_CZE_german_puppet
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4521,7 +4769,7 @@ focus = {
 		id = FRA_kieffer
 		icon = GFX_focus_eng_special_air_service
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4555,7 +4803,7 @@ focus = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = FRA_FAFL }
 		x = 0
-		y = 1
+		y = 2
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		relative_position_id = FRA_FAFL
 		cost = 5
@@ -4661,7 +4909,7 @@ focus = {
 	focus = {
 		id = FRA_refus_absurde
 		icon = GFX_focus_spr_crush_the_revolution
-		x = -5
+		x = -8
 		y = 1
 		
 		prerequisite = { 
@@ -4669,7 +4917,7 @@ focus = {
 		}
 		relative_position_id = FRA_rally_defectors
 		
-		cost = 5
+		cost = 1
 		ai_will_do = {
 			factor = 1
 		}
@@ -4698,7 +4946,7 @@ focus = {
 	focus = {
 		id = FRA_the_maquis
 		icon = GFX_focus_focus_fra_maquis
-		x = -6
+		x = -8
 		y = 1
 		offset = {
 			x = 0
@@ -4742,8 +4990,8 @@ focus = {
 	focus = {
 		id = FRA_radio_londre
 		icon = GFX_focus_SWE_radiotjanst
-		x = -2
-		y = 1
+		x = 0
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4776,8 +5024,8 @@ focus = {
 	focus = {
 		id = FRA_passive_resistance
 		icon = GFX_focus_spr_torchbearers_of_tomorrow
-		x = 0
-		y = 1
+		x = -2
+		y = 3
 		offset = {
 			x = 0
 			y = 0
@@ -4846,7 +5094,7 @@ focus = {
 	focus = {
 		id = FRA_underground_newspaper
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		x = 2
+		x = 4
 		y = 0
 		offset = {
 			x = 0
@@ -4942,7 +5190,7 @@ focus = {
 		id = FRA_drop_weapons
 		icon = GFX_focus_generic_paratrooper
 		x = 2
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -4987,7 +5235,7 @@ focus = {
 		id = FRA_resistance_capital
 		icon = GFX_focus_hol_united_netherlands
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5027,7 +5275,7 @@ focus = {
 	focus = {
 		id = FRA_fight_vichy
 		icon = GFX_goal_generic_major_war
-		x = 1
+		x = -4
 		y = 2
 		offset = {
 			x = 0
@@ -5305,7 +5553,7 @@ focus = {
 		icon = GFX_focus_generic_commonwealth_build_infantry
 		prerequisite = { focus = FRA_hidden_weapons }
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5344,7 +5592,7 @@ focus = {
 		icon = GFX_goal_generic_military_sphere
 		prerequisite = { focus = FRA_british_equipement }
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5387,7 +5635,7 @@ focus = {
 		id = FRA_reach_out_to_trade_unions
 		icon = GFX_focus_generic_workers
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5424,7 +5672,7 @@ focus = {
 		id = FRA_cooperation_with_the_communists
 		icon = GFX_focus_generic_soviet_politics
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5470,7 +5718,7 @@ focus = {
 		icon = GFX_focus_focus_fra_third_empire
 		prerequisite = { focus = FRA_refus_absurde }
 		x = 3
-		y = 1
+		y = 2
 		relative_position_id = FRA_refus_absurde
 		cost = 4
 
@@ -5524,7 +5772,7 @@ focus = {
 		id = FRA_the_civil_and_military_organization
 		icon = GFX_focus_focus_fra_maquis
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5560,7 +5808,7 @@ focus = {
 		id = FRA_establish_a_gaullist_resistance
 		icon = GFX_focus_ETH_freedom_at_gunpoint
 		x = 6
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5601,7 +5849,7 @@ focus = {
 		id = FRA_united_resistance_movements
 		icon = GFX_focus_chi_reach_out_to_france
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5637,7 +5885,7 @@ focus = {
 		id = FRA_national_council_of_the_resistance
 		icon = GFX_focus_focus_fra_national_resistance_council
 		x = 0
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5721,8 +5969,8 @@ focus = {
 	focus = {
 		id = FRA_national_uprising
 		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
-		x = -1
-		y = 1
+		x = -2
+		y = 2
 		offset = {
 			x = 0
 			y = 0
@@ -5754,7 +6002,7 @@ focus = {
 		id = FRA_french_forces_of_the_interior
 		icon = GFX_focus_prc_infiltration
 		x = 2
-		y = 1
+		y = 2
 		offset = {
 			x = 0
 			y = 0

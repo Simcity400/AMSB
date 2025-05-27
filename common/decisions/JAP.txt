@@ -19,7 +19,16 @@ JAP_intervene_in_china = {
 		fire_only_once = no
 
 		ai_will_do = {
-			factor = 0
+			factor = 201
+			modifier = {
+				has_war_with = USA
+				factor = 10 #screw it, kill everything
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = JAP_slow_down_in_china
+				#NOT = { has_war_with = USA }
+			}
 		}
 		modifier = {
 
@@ -989,7 +998,41 @@ JAP_southern_expansion = {
 					}
 				} 
 			}
-			
+			custom_trigger_tooltip = {
+				tooltip = demand_indochina_focus_tt
+				OR = {
+					286 = { 
+						CONTROLLER = { 
+							OR = { 
+								tag = FRA 
+								tag = VIC
+								is_subject_of = FRA
+								is_subject_of = VIC 
+							} 
+						}
+					}
+					670 = { 
+						CONTROLLER = { 
+							OR = { 
+								tag = FRA 
+								tag = VIC 
+								is_subject_of = FRA
+								is_subject_of = VIC
+							} 
+						}
+					}
+					671 = { 
+						CONTROLLER = { 
+							OR = { 
+								tag = FRA 
+								tag = VIC 
+								is_subject_of = FRA
+								is_subject_of = VIC
+							} 
+						}
+					}
+				}
+			}
 		}
 
 		visible = {
@@ -1040,18 +1083,18 @@ JAP_southern_expansion = {
 			}
 			else_if = {
 				limit = {
-					ENG = {
+					VIC = {
 						OR = {
 							controls_state = 671
 							controls_state = 670
 							controls_state = 286
-							671 = { CONTROLLER = { is_subject_of = ENG } }
-							670 = { CONTROLLER = { is_subject_of = ENG } }
-							286 = { CONTROLLER = { is_subject_of = ENG } }
+							671 = { CONTROLLER = { is_subject_of = VIC } }
+							670 = { CONTROLLER = { is_subject_of = VIC } }
+							286 = { CONTROLLER = { is_subject_of = VIC } }
 						}
 					}
 				}
-				ENG = { country_event = { id = france.1 } }
+				VIC = { country_event = { id = france.1 } }
 			}
 		}
 

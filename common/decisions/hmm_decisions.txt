@@ -36,7 +36,7 @@ operations = {
 		}
 		
 		available = {
-				date > 1940.03.01	
+				date > 1940.06.01	
 		} 
 		fire_only_once = yes
 		visible = {
@@ -47,58 +47,8 @@ operations = {
             air_to_england = yes
 		}			
  }
-    annex_South_Africa = {
-            # icon = generic_operation
-            allowed = {
-                tag = RAJ
-            }
-            fire_only_once = yes
-            cost = 0
-            ai_will_do = {
-                factor = 0
-            }
-            available = {
-                SAF = {
-                    is_ai = yes
-                }
-                ENG = {
-                    has_completed_focus = uk_south_africa_focus
-                }
-            }
-            targets = {
-                SAF
-            }
-            complete_effect = {
-                SAF = {
-                    transfer_units_fraction = {
-                        target = RAJ
-                        size = 1
-                        stockpile_ratio = 1
-                        army_ratio = 1
-                        navy_ratio = 1
-                        air_ratio = 1
-                        keep_unit_leaders_trigger = {
-                            always = no
-                        }
-                    }
-                }
-                RAJ = {
-                    annex_country = {
-                        target = SAF
-                        transfer_troops = yes
-                    }
-                }
-                every_state = {
-                    limit = {
-                        is_core_of = SAF
-                        is_controlled_by = RAJ
-                    }
-                    add_core_of = RAJ
-                }
-            }
 
-        }
-		annex_Ethiopia = {
+		annex_Ethopia = {
             # icon = generic_operation
             allowed = {
                 tag = ITA
@@ -115,19 +65,6 @@ operations = {
                 ETH
             }
             complete_effect = {
-			ETH = {
-				remove_state_core = 271
-				remove_state_core = 835
-				remove_state_core = 836
-				remove_state_core = 837
-				remove_state_core = 838
-				remove_state_core = 839
-				remove_state_core = 840
-				remove_state_core = 841
-				remove_state_core = 842
-				remove_state_core = 843
-				remove_state_core = 908
-			}
                 ITA = {
                     annex_country = {
                         target = ETH
@@ -136,62 +73,11 @@ operations = {
                     complete_national_focus = ITA_solid_progress 
 
                 }
-				
 				add_threat = 2.6
                 
             }
 
         }
-		annex_Mexiko = {
-            # icon = generic_operation
-            allowed = {
-                tag = BRA
-            }
-            fire_only_once = yes
-            cost = 0
-            ai_will_do = {
-                factor = 0
-            }
-            available = {
-                MEX = {
-                    is_ai = yes
-                    has_completed_focus = MEX_focus_soldaderas
-                }
-            }
-            targets = {
-                MEX
-            }
-            complete_effect = {
-                MEX = {
-                    transfer_units_fraction = {
-                        target = BRA
-                        size = 1
-                        stockpile_ratio = 1
-                        army_ratio = 1
-                        navy_ratio = 1
-                        air_ratio = 1
-                        keep_unit_leaders_trigger = {
-                            always = no
-                        }
-                    }
-                }
-                BRA = {
-                    annex_country = {
-                        target = MEX
-                        transfer_troops = yes
-                    }
-                }
-                every_state = {
-                    limit = {
-                        is_core_of = MEX
-                        is_controlled_by = BRA
-                    }
-                    add_core_of = BRA
-                }
-            }
-
-        }
-
 	
 		annex_siam = {
 			# icon = generic_operation
@@ -243,56 +129,7 @@ operations = {
 				}
 			}
 		}
-		annex_manchukuo = {
-			# icon = generic_operation
-			allowed = {
-				tag = JAP
-			}
-			available = {
-				MAN = {
-					is_ai = yes
-				}
-			}
-			fire_only_once = yes
-			cost = 0
-			ai_will_do = {
-				factor = 0
-			}
-			visible = {
-				tag = JAP
-			}
-			targets = {
-				MAN
-			}
-			complete_effect = {
-				MAN = {
-					transfer_units_fraction = {
-						target = JAP
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
-				JAP = {
-					annex_country = {
-						target = MAN
-						transfer_troops = yes
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = MAN
-						is_controlled_by = JAP
-					}
-					add_compliance = 100
-				}
-			}
-		}
+
 		annex_philippines= {
 			# icon = generic_operation
 			allowed = {
@@ -340,7 +177,7 @@ operations = {
 				}
 			}
 		}
-    	annex_netherlands = {
+    	annex_east_indies = {
 			# icon = generic_operation
 			allowed = {
 				tag = USA
@@ -361,32 +198,21 @@ operations = {
 				HOL	
 			}
 			complete_effect = {
-				HOL = {
-					transfer_units_fraction = {
-						target = USA
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
+		
 				USA = {
-					annex_country = {
-						target = HOL
-						transfer_troops = yes
-					}
+               	    transfer_state = 672
+			        transfer_state = 334
+			        transfer_state = 335
+			        transfer_state = 667
+			        transfer_state = 673
+			        transfer_state = 668
+			        transfer_state = 669
+			        transfer_state = 309
+			        transfer_state = 695
+                    transfer_state = 721 
+                    transfer_state = 738   
 				}
-				every_state = {
-					limit = {
-						is_core_of = HOL 
-						is_controlled_by = USA
-					}
-					add_compliance = 100
-				}
+		
 			}
 		}
 }
@@ -505,38 +331,8 @@ political_actions = {
 }
 
 Technologies = {
-    add_convoy = {
-		priority = 100
-        icon = SWE_set_navy_budget
-        allowed = {
- 		}
-		visible = {
-			is_ai = no
-		}
-        days_remove = 10
-        cost = 0
-        complete_effect = {
-            add_manpower = 1
-            add_equipment_to_stockpile = {
-                type = convoy_1
-                amount = 1
-            }
-        }
-		
- 		remove_effect = {
-            add_manpower = -1
-            add_equipment_to_stockpile = {
-                type = convoy_1
-                amount = -1
-            }
- 		}
-        ai_will_do = {
-            factor = 0
-        }
-    }
 
-
-auto_mech = {
+hosttool_mech = {
     # icon = generic_operation
     allowed = {
     }
@@ -657,7 +453,7 @@ auto_mech = {
             }
         }
 }
-                auto_gun3 = {
+                hosttool_gun3 = {
                     # icon = generic_operation
                     allowed = {
                     }
@@ -667,7 +463,7 @@ auto_mech = {
                         factor = 0
                     }
                     available = {
-                            date > 1940.10.01
+                            date > 1940.07.01
                         }
                     complete_effect = {
                         SWE = {
@@ -683,7 +479,7 @@ auto_mech = {
                         }
                     }
                     }
-                auto_AT2 = {
+                hosttool_AT2 = {
                     # icon = generic_operation
                     allowed = {
                     }
@@ -710,7 +506,7 @@ auto_mech = {
                         }
                     }
                     }
-                auto_AT3 = {
+                hosttool_AT3 = {
                     # icon = generic_operation
                     allowed = {
                     }

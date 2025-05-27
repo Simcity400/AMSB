@@ -2505,7 +2505,7 @@ on_actions = {
 					}
 
 					random_list = {
-						40 = {
+						50 = {
 							modifier = {
 								factor = 0.25
 								game_weight_can_add_democratic = no
@@ -2514,7 +2514,16 @@ on_actions = {
 							set_add_democratic_weight_small = yes
 						}
 
-						10 = {
+						30 = {
+							modifier = {
+								factor = 0.25
+								game_weight_can_add_democratic = no
+							}
+							set_country_flag = RAJ_AI_RANDOM_INDIA_LOYALTY
+							set_add_democratic_weight_small = yes
+						}
+
+						5 = {
 							modifier = {
 								factor = 0.1
 								game_weight_can_add_fascist = no
@@ -2523,7 +2532,7 @@ on_actions = {
 							set_add_fascist_weight_small = yes
 						}
 
-						10 = {
+						5 = {
 							modifier = {
 								factor = 0.10
 								game_weight_can_add_fascist = no
@@ -2532,7 +2541,7 @@ on_actions = {
 							set_add_fascist_weight_small = yes
 						}
 
-						15 = {
+						10 = {
 							modifier = {
 								factor = 0.15
 								game_weight_can_add_unaligned = no
@@ -2541,7 +2550,7 @@ on_actions = {
 							set_add_unaligned_weight_small = yes
 						}
 
-						10 = {
+						5 = {
 							modifier = {
 								factor = 0.10
 								game_weight_can_add_unaligned = no
@@ -2550,12 +2559,21 @@ on_actions = {
 							set_add_unaligned_weight_small = yes
 						}
 
-						15 = {
+						5 = {
 							modifier = {
 								factor = 0.15
 								game_weight_can_add_communist = no
 							}
 							set_country_flag = RAJ_AI_RANDOM_INDIA_COMMUNISM
+							set_add_communist_weight_small = yes
+						}
+
+						5 = {
+							modifier = {
+								factor = 0.15
+								game_weight_can_add_communist = no
+							}
+							set_country_flag = RAJ_AI_RANDOM_INDIA_COMMUNISM_URBAN
 							set_add_communist_weight_small = yes
 						}
 
@@ -4242,13 +4260,13 @@ on_actions = {
 						50 = {
 							AFG = { set_country_flag = AFG_AI_RANDOM_HISTORICAL }
 						}
-						20 = {
+						10 = {
 							AFG = { set_country_flag = AFG_AI_RANDOM_FASCISM }
 						}
-						10 = {
+						5 = {
 							AFG = { set_country_flag = AFG_AI_RANDOM_DEMOCRATIC }
 						}
-						20 = {
+						10 = {
 							AFG = { set_country_flag = AFG_AI_RANDOM_COMMUNIST }
 						}
 					}

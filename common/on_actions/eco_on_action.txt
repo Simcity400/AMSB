@@ -1101,27 +1101,27 @@ on_actions = {
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 1000
+					amount = 7733
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 9600
+					amount = 21600
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
-					amount = 259
+					amount = 1559
 				}
 				add_equipment_to_stockpile = {
 					type = motorized_equipment_0
-					amount = 0
+					amount = 200
 				}
 				add_equipment_to_stockpile = {
 					type = motorized_equipment_1
-					amount = 0
+					amount = 100
 				}
 				add_equipment_to_stockpile = {
 					type = artillery_equipment_1
-					amount = 100
+					amount = 135
 				}
 				add_equipment_to_stockpile = {
 					type = anti_tank_equipment_1
@@ -2056,4 +2056,304 @@ on_actions = {
 			
 		}
 	}
+
+		on_startup = {
+		effect = {
+			if = { #sov civs
+			limit = {
+				has_game_rule = {
+					rule = sov_boost
+					option = sov4
+				}
+			}
+			SOV = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = sov_boost
+					option = sov8
+				}
+			}
+			SOV = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = sov_boost
+					option = sov12
+				}
+			}
+			SOV = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #ger civs
+			limit = {
+				has_game_rule = {
+					rule = ger_boost
+					option = ger4
+				}
+			}
+			GER = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = ger_boost
+					option = ger8
+				}
+			}
+			GER = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = ger_boost
+					option = ger12
+				}
+			}
+			GER = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #jap civs
+			limit = {
+				has_game_rule = {
+					rule = jap_boost
+					option = jap4
+				}
+			}
+			JAP = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = jap_boost
+					option = jap8
+				}
+			}
+			JAP = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = jap_boost
+					option = jap12
+				}
+			}
+			JAP = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #eng civs
+			limit = {
+				has_game_rule = {
+					rule = eng_boost
+					option = eng4
+				}
+			}
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = eng_boost
+					option = eng8
+				}
+			}
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = eng_boost
+					option = eng12
+				}
+			}
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #ita civs
+			limit = {
+				has_game_rule = {
+					rule = ita_boost
+					option = ita4
+				}
+			}
+			ITA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = ita_boost
+					option = ita8
+				}
+			}
+			ITA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = ita8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = ita_boost
+					option = ita12
+				}
+			}
+			ITA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #fra civs
+			limit = {
+				has_game_rule = {
+					rule = fra_boost
+					option = fra4
+				}
+			}
+			FRA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = fra_boost
+					option = fra8
+				}
+			}
+			FRA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = fra_boost
+					option = fra12
+				}
+			}
+			FRA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #usa civs
+			limit = {
+				has_game_rule = {
+					rule = usa_boost
+					option = usa4
+				}
+			}
+			USA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = usa_boost
+					option = usa8
+				}
+			}
+			USA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = usa_boost
+					option = usa12
+				}
+			}
+			USA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		}
+	}
+	
 }

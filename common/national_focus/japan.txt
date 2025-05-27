@@ -1239,7 +1239,7 @@ focus = {
 		}
 	}
 
-		focus = {
+	focus = {
 		id = JAP_secure_china
 		icon = GFX_focus_chi_one_china_policy
 		prerequisite = { focus = JAP_intervene_in_china }
@@ -1250,8 +1250,12 @@ focus = {
 		cost = 5
 
 		ai_will_do = {
-			factor = 0 # AI will never choose this focus
-		} # <-- Correctly closed ai_will_do block
+			factor = 3
+			modifier = {
+				factor = 0
+				threat < 0.9
+			}
+		}
 
 		available = {
 			CHI = {
@@ -1278,7 +1282,7 @@ focus = {
 			USA = { add_war_support = 0.05 }	
 			unlock_decision_tooltip = JAP_ichi_go
 		}
-	} 
+	}
 
 	focus = {
 		id = JAP_develop_chinese_resources
@@ -1734,7 +1738,13 @@ focus = {
 
 
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 4 } 
+			random_country = {
+				limit = {
+					original_tag = GER
+					has_government = fascism
+				}
+				country_event = { id = wtt_japan.109 days = 1 }
+			}
 		}
 	}
 

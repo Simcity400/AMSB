@@ -36,6 +36,19 @@ country_event = {
 			country_event = { days = 5 id = japan.6 }
 		}
 	}
+	option = { # Refuse
+		name = france.1.b
+		ai_chance = { 
+			factor = 25 
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		JAP = {
+			country_event = { days = 5 id = japan.7 }
+		}
+	}
 }
 
 # Maginot Line Extension
@@ -161,27 +174,7 @@ country_event = {
 ### The Fall of France
 
 #hidden pre-event to check before capitulation
-country_event = {
-	id = france.101
-	hidden = yes
-	trigger = {
-		tag = FRA
-		surrender_progress > 0.6
 
-		# PLEASE Don't fire if this will end the war (No other ally is a major)
-		FRA = {
-			any_allied_country = {
-				is_major = yes 
-				has_capitulated = no 
-				has_war_with = GER 
-			}
-		}
-	}
-	mean_time_to_happen = { days = 5 }
-	immediate = {
-		country_event = france.10
-	}
-}
 # The Battle is Lost
 country_event = {
 	id = france.10
@@ -191,12 +184,15 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	is_triggered_only = yes
+	trigger = {
+		original_tag = FRA
+	    surrender_progress = 0.32
+	}
 
 	immediate = {
 		set_global_flag = achievement_france_surrender
 	}
-
+	
 
 	option = { # Become Free French
 		name = france.10.b
@@ -214,7 +210,7 @@ country_event = {
 			}
 		}
 	}
-
+	
 }
 
 
@@ -237,39 +233,6 @@ country_event = {
 			factor = 50
 		}
 		hidden_effect = {
-			514 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			459 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			32 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			28 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			19 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			26 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			21 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			27 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			14 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			461 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			24 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			33 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			18 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			460 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			16 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			25 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			30 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			462 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			31 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			29 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			15 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			785 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			23 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			806 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			20 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			735 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			458 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			851 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			513 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			665 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			22 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			17 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-		
 			GER = {
 				transfer_state = 29
 				transfer_state = 785
@@ -316,9 +279,7 @@ country_event = {
 				transfer_state = 459
 				transfer_state = 461
 				transfer_state = 462
-				transfer_navy = {
-					target = ITA
-				}
+
 				462 = {
 					set_demilitarized_zone = yes
 				}

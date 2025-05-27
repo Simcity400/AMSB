@@ -8,6 +8,7 @@ phases = { # phase = no is the standard phase
 	tactical_withdrawal
 	seize_bridge
 	hold_bridge
+	street_fighting
 }
 
 tactic_basic_attack = {
@@ -71,6 +72,7 @@ tactic_assault = {
 	trigger = {
 		is_attacker = yes
 		phase = no
+		has_artillery_ratio > 0.1
 	}
 	
 	active = yes

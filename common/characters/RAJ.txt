@@ -436,12 +436,7 @@ characters={
 			planning_skill=1
 			logistics_skill=3
 
-			visible = {
-				OR = {
-					has_completed_focus = RAJ_the_punjab_accord
-					has_completed_focus = RAJ_sikh_religious_guarantees
-				}
-			}
+			visible = { has_completed_focus = RAJ_sikh_religious_guarantees }
 		}
 	}
 
@@ -461,12 +456,7 @@ characters={
 			planning_skill=2
 			logistics_skill=2
 
-			visible = { 
-				OR = {
-					has_completed_focus = RAJ_the_punjab_accord
-					has_completed_focus = RAJ_sikh_religious_guarantees
-				}
-			}
+			visible = { has_completed_focus = RAJ_sikh_religious_guarantees }
 		}
 	}
 
@@ -1792,13 +1782,10 @@ characters={
 				has_dlc = "Graveyard of Empires"
 			}
 			visible = {
-				always = yes
+				has_completed_focus = RAJ_sikh_religious_guarantees
 			}
 			available = {
-				OR = {
-					has_completed_focus = RAJ_the_punjab_accord
-					has_completed_focus = RAJ_sikh_religious_guarantees
-				}
+				has_completed_focus = RAJ_sikh_religious_guarantees
 			}
 			traits = {
 				sikh_activist 

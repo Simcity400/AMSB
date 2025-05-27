@@ -251,6 +251,121 @@ GER_mefo_bills_category = {
 	#}
 }
 
+GER_seize_gold_reserves_cat = {
+	GER_seize_gold_reserves = {
+		priority = 1
+		icon = GFX_decision_generic_confiscation
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 2.5
+				check_variable = { GER_industrial_consumer_goods_factor > 0.25 }
+			}
+			modifier = {
+				factor = 2
+				check_variable = { GER_industrial_consumer_goods_factor > 0.5 }
+			}
+			modifier = {
+				factor = 2
+				check_variable = { GER_industrial_consumer_goods_factor > 0.75 }
+			}
+			modifier = {
+				factor = 5
+				check_variable = { GER_industrial_consumer_goods_factor > 0.99 }
+			}
+			modifier = {
+				factor = 1.5
+				has_war_with_major = yes
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					is_major = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				check_variable = { GER_industrial_consumer_goods_factor < 0.15 }
+			}
+		}
+
+		target_non_existing = yes #This is required for the Decision to even show up. TODO_Danne fix a better solution
+		target_array = ROOT.GER_european_targets_array
+
+		target_trigger = {
+			FROM = {
+				has_country_flag = GER_has_capitulated_to_germany
+				NOT = { #Don't seize France's gold reserves too soon; set up Vichy France first. Set in event France.10 and cleared in event france.14
+					has_country_flag = GER_dont_seize_gold_reserves_flag
+				}
+				any_core_state = {
+					is_controlled_by = ROOT
+					NOT = { is_core_of = ROOT }
+					NOT = { has_state_flag = GER_seize_gold_reserves_state_flag }
+					OR = {
+						check_variable = { industrial_complex_level > 0 }
+						check_variable = { arms_factory_level > 0 }
+						check_variable = { building_level@dockyard > 0 }
+					}
+				}
+			}
+		}
+
+		available = {
+			FROM = {
+				has_country_flag = GER_has_capitulated_to_germany
+			}
+			ROOT = {
+				custom_trigger_tooltip = {
+					tooltip = GER_economy_of_conquest_modifier_consumer_goods_tt
+					check_variable = { GER_industrial_consumer_goods_factor > 0 }
+				}
+			}
+		}
+
+		target_root_trigger = {
+			ROOT = { has_dynamic_modifier = { modifier = GER_economy_of_conquest_modifier }}
+		}
+		
+		fire_only_once = yes
+
+		cost = 25
+
+		complete_effect = {
+			ROOT = { set_temp_variable = { occupied_state_num_factory = 0 } } #This will show how many factories in total Germany controls from FROM's cores
+			add_to_temp_variable = { GER.occupied_state_num_factory = FROM.num_of_military_factories_in_cores@GER }
+			add_to_temp_variable = { GER.occupied_state_num_factory = FROM.num_of_civilian_factories_in_cores@GER }
+			add_to_temp_variable = { GER.occupied_state_num_factory = FROM.num_of_naval_factories_in_cores@GER }
+			FROM = {
+				every_core_state = {
+					limit = {
+						is_on_continent = europe
+						is_fully_controlled_by = ROOT
+						NOT = { has_state_flag = GER_seize_gold_reserves_state_flag }
+					}
+
+					add_compliance = -5
+					add_resistance = 10
+					set_state_flag = GER_seize_gold_reserves_state_flag
+					add_dynamic_modifier = { modifier = GER_overburdened_state_modifier days = 90 }
+				}
+			}
+			ROOT = {			
+				divide_temp_variable = { occupied_state_num_factory = 200 } #This is necessary since a single factory will increase the occupied_state_num_factory number to 1, which in turn translates to -100% when subtracting from the Consumer Goods. Dividing it by 100 here will give you 1% instead, which is more like what we want.
+				multiply_temp_variable = { occupied_state_num_factory = -1 }
+
+				custom_effect_tooltip = GER_modify_economy_of_conquest_modifier_tt
+				add_to_variable = {
+					GER_industrial_consumer_goods_factor = occupied_state_num_factory
+					tooltip = consumer_goods_factor_tt
+				}
+				GER_reduce_mefo_bills_penalty = yes
+			}
+		}
+	}
+}
+
 # Operational Planning
 GER_operational_planning_category = {
 

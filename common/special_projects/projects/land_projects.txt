@@ -20,23 +20,12 @@ sp_land_flamethrower_tank = {
 
 	allowed = {
 		has_dlc = "No Step Back"
-		always = no #Disabled due to it being a research
 	}
 	
 	available = {
-		if = {
-			limit = {
-				has_dlc = "No Step Back"
-			}
-			FROM = {
-				has_tech = advanced_ship_hull_heavy
-			}
+		FROM = {
+			has_tech = sp_armored_advanced_flamethrower_tech
 		}
-		else = {
-			FROM = {
-				has_tech = super_heavy_tank
-			}
-		}	
 	}
 
 	breakthrough_cost = {
@@ -198,7 +187,6 @@ sp_land_land_cruiser = {
 
 	allowed = {
 		has_dlc = "Gotterdammerung"
-		always = no #Disabled due to balancing
 	}
 
 	available = {
@@ -208,9 +196,6 @@ sp_land_land_cruiser = {
 			}
 			FROM = {
 				has_tech = super_heavy_tank_chassis
-			}
-			FROM = {
-				has_tech = advanced_ship_hull_heavy
 			}
 		}
 		else = {
@@ -1119,7 +1104,6 @@ sp_land_super_heavy_railway_gun = {
 
 	allowed = {
 		has_dlc = "No Step Back"
-		always = no #DISABLED DUE TO NOT SH RAILWAYS BEING REMOVED
 	}
 
 	available = {
@@ -1190,11 +1174,10 @@ sp_land_multi_charge_large_caliber_gun = {
 
 	allowed = {
 		has_dlc = "Gotterdammerung"
-		always = no #DISABLED DUE TO BALANCING
 	}
 
 	special_project_parent = {
-		sp_naval_modern_carrier
+		sp_land_super_heavy_howitzer
 	}
 		
 	prototype_time = sp_time.prototype.medium
@@ -1417,12 +1400,11 @@ sp_land_stronghold_network = {
 
 	allowed = {
 		has_dlc = "Gotterdammerung"
-		always = no #Disabled due to balancing
 	}
 	
 	available = {
 		FROM = {
-			has_tech = advanced_ship_hull_heavy
+			has_tech = basic_fortification_tech
 		}
 	}
 	

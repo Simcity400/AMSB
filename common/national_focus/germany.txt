@@ -1419,6 +1419,136 @@ focus_tree = {
 		}
 	}
 	
+	focus = {
+		id = GER_autarky_achieved
+		icon = GFX_focus_GER_autarky_achieved
+		prerequisite = { focus = GER_seize_foreign_industries }
+		prerequisite = { focus = GER_subsidize_hoesch_benzin }
+		prerequisite = { focus = GER_establish_buna_werke }
+
+		x = 2
+		y = 1
+		relative_position_id = GER_seize_foreign_industries
+		cost = 10
+		available = {
+			all_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = steel
+					amount > 799 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = steel
+						amount > 799 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = aluminium
+					amount > 199 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = aluminium
+						amount > 199 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = oil
+					amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = oil
+						amount > 149 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = tungsten
+					amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = tungsten
+						amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = chromium
+					amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = chromium
+						amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+			OR = {
+				has_resources_in_country = {
+					resource = rubber
+					amount > 49 #This needs to correspond to the Bypass values in the previous focuses
+					extracted = yes
+				}
+				any_subject_country = {
+					has_resources_in_country = {
+						resource = rubber
+						amount > 49 #This needs to correspond to the Bypass values in the previous focuses
+						extracted = yes
+					}
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			GER_autarky_achieved_effects = yes
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { #Notify that you will get an improved version of the Trade Law
+					NOT = { has_idea = autarkic_economy }
+				}
+				custom_effect_tooltip = GER_improve_autarkic_economy_tt
+			}
+			else = { #Get the improved version of the Trade Law
+				swap_ideas = {
+					remove_idea = autarkic_economy
+					add_idea = autarkic_economy_improved
+				}
+			}			
+
+			#custom_effect_tooltip = generic_skip_one_line_tt
+
+			#custom_effect_tooltip = GER_modify_wehrwirtschaft_modifier_tt
+			#add_to_variable = { 
+			#	GER_wehrwirtschaft_production_speed_buildings_factor = 0.05
+			#	tooltip = production_speed_buildings_factor_tt
+			#}
+		}
+	}
+
 
 	focus = {
 		id = GER_accelerate_the_rearmament_program
@@ -3854,7 +3984,7 @@ focus_tree = {
 		alternate_icon = GFX_focus_GER_sturzkampfbomber_historical
 
 		prerequisite = { focus = GER_aeronautical_research_institute }
-		#mutually_exclusive = { focus = GER_tactical_bombers focus = GER_uralbomber_program }
+		mutually_exclusive = { focus = GER_tactical_bombers focus = GER_uralbomber_program }
 		x = -2
 		y = 1
 		relative_position_id = GER_aeronautical_research_institute
@@ -3985,7 +4115,7 @@ focus_tree = {
 		id = GER_tactical_bombers
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = GER_aeronautical_research_institute }
-		#mutually_exclusive = { focus = GER_dive_bombers focus = GER_uralbomber_program }
+		mutually_exclusive = { focus = GER_dive_bombers focus = GER_uralbomber_program }
 		x = 0
 		y = 1
 		relative_position_id = GER_aeronautical_research_institute
@@ -4115,7 +4245,7 @@ focus_tree = {
 		id = GER_uralbomber_program
 		icon = GFX_focus_generic_long_range_aircraft
 		prerequisite = { focus = GER_aeronautical_research_institute }
-		#mutually_exclusive = { focus = GER_dive_bombers focus = GER_tactical_bombers }
+		mutually_exclusive = { focus = GER_dive_bombers focus = GER_tactical_bombers }
 		x = 2
 		y = 1
 		relative_position_id = GER_aeronautical_research_institute
@@ -6489,6 +6619,10 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			unlock_decision_tooltip = GER_refit_convoys_to_cruisers
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			if = {
 				limit = {
 					NOT = { has_dlc = "Arms Against Tyranny" }
@@ -7567,7 +7701,7 @@ focus_tree = {
 					}
 				}
 				capital_scope = {
-						create_unit = {
+					create_unit = {
 						division = "division_template = \"Straf-Division\" start_experience_factor = 1 start_equipment_factor = 1.0"
 						owner = ROOT
 						count = 3
@@ -7764,6 +7898,162 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = GER_reichskommissariats_tt
+		}
+	}
+
+	focus = {
+		id = GER_expand_ss_recruitment
+		icon = GFX_focus_generic_fascist_troops
+		prerequisite = { focus = GER_uplift_the_rosenberg_office }
+
+		x = 0
+		y = 1
+		relative_position_id = GER_uplift_the_rosenberg_office
+		cost = 5
+		available = {
+			has_government = fascism
+			OR = {
+				any_controlled_state = {
+					NOT = {
+						is_core_of = ROOT
+					}
+					is_on_continent = europe
+				}
+				any_subject_country = {
+					capital_scope = {
+						is_on_continent = europe
+					}
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_MANPOWER }
+
+		completion_reward = {
+			custom_effect_tooltip = GER_SS_recruitment_tt
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_template = "Waffen-SS Division" }
+				}
+				division_template = {
+					name = "Waffen-SS Division"
+					priority = 2
+					division_names_group = GER_SS_01
+					template_counter = 101
+					is_locked = yes #Unlocked in Strengthen the Waffen-SS focus under Himmler
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+					
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						mot_recon = { x = 0 y = 2 }
+					}
+					override_model = GER_militia
+				}
+			}
+			if = {
+				limit = {
+					64 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				64 = {
+					custom_effect_tooltip = GER_create_four_militia_units_tt
+					hidden_effect = {
+						create_unit = {
+							division = "division_template =\"Waffen-SS Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
+							owner = ROOT
+							count = 4
+						}
+					}
+				}
+			}
+			else = {
+				random_core_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+					}
+					custom_effect_tooltip = GER_create_four_militia_units_tt
+					hidden_effect = {
+						create_unit = {
+							division = "division_template =\"Waffen-SS Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
+							owner = ROOT
+							count = 4
+						}
+					}
+				}
+			}
+
+
+			if = {
+				limit = {
+					NOT = { has_template = "SS-Verfügungstruppe" }
+				}
+				division_template = {
+					name = "SS-Verfügungstruppe"
+					priority = 2
+					division_names_group = GER_SS_01
+					is_locked = yes
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						mot_recon = { x = 0 y = 2 }
+					}
+					override_model = GER_infantry_alt_0_entity
+				}
+			}
+			if = {
+				limit = {
+					64 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				64 = {
+					custom_effect_tooltip = GER_create_two_motorized_units_tt
+					hidden_effect = {
+						create_unit = {
+							division = "division_template =\"SS-Verfügungstruppe\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
+							owner = ROOT
+							count = 2
+						}
+					}
+				}
+			}
+			else = {
+				random_core_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+					}
+					custom_effect_tooltip = GER_create_two_motorized_units_tt
+					hidden_effect = {
+						create_unit = {
+							division = "division_template =\"SS-Verfügungstruppe\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
+							owner = ROOT
+							count = 2
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -8294,6 +8584,7 @@ focus_tree = {
 		relative_position_id = GER_an_invincible_army
 		cost = 5
 		available = {
+			date > 1943.1.1
 			surrender_progress < 0.01
 			custom_trigger_tooltip = {
 				tooltip = GER_an_invincible_army_trigger
@@ -8749,7 +9040,16 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		available = {
-			date > 1939.6.1
+			if = { 
+				limit = {
+					has_game_rule = {
+						rule = danzig_date_lock
+						option = locked
+					}	
+				}
+				date > 1939.6.1
+			}
+			
 			is_subject = no
 			#100 div			
 			#Make custom trigger tooltip here
@@ -8947,7 +9247,7 @@ focus_tree = {
 		icon = GFX_focus_GER_around_maginot
 		alternate_icon = GFX_focus_GER_around_maginot_historical
 
-		prerequisite = { focus = GER_danzig_for_slovakia focus = GER_danzig_or_war }
+		prerequisite = { focus = GER_danzig_or_war }
 		mutually_exclusive = { focus = GER_influence_the_benelux }
 		x = -1
 		y = 2
@@ -9521,7 +9821,7 @@ focus_tree = {
 		y = 1
 		relative_position_id =  GER_operation_weserubung 
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -9858,7 +10158,17 @@ focus_tree = {
 		available_if_capitulated = no
 
 		available = {
-			date > 1941.3.1
+
+			if = { 
+				limit = {
+					has_game_rule = {
+						rule = barb_date_lock
+						option = locked
+					}	
+				}
+				date > 1941.6.1
+			}
+
 			is_subject = no
 		}
 
@@ -13138,7 +13448,7 @@ focus_tree = {
 				64 = {
 					custom_effect_tooltip = GER_create_two_militia_units_tt
 					hidden_effect = {
-							create_unit = {
+						create_unit = {
 							division = "division_template =\"Waffen-SS Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
 							owner = ROOT
 							count = 2
@@ -13153,7 +13463,7 @@ focus_tree = {
 					}
 					custom_effect_tooltip = GER_create_two_militia_units_tt
 					hidden_effect = {
-							create_unit = {
+						create_unit = {
 							division = "division_template =\"Waffen-SS Division\" start_experience_factor = 0.2 start_equipment_factor = 0.7"
 							owner = ROOT
 							count = 2
@@ -13205,7 +13515,7 @@ focus_tree = {
 				64 = {
 					custom_effect_tooltip = GER_create_one_motorized_units_tt
 					hidden_effect = {
-							create_unit = {
+						create_unit = {
 							division = "division_template =\"SS-Verfügungstruppe\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
 							owner = ROOT
 							count = 1
@@ -13220,7 +13530,7 @@ focus_tree = {
 					}
 					custom_effect_tooltip = GER_create_one_motorized_units_tt
 					hidden_effect = {
-							create_unit = {
+						create_unit = {
 							division = "division_template =\"SS-Verfügungstruppe\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
 							owner = ROOT
 							count = 1
@@ -13266,7 +13576,7 @@ focus_tree = {
 					64 = {
 						custom_effect_tooltip = GER_create_two_light_panzer_units_tt
 						hidden_effect = {
-								create_unit = {
+							create_unit = {
 								division = "division_template =\"Waffen-SS Leicht Panzer Division\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
 								owner = ROOT
 								count = 2
@@ -13281,7 +13591,7 @@ focus_tree = {
 						}
 						custom_effect_tooltip = GER_create_two_light_panzer_units_tt
 						hidden_effect = {
-								create_unit = {
+							create_unit = {
 								division = "division_template =\"Waffen-SS Leicht Panzer Division\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
 								owner = ROOT
 								count = 2
@@ -13323,7 +13633,7 @@ focus_tree = {
 					64 = {
 						custom_effect_tooltip = GER_create_two_medium_panzer_units_tt
 						hidden_effect = {
-								create_unit = {
+							create_unit = {
 								division = "division_template =\"Waffen-SS Panzer Division\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
 								owner = ROOT
 								count = 2
@@ -13338,7 +13648,7 @@ focus_tree = {
 						}
 						custom_effect_tooltip = GER_create_two_medium_panzer_units_tt
 						hidden_effect = {
-								create_unit = {
+							create_unit = {
 								division = "division_template =\"Waffen-SS Panzer Division\" start_experience_factor = 0.2 start_equipment_factor = 0.4"
 								owner = ROOT
 								count = 2

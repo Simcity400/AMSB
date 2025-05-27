@@ -9,7 +9,7 @@
 #	In a script file:
 #
 #	trigger = {
-#		exampel_trigger = yes
+#		example_trigger = yes
 #	}
 #
 
@@ -77,6 +77,7 @@ check_has_focus_tree_to_switch_to_fascism = {
 		AND = {
 			tag = SAF
 			has_dlc = "Together for Victory"
+			has_completed_focus = SAF_south_africa_first
 		}
 	}
 	NOT = {
@@ -261,6 +262,20 @@ is_controlled_by_ROOT_or_ally = {
 		tooltip = is_controlled_by_ROOT_or_ally
 		CONTROLLER = {
 			OR = {
+				tag = ROOT
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+}
+
+#State scope
+is_not_controlled_by_ROOT_or_ally = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_controlled_by_ROOT_or_ally
+		CONTROLLER = {
+			NOT = {
 				tag = ROOT
 				is_subject_of = ROOT
 				is_in_faction_with = ROOT
@@ -620,16 +635,27 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 }
 
 is_available_to_collaboration_government = { # occupied_countries.1 should be updated along with this
-	NOT = {
-		AND = {
-			FROM = { original_tag = YUG }
+	is_subject = no
+	if = {
+		limit = {
 			original_tag = ITA
 		}
-		AND = {
-			FROM = { original_tag = DNZ }
+		NOT = { FROM = { original_tag = YUG } }
+	}
+
+	if = {
+		limit = {
 			original_tag = POL
 		}
-		TUR_cannot_form_kurdish_collaboration_government = yes
+		NOT = { FROM = { original_tag = DNZ } }
+	}
+	if = {
+		limit = {
+			original_tag = TUR
+		}
+		NOT = { FROM = { original_tag = KUR } }
+	}
+	NOT = {
 		any_country_with_original_tag = {
 			original_tag_to_check = FROM
 			is_puppet_of = PREV # if already created one do not create another
@@ -908,7 +934,6 @@ is_initial_ethiopian_state = {
 
 has_subject_autonomy_feature = {
 	has_dlc = "Together for Victory"
-	#TODO_Manu: More DLCs?
 }
 
 is_organization_of_african_unity_member = {
@@ -1001,6 +1026,8 @@ is_alpine_state = {
 			state = 153 #Tyrol - AUS 
 			state = 152 #Upper Austria - AUS 
 			state = 4 #Lower Austria 
+			state = 975 #Burgenland
+			state = 976 #Steiermark-Kömten 
 		}
 	}
 }

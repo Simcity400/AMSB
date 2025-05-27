@@ -27,22 +27,22 @@ hmm_capitulations_on_actions = {
 		}
 		FRA = {
 			set_capital = {
-				state = 461
+				state = 539
 			}
 		}
 		
-		GER = {
-			country_event = france.69420
-		}
+	#	GER = {
+	#		country_event = france.69420
+	#	}
 		set_global_flag = fall_of_france
-		every_country = {
-			limit = { is_in_faction_with = GER
-						NOT = {has_war_with= ENG}}
-			add_timed_idea = {
-				idea = WAR_join
-				days = 90
-			}
-		}
+	#	every_country = {
+	#		limit = { is_in_faction_with = GER
+	#					NOT = {has_war_with= ENG}}
+	#		add_timed_idea = {
+	#			idea = WAR_join
+	#			days = 90
+	#		}
+	#	}
 	}
 
 	if = {
@@ -78,97 +78,8 @@ hmm_capitulations_on_actions = {
 		}
 	}
 
-	if = {
-		limit = { 
-				original_tag = YUG 
-				OR = {
-					ITA = { has_war_with = YUG }
-					BUL = { has_war_with = YUG }
-					GER = { has_war_with = YUG }
-				}
-		} 
-		YUG = {
-			transfer_navy = { target = ITA }
-		}
 
-		ITA = {
-				add_named_threat = { 
-					threat = 9
-					name = hmm_yug
-				}
-			transfer_state = 103
-			transfer_state = 102
-			transfer_state = 104
-			transfer_state = 105
-			transfer_state = 109
-			transfer_state = 107
-			transfer_state = 108
-			transfer_state = 802
-			transfer_state = 804
-            transfer_state = 853
-		}
-		BUL = {
-			transfer_state = 106
-			transfer_state = 970
-			transfer_state = 803
-		
-		}
-		HUN = {
-			transfer_state = 764
-			transfer_state = 45
-		
-		}
-	} 
-	# Albania
-	if = {
-		limit = { 
-			original_tag = ALB 
-			ITA = { has_war_with = ALB }
-		} 
-		ITA = {
-			add_named_threat = { 
-				threat = -0.7 
-				name = hmm_alb
-			}
-			annex_country = {
-				target = ALB
-				transfer_troops = no
-			}
-		}
-	} 
-	# Greece
-	if = {
-		limit = { 
-			original_tag = GRE 
-			OR = {
-				ITA = { has_war_with = GRE }
-				BUL = { has_war_with = GRE }
-				GER = { has_war_with = YUG }
-			}
-		} 
-		
-		GRE = {
-			transfer_navy = { target = ITA }
-		}
-		ITA = {
-			transfer_state = 185
-			transfer_state = 47
-			transfer_state = 186
-			transfer_state = 187
-			transfer_state = 182
-		
-		}
-		BUL = {
-			add_named_threat = { 
-				threat = 4.3
-				name = hmm_gre
-			}
-			transfer_state = 731
-			transfer_state = 184
-		
-		}
-	
-	} 
+
 	# China
 	if = {
 		limit = { 

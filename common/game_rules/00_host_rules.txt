@@ -63,18 +63,8 @@ select_host_country = {
 		desc = ""
 	}
 	option = {
-		name = NZL
-		text = "New Zealand"
-		desc = ""
-	}
-	option = {
 		name = JAP
 		text = "Japan"
-		desc = ""
-	}
-	option = {
-		name = MAN
-		text = "Manchukuo"
 		desc = ""
 	}
 	option = {
@@ -98,21 +88,97 @@ select_host_country = {
 		desc = ""
 	}
 	option = {
-		name = IRE
-		text = "Ireland"
-		desc = ""
-	}
-	option = {
 		name = SPR
 		text = "Spain"
 		desc = ""
 	}
 }
 
-Germany_Cancel_Mefo= {
-	name = "Select if Germany is allowed to cancel MEFO Bills"
+
+danzig_date_lock= {
+	name = "'Danzig or War' available date"
 	group = "MSB Rules"
-	icon = "GFX_volunteers"
+	icon = "GFX_decision_border_war"
+	default = {
+		name = locked
+		text = "Not available until June 1939"
+		desc = "Germany cannot take the Focus 'Danzig or War' before June 1st 1939"
+	}
+	option = {
+		name = not_locked
+		text = "Always available"
+		desc = "Germany can always take the Focus 'Danzig or War' no matter the date"
+	}
+}
+
+barb_date_lock= {
+	name = "'War with the USSR' available date"
+	group = "MSB Rules"
+	icon = "GFX_decision_SOV_socialism_in_one_country"
+	default = {
+		name = locked
+		text = "Not available until June 1941"
+		desc = "Germany cannot take the Focus 'War with the USSR' before June 1st 1941"
+	}
+	option = {
+		name = not_locked
+		text = "Always available"
+		desc = "Germany can always take the Focus 'War with the USSR' no matter the date"
+	}
+}
+
+china_war_difficulty = {
+	name = "China War" 
+	group = "MSB Rules"
+	icon = "GFX_decision_jap_conquer_china"
+	option = {
+		name = yes
+		text = "RHard"
+		desc = "China will get 62 divisions in total which are all fully equipped (Not Recommmended)"
+	}
+	default = {
+		name = no
+		text = "GEasy"
+		desc = "China will get no divisions at all (Recommmended)"
+	}
+}
+
+auto_tech_rush = {
+	name = "Auto Tech Rush"
+	group = "MSB Rules"
+	icon = "GFX_decision_generic_research"
+	default = {
+		name = on
+		text = "GOn"
+		desc = "There will be decisions for auto-tech rushing (Recommmended)"
+	}
+	option = {
+		name = off
+		text = "ROff"
+		desc = "There will NOT be decisions for auto-tech rushing (Not Recommmended)"
+	}
+}
+
+hospitals = {
+	name = "Allow Hospital 2"
+	group = "MSB Rules"
+	icon = "GFX_decision_generic_cavalry"
+	option = {
+		name = on
+		text = "ROn"
+		desc = "You're ALLOWED to research Hospital 2 and onwards technology(NOT Recommmended)"
+	}
+	default = {
+		name = off
+		text = "GOff"
+		desc = "You're NOT ALLOWD TO research Hospital 2technology(Recommmended)"
+	}
+}
+
+Germany_Cancel_Mefo= {
+	name = "Is Germany is allowed to cancel MEFO Bills?"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_ger_mefo_bills"
 	default = {
 		name = Germany_no_cancel_MEFO_Bills
 		text = "Germany cant cancel MEFO Bills"
@@ -125,18 +191,214 @@ Germany_Cancel_Mefo= {
 	}
 
 }
-hospitals = {
-	name = "Allow Hospital 2"
-	group = "MSB Rules"
-	icon = "GFX_decision_generic_cavalry"
-	option = {
+
+sov_closed_eco = {
+	name = "Soviet Closed Economy"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_SOV_secure_the_administration"
+	default = {
 		name = on
 		text = "GOn"
-		desc = "You're ALLOWED to research Hospital 2 and onwards technology(NOT Recommmended)"
+		desc = "Soviets start the game on closed eco with free trade bonuses which cannot be changed (Recommmended)"
 	}
-	default = {
+	option = {
 		name = off
 		text = "ROff"
-		desc = "You're NOT ALLOWD TO research Hospital 2technology(Recommmended)"
+		desc = "Soviets start on export focus (Not Recommmended)"
+	}
+}
+
+japan_closed_eco = {
+	name = "Japan Closed Economy"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_jap_pacific_guardian"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Japan starts on limited exports (Recommmended)"
+	}
+	option = {
+		name = on
+		text = "ROn"
+		desc = "Japan starts the game on closed eco with free trade bonuses which cannot be changed (Not Recommmended)"
+	}
+}
+    
+  
+ger_boost = {
+	name = "German Civ Boost"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Germany won't have civilian factories buff (Recommmended)"
+	}
+	option = {
+		name = ger4
+		text = "ROn-4"
+		desc = "Germany gets 4 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = ger8
+		text = "ROn-8"
+		desc = "Germany gets 8 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = ger12
+		text = "ROn-12"
+		desc = "Germany gets 12 Civilian factories (Not Recommmended)"
+	}
+} 
+jap_boost = {
+	name = "Japan Civ Boost"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Japan won't have civilian factories buff (Recommmended)"
+	}
+	option = {
+		name = jap4
+		text = "ROn-4"
+		desc = "Japan gets 4 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = jap8
+		text = "ROn-8"
+		desc = "Japan gets 8 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = jap12
+		text = "ROn-12"
+		desc = "Japan gets 12 Civilian factories (Not Recommmended)"
+	}
+}          
+
+ita_boost = {
+	name = "Italy Civ Boost"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Italy won't have civilian factories buff (Recommmended)"
+	}
+	option = {
+		name = ita4
+		text = "ROn-4"
+		desc = "Italy gets 4 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = ita8
+		text = "ROn-8"
+		desc = "Italy gets 8 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = ita12
+		text = "ROn-12"
+		desc = "Italy gets 12 Civilian factories (Not Recommmended)"
+	}
+}
+sov_boost = {
+	name = "Soviets Civ Boost"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Soviets won't have civilian factories buff (Recommmended)"
+	}
+	option = {
+		name = sov4
+		text = "ROn-4"
+		desc = "Soviets gets 4 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = sov8
+		text = "ROn-8"
+		desc = "Soviets gets 8 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = sov12
+		text = "ROn-12"
+		desc = "Soviets gets 12 Civilian factories (Not Recommmended)"
+	}
+} 
+
+eng_boost = {
+	name = "Britain Civ Boost"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Britain won't have civilian factories buff (Recommmended)"
+	}
+	option = {
+		name = eng4
+		text = "ROn-4"
+		desc = "Britain gets 4 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = eng8
+		text = "ROn-8"
+		desc = "Britain gets 8 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = eng12
+		text = "ROn-12"
+		desc = "Britain gets 12 Civilian factories (Not Recommmended)"
+	}
+}
+fra_boost = {
+	name = "France Civ Boost"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "France won't have civilian factories buff (Recommmended)"
+	}
+	option = {
+		name = fra4
+		text = "ROn-4"
+		desc = "France gets 4 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = fra8
+		text = "ROn-8"
+		desc = "France gets 8 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = fra12
+		text = "ROn-12"
+		desc = "France gets 12 Civilian factories (Not Recommmended)"
+	}
+}
+usa_boost = {
+	name = "USA Civ Boost"
+	group = "Economic Adjustments"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "USA won't have civilian factories buff (Recommmended)"
+	}
+	option = {
+		name = usa4
+		text = "ROn-4"
+		desc = "USA gets 4 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = usa8
+		text = "ROn-8"
+		desc = "USA gets 8 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = usa12
+		text = "ROn-12"
+		desc = "USA gets 12 Civilian factories (Not Recommmended)"
 	}
 }

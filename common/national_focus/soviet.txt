@@ -725,7 +725,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_ideas = SOV_new_floor_managers
 			add_to_variable = { SOV_fyp_production_factory_efficiency_gain_factor = 0.05 } #Add efficiency gain
 			add_to_variable = { SOV_fyp_production_factory_start_efficiency_factor = 0.05 } #Add efficiency start
 			add_to_variable = { SOV_fyp_industrial_capacity_factory = 0.02 } #Add small output bonus
@@ -2120,7 +2119,7 @@ focus_tree = {
 		x = 6
 		y = 0
 		relative_position_id = SOV_transpolar_flights
-		cost = 2
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2164,273 +2163,20 @@ focus_tree = {
 
 		icon = GFX_SOV_reinforce_western_naval_bases_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_expand_the_red_fleet }
-		x = 0
+		x = -3
 		y = 1
 		relative_position_id = SOV_expand_the_red_fleet
-		cost = 2
+		cost = 5
 
 		available = {
-			OR = {
-				408 = { #VLADIVOSTOK
-					is_owned_and_controlled_by = ROOT
-				}
-				409 = { #KHABAROVSK
-					is_owned_and_controlled_by = ROOT
-				}
-			}
 			195 = { #LENINGRAD
 				is_owned_and_controlled_by = ROOT
-			}
-			OR = {
-				213 = { #MURMANSK
-					is_owned_and_controlled_by = ROOT
-				}
-				214 = { #ARKHANGELSK
-					is_owned_and_controlled_by = ROOT
-				}
-			}
-			OR = {
-				192 = { #ODESSA
-					is_owned_and_controlled_by = ROOT
-				}
-				137 = { #CRIMEA
-					is_owned_and_controlled_by = ROOT
-				}
-				218 = { #ROSTOV
-					is_owned_and_controlled_by = ROOT
-				}
-				234 = { #KRASNODAR
-					is_owned_and_controlled_by = ROOT
-				}
 			}
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
-			if = { #VLADIVOSTOK - Improved naval base + AA + coastal fort
-			limit = {
-				has_full_control_of_state = 408
-			}
-			408 = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 957
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					instant_build = yes
-					province = 957
-				}
-				set_state_flag = SOV_naval_bases_reinforced_flag
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-		}
-		if = { #VLADIVOSTOK - Improved naval base + AA + coastal fort
-			limit = {
-				has_full_control_of_state = 409
-			}
-			409 = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 9604
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					instant_build = yes
-					province = 9604
-				}
-				set_state_flag = SOV_naval_bases_reinforced_flag
-			}
-		}
-			if = { #ODESSA - Improved naval base + AA + coastal fort
-				limit = {
-					has_full_control_of_state = 192
-				}
-				192 = {
-					add_building_construction = {
-						type = anti_air_building
-						level = 1
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = naval_base
-						level = 2
-						instant_build = yes
-						province = 11670
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						level = 2
-						instant_build = yes
-						province = 11670
-					}
-					set_state_flag = SOV_naval_bases_reinforced_flag
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-			if = { #SEVASTOPOL (CRIMEA) - Extra AA + coastal fort
-				limit = {
-					has_full_control_of_state = 137
-				}
-				137 = {
-					add_building_construction = {
-						type = anti_air_building
-						level = 2
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						level = 3
-						instant_build = yes
-						province = 3686
-					}
-					set_state_flag = SOV_naval_bases_reinforced_flag
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-			if = { #ROSTOV - Improved naval base + AA + coastal fort
-				limit = {
-					has_full_control_of_state = 218
-				}
-				218 = {
-					add_building_construction = {
-						type = anti_air_building
-						level = 1
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = naval_base
-						level = 2
-						instant_build = yes
-						province = 9417
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						level = 2
-						instant_build = yes
-						province = 9417
-					}
-					set_state_flag = SOV_naval_bases_reinforced_flag
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-			if = { #KRASNODAR - Improved naval base + AA + coastal fort
-				limit = {
-					has_full_control_of_state = 234
-				}
-				234 = {
-					add_building_construction = {
-						type = anti_air_building
-						level = 1
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = naval_base
-						level = 2
-						instant_build = yes
-						province = 719
-					}
-					add_building_construction = {
-						type = coastal_bunker
-						level = 2
-						instant_build = yes
-						province = 719
-					}
-					set_state_flag = SOV_naval_bases_reinforced_flag
-				}
-			}
-		}
-			if = { #MURMANSK - Improved naval base + AA + coastal fort
-			limit = {
-				has_full_control_of_state = 213
-			}
-			213 = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 3134
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					instant_build = yes
-					province = 3134
-				}
-				set_state_flag = SOV_naval_bases_reinforced_flag
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-		}
-		if = { #ARKHANGELSK - Improved naval base + Severodvinsk Naval Base + AA + coastal fort
-			limit = {
-				has_full_control_of_state = 214
-			}
-			214 = {
-				add_building_construction = {
-					type = anti_air_building
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = naval_base
-					level = 1
-					instant_build = yes
-					province = 3338
-				}
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 312
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					instant_build = yes
-					province = 3338
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 2
-					instant_build = yes
-					province = 312
-				}
-				set_state_flag = SOV_naval_bases_reinforced_flag
-			}
-		}
-	}
 			195 = { #LENINGRAD
 				if = {
 					limit = {
@@ -2555,16 +2301,326 @@ focus_tree = {
 					set_state_flag = SOV_naval_bases_reinforced_flag
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = SOV_reinforce_northern_naval_bases
+
+		icon = GFX_SOV_reinforce_northern_naval_bases_ccp_2d_sov_compatibility
+		prerequisite = { focus = SOV_expand_the_red_fleet }
+		x = -1
+		y = 1
+		relative_position_id = SOV_expand_the_red_fleet
+		cost = 5
+
+		available = {
+			OR = {
+				213 = { #MURMANSK
+					is_owned_and_controlled_by = ROOT
+				}
+				214 = { #ARKHANGELSK
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		completion_reward = {
+			if = { #MURMANSK - Improved naval base + AA + coastal fort
+				limit = {
+					has_full_control_of_state = 213
+				}
+				213 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 3134
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 3134
+					}
+					set_state_flag = SOV_naval_bases_reinforced_flag
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			if = { #ARKHANGELSK - Improved naval base + Severodvinsk Naval Base + AA + coastal fort
+				limit = {
+					has_full_control_of_state = 214
+				}
+				214 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						instant_build = yes
+						province = 3338
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 312
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 3338
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 312
+					}
+					set_state_flag = SOV_naval_bases_reinforced_flag
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_reinforce_southern_naval_bases
+
+		icon = GFX_SOV_reinforce_southern_naval_bases_ccp_2d_sov_compatibility
+		prerequisite = { focus = SOV_expand_the_red_fleet }
+		x = 1
+		y = 1
+		relative_position_id = SOV_expand_the_red_fleet
+		cost = 5
+
+		available = {
+			OR = {
+				192 = { #ODESSA
+					is_owned_and_controlled_by = ROOT
+				}
+				137 = { #CRIMEA
+					is_owned_and_controlled_by = ROOT
+				}
+				218 = { #ROSTOV
+					is_owned_and_controlled_by = ROOT
+				}
+				234 = { #KRASNODAR
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		completion_reward = {
+			if = { #ODESSA - Improved naval base + AA + coastal fort
+				limit = {
+					has_full_control_of_state = 192
+				}
+				192 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 11670
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 11670
+					}
+					set_state_flag = SOV_naval_bases_reinforced_flag
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			if = { #SEVASTOPOL (CRIMEA) - Extra AA + coastal fort
+				limit = {
+					has_full_control_of_state = 137
+				}
+				137 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						instant_build = yes
+						province = 3686
+					}
+					set_state_flag = SOV_naval_bases_reinforced_flag
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			if = { #ROSTOV - Improved naval base + AA + coastal fort
+				limit = {
+					has_full_control_of_state = 218
+				}
+				218 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 9417
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 9417
+					}
+					set_state_flag = SOV_naval_bases_reinforced_flag
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			if = { #KRASNODAR - Improved naval base + AA + coastal fort
+				limit = {
+					has_full_control_of_state = 234
+				}
+				234 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 719
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 719
+					}
+					set_state_flag = SOV_naval_bases_reinforced_flag
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_reinforce_eastern_naval_bases
+
+		icon = GFX_SOV_reinforce_eastern_naval_bases_ccp_2d_sov_compatibility
+		prerequisite = { focus = SOV_expand_the_red_fleet }
+		x = 3
+		y = 1
+		relative_position_id = SOV_expand_the_red_fleet
+		cost = 5
+
+		available = {
+			OR = {
+				408 = { #VLADIVOSTOK
+					is_owned_and_controlled_by = ROOT
+				}
+				409 = { #KHABAROVSK
+					is_owned_and_controlled_by = ROOT
+				}
+			}
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		completion_reward = {
+			if = { #VLADIVOSTOK - Improved naval base + AA + coastal fort
+				limit = {
+					has_full_control_of_state = 408
+				}
+				408 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 957
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 957
+					}
+					set_state_flag = SOV_naval_bases_reinforced_flag
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			if = { #VLADIVOSTOK - Improved naval base + AA + coastal fort
+				limit = {
+					has_full_control_of_state = 409
+				}
+				409 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 9604
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						instant_build = yes
+						province = 9604
+					}
+					set_state_flag = SOV_naval_bases_reinforced_flag
+				}
+			}
+		}
+	}
 
 	focus = {
 		id = SOV_expand_shipbuilding_plants
 
 		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
-		prerequisite = {focus = SOV_reinforce_western_naval_bases}
-		x = -2
+		prerequisite = { focus = SOV_reinforce_western_naval_bases focus = SOV_reinforce_northern_naval_bases focus = SOV_reinforce_southern_naval_bases focus = SOV_reinforce_eastern_naval_bases }
+		x = 1
 		y = 1
-		relative_position_id = SOV_reinforce_western_naval_bases
-		cost = 4
+		relative_position_id = SOV_reinforce_northern_naval_bases
+		cost = 10
 
 		available = {
 
@@ -3214,7 +3270,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = SOV_expand_shipbuilding_plants
-		cost = 4
+		cost = 10
 
 		available = {
 		}
@@ -3527,11 +3583,11 @@ focus_tree = {
 		id = SOV_naval_infantry
 
 		icon = GFX_SOV_naval_infantry_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_reinforce_western_naval_bases }
+		prerequisite = { focus = SOV_advanced_maneuvers }
 		x = 0
 		y = 1
-		relative_position_id = SOV_reinforce_western_naval_bases
-		cost = 5
+		relative_position_id = SOV_advanced_maneuvers
+		cost = 10
 
 		available = {
 
@@ -3819,7 +3875,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_pc_of_mechanical_engineering
-		cost = 5
+		cost = 10
 
 		available = {
 
@@ -4466,7 +4522,7 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = SOV_military_engineering_university
-		cost = 5
+		cost = 10
 
 		available = {
 			has_full_control_of_state = 219 #MOSCOW
@@ -5628,10 +5684,81 @@ focus_tree = {
 	}
 
 	focus = {
+		id = SOV_restore_cossack_units
+		icon = GFX_focus_SOV_restore_cossack_units
+		prerequisite = { focus = SOV_strengthen_the_mobilization_plan }
+		x = -1
+		y = 1
+		relative_position_id = SOV_strengthen_the_mobilization_plan
+		cost = 5
+
+		mutually_exclusive = { focus = SOV_cohesion_first }
+
+		available = {
+
+		}
+		
+		search_filters = {}
+
+		completion_reward = {
+			add_to_variable = { SOV_the_red_army_modifier_army_sub_unit_cavalry_speed_factor = 0.05 }
+			add_to_variable = { SOV_the_red_army_cavalry_attack_factor = 0.05 }
+			custom_effect_tooltip = SOV_restore_cossack_units_ns_tt
+
+			show_unit_leaders_tooltip = SOV_lev_dovator
+
+			#Spawn Cossack divisions
+			custom_effect_tooltip = SOV_restore_cossack_units_spawn_tt
+			hidden_effect = {
+				division_template = {
+					name = "Kazachya Kavaleryskaya Diviziya"
+					division_names_group = SOV_CAV_02
+					template_counter = 05
+
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						mot_artillery_brigade = { x = 2 y = 0 }
+						light_armor = { x = 3 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+					}
+				}
+
+				capital_scope = {
+					#Cossack Cavalry
+					create_unit = { 
+						division = "name = \"4ya Donskaya Kazachya Kav. Div.\" division_template = \"Kazachya Kavaleryskaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"6ya Kubansko-Terskaya Kazachya Kav. Div.\" division_template = \"Kazachya Kavaleryskaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"10ya Tersko-Stavropolskaya Kazachya Kav. Div\" division_template = \"Kazachya Kavaleryskaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"12ya Kubanskaya Kazachya Kav. Div.\" division_template = \"Kazachya Kavaleryskaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1.0" owner = ROOT
+					}
+
+					#Cossack Infantry
+					create_unit = {
+						division = "name = \"13ya Donskaya Kazachya Div.\" division_template = \"Strelkovaya Diviziya\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = SOV_cohesion_first
 		icon = GFX_SOV_cohesion_first_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_strengthen_the_mobilization_plan }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = SOV_strengthen_the_mobilization_plan
 		cost = 5
@@ -5677,8 +5804,7 @@ focus_tree = {
 		id = SOV_military_reorganization
 		icon = GFX_SOV_military_reorganization_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_rehabilitated_military }
-		mutually_exclusive = { focus = SOV_military_reorganization_longer }
-		x = -1
+		x = 0
 		y = 2
 		relative_position_id = SOV_rehabilitated_military
 		cost = 10
@@ -5688,9 +5814,7 @@ focus_tree = {
 		}
 
 		available = {
-			any_enemy_country = {
-				SOV_is_major_not_original_sov = yes
-			}
+
 		}
 		
 		search_filters = {FOCUS_FILTER_ARMY_XP}
@@ -5718,57 +5842,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SOV_military_reorganization_longer
-		icon = GFX_SOV_military_reorganization_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_rehabilitated_military }
-		x = 1
-		y = 2
-		relative_position_id = SOV_rehabilitated_military
-		cost = 15
-
-		select_effect = {
-			add_ideas = SOV_military_reorganization_ns
-		}
-
-		available = {
-			any_enemy_country = {
-				SOV_is_major_not_original_sov = yes
-			}
-		}
-		
-		search_filters = {FOCUS_FILTER_ARMY_XP}
-
-		completion_reward = {
-			add_ideas = SOV_new_officer_core
-			#Tooltip purposes (Select Effect)
-			custom_effect_tooltip = SOV_focus_select_effect_tt
-			effect_tooltip = {
-				add_ideas = SOV_military_reorganization_ns	
-			}
-
-			#(Complete Effect)
-			custom_effect_tooltip = SOV_focus_complete_effect_tt
-			hidden_effect = {
-				remove_ideas = SOV_military_reorganization_ns
-			}
-
-			add_to_variable = { SOV_the_red_army_unit_infantry_design_cost_factor = -0.1 }
-			add_to_variable = { SOV_the_red_army_unit_artillery_brigade_design_cost_factor = -0.1 }
-			custom_effect_tooltip = SOV_military_reorganization_ns_tt
-
-			army_experience = 50
-			add_command_power = 25
-		}
-	}
-
-	focus = {
 		id = SOV_desperate_measures
 		icon = GFX_SOV_desperate_measures_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_strengthen_the_mobilization_plan }
 		x = 3
 		y = 2
 		relative_position_id = SOV_strengthen_the_mobilization_plan
-		cost = 1
+		cost = 5
 
 		available = {
 			any_enemy_country = {
@@ -5793,10 +5873,11 @@ focus_tree = {
 	focus = {
 		id = SOV_an_adaptable_army
 		icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_military_reorganization focus = SOV_military_reorganization_longer} 
+		prerequisite = { focus = SOV_rehabilitated_military }
+		prerequisite = { focus = SOV_desperate_measures }
 		x = 1
 		y = 1
-		relative_position_id = SOV_military_reorganization
+		relative_position_id = SOV_rehabilitated_military
 		cost = 10
 
 		available = {
@@ -5864,12 +5945,59 @@ focus_tree = {
 	}
 
 	focus = {
+		id = SOV_penal_battalions
+		icon = GFX_focus_SOV_penal_battalions
+		prerequisite = { focus = SOV_desperate_measures }
+		x = 2
+		y = 1
+		relative_position_id = SOV_desperate_measures
+		cost = 5
+
+		available = {
+			has_war = yes
+		}
+		
+		search_filters = {}
+
+		completion_reward = {
+			#Spawn Penal divisions
+			custom_effect_tooltip = SOV_penal_battalions_spawn_tt
+			hidden_effect = {
+				#set_technology = { penal_infantry = 1 popup = no } #Note: Granting tech will make the penal battalion available for any template
+
+				division_template = {
+					name = "Shtrafnaya Chast"
+					division_names_group = SOV_PEN_01
+					is_locked = yes
+
+					regiments = {
+						penal_battalion = { x = 0 y = 0 }
+						penal_battalion = { x = 0 y = 1 }
+						penal_battalion = { x = 0 y = 2 }
+						penal_battalion = { x = 1 y = 0 }
+						penal_battalion = { x = 1 y = 1 }
+						penal_battalion = { x = 1 y = 2 }
+						penal_battalion = { x = 2 y = 0 }
+						penal_battalion = { x = 2 y = 1 }
+						penal_battalion = { x = 2 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+					}
+				}
+
+				SOV_spawn_penal_divisions_effect = yes
+			}
+		}
+	}
+
+	focus = {
 		id = SOV_organization_of_the_partisans
 		icon = GFX_focus_focus_fra_maquis
-		prerequisite = { focus = SOV_smersh }
-		x = 0
+		prerequisite = { focus = SOV_lessons_of_war }
+		x = -1
 		y = 1
-		relative_position_id = SOV_smersh
+		relative_position_id = SOV_lessons_of_war
 		cost = 10
 
 		available = {
@@ -5943,7 +6071,7 @@ focus_tree = {
 		id = SOV_smersh
 		icon = GFX_SOV_smersh_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_lessons_of_war }
-		x = 3
+		x = 2
 		y = 1
 		relative_position_id = SOV_lessons_of_war
 		cost = 10
@@ -5983,10 +6111,10 @@ focus_tree = {
 	focus = {
 		id = SOV_barrier_troops
 		icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_lessons_of_war }
+		prerequisite = { focus = SOV_smersh }
 		x = 0
 		y = 1
-		relative_position_id = SOV_lessons_of_war
+		relative_position_id = SOV_smersh
 		cost = 5
 
 		available = {
@@ -6004,13 +6132,14 @@ focus_tree = {
 	focus = {
 		id = SOV_experts_in_camouflage
 		icon = GFX_SOV_experts_in_camouflage_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_an_adaptable_army}
-		x = 0
+		prerequisite = { focus = SOV_military_reorganization }
+		x = -1
 		y = 1
-		relative_position_id = SOV_an_adaptable_army
+		relative_position_id = SOV_military_reorganization
 		cost = 5
 
 		available = {
+
 		}
 		
 		search_filters = {}
@@ -6026,10 +6155,11 @@ focus_tree = {
 	focus = {
 		id = SOV_keep_commissars_organization
 		icon = GFX_SOV_keep_commissars_organization_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_barrier_troops }
-		x = -1
+		prerequisite = { focus = SOV_military_reorganization }
+		prerequisite = { focus = SOV_lessons_of_war }
+		x = 1
 		y = 1
-		relative_position_id = SOV_barrier_troops
+		relative_position_id = SOV_military_reorganization
 		cost = 10
 
 		mutually_exclusive = { focus = SOV_swap_to_political_advisors }
@@ -6131,10 +6261,11 @@ focus_tree = {
 	focus = {
 		id = SOV_swap_to_political_advisors
 		icon = GFX_SOV_swap_to_political_advisors_ccp_2d_sov_compatibility
-		prerequisite = { focus = SOV_barrier_troops}
-		x = 1
+		prerequisite = { focus = SOV_military_reorganization }
+		prerequisite = { focus = SOV_lessons_of_war }
+		x = 3
 		y = 1
-		relative_position_id = SOV_barrier_troops
+		relative_position_id = SOV_military_reorganization
 		cost = 10
 
 		mutually_exclusive = { focus = SOV_keep_commissars_organization focus = SOV_adjoined_battle_priests }
@@ -7704,7 +7835,7 @@ focus = {
 	id = SOV_nkvd_primacy
 	icon = GFX_SOV_nkvd_primacy_ccp_2d_sov_compatibility
 	prerequisite = { focus = SOV_addressing_internal_affairs }
-	x = -3
+	x = -2
 	y = 1
 	relative_position_id = SOV_addressing_internal_affairs
 	cost = 5
@@ -7720,53 +7851,6 @@ focus = {
 		SOV_paranoia_medium_increase_effect = yes
 	}
 }
-
-focus = {
-		id = SOV_penal_battalions
-		icon = GFX_focus_SOV_penal_battalions
-		prerequisite = { focus = SOV_nkvd_primacy }
-		x = 0
-		y = 1
-		relative_position_id = SOV_nkvd_primacy
-		cost = 5
-
-		available = {
-			has_war = yes
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			#Spawn Penal divisions
-			custom_effect_tooltip = SOV_penal_battalions_spawn_tt
-			hidden_effect = {
-				set_technology = { penal_infantry = 1 popup = no } #Note: Granting tech will make the penal battalion available for any template
-
-				division_template = {
-					name = "Shtrafnaya Chast"
-					division_names_group = SOV_PEN_01
-					is_locked = yes
-
-					regiments = {
-						penal_battalion = { x = 0 y = 0 }
-						penal_battalion = { x = 0 y = 1 }
-						penal_battalion = { x = 0 y = 2 }
-						penal_battalion = { x = 1 y = 0 }
-						penal_battalion = { x = 1 y = 1 }
-						penal_battalion = { x = 1 y = 2 }
-						penal_battalion = { x = 2 y = 0 }
-						penal_battalion = { x = 2 y = 1 }
-						penal_battalion = { x = 2 y = 2 }
-					}
-					support = {
-						artillery = { x = 0 y = 0 }
-					}
-				}
-
-				SOV_spawn_penal_divisions_effect = yes
-			}
-		}
-	}
 
 focus = {
 	id = SOV_the_new_soviet_woman
@@ -7826,7 +7910,7 @@ focus = {
 	id = SOV_positive_heroism
 	icon = GFX_SOV_positive_heroism_ccp_2d_sov_compatibility
 	prerequisite = { focus = SOV_expand_the_agitprop }
-	x = -1
+	x = -2
 	y = 1
 	relative_position_id = SOV_expand_the_agitprop
 	cost = 10
@@ -7966,7 +8050,7 @@ focus = {
 	id = SOV_collectivist_propaganda
 	icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
 	prerequisite = { focus = SOV_expand_the_agitprop }
-	x = 1
+	x = 0
 	y = 1
 	relative_position_id = SOV_expand_the_agitprop
 	cost = 10
@@ -8037,7 +8121,7 @@ focus = {
 	id = SOV_the_komsomol
 	icon = GFX_SOV_the_komsomol_ccp_2d_sov_compatibility
 	prerequisite = { focus = SOV_expand_the_agitprop }
-	x = 3
+	x = 2
 	y = 1
 	relative_position_id = SOV_expand_the_agitprop
 	cost = 5
@@ -9021,16 +9105,77 @@ ai_will_do = {
 		}
 	}
 
+	focus = {
+		id = SOV_secure_leningrad
+		icon = GFX_focus_generic_attack_finland
+		prerequisite = {  focus = SOV_claims_in_baltic }
+		x = 0
+		y = 1
+		relative_position_id = SOV_claims_in_baltic
+		cost = 5
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_civil_war = yes
+			}	
+		}
+		dynamic = yes 
+
+		available = {
+			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
+			is_subject = no
+		}
+
+		will_lead_to_war_with = FIN
+		bypass = {
+			OR = {
+				has_full_control_of_state = 146
+				is_in_faction_with = FIN
+				has_country_flag = FIN_finno_soviet_pact_flag
+			}
+		}
+		
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+
+		completion_reward = {
+			add_state_claim = 146 # Karjala
+
+			if= {
+				limit = {
+					146 = {
+						controller = {
+							NOT = { has_war_with = ROOT }
+						}
+					}
+				}
+				146 = {
+					controller = {
+						set_country_flag = SOV_ultimatum_sent_flag #Add it for AI strats reasons
+						add_timed_idea = {
+							idea = communist_pressure
+							days = 365
+						}
+						country_event = { id = finland.1 hours = 16 random_hours = 8 }
+					}
+				}
+				custom_effect_tooltip = if_they_accept_tt
+				event_option_tooltip = soviet.12.a
+			}
+		}
+	}
+
 
 	
 	focus = {
 		id = SOV_claim_on_bessarabia
 		icon = GFX_focus_generic_attack_romania
 		prerequisite = { focus = SOV_claims_in_baltic }
-		x = 0
+		x = 2
 		y = 1
 		relative_position_id = SOV_claims_in_baltic
-		cost = 2
+		cost = 5
 
 		ai_will_do = {
 			factor = 2.5
