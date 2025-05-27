@@ -331,70 +331,11 @@ focus_tree = {
 
 	#	available_if_capitulated = yes
 
+
 		completion_reward = {
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 1.0
-				uses = 1
-				category = armor
+			hidden_effect = {country_event = uktanks.1}
+			custom_effect_tooltip = uk_tank_spawn_tt
 			}
-			swap_ideas = {
-				remove_idea = motorized_army
-				add_idea = motorized_army_two
-			}
-			division_template = {
-				name = "Royal Tank Regiment" 	
-
-				regiments = {		
-					heavy_armor = { x = 0 y = 0 }		
-					heavy_armor = { x = 0 y = 1 }		
-					heavy_armor = { x = 0 y = 2 }	
-					heavy_armor = { x = 0 y = 3 }
-					heavy_armor = { x = 0 y = 4 }		
-					heavy_armor = { x = 1 y = 0 }		
-					heavy_armor = { x = 1 y = 1 }
-					heavy_armor = { x = 1 y = 2 }		
-					heavy_armor = { x = 1 y = 3 }
-					heavy_armor = { x = 1 y = 4 }		
-					mechanized = { x = 2 y = 0 }			
-					mechanized = { x = 2 y = 1 }
-					mechanized = { x = 2 y = 2 }
-					mechanized = { x = 2 y = 3 }	
-					mechanized = { x = 2 y = 4 }		
-					mechanized = { x = 3 y = 0 }
-					mechanized = { x = 3 y = 1 }			
-					mechanized = { x = 3 y = 2 }
-					mechanized = { x = 3 y = 3 }
-					mechanized = { x = 3 y = 4 }
-				}
-				support = {  		
-					artillery = { x = 0 y = 0 }
-					anti_air = { x = 0 y = 1 }
-					engineer = { x = 0 y = 2 }
-
-				}
-			}
-		
-				capital_scope = {
-					create_unit = {
-						division = "name = \"1st Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"2nd Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = ROOT
-					}
-						create_unit = {
-						division = "name = \"3rd Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"4th Royal Tank Divison\" division_template = \"Royal Tank Regiment\" start_experience_factor = 0.7 }"  
-						owner = ROOT
-					}
-				}
-			
-		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 	focus = {
@@ -1193,7 +1134,7 @@ focus_tree = {
 				}			
 			}
 		
-			
+			add_ideas = ENG_quality_RAF_pilots
 					
 			random_owned_controlled_state = {
 				limit = {
@@ -2822,13 +2763,12 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = uk_commonwealth_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 30
 		}
 
 		available = {
-			date > 1941.1.1
 			OR = {
 				CAN = { is_in_faction_with = ENG }
 				SAF = { is_in_faction_with = ENG }
@@ -2854,7 +2794,6 @@ focus_tree = {
 			}
 			ENG = {
 				add_ideas = ENG_the_plan
-				add_ideas = ENG_quality_RAF_pilots
 			}
 		}
 	}
@@ -4127,7 +4066,7 @@ focus_tree = {
 		}
 		completion_reward = {
 		add_ideas = welsh_miners_exploited
-			1017 = {
+			122 = {
 				add_building_construction = {
 					type =  dam
 					level = 1
