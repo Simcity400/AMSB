@@ -340,7 +340,7 @@ operations = {
 				}
 			}
 		}
-    	annex_netherlands = {
+    	annex_east_indies = {
 			# icon = generic_operation
 			allowed = {
 				tag = USA
@@ -361,32 +361,21 @@ operations = {
 				HOL	
 			}
 			complete_effect = {
-				HOL = {
-					transfer_units_fraction = {
-						target = USA
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
+		
 				USA = {
-					annex_country = {
-						target = HOL
-						transfer_troops = yes
-					}
+               	    transfer_state = 672
+			        transfer_state = 334
+			        transfer_state = 335
+			        transfer_state = 667
+			        transfer_state = 673
+			        transfer_state = 668
+			        transfer_state = 669
+			        transfer_state = 309
+			        transfer_state = 695
+                    transfer_state = 721 
+                    transfer_state = 738   
 				}
-				every_state = {
-					limit = {
-						is_core_of = HOL 
-						is_controlled_by = USA
-					}
-					add_compliance = 100
-				}
+		
 			}
 		}
 }
