@@ -437,6 +437,11 @@
 		search_filters = { FOCUS_FILTER_RESEARCH  }
 
 		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
 			285 = {
 				add_building_construction = {
 					type = land_facility
@@ -594,7 +599,7 @@
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1.00
-				uses = 2
+				uses = 3
 				category = rocketry
 			}
 		}
@@ -664,11 +669,16 @@
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = doctrine
-				bonus = 0.5
-				uses = 4
+			
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = special_forces_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
 			}
 		}
 	}
@@ -739,6 +749,11 @@
 
 		completion_reward = {
 			add_ideas = AST_increased_indian_cooperation
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
 		}
 	}
 
