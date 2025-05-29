@@ -1,0 +1,288 @@
+on_actions = {
+	on_startup = {
+        effect = {
+            if = {
+                limit = {
+                    WST = { has_country_flag = no_asia_bookmark }
+                }
+                WST = { 
+                    add_equipment_to_stockpile = {
+                        type = infantry_equipment_1
+                        amount = 999999
+                    }
+                }
+                FRA = {
+                    add_state_core = 635
+                    add_state_core = 543
+                    add_state_core = 461
+                    add_state_core = 462
+                    add_state_core = 728
+                    add_equipment_to_stockpile = {
+                        type = infantry_equipment_1
+                        amount = 7000
+                    }
+                }
+                ENG = {
+					add_state_core = 118
+					add_ideas = {
+						noasia_research
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 8000
+					}
+					add_research_slot = 1
+					126 = {
+						add_building_construction = {
+							type = industrial_complex
+							level = 20
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = arms_factory
+							level = 10
+							instant_build = yes
+						}
+						add_extra_state_shared_building_slots = 30
+					}
+				}
+				ROM = { 
+                    annex_country = { target = HUN transfer_troops = yes }
+                    every_state = {
+						limit = {
+							is_core_of = HUN
+						}
+						add_core_of = ROM
+					}
+                }
+                ROM = {
+                    annex_country = { target = BUL transfer_troops = yes }
+                    every_state = {
+						limit = {
+                            is_core_of = BUL
+						}
+						add_core_of = ROM
+					    }
+                    }
+                ROM = {
+                    annex_country = { target = FIN transfer_troops = yes }
+                    every_state = {
+						limit = {
+                            is_core_of = FIN
+						}
+						add_core_of = ROM
+					    }
+                    }
+                WST = { 
+                    annex_country = { target = AST transfer_troops = yes }
+                    every_state = {
+						limit = {
+							is_core_of = AST
+                    	}
+						add_core_of = WST
+					}
+                }
+                WST = { 
+                    annex_country = { target = RAJ transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = RAJ
+                        }
+                        add_core_of = WST
+                    }
+                }
+                WST = { 
+                    annex_country = { target = USA transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = USA
+                        }
+                        add_core_of = WST
+                    }
+                }
+                WST = { 
+                    annex_country = { target = PHI transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = PHI
+                        }
+                        add_core_of = WST
+                    }
+                }
+				WST = { 
+                    annex_country = { target = BRA transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = BRA
+                        }
+                        add_core_of = WST
+                    }
+                }
+                WST = { 
+                    annex_country = { target = JAP transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = JAP
+                        }
+                        add_core_of = WST
+                    }
+                }
+                WST = { 
+                    annex_country = { target = SIA transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = SIA
+                        }
+                        add_core_of = WST
+                    }
+                }
+                WST = { 
+                    annex_country = { target = MAN transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = MAN
+                        }
+                        add_core_of = WST
+                    }
+                }
+                WST = { 
+                    annex_country = { target = MEX transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = MEX
+                        }
+                        add_core_of = WST
+                    }
+                }
+                WST = { 
+                    annex_country = { target = CHI transfer_troops = yes }
+                    every_state = {
+                        limit = {
+                            is_core_of = CHI
+                        }
+                        add_core_of = WST
+                    }
+                }
+                WST = {
+                    give_resource_rights = {
+						receiver = FRA
+						state = 635
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 375
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 376
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 378
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 391
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 336
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 672
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 379
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 380
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 387
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 382
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 371
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 372
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 373
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 383
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 366
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 373
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 388
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 389
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 368
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 394
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 393
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 261
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 360
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 358
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 357
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 374
+					}
+                }
+                649 = {
+					add_building_construction = {
+						type = naval_base
+						level = 10
+						province = 5023
+						instant_build = yes
+					}
+				}
+            }
+        }
+    }
+}
+
