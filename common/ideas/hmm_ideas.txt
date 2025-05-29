@@ -56,6 +56,50 @@ ideas = {
 		
 	}
 	hidden_ideas = {
+		blm_ai = {
+			cancel = {
+				is_ai = no
+			}
+			removal_cost = -1
+			picture = ger_mefo_bills_payment
+			allowed = {
+				is_ai = yes
+			}
+			modifier = {
+				industrial_capacity_factory = -10
+				production_factory_max_efficiency_factor = -10
+				conscription = -10
+				consumer_goods_factor = 100
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+				ai_desired_divisions_factor = -1000
+				lend_lease_tension = 99
+				ai_license_acceptance = -1000
+				navy_intel_to_others = -1000
+				army_intel_to_others = -1000
+				airforce_intel_to_others = -1000
+			}
+		}
+
+		ai_idea = {
+			cancel = {
+				is_ai = no
+			}
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			allowed = {
+				is_ai = yes
+			}
+			modifier = {
+				enemy_operative_capture_chance_factor = -2
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+				enemy_operative_detection_chance = -200
+				trade_laws_cost_factor = 10000
+				justify_war_goal_time = 100
+				enemy_justify_war_goal_time = 100
+			}
+		}
 		novols = {
 			allowed = {
 				always = no
