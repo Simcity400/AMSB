@@ -736,7 +736,7 @@ focus_tree = {
 		id = CAN_polymer_corporation
 		icon = GFX_goal_generic_oil_refinery
 		prerequisite = { focus = CAN_turner_valley_oilfield }
-		x = -1
+		x = -3
 		y = 6
 		relative_position_id = CAN_cmp_truck
 
@@ -861,7 +861,7 @@ focus_tree = {
 		id = CAN_forced_quebec_conscription
 		icon = GFX_goal_tfv_can_forced_quebec_conscription 
 		prerequisite = { focus = CAN_SF_2 }
-		x = -2
+		x = 0
 		y = 4
 		relative_position_id = CAN_cmp_truck
 
@@ -1105,7 +1105,7 @@ focus_tree = {
 		id = CAN_a_motorized_army
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = CAN_cmp_truck }
-		x = 0
+		x = -2
 		y = 1
 		relative_position_id = CAN_cmp_truck
 
@@ -1142,7 +1142,7 @@ focus_tree = {
 		id = CAN_Research_Bonus_1
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = CAN_a_motorized_army }
-		x = 0
+		x = -2
 		y = 2
 		relative_position_id = CAN_cmp_truck
 
@@ -1179,7 +1179,7 @@ focus_tree = {
 		id = CAN_Research_Bonus_2
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = CAN_Research_Bonus_1 }
-		x = 0
+		x = -2
 		y = 3
 		relative_position_id = CAN_cmp_truck
 
@@ -1216,7 +1216,7 @@ focus_tree = {
 		id = CAN_Research_Bonus_3
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = CAN_Research_Bonus_2 }
-		x = 0
+		x = -2
 		y = 4
 		relative_position_id = CAN_cmp_truck
 
@@ -1253,9 +1253,10 @@ focus_tree = {
 		id = CAN_the_black_devils
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = CAN_cmp_truck }
-		x = -2
+		x = 0
 		y = 1
 		relative_position_id = CAN_cmp_truck
+		mutually_exclusive = {focus = CAN_the_valentine_tank}
 
 		cost = 5
 
@@ -1290,7 +1291,7 @@ focus_tree = {
 		id = CAN_SF_1
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = CAN_the_black_devils }
-		x = -2
+		x = 0
 		y = 2
 		relative_position_id = CAN_cmp_truck
 
@@ -1322,7 +1323,7 @@ focus_tree = {
 		id = CAN_SF_2
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = CAN_SF_1 }
-		x = -2
+		x = 0
 		y = 3
 		relative_position_id = CAN_cmp_truck
 
@@ -1369,6 +1370,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = CAN_cmp_truck
+		mutually_exclusive = { focus = CAN_the_black_devils}
 
 		cost = 10
 
@@ -1518,7 +1520,7 @@ focus_tree = {
 		id = CAN_supply_the_empire
 		icon = GFX_goal_generic_construction2
 		prerequisite = { focus = CAN_Research_Bonus_2 }
-		x = 1
+		x = -1
 		y = 5
 		relative_position_id = CAN_cmp_truck
 
@@ -1558,7 +1560,7 @@ focus_tree = {
 		id = CAN_aluminium_company_of_canada
 		icon = GFX_goal_generic_positive_trade_relations 
 		prerequisite = { focus = CAN_supply_the_empire }
-		x = 1
+		x = -1
 		y = 6
 		relative_position_id = CAN_cmp_truck
 
@@ -1609,7 +1611,7 @@ focus_tree = {
 		id = CAN_turner_valley_oilfield
 		icon = GFX_goal_generic_oil_refinery
 		prerequisite = { focus = CAN_Research_Bonus_2 }
-		x = -1
+		x = -3
 		y = 5
 		relative_position_id = CAN_cmp_truck
 
