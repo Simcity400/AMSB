@@ -584,3 +584,24 @@ GER_seize_gold_reserves_cat = {
 		}
 	}
 	}
+
+	USA_congress = {
+		
+		drafting_legislation = {
+    		activation = {
+				has_country_flag = USA_great_depression_cooldown
+				}
+    		available = {
+        		always = no
+    			}
+    		icon = mission_icon
+    		is_good = yes
+   			days_mission_timeout = 230
+    		selectable_mission = yes
+    		complete_effect = {
+    			}
+    		timeout_effect = {
+				country_event = {id = draftcountdown.1}
+    			}
+			}
+	}
