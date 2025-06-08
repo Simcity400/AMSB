@@ -243,3 +243,4 @@ NDefines.NProduction.MAX_MIL_FACTORIES_PER_LINE = 200
 NDefines.NAir.AIR_MORE_GROUND_CREWS_COST = 0.0
 NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 1
 NDefines.NGeography.MEDITERRANEAN_SEA_REGIONS = { 15, 29, 68, 69, 168, 169, 202, 299, 300, 301, } -- The sea regions that are considered as part of the Mediterranean sea
+NDefines.NIndustrialOrganisation.DESIGN_TEAM_RESEARCH_BONUS = 0.1

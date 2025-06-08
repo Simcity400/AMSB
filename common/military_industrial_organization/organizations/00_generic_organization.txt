@@ -413,7 +413,7 @@ generic_general_aircraft_organization = {
 	}
 
 	research_categories = { air_equipment }
-
+	research_bonus = 0.15
 	initial_trait = {
 		name = generic_mio_initial_trait_general_aircraft_designer
 
@@ -439,7 +439,7 @@ generic_light_aircraft_organization = {
 	equipment_type = {
 		mio_cat_eq_only_light_fighter
 	}
-
+	research_bonus = 0.15
 	research_categories = {	mio_cat_all_light_fighter_and_modules }
 
 	initial_trait = {
@@ -469,7 +469,7 @@ generic_medium_aircraft_organization = {
 		mio_cat_eq_all_medium_plane
 		transport_plane_equipment
 	}
-
+	research_bonus = 0.15
 	research_categories = { mio_cat_all_medium_aircraft_and_modules }
 	
 
@@ -497,7 +497,7 @@ generic_heavy_aircraft_organization = {
 	allowed = {
 		always = no # Archetype only - countries using it have their own verisons
 	}
-
+	research_bonus = 0.15
 	equipment_type = {
 		large_plane_airframe
 		transport_plane_equipment
@@ -528,7 +528,7 @@ generic_cas_aircraft_organization = {
 	allowed = {
 		always = no # Archetype only - countries using it have their own verisons
 	}
-
+	research_bonus = 0.15
 	equipment_type = {
 		small_plane_cas_airframe
 		cv_small_plane_cas_airframe
@@ -566,7 +566,7 @@ generic_naval_aircraft_organization = {
 
 	research_categories = { mio_cat_all_naval_bomber_and_modules }
 
-
+	research_bonus = 0.15
 	initial_trait = {
 		name = generic_mio_initial_trait_naval_aircraft_designer
 		equipment_bonus = {
@@ -596,7 +596,7 @@ generic_multi_role_aircraft_organization = {
 
 	research_categories = { mio_cat_all_light_aircraft_and_modules mio_cat_all_medium_aircraft_and_modules }
 	
-
+	research_bonus = 0.15
 	initial_trait = {
 		name = generic_mio_initial_trait_multi_role_aircraft_designer
 
@@ -641,6 +641,7 @@ generic_high_agility_fighter_aircraft_organization = {
 			thrust = 0.1
 		}
 	}
+	research_bonus = 0.15
 }
 
 
@@ -659,7 +660,7 @@ generic_range_focused_aircraft_organization = {
 	}
 
 	research_categories = { mio_cat_all_light_aircraft_and_modules mio_cat_all_medium_aircraft_and_modules }
-
+	research_bonus = 0.15
 	initial_trait = {
 		name = generic_mio_initial_trait_range_focused_aircraft_designer
 
