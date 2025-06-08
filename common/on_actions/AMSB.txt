@@ -1,11 +1,12 @@
 on_actions = {
-	on_monthly_JAP = {
+	on_monthly = {
 		effect = { 
 #Auto war for Barb and Pacific
-if = {
-				limit = {date > 1941.12.30
-				NOT = { GER = {has_war_with = SOV}}
-			}
+			if = {
+				limit = {
+					date > 1941.12.30
+					NOT = { GER = {has_war_with = SOV}}
+					}
 				GER = {
 					declare_war_on = {
 					target = SOV
@@ -25,19 +26,28 @@ if = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					JAP = {is_ai = yes}
-					date > 1937.12.31
-					tag = JAP
-				}
-				add_ideas = china_war_ai_skill_issue
-			}
 		}
 	}
 
 	on_startup = {
 		effect = {
+			if = {
+				limit = {
+					JAP = {is_ai = yes}
+				}
+				JAP = {
+					add_ideas = no_justify
+				}
+			}
+			if = {
+				limit = {
+					SPR = {is_ai = yes}
+				}
+				SPR = {
+					add_ideas = no_justify
+				}
+			}
+
 			every_country = {
 				limit = {
 					NOT = {tag = USA}
