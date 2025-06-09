@@ -605,3 +605,71 @@ GER_seize_gold_reserves_cat = {
     			}
 			}
 	}
+
+	economy_decisions = {
+
+		give_uk_eco = {
+			available = {
+				OR = {
+				tag = AST
+				tag = SAF
+				tag = CAN
+				}
+				date > 1942.1.1
+			}
+
+			visible = {
+				OR = {
+					tag = AST
+					tag = SAF
+					tag = CAN
+					}
+				ROOT = {NOT = {has_country_flag = diverted_industry}} 
+			}
+			icon = mission_icon
+			target_trigger = {FROM = {tag = ENG}}
+			complete_effect = {
+				add_ideas = Cuck_chair
+				set_country_flag = diverted_industry	
+			}
+		}
+
+		return_industry_SAF = {
+			visible = {
+				SAF = {has_country_flag = diverted_industry}
+				tag = ENG
+			}
+			available = {}
+			target_trigger = {FROM = {tag = SAF}}
+			complete_effect = {
+				SAF = {remove_ideas = Cuck_chair}
+				SAF = {clr_country_flag = diverted_industry}
+			}
+		}
+		return_industry_AST = {
+			visible = {
+				AST = {has_country_flag = diverted_industry}
+				tag = ENG
+			}
+			available = {}
+			target_trigger = {FROM = {tag = AST}}
+			complete_effect = {
+				AST = {remove_ideas = Cuck_chair}
+				AST = {clr_country_flag = diverted_industry}
+			}
+		}
+		return_industry_CAN = {
+			visible = {
+				CAN = {has_country_flag = diverted_industry}
+				tag = ENG
+			}
+			available = {}
+			target_trigger = {FROM = {tag = CAN}}
+			complete_effect = {
+				CAN = {remove_ideas = Cuck_chair}
+				CAN = {clr_country_flag = diverted_industry}
+			}
+		}
+
+	}
+	}
