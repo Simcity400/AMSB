@@ -1,0 +1,84 @@
+add_namespace = MSB
+
+news_event = {
+	id = msb.2
+	title = msb.2.t
+	desc = msb.2.desc
+	picture = GFX_news_event_002
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = msb.2.a
+
+	}
+}
+
+country_event = {
+    id = msb.3
+    title = msb.3.t
+    desc = msb.3.d
+    picture = GFX_report_event_chinese_japanese_handshake
+    
+    is_triggered_only = yes
+    
+    option = {
+        name = msb.3.a
+        add_threat = 40
+        hidden_effect = {
+            news_event = { hours = 6 id = msb.2 }
+        }
+    }
+}
+
+country_event = {
+    id = msb.4
+    title = msb.4.t
+    desc = msb.4.d
+    picture = GFX_report_event_FDR_speech
+    
+    is_triggered_only = yes
+    
+    option = {
+        name = msb.4.a
+
+        hidden_effect = {
+			ENG = { 
+				transfer_state = 357
+				transfer_state = 358
+				transfer_state = 360
+				transfer_state = 359
+				transfer_state = 361
+				transfer_state = 816
+				transfer_state = 362
+				transfer_state = 363
+				transfer_state = 364
+				transfer_state = 365
+				every_state = {
+					limit = {
+						is_core_of = USA
+					}
+					add_core_of = ENG
+				}
+			}
+            news_event = { hours = 6 id = msb.5 }
+        }
+    }
+}
+
+news_event = {
+	id = msb.5
+	title = msb.5.t
+	desc = msb.5.desc
+	picture = GFX_news_event_usa_japan_at_war
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = msb.5.a
+
+	}
+}
+
