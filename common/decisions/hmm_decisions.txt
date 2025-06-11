@@ -598,7 +598,62 @@ auto_mech = {
         }
     }
     }
-    
+    hosttool_gun2 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        
+        available = {
+            AND = {
+                date > 1938.02.1
+                
+            }
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = infantry_equipment_2
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+}
+                auto_gun3 = {
+                    # icon = generic_operation
+                    allowed = {
+                    }
+                    fire_only_once = no
+                    cost = 0
+                    ai_will_do = {
+                        factor = 0
+                    }
+                    available = {
+                            date > 1940.10.01
+                        }
+                    complete_effect = {
+                        SWE = {
+                            create_production_license = {
+                                target = ROOT
+                                equipment = {
+                                    type = infantry_equipment_3
+                                    version = 0
+                                    
+                                }
+                                cost_factor = 0
+                            }
+                        }
+                    }
+                    }
     hosttool_aa2 = {
             # icon = generic_operation
             allowed = {
@@ -659,62 +714,6 @@ auto_mech = {
             }
     }
     
-    hosttool_gun2 = {
-        # icon = generic_operation
-        allowed = {
-        }
-        fire_only_once = no
-        cost = 0
-        ai_will_do = {
-            factor = 0
-        }
-        
-        available = {
-            AND = {
-                date > 1938.02.1
-                
-            }
-        }
-        complete_effect = {
-            SWE = {
-                create_production_license = {
-                    target = ROOT
-                    equipment = {
-                        type = infantry_equipment_2
-                        version = 0
-                        
-                    }
-                    cost_factor = 0
-                }
-            }
-        }
-}
-                auto_gun3 = {
-                    # icon = generic_operation
-                    allowed = {
-                    }
-                    fire_only_once = no
-                    cost = 0
-                    ai_will_do = {
-                        factor = 0
-                    }
-                    available = {
-                            date > 1940.10.01
-                        }
-                    complete_effect = {
-                        SWE = {
-                            create_production_license = {
-                                target = ROOT
-                                equipment = {
-                                    type = infantry_equipment_3
-                                    version = 0
-                                    
-                                }
-                                cost_factor = 0
-                            }
-                        }
-                    }
-                    }
                 auto_AT2 = {
                     # icon = generic_operation
                     allowed = {
