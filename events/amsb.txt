@@ -7,6 +7,7 @@ add_namespace = givetankscan
 add_namespace = givetankssaf
 add_namespace = givetanksast
 add_namespace = draftcountdown
+add_namespace = dday
 
 country_event = {
 	id = draftcountdown.1
@@ -527,3 +528,23 @@ country_event = {
     }
 }
 
+country_event = {
+		id = dday.1
+    	title = dday.1.t
+    	desc = dday.1.d
+    	picture = GFX_news_event_canadian_tanks
+
+    	is_triggered_only = yes
+
+		option = {
+        	name = dday.1.eng   
+			unlock_decision_tooltip = { decision = USA_execute_war_plan_black show_effect_tooltip = yes show_modifiers = yes } 
+    		}
+
+    	option = {
+        	name = dday.1.usa
+        	set_country_flag = usa_dday
+			unlock_decision_tooltip = { decision = USA_execute_war_plan_black_2 show_effect_tooltip = yes show_modifiers = yes }
+    		}
+		
+}
