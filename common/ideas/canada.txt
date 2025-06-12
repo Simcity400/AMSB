@@ -657,6 +657,64 @@ ideas = {
 				production_speed_buildings_factor = 0.20
 			}
 		}
+		CAN_tank_1 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_tank_quality
+
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.05 instant = yes 
+				}
+				armor = {
+					reliability = 0.05 instant = yes
+				}
+				mechanized = {
+						build_cost_ic = -0.05 instant = yes 
+				}
+			}
+		}
+
+		CAN_tank_2 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_tank_quality
+
+			modifier = {
+				army_armor_speed_factor = 0.1
+				army_armor_attack_factor = 0.1
+			}
+		}
+
+
+		CAN_SF_1 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_tank_quality
+
+			modifier = {
+				special_forces_attack_factor = 0.1
+				special_forces_defence_factor = 0.1
+			}
+		}
 
 		CAN_canadian_citizenship = {
 
@@ -1009,63 +1067,6 @@ ideas = {
 			}
 		}
 
-	CAN_tank_1 = {
-		allowed = {
-			always = no
-		}
 
-		allowed_civil_war = {
-			always = yes
-		}
-
-		picture = generic_tank_quality
-
-		equipment_bonus = {
-			armor = {
-				build_cost_ic = -0.05 instant = yes 
-			}
-			armor = {
-				reliability = 0.05 instant = yes
-			}
-			mechanized = {
-					build_cost_ic = -0.05 instant = yes 
-			}
-		}
-	}
-
-	CAN_tank_2 = {
-		allowed = {
-			always = no
-		}
-
-		allowed_civil_war = {
-			always = yes
-		}
-
-		picture = generic_tank_quality
-
-		modifier = {
-			army_armor_speed_factor = 0.1
-			army_armor_attack_factor = 0.1
-		}
-	}
-
-
-	CAN_SF_1 = {
-		allowed = {
-			always = no
-		}
-
-		allowed_civil_war = {
-			always = yes
-		}
-
-		picture = generic_tank_quality
-
-		modifier = {
-			special_forces_attack_factor = 0.1
-			special_forces_defence_factor = 0.1
-		}
-	}
 }
 }
