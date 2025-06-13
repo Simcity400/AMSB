@@ -2261,10 +2261,6 @@ focus = {
 	search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
 	completion_reward = {
-		add_timed_idea = {
-			idea = RAJ_naval_invasion_support
-			days = 365
-		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 		add_tech_bonus = {
@@ -2691,9 +2687,7 @@ focus = {
 			add_dynamic_modifier = { modifier = RAJ_south_east_asia_command_dm }
 		}
 		custom_effect_tooltip = RAJ_modify_south_east_asia_command_dm_tt
-		add_to_variable = { RAJ_south_east_asia_command_dm_max_command_power = 50 tooltip = max_command_power_tt }
-		add_to_variable = { RAJ_south_east_asia_command_dm_command_power_gain = 0.2 tooltip = command_power_gain_tt }
-		add_to_variable = { RAJ_south_east_asia_command_dm_special_forces_cap = 0.25 tooltip = special_forces_cap_tt }
+		
 
 		country_event = GOE_RAJ_loyalist.06
 	}
@@ -3660,93 +3654,6 @@ focus = {
 	}
 }
 
-focus = {
-	id = RAJ_free_abyssinia
-	icon = GFX_focus_generic_naval_invasion_tank
-	prerequisite = { focus = RAJ_hill_training }
-	
-	x = 0
-	y = 1
-	relative_position_id = RAJ_hill_training 
-	cost = 10
-
-	available = {
-		has_tech = marines
-		992 = { #ADEN
-			controller = {
-				is_ally_with = ROOT
-			}
-		}
-	}
-
-	search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
-
-	completion_reward = {
-		custom_effect_tooltip = RAJ_modify_south_east_asia_command_dm_tt
-		add_to_variable = { RAJ_south_east_asia_command_dm_extra_marine_supply_grace = 48 tooltip = extra_marine_supply_grace_tt }
-		add_to_variable = { RAJ_south_east_asia_command_dm_shore_bombardment_bonus = 0.2 tooltip = shore_bombardment_bonus_tt }
-		add_to_variable = { RAJ_south_east_asia_command_dm_modifier_army_sub_unit_marine_attack_factor = 0.1 tooltip = modifier_army_sub_unit_marine_attack_factor_tt }
-		add_to_variable = { RAJ_south_east_asia_command_dm_special_forces_cap = 0.1 tooltip = special_forces_cap_tt }
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		if = {
-			limit = {
-				has_dlc = "Arms Against Tyranny"
-			}
-			add_doctrine_cost_reduction = {
-				name = RAJ_free_abyssinia
-				cost_reduction = 0.75
-				uses = 2
-				category = cat_marines_doctrine
-			}
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		add_equipment_to_stockpile = { 
-			type = convoy
-			amount = 50 
-			producer = ROOT
-		}
-		
-		hidden_effect = {
-			if = {
-				limit = {
-					NOT = { has_template = "Marines" }
-				}
-				load_oob = "unlock_marines"
-			}
-		}
-
-		division_template = {
-			name = "Royal Marines"
-			#template_counter = 33
-			regiments = {
-				marine = { x = 0 y = 0 }
-				marine = { x = 0 y = 1 }
-				marine = { x = 1 y = 0 }
-				marine = { x = 1 y = 1 }
-				marine = { x = 2 y = 0 }
-				marine = { x = 2 y = 1 }
-			}
-			support = {
-				engineer = { x = 0 y = 0 }
-				recon = { x = 0 y = 1 }
-				artillery = { x = 0 y = 2 }
-			}
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		992 = {
-			create_unit = {
-				division = "division_template = \"Royal Marines\" start_experience_factor = 0.7 start_equipment_factor = 1.0"
-				owner = ROOT
-				count = 3
-			}
-		}
-	}
-}
 
 focus = {
 	id = RAJ_urban_training
@@ -3761,12 +3668,6 @@ focus = {
 	search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 
 	completion_reward = {
-		custom_effect_tooltip = {
-			localization_key = generic_enables_tech_tt
-			TECH_EFFECT = tech_effect|urban_training_tech
-			TECH_NAME = urban_training_tech
-		}
-		hidden_effect = { set_technology = { urban_training_tech = 1 } }
 		
 		custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -19514,43 +19415,7 @@ focus = {
         }
     }
 
-    focus = {
-        id = RAJ_model_after_usa
-        icon = GFX_focus_generic_befriend_usa
-        prerequisite = { focus = RAJ_forming_an_indian_doctrine }
 
-        x = 0
-        y = 1
-        relative_position_id = RAJ_forming_an_indian_doctrine
-
-        mutually_exclusive = { focus = RAJ_model_after_germany }
-        mutually_exclusive = { focus = RAJ_model_after_soviet }
-
-        cost = 10
-
-        available = {
-            NOT = { has_war_with = USA }
-        }
-
-        bypass = {
-
-        }
-
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        available_if_capitulated = no
-
-        search_filters = {FOCUS_FILTER_POLITICAL}
-
-        completion_reward = {
-            add_popularity = {
-                ideology = democratic
-                popularity = 0.05
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            add_ideas = { idea_RAJ_indian_army_doctrine_usa }
-        }
-    }
 
     focus = {
         id = RAJ_model_after_soviet
@@ -23616,37 +23481,5 @@ focus = {
         }
     }
 
-    focus = {
-        id = RAJ_modernizing_navy_dlc
-        icon = GFX_focus_generic_naval_invasion
-        prerequisite = { focus = RAJ_obtain_modern_ship_contracts focus = RAJ_increase_funding_for_the_GRSE }
-        x = 0
-        y = 4
-        relative_position_id = RAJ_royal_indian_navy_dlc
-
-        cost = 10
-
-        ai_will_do = {
-            factor = 25
-        }
-
-        available = {
-
-        }
-
-        bypass = {
-
-        }
-
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        available_if_capitulated = no
-
-        search_filters = { FOCUS_FILTER_INDUSTRY }
-
-        completion_reward = {
-            add_ideas = RAJ_modernized_navy_spirit
-        }
-    }
 
 }       
