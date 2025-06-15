@@ -245,3 +245,6 @@ NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 1
 NDefines.NGeography.MEDITERRANEAN_SEA_REGIONS = { 15, 29, 68, 69, 168, 169, 202, 299, 300, 301, } -- The sea regions that are considered as part of the Mediterranean sea
 NDefines.NIndustrialOrganisation.DESIGN_TEAM_RESEARCH_BONUS = 0.1
 NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.01
+NDefines.NNavy.MAX_ORG_ON_MANUAL_MOVE = 1
+NDefines.NNavy.MIN_ORG_ON_MANUAL_MOVE = 1
+
