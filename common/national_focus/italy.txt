@@ -10242,42 +10242,6 @@ focus_tree = {
 
 
 
-	focus = {
-		id = ITA_befriend_japan
-		icon = GFX_focus_chi_collaboration_with_the_japanese
-		prerequisite = { focus = ITA_pact_of_steel  }
-
-		x = 2
-		y = 1
-		relative_position_id = ITA_pact_of_steel
-		cost = 5
-
-		available = {
-			country_exists = JAP
-			JAP = { 
-				is_in_faction = no
-				has_government = ROOT
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			add_relation_modifier = {
-				target = JAP
-				modifier = ITA_military_agreements
-			}
-			JAP = {
-				add_relation_modifier = {
-					target = ROOT
-					modifier = ITA_military_agreements
-				}
-
-				add_opinion_modifier = { target = ITA modifier = ita_diplomacy_focus }
-			}
-		}
-	}
-
 
 
 	focus = {
