@@ -1,4 +1,4 @@
-﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+﻿﻿### search_filters = {FOCUS_FILTER_POLITICAL}
 ### search_filters = {FOCUS_FILTER_RESEARCH}
 ### search_filters = {FOCUS_FILTER_INDUSTRY}
 ### search_filters = {FOCUS_FILTER_STABILITY}
@@ -5145,13 +5145,13 @@ focus_tree = {
 			air_experience = 15
 			if = {
 				limit = {
-					country_exists = ITA
-					NOT = { has_war_with = ITA }
+					country_exists = GER
+					NOT = { has_war_with = GER }
 				}
 				add_equipment_to_stockpile = { 
 					type = small_plane_cas_airframe_1
 					amount = 100
-					producer = ITA
+					producer = GER
 					variant_name = "Ju 87"
 				}
 			}
@@ -5629,14 +5629,14 @@ focus_tree = {
 					dockyard > 0
 					free_building_slots = {
 						building = dockyard
-						size > 2
+						size > 1
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -5649,10 +5649,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -5674,14 +5674,14 @@ focus_tree = {
 					limit = {
 						free_building_slots = {
 							building = dockyard
-							size > 2
+							size > 1
 							include_locked = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 3
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 3
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -5689,14 +5689,14 @@ focus_tree = {
 					limit = {
 						free_building_slots = {
 							building = dockyard
-							size > 3
+							size > 2
 							include_locked = yes
 						}
 					}
-					add_extra_state_shared_building_slots = 3
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 3
+						level = 2
 						instant_build = yes
 					}
 				}				
@@ -5798,16 +5798,16 @@ focus_tree = {
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
 							building = dockyard
-							size > 1
+							size > 0
 							include_locked = yes
 						}
 					}
 				}
 				162 = { #TUSCANY (La Spezia)
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 				}
@@ -5818,15 +5818,15 @@ focus_tree = {
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
 							building = dockyard
-							size > 1
+							size > 0
 							include_locked = yes
 						}
 					}
 					prioritize = { 157 161 2 } #ABRUZZO as main fallback
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 				}
@@ -5838,16 +5838,16 @@ focus_tree = {
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
 							building = dockyard
-							size > 1
+							size > 0
 							include_locked = yes
 						}
 					}
 				}
 				736 = { #LITORALE (Trieste)
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 				}
@@ -5858,15 +5858,15 @@ focus_tree = {
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
 							building = dockyard
-							size > 1
+							size > 0
 							include_locked = yes
 						}
 					}
 					prioritize = { 852 160 161 } #ISTRIA as main fallback
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 				}
@@ -7627,7 +7627,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_ispettorato_dei_mezzi_antisommergibili
-		cost = 20
+		cost = 10
 		available = {
 			if = {
 				limit = {
@@ -9997,11 +9997,21 @@ focus_tree = {
 		relative_position_id = ITA_foreign_affairs
 		cost = 5
 
+		bypass = {
+			is_in_faction = yes
+			is_in_faction_with = GER
+		}
+
 		available = {
-			NOT = { has_war_with = ITA }
+			NOT = { has_war_with = GER }
 			custom_trigger_tooltip = {
 				tooltip = ITA_germ_italy_same_tt
-				ITA = { has_government = ROOT }
+				GER = { has_government = ROOT }
+			}
+			is_in_faction = no
+			GER = {
+				is_faction_leader = yes
+				is_subject = no
 			}
 			is_subject = no
 			NOT = { has_country_flag = ENG_ditched_by_the_germans_flag }
@@ -10010,7 +10020,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
-			ITA = {
+			GER = {
 				add_opinion_modifier = { target = ITA modifier = pact_of_steel_opinion }
 			}
 			hidden_effect = {
@@ -10036,7 +10046,7 @@ focus_tree = {
 		relative_position_id = ITA_pact_of_steel
 		cost = 5
 		available = {
-			NOT = { has_war_with = ITA }
+			NOT = { has_war_with = GER }
 			NOT = { has_country_flag = ENG_ditched_by_the_germans_flag }
 		}
 
@@ -10133,15 +10143,15 @@ focus_tree = {
 				add_equipment_subsidy = {
 					cic = 500
 					equipment_type = light_tank_chassis
-					seller_tags = { ITA }
+					seller_tags = { GER }
 				}
 				add_equipment_subsidy = {
 					cic = 500
 					equipment_type = medium_tank_chassis
-					seller_tags = { ITA }
+					seller_tags = { GER }
 				}
 			}
-			ITA = {
+			GER = {
 				country_event = { id = italy.5 days = 1 }
 				custom_effect_tooltip = needs_approval
 			}
@@ -10178,10 +10188,10 @@ focus_tree = {
 
 		available = {
 			is_puppet = no
-			is_in_faction_with = ITA
-			ITA = { 
+			is_in_faction_with = GER
+			GER = { 
 				controls_state = 16 				
-				ITA = { is_faction_leader = yes }
+				GER = { is_faction_leader = yes }
 			}
 			custom_trigger_tooltip = {
 			 tooltip = ITA_claims_on_france_tt
@@ -10226,7 +10236,7 @@ focus_tree = {
 				set_global_flag = ITA_claims_on_france_1
 			}
 
-			ITA = { country_event = germany.104 }
+			GER = { country_event = germany.104 }
 		}
 	}
 
@@ -12785,10 +12795,10 @@ focus_tree = {
 			add_to_variable = { ITA_military_industry_dm_production_lack_of_resource_penalty_factor = -0.05 }
 			custom_effect_tooltip = ITA_expanded_corporatism_military_industry_tt
 
-			every_owned_state = {
+			every_controlled_state = {
 				limit = {
 					NOT = {	is_core_of = ROOT }
-					is_fully_controlled_by = ROOT
+					# is_fully_controlled_by = ROOT
 				}
 				add_dynamic_modifier = {
 					modifier = ITA_expanded_corporatism_modifier
@@ -14324,7 +14334,7 @@ focus = {
 		relative_position_id = ITA_pact_of_steel
 		cost = 1
 		available = {
-			ITA = { has_war = yes }
+			GER = { has_war = yes }
 			is_subject = no
 			GRE = { exists = yes }
 			NOT = { is_in_faction_with = GRE }
