@@ -219,7 +219,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = wuw_HUN_strengthen_horthys_reign
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 15
@@ -316,7 +316,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = wuw_HUN_restrict_voting_rights
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -417,7 +417,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = wuw_HUN_outlaw_the_party_of_national_will
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1037,7 +1037,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = wuw_HUN_seek_german_contracts
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 15
@@ -1253,7 +1253,7 @@ focus_tree = {
 		y = 0
 		
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1281,7 +1281,7 @@ focus_tree = {
 		icon = GFX_focus_secret_rearmament
 		#prerequisite = { focus = wuw_HUN_a_revolutionary_greater_hungary }
 		#mutually_exclusive = { focus = wuw_HUN_avoid_interventionalist_destablilization }
-		x = 18
+		x = 16
 		y = 0
 		relative_position_id = wuw_HUN_end_the_regency
 
@@ -1346,7 +1346,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1435,7 +1435,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1884,7 +1884,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5
@@ -1948,7 +1948,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_RESEARCH }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -2144,8 +2144,7 @@ focus_tree = {
 		id = wuw_HUN_form_the_gyorshadtest
 		icon = GFX_focus_HUN_form_the_gyorshadtest
 		prerequisite = { focus = wuw_HUN_quantity_over_quality }
-		mutually_exclusive = { focus = wuw_HUN_expand_the_army }
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = wuw_HUN_quantity_over_quality
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
@@ -2329,11 +2328,10 @@ focus_tree = {
 	focus = {
 		id = wuw_HUN_establish_the_mavag_army_division
 		icon = GFX_focus_HUN_establish_the_mavag_army_division
-		prerequisite = { focus = wuw_HUN_construct_the_arpad_line }
-		#mutually_exclusive = { focus = wuw_HUN_repulö_muszaki_intezet }
-		x = 0
+		prerequisite = { focus = wuw_HUN_expand_the_ganz_muvek }
+		x = -2
 		y = 1
-		relative_position_id = wuw_HUN_construct_the_arpad_line
+		relative_position_id = wuw_HUN_expand_the_ganz_muvek
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2397,8 +2395,7 @@ focus_tree = {
 		id = wuw_HUN_doctrinal_studies
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = wuw_HUN_quantity_over_quality }
-		#mutually_exclusive = { focus = wuw_HUN_repulö_muszaki_intezet }
-		x = 3
+		x = 6
 		y = 1
 		relative_position_id = wuw_HUN_quantity_over_quality
 
@@ -2426,29 +2423,9 @@ focus_tree = {
 
 			add_doctrine_cost_reduction = {
 				name = wuw_HUN_doctrinal_studies
-				cost_reduction = 0.25
-				uses = 1
+				cost_reduction = 0.5
+				uses = 3
 				category = land_doctrine
-			}
-
-			add_doctrine_cost_reduction = {
-				name = wuw_HUN_doctrinal_studies
-				cost_reduction = 0.25
-				uses = 1
-				category = air_doctrine
-			}
-			IF = {
-				limit = {
-					any_owned_state = {
-						is_coastal = yes
-					}
-				}
-				add_doctrine_cost_reduction = {
-					name = wuw_HUN_doctrinal_studies
-					cost_reduction = 0.25
-					uses = 1
-					category = naval_doctrine
-				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2469,7 +2446,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_HISTORICAL }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -2565,11 +2542,11 @@ focus_tree = {
 	focus = {
 		id = wuw_HUN_legacy_of_the_black_legion
 		icon = GFX_focus_HUN_legacy_of_the_black_legion
-		prerequisite = { focus = wuw_HUN_transylvanian_mountaineers }
+		prerequisite = { focus = wuw_HUN_light_infantry_divisions_doctrine focus = wuw_HUN_expand_the_army }
 		mutually_exclusive = { focus = wuw_HUN_the_szekel_command }
 		x = -2
-		y = 1
-		relative_position_id = wuw_HUN_transylvanian_mountaineers
+		y = 0
+		relative_position_id = wuw_HUN_the_szekel_command
 
 		cost = 5
 
@@ -2750,7 +2727,6 @@ focus_tree = {
 		}
 
 		available = {
-			num_of_factories > 29
 		}
 
 		bypass = {
@@ -2783,11 +2759,10 @@ focus_tree = {
 	focus = {
 		id = wuw_HUN_expand_the_army
 		icon = GFX_focus_HUN_expand_the_army
-		prerequisite = { focus = wuw_HUN_quantity_over_quality }
-		mutually_exclusive = { focus = wuw_HUN_form_the_gyorshadtest }
-		x = 1
+		prerequisite = { focus = wuw_HUN_form_the_gyorshadtest }
+		x = 0
 		y = 1
-		relative_position_id = wuw_HUN_quantity_over_quality
+		relative_position_id = wuw_HUN_form_the_gyorshadtest
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
@@ -2809,14 +2784,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			43 = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = arms_factory
-				level = 2
-				instant_build = yes
-				}
-			}
+			add_ideas = HUN_tribal_consolidation_revived
 		}
 	}
 
@@ -2824,7 +2792,7 @@ focus_tree = {
 		id = wuw_HUN_the_botond
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = wuw_HUN_quantity_over_quality }
-		x = -3
+		x = 0
 		y = 1
 		relative_position_id = wuw_HUN_quantity_over_quality
 
@@ -2877,192 +2845,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = wuw_HUN_the_turan
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = wuw_HUN_form_the_gyorshadtest }
-		#mutually_exclusive = { focus = wuw_HUN_expand_the_army }
-		x = 0
-		y = 1
-		relative_position_id = wuw_HUN_form_the_gyorshadtest
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 20
-		}
-
-		available = {
-			#has_country_flag = HUN_reverse_engineered_skoda_tanks
-			IF = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				has_tech = basic_medium_tank_chassis
-			}
-			ELSE_IF = {
-				limit = {
-					has_tech = basic_medium_tank
-				}
-			}
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-
-		completion_reward = {
-
-			add_tech_bonus = {
-				name = HUN_develop_tanks
-				ahead_reduction = 1
-				bonus = 1
-				uses = 1
-				category = cat_medium_armor
-			}
-
-			IF = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				IF = {
-					limit = {
-						has_tech = improved_medium_tank_chassis
-					}
-					#40M Turán
-					create_equipment_variant = {
-						name = "40M Turán"
-						type = medium_tank_chassis_2
-						parent_version = 0
-						modules = {
-							main_armament_slot = tank_medium_cannon_2
-							turret_type_slot = tank_medium_two_man_tank_turret
-							suspension_type_slot = tank_bogie_suspension
-							armor_type_slot = tank_welded_armor
-							engine_type_slot = tank_gasoline_engine
-							special_type_slot_1 = additional_machine_guns
-							special_type_slot_2 = additional_machine_guns
-						}
-						upgrades = {
-							tank_nsb_engine_upgrade = 3
-							tank_nsb_armor_upgrade = 3
-						}
-						#icon = "GFX_ITA_basic_medium_tank_medium"
-					}
-				}
-				ELSE = {
-					custom_effect_tooltip = wuw_HUN_the_turan_40_tt
-					effect_tooltip = {
-						#40M Turán
-						create_equipment_variant = {
-							name = "40M Turán"
-							type = medium_tank_chassis_2
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_medium_cannon_2
-								turret_type_slot = tank_medium_two_man_tank_turret
-								suspension_type_slot = tank_bogie_suspension
-								armor_type_slot = tank_welded_armor
-								engine_type_slot = tank_gasoline_engine
-								special_type_slot_1 = additional_machine_guns
-								special_type_slot_2 = additional_machine_guns
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 3
-								tank_nsb_armor_upgrade = 3
-							}
-							#icon = "GFX_ITA_basic_medium_tank_medium"
-						}
-					}
-				}
-				IF = {
-					limit = {
-						has_tech = advanced_medium_tank_chassis
-					}
-					#43M Turán III
-					create_equipment_variant = {
-						name = "43M Turán III"
-						type = medium_tank_chassis_3
-						parent_version = 0
-						modules = {
-							main_armament_slot = tank_medium_cannon_2
-							turret_type_slot = tank_medium_three_man_tank_turret
-							suspension_type_slot = tank_bogie_suspension
-							armor_type_slot = tank_welded_armor
-							engine_type_slot = tank_gasoline_engine
-							special_type_slot_1 = secondary_turret_hmg
-							special_type_slot_2 = additional_machine_guns
-						}
-						upgrades = {
-							tank_nsb_engine_upgrade = 3
-							tank_nsb_armor_upgrade = 7
-						}
-						#icon = "GFX_ITA_basic_medium_tank_medium"
-					}
-				}
-				ELSE = {
-					custom_effect_tooltip = wuw_HUN_the_turan_43_tt
-					effect_tooltip = {
-						#43M Turán III
-						create_equipment_variant = {
-							name = "43M Turán III"
-							type = medium_tank_chassis_3
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_medium_cannon_2
-								turret_type_slot = tank_medium_three_man_tank_turret
-								suspension_type_slot = tank_bogie_suspension
-								armor_type_slot = tank_welded_armor
-								engine_type_slot = tank_gasoline_engine
-								special_type_slot_1 = secondary_turret_hmg
-								special_type_slot_2 = additional_machine_guns
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 3
-								tank_nsb_armor_upgrade = 7
-							}
-							#icon = "GFX_ITA_basic_medium_tank_medium"
-						}
-					}
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-
-				custom_effect_tooltip = available_mio_tt
-				show_mio_tooltip = HUN_hti_turan_organization
-
-				mio:HUN_hti_turan_organization = {
-					add_mio_size = 3
-				}
-
-			}
-			ELSE = {
-				custom_effect_tooltip = available_designer
-				show_ideas_tooltip = HUN_hti_turan
-			}
-
-		}
-	}
-
-	focus = {
 		id = wuw_HUN_assault_gun_focus
 		icon = GFX_focus_generic_self_propelled_gun
-		prerequisite = { focus = wuw_HUN_the_toldi focus = wuw_HUN_the_turan }
-		#mutually_exclusive = { focus = wuw_HUN_the_toldi }
-		x = 1
+		prerequisite = { focus = wuw_HUN_expand_the_army }
+
+		x = -1
 		y = 1
-		relative_position_id = wuw_HUN_the_toldi
+		relative_position_id = wuw_HUN_expand_the_army
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -3206,115 +2995,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = wuw_HUN_the_toldi
-		icon = GFX_focus_generic_tankette
-		prerequisite = { focus = wuw_HUN_form_the_gyorshadtest }
-		#mutually_exclusive = { focus = wuw_HUN_assault_gun_focus }
-		x = -2
-		y = 1
-		relative_position_id = wuw_HUN_form_the_gyorshadtest
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 5
-		}
-
-		available = {
-
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-
-		completion_reward = {
-
-			add_tech_bonus = {
-				name = wuw_HUN_the_toldi
-				ahead_reduction = 1
-				bonus = 1
-				uses = 1
-				category = cat_light_armor
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_ideas = HUN_rapid_army_groups_idea
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			IF = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				IF = {
-					limit = {
-						has_tech = improved_light_tank_chassis
-					}
-					#38M Toldi
-					create_equipment_variant = {
-						name = "38M Toldi"
-						type = light_tank_chassis_2
-						parent_version = 0
-						modules = {
-							main_armament_slot = tank_small_cannon_2
-							turret_type_slot = tank_light_fixed_superstructure_turret
-							suspension_type_slot = tank_torsion_bar_suspension
-							armor_type_slot = tank_riveted_armor
-							engine_type_slot = tank_gasoline_engine
-							special_type_slot_2 = tank_radio_1
-						}
-						upgrades = {
-							tank_nsb_engine_upgrade = 3
-							tank_nsb_armor_upgrade = 2
-						}
-						#icon = "GFX_ITA_improved_light_tank_medium"
-					}
-				}
-				ELSE = {
-					custom_effect_tooltip = wuw_HUN_the_toldi_tt
-					effect_tooltip = {
-						#38M Toldi
-						create_equipment_variant = {
-							name = "38M Toldi"
-							type = light_tank_chassis_2
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_small_cannon_2
-								turret_type_slot = tank_light_fixed_superstructure_turret
-								suspension_type_slot = tank_torsion_bar_suspension
-								armor_type_slot = tank_riveted_armor
-								engine_type_slot = tank_gasoline_engine
-								special_type_slot_2 = tank_radio_1
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 3
-								tank_nsb_armor_upgrade = 2
-							}
-							#icon = "GFX_ITA_improved_light_tank_medium"
-						}
-					}
-				}
-			}
-
-		}
-	}
-
-	focus = {
 		id = wuw_HUN_invest_in_the_special_forces
 		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = wuw_HUN_expand_the_army }
-		#mutually_exclusive = { focus = wuw_HUN_assault_gun_focus }
-		x = 0
+		prerequisite = { focus = wuw_HUN_quantity_over_quality }
+		x = 2
 		y = 1
-		relative_position_id = wuw_HUN_expand_the_army
+		relative_position_id = wuw_HUN_quantity_over_quality
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
@@ -3370,11 +3056,13 @@ focus_tree = {
 
 	focus = {
 		id = wuw_HUN_construct_the_arpad_line
-		icon = GFX_goal_fortify_the_westwall
 		prerequisite = { focus = wuw_HUN_quantity_over_quality }
-		x = -5
-		y = 1
+		icon = GFX_goal_fortify_the_westwall
+
 		relative_position_id = wuw_HUN_quantity_over_quality
+
+		x = 4
+		y = 1
 
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_HISTORICAL }
 
@@ -3589,7 +3277,7 @@ focus_tree = {
 		id = wuw_HUN_transylvanian_mountaineers
 		icon = GFX_focus_SMB_special_forces_option_1
 		prerequisite = { focus = wuw_HUN_light_infantry_divisions_doctrine }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = wuw_HUN_light_infantry_divisions_doctrine
 
@@ -3639,11 +3327,11 @@ focus_tree = {
 	focus = {
 		id = wuw_HUN_the_szekel_command
 		icon = GFX_focus_HUN_the_szekel_command
-		prerequisite = { focus = wuw_HUN_transylvanian_mountaineers }
+		prerequisite = { focus = wuw_HUN_light_infantry_divisions_doctrine focus = wuw_HUN_expand_the_army }
 		mutually_exclusive = { focus = wuw_HUN_legacy_of_the_black_legion }
-		x = 0
+		x = -1
 		y = 1
-		relative_position_id = wuw_HUN_transylvanian_mountaineers
+		relative_position_id = wuw_HUN_light_infantry_divisions_doctrine
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_HISTORICAL }
 
