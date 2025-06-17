@@ -252,6 +252,7 @@ ideas = {
 			modifier = {
 				grant_medal_cost_factor = -0.9
 				field_officer_promotion_penalty = -0.9
+				experience_gain_army = 0.1
 			}
 			ai_will_do = {
 				factor = 1
@@ -264,16 +265,8 @@ ideas = {
 			modifier = {
 				experience_gain_motorized_combat_factor = 0.1
 				experience_gain_mechanized_combat_factor = 0.1
-				unit_light_armor_design_cost_factor = -1
-				#light_tank_destroyer_brigade
-				unit_medium_armor_design_cost_factor = -1
-				#medium_tank_destroyer_brigade 
-				unit_modern_armor_design_cost_factor = -1
-				unit_heavy_armor_design_cost_factor = -1
-				#heavy_tank_destroyer_brigade 
-				unit_super_heavy_armor_design_cost_factor = -1
-				unit_motorized_design_cost_factor = -1
-				unit_mechanized_design_cost_factor = -1
+				army_mechanized_speed_factor = 0.2
+				army_motorized_attack_factor = 0.1
 			}
 			ai_will_do = {
 				factor = 1
@@ -287,8 +280,6 @@ ideas = {
 				experience_gain_artillery_combat_factor = 1
 				breakthrough_factor = 0.05
 				army_artillery_attack_factor = 0.15
-				supply_consumption_factor = 0.05
-				
 			}
 			ai_will_do = {
 				factor = 1
@@ -317,10 +308,8 @@ ideas = {
 			visible = { has_tech = mass_assault }
 			modifier = {
 				experience_gain_infantry_combat_factor = 0.2
-				army_infantry_attack_factor = 0.15
-				army_infantry_defence_factor = 0.15
-
-				
+				army_infantry_attack_factor = 0.10
+				army_infantry_defence_factor = 0.05
 			}
 			ai_will_do = {
 				factor = 1
@@ -351,9 +340,8 @@ ideas = {
 				org_loss_when_moving = -0.1
 				army_speed_factor = 0.05
 				choose_preferred_tactics_cost = -20
-				planning_speed = 0.1
+				planning_speed = 0.05
 				coordination_bonus = 0.1
-				max_planning = -0.05
 
 			}
 			ai_will_do = {
@@ -419,7 +407,6 @@ ideas = {
 				coordination_bonus = 0.2
 				breakthrough_factor = 0.1
 				org_loss_when_moving = -0.3
-				supply_consumption_factor = 0.10
 				truck_attrition_factor = 0.15
 				out_of_supply_factor = 0.1
 			}
@@ -436,7 +423,6 @@ ideas = {
 				army_artillery_attack_factor = 0.3
 				breakthrough_factor = 0.05
 				coordination_bonus = 0.1
-				supply_consumption_factor = 0.15
 				army_defence_factor = 0.05
 			}
 			ai_will_do = {
@@ -449,7 +435,7 @@ ideas = {
 			visible = { has_tech = trench_warfare }
 			modifier = {
 				tactic_planned_attack_preferred_weight_factor = 2
-				supply_consumption_factor = -0.2
+				supply_consumption_factor = -0.1
 				air_fuel_consumption_factor = -0.2
 				navy_fuel_consumption_factor = -0.2
 				no_supply_grace = 72
