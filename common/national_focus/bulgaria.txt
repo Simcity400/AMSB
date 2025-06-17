@@ -65,7 +65,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_acquire_modern_tools }
 		icon = GFX_goal_generic_construction
 		relative_position_id = BUL_acquire_modern_tools
-		x = -5
+		x = -4
 		y = 1
 		cost = 10
 
@@ -107,13 +107,12 @@ focus_tree = {
 	focus = {
 		id = BUL_invigorate_national_industry
 
-		prerequisite = { focus = BUL_improve_the_road_system }
+		prerequisite = {focus = BUL_acquire_modern_tools }
 		icon = GFX_focus_generic_industry_1
-		relative_position_id = BUL_improve_the_road_system
-		x = 1
+		relative_position_id = BUL_acquire_modern_tools
+		x = -2
 		y = 1
 		cost = 10
-		mutually_exclusive = { focus = BUL_attract_foreign_capitals }
 
 		available = {
 
@@ -160,7 +159,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_invigorate_national_industry }
 		icon = GFX_focus_research
 		relative_position_id = BUL_invigorate_national_industry
-		x = -2
+		x = 0
 		y = 1
 		cost = 10
 
@@ -177,10 +176,10 @@ focus_tree = {
 	focus = {
 		id = BUL_increase_industry_investments
 
-		prerequisite = { focus = BUL_expand_sofia_university }
+		prerequisite = { focus = BUL_improve_the_road_system }
 		icon = GFX_focus_generic_industry_2
-		relative_position_id = BUL_expand_sofia_university
-		x = 2
+		relative_position_id = BUL_improve_the_road_system
+		x = 0
 		y = 1
 		cost = 10
 
@@ -219,7 +218,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_increase_industry_investments }
 		icon = GFX_focus_generic_industry_3
 		relative_position_id = BUL_increase_industry_investments
-		x = -2
+		x = 0
 		y = 1
 		cost = 10
 		mutually_exclusive = { focus = BUL_nationalization }
@@ -256,15 +255,14 @@ focus_tree = {
 	focus = {
 		id = BUL_steel_plant_in_pernik
 
-		prerequisite = { focus = BUL_utmost_optimization }
+		prerequisite = { focus = BUL_mineral_extraction_in_the_rhodopes }
 		icon = GFX_focus_generic_steel
-		relative_position_id = BUL_utmost_optimization
-		x = 2
+		relative_position_id = BUL_mineral_extraction_in_the_rhodopes
+		x = 0
 		y = 1
 		cost = 10
 
 		available = {
-			controls_state = 48
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -294,19 +292,14 @@ focus_tree = {
 	focus = {
 		id = BUL_mineral_extraction_in_the_rhodopes
 
-		prerequisite = { focus = BUL_steel_plant_in_pernik }
+		prerequisite = { focus = BUL_utmost_optimization }
 		icon = GFX_goal_generic_construction2
-		relative_position_id = BUL_steel_plant_in_pernik
-		x = -2
+		relative_position_id = BUL_utmost_optimization
+		x = 0
 		y = 1
 		cost = 5
 
 		available = {
-			has_tech = excavation2
-			OR = {
-				controls_state = 48
-				controls_state = 212
-			}
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -325,16 +318,14 @@ focus_tree = {
 	focus = {
 		id = BUL_uranium_prospecting
 
-		prerequisite = { focus = BUL_mineral_extraction_in_the_rhodopes }
+		prerequisite = { focus = BUL_steel_plant_in_pernik }
 		icon = GFX_goal_generic_secret_weapon
-		relative_position_id = BUL_mineral_extraction_in_the_rhodopes
-		x = 2
+		relative_position_id = BUL_steel_plant_in_pernik
+		x = 0
 		y = 1
 		cost = 10
 
 		available = {
-			has_tech = excavation3
-			controls_state = 48
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -473,7 +464,7 @@ focus_tree = {
 		relative_position_id = BUL_reorganize_the_military_industry
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			212 = {
@@ -524,7 +515,7 @@ focus_tree = {
 		relative_position_id = BUL_darzhavna_voenna_fabrika
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 			212 = {
@@ -567,7 +558,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = BUL_contract_foreign_companies
+		id = BUL_contract_german_companies
 
 		prerequisite = { focus = BUL_reorganize_the_military_industry }
 		icon = GFX_focus_generic_license_production
@@ -577,68 +568,121 @@ focus_tree = {
 		cost = 5
 
 		available = {
+			has_political_power > 150
 		}
 		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			effect_tooltip = {
-				IF = {
-					limit = { has_dlc = "Arms Against Tyranny"}
-					unlock_decision_category_tooltip = foreign_mio_decisions_category
+			add_political_power = -150
+			48 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+	 			type = arms_factory
+				level = 3
+	 			instant_build = yes
 				}
-				ELSE = {
-					if = {
-						limit = {
-							country_exists = GER
-							NOT = { has_war_with = GER }
-							GER = { BUL_is_valid_subject = yes }
-						}
-						activate_targeted_decision = { target = GER decision = BUL_military_agreements }
-					}
-					if = {
-						limit = {
-							country_exists = ENG
-							NOT = { has_war_with = ENG }
-							ENG = { BUL_is_valid_subject = yes }
-						}
-						activate_targeted_decision = { target = ENG decision = BUL_military_agreements }
-					}
-					if = {
-						limit = {
-							country_exists = SOV
-							NOT = { has_war_with = SOV }
-							SOV = { BUL_is_valid_subject = yes }
-						}
-						activate_targeted_decision = { target = SOV decision = BUL_military_agreements }
-					}
-					if = {
-						limit = {
-							country_exists = ITA
-							NOT = { has_war_with = ITA }
-							ITA = { BUL_is_valid_subject = yes }
-						}
-						activate_targeted_decision = { target = ITA decision = BUL_military_agreements }
-					}
+  			}
+		}
+	}
+
+		focus = {
+		id = BUL_contract_russian_companies
+
+		prerequisite = { focus = BUL_contract_german_companies }
+		icon = GFX_focus_generic_license_production
+		relative_position_id = BUL_contract_german_companies
+		x = 0
+		y = 1
+		cost = 5
+
+		available = {
+			has_political_power > 150
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_political_power = -150
+			48 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+	 			type = arms_factory
+				level = 3
+	 			instant_build = yes
 				}
-			}
-			hidden_effect = {
-				IF = {
-					limit = { NOT = { has_dlc = "Arms Against Tyranny"} }
-					activate_targeted_decision = { target = GER decision = BUL_military_agreements }
-					activate_targeted_decision = { target = ENG decision = BUL_military_agreements }
-					activate_targeted_decision = { target = SOV decision = BUL_military_agreements }
-					activate_targeted_decision = { target = ITA decision = BUL_military_agreements }
+  			}
+		}
+	}
+
+		focus = {
+		id = BUL_contract_british_companies
+
+		prerequisite = { focus = BUL_contract_russian_companies }
+		icon = GFX_focus_generic_license_production
+		relative_position_id = BUL_contract_russian_companies
+		x = 0
+		y = 1
+		cost = 5
+
+		available = {
+			has_political_power > 150
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_political_power = -150
+			48 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+	 			type = arms_factory
+				level = 3
+	 			instant_build = yes
 				}
-			}
+  			}
+		}
+	}
+
+		focus = {
+		id = BUL_contract_italian_companies
+
+		prerequisite = { focus = BUL_contract_british_companies }
+		icon = GFX_focus_generic_license_production
+		relative_position_id = BUL_contract_british_companies
+		x = 0
+		y = 1
+		cost = 5
+
+		available = {
+			has_political_power > 100
+		}
+		
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_political_power = -100
+			48 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+	 			type = arms_factory
+				level = 2
+	 			instant_build = yes
+				}
+  			}
 		}
 	}
 
 	focus = {
 		id = BUL_rebuild_the_army
 
-		prerequisite = { focus = BUL_contract_foreign_companies }
+		prerequisite = { focus = BUL_contract_italian_companies }
 		icon = GFX_focus_generic_little_entente
-		relative_position_id = BUL_contract_foreign_companies
+		relative_position_id = BUL_contract_italian_companies
 		x = 0
 		y = 1
 		cost = 10
