@@ -1013,7 +1013,7 @@ characters = {
 			}
 
 			available = {
-				has_completed_focus = wuw_HUN_form_the_gyorshadtest
+				has_completed_focus = wuw_HUN_legacy_of_the_black_legion
 			}
 
 			traits = {
@@ -1998,6 +1998,30 @@ characters = {
 		}
 	}
 
+	ROM_gheorghe_mihail={
+		name=ROM_gheorghe_mihail
+		portraits={
+			army={
+				small="GFX_idea_ROM_gheorghe_mihail"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ROM_gheorghe_mihail
+			ledger = army
+			allowed = {
+				original_tag = HUN
+			}
+			traits = {
+				army_commando_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}	
+
 	HUN_gusztav_jany = {
 		instance = {
 			allowed = {
@@ -2027,10 +2051,10 @@ characters = {
 				}
 
 				traits = {
-					army_armored_1
+					army_armored_2
 				}
 
-				cost =  50
+				cost =  100
 
 				ai_will_do = {
 					factor = 1.000
@@ -2082,10 +2106,10 @@ characters = {
 				}
 
 				traits = {
-					army_armored_1
+					army_armored_2
 				}
 
-				cost =  50
+				cost =  100
 
 				ai_will_do = {
 					base = 2

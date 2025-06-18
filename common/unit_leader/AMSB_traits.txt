@@ -1,0 +1,29 @@
+leader_traits = {
+	HUN_bolstered_vitez = { 
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = HUN
+			}
+		}
+		modifier = {
+			army_strength_factor = 0.1
+			army_armor_attack_factor = -0.25
+			army_armor_defence_factor = -0.25 
+			cavalry_attack_factor = 0.15
+			cavalry_defence_factor = 0.1
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+}

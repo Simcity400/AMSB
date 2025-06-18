@@ -2,6 +2,42 @@ ideas = {
 
 	country = {
 
+		# AMSB
+
+		HUN_katyusha_idea = {
+			name = HUN_expanded_rocket_works
+			allowed = {
+				original_tag = HUN
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_armor
+			
+			equipment_bonus = {
+				motorized_rocket_equipment = {
+					build_cost_ic = -0.15 instant = yes
+				}
+			}
+		}
+
+		HUN_rongyos_garda_militia = {
+			name = rongyos_garda
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				original_tag = HUN
+			}
+			available = {
+				has_completed_focus = wuw_HUN_reestablish_the_rongyos_garda
+			}
+
+			modifier = {
+				modifier_army_sub_unit_militia_max_org_factor = 0.10
+				conscription_factor = 0.1
+			}
+		}
+
 		### TREATY OF TRIANON SPIRITS ###
 
 		HUN_treaty_of_triannon = {
@@ -964,7 +1000,7 @@ ideas = {
 
 			modifier = {
 				army_attack_speed_factor = 0.05
-				army_armor_speed_factor = 0.02
+				army_armor_speed_factor = 0.075
 			}
 		}
 
@@ -2076,8 +2112,7 @@ ideas = {
 			}
 			
 			modifier = {
-				license_air_purchase_cost = -0.3
-				license_production_speed = 0.5 
+				license_production_speed = 0.26
 			}
 		}
 
@@ -2657,5 +2692,8 @@ ideas = {
 			}
 		}
 
+		
 	}
+
+	
 }
