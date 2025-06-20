@@ -252,7 +252,7 @@ ideas = {
 			modifier = {
 				grant_medal_cost_factor = -0.9
 				field_officer_promotion_penalty = -0.9
-				experience_gain_army = 0.1
+				experience_gain_army_unit_factor = 0.1 
 			}
 			ai_will_do = {
 				factor = 1
@@ -265,9 +265,14 @@ ideas = {
 			modifier = {
 				experience_gain_motorized_combat_factor = 0.1
 				experience_gain_mechanized_combat_factor = 0.1
-				army_mechanized_speed_factor = 0.2
-				army_motorized_attack_factor = 0.1
+				motorized_attack_factor = 0.1
 			}
+			equipment_bonus = {
+						mechanized = {
+							instant = yes
+							maximum_speed = 0.2
+						}
+					}
 			ai_will_do = {
 				factor = 1
 			}
@@ -370,10 +375,8 @@ ideas = {
 				tactic_delay_preferred_weight_factor = 2
 				training_time_army_factor = -0.5
 				army_org_factor = 0.05
-				minimum_training_level = 0.1 
-
-
-
+				minimum_training_level = 0.1
+				experience_loss_factor = -0.05
 			}
 			ai_will_do = {
 				factor = 1
