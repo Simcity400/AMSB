@@ -333,8 +333,16 @@ focus_tree = {
 
 
 		completion_reward = {
-			hidden_effect = {country_event = uktanks.1}
-			custom_effect_tooltip = uk_tank_spawn_tt
+			add_tech_bonus = {
+			name = armor_bonus
+			bonus = 1.0
+			uses = 1
+			category = armor
+			}
+		swap_ideas = {
+            remove_idea = motorized_army
+			add_idea = motorized_army_two
+			}
 			}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
