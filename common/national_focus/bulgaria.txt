@@ -565,7 +565,7 @@ focus_tree = {
 		relative_position_id = BUL_reorganize_the_military_industry
 		x = 2
 		y = 1
-		cost = 5
+		cost = 1
 
 		available = {
 			has_political_power > 150
@@ -595,7 +595,7 @@ focus_tree = {
 		relative_position_id = BUL_contract_german_companies
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 
 		available = {
 			has_political_power > 150
@@ -625,7 +625,7 @@ focus_tree = {
 		relative_position_id = BUL_contract_russian_companies
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 
 		available = {
 			has_political_power > 150
@@ -655,7 +655,7 @@ focus_tree = {
 		relative_position_id = BUL_contract_british_companies
 		x = 0
 		y = 1
-		cost = 5
+		cost = 1
 
 		available = {
 			has_political_power > 100
@@ -969,10 +969,6 @@ focus_tree = {
 			add_threat = -1
 			add_stability = 0.1
 			add_political_power = 35
-			BUL_zveno_low_loyalty_increase_effect = yes
-			BUL_bs_low_loyalty_increase_effect = yes
-			BUL_bzns_low_loyalty_increase_effect = yes
-			BUL_nsm_low_loyalty_decrease_effect = yes
 			custom_effect_tooltip = BUL_condemn_macedonian_organizations_tt
 			every_country = {
 				limit = {
@@ -1017,23 +1013,13 @@ focus_tree = {
 
 
 		available = {
-			NOT = {	has_country_flag = BUL_zveno_destroyed_flag } #Zveno is not destroyed
-			hidden_trigger = {
-				NOT = { has_active_mission = BUL_impending_zveno_coup }	#Zveno coup mission is not ongoing
-				NOT = { has_country_flag = BUL_zveno_coup_flag } #Zveno CW has not started
-			}
+		
 		}
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INTERNAL_AFFAIRS}
 		completion_reward = {
 			add_political_power = 50
 			add_war_support = 0.05
-			BUL_zveno_low_loyalty_increase_effect = yes
-			BUL_zveno_low_popularity_increase_effect = yes
-			BUL_bzns_low_loyalty_decrease_effect = yes
-			BUL_nsm_low_loyalty_decrease_effect = yes
-			custom_effect_tooltip = BUL_cooperate_with_the_zveno_tt
-			custom_effect_tooltip = BUL_cooperate_with_the_zveno_coup_tt
 		}
 	}
 
@@ -1080,15 +1066,7 @@ focus_tree = {
 				ideology = communism
 				popularity = -0.10
 			}
-			BUL_zveno_low_loyalty_increase_effect = yes
-			BUL_bs_high_loyalty_decrease_effect = yes
-			BUL_bs_medium_popularity_decrease_effect = yes
-			BUL_bzns_low_loyalty_increase_effect = yes
-			BUL_nsm_low_loyalty_increase_effect = yes
 
-			#Reduce Oppress Broad Socialists decisions cost
-			divide_variable = { BUL_broad_socialist_opression_cost_standard = 2 }
-			custom_effect_tooltip = BUL_reduced_communist_oppression_cost_tt
 
 			#Stability impact
 			hidden_effect = {
@@ -1098,8 +1076,6 @@ focus_tree = {
 				multiply_variable = { stability_impact = -1 }
 				add_stability = stability_impact
 			}
-			custom_effect_tooltip = BUL_stability_impact_tt
-			custom_effect_tooltip = BUL_crush_the_communists_tt
 			if = {
 				limit = {
 					NOT = { has_completed_focus = BUL_appoint_right_wing_ministers }
@@ -1190,11 +1166,6 @@ focus_tree = {
 			add_political_power = 70
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = BUL_nikola_zhekov
-			BUL_zveno_low_loyalty_increase_effect = yes
-			BUL_bs_low_loyalty_decrease_effect = yes
-			BUL_bzns_low_loyalty_increase_effect = yes
-			BUL_nsm_low_loyalty_increase_effect = yes
-			custom_effect_tooltip = BUL_appoint_right_wing_ministers_tt
 		}
 	}
 

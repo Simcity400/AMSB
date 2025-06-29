@@ -92,76 +92,6 @@ BUL_internal_factions = {
 ##       ##     ##  ######     ##    ####  #######  ##    ##     ######   #######   #######  ##        
 
 
-	BUL_cooperation_zveno_speech  = { #ZVENO Allow/Support faction speech
-
-		priority = 42
-
-		icon = GFX_decision_bul_speech_zveno
-
-		ai_will_do = {
-			base = 4
-			modifier = {
-				factor = 0.1
-				has_country_flag = BUL_zveno_joint_act_flag
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-			NOT = { has_country_flag = BUL_zveno_bolstered_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_very_low
-
-		days_re_enable = BUL_faction_days_reenable_low
-
-		cancel_trigger = {
-			hidden_trigger = {
-				OR = {
-					has_country_flag = BUL_zveno_destroyed_flag
-					has_country_flag = BUL_zveno_coup_flag
-				}
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			has_completed_focus = BUL_cooperate_with_the_zveno
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_zveno_bolstered_flag }
-			NOT = { has_country_flag = BUL_disposed_of_zveno_generals_flag }
-			NOT = { has_country_flag = BUL_zveno_integrated_flag }
-			NOT = { has_country_flag = BUL_zveno_destroyed_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-			if = {
-				limit = {
-					has_country_flag = BUL_discredited_zveno_flag
-				}
-				clr_country_flag = BUL_discredited_zveno_flag
-			}
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_cooperation_zveno_joint_act
-			BUL_zveno_low_loyalty_increase_effect = yes
-			BUL_zveno_low_popularity_increase_effect = yes
-			set_country_flag = BUL_speech_zveno_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_faction_speech_cd_tt
-		}
-	}
 
 	BUL_cooperation_bs_speech  = { #BROAD SOCIALISTS Allow/Support faction speech
 
@@ -266,80 +196,6 @@ BUL_internal_factions = {
 			custom_effect_tooltip = BUL_cooperation_faction_speech_cd_tt
 		}
 	}
-
-	BUL_cooperation_bzns_speech  = { #AGRARIAN UNION Allow/Support faction speech
-
-		priority = 22
-
-		icon = GFX_decision_bul_speech_bzns
-
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 0.1
-				has_country_flag = BUL_bzns_joint_act_flag
-			}
-			modifier = {
-				factor = 0
-				BUL_is_fascist_axis_ai = yes
-			}
-			modifier = {
-				factor = 1.5
-				OR = {
-					BUL_is_communist_stalinist_ai = yes
-					BUL_is_communist_balkan_ai = yes
-					BUL_is_democratic_socialist_ai = yes
-				}
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-			NOT = {	has_country_flag = BUL_bzns_legalized_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_very_low
-
-		days_re_enable = BUL_faction_days_reenable_low
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_oppose_the_royal_dictatorship
-				has_completed_focus = BUL_power_to_the_tsar
-			}
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_integrated_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_media_banned_flag }
-			NOT = {	has_country_flag = BUL_bzns_legalized_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-			if = {
-				limit = {
-					has_country_flag = BUL_discredited_bzns_flag
-				}
-				clr_country_flag = BUL_discredited_bzns_flag
-			}
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_cooperation_bzns_joint_act
-			BUL_bzns_low_loyalty_increase_effect = yes
-			BUL_bzns_low_popularity_increase_effect = yes
-			set_country_flag = BUL_speech_bzns_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_faction_speech_cd_tt
-		}
-	}
-
 	BUL_cooperation_nsm_speech  = { #NATIONAL SOCIAL MOVEMENT Allow/Support faction speech
 
 		priority = 12
@@ -401,75 +257,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_cooperation_zveno_joint_act  = { #ZVENO Joint Act
-
-		priority = 43
-
-		icon = GFX_decision_bul_joint_act_zveno
-
-		ai_will_do = {
-			base = 4.5
-			modifier = {
-				factor = 0.5
-				has_country_flag = BUL_zveno_legalized_flag
-				check_variable = { BUL_zveno_loyalty = 55 compare = less_than_or_equals }
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_faction_joint_act_tt
-				check_variable = { BUL_zveno_loyalty = 25 compare = greater_than_or_equals }
-			}
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_low
-
-		days_re_enable = BUL_faction_days_reenable_medium
-
-		cancel_trigger = {
-			hidden_trigger = {
-				OR = {
-					has_country_flag = BUL_zveno_destroyed_flag
-					has_country_flag = BUL_zveno_coup_flag
-				}
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			OR = {
-				has_country_flag = BUL_speech_zveno_flag
-				has_country_flag = BUL_zveno_legalized_flag
-			}			
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_zveno_integrated_flag }
-			NOT = { has_country_flag = BUL_disposed_of_zveno_generals_flag }
-			NOT = { has_country_flag = BUL_zveno_destroyed_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			BUL_zveno_medium_loyalty_increase_effect = yes
-			BUL_zveno_medium_popularity_increase_effect = yes
-			set_country_flag = BUL_zveno_joint_act_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_faction_joint_act_cd_tt
-		}
-	}
 
 	BUL_cooperation_bs_joint_act  = { #BROAD SOCIALISTS Joint Act
 
@@ -563,71 +350,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_cooperation_bzns_joint_act  = { #AGRARIAN UNION Joint Act
-
-		priority = 23
-
-		icon = GFX_decision_bul_joint_act_bzns
-
-		ai_will_do = {
-			base = 2.5
-			modifier = {
-				factor = 0.5
-				has_country_flag = BUL_bzns_legalized_flag
-				check_variable = { BUL_bzns_loyalty = 55 compare = less_than_or_equals }
-			}
-			modifier = {
-				factor = 1.5
-				OR = {
-					BUL_is_communist_stalinist_ai = yes
-					BUL_is_communist_balkan_ai = yes
-					BUL_is_democratic_socialist_ai = yes
-				}
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_faction_joint_act_tt
-				check_variable = { BUL_bzns_loyalty = 25 compare = greater_than_or_equals }
-			}
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_low
-
-		days_re_enable = BUL_faction_days_reenable_medium
-
-		visible = {
-			OR = {
-				has_country_flag = BUL_speech_bzns_flag
-				has_country_flag = BUL_bzns_legalized_flag
-			}
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_integrated_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_media_banned_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			BUL_bzns_medium_loyalty_increase_effect = yes
-			BUL_bzns_medium_popularity_increase_effect = yes
-			set_country_flag = BUL_bzns_joint_act_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_faction_joint_act_cd_tt
-		}
-	}
-
 	BUL_cooperation_nsm_joint_act  = { #NATIONAL SOCIAL MOVEMENT Joint Act
 
 		priority = 13
@@ -700,14 +422,11 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_bolster_zveno_tt
-				check_variable = { BUL_zveno_loyalty = 40 compare = greater_than_or_equals }
-			}
+			has_completed_focus = BUL_cooperate_with_the_zveno
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_medium
+		days_remove =56 #approx time to get bolster
 
 		fire_only_once = yes
 
@@ -724,25 +443,20 @@ BUL_internal_factions = {
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 		}
 
-		visible = {
-			has_country_flag = BUL_factions_unlocked_flag
-			has_completed_focus = BUL_cooperate_with_the_zveno
-			NOT = { has_country_flag = BUL_zveno_integrated_flag }
-			NOT = { has_country_flag = BUL_disposed_of_zveno_generals_flag }
-			NOT = { has_country_flag = BUL_zveno_destroyed_flag }
+		visible = {	
+			has_completed_focus	= BUL_power_to_the_tsar
 		}
 
-		cost = BUL_faction_interaction_cost_standard
+		cost = 25
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
 		}
 
 		remove_effect = {
-			unlock_decision_tooltip = BUL_cooperation_zveno_social_renovation_directory
-			unlock_decision_tooltip = BUL_cooperation_fund_zveno
-			unlock_decision_tooltip = BUL_cooperation_appoint_zveno_members
-			BUL_zveno_low_loyalty_increase_effect = yes
+			#unlock_decision_tooltip = BUL_cooperation_zveno_social_renovation_directory
+			#unlock_decision_tooltip = BUL_cooperation_fund_zveno
+			#unlock_decision_tooltip = BUL_cooperation_appoint_zveno_members
 			custom_effect_tooltip = available_chief_of_army
 			show_ideas_tooltip = BUL_kiril_stanchev
 			custom_effect_tooltip = available_military_high_command
@@ -751,7 +465,8 @@ BUL_internal_factions = {
 			show_ideas_tooltip = BUL_gancho_manchev
 			set_country_flag = BUL_zveno_bolstered_flag
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
-
+			add_stability = 0.1
+			add_war_support	= -.05 #this is the buff from SRD
 			#Add days to Zveno Coup timer if active
 			if = {
 				limit = {
@@ -759,87 +474,11 @@ BUL_internal_factions = {
 				}
 				add_days_mission_timeout = {
 					mission = BUL_impending_zveno_coup
-					days = BUL_zveno_coup_timer_delay_medium
+					days = 200
 				}
 			}
 
 			custom_effect_tooltip = BUL_legalize_faction_prevents_oppression_tt
-		}
-	}
-
-	BUL_cooperation_zveno_social_renovation_directory  = { #ZVENO Legalize Faction equivalent
-
-		priority = 45
-
-		icon = GFX_decision_bul_legalize_zveno
-
-		ai_will_do = {
-			base = 20
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_legalize_faction_tt
-				check_variable = { BUL_zveno_loyalty = 50 compare = greater_than_or_equals }
-			}
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_high
-
-		fire_only_once = yes
-
-		cancel_trigger = {
-			hidden_trigger = {
-				OR = {
-					has_country_flag = BUL_zveno_destroyed_flag
-					has_country_flag = BUL_zveno_coup_flag
-				}
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			has_completed_focus = BUL_cooperate_with_the_zveno
-			check_variable = { BUL_zveno_loyalty = 35 compare = greater_than_or_equals }
-			has_country_flag = BUL_zveno_bolstered_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_zveno_integrated_flag }
-			NOT = { has_country_flag = BUL_disposed_of_zveno_generals_flag }
-			NOT = { has_country_flag = BUL_zveno_destroyed_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			add_stability = 0.1
-			add_war_support = -0.05
-			BUL_zveno_high_loyalty_increase_effect = yes
-			BUL_zveno_low_popularity_increase_effect = yes
-			set_country_flag = BUL_zveno_legalized_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-
-			#Add days to Zveno Coup timer if active
-			if = {
-				limit = {
-					has_active_mission = BUL_impending_zveno_coup
-				}
-				add_days_mission_timeout = {
-					mission = BUL_impending_zveno_coup
-					days = BUL_zveno_coup_timer_delay_medium
-				}
-			}
 		}
 	}
 
@@ -932,76 +571,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_cooperation_bzns_legalize_faction  = { #AGRARIAN UNION Legalize Faction
-
-		priority = 25
-
-		icon = GFX_decision_bul_legalize_bzns
-
-		ai_will_do = {
-			base = 10
-			modifier = {
-				factor = 0
-				BUL_is_fascist_axis_ai = yes
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_legalize_faction_tt
-				check_variable = { BUL_bzns_loyalty = 50 compare = greater_than_or_equals }
-			}
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_high
-
-		fire_only_once = yes
-
-		cancel_trigger = {
-			hidden_trigger = {
-				has_completed_focus = BUL_legalize_the_agrarian_party
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_oppose_the_royal_dictatorship
-				has_completed_focus = BUL_power_to_the_tsar
-			}
-			check_variable = { BUL_bzns_loyalty = 35 compare = greater_than_or_equals }
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_integrated_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_media_banned_flag }
-			NOT = { has_country_flag = BUL_bzns_legalized_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_cooperation_fund_bzns
-			unlock_decision_tooltip = BUL_cooperation_appoint_bzns_members
-			BUL_bzns_medium_loyalty_increase_effect = yes
-			BUL_bzns_medium_popularity_increase_effect = yes
-			set_country_flag = BUL_bzns_legalized_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_legalize_faction_prevents_oppression_tt
-		}
-	}
-
 	BUL_cooperation_nsm_legalize_faction  = { #NATIONAL SOCIAL MOVEMENT Legalize Faction
 
 		priority = 15
@@ -1068,74 +637,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_cooperation_fund_zveno = { # Fund ZVENO
-
-		priority = 46
-
-		icon = GFX_decision_bul_fund_zveno
-
-		ai_will_do = {
-			base = 5
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_high
-
-		days_re_enable = BUL_faction_days_reenable_high
-
-		cancel_trigger = {
-			hidden_trigger = {
-				OR = {
-					has_country_flag = BUL_zveno_destroyed_flag
-					has_country_flag = BUL_zveno_coup_flag
-				}
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			has_country_flag = BUL_zveno_bolstered_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_zveno_integrated_flag }		
-			NOT = { has_country_flag = BUL_disposed_of_zveno_generals_flag }
-			NOT = { has_country_flag = BUL_zveno_destroyed_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			set_country_flag = BUL_fund_zveno_flag
-			BUL_zveno_high_loyalty_increase_effect = yes
-			BUL_zveno_medium_popularity_increase_effect = yes
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_fund_faction_cd_tt
-
-			#Add days to Zveno Coup timer if active
-			if = {
-				limit = {
-					has_active_mission = BUL_impending_zveno_coup
-				}
-				add_days_mission_timeout = {
-					mission = BUL_impending_zveno_coup
-					days = BUL_zveno_coup_timer_delay_low
-				}
-			}
-		}
-	}
 
 	BUL_cooperation_fund_bs = { # Fund BROAD SOCIALISTS
 
@@ -1186,59 +687,6 @@ BUL_internal_factions = {
 			set_country_flag = BUL_fund_bs_flag
 			BUL_bs_high_loyalty_increase_effect = yes
 			BUL_bs_medium_popularity_increase_effect = yes
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_fund_faction_cd_tt
-		}
-	}
-
-	BUL_cooperation_fund_bzns = { # Fund AGRARIAN UNION
-
-		priority = 26
-
-		icon = GFX_decision_bul_fund_bzns
-
-		ai_will_do = {
-			base = 3
-			modifier = {
-				factor = 1.5
-				OR = {
-					BUL_is_communist_stalinist_ai = yes
-					BUL_is_communist_balkan_ai = yes
-					BUL_is_democratic_socialist_ai = yes
-				}
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_high
-
-		days_re_enable = BUL_faction_days_reenable_high
-
-		visible = {
-			has_country_flag = BUL_bzns_legalized_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_integrated_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_media_banned_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			set_country_flag = BUL_fund_bzns_flag
-			BUL_bzns_high_loyalty_increase_effect = yes
-			BUL_bzns_medium_popularity_increase_effect = yes
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 			custom_effect_tooltip = BUL_cooperation_fund_faction_cd_tt
 		}
@@ -1304,15 +752,11 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_appoint_faction_members_tt
-				check_variable = { BUL_zveno_loyalty = 75 compare = greater_than_or_equals }
-				check_variable = { BUL_zveno_popularity = 60 compare = greater_than_or_equals }
-			}
+			has_country_flag = BUL_zveno_bolstered_flag
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_high
+		days_remove = 90 #approx time
 
 		fire_only_once = yes
 
@@ -1337,7 +781,7 @@ BUL_internal_factions = {
 			NOT = { has_country_flag = BUL_zveno_destroyed_flag }
 		}
 
-		cost = BUL_faction_interaction_cost_standard
+		cost = 25
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
@@ -1347,30 +791,7 @@ BUL_internal_factions = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = BUL_kimon_georgiev
 			unlock_decision_tooltip = BUL_cooperation_integrate_zveno
-			BUL_zveno_medium_loyalty_increase_effect = yes
-			BUL_zveno_medium_popularity_increase_effect = yes
 			set_country_flag = BUL_appointed_zveno_members_flag
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_bs_destroyed_flag }
-					NOT = { has_country_flag = BUL_bs_integrated_flag }
-				}
-				BUL_bs_low_loyalty_decrease_effect = yes
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-					NOT = { has_country_flag = BUL_bzns_integrated_flag }
-				}
-				BUL_bzns_low_loyalty_decrease_effect = yes
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-					NOT = { has_country_flag = BUL_nsm_integrated_flag }
-				}
-				BUL_nsm_low_loyalty_decrease_effect = yes
-			}
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 
 			#Add days to Zveno Coup timer if active
@@ -1380,7 +801,7 @@ BUL_internal_factions = {
 				}
 				add_days_mission_timeout = {
 					mission = BUL_impending_zveno_coup
-					days = BUL_zveno_coup_timer_delay_high
+					days = 100
 				}
 			}
 		}
@@ -1475,27 +896,21 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_appoint_faction_members_tt
-				check_variable = { BUL_bzns_loyalty = 75 compare = greater_than_or_equals }
-				check_variable = { BUL_bzns_popularity = 60 compare = greater_than_or_equals }
-			}
+			has_completed_focus	= BUL_power_to_the_tsar
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_high
+		days_remove = 118 #roughly the amount of time required to get to the appoint decision
 
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = BUL_bzns_legalized_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_integrated_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_media_banned_flag }
+			
+			has_completed_focus	= BUL_power_to_the_tsar
+
 		}
 
-		cost = BUL_faction_interaction_cost_standard
+		cost = 30 #half now, half later
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
@@ -1505,30 +920,7 @@ BUL_internal_factions = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = BUL_nikola_petkov
 			unlock_decision_tooltip = BUL_cooperation_integrate_bzns
-			BUL_bzns_medium_loyalty_increase_effect = yes
-			BUL_bzns_medium_popularity_increase_effect = yes
 			set_country_flag = BUL_appointed_bzns_members_flag
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_zveno_destroyed_flag }
-					NOT = { has_country_flag = BUL_zveno_integrated_flag }
-				}
-				BUL_zveno_low_loyalty_decrease_effect = yes
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_bs_destroyed_flag }
-					NOT = { has_country_flag = BUL_bs_integrated_flag }
-				}
-				BUL_bs_low_loyalty_decrease_effect = yes
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-					NOT = { has_country_flag = BUL_nsm_integrated_flag }
-				}
-				BUL_nsm_low_loyalty_decrease_effect = yes
-			}
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 		}
 	}
@@ -1621,15 +1013,11 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_integrate_faction_tt
-				check_variable = { BUL_zveno_loyalty = 100 compare = greater_than_or_equals }
-				check_variable = { BUL_zveno_popularity = 75 compare = greater_than_or_equals }
-			}
+			has_country_flag = BUL_appointed_zveno_members_flag
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_very_high
+		days_remove = 90
 
 		fire_only_once = yes
 
@@ -1648,50 +1036,24 @@ BUL_internal_factions = {
 
 		visible = {
 			has_country_flag = BUL_appointed_zveno_members_flag
-			has_country_flag = BUL_factions_unlocked_flag
 			NOT = { has_country_flag = BUL_zveno_integrated_flag }
 			NOT = { has_country_flag = BUL_disposed_of_zveno_generals_flag }
 			NOT = { has_country_flag = BUL_zveno_destroyed_flag }
 		}
 
-		cost = BUL_faction_interaction_cost_standard
+		cost = 25
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
 		}
 
 		remove_effect = {
-			country_event = bftb_bulgaria_factions.17
+			add_stability = 0.1
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 			clr_country_flag = BUL_speech_zveno_flag
 			clr_country_flag = BUL_zveno_joint_act_flag
 			clr_country_flag = BUL_fund_zveno_flag
 			set_country_flag = BUL_zveno_integrated_flag
-			effect_tooltip = {
-				add_political_power = 120
-				add_stability = 0.1
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_bs_destroyed_flag }
-						NOT = { has_country_flag = BUL_bs_integrated_flag }
-					}
-					BUL_bs_medium_loyalty_decrease_effect = yes
-				}
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-						NOT = { has_country_flag = BUL_bzns_integrated_flag }
-					}
-					BUL_bzns_medium_loyalty_decrease_effect = yes
-				}
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-						NOT = { has_country_flag = BUL_nsm_integrated_flag }
-					}
-					BUL_nsm_medium_loyalty_decrease_effect = yes
-				}
-			}
 		}
 	}
 
@@ -1787,64 +1149,34 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_integrate_faction_tt
-				check_variable = { BUL_bzns_loyalty = 100 compare = greater_than_or_equals }
-				check_variable = { BUL_bzns_popularity = 75 compare = greater_than_or_equals }
-			}
+			has_country_flag = BUL_appointed_bzns_members_flag
+			has_completed_focus	= BUL_power_to_the_tsar
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_very_high
+		days_remove = 88 #total days (206, roughly) minus 118, which is the minister part
 
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = BUL_appointed_bzns_members_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_integrated_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_media_banned_flag }
+			has_completed_focus	= BUL_power_to_the_tsar
+			has_flag = BUL_appointed_bzns_members_flag
+
 		}
 
-		cost = BUL_faction_interaction_cost_standard
+		cost = 30 # other half of total cost - 120 (reward for finishing faction)
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
 		}
 
 		remove_effect = {
-			country_event = bftb_bulgaria_factions.37
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 			clr_country_flag = BUL_speech_bzns_flag
 			clr_country_flag = BUL_bzns_joint_act_flag
 			clr_country_flag = BUL_fund_bzns_flag
 			set_country_flag = BUL_bzns_integrated_flag
-			effect_tooltip = {
-				add_political_power = 120
-				add_stability = 0.1
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_zveno_destroyed_flag }
-						NOT = { has_country_flag = BUL_zveno_integrated_flag }
-					}
-					BUL_zveno_medium_loyalty_decrease_effect = yes
-				}
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_bs_destroyed_flag }
-						NOT = { has_country_flag = BUL_bs_integrated_flag }
-					}
-					BUL_bs_medium_loyalty_decrease_effect = yes
-				}
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-						NOT = { has_country_flag = BUL_nsm_integrated_flag }
-					}
-					BUL_nsm_medium_loyalty_decrease_effect = yes
-				}
-			}
+			add_stability = 0.1
 		}
 	}
 
@@ -2079,71 +1411,6 @@ BUL_internal_factions = {
 			custom_effect_tooltip = BUL_opression_discredit_faction_leaders_cd_tt
 		}
 	}
-
-	BUL_opression_discredit_bzns_leaders  = { # Discredit AGRARIAN UNION Leaders
-
-		priority = 20
-
-		icon = GFX_decision_bul_discredit_bzns
-
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 2
-				BUL_is_fascist_axis_ai = yes
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_very_low
-
-		days_re_enable = BUL_faction_days_reenable_low
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_oppose_the_royal_dictatorship
-				has_completed_focus = BUL_power_to_the_tsar
-			}
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_legalized_flag }
-			NOT = { has_country_flag = BUL_bzns_media_banned_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-			if = { 
-				limit = {
-					has_country_flag = BUL_speech_bzns_flag
-				}
-				clr_country_flag = BUL_speech_bzns_flag
-			}
-			if = { 
-				limit = {
-					has_country_flag = BUL_bzns_joint_act_flag
-				}
-				clr_country_flag = BUL_bzns_joint_act_flag
-			}
-		}
-
-		remove_effect = {
-			BUL_bzns_medium_loyalty_decrease_effect = yes
-			BUL_bzns_medium_popularity_decrease_effect = yes
-			set_country_flag = BUL_discredited_bzns_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_opression_discredit_faction_leaders_cd_tt
-		}
-	}
-
 	BUL_opression_discredit_nsm_leaders  = { # Discredit NATIONAL SOCIAL MOVEMENT Leaders
 
 		priority = 10
@@ -2406,121 +1673,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_opression_ban_bzns_media  = { #AGRARIAN UNION Ban Media
-
-		priority = 21
-
-		icon = GFX_decision_bul_ban_media_bzns
-
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 2.5
-				BUL_is_fascist_axis_ai = yes
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-			custom_trigger_tooltip = {
-				tooltip = BUL_oppression_ban_faction_media_tt
-				check_variable = { BUL_bzns_popularity = 50 compare = less_than_or_equals }
-			}
-			if = {
-				limit = {
-					has_completed_focus = BUL_freedom_of_press
-				}
-				custom_trigger_tooltip = {
-					tooltip = BUL_oppression_ban_faction_media_freedom_of_press_tt
-					has_country_flag = {
-						flag = BUL_freedom_of_press_flag
-						days > 365
-					}
-				}
-			}
-			else = {
-				NOT = {
-					focus_progress = {
-						focus = BUL_freedom_of_press
-						progress > 0
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = BUL_oppression_ban_faction_media_freedom_of_press_tt
-					OR = {
-						has_country_flag = {
-							flag = BUL_freedom_of_press_flag
-							days > 365
-						}
-						focus_progress = {
-							focus = BUL_freedom_of_press
-							progress < 1
-						}
-					}
-				}
-			}
-		}
-
-		days_remove = BUL_faction_days_remove_low
-
-		cancel_trigger = {
-			hidden_trigger = {
-				OR = {
-					AND = {
-						focus_progress = {
-							focus = BUL_freedom_of_press
-							progress > 0
-						}
-						focus_progress = {
-							focus = BUL_freedom_of_press
-							progress < 1
-						}
-					}
-					focus_progress = {
-						focus = BUL_legalize_the_agrarian_party
-						progress > 0
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_oppose_the_royal_dictatorship
-				has_completed_focus = BUL_power_to_the_tsar
-			}
-			check_variable = { BUL_bzns_popularity = 65 compare = less_than_or_equals }
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_legalized_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_media_banned_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_opression_anti_bzns_speech
-			unlock_decision_tooltip = BUL_opression_imprison_bzns_leaders
-			BUL_bzns_low_loyalty_decrease_effect = yes
-			BUL_bzns_medium_popularity_decrease_effect = yes
-			set_country_flag = BUL_bzns_media_banned_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_ban_media_prevents_cooperation_tt
-		}
-	}
-
 	BUL_opression_ban_nsm_media  = { #NATIONAL SOCIAL MOVEMENT Ban Media
 
 		priority = 11
@@ -2757,50 +1909,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_opression_anti_bzns_speech  = { #AGRARIAN UNION Speech against organization
-
-		priority = 23
-
-		icon = GFX_decision_bul_against_bzns
-
-		ai_will_do = {
-			base = 3
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_low
-
-		days_re_enable = BUL_faction_days_reenable_medium
-
-		visible = {
-			has_country_flag = BUL_bzns_media_banned_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_legalized_flag }		
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			BUL_bzns_medium_loyalty_decrease_effect = yes
-			BUL_bzns_medium_popularity_decrease_effect = yes
-			set_country_flag = BUL_anti_bzns_speech_held_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_opression_anti_faction_speech_cd_tt
-		}
-	}
-
 	BUL_opression_anti_nsm_speech  = { #NATIONAL SOCIALIST MOVEMENT Speech against organization
 
 		priority = 13
@@ -2991,69 +2099,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_opression_imprison_bzns_leaders = { #AGRARIAN UNION Imprison leaders
-
-		priority = 24
-
-		icon = GFX_decision_bul_imprison_leaders_bzns
-
-		ai_will_do = {
-			base = 10
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-			custom_trigger_tooltip = {
-				tooltip = BUL_oppression_imprison_faction_leaders_tt
-				check_variable = { BUL_bzns_popularity = 35 compare = less_than_or_equals }
-			}
-		}
-
-		days_remove = BUL_faction_days_remove_medium
-
-		fire_only_once = yes
-
-		visible = {
-			has_country_flag = BUL_bzns_media_banned_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_legalized_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		fixed_random_seed = no
-
-		remove_effect = {
-			set_country_flag = BUL_bzns_leaders_imprisoned_flag
-			hidden_effect = {
-				random_list = {
-					60 = {
-						country_event = { id = bftb_bulgaria_factions.73 hours = 4 random_hours = 2 }
-					}
-					30 = {
-						country_event = { id = bftb_bulgaria_factions.74 hours = 4 random_hours = 2 }
-					}
-					10 = {
-						country_event = { id = bftb_bulgaria_factions.75 hours = 4 random_hours = 2 }
-					}
-				}
-			}
-			effect_tooltip = {
-				country_event = bftb_bulgaria_factions.73
-			}
-			unlock_decision_tooltip = BUL_opression_raid_bzns_supporters
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-	}
 
 	BUL_opression_imprison_nsm_leaders = { #NATIONAL SOCIAL MOVEMENT Imprison leaders
 
@@ -3245,55 +2290,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_opression_raid_bzns_supporters  = { # Raid AGRARIAN UNION Supporters
-
-		priority = 25
-
-		icon = GFX_decision_bul_raid_bzns
-
-		ai_will_do = {
-			base = 5
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_opression_raid_faction_supporters_tt
-				check_variable = { BUL_bzns_popularity = 25 compare = less_than_or_equals }
-			}
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_high
-
-		days_re_enable = BUL_faction_days_reenable_very_high
-
-		visible = {
-			has_country_flag = BUL_bzns_leaders_imprisoned_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_legalized_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_opression_destroy_bzns
-			set_country_flag = BUL_raided_bzns_supporters_flag
-			BUL_bzns_medium_loyalty_decrease_effect = yes
-			BUL_bzns_high_popularity_decrease_effect = yes
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_opression_raid_faction_supporters_cd_tt
-		}
-	}
-
 	BUL_opression_raid_nsm_supporters  = { # Raid NATIONAL SOCIAL MOVEMENT Supporters
 
 		priority = 15
@@ -3434,6 +2430,7 @@ BUL_internal_factions = {
 		}
 
 		available = {
+			has_completed_focus	= BUL_power_to_the_tsar
 			custom_trigger_tooltip = {
 				tooltip = BUL_opression_destroy_faction_tt
 				check_variable = { BUL_bs_popularity = 0 compare = less_than_or_equals }
@@ -3480,32 +2477,29 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_opression_destroy_faction_tt
-				check_variable = { BUL_bzns_popularity = 0 compare = less_than_or_equals }
-			}
+			has_completed_focus	= BUL_power_to_the_tsar
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_high
+		days_remove = 141 #by my rough estimate, this is how long all the decisions should take
 
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = BUL_raided_bzns_supporters_flag
+			NOT = {has_country_flag = BUL_appointed_bzns_members_flag}
+			has_completed_focus	= BUL_power_to_the_tsar
 			has_country_flag = BUL_factions_unlocked_flag
 			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-			NOT = { has_country_flag = BUL_bzns_legalized_flag }
 		}
 
-		cost = BUL_faction_interaction_cost_standard
+		cost = 40
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
 		}
 
 		remove_effect = {
-			country_event = bftb_bulgaria_factions.39
+			add_stability = 0.1
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 			set_country_flag = BUL_bzns_destroyed_flag
 		}
@@ -3713,87 +2707,6 @@ BUL_internal_factions = {
 			custom_effect_tooltip = BUL_repress_faction_tt
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 			clr_country_flag = BUL_bs_dissident_event_not_addressed_flag
-		}
-	}
-
-	BUL_opression_repress_bzns  = { #AGRARIAN UNION Repress Organization
-
-		priority = 22
-
-		icon = GFX_decision_bul_repress_bzns
-
-		ai_will_do = {
-			base = 100
-			modifier = {
-				factor = 0
-				OR = {
-					BUL_is_communist_stalinist_ai = yes
-					BUL_is_communist_balkan_ai = yes
-					BUL_is_democratic_socialist_ai = yes
-				}
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_very_low
-
-		cancel_trigger = {
-			hidden_trigger = {
-				OR = {
-					has_country_flag = BUL_bzns_destroyed_flag
-					has_country_flag = BUL_bzns_integrated_flag
-				}
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			has_country_flag = BUL_bzns_dissident_event_flag #This faction has triggered a dissident event
-			has_country_flag = BUL_bzns_dissident_event_not_addressed_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bzns_integrated_flag }
-			NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-			set_country_flag = BUL_bzns_repressed_flag
-		}
-
-		fixed_random_seed = no
-
-		remove_effect = {
-			hidden_effect = {
-				random_list = {
-					70 = {
-						country_event = { id = bftb_bulgaria_factions.70 hours = 4 random_hours = 2 }
-					}
-					20 = {
-						country_event = { id = bftb_bulgaria_factions.71 hours = 4 random_hours = 2 }
-					}
-					10 = {
-						country_event = { id = bftb_bulgaria_factions.72 hours = 4 random_hours = 2 }
-					}
-				}
-			}
-			effect_tooltip = {
-				country_event = bftb_bulgaria_factions.70
-			}
-			custom_effect_tooltip = BUL_repress_faction_tt
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			clr_country_flag = BUL_bzns_dissident_event_not_addressed_flag
 		}
 	}
 
