@@ -9997,26 +9997,6 @@ focus_tree = {
 		relative_position_id = ITA_foreign_affairs
 		cost = 5
 
-		bypass = {
-			is_in_faction = yes
-			is_in_faction_with = GER
-		}
-
-		available = {
-			NOT = { has_war_with = GER }
-			custom_trigger_tooltip = {
-				tooltip = ITA_germ_italy_same_tt
-				GER = { has_government = ROOT }
-			}
-			is_in_faction = no
-			GER = {
-				is_faction_leader = yes
-				is_subject = no
-			}
-			is_subject = no
-			NOT = { has_country_flag = ENG_ditched_by_the_germans_flag }
-		}
-
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
