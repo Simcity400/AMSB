@@ -196,67 +196,6 @@ BUL_internal_factions = {
 			custom_effect_tooltip = BUL_cooperation_faction_speech_cd_tt
 		}
 	}
-	BUL_cooperation_nsm_speech  = { #NATIONAL SOCIAL MOVEMENT Allow/Support faction speech
-
-		priority = 12
-
-		icon = GFX_decision_bul_speech_nsm
-
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 0.1
-				has_country_flag = BUL_nsm_joint_act_flag
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-			NOT = {	has_country_flag = BUL_nsm_legalized_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_very_low
-
-		days_re_enable = BUL_faction_days_reenable_low
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_restrained_paramilitary_organizations
-				has_completed_focus = BUL_appoint_right_wing_ministers
-			}
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_nsm_integrated_flag }
-			NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-			NOT = { has_country_flag = BUL_nsm_media_banned_flag }
-			NOT = {	has_country_flag = BUL_nsm_legalized_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-			if = {
-				limit = {
-					has_country_flag = BUL_discredited_nsm_flag
-				}
-				clr_country_flag = BUL_discredited_nsm_flag
-			}
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_cooperation_nsm_joint_act
-			BUL_nsm_low_loyalty_increase_effect = yes
-			BUL_nsm_low_popularity_increase_effect = yes
-			set_country_flag = BUL_speech_nsm_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_faction_speech_cd_tt
-		}
-	}
-
 
 	BUL_cooperation_bs_joint_act  = { #BROAD SOCIALISTS Joint Act
 
@@ -345,63 +284,6 @@ BUL_internal_factions = {
 			BUL_bs_medium_loyalty_increase_effect = yes
 			BUL_bs_medium_popularity_increase_effect = yes
 			set_country_flag = BUL_bs_joint_act_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_faction_joint_act_cd_tt
-		}
-	}
-
-	BUL_cooperation_nsm_joint_act  = { #NATIONAL SOCIAL MOVEMENT Joint Act
-
-		priority = 13
-
-		icon = GFX_decision_bul_joint_act_nsm
-
-		ai_will_do = {
-			base = 2.5
-			modifier = {
-				factor = 0.5
-				has_country_flag = BUL_nsm_legalized_flag
-				check_variable = { BUL_nsm_loyalty = 55 compare = less_than_or_equals }
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_faction_joint_act_tt
-				check_variable = { BUL_nsm_loyalty = 25 compare = greater_than_or_equals }
-			}
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_low
-
-		days_re_enable = BUL_faction_days_reenable_medium
-
-		visible = {
-			OR = {
-				has_country_flag = BUL_speech_nsm_flag
-				has_country_flag = BUL_nsm_legalized_flag
-			}
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_nsm_integrated_flag }
-			NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-			NOT = { has_country_flag = BUL_nsm_media_banned_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			BUL_nsm_medium_loyalty_increase_effect = yes
-			BUL_nsm_medium_popularity_increase_effect = yes
-			set_country_flag = BUL_nsm_joint_act_flag
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 			custom_effect_tooltip = BUL_cooperation_faction_joint_act_cd_tt
 		}
@@ -571,73 +453,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_cooperation_nsm_legalize_faction  = { #NATIONAL SOCIAL MOVEMENT Legalize Faction
-
-		priority = 15
-
-		icon = GFX_decision_bul_legalize_nsm
-
-		ai_will_do = {
-			base = 10
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_legalize_faction_tt
-				check_variable = { BUL_nsm_loyalty = 50 compare = greater_than_or_equals }
-			}
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_high
-
-		fire_only_once = yes
-
-		cancel_trigger = {
-			hidden_trigger = {
-				has_completed_focus = BUL_allow_far_right_organizations
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_restrained_paramilitary_organizations
-				has_completed_focus = BUL_appoint_right_wing_ministers
-			}
-			check_variable = { BUL_nsm_loyalty = 35 compare = greater_than_or_equals }
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_nsm_integrated_flag }
-			NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-			NOT = { has_country_flag = BUL_nsm_media_banned_flag }
-			NOT = { has_country_flag = BUL_nsm_legalized_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_cooperation_fund_nsm
-			unlock_decision_tooltip = BUL_cooperation_appoint_nsm_members
-			BUL_nsm_medium_loyalty_increase_effect = yes
-			BUL_nsm_medium_popularity_increase_effect = yes
-			set_country_flag = BUL_nsm_legalized_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_legalize_faction_prevents_oppression_tt
-		}
-	}
-
-
 	BUL_cooperation_fund_bs = { # Fund BROAD SOCIALISTS
 
 		priority = 36
@@ -692,50 +507,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_cooperation_fund_nsm = { # Fund NATIONAL SOCIAL MOVEMENT
-
-		priority = 16
-
-		icon = GFX_decision_bul_fund_nsm
-
-		ai_will_do = {
-			base = 3
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_high
-
-		days_re_enable = BUL_faction_days_reenable_high
-
-		visible = {
-			has_country_flag = BUL_nsm_legalized_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_nsm_integrated_flag }
-			NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-			NOT = { has_country_flag = BUL_nsm_media_banned_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			set_country_flag = BUL_fund_nsm_flag
-			BUL_nsm_high_loyalty_increase_effect = yes
-			BUL_nsm_medium_popularity_increase_effect = yes
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_cooperation_fund_faction_cd_tt
-		}
-	}
 
 	BUL_cooperation_appoint_zveno_members = { # Appoint ZVENO Members
 
@@ -940,27 +711,23 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_appoint_faction_members_tt
-				check_variable = { BUL_nsm_loyalty = 75 compare = greater_than_or_equals }
-				check_variable = { BUL_nsm_popularity = 60 compare = greater_than_or_equals }
-			}
+			has_completed_focus	= BUL_appoint_right_wing_ministers
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_high
+		days_remove = 90
 
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = BUL_nsm_legalized_flag
+			has_completed_focus	= BUL_power_to_the_tsar
 			has_country_flag = BUL_factions_unlocked_flag
 			NOT = { has_country_flag = BUL_nsm_integrated_flag }
 			NOT = { has_country_flag = BUL_nsm_destroyed_flag }
 			NOT = { has_country_flag = BUL_nsm_media_banned_flag }
 		}
 
-		cost = BUL_faction_interaction_cost_standard
+		cost = 20
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
@@ -973,27 +740,6 @@ BUL_internal_factions = {
 			BUL_nsm_medium_loyalty_increase_effect = yes
 			BUL_nsm_medium_popularity_increase_effect = yes
 			set_country_flag = BUL_appointed_nsm_members_flag
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_zveno_destroyed_flag }
-					NOT = { has_country_flag = BUL_zveno_integrated_flag }
-				}
-				BUL_zveno_low_loyalty_decrease_effect = yes
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_bs_destroyed_flag }
-					NOT = { has_country_flag = BUL_bs_integrated_flag }
-				}
-				BUL_bs_low_loyalty_decrease_effect = yes
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-					NOT = { has_country_flag = BUL_bzns_integrated_flag }
-				}
-				BUL_bzns_low_loyalty_decrease_effect = yes
-			}
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 		}
 	}
@@ -1195,27 +941,20 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = BUL_cooperation_integrate_faction_tt
-				check_variable = { BUL_nsm_loyalty = 100 compare = greater_than_or_equals }
-				check_variable = { BUL_nsm_popularity = 75 compare = greater_than_or_equals }
-			}
+			has_country_flag = BUL_appointed_nsm_members_flag
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_very_high
+		days_remove = 74
 
 		fire_only_once = yes
 
 		visible = {
 			has_country_flag = BUL_appointed_nsm_members_flag
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_nsm_integrated_flag }
-			NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-			NOT = { has_country_flag = BUL_nsm_media_banned_flag }
+			has_completed_focus	= BUL_power_to_the_tsar
 		}
 
-		cost = BUL_faction_interaction_cost_standard
+		cost = 20
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
@@ -1228,31 +967,8 @@ BUL_internal_factions = {
 			clr_country_flag = BUL_nsm_joint_act_flag
 			clr_country_flag = BUL_fund_nsm_flag
 			set_country_flag = BUL_nsm_integrated_flag
-			effect_tooltip = {
-				add_political_power = 120
-				add_stability = 0.1
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_zveno_destroyed_flag }
-						NOT = { has_country_flag = BUL_zveno_integrated_flag }
-					}
-					BUL_zveno_medium_loyalty_decrease_effect = yes
-				}
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_bs_destroyed_flag }
-						NOT = { has_country_flag = BUL_bs_integrated_flag }
-					}
-					BUL_bs_medium_loyalty_decrease_effect = yes
-				}
-				if = {
-					limit = {
-						NOT = { has_country_flag = BUL_bzns_destroyed_flag }
-						NOT = { has_country_flag = BUL_bzns_integrated_flag }
-					}
-					BUL_bzns_medium_loyalty_decrease_effect = yes
-				}
-			}
+			add_political_power = 80
+			add_stability = 0.1
 		}
 	}
 
@@ -1340,142 +1056,6 @@ BUL_internal_factions = {
 		}
 	}
 
-	BUL_opression_discredit_bs_leaders  = { # Discredit BROAD SOCIALISTS Leaders
-
-		priority = 30
-
-		icon = GFX_decision_bul_discredit_bs
-
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 2
-				OR = {
-					BUL_is_fascist_axis_ai = yes
-					BUL_is_monarchist_ferdinand_ai = yes
-					BUL_is_democratic_liberal_ai = yes
-					#AND = { #TODO_Manu: Check how the AI performs without this. Might be necessary to not add it to help the FF coup.
-					#	BUL_is_historical_ai = yes
-					#	date > 1940.6.1
-					#}
-				}
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_very_low
-
-		days_re_enable = BUL_faction_days_reenable_low
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_oppose_the_royal_dictatorship
-				has_completed_focus = BUL_power_to_the_tsar
-			}
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bs_legalized_flag }
-			NOT = { has_country_flag = BUL_bs_media_banned_flag }
-			NOT = { has_country_flag = BUL_bs_destroyed_flag }
-		}
-
-		cost = BUL_broad_socialist_opression_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-			if = { 
-				limit = {
-					has_country_flag = BUL_speech_bs_flag
-				}
-				clr_country_flag = BUL_speech_bs_flag
-			}
-			if = { 
-				limit = {
-					has_country_flag = BUL_bs_joint_act_flag
-				}
-				clr_country_flag = BUL_bs_joint_act_flag
-			}
-		}
-
-		remove_effect = {
-			BUL_bs_medium_loyalty_decrease_effect = yes
-			BUL_bs_medium_popularity_decrease_effect = yes
-			set_country_flag = BUL_discredited_bs_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_opression_discredit_faction_leaders_cd_tt
-		}
-	}
-	BUL_opression_discredit_nsm_leaders  = { # Discredit NATIONAL SOCIAL MOVEMENT Leaders
-
-		priority = 10
-
-		icon = GFX_decision_bul_discredit_nsm
-
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 0
-				BUL_is_fascist_axis_ai = yes
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-		}
-
-		days_remove = BUL_faction_days_remove_very_low
-
-		days_re_enable = BUL_faction_days_reenable_low
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_appoint_communist_ministers
-				has_completed_focus = BUL_ban_far_right_organizations
-				has_completed_focus = BUL_appoint_right_wing_ministers
-			}
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_nsm_legalized_flag }
-			NOT = { has_country_flag = BUL_nsm_media_banned_flag }
-			NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-				if = { 
-				limit = {
-					has_country_flag = BUL_speech_nsm_flag
-				}
-				clr_country_flag = BUL_speech_nsm_flag
-			}
-			if = { 
-				limit = {
-					has_country_flag = BUL_nsm_joint_act_flag
-				}
-				clr_country_flag = BUL_nsm_joint_act_flag
-			}
-		}
-
-		remove_effect = {
-			BUL_nsm_medium_loyalty_decrease_effect = yes
-			BUL_nsm_medium_popularity_decrease_effect = yes
-			set_country_flag = BUL_discredited_nsm_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_opression_discredit_faction_leaders_cd_tt
-		}
-	}
-
 	BUL_opression_dispose_of_zveno_generals  = { #ZVENO Ban Media equivalent
 
 		priority = 41
@@ -1558,238 +1138,6 @@ BUL_internal_factions = {
 					days = BUL_zveno_coup_timer_delay_medium
 				}
 			}
-		}
-	}
-
-
-	BUL_opression_ban_bs_media  = { #BROAD SOCIALISTS Ban Media
-
-		priority = 31
-
-		icon = GFX_decision_bul_ban_media_bs
-
-		ai_will_do = {
-			base = 0.5
-			modifier = {
-				add = 2
-				OR = {
-					BUL_is_fascist_axis_ai = yes
-					BUL_is_monarchist_ferdinand_ai = yes
-					BUL_is_democratic_liberal_ai = yes
-				}
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-			custom_trigger_tooltip = {
-				tooltip = BUL_oppression_ban_faction_media_tt
-				check_variable = { BUL_bs_popularity = 50 compare = less_than_or_equals }
-			}
-			if = {
-				limit = {
-					has_completed_focus = BUL_freedom_of_press
-				}
-				custom_trigger_tooltip = {
-					tooltip = BUL_oppression_ban_faction_media_freedom_of_press_tt
-					has_country_flag = {
-						flag = BUL_freedom_of_press_flag
-						days > 365
-					}
-				}
-			}
-			else = {
-				NOT = {
-					focus_progress = {
-						focus = BUL_freedom_of_press
-						progress > 0
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = BUL_oppression_ban_faction_media_freedom_of_press_tt
-					OR = {
-						has_country_flag = {
-							flag = BUL_freedom_of_press_flag
-							days > 365
-						}
-						focus_progress = {
-							focus = BUL_freedom_of_press
-							progress < 1
-						}
-					}
-				}
-			}
-		}
-
-		days_remove = BUL_faction_days_remove_low
-
-		cancel_trigger = {
-			hidden_trigger = {
-				focus_progress = {
-					focus = BUL_freedom_of_press
-					progress > 0
-				}
-				focus_progress = {
-					focus = BUL_freedom_of_press
-					progress < 1
-				}
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_oppose_the_royal_dictatorship
-				has_completed_focus = BUL_power_to_the_tsar
-			}
-			check_variable = { BUL_bs_popularity = 65 compare = less_than_or_equals }
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_bs_legalized_flag }
-			NOT = { has_country_flag = BUL_bs_destroyed_flag }
-			NOT = { has_country_flag = BUL_bs_media_banned_flag }
-		}
-
-		cost = BUL_broad_socialist_opression_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_opression_anti_bs_speech
-			unlock_decision_tooltip = BUL_opression_imprison_bs_leaders
-			BUL_bs_low_loyalty_decrease_effect = yes
-			BUL_bs_medium_popularity_decrease_effect = yes
-			set_country_flag = BUL_bs_media_banned_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_ban_media_prevents_cooperation_tt
-		}
-	}
-
-	BUL_opression_ban_nsm_media  = { #NATIONAL SOCIAL MOVEMENT Ban Media
-
-		priority = 11
-
-		icon = GFX_decision_bul_ban_media_nsm
-
-		ai_will_do = {
-			base = 2.5
-			modifier = {
-				factor = 0
-				OR = {
-					BUL_is_fascist_axis_ai = yes
-					BUL_is_monarchist_ferdinand_ai = yes
-					BUL_is_democratic_liberal_ai = yes
-				}
-			}
-		}
-
-		allowed = { 
-			original_tag = BUL
-		}
-
-		available = {
-			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
-			custom_trigger_tooltip = {
-				tooltip = BUL_oppression_ban_faction_media_tt
-				check_variable = { BUL_nsm_popularity = 50 compare = less_than_or_equals }
-			}
-			if = {
-				limit = {
-					has_completed_focus = BUL_freedom_of_press
-				}
-				custom_trigger_tooltip = {
-					tooltip = BUL_oppression_ban_faction_media_freedom_of_press_tt
-					has_country_flag = {
-						flag = BUL_freedom_of_press_flag
-						days > 365
-					}
-				}
-			}
-			else = {
-				NOT = {
-					focus_progress = {
-						focus = BUL_freedom_of_press
-						progress > 0
-					}
-				}
-				custom_trigger_tooltip = {
-					tooltip = BUL_oppression_ban_faction_media_freedom_of_press_tt
-					OR = {
-						has_country_flag = {
-							flag = BUL_freedom_of_press_flag
-							days > 365
-						}
-						focus_progress = {
-							focus = BUL_freedom_of_press
-							progress < 1
-						}
-					}
-				}
-			}
-		}
-
-		days_remove = BUL_faction_days_remove_low
-
-		cancel_trigger = {
-			hidden_trigger = {
-				OR = {
-					AND = {
-						focus_progress = {
-							focus = BUL_freedom_of_press
-							progress > 0
-						}
-						focus_progress = {
-							focus = BUL_freedom_of_press
-							progress < 1
-						}
-					}
-					focus_progress = {
-						focus = BUL_allow_far_right_organizations
-						progress > 0
-					}
-				}
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		visible = {
-			OR = {
-				has_completed_focus = BUL_appoint_communist_ministers
-				has_completed_focus = BUL_ban_far_right_organizations
-				has_completed_focus = BUL_appoint_right_wing_ministers
-			}
-			check_variable = { BUL_nsm_popularity = 65 compare = less_than_or_equals }
-			has_country_flag = BUL_factions_unlocked_flag
-			NOT = { has_country_flag = BUL_nsm_legalized_flag }
-			NOT = { has_country_flag = BUL_nsm_destroyed_flag }
-			NOT = { has_country_flag = BUL_nsm_media_banned_flag }
-		}
-
-		cost = BUL_faction_interaction_cost_standard
-
-		complete_effect = {
-			set_country_flag = BUL_internal_affairs_ongoing_flag
-		}
-
-		remove_effect = {
-			unlock_decision_tooltip = BUL_opression_anti_nsm_speech
-			unlock_decision_tooltip = BUL_opression_imprison_nsm_leaders
-			BUL_nsm_low_loyalty_decrease_effect = yes
-			BUL_nsm_medium_popularity_decrease_effect = yes
-			set_country_flag = BUL_nsm_media_banned_flag
-			clr_country_flag = BUL_internal_affairs_ongoing_flag
-			custom_effect_tooltip = BUL_ban_media_prevents_cooperation_tt
 		}
 	}
 
@@ -2430,33 +1778,27 @@ BUL_internal_factions = {
 		}
 
 		available = {
-			has_completed_focus	= BUL_power_to_the_tsar
-			custom_trigger_tooltip = {
-				tooltip = BUL_opression_destroy_faction_tt
-				check_variable = { BUL_bs_popularity = 0 compare = less_than_or_equals }
-			}
 			NOT = { has_country_flag = BUL_internal_affairs_ongoing_flag }
 		}
 
-		days_remove = BUL_faction_days_remove_high
+		days_remove = 116
 
 		fire_only_once = yes
 
 		visible = {
-			has_country_flag = BUL_raided_bs_supporters_flag
-			has_country_flag = BUL_factions_unlocked_flag
+			has_completed_focus	= BUL_power_to_the_tsar
 			NOT = { has_country_flag = BUL_bs_destroyed_flag }
-			NOT = { has_country_flag = BUL_bs_legalized_flag }
 		}
 
-		cost = BUL_broad_socialist_opression_cost_standard
+		cost = 20
 
 		complete_effect = {
 			set_country_flag = BUL_internal_affairs_ongoing_flag
 		}
 
 		remove_effect = {
-			country_event = bftb_bulgaria_factions.29
+			add_political_power = 70
+			add_stability = 0.1
 			clr_country_flag = BUL_internal_affairs_ongoing_flag
 			set_country_flag = BUL_bs_destroyed_flag
 		}
