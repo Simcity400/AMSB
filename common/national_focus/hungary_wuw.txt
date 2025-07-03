@@ -207,9 +207,12 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			set_technology = { militia_tech = 1  }
+			set_technology = { hun_militia = 1 }
 
+			custom_effect_tooltip = HUN_militia_combat_width
+			
 			custom_effect_tooltip = generic_skip_one_line_tt
-
+			
 			custom_effect_tooltip = HUN_rongyos_garda_leaders_become_generals
 
 		}
@@ -726,7 +729,24 @@ focus_tree = {
 				}
 			}
 
-
+			
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = HUN_istvan_horthy
@@ -804,9 +824,13 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = HUN_henrik_werth
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_country_leader_trait = HUN_arpads_successor_trait
-
+			
 		}
 	}
 
@@ -1968,7 +1992,14 @@ focus_tree = {
 			every_army_leader = {
 				add_planning = 1
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
+			add_tech_bonus = {
+				name = wuw_HUN_quantity_over_quality
+				bonus = 0.75
+				uses = 2
+				category = artillery
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_chief_of_army
@@ -2008,7 +2039,7 @@ focus_tree = {
 		}
 
 		available = {
-			num_of_factories > 30
+			num_of_factories > 25
 		}
 
 		bypass = {
@@ -2305,7 +2336,7 @@ focus_tree = {
 					}
 				}
 				43 = {
-					add_extra_state_shared_building_slots = 1
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
 						level = 2
@@ -2495,139 +2526,16 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = wuw_HUN_form_the_gyorshadtest
-				bonus = 0.25
+				bonus = 1
 				uses = 1
-				category = cat_light_armor
+				category = armor
 			}
 
 			add_tech_bonus = {
 				name = wuw_HUN_form_the_gyorshadtest
-				bonus = 0.25
+				bonus = 0.5
 				uses = 1
 				category = motorized_equipment
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			IF = {
-				limit = {
-					NOT = {
-						has_tech = mechanised_infantry
-					}
-				}
-
-				custom_effect_tooltip = gyordshadtest_division_mot_tt
-
-				hidden_effect = {
-					delete_unit_template_and_units = {
-						division_template = "Gyorshadtest"
-						disband = yes #if yes, will refund equipment/manpower.
-					}
-
-					division_template = {
-						name = "Gyorshadtest"
-						division_names_group = HUN_MOT_01
-						role = mobile
-						is_locked = no
-						regiments = {
-							motorized = { x = 0 y = 0 }
-							motorized = { x = 0 y = 1 }
-							bicycle_battalion = { x = 1 y = 0 }
-							bicycle_battalion = { x = 1 y = 1 }
-						}
-						support = {
-							light_tank_recon = { x = 0 y = 0 }   # recon bn of tankettes, ACs etc
-							artillery = { x = 0 y = 1 } # Represents the 105mm howitzer battalion
-						}
-					}
-
-					random_owned_state = {
-						limit = {
-							is_controlled_by = ROOT
-							is_core_of = ROOT
-						}
-						create_unit = {
-						    division = "name = \"Első Gyorshadtest\" division_template = \"Gyorshadtest\" start_experience_factor = 0.8 start_equipment_factor = 1"
-						    owner = ROOT
-						    officer = {
-						    	name = HUN_jeno_major
-						    	portraits = {
-						    		army = {
-						    			large = GFX_portrait_HUN_jeno_major
-						    			small = GFX_portrait_HUN_jeno_major_small
-						    		}
-						    	}
-						    }
-						}
-						create_unit = {
-						    division = "name = \"Második Gyorshadtest\" division_template = \"Gyorshadtest\" start_experience_factor = 0.8 start_equipment_factor = 1"
-						    owner = ROOT
-						    officer = {
-						    	name = HUN_ferenc_bisza
-						    }
-						}
-					}
-				}
-			}
-
-			ELSE_IF = {
-				limit = {
-					has_tech = mechanised_infantry
-				}
-
-				custom_effect_tooltip = gyordshadtest_division_mech_tt
-
-				hidden_effect = {
-					delete_unit_template_and_units = {
-						division_template = "Gyorshadtest"
-						disband = yes #if yes, will refund equipment/manpower.
-					}
-
-					division_template = {
-						name = "Gyorshadtest"
-						division_names_group = HUN_INF_01
-						role = mobile
-						is_locked = no
-						regiments = {
-							mechanized = { x = 0 y = 0 }
-							mechanized = { x = 0 y = 1 }
-							bicycle_battalion = { x = 1 y = 0 }
-							bicycle_battalion = { x = 1 y = 1 }
-						}
-						support = {
-							light_tank_recon = { x = 0 y = 0 }   # recon bn of tankettes, ACs etc
-							artillery = { x = 0 y = 1 } # Represents the 105mm howitzer battalion
-						}
-					}
-
-					random_state = {
-						limit = {
-							is_fully_controlled_by = ROOT
-							is_owned_by = ROOT
-							is_core_of = ROOT
-						}
-						create_unit = {
-						    division = "name = \"Első Gyorshadtest\" division_template = \"Gyorshadtest\" start_experience_factor = 0.8 start_equipment_factor = 1"
-						    owner = ROOT
-						    officer = {
-						    	name = HUN_jeno_major
-						    	portraits = {
-						    		army = {
-						    			large = GFX_portrait_HUN_jeno_major
-						    			small = GFX_portrait_HUN_jeno_major_small
-						    		}
-						    	}
-						    }
-						}
-						create_unit = {
-						    division = "name = \"Második Gyorshadtest\" division_template = \"Gyorshadtest\" start_experience_factor = 0.8 start_equipment_factor = 1"
-						    owner = ROOT
-						    officer = {
-						    	name = HUN_ferenc_bisza
-						    }
-						}
-					}
-				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2858,69 +2766,12 @@ focus_tree = {
 		completion_reward = {
 
 			custom_effect_tooltip = HUN_light_infantry_divisions_doctrine_tech_tt
-			custom_effect_tooltip = HUN_light_infantry_divisions_doctrine_unit_tt
-			hidden_effect = {
-				IF = {
-					limit = { has_tech = tech_engineers }
-					division_template = {
-						name = "Light Division"
-						division_names_group = HUN_INF_01
-						role = infantry
-						priority = 2
-
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
-
-		    	   		 	infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
-						}
-						support = {
-							engineer = { x = 0 y = 0 }
-							recon = { x = 0 y = 1 }
-							artillery = { x = 0 y = 2 }
-						}
-					}
-					ELSE = {
-						division_template = {
-							name = "Light Division"
-							division_names_group = HUN_INF_01
-							role = infantry
-							priority = 2
-
-							regiments = {
-								infantry = { x = 0 y = 0 }
-								infantry = { x = 0 y = 1 }
-								infantry = { x = 0 y = 2 }
-
-			    	   		 	infantry = { x = 1 y = 0 }
-								infantry = { x = 1 y = 1 }
-								infantry = { x = 1 y = 2 }
-							}
-							support = {
-								recon = { x = 0 y = 0 }
-								artillery = { x = 0 y = 1 }
-							}
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					prioritize = { 43 }
-					limit = { ROOT = { has_full_control_of_state = PREV } }
-					create_unit = {
-						division = "name = \"1. Light Division\" division_template = \"Light Division\" start_experience_factor = 1.0"
-						owner = HUN
-					}
-				}
-			}
 			hidden_effect = { set_technology = { HUN_light_infantry_tech = 1 } }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_military_high_command
-			show_ideas_tooltip = HUN_jeno_ratz
+			show_ideas_tooltip = HUN_jeno_ratz 
 		}
 	}
 
@@ -2961,8 +2812,8 @@ focus_tree = {
 			}
 
 			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 150
+				type = support_equipment
+				amount = 1000
 				producer = ROOT
 			}
 
@@ -3040,7 +2891,7 @@ focus_tree = {
 		}
 
 		available = {
-			num_of_factories > 29
+			num_of_factories > 20
 		}
 
 		bypass = {
@@ -3060,13 +2911,18 @@ focus_tree = {
 				category = armor
 			}
 
-			add_tech_bonus = {
-				name = wuw_HUN_quantity_over_quality
-				bonus = 0.25
-				uses = 2
-				category = artillery
+			random_owned_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
 			}
-
 		}
 	}
 
@@ -3101,6 +2957,19 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = HUN_rapid_army_expansion
+
+			random_owned_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -3137,7 +3006,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = HUN_the_botond
-				bonus = 0.75
+				bonus = 1
 				uses = 1
 				category = motorized_equipment
 			}
@@ -3146,6 +3015,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
+			
 		}
 	}
 
@@ -3239,119 +3109,14 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = HUN_develop_assault_guns
-				bonus = 0.5
+				bonus = 1
 				uses = 2
-				category = cat_anti_air
-				category = mio_cat_artillery
+				category = artillery
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_ideas = wuw_HUN_assault_gun_focus_idea
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			IF = {
-				limit = {
-					has_dlc = "No Step Back"
-				}
-				IF = {
-					limit = {
-						has_tech = advanced_medium_tank_chassis
-					}
-					# 43M Zrínyi
-					create_equipment_variant = {
-						name = "43M Zrínyi"
-						type = medium_tank_artillery_chassis_3
-						parent_version = 0
-						modules = {
-							main_armament_slot = tank_medium_howitzer_2
-							turret_type_slot = tank_medium_one_man_tank_turret
-							suspension_type_slot = tank_torsion_bar_suspension
-							armor_type_slot = tank_riveted_armor
-							engine_type_slot = tank_gasoline_engine
-						}
-						upgrades = {
-							tank_nsb_engine_upgrade = 3
-							tank_nsb_armor_upgrade = 3
-						}
-						#icon = "GFX_ITA_advanced_medium_art_medium"
-					}
-				}
-				ELSE = {
-					custom_effect_tooltip = wuw_HUN_zrinyi_arty_tt
-					effect_tooltip = {
-						# 43M Zrínyi
-						create_equipment_variant = {
-							name = "43M Zrínyi"
-							type = medium_tank_artillery_chassis_3
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_medium_howitzer_2
-								turret_type_slot = tank_medium_one_man_tank_turret
-								suspension_type_slot = tank_torsion_bar_suspension
-								armor_type_slot = tank_riveted_armor
-								engine_type_slot = tank_gasoline_engine
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 3
-								tank_nsb_armor_upgrade = 3
-							}
-							#icon = "GFX_ITA_advanced_medium_art_medium"
-						}
-					}
-				}
-				IF = {
-					limit = {
-						has_tech = improved_medium_tank_chassis
-					}
-					# 40M Nimród
-					create_equipment_variant = {
-						name = "40M Nimród"
-						type = medium_tank_aa_chassis_2
-						parent_version = 0
-						modules = {
-							main_armament_slot = tank_anti_air_cannon_2
-							turret_type_slot = tank_medium_two_man_tank_turret
-							suspension_type_slot = tank_torsion_bar_suspension
-							armor_type_slot = tank_riveted_armor
-							engine_type_slot = tank_gasoline_engine
-							special_type_slot_1 = auto_loader
-							special_type_slot_2 = secondary_turret_small_cannon
-						}
-						upgrades = {
-							tank_nsb_engine_upgrade = 6
-							tank_nsb_armor_upgrade = 2
-						}
-						#icon = "GFX_ITA_advanced_medium_spaa_medium"
-					}
-				}
-				ELSE = {
-					custom_effect_tooltip = wuw_HUN_nimrod_aa_tt
-					effect_tooltip = {
-						# 40M Nimród
-						create_equipment_variant = {
-							name = "40M Nimród"
-							type = medium_tank_aa_chassis_2
-							parent_version = 0
-							modules = {
-								main_armament_slot = tank_anti_air_cannon_2
-								turret_type_slot = tank_medium_two_man_tank_turret
-								suspension_type_slot = tank_torsion_bar_suspension
-								armor_type_slot = tank_riveted_armor
-								engine_type_slot = tank_gasoline_engine
-								special_type_slot_1 = auto_loader
-								special_type_slot_2 = secondary_turret_small_cannon
-							}
-							upgrades = {
-								tank_nsb_engine_upgrade = 6
-								tank_nsb_armor_upgrade = 2
-							}
-							#icon = "GFX_ITA_advanced_medium_spaa_medium"
-						}
-					}
-				}
-			}
 
 		}
 	}
@@ -3434,17 +3199,21 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ROM_gheorghe_mihail
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_tech_bonus = {
 				name = wuw_HUN_invest_in_the_special_forces
-				bonus = 0.5
+				bonus = 0.75
 				uses = 1
 				category = mountaineers_tech
 			}
 
 			add_tech_bonus = {
 				name = wuw_HUN_invest_in_the_special_forces
-				bonus = 0.35
+				bonus = 0.75
 				uses = 1
 				category = para_tech
 			}
@@ -3456,7 +3225,7 @@ focus_tree = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 				add_doctrine_cost_reduction = {
 					name = wuw_HUN_invest_in_the_special_forces
-					cost_reduction = 0.5
+					cost_reduction = 0.75
 					uses = 2
 					category = special_forces_doctrine
 				}
@@ -3501,6 +3270,10 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = HUN_dezso_magos
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_tech_bonus = {
 				name = wuw_HUN_carpathian_mountaineers
@@ -3520,7 +3293,7 @@ focus_tree = {
 				custom_effect_tooltip = ROM_mountain_artillery_tech_tt
 				hidden_effect = { set_technology = { mountain_gun = 1 } }
 			}
-
+			
 		}
 	}
 
@@ -3544,9 +3317,6 @@ focus_tree = {
 
 		available = {
 			has_war = yes
-			70 = {
-				is_controlled_by = ROOT
-			}
 		}
 
 		bypass = {
@@ -3558,52 +3328,9 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-
-			custom_effect_tooltip = wuw_HUN_the_szekel_command_division_tt
-
-			hidden_effect = {
-				delete_unit_template_and_units = {
-					division_template = "Székel Command"
-					disband = yes #if yes, will refund equipment/manpower.
-				}
-
-				division_template = {
-					name = "Székel Command Group"
-					division_names_group = HUN_MTN_01
-					role = mountaineers
-					is_locked = no
-					regiments = {
-						mountaineers = { x = 0 y = 0 }
-						mountaineers = { x = 0 y = 1 }
-						mountaineers = { x = 1 y = 0 }
-						mountaineers = { x = 1 y = 1 }
-						artillery_brigade = { x = 2 y = 0 }
-					}
-					support = {
-						recon = { x = 0 y = 0 }
-						engineer = { x = 0 y = 1 }
-						artillery = { x = 0 y = 2 }
-					}
-				}
-
-				76 = {
-					create_unit = {
-					    division = "name = \"First Székel Command\" division_template = \"Székel Command Group\" start_experience_factor = 0.6 start_equipment_factor = 0.8"
-					    owner = ROOT
-					    officer = {
-					    	name = HUN_istvan_kozma
-					    }
-					}
-					create_unit = {
-					    division = "name = \"Second Székel Command\" division_template = \"Székel Command Group\" start_experience_factor = 0.6 start_equipment_factor = 0.6"
-					    owner = ROOT
-					    officer = {
-					    	name = HUN_ferenc_horvath
-					    }
-					}
-				}
-			}
-
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = HUN_pal_kiraly
+			
 		}
 	}
 
