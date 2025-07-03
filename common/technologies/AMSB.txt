@@ -1,0 +1,44 @@
+technologies = {
+    hun_militia = {
+		xp_research_type = army
+		xp_unlock_cost = 100
+		militia = {
+			combat_width = -0.3
+		}
+		
+		path = {
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes	
+		research_cost = 4.5
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+
+		
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 1 y = 1 }
+		}
+		
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+		
+		ai_research_weights = {
+			infantry_weapons = 1.0
+			industry = 2.0
+		}
+	}
+    }
+    
+}
