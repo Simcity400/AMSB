@@ -149,121 +149,6 @@ characters = {
 		}
 	}
 
-	HUN_otto_von_habsburg = {
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Gotterdammerung"
-				}
-			}
-
-			name = HUN_otto_von_habsburg
-
-			portraits = {
-				civilian={
-					large = "GFX_Portrait_hungary_otto_von_hapsburg"
-				}
-			}
-			
-			country_leader = {
-				ideology = despotism
-				traits = { HUN_the_habsburg_prince }
-				expire = "1965.1.1.1"
-				id = -1
-			}
-
-		}
-		instance = {
-			allowed = {
-				has_dlc = "Gotterdammerung"
-			}
-
-			name = HUN_otto_von_habsburg
-
-			portraits = {
-				civilian = {
-					large = "GFX_Portrait_hungary_otto_von_hapsburg"
-					small = GFX_portrait_HUN_otto_von_habsburg_small
-				}
-				army = { 
-					large = GFX_portrait_HUN_otto_von_habsburg_military
-					small = GFX_portrait_HUN_otto_von_habsburg_military_small
-				}
-			}
-
-			country_leader = {
-				ideology = despotism
-				traits = { HUN_the_habsburg_prince }
-				expire = "1965.1.1.1"
-				id = -1
-			}
-
-			# Basically only available if country leader
-			field_marshal = {
-				traits = { politically_connected }
-				skill = 2
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 3
-				logistics_skill = 2
-				legacy_id = -1 
-				visible = {
-					OR = {
-						AND = {
-							original_tag = HUN
-							has_country_leader = {
-								ruling_only = yes
-								character = HUN_otto_von_habsburg
-							}
-						}
-						AND = {
-							original_tag = AUS
-							has_country_flag = AUS_otto_on_the_battlefield_flag
-						}
-					}
-					
-				}
-			}
-
-		}
-	}
-
-	HUN_joseph_august_von_habsburg = {
-
-		name = HUN_joseph_august_von_habsburg
-
-		portraits = {
-			civilian = {
-				large = GFX_portrait_HUN_joseph_august_von_habsburg
-				small = GFX_portrait_HUN_joseph_august_von_habsburg_small
-			}
-		}
-
-		#country_leader = {
-		#	ideology = despotism
-		#	traits = { HUN_the_old_warden }
-		#	expire = "1965.1.1.1"
-		#	id = -1
-		#}
-
-		field_marshal = {
-			traits = { inflexible_strategist politically_connected old_guard }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 1
-			legacy_id = -1
-			visible = {
-				OR = {
-					has_completed_focus = wuw_HUN_invite_otto_to_the_throne
-					has_completed_focus = wuw_HUN_the_old_habsburg_king
-				}
-			}
-		}
-		
-	}
-
 	HUN_istvan_horthy = {
 
 		name = HUN_istvan_horthy
@@ -360,162 +245,6 @@ characters = {
 				}
 			}
 		}
-		
-	}
-
-	HUN_matyas_rakosi = {
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Gotterdammerung"
-				}
-			}
-
-			name = HUN_matyas_rakosi
-
-			portraits = {
-				civilian = {
-					large = "GFX_Portrait_hungary_matyas_rakosi"
-				}
-			}
-
-			country_leader = {
-				ideology = stalinism
-				traits = { }
-				expire = "1965.1.1.1"
-				id = -1
-			}
-
-		}
-		instance = {
-			allowed = {
-				has_dlc = "Gotterdammerung"
-			}
-
-			name = HUN_matyas_rakosi
-
-			portraits = {
-				civilian = {
-					large = GFX_portrait_HUN_matyas_rakosi
-					small = GFX_portrait_HUN_matyas_rakosi_civilian_small
-				}
-				army = {
-					small = GFX_portrait_HUN_matyas_rakosi_military_small
-				}
-			}
-
-			country_leader = {
-				ideology = stalinism
-				traits = { HUN_ardent_stalinist }
-				expire = "1965.1.1.1"
-				id = -1
-			}
-
-		}
-	}
-
-	HUN_bela_kun = {
-
-		name = HUN_bela_kun
-
-		portraits = {
-			civilian = {
-				large = "GFX_Portrait_hungary_bela_kun"
-			}
-		}
-
-		#country_leader = {
-		#	ideology = marxism
-		#	traits = { HUN_the_hungarian_lenin }
-		#	expire = "1965.1.1.1"
-		#	id = -1
-		#}
-		
-	}
-
-	HUN_arpad_szakasits = {
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Gotterdammerung"
-				}
-			}
-
-			name = HUN_arpad_szakasits
-
-			portraits = {
-				civilian = {
-					large = "GFX_portrait_HUN_arpad_szakasits"
-					small = "GFX_portrait_HUN_arpad_szakasits_small"
-				}
-			}
-
-			country_leader = {
-				ideology = socialism
-				expire = "1965.1.1.1"
-				id = -1
-			}
-
-		}
-		instance = {
-			allowed = {
-				has_dlc = "Gotterdammerung"
-			}
-
-			name = HUN_arpad_szakasits
-
-			portraits = {
-				civilian = {
-					large = GFX_portrait_HUN_arpad_szakasits
-					small = GFX_portrait_HUN_arpad_szakasits_small
-				}
-			}
-			
-			country_leader = {
-				ideology = socialism
-				traits = { HUN_socialist_bulwark }
-				expire = "1965.1.1.1"
-				id = -1
-			}
-
-		}
-	}
-
-	HUN_mihaly_karolyi = {
-
-		name = HUN_mihaly_karolyi
-
-		portraits = {
-			civilian = {
-				large = GFX_portrait_HUN_mihaly_karolyi
-			}
-		}
-		
-		#country_leader = {
-		#	ideology = conservatism
-		#	traits = { HUN_veteran_president }
-		#	expire = "1965.1.1.1"
-		#	id = -1
-		#}
-		
-	}
-
-	HUN_janos_zichy = {
-
-		name = HUN_janos_zichy
-
-		portraits = {
-			civilian = {
-				large = GFX_portrait_HUN_janos_zichy
-			}
-		}
-		
-		#country_leader = {
-		#	ideology = liberalism
-		#	traits = { HUN_christian_academic }
-		#	expire = "1965.1.1.1"
-		#	id = -1
-		#}
 		
 	}
 
@@ -652,12 +381,12 @@ characters = {
 			
 			# Will be upgradeable through various focuses
 			corps_commander = {
-				traits = { trait_HUN_vitez infantry_officer }
-				skill = 2
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 2
-				logistics_skill = 2
+				traits = { trait_HUN_vitez infantry_officer brilliant_strategist cavalry_leader organizer war_hero trickster}
+				skill=4
+				attack_skill=4
+				defense_skill=4
+				planning_skill=4
+				logistics_skill=4
 				legacy_id = -1 
 				visible = {
 					NOT = {
@@ -872,12 +601,12 @@ characters = {
 			}
 			
 			corps_commander = {
-				traits = { armor_officer cavalry_leader }
-				skill = 2
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 2
-				logistics_skill = 2
+				traits = { armor_officer cavalry_leader trait_engineer }
+				skill=4
+				attack_skill= 5
+				defense_skill= 4
+				planning_skill=4
+				logistics_skill=4
 				legacy_id = -1
 				visible = {
 					NOT = {
@@ -1998,13 +1727,14 @@ characters = {
 		}
 	}
 
-	ROM_gheorghe_mihail={
+	ROM_gheorghe_mihail = {
 		name=ROM_gheorghe_mihail
 		portraits={
 			army={
 				small="GFX_idea_ROM_gheorghe_mihail"
 			}
 		}
+
 		advisor={
 			slot = high_command
 			idea_token = ROM_gheorghe_mihail
@@ -2014,6 +1744,9 @@ characters = {
 			}
 			traits = {
 				army_commando_2
+			}
+			available = {
+				has_completed_focus = wuw_HUN_invest_in_the_special_forces
 			}
 			cost = 100
 			ai_will_do = {
@@ -2302,10 +2035,10 @@ characters = {
 				}
 
 				traits = {
-					army_infantry_1
+					army_infantry_2
 				}
 
-				cost = 50
+				cost = 100
 
 				ai_will_do = {
 					base = 2
@@ -2399,7 +2132,7 @@ characters = {
 				}
 
 				available = {
-					has_completed_focus = wuw_HUN_doctrinal_studies
+					has_completed_focus = wuw_HUN_carrying_on_arpads_legacy
 				}
 
 				traits = {
@@ -2488,83 +2221,6 @@ characters = {
 
 	### POLITICAL ADVISORS ###
 	
-	HUN_kalman_kanya = {
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Gotterdammerung"
-				}
-			}
-
-			name = HUN_kalman_kanya
-
-			portraits = {
-				army = {
-					small = "GFX_idea_HUN_kalman_kanya"
-				}
-			}
-
-			advisor = {
-
-				slot = political_advisor
-
-				idea_token = HUN_kalman_kanya
-
-				allowed = {
-					original_tag = HUN
-				}
-
-				traits = {
-					compassionate_gentleman 
-				}
-
-			}
-
-		}
-		instance = {
-			allowed = {
-				has_dlc = "Gotterdammerung"
-			}
-
-			name = HUN_kalman_kanya
-
-			portraits = {
-				army = {
-					small = "GFX_idea_HUN_kalman_kanya"
-				}
-			}
-
-			advisor = {
-
-				slot = political_advisor
-
-				idea_token = HUN_kalman_kanya
-
-				allowed = {
-					original_tag = HUN
-				}
-
-				available = {
-					NOT = {
-						OR = {
-							has_government = communism
-							has_government = democratic
-						}
-					}
-				}
-
-				traits = {
-					HUN_irredentist_foreign_minister 
-				}
-
-				ai_will_do = {
-					base = 1
-				}
-				
-			}
-
-		}
-	}
 
 	HUN_lajos_remenyi_schneller = {
 		instance = {
@@ -2725,69 +2381,6 @@ characters = {
 		}
 	}
 
-	HUN_gusztav_gratz = {
-
-		name = HUN_gusztav_gratz
-
-		portraits = {
-			army = {
-				small = "GFX_idea_HUN_gusztav_gratz"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_gusztav_gratz
-
-			allowed = {
-				original_tag = HUN
-				has_dlc = "Death or Dishonor"
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_continue_the_regency
-						has_completed_focus = wuw_HUN_end_the_white_terror
-					}
-				}
-				NOT = {
-					has_cosmetic_tag = vojvodina
-				}
-			}
-
-			available = {
-				IF = {
-					limit = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state = autonomy_supervised_state
-					}
-				}
-				IF = {
-					limit = {
-						# TODO:JA: Change this later!
-						has_dlc = "By Blood Alone"
-					}
-					has_completed_focus = wuw_HUN_end_the_regency
-				}
-			}
-
-			traits = {
-				staunch_monarchist 
-			}
-
-			ai_will_do = {
-				base = 1
-			}
-
-		}
-
-	}
-
 	HUN_kalman_daranyi = {
 		instance = {
 			allowed = {
@@ -2879,188 +2472,6 @@ characters = {
 			}
 
 		}
-	}
-
-	HUN_zoltan_tildy = {
-
-		name = HUN_zoltan_tildy
-
-		portraits = {
-			army = {
-				small="GFX_idea_HUN_zoltan_tildy"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_zoltan_tildy
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_elect_a_fascist_king
-						has_completed_focus = wuw_HUN_continue_the_regency
-						has_completed_focus = wuw_HUN_reinstate_the_pragmatic_sanction
-					}
-				}
-			}
-
-			available = {
-				IF = {
-					limit = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state = autonomy_supervised_state
-					}
-				}
-				OR = {
-					has_completed_focus = wuw_HUN_elect_a_democratic_king
-					has_completed_focus = wuw_HUN_elections_in_the_revolutionary_council
-				}
-			}
-
-			traits = {
-				democratic_reformer 
-			}
-
-			ai_will_do = {
-				base = 0
-			}
-
-		}
-	}
-
-	HUN_laszlo_rajk = {
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Gotterdammerung"
-				}
-			}
-
-			name = HUN_laszlo_rajk
-
-			portraits = {
-				army = {
-					small = "GFX_idea_HUN_laszlo_rajk"
-				}
-			}
-
-			advisor = {
-
-				slot = political_advisor
-
-				idea_token = HUN_laszlo_rajk
-
-				allowed = {
-					original_tag = HUN
-				}
-
-				available = {
-					IF = {
-						limit = {
-							has_dlc = "Man the Guns"
-						}
-						NOT = {
-							has_autonomy_state = autonomy_supervised_state
-						}
-					}
-				}
-
-				traits = {
-					communist_revolutionary 
-				}
-
-				ai_will_do = {
-					base = 0
-					modifier = {
-						add = 100
-						OR = {
-							has_country_flag = HUN_AI_RANDOM_COMMUNIST
-							has_game_rule = {
-								rule = HUN_ai_behavior
-								option = COMMUNIST
-							}
-						}
-					}
-				}
-
-			}
-
-		}
-		instance = {
-			allowed = {
-				has_dlc = "Gotterdammerung"
-			}
-
-			name = HUN_laszlo_rajk
-
-			portraits = {
-				army = {
-					small = "GFX_idea_HUN_laszlo_rajk"
-				}
-			}
-
-			advisor = {
-
-				slot = political_advisor
-
-				idea_token = HUN_laszlo_rajk
-
-				allowed = {
-					original_tag = HUN
-				}
-
-				visible = {
-					NOT = {
-						OR = {
-							has_completed_focus = wuw_HUN_end_the_regency
-							has_completed_focus = wuw_HUN_continue_the_regency
-						}
-					}
-				}
-
-				available = {
-					IF = {
-						limit = {
-							has_dlc = "Man the Guns"
-						}
-						NOT = {
-							has_autonomy_state = autonomy_supervised_state
-						}
-					}
-					has_completed_focus = wuw_HUN_elections_in_the_revolutionary_council
-				}
-
-				traits = {
-					marxist_philosopher 
-				}
-
-				ai_will_do = {
-					base = 0
-					modifier = {
-						add = 100
-						OR = {
-							has_country_flag = HUN_AI_RANDOM_COMMUNIST
-							has_game_rule = {
-								rule = HUN_ai_behavior
-								option = COMMUNIST
-							}
-						}
-					}
-				}
-				
-			}
-
-		}
-
 	}
 
 	HUN_jozsef_szell = {
@@ -3236,106 +2647,6 @@ characters = {
 
 	}
 
-	HUN_erno_gero = {
-
-		name = HUN_erno_gero
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_erno_gero_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_erno_gero
-
-			allowed = {
-				original_tag = HUN
-				has_dlc = "La Resistance"
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
-						has_completed_focus = wuw_HUN_establish_the_second_republic
-						has_completed_focus = wuw_HUN_continue_the_regency
-						has_completed_focus = wuw_HUN_end_the_regency
-					}
-				}
-			}
-
-			available = {
-				has_government = communism 
-				has_completed_focus = wuw_HUN_join_the_comintern
-			}
-
-			traits = {
-				HUN_stalinist_agent
-			}
-
-			ai_will_do = {
-				base = 1
-			}
-
-		}
-
-	}
-
-	HUN_fidel_palffy = {
-
-		name = HUN_fidel_palffy
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_fidel_palffy_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_fidel_palffy
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
-						has_completed_focus = wuw_HUN_join_the_comintern
-					}
-				}
-			}
-
-			available = {
-				NOT = {
-					OR = {
-						has_government = communism
-						has_government = democratic
-					}
-				}
-			}
-
-			# He should get a better trait through the focus wuw_HUN_sway_the_count
-			traits = {
-				nazi_sympathizer
-			}
-
-			ai_will_do = {
-				base = 1
-			}
-
-		}
-
-	}
-
 	HUN_istvan_friedrich = {
 
 		name = HUN_istvan_friedrich
@@ -3364,55 +2675,6 @@ characters = {
 
 			traits = {
 				captain_of_industry
-			}
-
-			ai_will_do = {
-				base = 1
-			}
-
-		}
-
-	}
-
-	HUN_magdolna_purgly = {
-
-		name = HUN_magdolna_purgly
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_magdolna_purgly_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_magdolna_purgly
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_end_the_regency
-						has_completed_focus = wuw_HUN_end_the_white_terror
-						has_completed_focus = wuw_HUN_undermine_the_admiral
-					}
-				}
-			}
-
-			available = {
-				NOT = {
-					has_government = communism
-				}
-				has_completed_focus = wuw_HUN_pass_statute_xix
-			}
-
-			traits = {
-				HUN_her_serene_highness
 			}
 
 			ai_will_do = {
@@ -3485,7 +2747,7 @@ characters = {
 			}
 
 			available = {
-				has_completed_focus = wuw_HUN_construct_the_arpad_line
+				has_completed_focus = wuw_HUN_carpathian_mountaineers
 			}
 
 			traits = {
@@ -3494,99 +2756,6 @@ characters = {
 
 			ai_will_do = {
 				base = 3
-			}
-
-		}
-
-	}
-
-	HUN_sandor_garbai = {
-
-		name = HUN_sandor_garbai
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_sandor_garbai_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_sandor_garbai
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_continue_the_regency
-						has_completed_focus = wuw_HUN_end_the_regency
-					}
-				}
-			}
-
-			available = {
-				has_government = communism
-			}
-
-			traits = {
-				socialist_economist
-			}
-
-			ai_will_do = {
-				base = 3
-			}
-
-		}
-
-	}
-
-	HUN_jozsef_kelen = {
-
-		name = HUN_jozsef_kelen
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_jozsef_kelen_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_jozsef_kelen
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_continue_the_regency
-						has_completed_focus = wuw_HUN_end_the_regency
-					}
-				}
-			}
-
-			available = {
-				OR = {
-					has_government = communism
-					has_government = democratic
-				}
-			}
-
-			traits = {
-				peoples_commisar_of_heavy_industries
-			}
-
-			ai_will_do = {
-				base = 2
 			}
 
 		}
@@ -3683,97 +2852,6 @@ characters = {
 
 	}
 
-	HUN_imre_nagy = {
-
-		name = HUN_imre_nagy
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_imre_nagy_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_imre_nagy
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_continue_the_regency
-						has_completed_focus = wuw_HUN_end_the_regency
-					}
-				}
-			}
-
-			available = {
-				NOT = {
-					OR = {
-						has_government = neutrality
-						has_government = fascism
-					}
-				}
-			}
-
-			traits = {
-				HUN_internationalist_marxist
-			}
-
-			ai_will_do = {
-				base = 1
-			}
-
-		}
-
-	}
-
-	HUN_miklos_horthy_jr = {
-
-		name = HUN_miklos_horthy_jr
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_miklos_horthy_jr_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_miklos_horthy_jr
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			available = {
-				NOT = {
-					OR = {
-						has_government = communism
-						has_government = fascism
-					}
-				}
-			}
-
-			traits = {
-				modernizer_and_diplomat
-			}
-
-			ai_will_do = {
-				base = 1
-			}
-
-		}
-
-	}
-
 	HUN_pal_kiraly = {
 
 		name = HUN_pal_kiraly
@@ -3795,7 +2873,7 @@ characters = {
 			}
 
 			available = {
-				has_completed_focus = wuw_HUN_danuvia_submachine_guns
+				has_completed_focus = wuw_HUN_the_szekel_command
 			}
 
 			traits = {
@@ -3804,151 +2882,6 @@ characters = {
 
 			ai_will_do = {
 				base = 1
-			}
-
-		}
-
-	}
-
-	HUN_janos_kadar = {
-
-		name = HUN_janos_kadar
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_janos_kadar_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_janos_kadar
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_establish_the_second_republic
-						has_completed_focus = wuw_HUN_continue_the_regency
-						has_completed_focus = wuw_HUN_end_the_regency
-					}
-				}
-			}
-
-			available = {
-				OR = {
-					has_completed_focus = wuw_HUN_goulash_communism
-					has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
-				}
-				has_government = communism
-			}
-
-			traits = {
-				HUN_goulash_communist
-			}
-
-			ai_will_do = {
-				base = 5
-			}
-
-		}
-
-	}
-
-	HUN_jusztinian_seredi = {
-
-		name = HUN_jusztinian_seredi
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_jusztinian_seredi_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_jusztinian_seredi
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					has_completed_focus = wuw_HUN_end_the_white_terror
-				}
-			}
-
-			available = {
-				OR = {
-					has_completed_focus = wuw_HUN_end_the_regency
-					has_completed_focus = wuw_HUN_continue_the_regency
-				}
-			}
-
-			traits = {
-				HUN_archbishop_of_esztergom
-			}
-
-			ai_will_do = {
-				base = 1
-			}
-
-		}
-
-	}
-
-	HUN_lennart_bernadotte = {
-
-		name = HUN_lennart_bernadotte
-
-		portraits = {
-			civilian = {
-				small = "GFX_portrait_HUN_lennart_bernadotte_small"
-			}
-		}
-
-		advisor = {
-
-			slot = political_advisor
-
-			idea_token = HUN_lennart_bernadotte
-
-			allowed = {
-				original_tag = HUN
-			}
-
-			visible = {
-				NOT = {
-					OR = {
-						has_completed_focus = wuw_HUN_reinstate_the_pragmatic_sanction
-						has_completed_focus = wuw_HUN_end_the_white_terror
-						has_completed_focus = wuw_HUN_continue_the_regency
-					}
-				}
-			}
-
-			available = {
-				has_completed_focus = wuw_HUN_a_responsible_government
-				OR = {
-					has_government = democratic
-					has_government = neutrality
-				}
-			}
-
-			traits = {
-				HUN_filmmaker
-			}
-
-			ai_will_do = {
-				base = 5
 			}
 
 		}
