@@ -3224,15 +3224,6 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			add_tech_bonus = {
-				name = wuw_HUN_carpathian_mountaineers
-				bonus = 1
-				uses = 1
-				category = mountaineers_tech
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			IF = {
 				limit = {
 					NOT = {
@@ -3241,6 +3232,15 @@ focus_tree = {
 				}
 				custom_effect_tooltip = ROM_mountain_artillery_tech_tt
 				hidden_effect = { set_technology = { mountain_gun = 1 } }
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = wuw_HUN_carpathian_mountaineers
+				bonus = 1
+				uses = 1
+				category = mountaineers_tech
 			}
 			
 		}
