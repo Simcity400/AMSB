@@ -690,14 +690,14 @@ characters = {
 				}
 
 				available = {
-					has_completed_focus = wuw_HUN_make_the_magyar_legiero_known
+					has_completed_focus = wuw_HUN_allied_manufacturing_programs
 				}
 
 				traits = {
-					air_chief_ground_support_2
+					air_chief_ground_support_3
 				}
 
-				cost = 100
+				cost = 200
 
 				ai_will_do = {
 					base = 1
@@ -1345,12 +1345,12 @@ characters = {
 
 			# Can become a general through the military promotions focus
 			corps_commander = {
-				traits = { hill_fighter }
-				skill = 3
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 3
+				traits = { hill_fighter trait_engineer infantry_leader commando}
+				skill = 4
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 4
 				legacy_id = -1
 				visible = {
 					has_completed_focus = wuw_HUN_award_military_promotions
@@ -1706,14 +1706,11 @@ characters = {
 				}
 
 				available = {
-					OR = {
-						has_completed_focus = wuw_HUN_undercover_air_maneuvers
-						wuw_HUN_does_not_have_trianon = yes
-					}
+					wuw_HUN_does_not_have_trianon = yes
 				}
 
 				traits = {
-					air_air_combat_training_2
+					air_air_superiority_3
 				}
 
 				cost =  100
