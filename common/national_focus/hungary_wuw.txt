@@ -2548,9 +2548,9 @@ focus_tree = {
 	focus = {
 		id = wuw_HUN_establish_the_mavag_army_division
 		icon = GFX_focus_HUN_establish_the_mavag_army_division
-		prerequisite = { focus = wuw_HUN_form_the_gyorshadtest }
+		prerequisite = { focus = wuw_HUN_form_the_gyorshadtest focus = wuw_HUN_the_botond}
 		#mutually_exclusive = { focus = wuw_HUN_repulö_muszaki_intezet }
-		x = 2
+		x = -1
 		y = 1
 		relative_position_id = wuw_HUN_form_the_gyorshadtest
 
@@ -2590,12 +2590,11 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			
+
 			add_tech_bonus = {
-				name = SOV_soviet_artillery_tech_bonus_name_default
+				name = HUN_develop_assault_guns
 				bonus = 1
-				uses = 1
-				ahead_reduction = 1
+				uses = 2
 				category = artillery
 			}
 
@@ -3083,7 +3082,7 @@ focus_tree = {
 		icon = GFX_focus_generic_self_propelled_gun
 		prerequisite = { focus = wuw_HUN_form_the_gyorshadtest }
 		#mutually_exclusive = { focus = wuw_HUN_the_toldi }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = wuw_HUN_form_the_gyorshadtest
 
@@ -3110,9 +3109,10 @@ focus_tree = {
 		completion_reward = {
 
 			add_tech_bonus = {
-				name = HUN_develop_assault_guns
+				name = SOV_soviet_artillery_tech_bonus_name_default
 				bonus = 1
-				uses = 2
+				uses = 1
+				ahead_reduction = 2
 				category = artillery
 			}
 
