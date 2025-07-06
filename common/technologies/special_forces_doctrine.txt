@@ -10,10 +10,10 @@ technologies = {
 		category_mountaineers = {
 			supply_consumption = -0.02
 		}
-		category_special_forces = {
+		mountaineers = {
 			max_organisation = 5
-			soft_attack = 0.05
 		}
+		modifier_army_sub_unit_mountaineers_attack_factor = 0.05
 		enable_subunits = {
 			rangers_support
 		}		
@@ -437,7 +437,7 @@ technologies = {
 		xp_unlock_cost = 60
 		
 		#xor = { special_forces_mountaineers special_forces_paratroopers }
-		
+		marine = { max_organisation = 5}
 		force_use_small_tech_layout = yes
 		
 		allow = { 
@@ -463,11 +463,8 @@ technologies = {
 		
 		marines_special_forces_contribution_factor = -0.25
 		naval_invasion_capacity = 5
-		naval_invasion_planning_bonus_speed = 0.4
-		category_special_forces = {
-			max_organisation = 5
-			soft_attack = 0.05
-		}
+		naval_invasion_planning_bonus_speed = 0.5
+		modifier_army_sub_unit_marine_attack_factor = 0.05
 		
 		enable_subunits = {
 			pioneer_support
@@ -986,11 +983,10 @@ special_forces_paratroopers = {
 	#xor = { special_forces_mountaineers special_forces_marines } 
 
 	paratroopers_special_forces_contribution_factor = -0.10
-	category_special_forces = {
+	paratrooper = {
 		max_organisation = 5
-		soft_attack = 0.05
 	}
-	
+	modifier_army_sub_unit_paratrooper_attack_factor = 0.05
 	paratrooper = {
 		desert = {
 			attack = 0.05
