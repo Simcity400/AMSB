@@ -199,8 +199,8 @@ NDefines.NMilitary.UNIT_EXP_LEVELS = {0.02,	0.04,	0.06,	0.08,	0.1,	0.14,	0.18,	0
 NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.03
 NDefines.NMilitary.ARMY_EXP_BASE_LEVEL = 5
 -- NDefines.NAir.AIR_WING_XP_LEVELS = { 20, 40, 60, 80, 100, 140, 180, 220, 260, 300, 380, 460, 640, 620, 700, 740, 780, 820, 860, 900 }
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 6;
-
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_WIDTH = 2;  -- default 1
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 5; -- default 5
 -- FUWG/TFB style converts
 NDefines.NMilitary.BATALION_CHANGED_EXPERIENCE_DROP = 0 
 
