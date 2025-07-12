@@ -856,12 +856,12 @@
 			amount_research_slots < 5
 		}
 		prerequisite = {
-			focus = FRA_industrial_expansion
+			focus = FRA_form_the_popular_front
 			
 		}
-		x = 0
-		y = 2
-		relative_position_id = FRA_industrial_expansion
+		x = -1
+		y = 1
+		relative_position_id = FRA_form_the_popular_front
 		cost = 10
 
 		available_if_capitulated = yes
@@ -884,9 +884,7 @@
 			x = 0
 			y = 0
 		}
-		prerequisite = { focus = FRA_ivory_coast_rubber }
-		prerequisite = { focus = FRA_tonkin_mines }
-		prerequisite = { focus = FRA_syria_oil }
+		prerequisite = { focus = FRA_ivory_coast_rubber focus = FRA_syria_oil focus = FRA_tonkin_mines }
 		mutually_exclusive = { }
 		relative_position_id = FRA_tonkin_mines
 		cost = 5
@@ -922,7 +920,7 @@
 		
 		prerequisite = {}
 		mutually_exclusive = { }
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -944,53 +942,7 @@
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			806 = {
-				limit = {
-					is_controlled_by = ROOT
-					is_core_of = ROOT
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 4
-					instant_build = yes
-				}
-			}
-			25 = {
-				limit = {
-					is_controlled_by = ROOT
-					is_core_of = ROOT
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 4
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-
-	focus = {
-		id = FRA_defensive_focus
-		icon = GFX_goal_generic_defence
-		mutually_exclusive = { focus = FRA_aggressive_focus }
-		x = -1
-		y = 1
-		cost = 10
-		prerequisite = { focus = FRA_begin_rearmament }
-		available_if_capitulated = yes
-		relative_position_id = FRA_begin_rearmament
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			every_army_leader = {
-				add_defense = 1
-			}
-			add_command_power = 30
-			custom_effect_tooltip = available_chief_of_army
-			show_ideas_tooltip = maxime_weygand
-			army_experience = 25
+			add_political_power = 100
 		}
 	}
 
@@ -1000,9 +952,9 @@
 		x = -5
 		y = 1
 		
-		prerequisite = { focus = FRA_defensive_focus }
-		mutually_exclusive = { focus = FRA_methodical_battle }
-		relative_position_id = FRA_defensive_focus
+		prerequisite = { focus = FRA_aggressive_focus }
+		mutually_exclusive = { focus = FRA_methodical_battle focus = FRA_battle_of_maneuver } 
+		relative_position_id = FRA_aggressive_focus
 		cost = 5
 
 		ai_will_do = {
@@ -1037,9 +989,9 @@
 		x = -2
 		y = 1
 		
-		prerequisite = { focus = FRA_defensive_focus }
-		mutually_exclusive = { focus = FRA_firepower_kills }
-		relative_position_id = FRA_defensive_focus
+		prerequisite = { focus = FRA_aggressive_focus }
+		mutually_exclusive = { focus = FRA_firepower_kills focus = FRA_battle_of_maneuver }
+		relative_position_id = FRA_aggressive_focus
 		cost = 5
 
 		ai_will_do = {
@@ -1629,8 +1581,7 @@
 	focus = {
 		id = FRA_aggressive_focus
 		icon = GFX_goal_generic_major_war
-		mutually_exclusive = { focus = FRA_defensive_focus }
-		x = 1
+		x = 0
 		y = 1
 		cost = 10
 		relative_position_id = FRA_begin_rearmament
@@ -1656,7 +1607,7 @@
 		y = 1
 		
 		prerequisite = { focus = FRA_aggressive_focus }
-		mutually_exclusive = { focus = FRA_air_dominance }
+		mutually_exclusive = { focus = FRA_methodical_battle focus = FRA_firepower_kills }
 		relative_position_id = FRA_aggressive_focus
 		cost = 5
 
@@ -1744,7 +1695,6 @@
 		y = 1
 		
 		prerequisite = { focus = FRA_aggressive_focus }
-		mutually_exclusive = { focus = FRA_battle_of_maneuver }
 		relative_position_id = FRA_aggressive_focus
 		cost = 5
 
@@ -1753,7 +1703,7 @@
 		}
 
 		available = {
-			
+			always = no
 		}
 		
 		bypass = {
@@ -2178,7 +2128,7 @@
 			focus = FRA_form_the_popular_front
 		}
 		relative_position_id = FRA_form_the_popular_front
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -3656,7 +3606,7 @@ focus = {
 	focus = {
 		id = FRA_rally_defectors
 		icon = GFX_focus_fra_milice
-		x = 16
+		x = 18
 		y = 7
 	
 		
@@ -4695,10 +4645,11 @@ focus = {
 			remove_ideas = { FRA_defeatism }
 		}
 	}
+
 	focus = {
 		id = FRA_the_maquis
 		icon = GFX_focus_focus_fra_maquis
-		x = -6
+		x = -8
 		y = 1
 		offset = {
 			x = 0
@@ -4739,6 +4690,7 @@ focus = {
 			}
 		}
 	}
+
 	focus = {
 		id = FRA_radio_londre
 		icon = GFX_focus_SWE_radiotjanst
@@ -4753,7 +4705,7 @@ focus = {
 		}
 		relative_position_id = FRA_the_maquis
 		
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}
@@ -4773,6 +4725,7 @@ focus = {
 			add_manpower = 7000
 		}
 	}
+
 	focus = {
 		id = FRA_passive_resistance
 		icon = GFX_focus_spr_torchbearers_of_tomorrow
@@ -4787,7 +4740,7 @@ focus = {
 		}
 		relative_position_id = FRA_the_maquis
 		
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}
@@ -4806,6 +4759,7 @@ focus = {
 			add_stability = 0.05
 		}
 	}
+
 	focus = {
 		id = FRA_train_resistance
 		icon = GFX_focus_generic_limited_social_mobilization
@@ -4843,6 +4797,7 @@ focus = {
 			}
 		}
 	}
+
 	focus = {
 		id = FRA_underground_newspaper
 		icon = GFX_focus_renounce_the_treaty_of_trianon
@@ -4857,7 +4812,7 @@ focus = {
 		}
 		relative_position_id = FRA_passive_resistance
 		
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}
@@ -4875,6 +4830,7 @@ focus = {
 			add_war_support = 0.08
 		}
 	}
+
 	focus = {
 		id = FRA_break_german_lines
 		icon = GFX_focus_FIN_motti_tactics
@@ -4885,6 +4841,7 @@ focus = {
 		cost = 5
 
 		available = {
+			always = no
 		}
 
 		available_if_capitulated = yes
@@ -4895,6 +4852,7 @@ focus = {
 			}
 		}
 	}
+
 	focus = {
 		id = FRA_improvised_weapons
 		icon = GFX_focus_FIN_oy_alkoholiliike
@@ -4938,6 +4896,7 @@ focus = {
 			}
 		}
 	}
+
 	focus = {
 		id = FRA_drop_weapons
 		icon = GFX_focus_generic_paratrooper
@@ -4983,6 +4942,7 @@ focus = {
 			}
 		}
 	}
+	
 	focus = {
 		id = FRA_resistance_capital
 		icon = GFX_focus_hol_united_netherlands
