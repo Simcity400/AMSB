@@ -2,7 +2,7 @@ bookmarks = {
 	bookmark = {
 		name = "NO_ASIA_NAME"
 		desc = "NO_ASIA_DESC"
-		date = 1936.1.1.14
+		date = 1936.1.1.13
 		picture = "GFX_select_date_no_asia"
 		default_country = "GER"
 		
@@ -165,6 +165,34 @@ bookmarks = {
 		}
 
 
+		# minors from DLC ####
+		"CAN"={
+			minor = yes
+			history = "CAN_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				CAN_great_depression_1
+				CAN_conscription_crisis
+			}
+			focuses = {
+				CAN_war_fueled_economy
+				CAN_send_in_the_zombies
+				CAN_forced_quebec_conscription
+			}
+		}
+		"AST"={
+			minor = yes
+			history = "AST_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				AST_great_depression_1
+			}
+			focuses = {
+				AST_rats_of_tobruk
+				AST_fight_work_or_perish
+				AST_fly_the_jolly_roger
+			}
+		}
 		"SAF"={
 			minor = yes
 			history = "SAF_GATHERING_STORM_DESC"
@@ -179,7 +207,37 @@ bookmarks = {
 				SAF_operation_overlord
 			}
 		}
+		"RAJ"={
+			minor = yes
+			history = "RAJ_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				RAJ_agrarian_society
+				RAJ_princely_states
+			}
+			focuses = {
+				RAJ_provincial_elections
+				RAJ_indian_gurkhas
+				RAJ_the_smiling_buddha
+			}
+		}
+	
 
+		HUN = {
+			minor = yes
+			history = "HUN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			available = {  NOT = { has_dlc = "Gotterdammerung" } }
+			ideas = {
+				HUN_treaty_of_triannon
+				HUN_gombos_trade_treaty
+			}
+			focuses = {
+				HUN_proclaim_the_restoration_of_austria_hungary
+				HUN_secret_rearmament
+				HUN_renounce_the_treaty_of_trianon
+			}
+		}
 
 		"ROM"={
 			minor = yes
@@ -196,6 +254,8 @@ bookmarks = {
 			}
 		}
 		
+	
+	
 
 		"SPR"={
 			minor = yes
@@ -212,20 +272,71 @@ bookmarks = {
 				SPA_expand_the_axis_gold_trade
 			}
 		}
-		"CAN"={
+
+	
+
+		"BUL"={
 			minor = yes
-			history = "CAN_GATHERING_STORM_DESC"
-			ideology = democratic
+			history = "BUL_GATHERING_STORM_DESC"
+			ideology = neutrality
 			ideas = {
-				CAN_great_depression_1
-				CAN_conscription_crisis
+				BUL_second_national_catastrophe
+				BUL_army_restrictions
+				BUL_imro_01
 			}
 			focuses = {
-				CAN_skewer_the_eagle
-				CAN_north_american_alliance
-				CAN_join_comintern
+				BUL_the_third_bulgarian_empire
+				BUL_supremacy_on_the_bosporus
+				BUL_prussia_of_the_balkans
 			}
 		}
+
+		FIN = {
+			minor = yes
+			history = FIN_GATHERING_STORM_DESC
+			ideology = neutrality
+			available = {  NOT = { has_dlc = "Arms Against Tyranny" } }
+			ideas = {
+				FIN_sisu_2
+			}
+			focuses = {
+				FIN_winter_warfare
+				FIN_greater_finland
+				FIN_oy_alkoholiliike
+			}
+		}
+		FIN = {
+			minor = yes
+			history = FIN_GATHERING_STORM_DESC
+			ideology = neutrality
+			available = { has_dlc = "Arms Against Tyranny" } 
+			ideas = {
+				FIN_sisu_2
+			}
+			focuses = {
+				FIN_dreams_of_expansionism
+				FIN_winter_warfare
+				FIN_greater_finland
+			}
+		}
+		
+		HUN = {
+			minor = yes
+			history = "HUN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			available = { has_dlc = "Gotterdammerung" }
+			ideas = {
+				HUN_treaty_of_triannon_wuw
+				HUN_gombos_trade_treaty
+				HUN_hungarian_national_defense_association
+			}
+			focuses = {
+				wuw_HUN_proclaim_greater_hungary
+				wuw_HUN_strengthen_horthys_reign
+				wuw_HUN_invite_german_investors
+			}
+		}
+	
 		effect = {
 			every_country = {
                 set_country_flag = no_asia_bookmark

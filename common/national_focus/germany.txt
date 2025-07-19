@@ -1926,26 +1926,110 @@ focus_tree = {
 		relative_position_id = GER_develop_modern_maneuver_warfare
 		cost = 5
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = GER_controls_french_coast_tt
+				29 = { #Nord-Pas-de_calais
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				785 = { #Picardy
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				15 = { #Normandy
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				14 = { #Brittany
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				30 = { #Loire
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				23 = { #Poitou
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				19 = { #Aquitaine
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				806 = { #Pyrenees-Atlantique
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GER_controls_atlantic_coast_jylland_vlaanderen_tt
+				99 = { #Jylland
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				912 = { #Sonderjylland
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				909 = { #Schleswig
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				58 = { #Holstein
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				59 = { #Hannover
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				56 = { #Weser-Ems
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				36 = { #Friesland
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				7 = { #Holland
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				35 = { #Brabant
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				6 = { #Vlaanderen
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+				977 = { #Antwerpen
+					state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_CHARACTER }
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = GER_fortify_the_vaterland
-				bonus = 0.5
-				uses = 2
-				category = cat_fortification
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = ddaywall
+			every_state = {
+				limit = {
+					is_coastal = yes
+					OR = { #From ord-Pas-de_calais to Pyrenees-Atlantique
+						state = 29
+						state = 785
+						state = 15
+						state = 14
+						state = 30
+						state = 23
+						state = 19
+						state = 806
+						state = 99
+						state = 912
+						state = 909
+						state = 58 
+						state = 59
+						state = 56
+						state = 36
+						state = 7
+						state = 35
+						state = 6
+						state = 977
+					}
 
-			add_timed_idea = {
-				idea = GER_fortify_the_vaterland_idea
-				days = 730
+				}
+				set_building_level = {
+					type = coastal_bunker
+					level = 4
+					instant_build = yes
+					province = {
+						all_provinces = yes
+				    }
+				}
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			custom_effect_tooltip = GER_fortify_the_vaterland_unlock_decision_tt
 		}
 	}
 	
