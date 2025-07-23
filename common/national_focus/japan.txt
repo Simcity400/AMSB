@@ -1386,7 +1386,7 @@ focus = {
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = JAP_non_aggression_pact_with_the_soviet_union }
 		mutually_exclusive = { focus = JAP_secure_the_philippines }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = JAP_non_aggression_pact_with_the_soviet_union
 
@@ -1412,7 +1412,7 @@ focus = {
 		completion_reward = {
 			add_timed_idea = {
 				idea = JAP_theater_prep
-				days = 120
+				years = 1
 			}
 			add_tech_bonus = {
 				name = JAP_bypass_the_philippines
@@ -2615,7 +2615,7 @@ focus = {
 		prerequisite = {
 			focus = JAP_non_aggression_pact_with_the_soviet_union
 		}
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = JAP_non_aggression_pact_with_the_soviet_union
 		dynamic = yes  
@@ -2627,7 +2627,7 @@ focus = {
 		}
 
 		available = {
-
+			always = no
 		}
 
 		bypass = {
@@ -2708,10 +2708,10 @@ focus = {
 	focus = {
 		id = JAP_preemptive_war
 		icon = GFX_focus_ger_strike_at_the_source
-		prerequisite = { focus = JAP_prepare_for_war_with_the_soviet_union }
-		x = 0
+		prerequisite = { focus = JAP_bypass_the_philippines }
+		x = 2
 		y = 1
-		relative_position_id = JAP_prepare_for_war_with_the_soviet_union
+		relative_position_id = JAP_bypass_the_philippines
 
 		cost = 1
 

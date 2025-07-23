@@ -645,7 +645,6 @@ focus_tree = {
 	focus = {
 		id = SPA_the_corpo_truppe_volontarie
 		available = {
-			NOT = { has_global_flag = scw_over }
 		}
 		bypass = {
 		}
@@ -682,7 +681,6 @@ focus_tree = {
 	focus = {
 		id = SPA_the_condor_legion
 		available = {
-			NOT = { has_global_flag = scw_over }
 		}
 		bypass = {
 		}
@@ -926,12 +924,12 @@ focus_tree = {
 		}
 		bypass = {
 		}
-		prerequisite = { focus = SPA_equipment_modernization }
+		prerequisite = { focus = SPA_the_army_of_africa_model }
 		
 		icon = GFX_goal_generic_army_artillery2
-		x = -1
+		x = -2
 		y = 1
-		relative_position_id = SPA_equipment_modernization
+		relative_position_id = SPA_the_army_of_africa_model
 		cost = 5
 
 		available_if_capitulated = yes
@@ -2135,27 +2133,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SPA_utilize_the_intellectuals
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_integrate_the_requetes }
-		
-		icon = GFX_focus_research
-		x = 0
-		y = 1
-		relative_position_id = SPA_integrate_the_requetes
-		cost = 10
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	focus = {
 		id = SPA_banish_the_party_leaders
 		available = {
 		}
@@ -2347,7 +2324,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SPA_adopt_the_26_points
-		cost = 10
+		cost = 5
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_STABILITY}
@@ -2685,13 +2662,12 @@ focus_tree = {
         bypass = {
             NOT = { country_exists = POR }
         }
-     	prerequisite = { focus = SPA_la_division_azul }
-		prerequisite = { focus = SPA_stamp_out_the_maquis }
+     	prerequisite = { focus = SPA_fuse_the_parties }
 
         icon = GFX_focus_spa_strengthen_the_supreme_reality_of_spain
         x = 1
-        y = 3
-        relative_position_id = SPA_dictator_for_life
+        y = 1
+        relative_position_id = SPA_fuse_the_parties
         cost = 10
 
         available_if_capitulated = yes
