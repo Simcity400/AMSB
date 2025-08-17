@@ -1767,7 +1767,7 @@ focus_tree = {
 		icon = GFX_focus_generic_mining_industry
 		prerequisite = { focus = wuw_HUN_invite_foreign_investors focus = wuw_HUN_expand_the_hungarian_academy_of_sciences }
 		#mutually_exclusive = { focus = wuw_HUN_invite_foreign_investors }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = wuw_HUN_expand_the_hungarian_academy_of_sciences
 
@@ -1921,7 +1921,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 10
@@ -1994,7 +1994,7 @@ focus_tree = {
 		icon = GFX_focus_HUN_magyar_allamvasutak
 		prerequisite = { focus = wuw_HUN_invite_foreign_investors }
 		#mutually_exclusive = { focus = wuw_HUN_hungarian_tradition }
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = wuw_HUN_invite_foreign_investors
 
@@ -3255,6 +3255,48 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = wuw_HUN_increase_economic_cooperation
+		icon = GFX_focus_BRA_reach_out_to_military_dem
+		prerequisite = { focus = wuw_HUN_invite_foreign_investors }
+		#mutually_exclusive = { focus = wuw_HUN_establishing_a_new_dynasty focus = wuw_HUN_elect_a_fascist_king }
+		x = 0
+		y = 1
+		relative_position_id = wuw_HUN_invite_foreign_investors
 
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			NOT = {
+				has_idea = HUN_revaluing_the_pengo
+			}
+			any_country = {
+				is_major = yes
+				has_opinion = {
+					target = ROOT
+					value > 59
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = HUN_increased_economic_cooperation
+
+		}
+	}
 
 }
