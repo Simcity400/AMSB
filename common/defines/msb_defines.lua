@@ -249,3 +249,5 @@ NDefines.NNavy.MAX_ORG_ON_MANUAL_MOVE = 1
 NDefines.NNavy.MIN_ORG_ON_MANUAL_MOVE = 1
 NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.7
 
+-- Cosmonaut AMSB
+NDefines.NMilitary.AIR_SUPPORT_BASE = 0.13
