@@ -432,4 +432,23 @@ ITA_officine_meccaniche_organization = {
 		mot_rockets
 		train_equipment
 	}
+
+	trait = {
+		token = upgrade_1 # mandatory
+		name = Italian_Rubber_Corruption
+
+		icon = GFX_generic_mio_department_icon_motorized_mechanized_production
+		
+		available = {
+			FROM = {
+				has_completed_focus = ITA_superesercito
+			}
+		}
+
+		position = { x=1 y=0 }
+		relative_position_id = trait_token
+
+		production_bonus = {
+		production_resource_need_factor = -0.50
+	}
 }
