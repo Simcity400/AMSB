@@ -1830,44 +1830,6 @@
 			}
 		}
 	}
-	
-
-	focus = {
-		id = FRA_ban_the_leagues
-		icon = GFX_goal_generic_forceful_treaty
-		x = -6
-		y = 1
-		
-		prerequisite = {
-			focus = FRA_form_the_popular_front
-		}
-		relative_position_id = FRA_form_the_popular_front
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			has_idea = FRA_political_violence
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_FRA_POLITICAL_VIOLENCE }
-		completion_reward = {
-			remove_ideas = { FRA_political_violence }
-			set_temp_variable = { FRA_rw_support = party_popularity@neutrality }
-			add_to_temp_variable = { FRA_rw_support = party_popularity@fascism }
-			multiply_temp_variable = { FRA_rw_support = -0.5 }
-			add_stability = FRA_rw_support
-		}
-	}
 
 	focus = {
 		id = FRA_the_blum_viollette_proposal
