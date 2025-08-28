@@ -767,14 +767,18 @@ characters={
 			allowed = {
 				original_tag = USA
 			}
+			available  = {
+				#has_completed_focus  = USA_reestablish_the_gold_standard
+				#has_completed_focus = USA_war_plan_orange
+			}
 			traits = {
-				navy_chief_reform_2
+				navy_chief_decisive_battle_2
 			}
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
+				}
 			}
-		}
 
 		navy_leader={
 			traits={ navy_career_officer aviation_enthusiast caustic_personality blockade_runner superior_tactician }
@@ -1548,7 +1552,7 @@ characters={
 					limit  = {
 						has_dlc = "Man the Guns"
 					}
-					has_completed_focus  = USA_america_first
+					has_completed_focus  = USA_reestablish_the_gold_standard
 				}
 			}
 			visible  = {
@@ -1557,7 +1561,7 @@ characters={
 			traits  = {
 				captain_of_industry
 			}
-			cost  = 50.000
+			cost  = 0.000
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -1610,12 +1614,12 @@ characters={
 
 	USA_charles_coughlin={
 		name=USA_charles_coughlin
-		portraits={
-			army={
+		portraits	= {
+			army	=	{
 				small="GFX_idea_charles_coughlin"
 			}
 		}
-		advisor={
+		advisor	= {
 			slot = political_advisor
 			idea_token = charles_coughlin
 			allowed  = {
@@ -1711,7 +1715,7 @@ characters={
 				small="GFX_idea_USA_joseph_mccarthy"
 			}
 		}
-		advisor={
+		advisor	=	{
 			slot = political_advisor
 			idea_token = USA_joseph_mccarthy
 			allowed  = {
@@ -1795,7 +1799,7 @@ characters={
 				small=GFX_portrait_USA_henry_stimson_small
 			}
 		}
-		advisor={
+		advisor	= {
 			slot = political_advisor
 			idea_token = USA_henry_stimson
 			allowed  = {
@@ -1803,9 +1807,9 @@ characters={
 			}
 			traits  = {
 				war_industrialist
+					}
+				}
 			}
-		}
-	}
 
 	USA_donald_nelson={
 		name=USA_donald_nelson
