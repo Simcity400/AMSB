@@ -156,45 +156,9 @@
 	}
 	
 	focus = {
-	id = FRA_tonkin_mines
-	icon = GFX_focus_generic_tungsten
-	x = 0
-	y = 1
-	offset = {
-		x = 0
-		y = 0
-	}
-	prerequisite = { focus = FRA_invest_in_indochina }
-	mutually_exclusive = { }
-	relative_position_id = FRA_invest_in_indochina
-	cost = 5
-
-	ai_will_do = {
-		factor = 1
-	}
-	
-	bypass = {
-
-	}
-
-	cancel_if_invalid = yes
-	continue_if_invalid = no
-	available_if_capitulated = yes
-
-	search_filters = { FOCUS_FILTER_INDUSTRY }
-	completion_reward = {
-		671 = 	{ 
-				add_resource = {
-				type = tungsten
-				amount = 22    }
-				}
-		}
-	}
-	
-	focus = {
 		id = FRA_devalue_the_franc
 		icon = GFX_focus_fra_devalue_the_franc
-		x = -7
+		x = -5
 		y = 1
 		offset = {
 			x = 0
@@ -230,7 +194,7 @@
 	focus = {
 			id = FRA_invest_in_the_metropole
 			icon = GFX_focus_SWE_urbanization
-			x = -5
+			x = -3
 			y = 1
 			offset = {
 				x = 0
@@ -505,7 +469,7 @@
 				}
 			}
 		}
-		x = -4
+		x = -2
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -579,7 +543,7 @@
 	focus = {
 		id = FRA_invest_in_west_africa
 		icon = GFX_focus_generic_industry_1
-		x = -2
+		x = 0
 		y = 1
 		offset = {
 			x = 0
@@ -678,73 +642,7 @@
 				}
 		}
 	}
-	
-	focus = {
-		id = FRA_invest_in_indochina
-		icon = GFX_focus_generic_industry_1
-		x = 00
-		y = 1
-		offset = {
-			x = 0
-			y = 0
-		}
-		prerequisite = { focus = FRA_invest_in_the_colonies }
-		mutually_exclusive = { }
-		relative_position_id = FRA_invest_in_the_colonies
-		cost = 5
 
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			any_state = {
-				OR = {
-					state = 670
-					state = 671
-					state = 741
-					state = 286
-				}
-				OWNER = {
-					OR = {
-						tag = ROOT
-						is_subject_of = ROOT
-					}
-				}
-			}
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		completion_reward = {
-			build_railway = {
-				path = { 10162 4405 4334 1300 4255 10137 }
-			}
-			random_state = {
-				limit = { 
-					OR = {
-						state = 741
-						state = 286
-						state = 671
-						state = 670
-					}
-					OWNER = { is_owned_or_subject_trigger = yes }	
-					NOT = {
-						has_state_flag = FRA_colonial_industry_target
-					}
-				}
-				add_extra_state_shared_building_slots = 4
-				set_state_flag = FRA_colonial_industry_target
-			}
-		}
-	}
 	focus = {
 		id = FRA_invest_in_syria
 		icon = GFX_focus_generic_industry_1
@@ -881,12 +779,12 @@
 		x = 0
 		y = 1
 		offset = {
-			x = 0
+			x = -2
 			y = 0
 		}
-		prerequisite = { focus = FRA_ivory_coast_rubber focus = FRA_syria_oil focus = FRA_tonkin_mines }
+		prerequisite = { focus = FRA_ivory_coast_rubber focus = FRA_syria_oil  }
 		mutually_exclusive = { }
-		relative_position_id = FRA_tonkin_mines
+		relative_position_id = FRA_syria_oil 
 		cost = 5
 	
 		ai_will_do = {
