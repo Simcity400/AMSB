@@ -26,6 +26,34 @@ ideas = {
 ideas = {
 	trade_laws = {
 		law = yes
+		State_General_Mobilization_Law = {
+			picture = jap_militarism_showa
+			allowed = { 
+				original_tag = jap
+			}
+			removal_cost = -1
+
+			cost = 150
+			
+			modifier = {
+				min_export = 0
+				industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = 0.10
+				research_speed_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.15
+				civilian_intel_to_others = 0
+				navy_intel_to_others = 0
+			}
+			allowed_to_remove = {
+				always = no
+			}
+			cancel_if_invalid = no
+		}
+	}
+}
+ideas = {
+	trade_laws = {
+		law = yes
 		ROM_oil_lend_lease = {
 			picture = generic_exploit_mines
 			allowed = {

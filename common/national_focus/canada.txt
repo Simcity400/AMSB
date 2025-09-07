@@ -67,7 +67,7 @@ focus_tree = {
 	focus = {
 		id = CAN_rowell_sirois_commission
 		icon = GFX_goal_generic_consumer_goods
-		x = 8
+		x = 12
 		y = 0
 
 		cost = 10
@@ -110,7 +110,7 @@ focus_tree = {
 			add_war_support = 0.05
 		}
 	}
-
+	
 
 	focus = {
 		id = CAN_national_housing_act
@@ -382,7 +382,7 @@ focus_tree = {
 		id = CAN_defence_of_canada_regulations
 		icon = GFX_goal_generic_construct_military
 		prerequisite = { focus = CAN_rowell_sirois_commission }
-		x = 10
+		x = 12
 		y = 1
 
 		cost = 5
@@ -734,7 +734,7 @@ focus_tree = {
 
 	focus = {
 		id = CAN_polymer_corporation
-		icon = GFX_goal_generic_oil_refinery
+		icon = GFX_focus_IRQ_anglo_iraqi_oil_expansion
 		prerequisite = { focus = CAN_turner_valley_oilfield }
 		x = -3
 		y = 6
@@ -860,9 +860,9 @@ focus_tree = {
 	focus = {
 		id = CAN_forced_quebec_conscription
 		icon = GFX_goal_tfv_can_forced_quebec_conscription 
-		prerequisite = { focus = CAN_SF_2 }
-		x = 0
-		y = 4
+		prerequisite = { focus = CAN_MECH_3 focus = CAN_SF_3 }
+		x = 1
+		y = 5
 		relative_position_id = CAN_cmp_truck
 
 		cost = 10
@@ -895,9 +895,9 @@ focus_tree = {
 	focus = {
 		id = CAN_compromise_with_quebec
 		icon = GFX_goal_tfv_can_compromise_with_quebec
-		prerequisite = { focus = CAN_Tank_Quality }
-		x = 2
-		y = 4
+		prerequisite = { focus = CAN_AMFIB_2 focus = CAN_Tank_Quality_2}
+		x = 5	
+		y = 5
 		relative_position_id = CAN_cmp_truck
 
 		cost = 10
@@ -1103,7 +1103,7 @@ focus_tree = {
 	}
 	focus = {
 		id = CAN_a_motorized_army
-		icon = GFX_goal_generic_build_tank
+		icon = GFX_focus_generic_road_investment
 		prerequisite = { focus = CAN_cmp_truck }
 		x = -2
 		y = 1
@@ -1140,7 +1140,7 @@ focus_tree = {
 
 		focus = {
 		id = CAN_Research_Bonus_1
-		icon = GFX_goal_generic_build_tank
+		icon = GFX_focus_SMB_mountain_guns
 		prerequisite = { focus = CAN_a_motorized_army }
 		x = -2
 		y = 2
@@ -1214,7 +1214,7 @@ focus_tree = {
 
 	focus = {
 		id = CAN_Research_Bonus_3
-		icon = GFX_goal_generic_build_tank
+		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = CAN_Research_Bonus_2 }
 		x = -2
 		y = 4
@@ -1253,7 +1253,7 @@ focus_tree = {
 		id = CAN_the_black_devils
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = CAN_cmp_truck }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = CAN_cmp_truck
 		mutually_exclusive = {focus = CAN_the_valentine_tank}
@@ -1287,11 +1287,12 @@ focus_tree = {
 		}
 	}
 
+
 		focus = {
-		id = CAN_SF_1
-		icon = GFX_goal_generic_special_forces
+		id = CAN_MECH_1
+		icon = GFX_focus_CHL_domestic_production_of_the_willys_mb
 		prerequisite = { focus = CAN_the_black_devils }
-		x = 0
+		x = 1
 		y = 2
 		relative_position_id = CAN_cmp_truck
 
@@ -1300,29 +1301,20 @@ focus_tree = {
 		ai_will_do = {
 			factor = 25
 		}
-
-		available = {
-
-		}
 		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = yes
-		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			add_ideas = CAN_SF_1
+			add_ideas = CAN_MECH_1
 		}
+		
 	}
+
 
 		focus = {
 		id = CAN_SF_2
-		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = CAN_SF_1 }
+		icon = GFX_focus_generic_naval_discipline
+		prerequisite = { focus = CAN_MECH_1 }
+		mutually_exclusive = {focus = CAN_MECH_2 }
 		x = 0
 		y = 3
 		relative_position_id = CAN_cmp_truck
@@ -1349,8 +1341,8 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = CAN_marines
-				bonus = 1.0
-				uses = 2
+				bonus = 3.0
+				uses = 4
 				category = cat_special_forces_generic
 			}
 			add_doctrine_cost_reduction = {
@@ -1361,12 +1353,42 @@ focus_tree = {
 		}
 	}
 
+		focus = {
+		id = CAN_SF_3
+		icon = GFX_focus_ICE_expanding_the_university_of_reykjavik
+		prerequisite = { focus = CAN_SF_2 }
+		x = 0
+		y = 1
+		relative_position_id = CAN_SF_2
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			Add_ideas = CAN_SF_10
+		}
+	}
 
 	focus = {
 		id = CAN_the_valentine_tank
-		icon = GFX_goal_generic_army_tanks
+		icon = GFX_focus_ARG_the_war_machine
 		prerequisite = { focus = CAN_cmp_truck }
-		x = 2
+		x = 5
 		y = 1
 		relative_position_id = CAN_cmp_truck
 		mutually_exclusive = { focus = CAN_the_black_devils}
@@ -1416,11 +1438,11 @@ focus_tree = {
 
 	focus = {
 		id = CAN_Tank_Quality
-		icon = GFX_goal_generic_army_tanks
+		icon = GFX_focus_AFG_royal_guard
 		prerequisite = { focus = CAN_Tank_Streamlined }
-		x = 2
-		y = 3
-		relative_position_id = CAN_cmp_truck
+		x = 1
+		y = 1
+		relative_position_id = CAN_Tank_Streamlined
 
 		cost = 10
 
@@ -1445,12 +1467,43 @@ focus_tree = {
 			add_ideas = CAN_tank_2
 		}
 	}
+	focus = {
+		id = CAN_Tank_Quality_2
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = CAN_Tank_Streamlined }
+		x = 1
+		y = 2
+		relative_position_id = CAN_Tank_Streamlined
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_ideas = CAN_tank_3
+		}
+	}
 
 	focus = {
 		id = CAN_Tank_Streamlined
-		icon = GFX_goal_generic_army_tanks
+		icon = GFX_focus_generic_mass_production
 		prerequisite = { focus = CAN_the_valentine_tank }
-		x = 2
+		x = 5
 		y = 2
 		relative_position_id = CAN_cmp_truck
 
@@ -1477,6 +1530,96 @@ focus_tree = {
 			add_ideas = CAN_tank_1
 		}
 	}
+
+	focus = {
+		id = CAN_AMFIB_1
+		icon = GFX_focus_generic_naval_invasion
+		prerequisite = { focus = CAN_Tank_Streamlined }
+		mutually_exclusive = { Focus = CAN_Tank_Quality}
+		x = 4
+		y = 3
+		relative_position_id = CAN_cmp_truck
+		
+		cost = 5
+
+	completion_reward = {
+		IF = {
+			limit = { has_dlc = "Man the Guns" }
+			IF = {
+				limit = {
+					NOT = {
+						has_tech = mtg_transport
+					}
+				}
+				set_technology = { mtg_transport = 1 }
+			}
+			ELSE_IF = {
+				limit = {
+					NOT = {
+						has_tech = mtg_landing_craft
+					}
+				}
+				set_technology = { mtg_landing_craft = 1 }
+			}
+			ELSE_IF = {
+				limit = {
+					NOT = {
+						has_tech = mtg_tank_landing_craft
+					}
+				}
+				set_technology = { mtg_tank_landing_craft = 1 }
+			}
+
+			IF = {
+				limit = {
+					NOT = { has_tech = amphibious_tank }
+				}
+				set_technology = { amphibious_drive = 1}
+			}
+			ELSE_IF = {
+				limit = {
+					NOT = { has_tech = amphibious_tank }
+				}
+				set_technology = { amphibious_drive = 1}
+			}
+		}
+		}
+	}
+
+	focus = {
+		id = CAN_AMFIB_2
+		icon = GFX_focus_ARG_army
+		prerequisite = {focus = CAN_AMFIB_1 }
+		x = 0
+		y = 1
+		relative_position_id = CAN_AMFIB_1
+		cost = 10
+
+		completion_reward = {
+			add_ideas = CAN_amfib_22
+		}
+	}
+
+		focus = {
+		id = CAN_MECH_2
+		icon = GFX_focus_ARG_establish_the_free_association
+		prerequisite = { focus = CAN_MECH_1 }
+		x = 1
+		y = 1
+		relative_position_id = CAN_MECH_1
+		mutually_exclusive = { focus = CAN_SF_2 }
+		
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+
+		completion_reward = {
+			add_ideas = CAN_MECH_2
+		}
+	}
+
 	############################
 	#### GO WITH UK SECTION ####
 	############################
@@ -1608,7 +1751,7 @@ focus_tree = {
 
 	focus = {
 		id = CAN_turner_valley_oilfield
-		icon = GFX_goal_generic_oil_refinery
+		icon = GFX_focus_PER_invite_oil_nations
 		prerequisite = { focus = CAN_Research_Bonus_2 }
 		x = -3
 		y = 5
@@ -1686,6 +1829,27 @@ focus_tree = {
 	}
 
 
+		focus = {
+		id = CAN_MECH_3
+		icon = GFX_focus_generic_truck
+		prerequisite = { focus = CAN_MECH_2 }
+		x = 2
+		y = 4
+		relative_position_id = CAN_cmp_truck
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 25
+		}
+		
+
+		completion_reward = {
+			add_ideas = CAN_MECH_33
+		}
+	}
+}
+
 	############################
 	#### GO FASCIST SECTION ####
 	############################
@@ -1699,7 +1863,7 @@ focus_tree = {
 	############################
 	####### AIR SECTION ########
 	############################
-}
+
 
 	############################
 	###### NAVY SECTION ########
