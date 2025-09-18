@@ -4924,33 +4924,13 @@ form_roman_empire_category = {
 			custom_trigger_tooltip = {
 				tooltip = form_country_mare_nostrum_greece_required_states_tt
 				controls_state = 185
-				controls_state = 731
 				controls_state = 47
 				controls_state = 186
-				controls_state = 184
 				controls_state = 187
 				controls_state = 182
 				controls_state = 164 #DODECANESE initially controlled by Italy
 			}
-			# Turkey
-			custom_trigger_tooltip = {
-				tooltip = form_country_mare_nostrum_turkey_required_states_tt
-				controls_state = 341
-				controls_state = 797
-				controls_state = 340
-				controls_state = 339
-				controls_state = 342
-				controls_state = 345
-				controls_state = 344
-				if = { # HATAY will most likely be handed over from FRA to TUR, this hopefully prevents some confusion
-					limit = {
-						799 = {
-							is_controlled_by = TUR
-						}
-					}
-					controls_state = 799
-				}
-			}
+
 			# Italy
 			custom_trigger_tooltip = {
 				tooltip = form_spqr_italy_required_states_tt
@@ -4973,25 +4953,7 @@ form_roman_empire_category = {
 				controls_state = 852
 				controls_state = 159
 			}
-			# Spain
-			custom_trigger_tooltip = {
-				tooltip = form_spqr_coastal_spain_required_states_tt
-				controls_state = 165
-				controls_state = 177
-				controls_state = 167
-				controls_state = 168
-				controls_state = 173
-			}
-			# France
-			custom_trigger_tooltip = {
-				tooltip = form_spqr_coastal_france_required_states_tt
-				controls_state = 1
-				controls_state = 735
-				controls_state = 851
-				controls_state = 21
-				controls_state = 22
-				controls_state = 31
-			}
+	
 			# British Mediterranean
 			custom_trigger_tooltip = {
 				tooltip = form_mare_nostrum_coastal_uk_required_states_tt
@@ -5002,12 +4964,7 @@ form_roman_empire_category = {
 			# North Africa (Morocco to Libya)
 			custom_trigger_tooltip = {
 				tooltip = form_country_mare_nostrum_north_africa_required_states_tt
-				#Morocco
-				controls_state = 290
-				controls_state = 461
-				#Algeria
-				controls_state = 459
-				controls_state = 460
+				
 				#Tunisia
 				controls_state = 458
 				controls_state = 665
