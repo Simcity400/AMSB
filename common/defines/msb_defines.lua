@@ -50,7 +50,7 @@ NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.00                        -- Unlim
 NDefines.NCountry.SCORCHED_EARTH_STATE_COST = 5000	                    -- No scourched earth
 NDefines.NDiplomacy.VOLUNTEERS_PER_TARGET_PROVINCE = 0.5			    -- Volunteer shit to prevent 2w spam
 NDefines.NDiplomacy.VOLUNTEERS_PER_COUNTRY_ARMY = 0.5				    -- Volunteer shit to prevent 2w spam
-NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 1				    -- Volunteer shit to prevent 2w spam
+NDefines.NDiplomacy.VOLUNTEERS_DIVISIONS_REQUIRED = 1				    -- Volunteer shit to prevent 2w sp am
 NDefines.NOperatives.AGENCY_CREATION_FACTORIES = 5				        -- Number of factories used to create an intelligence agency
 
 NDefines.NMilitary.MAX_NAVY_EXPERIENCE = 999                            -- WAS 500 || XP Cap
@@ -248,6 +248,12 @@ NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.01
 NDefines.NNavy.MAX_ORG_ON_MANUAL_MOVE = 1
 NDefines.NNavy.MIN_ORG_ON_MANUAL_MOVE = 1
 NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.7
+
+-- Bombing Fix (stolen:)
+NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
+NDefines.NAir.AIR_WING_BOMB_DAMAGE_FACTOR = 0.6 --Chrom Bombing Fix; HMM = 0.6
+NDefines.NMilitary.ANTI_AIR_TARGETTING_TO_CHANCE = 0.09 -- Vanilla 0.07
+NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = 0 --Vanilla -0.12
 
 -- Cosmonaut AMSB
 NDefines.NMilitary.AIR_SUPPORT_BASE = 0.13
