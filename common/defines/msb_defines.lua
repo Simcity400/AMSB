@@ -253,7 +253,7 @@ NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.7
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
 NDefines.NAir.AIR_WING_BOMB_DAMAGE_FACTOR = 0.5 --Chrom Bombing Fix; HMM = 0.6 
 NDefines.NMilitary.ANTI_AIR_TARGETTING_TO_CHANCE = 0.09 -- Vanilla 0.07
-NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = 0.6  --Vanilla -0.12
+NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = 0.10  --Vanilla -0.12
 
 
 -- Cosmonaut AMSB
