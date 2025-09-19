@@ -161,7 +161,7 @@ focus_tree = {
 		id = CAN_canada_pacific_railway
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = CAN_defence_of_canada_regulations }
-		x = -2
+		x = 0
 		y = 2
 		relative_position_id = CAN_rowell_sirois_commission
 
@@ -382,7 +382,7 @@ focus_tree = {
 		id = CAN_defence_of_canada_regulations
 		icon = GFX_goal_generic_construct_military
 		prerequisite = { focus = CAN_rowell_sirois_commission }
-		x = 12
+		x = 14
 		y = 1
 
 		cost = 5
@@ -417,7 +417,7 @@ focus_tree = {
 		prerequisite = {
 			focus = CAN_defence_of_canada_regulations
 		}
-		x = 14
+		x = 18
 		y = 2
 
 		cost = 5
@@ -1787,6 +1787,42 @@ focus_tree = {
 		}
 	}
 
+		focus = {	
+			id = CAN_canadian_citizenship_act
+			icon = GFX_focus_eng_decolonization
+			x = 0
+			y = 4
+			prerequisite = { focus = CAN_alberta_coal_towns }
+			relative_position_id = CAN_rowell_sirois_commission
+
+			cost = 10
+
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 5
+					is_subject = no 
+				}
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = yes
+
+			completion_reward = {
+			
+				add_ideas = CAN_canadian_citizenship
+
+			}
+		}
 
 	############################
 	#### LEAVE COMMONWEALTH ####
