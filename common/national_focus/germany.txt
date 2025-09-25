@@ -855,7 +855,7 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GER_industrial_consumer_goods_factor_limit_tt
-				check_variable = { GER_industrial_consumer_goods_factor < 0.9 }
+				check_variable = { GER_industrial_consumer_goods_factor < 0.95 }
 			}
 		}
 
@@ -874,10 +874,10 @@ focus_tree = {
 					}
 				}
 				prioritize = { 59 }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 4
 					instant_build = yes
 				}
 				add_resource = {
@@ -903,7 +903,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = 0.1
+				GER_industrial_consumer_goods_factor = 0.05
 				tooltip = consumer_goods_factor_tt
 			}
 			if = {
@@ -920,7 +920,7 @@ focus_tree = {
 
 			GER_add_or_modify_wehrwirtschaft = yes
 			add_to_variable = { 
-				GER_wehrwirtschaft_local_resources_factor = 0.05
+				GER_wehrwirtschaft_local_resources_factor = 0.1
 				tooltip = local_resources_factor_tt
 			}
 
@@ -939,7 +939,7 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = GER_industrial_consumer_goods_factor_limit_tt
-				check_variable = { GER_industrial_consumer_goods_factor < 0.9 }
+				check_variable = { GER_industrial_consumer_goods_factor < 0.95 }
 			}
 			any_controlled_state = {
 				NOT = { is_core_of = ROOT }
@@ -1041,10 +1041,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1058,10 +1058,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1109,7 +1109,7 @@ focus_tree = {
 
 			GER_modify_industrial_modifier = yes
 			add_to_variable = { 
-				GER_industrial_consumer_goods_factor = 0.1
+				GER_industrial_consumer_goods_factor = 0.05
 				tooltip = consumer_goods_factor_tt
 			}
 			if = {
