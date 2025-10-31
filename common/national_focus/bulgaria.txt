@@ -38,7 +38,7 @@ focus_tree = {
 		id = BUL_acquire_modern_tools
 
 		icon = GFX_goal_generic_production2
-		x = 8
+		x = 4
 		y = 0
 		cost = 5
 
@@ -59,13 +59,120 @@ focus_tree = {
 		}
 	}
 
+		focus = {
+		id = BUL_war_logistics
+
+		prerequisite = { focus = BUL_acquire_modern_tools }
+		icon = GFX_goal_generic_army_motorized
+		relative_position_id = BUL_acquire_modern_tools
+		x = 4
+		y = 1
+		cost = 10
+
+		available = {
+
+		}
+		
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BUL_war_logistics
+			    bonus = 1
+				ahead_reduction = 1
+			    uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	
+		focus = {
+		id = BUL_war_logistics_2
+
+		prerequisite = { focus = BUL_war_logistics }
+		icon = GFX_focus_AFG_against_kabul
+		relative_position_id = BUL_war_logistics
+		x =-1
+		y = 1
+		cost = 10
+
+		available = {
+
+		}
+		
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BUL_war_logistics
+			    bonus = 1
+			    ahead_reduction = 1
+			    uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	
+		focus = {
+		id = BUL_war_logistics_3
+
+		prerequisite = { focus = BUL_war_logistics }
+		icon = GFX_focus_HUN_form_the_gyorshadtest
+		relative_position_id = BUL_war_logistics
+		x = 1
+		y = 1
+		cost = 10
+
+		available = {
+
+		}
+		
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BUL_war_logistics
+			    bonus = 1
+			    uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	
+		focus = {
+		id = BUL_war_logistics_4
+
+		prerequisite = { focus = BUL_war_logistics_3 }
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		relative_position_id = BUL_war_logistics_3
+		x = 0
+		y = 1
+		cost = 10
+
+		available = {
+
+		}
+		
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BUL_war_logistics
+			    bonus = 0.5
+			    ahead_reduction = 2
+			    uses = 2
+				category = support_tech
+			}
+		}
+	}
+
 	focus = {
 		id = BUL_improve_the_road_system
 
 		prerequisite = { focus = BUL_acquire_modern_tools }
-		icon = GFX_goal_generic_construction
+		icon = GFX_focus_generic_improve_roads
 		relative_position_id = BUL_acquire_modern_tools
-		x = -4
+		mutually_exclusive = { focus = BUL_improve_the_road_system_2 }
+		x = -7
 		y = 1
 		cost = 10
 
@@ -80,7 +187,7 @@ focus_tree = {
 					has_state_flag = BUL_initial_bulgarian_state_flag
 					NOT = { state = 48 }
 				}
-				add_extra_state_shared_building_slots = 5
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -88,7 +195,7 @@ focus_tree = {
 				}
 			}
 			48 = {
-				add_extra_state_shared_building_slots = 5
+				add_extra_state_shared_building_slots = 12
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -96,9 +203,53 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+		focus = {
+		id = BUL_improve_the_road_system_2
+
+		prerequisite = { focus = BUL_acquire_modern_tools }
+		icon = GFX_focus_generic_road_investment
+		relative_position_id = BUL_acquire_modern_tools
+		mutually_exclusive = { focus = BUL_improve_the_road_system }
+		x = -5
+		y = 1
+		cost = 10
+
+		available = {
+
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_state_flag = BUL_initial_bulgarian_state_flag
+					NOT = { state = 48 }
+				}
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
+			}
+			48 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+						type = Tungsten
+						amount = 13
+					}
 			}
 		}
 	}
@@ -152,7 +303,39 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = BUL_defenses_against_strategic_bombing
+		available = {
+		}
+		bypass = {
+		}
+		prerequisite = { focus = BUL_invigorate_national_industry }
+		
+		icon = GFX_focus_generic_air_defense
+		x = -2
+		y = 1
+		relative_position_id = BUL_invigorate_national_industry
+		cost = 5
 
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = SPA_No_bombing
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					is_core_of = ROOT
+					is_in_home_area = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 5
+					instant_build = yes
+				}
+			}
+							
+		}
+	}
 	focus = {
 		id = BUL_expand_sofia_university
 
@@ -176,10 +359,11 @@ focus_tree = {
 	focus = {
 		id = BUL_increase_industry_investments
 
-		prerequisite = { focus = BUL_improve_the_road_system }
+
 		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = BUL_improve_the_road_system focus = BUL_improve_the_road_system_2}
 		relative_position_id = BUL_improve_the_road_system
-		x = 0
+		x = 1
 		y = 1
 		cost = 10
 
@@ -255,10 +439,10 @@ focus_tree = {
 	focus = {
 		id = BUL_steel_plant_in_pernik
 
-		prerequisite = { focus = BUL_mineral_extraction_in_the_rhodopes }
+		prerequisite = { focus = BUL_mineral_extraction_in_the_rhodopes focus = BUL_mineral_extraction_in_the_rhodopes_2 focus = BUL_mineral_extraction_in_the_rhodopes_3 }
 		icon = GFX_focus_generic_steel
 		relative_position_id = BUL_mineral_extraction_in_the_rhodopes
-		x = 0
+		x = 1
 		y = 1
 		cost = 10
 
@@ -288,12 +472,71 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = BUL_steel_plant_in_pernik_2
+
+		prerequisite = { focus = BUL_mineral_extraction_in_the_rhodopes focus = BUL_mineral_extraction_in_the_rhodopes_2 focus = BUL_mineral_extraction_in_the_rhodopes_3 }
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
+		relative_position_id = BUL_mineral_extraction_in_the_rhodopes
+		x = 3
+		y = 1
+		cost = 10
+
+		available = {
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BUL_mineral_extraction_in_the_rhodopes
+			    bonus = 1.0
+			    uses = 2
+			    category = excavation_tech
+			}
+		}
+	}
 
 	focus = {
 		id = BUL_mineral_extraction_in_the_rhodopes
 
 		prerequisite = { focus = BUL_utmost_optimization }
-		icon = GFX_goal_generic_construction2
+		mutually_exclusive = { focus = BUL_mineral_extraction_in_the_rhodopes_2 }
+		mutually_exclusive = { focus = BUL_mineral_extraction_in_the_rhodopes_3 }
+		icon = GFX_focus_generic_tungsten
+		relative_position_id = BUL_utmost_optimization
+		x = -2
+		y = 1
+		cost = 5
+
+		available = {
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BUL_mineral_extraction_in_the_rhodopes
+			    bonus = 1.0
+			    uses = 1
+			    category = industry
+			}
+			212 = {
+				add_resource = {
+						type = Tungsten
+						amount = 12
+					}
+				}
+			set_variable = { var = BUL_plovdiv_chromium_duration value = 15 }
+			unlock_decision_tooltip = BUL_mineral_extraction_in_the_rhodopes
+		}
+	}
+
+	focus = {
+		id = BUL_mineral_extraction_in_the_rhodopes_2
+
+		prerequisite = { focus = BUL_utmost_optimization }
+		mutually_exclusive = { focus = BUL_mineral_extraction_in_the_rhodopes }
+		mutually_exclusive = { focus = BUL_mineral_extraction_in_the_rhodopes_3 }
+		icon = GFX_SOV_steel_casting_industry_ccp_2d_sov_compatibility
 		relative_position_id = BUL_utmost_optimization
 		x = 0
 		y = 1
@@ -310,6 +553,46 @@ focus_tree = {
 			    uses = 1
 			    category = industry
 			}
+			212 = {
+				add_resource = {
+						type = steel
+						amount = 33
+					}
+				}
+			set_variable = { var = BUL_plovdiv_chromium_duration value = 15 }
+			unlock_decision_tooltip = BUL_mineral_extraction_in_the_rhodopes
+		}
+	}
+
+	focus = {
+		id = BUL_mineral_extraction_in_the_rhodopes_3
+
+		prerequisite = { focus = BUL_utmost_optimization }
+		mutually_exclusive = { focus = BUL_mineral_extraction_in_the_rhodopes_2 }
+		mutually_exclusive = { focus = BUL_mineral_extraction_in_the_rhodopes }
+		icon = GFX_focus_generic_chromium
+		relative_position_id = BUL_utmost_optimization
+		x = 2
+		y = 1
+		cost = 5
+
+		available = {
+		}
+		
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = BUL_mineral_extraction_in_the_rhodopes
+			    bonus = 1.0
+			    uses = 1
+			    category = industry
+			}
+			212 = {
+				add_resource = {
+						type = Chromium
+						amount = 12
+					}
+				}
 			set_variable = { var = BUL_plovdiv_chromium_duration value = 15 }
 			unlock_decision_tooltip = BUL_mineral_extraction_in_the_rhodopes
 		}
@@ -319,9 +602,10 @@ focus_tree = {
 		id = BUL_uranium_prospecting
 
 		prerequisite = { focus = BUL_steel_plant_in_pernik }
+		prerequisite = { focus = BUL_steel_plant_in_pernik_2 }
 		icon = GFX_goal_generic_secret_weapon
 		relative_position_id = BUL_steel_plant_in_pernik
-		x = 0
+		x = 1
 		y = 1
 		cost = 10
 
@@ -422,10 +706,10 @@ focus_tree = {
 		id = BUL_reorganize_the_military_industry
 
 		prerequisite = { focus = BUL_negotiate_bulgarian_rearmament }
-		icon = GFX_focus_generic_tank_production
+		icon = GFX_focus_CHL_protect_the_easter_island
 		relative_position_id = BUL_negotiate_bulgarian_rearmament
 		x = 0
-		y = 2
+		y = 1
 		cost = 10
 
 		available = {
@@ -510,9 +794,9 @@ focus_tree = {
 	focus = {
 		id = BUL_found_dvf_sopot
 
-		prerequisite = { focus = BUL_darzhavna_voenna_fabrika }
+		prerequisite = { focus = BUL_vasil_levsky_national_military_university }
 		icon = GFX_goal_generic_army_artillery
-		relative_position_id = BUL_darzhavna_voenna_fabrika
+		relative_position_id = BUL_vasil_levsky_national_military_university
 		x = 0
 		y = 1
 		cost = 5
@@ -535,7 +819,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_found_dvf_sopot
-			    bonus = 0.5
+			    bonus = 1
 			    uses = 2
 				category = artillery
 			}
@@ -558,24 +842,33 @@ focus_tree = {
 	}
 
 	focus = {
-		id = BUL_contract_german_companies
+		id = BUL_reorganize_the_military_industry_2
 
 		prerequisite = { focus = BUL_reorganize_the_military_industry }
-		icon = GFX_focus_generic_license_production
+		icon = GFX_focus_GER_kdf_wagen
 		relative_position_id = BUL_reorganize_the_military_industry
 		x = 2
 		y = 1
-		cost = 1
+		cost = 3
 
 		available = {
-			has_political_power > 150
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				NOT = {
+					has_idea = BUL_army_restrictions_aat
+				}
+			}
+			else = {
+				NOT = {
+					has_idea = BUL_army_restrictions
+				}
+			}
 		}
 		
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_political_power = -150
 			48 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -584,29 +877,7 @@ focus_tree = {
 	 			instant_build = yes
 				}
   			}
-		}
-	}
-
-		focus = {
-		id = BUL_contract_russian_companies
-
-		prerequisite = { focus = BUL_contract_german_companies }
-		icon = GFX_focus_generic_license_production
-		relative_position_id = BUL_contract_german_companies
-		x = 0
-		y = 1
-		cost = 1
-
-		available = {
-			has_political_power > 150
-		}
-		
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			add_political_power = -150
-			48 = {
+			211 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 	 			type = arms_factory
@@ -614,29 +885,7 @@ focus_tree = {
 	 			instant_build = yes
 				}
   			}
-		}
-	}
-
-		focus = {
-		id = BUL_contract_british_companies
-
-		prerequisite = { focus = BUL_contract_russian_companies }
-		icon = GFX_focus_generic_license_production
-		relative_position_id = BUL_contract_russian_companies
-		x = 0
-		y = 1
-		cost = 1
-
-		available = {
-			has_political_power > 150
-		}
-		
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			add_political_power = -150
-			48 = {
+			212 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 	 			type = arms_factory
@@ -644,33 +893,11 @@ focus_tree = {
 	 			instant_build = yes
 				}
   			}
-		}
-	}
-
-		focus = {
-		id = BUL_contract_italian_companies
-
-		prerequisite = { focus = BUL_contract_british_companies }
-		icon = GFX_focus_generic_license_production
-		relative_position_id = BUL_contract_british_companies
-		x = 0
-		y = 1
-		cost = 1
-
-		available = {
-			has_political_power > 100
-		}
-		
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			add_political_power = -100
-			48 = {
-				add_extra_state_shared_building_slots = 2
+			801 = {
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 	 			type = arms_factory
-				level = 2
+				level = 3
 	 			instant_build = yes
 				}
   			}
@@ -678,11 +905,144 @@ focus_tree = {
 	}
 
 	focus = {
-		id = BUL_rebuild_the_army
+			id = BUL_contract_bulgarian_companies
+
+			prerequisite = { focus = BUL_reorganize_the_military_industry_2 }
+			icon = GFX_focus_BUL_support_macedonian_organizations
+			mutually_exclusive = { focus = BUL_contract_italian_companies }
+			mutually_exclusive = { focus = BUL_contract_german_companies }
+			relative_position_id = BUL_reorganize_the_military_industry_2
+			x = 0
+			y = 1
+			cost = 5
+
+			cancel_if_invalid = no
+			continue_if_invalid = yes
+			search_filters = {FOCUS_FILTER_INDUSTRY}
+			completion_reward = {
+				add_ideas = BUL_bulgarian_advisers
+				add_tech_bonus = {
+				bonus = 2.0
+				uses = 2
+				category = cat_special_forces_generic
+			}
+			}
+		}
+
+		focus = {
+			id = BUL_contract_bulgarian_companies_2
+
+			prerequisite = { focus = BUL_contract_bulgarian_companies }
+			icon = GFX_focus_PER_establish_special_unit
+			relative_position_id = BUL_contract_bulgarian_companies
+			x = 0
+			y = 1
+			cost = 5
+
+			cancel_if_invalid = no
+			continue_if_invalid = yes
+			search_filters = {FOCUS_FILTER_INDUSTRY}
+			completion_reward = {
+				add_tech_bonus = {
+			    bonus = 1
+			    uses = 1
+				category = infantry_weapons
+				add_potential_special_forces_tree = yes
+			}
+
+			}
+		}
+
+	focus = {
+		id = BUL_contract_german_companies
+
+		prerequisite = { focus = BUL_reorganize_the_military_industry_2 }
+		icon = GFX_focus_BRA_acquire_german_tanks
+		mutually_exclusive = { focus = BUL_contract_italian_companies }
+		mutually_exclusive = { focus = BUL_contract_bulgarian_companies }
+		relative_position_id = BUL_reorganize_the_military_industry_2
+		x = 4
+		y = 1
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_ideas = BUL_german_advisers
+		}
+	}
+
+		focus = {
+		id = BUL_contract_german_companies_2
+
+		prerequisite = { focus = BUL_contract_german_companies }
+		icon = GFX_focus_generic_heavy_tank
+		relative_position_id = BUL_contract_german_companies
+		x = 0
+		y = 1
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+				add_tech_bonus = {
+			    bonus = 1
+			    uses = 3
+				category = armor
+			}
+		}
+	}
+
+		focus = {
+		id = BUL_contract_italian_companies
+
+		prerequisite = { focus = BUL_reorganize_the_military_industry_2 }
+		icon = GFX_focus_ITA_a_colonial_empire
+		mutually_exclusive = { focus = BUL_contract_bulgarian_companies }
+		mutually_exclusive = { focus = BUL_contract_german_companies }
+		relative_position_id = BUL_reorganize_the_military_industry_2
+		x = 2
+		y = 1
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_ideas = BUL_italian_advisers
+			
+		}
+	}
+
+	
+
+		focus = {
+		id = BUL_contract_italian_companies_2
 
 		prerequisite = { focus = BUL_contract_italian_companies }
-		icon = GFX_focus_generic_little_entente
+		icon = GFX_focus_RAJ_military_into_the_workforce
 		relative_position_id = BUL_contract_italian_companies
+		x = 0
+		y = 1
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_ideas = BUL_realize_italians_advisers_are_shit
+		}
+	}
+
+
+	focus = {
+		id = BUL_rebuild_the_army
+
+		prerequisite = { focus = BUL_reorganize_the_military_industry }
+		icon = GFX_focus_generic_little_entente
+		relative_position_id = BUL_reorganize_the_military_industry
 		x = 0
 		y = 1
 		cost = 10
@@ -722,9 +1082,9 @@ focus_tree = {
 	focus = {
 		id = BUL_vasil_levsky_national_military_university
 
-		prerequisite = { focus = BUL_found_dvf_sopot }
+		prerequisite = { focus = BUL_rebuild_the_army }
 		icon = GFX_focus_research
-		relative_position_id = BUL_found_dvf_sopot
+		relative_position_id = BUL_rebuild_the_army
 		x = 0
 		y = 1
 		cost = 10
@@ -753,10 +1113,11 @@ focus_tree = {
 	focus = {
 		id = BUL_prussia_of_the_balkans
 
-		prerequisite = { focus = BUL_vasil_levsky_national_military_university }
 		prerequisite = { focus = BUL_found_dvf_sopot }
+		prerequisite = { focus = BUL_contract_italian_companies_2 focus =BUL_contract_german_companies_2 focus = BUL_contract_bulgarian_companies_2}
+		prerequisite = { focus = BUL_national_military_academy_3 }
 		icon = GFX_focus_BUL_prussia_of_the_balkans
-		relative_position_id = BUL_vasil_levsky_national_military_university
+		relative_position_id = BUL_found_dvf_sopot
 		x = 0
 		y = 1
 		cost = 10
@@ -852,15 +1213,16 @@ focus_tree = {
 		}
 	}
 
+
 	focus = {
-		id = BUL_war_logistics
+		id = BUL_national_military_academy_2
 
 		prerequisite = { focus = BUL_national_military_academy }
-		icon = GFX_goal_generic_army_motorized
+		icon = GFX_focus_generic_university_1
 		relative_position_id = BUL_national_military_academy
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -868,21 +1230,34 @@ focus_tree = {
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_tech_bonus = {
-				name = BUL_war_logistics
-			    bonus = 0.5
-			    ahead_reduction = 2
-			    uses = 2
-				category = support_tech
-			}
-			add_tech_bonus = {
-				name = BUL_war_logistics
-			    bonus = 1
-			    uses = 1
-				category = motorized_equipment
-			}
+			add_potential_special_forces_tree = yes
 		}
 	}
+
+	focus = {
+		id = BUL_national_military_academy_3
+
+		prerequisite = { focus = BUL_national_military_academy_2 }
+		icon = GFX_focus_AUS_frontmiliz_focus
+		relative_position_id = BUL_national_military_academy_2
+		x = 0
+		y = 1
+		cost = 5
+
+		available = {
+
+		}
+		
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			hidden_effect = {
+				set_technology = { masterful_blitz = 1 popup = no }
+			}
+			custom_effect_tooltip = SOV_the_glory_of_the_red_army_masterful_blitz_tactic_tt
+		}
+	}
+
+
 
 
  ######   #######  ##     ## ##     ## ##     ## ##    ## ####  ######  ########    ########  ########     ###    ##    ##  ######  ##     ## 
@@ -1161,7 +1536,7 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = {
 				ideology = fascism
-				popularity = 0.05
+				popularity = 0.15
 			}
 			add_political_power = 70
 			custom_effect_tooltip = available_political_advisor

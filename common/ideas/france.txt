@@ -13,10 +13,11 @@ ideas = {
 			picture = HUN_secret_rearmament
 
 			modifier = {
-				industrial_capacity_factory = 7.0
+				industrial_capacity_factory = 11.0
 				production_lack_of_resource_penalty_factor = -1
 			}
 		}
+
 		FRA_rearmament_policy = {
 			
 			allowed = {
@@ -32,7 +33,8 @@ ideas = {
 
 			modifier = {
 				production_speed_arms_factory_factor = 0.1
-				production_factory_start_efficiency_factor = 0.05
+				production_factory_start_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
 			}
 		}
 
@@ -50,8 +52,7 @@ ideas = {
 			picture = prc_low_popular_support3
 
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.05
-				local_resources_factor = 0.05
+				production_factory_max_efficiency_factor = 0.10
 			}
 		}
 
@@ -70,6 +71,24 @@ ideas = {
 
 			modifier = {
 				industrial_capacity_factory = 0.1
+			}
+		}
+
+		FRA_increase_military_spendings2 = {
+		name = FRA_increase_military_spendings
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			
+			picture = generic_war_preparation
+
+			modifier = {
+				industrial_capacity_factory = 0.2
 			}
 		}
 	
@@ -160,7 +179,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = -0.1
+				consumer_goods_factor = -0.15
 				stability_factor = -0.05
 			}
 		}
@@ -311,7 +330,7 @@ ideas = {
 			
 			modifier = {
 				economy_cost_factor = -0.5
-				conversion_cost_civ_to_mil_factor = -0.5
+				#conversion_cost_civ_to_mil_factor = -0.5
 			}
 		}
 		FRA_expanded_citizenship = {
@@ -378,7 +397,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				production_speed_industrial_complex_factor = 0.075
+				production_speed_industrial_complex_factor = 0.10
 			}
 		}
 		FRA_entrepeneurship = {
@@ -403,7 +422,7 @@ ideas = {
 			
 			modifier = {
 				production_speed_arms_factory_factor = 0.05
-				production_speed_dockyard_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.02
 			}
 		}
 		FRA_market_dynamism = {
@@ -653,6 +672,30 @@ ideas = {
 				neutrality_drift = 0.025
 			}
 		}
+
+		FRA_up_with_jean_darc2 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				army_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				political_power_gain = 0.05
+				war_support_factor = 0.05
+			}
+
+			picture = SWI_spirit_of_helvetia_aggressive_war
+			
+			removal_cost = -1			
+			
+		}
+
 		FRA_venerate_the_craftsman = {
 			picture = generic_production_bonus
 			allowed = {
@@ -667,7 +710,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_max_efficiency_factor = 0.1
+				line_change_production_efficiency_factor = 0.25
+				production_factory_start_efficiency_factor = 0.05
 			}
 		}
 		FRA_occupation_costs_4 = {
@@ -1264,7 +1308,7 @@ ideas = {
 			
 			modifier = {
 				non_core_manpower = 0.05
-				weekly_manpower = 1500
+				weekly_manpower = 500
 			}
 		}
 
@@ -1292,6 +1336,7 @@ ideas = {
 				land_reinforce_rate = -0.02
 				army_morale_factor = -0.1
 				army_org_factor = -0.1
+				surrender_limit = -0.15
 				hidden_modifier = {
 					ai_desired_divisions_factor = -0.25
 					ai_focus_defense_factor = 0.25
@@ -1307,7 +1352,7 @@ ideas = {
 
 			allowed_civil_war = {
 				tag = FRA
-						
+				}		
 			available = {
 				has_focus_tree = french_focus
 			}
@@ -1315,15 +1360,13 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				conscription_factor = -0.25
 				industrial_capacity_factory = -0.1
 				industrial_capacity_dockyard = -0.1
 			}
-		}
+		
 	}
 		FRA_inefficient_economy_2 = {
 			picture = generic_local_self_management
-			name = FRA_inefficient_economy_1
 			allowed = {
 				original_tag = FRA
 				always = no
@@ -1360,16 +1403,17 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_political_violence
+			picture = generic_disjointed_gov
 			
 			modifier = {
 				# custom_modifier_tooltip = FPM_political_violence_tt
-				political_power_cost = 0.6
+				political_power_cost = 0.8
 				stability_factor = -0.10
-				surrender_limit = -0.40
+				surrender_limit = -0.25
 			}
 		}
 		FPM_disjointed_government = {
+			name = "Improving Government"
 			
 			allowed = {
 				original_tag = FRA
@@ -1386,11 +1430,32 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_political_violence
+			picture = generic_disjointed_gov
 			
 			modifier = {
-				political_power_cost = 0.8
-				stability_factor = -0.10
+				political_power_cost = 0.4
+				stability_factor = -0.05
+				surrender_limit = -0.125
+			}
+		}
+
+		
+		FRA_celebrate_motherhood = {
+
+			picture = ITA_battaglie_per_la_nascite
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			modifier = {
+				monthly_population = 0.3
+				political_power_factor = 0.05
 			}
 		}
 		FPM_union_sacree = {
@@ -1530,7 +1595,7 @@ ideas = {
 
 			modifier = {
 				land_bunker_effectiveness_factor = 0.15
-				max_dig_in = 7.5
+				max_dig_in_factor = 0.1
 				production_speed_bunker_factor = 0.1
 				production_speed_coastal_bunker_factor = 0.1
 			}
@@ -1557,6 +1622,10 @@ ideas = {
 			equipment_bonus = {
 				motorized_equipment = {
 					build_cost_ic = -0.1 instant = yes
+				}
+				mechanized_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
 				}
 			}
 		}
@@ -1782,7 +1851,24 @@ ideas = {
 			}
 		}
 		
-		
+		FRA_class_collaboration = {
+			
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			
+			allowed_civil_war = {
+				has_government = fascism
+			}
+			
+			picture = SOV_scientist_defect
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				global_building_slots_factor = 0.15
+			}
+		}
 		
 	}
 	

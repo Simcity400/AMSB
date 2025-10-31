@@ -2002,7 +2002,7 @@ focus_tree = {
 			}
 			add_days_mission_timeout = {
 				mission = SPA_carlist_uprising_mission
-				days = 70
+				days = 140
 			}
 		}
 	}
@@ -2165,7 +2165,7 @@ focus_tree = {
 			show_ideas_tooltip = SPA_raimundo_fernandez_cuesta
 			add_days_mission_timeout = {
 				mission = SPA_carlist_uprising_mission
-				days = 140
+				days = 240
 			}
 		}
 	}
@@ -2755,7 +2755,18 @@ focus_tree = {
 			GER = {
 				add_to_faction = SPA
 			}
-							
+			every_controlled_state = {
+				limit = {
+					NOT = {	state = 177 }
+					NOT = {	state = 173 }
+					NOT = {	state = 169 }
+					# is_fully_controlled_by = ROOT
+				}
+				remove_building = {
+					type = air_base
+					level = 10
+				}
+			}			
 		}
 	}
 
@@ -2799,6 +2810,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			add_ideas = SPA_No_bombing
 			every_owned_state = {
 				limit = {
 					is_controlled_by = ROOT
@@ -2807,7 +2819,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = anti_air_building
-					level = 4
+					level = 5
 					instant_build = yes
 				}
 			}
