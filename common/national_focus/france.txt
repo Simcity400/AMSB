@@ -57,6 +57,12 @@
 		
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
+			310 = {
+				add_extra_state_shared_building_slots = 5
+			}
+			694 = {
+				add_extra_state_shared_building_slots = 5
+			}
 				20 = {
 				limit = {
 					is_controlled_by = ROOT
@@ -3229,7 +3235,7 @@
 			#FRA_communism_riot_effect = yes
 			}
 			remove_ideas = FRA_political_violence
-			695 = {
+			694 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
@@ -4027,6 +4033,32 @@ focus = {
 	
 		search_filters = { FOCUS_FILTER_POLITICAL  }
 		completion_reward = {
+			310 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			694 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			695 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			FRA = { transfer_state = 695 }
+			add_state_core = 695
 			add_timed_idea = {
             idea = FRA_post_cap_boost
             days = 40
