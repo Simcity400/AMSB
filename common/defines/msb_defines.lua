@@ -257,6 +257,6 @@ NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = 0  --Vanilla -0.12
 
 
 -- Cosmonaut AMSB
-NDefines.NMilitary.AIR_SUPPORT_BASE = 0.13
+NDefines.NMilitary.AIR_SUPPORT_BASE = 0.25
 NDefines.NMilitary.UNIT_EXPERIENCE_PER_TRAINING_DAY = 0.0030  --Vanilla 0.0015
 NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.051  --Vanilla 0.053
