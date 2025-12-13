@@ -35,7 +35,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 2 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -50,6 +50,7 @@ ENG_propaganda_campaigns = {
 
 		available = {
 			ENG_propaganda_poster_slot_available = yes
+			has_completed_focus = ENG_time_of_economic_prosperity
 		}
 
 		days_remove = 365
@@ -71,7 +72,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 3 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -96,7 +97,7 @@ ENG_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			air_home_defence_factor = 0.25
+			air_home_defence_factor = 0.1
 			army_core_attack_factor = 0.2
 			army_core_defence_factor = 0.2
 			minimum_training_level = -0.2
@@ -110,7 +111,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 4 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -125,6 +126,7 @@ ENG_propaganda_campaigns = {
 
 		available = {
 			ENG_propaganda_poster_slot_available = yes
+			has_completed_focus = ENG_expand_the_secret_intelligence_service_focus 
 		}
 
 		days_remove = 365
@@ -149,7 +151,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 5 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -164,7 +166,7 @@ ENG_propaganda_campaigns = {
 
 		available = {
 			ENG_propaganda_poster_slot_available = yes
-			has_completed_focus = air_rearmament_focus
+			has_completed_focus = ENG_raf
 			has_war = yes
 		}
 
@@ -187,7 +189,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 6 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -224,7 +226,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 7 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -267,7 +269,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 8 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 	
@@ -306,7 +308,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 9 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 	
@@ -322,7 +324,7 @@ ENG_propaganda_campaigns = {
 		available = {
 			ENG_propaganda_poster_slot_available = yes
 			has_completed_focus = aircraft_production_focus
-			has_war_with = JAP
+			has_tech = advanced_small_airframe
 		}
 
 		days_remove = 365
@@ -334,14 +336,14 @@ ENG_propaganda_campaigns = {
 		complete_effect = {
 			set_variable = { ENG_new_propaganda_campaign = 10 }
 			ENG_pick_propaganda_campaign_slot_effect = yes
-			add_ideas = ROM_local_development
+			add_ideas = ROM_local_development_2
 		}
 
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 10 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
-			remove_ideas = ROM_local_development
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+			remove_ideas = ROM_local_development_2
 		}
 	}
 	
@@ -378,7 +380,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 11 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 	
@@ -423,7 +425,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 12 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 	
@@ -438,6 +440,7 @@ ENG_propaganda_campaigns = {
 
 		available = {
 			ENG_propaganda_poster_slot_available = yes
+			has_completed_focus = limited_rearmament_focus
 		}
 
 		days_remove = 365
@@ -447,7 +450,7 @@ ENG_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			consumer_goods_factor = -0.15
+			consumer_goods_factor = -0.1
 		}
 
 		complete_effect = {
@@ -458,7 +461,7 @@ ENG_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 13 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 }

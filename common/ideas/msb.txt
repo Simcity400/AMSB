@@ -22,100 +22,48 @@ ideas = {
 			cancel_if_invalid = no
 		}
 	}
-}
-ideas = {
-	trade_laws = {
-		law = yes
-		State_General_Mobilization_Law = {
-			picture = jap_militarism_showa
-			allowed = { 
-				original_tag = jap
-			}
-			removal_cost = -1
-
-			cost = 150
-			
-			modifier = {
-				min_export = 0
-				industrial_capacity_factory = 0.1
-				production_speed_buildings_factor = 0.10
-				research_speed_factor = 0.05
-				production_factory_efficiency_gain_factor = 0.15
-				civilian_intel_to_others = 0
-				navy_intel_to_others = 0
-			}
-			allowed_to_remove = {
-				always = no
-			}
-			cancel_if_invalid = no
-		}
-	}
-}
-ideas = {
-	trade_laws = {
-		law = yes
-		ROM_oil_lend_lease = {
-			picture = generic_exploit_mines
-			allowed = {
-				always = no
-			}
-			removal_cost = -1
-			modifier = {
-				min_export = 0
-				industrial_capacity_factory = 0.10
-				industrial_capacity_dockyard = 0.10
-				production_speed_buildings_factor = 0.10
-				research_speed_factor = 0.05
-				civilian_intel_to_others = 40
-				navy_intel_to_others = 20
-			}
-			allowed_to_remove = {
-				always = no
-			}
-			cancel_if_invalid = no
-		}
-	}
-}
-
-
-ideas = {
 	country = {
-		no_tanks = {
-			picture = generic_tank_bonus
+		extra_cp = {
 			allowed = {
-				always = no 
-				}
-			allowed_civil_war = {
-				always = yes
+				always = no
+			}
+			cancel = {
+
 			}
 			removal_cost = -1
-			equipment_bonus = {
-				light_tank_chassis = {
-					build_cost_ic = 100 instant = yes
-				}
-				medium_tank_chassis = {
-					build_cost_ic = 100 instant = yes
-				}
-				heavy_tank_chassis = {
-					build_cost_ic = 100 instant = yes
-				}
+			picture = MEX_politicised_army_2
+			modifier = {
+				max_command_power = 110
+				command_power_gain_mult = 0.5
 			}
 		}
-		
-	}
-}
-ideas = {
-	hidden_ideas = {
-		no_justify = {
+
+		JAP_domestic_air_production = {
 			allowed = {
-				always = no 
-				}
-			allowed_civil_war = {
-				always = yes
+				always = no
 			}
+
 			removal_cost = -1
-			modifier = {
-				justify_war_goal_time = 100
+
+			picture = man_five_year_plan_air
+
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.05 
+					instant = yes
+				}
+				cv_small_plane_airframe = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
 			}
 		}
 	}

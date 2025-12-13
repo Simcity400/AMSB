@@ -295,8 +295,31 @@ ideas = {
 				legitimacy_gain_factor = 0.05
 				legitimacy_daily = 0.25
 				training_time_army_factor = -0.6
-				production_factory_efficiency_gain_factor = 0.3
 				}
+		}
+
+	
+		FRA_eco_post_cap_idea = { # fra post cap idea
+			
+			allowed = {
+				original_tag = FRA
+				always = yes
+			}
+			allowed_civil_war = {
+				has_government = democratic
+			}
+			available = {
+			}
+
+			removal_cost = -1
+
+			picture = ARG_envoy_to_london
+			
+			modifier = {
+				industrial_capacity_factory = 6 # fra post cap idea
+				production_lack_of_resource_penalty_factor = -1
+				communism_drift = -0.3
+			}
 		}
 
 		FRA_revolution_nationale = {
@@ -612,29 +635,6 @@ ideas = {
 			}
 
 			picture = generic_coastal_defense_ships2
-			
-			removal_cost = -1			
-			
-		}
-
-		FRA_up_with_jean_darc2 = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-				army_attack_factor = 0.05
-				army_core_defence_factor = 0.05
-				political_power_gain = 0.05
-				war_support_factor = 0.05
-			}
-
-			picture = SWI_spirit_of_helvetia_aggressive_war
 			
 			removal_cost = -1			
 			
@@ -1946,7 +1946,7 @@ ideas = {
 				acclimatization_hot_climate_gain_factor = 0.50
 				army_morale_factor = 0.08
 				army_org_factor = 0.05
-				breakthrough_factor = 0.05
+				#breakthrough_factor = 0.05
 				}
 		}
 
@@ -1991,8 +1991,8 @@ ideas = {
 			modifier = {
 				ai_desired_divisions_factor = 0.25
 				legitimacy_gain_factor = 0.10
-				army_defence_against_major_factor = 0.05
-				army_attack_against_major_factor  = 0.10
+				#army_defence_against_major_factor = 0.05
+				#army_attack_against_major_factor  = 0.10
 				army_morale_factor = 0.05
 				acclimatization_hot_climate_gain_factor = 0.50
 				}

@@ -1,0 +1,86 @@
+bookmarks = {
+	bookmark = {
+		name = "Operation Barbarossa"
+		desc = "This game mode focuses only on the Eastern Front. The game starts in 1941 where the players then have 6 months to set up before Operation Barbarossa commences."
+		date = 1941.1.1.12
+		picture = "GFX_select_date_barb"
+		default_country = "GER"
+		default = yes
+
+		"GER"={
+			history = "GER_BLITZKRIEG_DESC"
+			ideology = fascism
+			available = { has_dlc = "Waking the Tiger" }
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"SOV"={
+			history = "SOV_BLITZKRIEG_DESC"
+			ideology = communism
+			available = { has_dlc = "No Step Back" }
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}	
+			
+		}
+        ROM ={
+			history = "  "
+			ideology = fascism
+			#available = { has_dlc = "Arms Against Tyranny" } 
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		HUN = {
+			history = "HUN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			available = { has_dlc = "Gotterdammerung" }
+			ideas = {
+				HUN_treaty_of_triannon_wuw
+				HUN_gombos_trade_treaty
+				HUN_hungarian_national_defense_association
+			}
+			focuses = {
+				wuw_HUN_proclaim_greater_hungary
+				wuw_HUN_strengthen_horthys_reign
+				wuw_HUN_invite_german_investors
+			}
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+		effect = {
+			WST = {
+				add_equipment_to_stockpile = {
+					type = convoy
+					amount = 99999
+				}
+			}
+			SOV = {
+				set_country_flag = barbstart
+			}
+			GER = {
+				set_country_flag = barbstart
+			}
+			HUN = {
+				set_country_flag = barbstart
+			}
+			ROM = {
+				set_country_flag = barbstart
+			}
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

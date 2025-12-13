@@ -173,205 +173,125 @@ country_event = {
 	
 	trigger = {
 		original_tag = FRA
-	    surrender_progress = 0.6
+	    surrender_progress = 0.32
 	}
-	mean_time_to_happen = { days = 3}
+
 	immediate = {
 		set_global_flag = achievement_france_surrender
 	}
-	timeout_days = 3
+	
 
 	option = { # Become Free French
 		name = france.10.b
 		ai_chance = {
 			factor = 85
 		}
-		set_global_flag = fall_of_france
+		#set_global_flag = fall_of_france
 		save_global_event_target_as = free_france
-		GER = { country_event = france.14 }
-		custom_effect_tooltip = france.10.b_tt
-		set_country_flag = GER_dont_seize_gold_reserves_flag #Can't allow Germany to seize out gold reserves just yet
-		hidden_effect = {
-		    FRA = {
-				add_ideas = FRA_no_cap
+		#custom_effect_tooltip = france.10.b_tt
+		# set_country_flag = GER_dont_seize_gold_reserves_flag #Can't allow Germany to seize out gold reserves just yet
+	}
+	
+}
+country_event = {
+	id = france.101
+	hidden = yes
+	trigger = {
+		tag = FRA
+		has_war_with = GER
+		has_government = democratic
+		16 = { is_controlled_by = GER }
+		is_in_faction_with = ENG
+		ENG = { has_war_with = GER }
+		surrender_progress > 0.7
+		GER = {
+			OR = {
+				is_faction_leader = yes
+				has_government = neutrality
+			}
+		}
+		has_civil_war = no
+		#Don't fire if France has pushed pretty far into ITA or GER
+		NOT = {
+			any_state = {
+				is_on_continent = europe
+				NOT = { state = 158 }
+				NOT = { state = 114 }
+				NOT = { state = 50 }
+				NOT = { state = 42 }
+				is_controlled_by = ROOT
+				OR = {
+					is_owned_by = GER
+					AND = {
+						FRA = { has_War_with = ITA }
+						is_owned_by = ITA
+					}
+				}
+			}
+		}		
+
+		#Don't fire if any states in France are controlled by a different human player
+		NOT = {
+			any_country = {
+				is_ai = no
+				NOT = { tag = GER }
+				NOT = { is_in_faction_with = GER }
+				has_war_with = ROOT
+				any_state = {
+					is_on_continent = europe
+					NOT = { state = 1 }
+					NOT = { state = 735 }
+					NOT = { state = 21 }
+					NOT = { state = 851 }
+					NOT = { state = 31 }
+					is_owned_by = ROOT
+					is_controlled_by = PREV
+				}
 			}
 		}
 	}
-	
+	mean_time_to_happen = { days = 2 }
+	immediate = {
+		country_event = france.10
+	}
 }
 
 
 
-# France wants Armistice (Germany)
+# France wants Armistice (Germany) Vichy
 country_event = {
 	id = france.14
 	title = france.14.t
 	desc = france.14.d
 	picture = GFX_report_event_german_parade_paris
-
-	fire_only_once = yes
 	
 	is_triggered_only = yes
 	
-	option = { # Agree
-	
-		name = france.14.a
-		ai_chance = {
-			factor = 50
+	option = {
+		name = france.14.a 
+		hidden_effect = { 
+			elwolfmod_vichy_france = yes
+			news_event = { id = news.34 hours = 6 } 
 		}
-		hidden_effect = {
-			514 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			459 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			32 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			28 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			19 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			26 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			21 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			27 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			14 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			461 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			24 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			33 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			18 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			460 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			16 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			25 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			30 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			462 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			31 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			29 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			15 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			785 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			23 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			806 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			20 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			735 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			458 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			851 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			513 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			665 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			22 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-			17 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
-		
-			GER = {
-				transfer_state = 29
-				transfer_state = 785
-				transfer_state = 18
-				transfer_state = 28
-				transfer_state = 17
-				transfer_state = 27
-				transfer_state = 24
-				transfer_state = 30
-				transfer_state = 15
-				transfer_state = 14
-				transfer_state = 23
-				transfer_state = 806
-				transfer_state = 19
-				transfer_state = 16
-				every_state = {
-					limit = {
-						is_core_of = FRA
-					}
-					add_compliance = 80
-				}
-			}
-			ITA = {
-				transfer_state = 735
-				transfer_state = 851
-				transfer_state = 1
-				transfer_state = 458
-				transfer_state = 665
-
-
-			}
-			EFR = {
-				give_military_access = GER
-				transfer_state = 20
-				transfer_state = 22
-				transfer_state = 25
-				transfer_state = 31
-				transfer_state = 33
-				transfer_state = 26
-				transfer_state = 32
-				transfer_state = 21
-				transfer_state = 460
-				transfer_state = 513
-				transfer_state = 459
-				transfer_state = 461
-				transfer_state = 462
-
-				462 = {
-					set_demilitarized_zone = yes
-				}
-				461 = {
-					set_demilitarized_zone = yes
-				}
-				459 = {
-					set_demilitarized_zone = yes
-				}
-				513 = {
-					set_demilitarized_zone = yes
-				}
-				460 = {
-					set_demilitarized_zone = yes
-				}
-				
-
-				
-				
-
-			}
-			
-			FROM = {
-				clr_country_flag = GER_dont_seize_gold_reserves_flag
-			}
-			FRA = {
-				transfer_state = 713
-				transfer_units_fraction = {
-					target = EFR
-					air_ratio = 1
-					army_ratio = 1
-					stockpile_ratio = 1
-				}
-				
-				add_equipment_to_stockpile = {
-					type = motorized_equipment
-					amount = 2000
-				}
-				add_equipment_to_stockpile = {
-					type = train_equipment
-					amount = 100
-				}
-				add_equipment_to_stockpile = {
-					type = convoy
-					amount = 600
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_0
-					amount = 6000
-				}
-				add_ideas = FRA_defeatism
-				remove_ideas = FRA_victors_of_wwi
-		        remove_ideas = FPM_disjointed_government1
-		        remove_ideas = FRA_protected_by_the_maginot_line
-				set_cosmetic_tag = FRA_FREE
-				
-				
-
-			}
-		}
-	
-		
-
 	}
-	
-
-	
 }
 
+# France wants Armistice (Germany)
+country_event = {
+	id = france.69420
+	title = france.14.t
+	desc = france.14.d
+	picture = GFX_report_event_german_parade_paris
+	
+	is_triggered_only = yes
 
-
-# Germany refuses armistice! (France)
+	option = { # Conquer everything!
+		name = france.14.b
+		FRA = {
+			country_event = { hours = 6 id = france.15 }
+		}
+	}
+}
 country_event = {
 	id = france.15
 	title = france.15.t
@@ -384,7 +304,6 @@ country_event = {
 		name = france.15.a
 	}
 }
-
 #Capital captured by non french faction
 country_event = {
 	id = france.16
@@ -410,6 +329,7 @@ country_event = {
 		remove_ideas = FRA_victors_of_wwi
 		remove_ideas = FRA_disjointed_government
 		remove_ideas = FRA_protected_by_the_maginot_line
+		remove_ideas = FRA_up_with_jean_darc2
 	}
 }
 
@@ -964,6 +884,42 @@ country_event = {
 	}
 }
 
+# Édouard Daladier Resigns
+country_event = {
+	id = france.31
+	title = france.31.t
+	desc = france.31.d
+	picture = GFX_report_event_german_parade_paris
+
+	fire_only_once = yes
+
+	trigger = {
+		original_tag = FRA
+		has_government = democratic
+		has_war = yes
+	} 
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	option = {
+		name = france.31.a
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = FRA_paul_reynaud
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+					emergency_powers
+				}
+			}
+			promote_leader = yes
+		}
+		set_country_flag = daladier_resigned
+	}
+}
 
 
 # Hidden event to add AI values for nationalist spain if France is going fascist

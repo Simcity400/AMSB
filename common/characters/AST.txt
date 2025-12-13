@@ -78,12 +78,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { brilliant_strategist trait_engineer infantry_leader organizer }
-			skill=6
-			attack_skill=2
-			defense_skill=4
-			planning_skill=4
-			logistics_skill=3
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			planning_skill=5
+			logistics_skill=2
 			legacy_id=-1
 		}
 	}
@@ -133,12 +132,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { trickster trait_engineer skilled_staffer infantry_leader }
-			skill=5
+			traits={ hill_fighter }
+			skill=3
 			attack_skill=2
-			defense_skill=5
+			defense_skill=4
 			planning_skill=3
-			logistics_skill=2
+			logistics_skill=1
 			legacy_id=-1
 		}
 	}
@@ -171,12 +170,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { panzer_leader trait_engineer organizer trickster }
-			skill=6
-			attack_skill=4
+			traits={ armor_officer }
+			skill=1
+			attack_skill=1
 			defense_skill=1
-			planning_skill=3
-			logistics_skill=5
+			planning_skill=1
+			logistics_skill=1
 			legacy_id=-1
 		}
 	}
@@ -338,9 +337,9 @@ characters={
 				original_tag = AST
 			}
 			traits = {
-				army_chief_offensive_2
+				army_chief_offensive_1
 			}
-			cost =  100
+			cost =  50
 			ai_will_do = {
 				factor = 1.000
 			}
@@ -561,7 +560,7 @@ characters={
 				has_dlc = "Together for Victory"
 			}
 			traits = {
-				army_commando_2
+				army_commando_1
 			}
 			cost = 100
 		}		
@@ -580,6 +579,11 @@ characters={
 			ledger = army
 			allowed = {
 				original_tag = AST
+				has_dlc = "Together for Victory"
+			}
+			cost = 150.000
+			available = {
+				has_completed_focus = AST_australian_army_catering_corps
 			}
 			traits = {
 				army_logistics_2
@@ -669,7 +673,7 @@ characters={
 			allowed = {
 				original_tag = AST
 			}
-			cost = 150.000
+			cost = 100.000
 			traits = {
 				silent_workhorse 
 			}
@@ -677,7 +681,8 @@ characters={
 				if = {
 					limit = {
 						has_dlc = "Together for Victory"
-					} 
+					}
+					has_completed_focus = AST_support_the_policy_of_appeasement 
 				}
 			}
 		}		

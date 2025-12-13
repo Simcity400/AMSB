@@ -20,7 +20,7 @@ every_possible_country = {
 		}
 		IF = {
 			limit = { has_dlc = "Arms Against Tyranny" }
-			NOT = { OR = { tag = ICE tag = DEN tag = SWE tag = NOR } }
+			NOT = { OR = {  tag = DEN tag = SWE tag = NOR } }
 		}
 
 		IF = {
@@ -77,7 +77,7 @@ every_possible_country = {
 		}
 		IF = {
 			limit = { has_dlc = "Arms Against Tyranny" }
-			NOT = { OR = { tag = ICE tag = DEN tag = SWE tag = NOR } }
+			NOT = { OR = {  tag = DEN tag = SWE tag = NOR } }
 		}
 
 		IF = {
@@ -138,7 +138,7 @@ every_possible_country = {
 		}
 		IF = {
 			limit = { has_dlc = "Arms Against Tyranny" }
-			NOT = { OR = { tag = ICE tag = DEN tag = SWE tag = NOR } }
+			NOT = { OR = {  tag = DEN tag = SWE tag = NOR } }
 		}
 		# TODO CHANGE THIS TO THE CORRECT DLC LOCK
 		IF = {
@@ -493,97 +493,6 @@ every_possible_country = {
 	}
 }
 
-every_possible_country = { #Iceland is a special case
-	limit = { 
-		original_tag = ICE 
-		has_dlc = "Arms Against Tyranny"
-	}
-	generate_character = {
-		token_base = generic_army_art # token will be TAG_token_base
-		advisor = {
-			slot = high_command
-			traits = { army_artillery_1 }
-			ledger = army
-			cost = 50
-		}
-		portraits = { 
-			army = { small = GFX_idea_generic_army_art }
-		}
-	}
-	generate_character = {
-		token_base = generic_army_log # token will be TAG_token_base
-		advisor = {
-			slot = high_command
-			traits = { army_logistics_2 }
-			ledger = army
-			cost = 100
-		}
-		portraits = { 
-			army = { small = GFX_idea_generic_army_log }
-		}
-	}
-	generate_character = {
-		token_base = generic_navy_fleet_log # token will be TAG_token_base
-		advisor = {
-			slot = high_command
-			traits = { navy_fleet_logistics_1 }
-			ledger = navy
-			cost = 50
-		}
-		portraits = { 
-			army = { small = GFX_idea_generic_navy_fleet_log }
-		}
-	}
-	generate_character = {
-		token_base = generic_air_air_combat_trainer # token will be TAG_token_base
-		advisor = {
-			slot = high_command
-			traits = { air_air_combat_training_2 }
-			ledger = air
-			cost = 100
-		}
-		portraits = { 
-			army = { small = GFX_idea_generic_air_air_combat_trainer }
-		}
-	}
-	# generic theorists
-	generate_character = {
-		token_base = generic_military_theorist # token will be TAG_token_base
-		advisor = {
-			slot = theorist
-			traits = { military_theorist }
-			ledger = army
-			cost = 50
-		}
-		portraits = { 
-			army = { small = GFX_idea_generic_military_theorist }
-		}
-	}
-	generate_character = {
-		token_base = generic_naval_theorist # token will be TAG_token_base
-		advisor = {
-			slot = theorist
-			traits = { naval_theorist }
-			ledger = navy
-			cost = 50
-		}
-		portraits = { 
-			army = { small = GFX_idea_generic_naval_theorist }
-		}
-	}
-	generate_character = {
-		token_base = generic_air_warfare_theorist # token will be TAG_token_base
-		advisor = {
-			slot = theorist
-			traits = { air_warfare_theorist }
-			ledger = air
-			cost = 50
-		}
-		portraits = { 
-			army = { small = GFX_idea_generic_air_warfare_theorist }
-		}
-	}
-}
 
 every_possible_country = { #BEL has no chief of navy, nor any naval theorists
 	limit = {

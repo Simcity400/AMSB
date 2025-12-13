@@ -7,20 +7,21 @@ state={
 	state_category = pastoral
 	
 	
-	history=
-	{
-				# No Asia + Scraping
-		1936.1.1.13 = { owner = WST add_core_of = WST }
-		1936.1.1.14 = { owner = WST add_core_of = WST }
+	history = {
 
-        owner = CHI
-
-       # Less Minors
-		1936.1.1.15 = { owner = CHI add_core_of = CHI }
-		add_core_of = CHI
+		owner = CHI
+		
 		add_core_of = CHI
 		
-		add_core_of = MAN
+		
+
+		victory_points = {
+			3427 1 # Ordos
+		}
+
+		victory_points = {
+			10854 1 # Wuhai
+		}
 		
 		buildings = {
 			infrastructure = 1
@@ -32,12 +33,16 @@ state={
 		
 		1939.1.1 = {
 			
-			owner = PRC
-			controller = MAN
+			owner = CHI
+			controller = MEN
 
 		}
 	}
 	manpower=500000
+
+	resources = {
+		coal = 8 #initial distribution
+	}
 	buildings_max_level_factor=1.000
 
 	local_supplies=0.0 

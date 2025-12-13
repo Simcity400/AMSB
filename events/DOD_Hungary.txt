@@ -1159,6 +1159,24 @@ country_event = {
 	
 	is_triggered_only = yes
 
+	option = { #challenge
+		name = DOD_hungary.40.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				has_war = yes
+				factor = 0.1
+			}
+		}
+		add_stability = -0.05
+		add_war_support = -0.1
+		HUN = { country_event = { id = DOD_hungary.41 } } #option for HUN to back down
+		
+	}
 	option = { #Fold
 		name = DOD_hungary.40.b
 		ai_chance = {
@@ -4181,7 +4199,7 @@ country_event = {
 		HUN = {
 			transfer_state = 70
 			transfer_state = 71
-			transfer_state = 72
+			# transfer_state = 72
 			transfer_state = 73
 		}
 		if = { #In case Demand Southern Slovakia Bypasses, this will transfer it.  
@@ -4190,6 +4208,75 @@ country_event = {
 			}
 			HUN = { transfer_state = 664 }
 		}
+		if = {
+			limit = {
+				country_exists = CZE
+			}
+			CZE = {
+				set_cosmetic_tag = CZE_ONLY
+			}
+		}
+	}
+
+	option = {# puppet
+		name = DOD_hungary.101.b
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				70 = {
+					is_owned_by = CZE
+				}
+			}
+			SLO = { transfer_state = 70 }
+		}
+		if = {
+			limit = {
+				71 = {
+					is_owned_by = CZE	
+				}
+			}
+			SLO = { transfer_state = 71 }
+		}
+		if = {
+			limit = {
+				72 = {
+					is_owned_by = CZE	
+				}
+			}
+			SLO = { transfer_state = 72 }
+		}
+		if = {
+			limit = {
+				154 = { is_owned_by = HUN }
+				73 = {
+					is_owned_by = CZE
+				}
+			}
+			HUN = { transfer_state = 73 }
+		}
+		if = {
+			limit = {
+				664 = {
+					is_owned_by = CZE
+				}
+			}
+			HUN = { transfer_state = 664 }
+		}
+		every_state = {
+			limit = {
+				is_owned_by = SLO
+			}
+			add_core_of = SLO
+		}
+		hidden_effect = {
+			SLO = {
+				load_oob = SLO_1939
+				add_manpower = 9876
+			}
+		}
+		puppet = SLO
 		if = {
 			limit = {
 				country_exists = CZE
@@ -5162,7 +5249,7 @@ country_event = {
 			FROM = {
 				transfer_state = 70
 				transfer_state = 71
-				transfer_state = 72
+				# transfer_state = 72
 			}
 			SLO = {
 				add_state_core = 70
@@ -5283,6 +5370,18 @@ country_event = {
 			country_event = { id = DOD_hungary.142 days = 3 }
 		}
 	}
+
+	option = {# refuse
+		name = DOD_hungary.140.b
+		ai_chance = {
+			base = 25
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		HUN = { country_event = { id = DOD_hungary.144 days = 3 } }
+	}
 }
 
 #Bled Agreement - ROM/FRA has agreed, minors get to issue a response
@@ -5293,6 +5392,41 @@ country_event = {
 	picture = GFX_report_event_journalists_speech
 	
 	is_triggered_only = yes
+
+	option = {# intervene
+		name = DOD_hungary.141.a
+		trigger = {
+			HUN = {
+				OR = {
+					has_government = fascism
+					has_added_tension_amount > 0.05 #hungary has been bad
+				}
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = HUN
+		}
+		add_political_power = -200
+		add_stability = -0.15
+		add_war_support = -0.1
+		add_threat = 5
+	}
+	option = {# issue a protest
+		name = DOD_hungary.141.b
+		ai_chance = {
+			factor = 45
+		}
+		add_opinion_modifier = { target = HUN modifier = protest_action }
+		HUN = { country_event = DOD_hungary.143 }
+	}
 
 	option = {# accept it
 		name = DOD_hungary.141.c

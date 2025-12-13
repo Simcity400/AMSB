@@ -17,9 +17,20 @@
  	}
 
  	available = {
- 			FROM = {
- 					has_completed_focus = SMB_domestic_production
+ 		IF = {
+ 			limit = {
+ 				FROM = { NOT = { original_tag = BRA } }
  			}
+ 			FROM = { NOT = { has_war_with = BRA } }
+ 		}
+ 		ELSE = { #original_tag = BRA
+ 			FROM = {
+ 				OR = {
+ 					has_completed_focus = SMB_domestic_production
+ 					has_completed_focus = SMB_foreign_designs
+ 				}
+ 			}
+ 		} 
  	}
  }
 
@@ -41,7 +52,22 @@ BRA_amrj_organization = {
 	icon = GFX_idea_BRA_arsenal_de_marinha
 	allowed = {
 		has_dlc = "Trial of Allegiance"
+		# TODO_JUNO: Add correct DLC check!
 		tag = BRA 
+	}
+
+	available = {
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = BRA } }
+			}
+			FROM = { NOT = { has_war_with = BRA } }
+		}
+		ELSE = { #original_tag = BRA
+			FROM = {
+				controls_state = 500 #Rio de Janeiro
+			}
+		} 
 	}
 }
 
@@ -68,9 +94,19 @@ BRA_embraer_organization = {
 	}
 
 	available = {
-			FROM = {
-					has_completed_focus = SMB_establish_aircraft_industry
+		IF = {
+			limit = {
+				FROM = { NOT = { original_tag = BRA } }
 			}
+			FROM = { NOT = { has_war_with = BRA } }
+		}
+		ELSE = {
+			FROM = {
+				OR = {
+					has_completed_focus = SMB_establish_aircraft_industry
+				}
+			}
+		}
 	}
 }
 
@@ -132,13 +168,13 @@ BRA_fnm_organization = {
 			}
 			FROM = { NOT = { has_war_with = BRA } }
 		}
-	#	ELSE = {
-	#		FROM = { 
-	#			OR = { 
-	#				has_completed_focus = SMB_motorized 
-	#				has_completed_focus = BRA_fabrica_nacional_de_motores
-	#			}
-	#	}
-	#}
+		ELSE = {
+			FROM = { 
+				OR = { 
+					has_completed_focus = SMB_motorized 
+					has_completed_focus = BRA_fabrica_nacional_de_motores
+				}
+		}
+	}
 }
-}
+

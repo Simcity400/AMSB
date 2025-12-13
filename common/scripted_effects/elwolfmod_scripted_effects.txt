@@ -1,0 +1,82 @@
+elwolfmod_vichy_france = {
+	FRA = {
+		set_cosmetic_tag = FRA_FREE
+		add_ideas = FRA_defeatism
+		add_ideas = war_economy 
+		set_legitimacy = 100
+		remove_ideas = FRA_full_employment
+		remove_ideas = FRA_protected_by_the_maginot_line
+		remove_ideas = FRA_victors_of_wwi
+		remove_ideas = FRA_disjointed_government
+		remove_ideas FRA_inefficient_economy_1
+		remove_ideas FRA_inefficient_economy_2
+		add_equipment_to_stockpile = {
+			type = convoy_1
+			amount = 200
+			producer = FRA
+		}
+		set_capital = {
+			state = 539
+		}
+	}
+	EFR = {
+		#Mainland vichy shit
+		transfer_state = 26
+		set_capital = {
+			state = 26
+		}
+		transfer_state = 20
+		transfer_state = 32
+		transfer_state = 21
+		transfer_state = 22
+		transfer_state = 31
+		transfer_state = 25
+		transfer_state = 33
+		#Algeria vichy shit
+		transfer_state = 459
+		transfer_state = 461
+		transfer_state = 462
+		transfer_state = 462
+		transfer_state = 460
+		transfer_state = 513
+		462 = {
+			set_demilitarized_zone = yes
+		}
+		461 = {
+			set_demilitarized_zone = yes
+		}
+		459 = {
+			set_demilitarized_zone = yes
+		}
+		513 = {
+			set_demilitarized_zone = yes
+		}
+		460 = {
+			set_demilitarized_zone = yes
+		}
+	}
+	GER = {
+		diplomatic_relation = {   
+			country = EFR    
+			relation = guarantee   
+			active = yes 
+		} 
+	}
+	
+	ITA = { 
+		transfer_state = 735 
+		transfer_state = 851 
+		transfer_state = 1 
+		transfer_state = 665
+		transfer_state = 458
+		735 = { 
+			add_compliance = 30 
+		}
+		1 = { 
+			add_compliance = 30 
+		}
+		851 = { 
+			add_compliance = 30 
+		}
+	}
+}

@@ -1,0 +1,62 @@
+instant_effect = {
+	set_technology = {
+		improved_small_airframe = 1
+		engines_3 = 1
+		range_improvements = 1
+		survivability_studies = 1
+	}
+	create_equipment_variant = {
+		name = "Barb CAS"
+		type = small_plane_cas_airframe_2
+		design_team = mio:GER_junkers_organization
+		modules = {
+			fixed_main_weapon_slot = heavy_bomb_locks
+			fixed_auxiliary_weapon_slot_1 = heavy_bomb_locks
+			fixed_auxiliary_weapon_slot_2 = heavy_bomb_locks
+			fixed_auxiliary_weapon_slot_3 = empty
+			engine_type_slot = engine_3_1x
+			special_type_slot_1 = non_strategic_materials_small
+			special_type_slot_2 = fuel_tanks_small
+			special_type_slot_3 = empty
+			special_type_slot_4 = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "F2"
+		type = small_plane_airframe_2
+		design_team = mio:GER_focke_wulf_organization
+		modules = {
+			fixed_main_weapon_slot = heavy_mg_4x
+			fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+			fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
+			fixed_auxiliary_weapon_slot_3 = empty
+			engine_type_slot = engine_3_1x
+			special_type_slot_1 = fuel_tanks_small
+			special_type_slot_2 = armor_plate_small
+			special_type_slot_3 = self_sealing_fuel_tanks_small
+		}
+	}
+	add_equipment_production = {
+		equipment = {
+			type = small_plane_cas_airframe_2
+			creator = GER
+			version_name = "Barb CAS"
+		}
+		requested_factories = 40
+		progress = 1
+		efficiency = 100
+		industrial_manufacturer = mio:GER_junkers_organization
+	}
+	add_equipment_to_stockpile = { 
+		type = small_plane_cas_airframe_2
+		amount = 2400
+		producer = GER
+		variant_name = "Barb CAS"
+	}
+	add_equipment_to_stockpile = { 
+		type = small_plane_airframe_2
+		amount = 4000
+		producer = GER
+		variant_name = "F2"
+	}
+}

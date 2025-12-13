@@ -10,8 +10,8 @@ JAP_propaganda_campaigns = {
 
 		available = {
 			JAP_propaganda_poster_slot_available = yes
+		#	has_war = yes
 		}
-
 		days_remove = 365
 
 		days_re_enable = 360
@@ -31,7 +31,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 2 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -55,7 +55,7 @@ JAP_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			research_speed_factor = 0.075
+			research_speed_factor = 0.05
 		}
 
 		complete_effect = {
@@ -66,7 +66,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 3 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -91,7 +91,7 @@ JAP_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			air_power_projection_factor = 0.25
+			air_mission_efficiency = 0.05
 			air_untrained_pilots_penalty_factor = -0.5
 		}
 
@@ -103,7 +103,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 4 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -140,7 +140,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 5 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -179,7 +179,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 6 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 
@@ -220,7 +220,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 7 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 	
@@ -235,7 +235,7 @@ JAP_propaganda_campaigns = {
 
 		available = {
 			JAP_propaganda_poster_slot_available = yes
-			MAN = { has_completed_focus = MAN_the_two_emperors}
+			has_completed_focus = JAP_ministry_of_colonial_affairs
 		}
 
 		days_remove = 365
@@ -258,7 +258,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 8 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 
 		}
 	}
@@ -275,7 +275,7 @@ JAP_propaganda_campaigns = {
 		available = {
 			JAP_propaganda_poster_slot_available = yes
 			OR = {
-				has_completed_focus = JAP_the_zero
+				has_completed_focus = JAP_develop_new_fighters
 			}
 		}
 
@@ -292,14 +292,14 @@ JAP_propaganda_campaigns = {
 		complete_effect = {
 			set_variable = { JAP_new_propaganda_campaign = 9 }
 			JAP_pick_propaganda_campaign_slot_effect = yes
-			add_ideas = AUS_domestic_air_production
+			add_ideas = JAP_domestic_air_production
 		}
 
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 9 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
-			remove_ideas = AUS_domestic_air_production
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+			remove_ideas = JAP_domestic_air_production
 		}
 	}	
 
@@ -356,7 +356,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 10 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}	
 
@@ -395,7 +395,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 11 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}	
 
@@ -410,7 +410,7 @@ JAP_propaganda_campaigns = {
 
 		available = {
 			JAP_propaganda_poster_slot_available = yes
-			has_completed_focus = JAP_supremacy_of_technology
+			has_completed_focus = JAP_reform_the_army
 
 		}
 
@@ -434,7 +434,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 12 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 			
 		}
 	}	
@@ -493,7 +493,7 @@ JAP_propaganda_campaigns = {
 		remove_effect = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 13 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = generic.26 hours = 1} } }
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
 	}
 }

@@ -1,0 +1,59 @@
+scripted_gui = {
+
+	vp_topbar= {
+		context_type = player_context
+		window_name = "topbar_vp_container"
+		visible = { 			
+			has_game_rule = {
+				rule = vp_system
+				option = ENABLED
+			}
+		}
+		effects = {
+			tool_vp2_click = {  
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = vps_ticking_disabled } } }
+					ROOT = { set_country_flag = vps_ticking_disabled }
+				}
+				else = {
+					ROOT = { clr_country_flag = vps_ticking_disabled }
+				}
+			}
+		}
+	}
+
+	topbar_vp_ticking= {
+		context_type = player_context
+		window_name = "topbar_vp_ticking"
+		#visible = { always = yes }
+		visible = { 
+			has_game_rule = {
+				rule = vp_system
+				option = ENABLED
+			}
+			NOT = { has_country_flag = vps_ticking_disabled } 
+			OR = {
+				has_active_mission = MOD_countdown_to_allied_victory_mission
+				has_active_mission = MOD_countdown_to_axis_victory_mission
+			}
+		}
+	}
+
+	VP_UI = {
+		context_type = decision_category
+		window_name = "vp_explainer_window"
+		
+		visible = { 			
+			has_game_rule = {
+				rule = vp_system
+				option = ENABLED
+			}
+		}
+		
+		triggers = {
+		}
+
+	}
+
+
+}

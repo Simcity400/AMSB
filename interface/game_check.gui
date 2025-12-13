@@ -1,0 +1,528 @@
+@RULE_ICON_X = 10
+@RULE_NAME_X = 55
+@RULE_STATUS_X = 240
+
+guiTypes = {
+@STATUS_TEXT_X = 240
+@GAMERULE_ICONS_X = 10
+@GAMERULE_NAMES_X = 55
+
+
+containerWindowType = {
+    	name = "check_gamerules_decision_ui_window"
+        position = { x = 0 y = 0 }
+        size = { width = 100% height= 500 }
+        verticalScrollbar = "right_vertical_slider"
+        margin = { top = 10 bottom = 10 }
+        background = {
+            name = "Background"
+            quadTextureSprite = "GFX_tiled_window_transparent"
+        }
+        gridboxtype = {
+            name = "gamerules_grid"
+            position = { x = 0 y = 0 }
+            size = { width = 100% height = 700 }
+            slotsize = { width = 100% height = 45 }
+            max_slots_horizontal = 1
+        }
+
+    	################ Host Tool ################
+		iconType = {
+			name ="host_icon"
+			spriteType = GFX_volunteers
+			position = { x = @GAMERULE_ICONS_X y = -25 }
+		}
+
+		instantTextBoxType = {
+			name ="host_text"
+			position = { x = @GAMERULE_NAMES_X y = -15 }
+			font = "hoi_18mbs"
+			text = "Host Tool"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="host_status"
+			position = { x = @STATUS_TEXT_X y = -15 }
+			font = "hoi_18mbs"
+			text = "host_status"
+			format = center
+			maxwidth = 110
+		}
+
+    	################ Victory Points System ################
+		iconType = {
+			name ="vp_system_icon"
+			spriteType = GFX_decision_infiltrate_state
+			position = { x = @GAMERULE_ICONS_X y = 15 }
+		}
+
+		instantTextBoxType = {
+			name ="vp_system_text"
+			position = { x = @GAMERULE_NAMES_X y = 25 }
+			font = "hoi_18mbs"
+			text = "Victory Points System"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="vp_system_status"
+			position = { x = @STATUS_TEXT_X y = 25 }
+			font = "hoi_18mbs"
+			text = "vp_system_status"
+			format = center
+			maxwidth = 110
+		}
+    	################ 'Danzig or War' available date ################
+    	iconType = {
+			name ="danzig_date_lock_icon"
+			spriteType = GFX_decision_border_war
+			position = { x = @GAMERULE_ICONS_X y = 55 }
+		}
+
+		instantTextBoxType = {
+			name ="danzig_date_lock_text"
+			position = { x = @GAMERULE_NAMES_X y = 65 }
+			font = "hoi_18mbs"
+			text = "Danzig or War"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="danzig_date_lock_status"
+			position = { x = @STATUS_TEXT_X y = 65 }
+			font = "hoi_18mbs"
+			text = "danzig_date_lock_status"
+			format = center
+			maxwidth = 110
+		}
+        ################ War with the USSR ################
+    	iconType = {
+			name ="barb_date_lock_icon"
+			spriteType = GFX_decision_SOV_socialism_in_one_country
+			position = { x = @GAMERULE_ICONS_X y = 95 }
+		}
+
+		instantTextBoxType = {
+			name ="barb_date_lock_text"
+			position = { x = @GAMERULE_NAMES_X y = 105 }
+			font = "hoi_18mbs"
+			text = "War with the USSR"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="barb_date_lock_status"
+			position = { x = @STATUS_TEXT_X y = 105 }
+			font = "hoi_18mbs"
+			text = "barb_date_lock_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ China War ################
+    	iconType = {
+			name ="china_war_difficulty_icon"
+			spriteType = GFX_decision_jap_conquer_china
+			position = { x = @GAMERULE_ICONS_X y = 135 }
+		}
+
+		instantTextBoxType = {
+			name ="china_war_difficulty_text"
+			position = { x = @GAMERULE_NAMES_X y = 145 }
+			font = "hoi_18mbs"
+			text = "China War"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="china_war_difficulty_status"
+			position = { x = @STATUS_TEXT_X y = 145 }
+			font = "hoi_18mbs"
+			text = "china_war_difficulty_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Spanish Civil War ################
+    	iconType = {
+			name ="scw_difficulty_icon"
+			spriteType = GFX_decision_spa_garrison_control_total
+			position = { x = @GAMERULE_ICONS_X y = 175 }
+		}
+
+		instantTextBoxType = {
+			name ="scw_difficulty_text"
+			position = { x = @GAMERULE_NAMES_X y = 185 }
+			font = "hoi_18mbs"
+			text = "Spanish Civil War"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="scw_difficulty_status"
+			position = { x = @STATUS_TEXT_X y = 185 }
+			font = "hoi_18mbs"
+			text = "scw_difficulty_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Allow Hospital 2 ################
+    	iconType = {
+			name ="hospitals_icon"
+			spriteType = GFX_decision_generic_cavalry
+			position = { x = @GAMERULE_ICONS_X y = 215 }
+		}
+
+		instantTextBoxType = {
+			name ="hospitals_text"
+			position = { x = @GAMERULE_NAMES_X y = 225 }
+			font = "hoi_18mbs"
+			text = "Allow Hospital 2"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="hospitals_status"
+			position = { x = @STATUS_TEXT_X y = 225 }
+			font = "hoi_18mbs"
+			text = "hospitals_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Auto Tech Rush ################
+    	iconType = {
+			name ="auto_tech_rush_icon"
+			spriteType = GFX_decision_generic_research
+			position = { x = @GAMERULE_ICONS_X y = 255 }
+		}
+
+		instantTextBoxType = {
+			name ="auto_tech_rush_text"
+			position = { x = @GAMERULE_NAMES_X y = 265 }
+			font = "hoi_18mbs"
+			text = "Auto Tech Rush"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="auto_tech_rush_status"
+			position = { x = @STATUS_TEXT_X y = 265 }
+			font = "hoi_18mbs"
+			text = "auto_tech_rush_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Tradeback Idea ################
+    	iconType = {
+			name ="tradebacks_icon"
+			spriteType = GFX_decision_generic_forestry
+			position = { x = @GAMERULE_ICONS_X y = 295 }
+		}
+
+		instantTextBoxType = {
+			name ="tradebacks_text"
+			position = { x = @GAMERULE_NAMES_X y = 305 }
+			font = "hoi_18mbs"
+			text = "Tradeback Idea"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="tradebacks_status"
+			position = { x = @STATUS_TEXT_X y = 305 }
+			font = "hoi_18mbs"
+			text = "tradebacks_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Germany MEFO Bills ################
+    	iconType = {
+			name ="Germany_Cancel_Mefo_icon"
+			spriteType = GFX_decision_ger_mefo_bills
+			position = { x = @GAMERULE_ICONS_X y = 335 }
+		}
+
+		instantTextBoxType = {
+			name ="Germany_Cancel_Mefo_text"
+			position = { x = @GAMERULE_NAMES_X y = 345 }
+			font = "hoi_18mbs"
+			text = "Germany MEFO Bills"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="Germany_Cancel_Mefo_status"
+			position = { x = @STATUS_TEXT_X y = 345 }
+			font = "hoi_18mbs"
+			text = "Germany_Cancel_Mefo_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Germany Autarky Achieved ################
+    	iconType = {
+			name ="ger_autarky_icon"
+			spriteType = GFX_decision_ger_reichskommissariats
+			position = { x = @GAMERULE_ICONS_X y = 375 }
+		}
+
+		instantTextBoxType = {
+			name ="ger_autarky_text"
+			position = { x = @GAMERULE_NAMES_X y = 385 }
+			font = "hoi_18mbs"
+			text = "Germany Autarky Achieved"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="ger_autarky_status"
+			position = { x = @STATUS_TEXT_X y = 385 }
+			font = "hoi_18mbs"
+			text = "ger_autarky_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Soviet Closed Economy ################
+    	iconType = {
+			name ="sov_closed_eco_icon"
+			spriteType = GFX_decision_SOV_secure_the_administration
+			position = { x = @GAMERULE_ICONS_X y = 415 }
+		}
+
+		instantTextBoxType = {
+			name ="sov_closed_eco_text"
+			position = { x = @GAMERULE_NAMES_X y = 425 }
+			font = "hoi_18mbs"
+			text = "Soviet Closed Economy"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="sov_closed_eco_status"
+			position = { x = @STATUS_TEXT_X y = 425 }
+			font = "hoi_18mbs"
+			text = "sov_closed_eco_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Japan Closed Economy ################
+    	iconType = {
+			name ="japan_closed_eco_icon"
+			spriteType = GFX_decision_jap_pacific_guardian
+			position = { x = @GAMERULE_ICONS_X y = 455 }
+		}
+
+		instantTextBoxType = {
+			name ="japan_closed_eco_text"
+			position = { x = @GAMERULE_NAMES_X y = 465 }
+			font = "hoi_18mbs"
+			text = "Japan Closed Economy"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="japan_closed_eco_status"
+			position = { x = @STATUS_TEXT_X y = 465 }
+			font = "hoi_18mbs"
+			text = "japan_closed_eco_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ German Civ Boost ################
+    	iconType = {
+			name ="ger_boost_icon"
+			spriteType = GFX_decision_generic_merge_plant_materiel
+			position = { x = @GAMERULE_ICONS_X y = 495 }
+		}
+
+		instantTextBoxType = {
+			name ="ger_boost_text"
+			position = { x = @GAMERULE_NAMES_X y = 505 }
+			font = "hoi_18mbs"
+			text = "German Civ Boost"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="ger_boost_status"
+			position = { x = @STATUS_TEXT_X y = 505 }
+			font = "hoi_18mbs"
+			text = "ger_boost_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Japan Civ Boost ################
+    	iconType = {
+			name ="jap_boost_icon"
+			spriteType = GFX_decision_generic_merge_plant_materiel
+			position = { x = @GAMERULE_ICONS_X y = 535 }
+		}
+
+		instantTextBoxType = {
+			name ="jap_boost_text"
+			position = { x = @GAMERULE_NAMES_X y = 545 }
+			font = "hoi_18mbs"
+			text = "Japan Civ Boost"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="jap_boost_status"
+			position = { x = @STATUS_TEXT_X y = 545 }
+			font = "hoi_18mbs"
+			text = "jap_boost_status"
+			format = center
+			maxwidth = 110
+		}
+        ################ Italy Civ Boost ################
+    	iconType = {
+			name ="ita_boost_icon"
+			spriteType = GFX_decision_generic_merge_plant_materiel
+			position = { x = @GAMERULE_ICONS_X y = 575 }
+		}
+
+		instantTextBoxType = {
+			name ="ita_boost_text"
+			position = { x = @GAMERULE_NAMES_X y = 585 }
+			font = "hoi_18mbs"
+			text = "Italy Civ Boost"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="ita_boost_status"
+			position = { x = @STATUS_TEXT_X y = 585 }
+			font = "hoi_18mbs"
+			text = "ita_boost_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Soviets Civ Boost ################
+    	iconType = {
+			name ="sov_boost_icon"
+			spriteType = GFX_decision_generic_merge_plant_materiel
+			position = { x = @GAMERULE_ICONS_X y = 615 }
+		}
+
+		instantTextBoxType = {
+			name ="sov_boost_text"
+			position = { x = @GAMERULE_NAMES_X y = 625 }
+			font = "hoi_18mbs"
+			text = "Soviets Civ Boost"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="sov_boost_status"
+			position = { x = @STATUS_TEXT_X y = 625 }
+			font = "hoi_18mbs"
+			text = "sov_boost_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Britain Civ Boost ################
+    	iconType = {
+			name ="eng_boost_icon"
+			spriteType = GFX_decision_generic_merge_plant_materiel
+			position = { x = @GAMERULE_ICONS_X y = 655 }
+		}
+
+		instantTextBoxType = {
+			name ="eng_boost_text"
+			position = { x = @GAMERULE_NAMES_X y = 665 }
+			font = "hoi_18mbs"
+			text = "Britain Civ Boost"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="eng_boost_status"
+			position = { x = @STATUS_TEXT_X y = 665 }
+			font = "hoi_18mbs"
+			text = "eng_boost_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ France Civ Boost ################
+    	iconType = {
+			name ="fra_boost_icon"
+			spriteType = GFX_decision_generic_merge_plant_materiel
+			position = { x = @GAMERULE_ICONS_X y = 695 }
+		}
+
+		instantTextBoxType = {
+			name ="fra_boost_text"
+			position = { x = @GAMERULE_NAMES_X y = 705 }
+			font = "hoi_18mbs"
+			text = "France Civ Boost"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="fra_boost_status"
+			position = { x = @STATUS_TEXT_X y = 705 }
+			font = "hoi_18mbs"
+			text = "fra_boost_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ USA Civ Boost ################
+    	iconType = {
+			name ="usa_boost_icon"
+			spriteType = GFX_decision_generic_merge_plant_materiel
+			position = { x = @GAMERULE_ICONS_X y = 735 }
+		}
+
+		instantTextBoxType = {
+			name ="usa_boost_text"
+			position = { x = @GAMERULE_NAMES_X y = 745 }
+			font = "hoi_18mbs"
+			text = "USA Civ Boost"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="usa_boost_status"
+			position = { x = @STATUS_TEXT_X y = 745 }
+			font = "hoi_18mbs"
+			text = "usa_boost_status"
+			format = center
+			maxwidth = 110
+		}
+    }
+}
+
+

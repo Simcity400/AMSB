@@ -1,0 +1,149 @@
+on_actions = {
+	on_naval_invasion = { # FINLAND
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						state = 148
+						state = 929
+						state = 149
+						state = 722
+						state = 926
+						state = 111
+						state = 928
+						state = 146
+						# state = 145 # aland island removed bcz why not lol
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = killable_fin
+							option = off
+						}
+					}
+					teleport_armies = {
+						to_state = FROM 
+					}
+					PREV = { 
+						transfer_state_to = PREV
+					}
+				}
+			}
+		}
+	}
+	on_daily_FIN = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = killable_fin
+						option = off
+					} 
+				}
+				every_owned_state = {
+					limit = { NOT = { state = 111 } }
+					set_demilitarized_zone = yes
+					set_state_controller_to = FIN
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = killable_fin
+						option = off
+					}
+					FIN = { has_offensive_war = yes }
+				}
+				FIN = { add_ideas = SPR_offensive }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = killable_fin
+						option = off
+					}
+					GER = {
+						divisions_in_state = {
+							type = infantry
+							size > 0
+							state = 111
+						}
+					}
+				}
+				every_state = { 
+					limit = { is_core_of = FIN } 
+					teleport_armies = {
+						limit = {
+							OR = {
+								original_tag = GER
+								original_tag = ITA
+								original_tag = HUN
+								original_tag = ROM
+								original_tag = BUL
+								original_tag = SPR
+							}
+						} 
+						to_state = 64 
+					} 
+				}
+			}
+		}
+    }
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = killable_fin
+						option = off
+					} 
+				}
+				every_country = {
+					every_owned_state = {
+						limit = { 
+							OR = {
+								is_core_of = FIN
+								has_state_flag = finnish_demilitarized_zone
+							}
+							NOT = {
+								OR = {
+									state = 146
+									state = 147
+									state = 111
+								}
+								OWNER = { tag = SOV }
+							}
+						}
+						set_state_flag = finnish_demilitarized_zone
+						if = {
+							limit = {
+								OWNER = {
+									OR = {
+										tag = ROM
+										tag = HUN
+										tag = SPR
+										tag = BUL
+										# Add other tags here if needed
+									}
+								}
+							}
+							set_demilitarized_zone = yes
+						}
+					}
+				}
+				
+				every_state = {
+					limit = {
+						OR = {
+							state = 146
+							state = 147
+						}
+						OWNER = { tag = SOV }
+					}
+					clr_state_flag = finnish_demilitarized_zone
+					set_demilitarized_zone = no
+				}
+			}
+		}
+    }}

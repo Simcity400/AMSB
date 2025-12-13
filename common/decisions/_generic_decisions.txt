@@ -1,5 +1,4 @@
 political_actions = {
-
 	
 	targeted_race_for_the_bomb = {
 
@@ -57,7 +56,7 @@ political_actions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				any_other_country = { has_tech = nukes }
+				any_other_country = { is_special_project_completed = sp:sp_nuclear_bomb }
 			}
 		}
 	}
@@ -88,6 +87,7 @@ political_actions = {
 			stability_weekly = 0.005
 			consumer_goods_factor = 0.10
 			industrial_capacity_factory = -0.1
+			
 		}
 
 		days_remove = 180
@@ -136,38 +136,6 @@ political_actions = {
 			}
 		}
 	}
-
-	case_anton = {
-
-		icon = GFX_decision_ger_reichskommissariats
-		priority = 10
-		available = {
-			OR = {
-				EFR = {
-					has_war = yes
-				}
-				if = {
-					has_war_with = SOV
-				}
-			}
-			
-			
-			
-		}
-
-		visible = {
-			tag = GER
-		}
-
-		fire_only_once = yes
-
-		complete_effect = {
-			annex_country = {
-				target = EFR
-				transfer_troops = no
-			}
-		}
-	}
 }
 
 economy_decisions = {
@@ -180,7 +148,7 @@ economy_decisions = {
 			NOT = { OR = { original_tag = GER original_tag = FRA } }
 		}
 
-		cost = 0
+		cost = 50
 		fire_only_once = yes
 
 		days_remove = 200
@@ -261,7 +229,6 @@ economy_decisions = {
 		visible = { 
 			OR = {
 				is_major = no
-				tag = JAP
 				AND = {
 					is_faction_leader = yes
 					num_of_factories < 51 #would be a minor if it wasn't for faction leader status
@@ -323,7 +290,7 @@ economy_decisions = {
 
 		complete_effect = {
 			add_equipment_to_stockpile = {
-				type = train_equipment
+				type = train_equipment_1
 				amount = 15
 			}
 			add_stability = -0.05
@@ -466,6 +433,10 @@ propaganda_efforts = {
 					has_idea = extensive_conscription
 				}
 			}
+			modifier = {
+				factor = 0
+				has_war_support > 0.9
+			}
 		}
 	}
 	
@@ -601,11 +572,26 @@ propaganda_efforts = {
 		available = {
 			IF = {
 				limit = {
+					has_dlc = "Trial of Allegiance"
 					tag = BRA
 				}
 				threat > 0.25
 				#has_tech = radio
 				has_completed_focus = BRA_radio_nacional
+			}
+			ELSE = {
+				threat > 0.25
+				has_tech = radio
+			}
+		
+
+			IF = {
+				limit = {
+					tag = AFG
+				}
+				threat > 0.25
+				#has_tech = radio
+				has_completed_focus = AFG_establish_radio_networks
 			}
 			ELSE = {
 				threat > 0.25
@@ -701,6 +687,7 @@ propaganda_efforts = {
 			}
 			hidden_effect = {
 				country_event = political.33
+				set_country_flag = has_taken_the_war_propaganda_film_industry_decision
 			}
 		}
 
@@ -1689,6 +1676,10 @@ war_measures = {
 				surrender_progress > 0.6
 				factor = 10
 			}
+			modifier = {
+				has_capitulated = yes
+				factor = 0
+			}
 		}
 
 		modifier = {
@@ -1713,9 +1704,21 @@ war_measures = {
             has_war = yes
             if = {
 				limit = {
-					NOT = { original_tag = GER }
+					NOT = {
+						original_tag = GER
+						original_tag = JAP
+					}
 				}
         		has_idea = tot_economic_mobilisation
+        		if = {
+        			limit = {
+        				original_tag = PRC
+        			}
+        			NOT = { 
+        				has_completed_focus = PRC_holding_half_the_sky
+        				has_completed_focus = PRC_promote_womens_suffrage
+        			}
+        		}
 			}
 			else_if = {
 				limit = {
@@ -1726,6 +1729,16 @@ war_measures = {
 					has_idea = totaler_krieg_economy
 				}
 				NOT = { has_completed_focus = GER_womens_rights_and_equality }
+			}
+			else_if = {
+				limit = {
+					original_tag = JAP
+				}
+				OR = {
+					has_idea = tot_economic_mobilisation
+					has_idea = national_defense_state
+				}
+				NOT = { has_completed_focus = JAP_democratic_women_in_the_workforce }
 			}
             OR = {
                 AND = {
@@ -1773,6 +1786,18 @@ war_measures = {
         				NOT = { has_idea = totaler_krieg_economy }
         			}
         			has_completed_focus = GER_womens_rights_and_equality
+        		}
+            }
+            else_if = {
+            	limit = {
+            		original_tag = JAP
+            	}
+        		OR = {
+        			has_war = no
+        			AND = {
+        				NOT = { has_idea = tot_economic_mobilisation }
+        				NOT = { has_idea = national_defense_state }
+        			}
         		}
             }
         	else = {
@@ -1873,10 +1898,8 @@ war_measures = {
 		complete_effect = {
 			if = {
 				limit = {
-					check_variable = {
-						var = GER_war_bonds_var
-						value = 50
-						compare = less_than
+					NOT = {
+						has_variable = GER_war_bonds_var
 					}
 				}
 				set_variable = {
@@ -1890,35 +1913,13 @@ war_measures = {
 			}
 			if = {
 				limit = {
-					check_variable = {
-						var = GER_war_bonds_var
-						value = 100
-						compare = greater_than_or_equals
-					}
-					check_variable = {
-						var = GER_war_bonds_war_support_var
-						value = -0.025
-						compare = greater_than
-					}
-				}
-				set_variable = {
-					var = GER_war_bonds_war_support_var
-					value = -0.025
-				}
-			}
-			if = {
-				limit = {
-					check_variable = {
-						var = GER_war_bonds_war_support_var
-						value = -0.025
-						compare = less_than_or_equals
-					}
-				}
-				add_to_variable = {
-					var = GER_war_bonds_war_support_var
-					value = -0.025
+					has_variable = GER_war_bonds_war_support_var
 				}
 				add_war_support = GER_war_bonds_war_support_var
+			}
+			add_to_variable = {
+				var = GER_war_bonds_war_support_var
+				value = -0.025
 			}
 		}
     }
@@ -1927,48 +1928,65 @@ war_measures = {
 
 		icon = GFX_decision_generic_military
 
+		allowed = {
+			has_dlc = "Arms Against Tyranny"
+			NOT = {
+				OR = {
+					tag = ENG #has a focus
+					tag = USA #has a focus
+					tag = SOV #has a focus
+					tag = JAP #has a focus
+					tag = AST #has a focus
+					tag = FRA #has a focus
+					tag = GER #has a focus
+				}
+			}
+		}
+
 		available = {
-			date > 1940.1.1
 		}
 
 		visible = {
-			AND = {
-				has_dlc = "Arms Against Tyranny"
+			is_major = yes
+			date > 1940.1.1
+			IF = {
+				limit = {
+					has_dlc = "Trial of Allegiance"
+				}
 				NOT = {
 					OR = {
-						tag = ENG #has a focus
-						tag = USA #has a focus
-						tag = SOV #has a focus
-						tag = JAP #has a focus
 						tag = CHL #has a focus
 						tag = BRA #has a focus
 						tag = ARG #has a focus
-						tag = FRA #has a focus
-						tag = GER #has a focus
-					}
-				} 
-				AND = {
-					has_dlc = "Trial of Allegiance"
-					NOT = {
-						OR = {
-							tag = CHL #has a focus
-							tag = BRA #has a focus
-							tag = ARG #has a focus
-							tag = URG #has a focus
-							tag = PAR #has a focus
-						}
-					}
-				}
-				AND = {
-					has_dlc = "Gotterdammerung"
-					NOT = {
-						OR = {
-							tag = BEL #has a focus
-							tag = COG #has a focus
-						}
+						tag = URG #has a focus
+						tag = PAR #has a focus
 					}
 				}
 			}
+			IF = {
+				limit = {
+            		has_dlc = "Graveyard of Empires"
+				}
+				NOT = {
+					OR = {
+						tag = PER #has a focus
+						tag = IRQ #has a focus
+						tag = RAJ #has a focus
+					}
+				}
+			}
+			IF = {
+				limit = {
+					has_dlc = "Gotterdammerung"
+				}
+				NOT = {
+					OR = {
+						tag = BEL #has a focus
+						tag = COG #has a focus
+					}
+				}
+			}
+			PHI_SEA = no
 		}
 
 		fire_only_once = yes
@@ -1979,10 +1997,35 @@ war_measures = {
 			add_potential_special_forces_tree = yes
 		}
 		ai_will_do = {
-			factor = 201
+			base = 201
 			modifier = {
 				factor = 0
 				is_major = no
+			}
+			modifier = {
+				factor = 0
+				original_tag = CHI 
+				amount_taken_ideas = {
+					amount < 1
+					slots = {
+						army_chief
+					}
+				}
+				amount_taken_ideas = {
+					amount < 2
+					slots = {
+						high_command
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = special_forces_mountaineers
+					has_tech = special_forces_marines
+					has_tech = special_forces_paratroopers
+					has_tech = special_forces_rangers
+				}
 			}
 		}
 	}
@@ -2002,9 +2045,7 @@ foreign_politics = {
         days_re_enable = 30
 
         available = {
-			always = no
         }
-		
 
         visible = {
         	FROM = {
@@ -2111,7 +2152,7 @@ economy_decisions = {
 			base = 1
 			modifier = {
 				factor = 1.5
-				any_owned_state = { free_building_slots = { building = industrial_complex size < 1 include_locked = no } }
+				all_owned_state = { free_building_slots = { building = industrial_complex size < 1 include_locked = no } }
 			}
 		}
     }
@@ -2223,7 +2264,6 @@ economy_decisions = {
 							include_locked = yes
 						}
 						NOT = { has_state_flag = war_building_slot_flag }
-						infrastructure > 4
 					}
 					add_extra_state_shared_building_slots = 1
 					set_state_flag = war_building_slot_flag
@@ -2231,17 +2271,10 @@ economy_decisions = {
 			}
 		}
 		ai_will_do = {
-			base = 1
+			base = 0
 			modifier = {
-				factor = 10
+				add = 1
 				all_owned_state = { free_building_slots = { building = industrial_complex size < 1 include_locked = no } }
-			}
-			modifier = {
-				any_owned_state = {
-					infrastructure > 3
-					free_building_slots = { building = industrial_complex size > 0 include_locked = no }
-				}
-				factor = 0
 			}
 		}
     }
@@ -3007,7 +3040,7 @@ foreign_support = {
 					}
 				}
 				AND = {
-					601 = { #Xikang
+					747 = { #Dali
 						has_state_flag = CHI_needed_for_the_hump
 						OR = {
 							is_controlled_by = ROOT
@@ -3037,7 +3070,7 @@ foreign_support = {
 					}
 				}
 				AND = {
-					601 = { #Xikang
+					747 = { #Dali 
 						has_state_flag = CHI_needed_for_the_hump
 						OR = {
 							is_controlled_by = ROOT

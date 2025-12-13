@@ -1,31 +1,39 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			135 = {
-				add_extra_state_shared_building_slots = 3
+
+		# NZL SPAWN IN
+			284 = {
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
-					type = dockyard
-					level = 3
+					type = infrastructure
+					level = 2
 					instant_build = yes
 				}
+				add_building_construction = {
+					type = arms_factory
+					level = 6
+					instant_build = yes
+				}
+		
 			}
+			723 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+		
+			}
+
+	 	# POL - Poland
 			807 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = dockyard
-					level = 4
-					instant_build = yes
-				}
-			}
-			85 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = dockyard
-					level = 4
-					instant_build = yes
-				}
-			}
-			924 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -33,15 +41,49 @@ on_actions = {
 					instant_build = yes
 				}
 			}
+			85 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			10 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = arms_factory
+					level = 6
+					instant_build = yes
+				}
+			}
+			88 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+
+		# NOR - Norway
+			924 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 			912 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = dockyard
+					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
 			}
-			186 = {
+			44 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
@@ -52,83 +94,12 @@ on_actions = {
 			35 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
-					type = dockyard
-					level = 3
-					instant_build = yes
-				}
-			}
-			812 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
 					type = industrial_complex
 					level = 3
 					instant_build = yes
 				}
 			}
-			13 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-			191 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			813 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			812 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			808 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-			12 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-			810 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-			10 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
+
 			98 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -170,21 +141,22 @@ on_actions = {
 				}
 			}
 			853 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 5
+					instant_build = yes
+				}
+			}	
+			109 = {
+				add_extra_state_shared_building_slots = 7
+				add_building_construction = {
+					type = arms_factory
+					level = 7
 					instant_build = yes
 				}
 			}
-			803 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
+
 			803 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -244,7 +216,7 @@ on_actions = {
 			99 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 3
 					instant_build = yes
 				}
@@ -260,7 +232,7 @@ on_actions = {
 			110 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 4
 					instant_build = yes
 				}
@@ -322,10 +294,18 @@ on_actions = {
 				}
 			}
 			47 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 10
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 10
+					instant_build = yes
+				}
+			}
+			185 = {
+				add_extra_state_shared_building_slots = 7
+				add_building_construction = {
+					type = arms_factory
+					level = 7
 					instant_build = yes
 				}
 			}
@@ -369,46 +349,25 @@ on_actions = {
 					instant_build = yes
 				}
 			}
-			113 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-			135 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-			134 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
+		
+		
 			44 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 11
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 11
 					instant_build = yes
 				}
 			}
 			934 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 7
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 7
 					instant_build = yes
 				}
 			}
+			# AUS - Austria
 			152 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -433,15 +392,8 @@ on_actions = {
 					instant_build = yes
 				}
 			}
+			# CZE
 			69 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			9 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
@@ -449,6 +401,23 @@ on_actions = {
 					instant_build = yes
 				}
 			}
+			75 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			9 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			# BEL - Belgium
 			980 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -476,73 +445,438 @@ on_actions = {
 			6 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			# CHI - CHINA
+			606 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			749 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			600 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			613 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			608 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			1035 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			1037 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 6
+					instant_build = yes
+				}
+			}
+			602 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			596 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			595 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			593 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = arms_factory
+					level = 5
+					instant_build = yes
+				}
+			}
+			592 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+
+		# Portugal Spawn in POR
+			180 = {
+				add_extra_state_shared_building_slots = 10
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 10
+					instant_build = yes
+				}
+			}
+			181 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 6
+					instant_build = yes
+				}
+			}
+			112 = {
+				add_extra_state_shared_building_slots = 7
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 7
+					instant_build = yes
+				}
+		
+			}
+			179 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}	
+			}
+			795 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}	
+			}
+
+		# Former AI Ireland Docks now for UK
+			119 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = dockyard
+					level = 5
+					instant_build = yes
+				}
+			}
+
+		# LIT Lithunia Spawn in Baltic
+			814 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			188 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			189 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			815 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+
+			}
+		# EST Estonia
+			812 = {
+				add_extra_state_shared_building_slots = 7
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			813 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			13 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			191 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			811 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+		# LAT Latvia
+			808 = {
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = industrial_complex
+					level = 6
+					instant_build = yes
+				}
+			}
+			12 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			810 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			190 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			809 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			# SIA Siam
+			724 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
 					type = industrial_complex
 					level = 4
 					instant_build = yes
 				}
 			}
-			606 = {
+			289 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
-					type = industrial_complex
+					type = dockyard
 					level = 3
 					instant_build = yes
 				}
 			}
-			749 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			600 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			602 = {
+			868 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					level = 3
-					instant_build = yes
-				}
-			}
-			596 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-			595 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			593 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
 					instant_build = yes
 				}
 			}
 
+			# TAN
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 7
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			# MON
+			330 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			817 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+
+
+
+		# EQ Equipment
 
 			AUS = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 0
+					amount = 10000
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
@@ -577,11 +911,11 @@ on_actions = {
 			CZE = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 0
+					amount = 3250
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 34000
+					amount = 40000
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
@@ -1101,27 +1435,27 @@ on_actions = {
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 1000
+					amount = 37733
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 9600
+					amount = 21600
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
-					amount = 259
+					amount = 1559
 				}
 				add_equipment_to_stockpile = {
 					type = motorized_equipment_0
-					amount = 0
+					amount = 200
 				}
 				add_equipment_to_stockpile = {
 					type = motorized_equipment_1
-					amount = 0
+					amount = 100
 				}
 				add_equipment_to_stockpile = {
 					type = artillery_equipment_1
-					amount = 100
+					amount = 135
 				}
 				add_equipment_to_stockpile = {
 					type = anti_tank_equipment_1
@@ -1788,7 +2122,7 @@ on_actions = {
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 34900
+					amount = 24900
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
@@ -1958,7 +2292,7 @@ on_actions = {
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 5160
+					amount = 65160
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
@@ -2054,6 +2388,352 @@ on_actions = {
 			}
 			
 			
+		}
+	}
+
+		on_startup = {
+			effect = {
+				if = {
+				limit = {
+					has_game_rule = {
+						rule = tradebacks
+						option = on
+					}
+				}
+				every_country = {
+					limit = {
+						is_playable_country = yes
+					}
+					add_ideas = tradeback_is_cancer
+				}
+			}
+
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = larp_barb
+						option = on
+					}
+				}
+				every_country = {
+					limit = {
+						is_playable_country = yes
+					}
+					#add_ideas = tradeback_is_cancer
+					add_ideas = click_barb
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = larp_barb
+						option = on
+					}
+				}
+				every_country = {
+					limit = {
+						is_playable_country = yes
+					}
+					#add_ideas = tradeback_is_cancer
+					add_ideas = no_intel_advantage
+				}
+			}
+
+
+			if = { #sov civs
+			limit = {
+				has_game_rule = {
+					rule = sov_boost
+					option = sov4
+				}
+			}
+			SOV = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = sov_boost
+					option = sov8
+				}
+			}
+			SOV = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = sov_boost
+					option = sov12
+				}
+			}
+			SOV = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #ger civs
+			limit = {
+				has_game_rule = {
+					rule = ger_boost
+					option = ger4
+				}
+			}
+			GER = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = ger_boost
+					option = ger8
+				}
+			}
+			GER = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = ger_boost
+					option = ger12
+				}
+			}
+			GER = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #jap civs
+			limit = {
+				has_game_rule = {
+					rule = jap_boost
+					option = jap4
+				}
+			}
+			JAP = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = jap_boost
+					option = jap8
+				}
+			}
+			JAP = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = jap_boost
+					option = jap12
+				}
+			}
+			JAP = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #eng civs
+			limit = {
+				has_game_rule = {
+					rule = eng_boost
+					option = eng4
+				}
+			}
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = eng_boost
+					option = eng8
+				}
+			}
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = eng_boost
+					option = eng12
+				}
+			}
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #ita civs
+			limit = {
+				has_game_rule = {
+					rule = ita_boost
+					option = ita4
+				}
+			}
+			ITA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = ita_boost
+					option = ita8
+				}
+			}
+			ITA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = ita_boost
+					option = ita12
+				}
+			}
+			ITA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #fra civs
+			limit = {
+				has_game_rule = {
+					rule = fra_boost
+					option = fra4
+				}
+			}
+			FRA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = fra_boost
+					option = fra8
+				}
+			}
+			FRA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = fra_boost
+					option = fra12
+				}
+			}
+			FRA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
+		if = { #usa civs
+			limit = {
+				has_game_rule = {
+					rule = usa_boost
+					option = usa4
+				}
+			}
+			USA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = usa_boost
+					option = usa8
+				}
+			}
+			USA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 8
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = usa_boost
+					option = usa12
+				}
+			}
+			USA = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 12
+				}
+			}
+		}
 		}
 	}
 }
