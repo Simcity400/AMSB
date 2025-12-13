@@ -1,0 +1,75 @@
+on_actions = {
+
+	on_capitulation = {
+
+		effect = {
+
+			if = {
+				limit = { 
+					tag = FRA 
+				}
+
+				FRA = { 
+					#every_state = {
+					#	limit = { is_core_of = FRA }
+					#	teleport_armies = { to_state = 446 }
+					#}
+					set_country_flag = france_tp
+					# transfer_navy = { target = EFR }
+					transfer_units_fraction = {
+						target = EFR
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 0
+						navy_ratio = 0
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = yes
+						}
+					}					
+				}
+
+				if = {
+					limit = {
+						tag = FRA
+						AND = {
+							original_tag = FRA
+							FRA = { has_war_with = GER }
+							has_game_rule = {
+								rule = vichy_france
+								option = forced
+							}
+						}
+					}
+					GER = {
+						country_event = france.14
+					}
+					set_global_flag = fall_of_france
+				} 
+				else if = {
+					limit = {
+						tag = FRA
+						AND = {
+							original_tag = FRA
+							FRA = { has_war_with = GER }
+							has_game_rule = {
+								rule = vichy_france
+								option = banned
+							}
+						}
+					}
+					FRA = {
+						set_capital = {
+							state = 539
+						}
+					}
+					GER = {
+						country_event = france.69420
+					}
+					set_global_flag = fall_of_france
+				}
+			}
+		}
+	}
+
+}

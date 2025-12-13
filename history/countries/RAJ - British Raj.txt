@@ -40,16 +40,16 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_recon = 1
-	trench_warfare = 1
-	fleet_in_being = 1
+	#trench_warfare = 1
+	#fleet_in_being = 1
 	fuel_silos = 1
 	fuel_refining = 1
 	basic_train = 1
 	gw_artillery = 1
-	tech_mountaineers = 1
-	marines  = 1
-	paratroopers = 1 
 }
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
 
 recruit_character = RAJ_lord_linlithgow
 recruit_character = RAJ_v_d_savarkar
@@ -284,7 +284,26 @@ set_cosmetic_tag = RAJ_UK # British Raj
 		limit = {
 			has_dlc = "Graveyard of Empires"
 		}
-		complete_national_focus = RAJ_provincial_autonomy
+		unlock_national_focus = RAJ_provincial_autonomy
+
+		retire_character = RAJ_freeman_freeman_thomas
+		add_country_leader_role = {
+			character =  RAJ_lord_linlithgow
+			promote_leader = yes
+			country_leader={
+				ideology=centrism
+				expire="1965.1.1.1"
+				id=-1
+				traits = {
+					aloof_authority
+				}
+			}
+		}
+
+		add_dynamic_modifier = {
+			modifier = idea_RAJ_independence_movement
+		}
+
 		complete_national_focus = RAJ_purna_swaraj
 		complete_national_focus = RAJ_uplifting_the_people_of_india
 		complete_national_focus = RAJ_tenancy_reforms
@@ -341,17 +360,16 @@ set_cosmetic_tag = RAJ_UK # British Raj
 		
 		#doctrines
 		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-		grand_battle_plan = 1
-
-		trench_warfare = 1
-		prepared_defense = 1
-		battlefleet_concentration = 1
-		subsidiary_carrier_role = 1
-		convoy_sailing = 1
-		convoy_escorts = 1
-		submarine_operations = 1
+		#force_rotation = 1
+		#fighter_baiting = 1
+		#grand_battle_plan = 1
+		#trench_warfare = 1
+		#prepared_defense = 1
+		#battlefleet_concentration = 1
+		#subsidiary_carrier_role = 1
+		#convoy_sailing = 1
+		#convoy_escorts = 1
+		#submarine_operations = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -377,6 +395,9 @@ set_cosmetic_tag = RAJ_UK # British Raj
 	complete_special_project = {
 		project = sp:sp_air_radar
 	}
+	set_grand_doctrine = grand_battleplan
+	set_grand_doctrine = new_fleet_in_being
+	set_grand_doctrine = new_operational_integrity
 }
 
 set_politics = {
@@ -489,13 +510,6 @@ if = {
 	}
 	
 }
-if = {
-	limit = { is_historical_focus_on = no }
-	random_owned_state = {
-		set_variable = { global.famine_state = THIS }	
-		
-	}
-}
 
 if = {
 	limit = {
@@ -513,11 +527,33 @@ if = {
 		NOT = { has_dlc = "Graveyard of Empires" }
 	}
 	every_owned_state = {
+		limit = {
+			NOT = {
+				state = 992
+				state = 441
+				state = 787
+				state = 442
+				state = 987
+				state = 440
+				state = 445
+				state = 444
+				state = 1012
+				state = 432
+				state = 434
+				state = 990
+			}
+		}
 		add_core_of = RAJ
 	}
 }
-country_event = { id = GOE_RAJ_partition.1 days = 40 random_days = 25 }
-country_event = { id = GOE_RAJ.32 days = 30 random_days = 80 }
+
+if = {
+	limit = {
+		has_start_date < 1939.1.1
+	}
+	country_event = { id = GOE_RAJ_partition.1 days = 40 random_days = 25 }
+	country_event = { id = GOE_RAJ.32 days = 30 random_days = 80 }
+}
 
 if = {
 	limit = {
@@ -542,6 +578,17 @@ set_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_redu
 set_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction_display = RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction }
 multiply_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction_display = 100 }
 set_variable = { RAJ_railway_focuses = 0 }
+
+set_variable = { RAJ_railway_default_increase = 0.03 }
+set_variable = { RAJ_railway_default_increase_tt = RAJ_railway_default_increase }
+multiply_variable = { RAJ_railway_default_increase_tt = 100 }
+
+set_variable = { RAJ_railway_default_decrease = -0.02 }
+set_variable = { RAJ_railway_default_decrease_tt = RAJ_railway_default_decrease }
+multiply_variable = { RAJ_railway_default_decrease_tt = 100 }
+
+set_variable = { RAJ_communism_drift_independence_movement = 0 }
+set_variable = { RAJ_royal_indian_navy_mutiny_threshold = 0.75 }
 #multiply_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction_display = -1 }
 
 

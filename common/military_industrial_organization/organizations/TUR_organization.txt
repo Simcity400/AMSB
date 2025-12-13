@@ -1,19 +1,19 @@
+#####################
 
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
 
-           
-             
-           
-              
-            
-
-  
+ #################### 
 
 
 TUR_ticaret_organization = {
 	include = generic_infantry_tank_organization
 	icon = GFX_idea_tur_koc_ticaret_as
 	allowed = {	
-		tag = TUR
+		original_tag = TUR
 		has_dlc = "Battle for the Bosporus"
 	}
 }
@@ -26,15 +26,15 @@ TUR_tulomsas_organization = {
 	}
 }
 
+#####################
 
-
-          
-               
-            
-                
-            
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
  
-
+#####################
 
 TUR_golcuk_nsy_organization = {
 	include = generic_task_force_ship_organization
@@ -55,68 +55,84 @@ TUR_koc_ticaret_as_shipyard_organization = {
 	include = generic_escort_ship_organization
 	icon = GFX_idea_tur_koc_ticaret_as
 	allowed = {	
+		original_tag = TUR
+		has_dlc = "Battle for the Bosporus"
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+
+TUR_thk_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_2
+	allowed = {	
+		tag = TUR
+		NOT = { has_dlc = "Battle for the Bosporus" }
+	}
+}
+TUR_ktf_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_man_five_year_plan_air
+	allowed = {	
+		tag = TUR
+		NOT = { has_dlc = "Battle for the Bosporus" }
+	}
+}
+TUR_thk_bftb_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_man_five_year_plan_air
+	allowed = {	
+		tag = TUR
+		has_dlc = "Battle for the Bosporus"
+	}
+}
+TUR_gok_okulu_organization = {
+	include = generic_range_focused_aircraft_organization
+	icon = GFX_idea_tur_gok_okulu
+	allowed = {	
+		tag = TUR
+		has_dlc = "Battle for the Bosporus"
+	}
+}
+
+TUR_nud_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_tur_nud
+	allowed = {	
+		tag = TUR
+		has_dlc = "Battle for the Bosporus"
+	}
+}
+
+TUR_tomtasch_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_tur_tomtasch
+	allowed = {	
 		tag = TUR
 		has_dlc = "Battle for the Bosporus"
 	}
 }
 
 
+################################### 
 
-              
-                 
-             
-                   
-              
-
-
-
-
- TUR_thk_bftb_organization = {
- 	include = generic_light_aircraft_organization
- 	icon = GFX_idea_man_five_year_plan_air
- 	allowed = {	
- 		tag = TUR
- 		has_dlc = "Battle for the Bosporus"
- 	}
- }
- TUR_gok_okulu_organization = {
- 	include = generic_range_focused_aircraft_organization
- 	icon = GFX_idea_tur_gok_okulu
- 	allowed = {	
- 		tag = TUR
- 		has_dlc = "Battle for the Bosporus"
- 	}
- }
-
- TUR_nud_organization = {
- 	include = generic_cas_aircraft_organization
- 	icon = GFX_idea_tur_nud
- 	allowed = {	
- 		tag = TUR
- 		has_dlc = "Battle for the Bosporus"
- 	}
- }
-
- TUR_tomtasch_organization = {
- 	include = generic_medium_aircraft_organization
- 	icon = GFX_idea_tur_tomtasch
- 	allowed = {	
- 		tag = TUR
- 		has_dlc = "Battle for the Bosporus"
- 	}
- }
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
 
 
- 
-
-                
-                       
-                   
-                         
-                 
-
-
-
+###################################
 
 TUR_istanbul_military_industries_organization = {
 	include = generic_infantry_equipment_organization
@@ -142,7 +158,7 @@ TUR_koc_ticaret_as_defense_industry_organization = {
 	include = generic_motorized_mechanized_organization
 	icon = GFX_idea_tur_koc_ticaret_as
 	allowed = {	
-		tag = TUR
+		original_tag = TUR
 		has_dlc = "Battle for the Bosporus"
 	}
 }

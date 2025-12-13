@@ -1,12 +1,10 @@
 ﻿capital = 46
 oob = "ROM_1936"
 set_naval_oob = "ROM_1936_naval_mtg"
-create_intelligence_agency = yes
-add_to_tech_sharing_group = axis_research 
+# create_intelligence_agency = yes
 set_research_slots = 3
 set_stability = 0.6
 set_war_support = 0.3
-set_rule = { can_be_spymaster = no }
 set_variable = {
     var = min_fuel
     value = 0.800
@@ -51,6 +49,7 @@ recruit_character = ROM_ioan_mihail_racovita
 # recruit_character = ROM_air_tacticalbombing
 recruit_character = ROM_gheorghe_potopeanu
 # recruit_character = ROM_chief_entrenchment
+recruit_character = ROM_gheorghe_mihail
 # recruit_character = ROM_chief_planning
 recruit_character = ROM_ermil_gheorghiu
 # recruit_character = ROM_army_logistics
@@ -97,24 +96,6 @@ set_technology = {
 }
 
 if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-		basic_light_tank = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-		basic_light_tank_chassis = 1
-	}
-}
-if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
 		early_submarine = 1
@@ -151,9 +132,8 @@ add_ideas = ROM_waning_influence_of_democracy
 add_ideas = ROM_romanian_officers
 add_ideas = ROM_iron_guard
 add_ideas = ROM_king_carol_ii_hedonist
-add_ideas = ROM_oil_lend_lease
 
-set_convoys = 60
+set_convoys = 100
 
 set_politics = {
 	ruling_party = democratic
@@ -213,3 +193,97 @@ set_popularities = {
 			rear_1_custom_slot = ship_depth_charge_1
 		}
 	}
+
+###################### ROMANIA IN 1941 START ######################
+
+	1941.1.1 = {
+	set_oob = "ROM_1941_nsb"
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1937.10.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		democratic = 5
+		fascism = 55
+		communism = 0
+		neutrality = 40
+	}
+	### Focus Completion ### 
+	complete_national_focus = ROM_national_recovery
+	complete_national_focus = ROM_autarky
+	complete_national_focus = ROM_national_defense_industry
+	complete_national_focus = ROM_reduce_reliance_on_foreign_imports
+	complete_national_focus = ROM_more_efficient_agricultural_procurement
+	complete_national_focus = ROM_hunedoara_steel_works
+	complete_national_focus = ROM_institute_a_royal_dictatorship
+	complete_national_focus = ROM_sentinels_of_the_motherland
+	complete_national_focus = ROM_arrest_general_antonescu
+	complete_national_focus = ROM_nationalize_the_oil
+	complete_national_focus = ROM_modern_at_guns
+	complete_national_focus = ROM_modern_at_guns_2
+	complete_national_focus = ROM_expand_the_army
+	complete_national_focus = ROM_expand_the_war_industry
+	complete_national_focus = ROM_hunedoara_steel_works
+	complete_national_focus = ROM_expand_the_axis_oil_trade
+	complete_national_focus = ROM_ensure_agricultural_self_sufficiency
+	### Focus Completion Manually ###
+	unlock_national_focus = ROM_expand_the_university_of_bucharest
+	unlock_national_focus = ROM_bucharest_technical_institute
+	unlock_national_focus = ROM_for_the_preservation_of_greater_romania
+	unlock_national_focus = ROM_reject_french_containment_strategies
+	unlock_national_focus = ROM_the_decay_of_democracy
+	unlock_national_focus = ROM_elections_of_1937
+	unlock_national_focus = ROM_fascist_economics
+	unlock_national_focus = ROM_form_the_front_of_national_rebirth
+	unlock_national_focus = ROM_german_romanian_oil_exploitation_company
+	unlock_national_focus = ROM_romanian_rearmament
+	unlock_national_focus = ROM_expand_small_arms_manufacturing
+	unlock_national_focus = ROM_deploy_reserve_divisions
+	unlock_national_focus = ROM_import_and_convert_antique_artillery
+	unlock_national_focus = ROM_organizing_logistics
+	unlock_national_focus = ROM_grand_army
+	unlock_national_focus = ROM_support_the_war_industry
+	unlock_national_focus = ROM_operetta_fascism 
+	unlock_national_focus = ROM_the_royal_foundation
+	unlock_national_focus = ROM_army_maneuvers
+	unlock_national_focus = ROM_encourage_trade_with_germany
+	unlock_national_focus = ROM_trade_treaty_with_germany
+
+	add_ideas = {
+		## national spirit
+		ROM_german_influence
+		ROM_preserve_greater_romania2
+		ROM_iron_guard
+		ROM_grand_army
+
+		## economy
+		closed_economy
+		tot_economic_mobilisation
+		all_adults_serve
+		ROM_ROMLOC
+		ROM_nicolae_malaxa
+		tradeback_is_cancer
+		## high command
+
+		ROM_ion_antonescu
+		ROM_gheorghe_avramescu
+		ROM_gheorghe_mihail
+		ROM_ermil_gheorghiu
+		
+		# theorist
+		ROM_gheorghe_potopeanu
+	}
+
+	add_timed_idea = {
+		idea = tradeback_is_cancer
+		days = 60
+	}
+	remove_ideas = {
+		ROM_iron_guard
+		ROM_romanian_officers
+		#ROM_king_carol_ii_hedonist
+	}
+}
+

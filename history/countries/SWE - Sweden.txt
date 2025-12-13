@@ -86,14 +86,29 @@ set_technology = {
 	antitank5 = 1
 	antitank2 = 1
 	mechanised_infantry = 1
+	amphibious_mechanized_infantry = 1
 	improved_infantry_weapons = 1
 	improved_infantry_weapons_2 = 1
 	advanced_heavy_tank_chassis = 1
+	artillery1 = 1
+	artillery4 = 1
+	rocket_artillery = 1
+	rocket_artillery4 = 1
+
 }
 
 create_equipment_variant = {
 	name = "Cheap Mechanised"
 	type = mechanized_equipment_1
+	parent_version = 0
+	upgrades = {
+		mech_cost_upgrade = 5
+	}
+} 
+
+create_equipment_variant = {
+	name = "Cheap Amtrac"
+	type = amphibious_mechanized_equipment_1
 	parent_version = 0
 	upgrades = {
 		mech_cost_upgrade = 5
@@ -236,10 +251,10 @@ if = {
 		support_weapons = 1
 
 		#doctrines
-		air_superiority = 1
+		
 		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
+		 
+		
 		battlefleet_concentration = 1
 		submarine_operations = 1
 

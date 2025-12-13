@@ -386,11 +386,11 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1936
+		start_year = 1938
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = -4 y = 4 }
+			position = { x = -4 y = 5 }
 		}
 
 		ai_will_do = {
@@ -452,11 +452,11 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1939
+		start_year = 1941
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = -4 y = 6 }
+			position = { x = -4 y = 8 }
 		}
 
 		ai_will_do = {
@@ -590,7 +590,7 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = 3 }
+			position = { x = 2 y = @1936 }
 		}
 
 		ai_will_do = {
@@ -817,7 +817,7 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = 9 }
+			position = { x = 2 y = @1942 }
 		}
 
 		on_research_complete = {
@@ -929,7 +929,7 @@ technologies = {
 			modern_armor
 		}
 
-		research_cost = 2.5
+		research_cost = 2
 		start_year = 1945
 
 		folder = {
@@ -1074,7 +1074,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 2.5
+		research_cost = 2
 		start_year = 1939
 
 		folder = {
@@ -1150,12 +1150,12 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 2.5
+		research_cost = 2
 		start_year = 1942
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 5 y = 9 }
+			position = { x = 5 y = @1942 }
 		}
 
 		on_research_complete = {
@@ -1776,29 +1776,26 @@ technologies = {
 
 	sp_armored_advanced_flamethrower_tech = {
 
-		
-
-	
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_land_flamethrower_tank
+			}
+		}
 
 		is_special_project_tech = yes
 
 		research_cost = 1
-		start_year = 1936
-		
+		start_year = 1940
+
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = 4 }
+			position = { x = 12 y = @1940 }
 		}
 
 		enable_equipment_modules = {
-			flamethrower #MM: Moved to Special Project sp_land_flamethrower_tank			
+			advanced_flamethrower
 		}
 
-		enable_subunits = { #MM: Moved to Special Project sp_land_flamethrower_tank
-            light_flame_tank
-            medium_flame_tank
-            heavy_flame_tank
-        }
 
 		show_effect_as_desc = yes
 		ai_will_do = {

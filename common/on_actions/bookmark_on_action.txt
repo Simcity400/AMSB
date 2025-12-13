@@ -1,0 +1,61 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = { 
+				limit = {
+					NOT = { country_exists = USA }
+				}
+				ENG = {
+					add_research_slot = 1
+
+					add_offsite_building = {
+						type = industrial_complex
+						level = 16
+					}
+
+					country_event = { 
+						id = msb.4
+						days = 1825
+					} 
+
+				}
+
+				SOV = {
+					add_offsite_building = {
+						type = industrial_complex
+						level = 16
+					}
+				}
+
+				WST = {
+					give_resource_rights = {
+						receiver = ENG
+						state = 378
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 375
+					}
+					give_resource_rights = {
+						receiver = ENG
+						state = 374
+					}
+				}
+			}
+			if = { 
+				limit = {
+					NOT = { country_exists = CHI }
+				}
+
+				WST = {
+					country_event = { 
+						id = msb.3
+						days = 560 
+					} 
+				}
+			
+			}
+		}
+	}
+}
+

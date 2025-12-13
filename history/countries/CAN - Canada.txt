@@ -29,6 +29,7 @@ if = {
 			engines_1 = 1
 			aircraft_construction = 1
 			iw_small_airframe = 1
+			bba_early_transport_plane = 1
 		}
 	else = {
 		set_air_oob = "CAN_1936_air_legacy"
@@ -97,13 +98,15 @@ set_technology = {
 	tech_recon = 1
 	tech_trucks = 1
 	gw_artillery = 1
-	trench_warfare = 1
-	fleet_in_being = 1
 	basic_train = 1
 	tech_mountaineers = 1
 	marines  = 1
 	paratroopers = 1
 }
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
 if = {
 	limit = {
 		NOT = { has_dlc = "By Blood Alone" }
@@ -112,7 +115,7 @@ if = {
 		early_fighter = 1
 		naval_bomber1 = 1
 		early_bomber = 1
-		
+		early_transport_plane = 1
 	}
 }
 
@@ -245,15 +248,8 @@ if = {
 
 		#doctrines
 		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		subsidiary_carrier_role = 1
-		convoy_sailing = 1
+		#force_rotation = 1
+		#fighter_baiting = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -276,6 +272,11 @@ if = {
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
 	}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_operational_integrity
+
 	complete_special_project = {
 		project = sp:sp_air_radar
 	}

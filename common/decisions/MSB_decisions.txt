@@ -1,0 +1,1113 @@
+operations = {
+     add_convoy = {
+		priority = 100
+        icon = SWE_set_navy_budget
+        allowed = {
+ 		}
+		visible = {
+			is_ai = no
+		}
+        days_remove = 10
+        cost = 0
+        complete_effect = {
+            add_manpower = 1
+            add_equipment_to_stockpile = {
+                type = convoy_1
+                amount = 1
+            }
+        }
+		
+ 		remove_effect = {
+            add_manpower = -1
+            add_equipment_to_stockpile = {
+                type = convoy_1
+                amount = -1
+            }
+ 		}
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+		annex_bulgaria= {
+			# icon = generic_operation
+			allowed = {
+				tag = ITA
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			available = {
+				BUL = {
+					is_ai = yes
+				}
+			}
+            visible = {
+				BUL = {
+					is_ai = yes
+				}
+			}
+			targets = {
+				BUL	
+			}
+			complete_effect = {
+                add_ideas = extra_cp
+				SPR = { add_ideas = extra_cp }
+				BUL = {
+					transfer_units_fraction = {
+						target = ITA
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				ITA = {
+					annex_country = {
+						target = BUL
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = BUL 
+						is_controlled_by = ITA
+					}
+					add_compliance = 100
+				}
+			}
+		}
+	
+	
+		annex_manchukuo = {
+			# icon = generic_operation
+			allowed = {
+				tag = JAP
+			}
+			available = {
+				MAN = {
+					is_ai = yes
+				}
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			visible = {
+				tag = JAP
+			}
+			targets = {
+				MAN
+			}
+			complete_effect = {
+				MAN = {
+					transfer_units_fraction = {
+						target = JAP
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				JAP = {
+					annex_country = {
+						target = MAN
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = MAN
+						is_controlled_by = JAP
+					}
+					add_compliance = 100
+				}
+			}
+		}
+		annex_new_zealand = {
+			# icon = generic_operation
+			allowed = {
+				tag = AST
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			available = {
+				NZL = {
+					is_ai = yes
+				}
+				ENG = {
+						has_completed_focus = uk_new_zealand_focus
+				}
+				NZL = {
+						has_completed_focus = NZL_think_big
+				}
+	
+			}
+			targets = {
+				NZL
+			}
+			complete_effect = {
+				NZL = {
+					transfer_units_fraction = {
+						target = AST
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				AST = {
+					annex_country = {
+						target = NZL
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = NZL
+						is_controlled_by = AST
+					}
+					add_core_of = AST
+				}
+			}
+		}
+    	annex_east_indies = {
+			# icon = generic_operation
+			allowed = {
+				tag = USA
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			visible = {
+				always = no
+			}
+			available = {
+                date > 1940.03.01
+				HOL = {
+                    has_capitulated = yes
+					is_ai = yes
+				}
+				JAP = {has_war = no }
+			}
+			targets = {
+				HOL	
+			}
+			complete_effect = {
+		
+				USA = {
+               	    transfer_state = 672
+			        transfer_state = 334
+			        transfer_state = 335
+			        transfer_state = 667
+			        transfer_state = 673
+			        transfer_state = 668
+			        #transfer_state = 669
+			        transfer_state = 309
+			        #transfer_state = 695
+                    transfer_state = 721 
+                    transfer_state = 738   
+				}
+		
+			}
+		}
+    }
+
+    political_actions = {
+
+	move_capital_to_cascablanca = {
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+		}
+		complete_effect = {
+			set_capital = {
+				state = 461
+			}
+		}
+	}
+
+	move_capital_to_gabon = {
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+		}
+		complete_effect = {
+			set_capital = {
+				state = 539
+			}
+		}
+	}
+
+	move_capital_to_brest = {
+		fire_only_once = no
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+			controls_state = 14
+			has_capitulated = yes
+		}
+		complete_effect = {
+			set_capital = {
+				state = 14
+			}
+		}
+	}
+
+	move_capital_to_paris = {
+		fire_only_once = no
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+			controls_state = 16
+			has_capitulated = yes
+		}
+		complete_effect = {
+			set_capital = {
+				state = 16
+			}
+		}
+	}
+
+	move_capital_to_Kazan = {
+		fire_only_once = yes
+		allowed = {
+			tag = SOV
+		}
+		visible = {
+			tag = SOV
+			GER = { has_war_with = SOV }
+		}
+		complete_effect = {
+			set_capital = {
+				state = 249
+			}
+		}
+	}
+	move_capital_to_Stalingrad = {
+		fire_only_once = yes
+		allowed = {
+			tag = SOV
+		}
+		visible = {
+			tag = SOV
+			GER = { has_war_with = SOV }
+		}
+		complete_effect = {
+			set_capital = {
+				state = 217
+			}
+		}
+	}
+	move_capital_to_Vladivostok = {
+		fire_only_once = yes
+		allowed = {
+			tag = SOV
+		}
+		visible = {
+			tag = SOV
+			GER = { has_war_with = SOV }
+		}
+		complete_effect = {
+			set_capital = {
+				state = 408
+			}
+		}
+	}
+
+}
+
+Technologies = {
+
+	uk_hf3_usa = {
+            icon = GFX_decision_generic_merge_plant_aircraft
+            allowed = {
+                tag = ENG
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+			visible = {
+        		NOT = { country_exists = USA }
+    		}
+            available = {
+                ENG = {
+                    has_war = yes
+                }
+            }
+
+            complete_effect = {
+              	set_technology = { advanced_medium_airframe = 1 }
+				add_ideas = air_support_focus
+            }
+    }
+
+	hosttool_mech = {
+    	# icon = generic_operation
+    	allowed = {
+    	}
+    	fire_only_once = no
+    	cost = 0
+    	ai_will_do = {
+        	factor = 0
+    	}
+    	visible = {
+        	NOT = {
+                tag = HOL
+            	}
+    	}
+    	available = {
+            date > 1937.08.01
+        }
+    	complete_effect = {
+        	SWE = {
+            	create_production_license = {
+                	target = ROOT
+                	equipment = {
+                    	type = mechanized_equipment_1
+                    	version = 1
+                	}
+                	cost_factor = 0
+           		}
+        	}
+    	}
+    }
+
+    hosttool_amtrac = {
+        # icon = generic_operation
+        allowed = {}
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        visible = {}
+        available = {
+           date > 1939.6.1
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                        equipment = {
+                            type = amphibious_mechanized_equipment_1
+                            version = 0
+                            new_prioritised = yes
+                        }
+                    cost_factor = 0
+                }
+            }
+        }
+	}
+    
+    hosttool_aa2 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            
+            available = {
+                AND = {
+                    date > 1938.08.01
+                    
+                }
+            }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_air_equipment_2
+                            version = 0
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+    }
+    hosttool_aa3 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            
+            available = {
+                AND = {
+                    date > 1940.08.01
+                    
+                }
+            }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_air_equipment_3
+                            version = 0
+                            
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+    }
+    
+    hosttool_gun2 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        
+        available = {
+            AND = {
+                date > 1938.02.1
+                
+            }
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = infantry_equipment_2
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+}
+                hosttool_gun3 = {
+                    # icon = generic_operation
+                    allowed = {
+                    }
+                    fire_only_once = no
+                    cost = 0
+                    ai_will_do = {
+                        factor = 0
+                    }
+                    available = {
+                            date > 1940.07.01
+                        }
+                    complete_effect = {
+                        SWE = {
+                            create_production_license = {
+                                target = ROOT
+                                equipment = {
+                                    type = infantry_equipment_3
+                                    version = 0
+                                    
+                                }
+                                cost_factor = 0
+                            }
+                        }
+                    }
+                    }
+                hosttool_AT2 = {
+                    # icon = generic_operation
+                    allowed = {
+                    }
+                    fire_only_once = no
+                    cost = 0
+                    ai_will_do = {
+                        factor = 0
+                    }
+                    
+                    available = {
+                            date > 1938.08.1
+                        }
+                    complete_effect = {
+                        SWE = {
+                            create_production_license = {
+                                target = ROOT
+                                equipment = {
+                                    type = anti_tank_equipment_2
+                                    version = 0
+                                    
+                                }
+                                cost_factor = 0
+                            }
+                        }
+                    }
+                    }
+                hosttool_AT3 = {
+                    # icon = generic_operation
+                    allowed = {
+                    }
+                    fire_only_once = no
+                    cost = 0
+                    ai_will_do = {
+                        factor = 0
+                    }
+                    
+                    available = {
+                            date > 1940.08.01
+                        }
+                    complete_effect = {
+                        SWE = {
+                            create_production_license = {
+                                target = ROOT
+                                equipment = {
+                                    type = anti_tank_equipment_3
+                                    version = 0
+                                    
+                                }
+                                cost_factor = 0
+                            }
+                        }
+                    }
+                }
+
+    hosttool_arty2 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        
+        available = {
+            AND = {
+                date > 1938.02.1
+                
+            }
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = artillery_equipment_2
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+	}
+
+    hosttool_rocket_arty1 = {
+		allowed = {
+		}
+		fire_only_once = no
+		cost = 0
+		ai_will_do = {
+			factor = 0
+        }
+		available = {
+			date > 1939.06.01
+		}
+		complete_effect = {
+			SWE = {
+				create_production_license = {
+					target = ROOT
+                	equipment = {
+                        type = rocket_artillery_equipment_1
+                        version = 0
+                                    
+                        }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+
+	hosttool_arty3 = {
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+        	factor = 0
+        }
+                    
+        available = {
+            date > 1941.1.1
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                    	type = artillery_equipment_3
+                    	version = 0                
+                    }
+                    cost_factor = 0
+                }
+			}
+        }
+    }
+
+	hosttool_rocket_arty2 = {
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+        	factor = 0
+        }
+                    
+        available = {
+            date > 1941.08.1
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                    	type = rocket_artillery_equipment_2
+                    	version = 0                
+                    }
+                    cost_factor = 0
+                }
+			}
+        }
+    }
+}
+
+templates = {
+	Hide_Templates = {
+		icon = decision_generic_decision
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = Clear_Template_Decision
+		}
+	}
+	Show_Templates = {
+		icon = decision_generic_decision
+		visible = {
+			is_ai = no
+			has_country_flag = Clear_Template_Decision
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			clr_country_flag = Clear_Template_Decision
+		}
+	}
+	cav = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "Garrison"
+
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+					cavalry = { x = 0 y = 4 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+					cavalry = { x = 1 y = 2 }
+					cavalry = { x = 1 y = 3 }
+					cavalry = { x = 1 y = 4 }
+					cavalry = { x = 2 y = 0 }
+					cavalry = { x = 2 y = 1 }
+					cavalry = { x = 2 y = 2 }
+					cavalry = { x = 2 y = 3 }
+					cavalry = { x = 2 y = 4 }
+					cavalry = { x = 3 y = 0 }
+					cavalry = { x = 3 y = 1 }
+					cavalry = { x = 3 y = 2 }
+					cavalry = { x = 3 y = 3 }
+					cavalry = { x = 3 y = 4 }
+					cavalry = { x = 4 y = 0 }
+					cavalry = { x = 4 y = 1 }
+					cavalry = { x = 4 y = 2 }
+					cavalry = { x = 4 y = 3 }
+					cavalry = { x = 4 y = 4 }
+				}
+			}
+		}
+	}
+	a2cw = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "2W Infantry/FALS division"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }			
+				}
+			}
+		}
+	}
+	a20cw = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "20W Infantry/16W MM Infantry"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+				}
+			}
+		}
+	}
+	a26cw = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "26W Infantry/20W MM Infantry"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+			}
+		}
+	}
+	a40cw = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "40W Infantry/36 MM Infantry"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+					infantry = { x = 3 y = 3 }
+					infantry = { x = 3 y = 4 }
+				}
+			}
+		}
+	}
+	a50cw = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "50W Infantry/40 MM Infantry"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+					infantry = { x = 3 y = 3 }
+					infantry = { x = 3 y = 4 }
+					infantry = { x = 4 y = 0 }
+					infantry = { x = 4 y = 1 }
+					infantry = { x = 4 y = 2 }
+					infantry = { x = 4 y = 3 }
+					infantry = { x = 4 y = 4 }
+				}
+			}
+		}
+	}
+
+
+
+
+
+}
+
+E_ll = {
+    send_air_to_eng = {
+	
+		icon = GFX_decision_generic_air
+			
+			allowed = {
+		}
+		
+		available = {
+				date > 1940.10.01	
+		} 
+		fire_only_once = yes
+		visible = {
+			original_tag = USA
+		}
+		
+		complete_effect = {
+            air_to_england = yes
+		}			
+    }
+
+	# AXIS
+	# AXIS
+	# AXIS
+	GER_start_ll = {
+		icon = GFX_decision_generic_air
+
+		visible = {	
+			OR = {
+				original_tag = ITA
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+				original_tag = SPR
+				original_tag = IRQ
+			}
+			NOT = { has_country_flag = sending_ll_to_ger }
+		}
+		available = {
+			#date > 1938.1.1
+		}
+
+		complete_effect = {
+			activate_mission = GER_recieving_ll_1
+			set_country_flag = sending_ll_to_ger
+		}
+	}
+	GER_close_ll = {
+		icon = GFX_decision_generic_air
+
+		visible = {	
+			OR = {
+				original_tag = ITA
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+				original_tag = SPR
+				original_tag = IRQ
+			}
+			has_country_flag = sending_ll_to_ger
+		}
+		available = {
+			#date > 1938.1.1
+		}
+
+		complete_effect = {
+			clr_country_flag = sending_ll_to_ger
+		}
+	}
+	GER_recieving_ll_1 = {
+		allowed = {	 
+			OR = { 
+				original_tag = ITA
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+				original_tag = SPR
+				original_tag = IRQ
+			} 
+		}
+		available = {
+			NOT = { has_country_flag = sending_ll_to_ger }
+		}
+		icon = generic_army_support
+		is_good = yes
+		activation = { always = no }
+		days_mission_timeout = 30
+
+		timeout_effect = {
+			if = { 
+				limit = { 
+					has_country_flag = sending_ll_to_ger 
+				}  
+				send_equipment = { equipment = small_plane_airframe amount = 10000 target = GER }
+				send_equipment = { equipment = large_plane_airframe amount = 10000 target = GER }
+				send_equipment = { equipment = small_plane_cas_airframe amount = 10000 target = GER }
+				send_equipment = { equipment = medium_plane_airframe amount = 10000 target = GER }
+				send_equipment = { equipment = medium_plane_fighter_airframe amount = 10000 target = GER }
+			}
+			activate_mission = GER_recieving_ll_2		
+		}
+	}
+	GER_recieving_ll_2 = {
+		allowed = {	 
+			OR = { 
+				original_tag = ITA
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+				original_tag = SPR
+				original_tag = IRQ
+			} 
+		}
+		available = {
+			NOT = { has_country_flag = sending_ll_to_ger }
+		}
+		icon = generic_army_support
+		is_good = yes
+		activation = { always = no }
+		days_mission_timeout = 30
+
+		timeout_effect = {
+			if = { 
+				limit = { 
+					has_country_flag = sending_ll_to_ger 
+				}  
+				send_equipment = { equipment = small_plane_airframe amount = 10000 target = GER }
+				send_equipment = { equipment = large_plane_airframe amount = 10000 target = GER }
+				send_equipment = { equipment = small_plane_cas_airframe amount = 10000 target = GER }
+				send_equipment = { equipment = medium_plane_airframe amount = 10000 target = GER }
+				send_equipment = { equipment = medium_plane_fighter_airframe amount = 10000 target = GER }
+			}
+			activate_mission = GER_recieving_ll_1		
+		}
+	}
+}	
+
+
+
+

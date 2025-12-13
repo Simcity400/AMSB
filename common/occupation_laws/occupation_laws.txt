@@ -118,10 +118,12 @@ autonomous_occupation = {
 	icon = 2
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
 
+	fallback_law = foreign_civilian_oversight
+
 	visible = {
 		has_government = democratic #? on design
 	}
-
+	
 	state_modifier = {
 		resistance_target 				= +0.10
 		compliance_gain 				= 0.02
@@ -432,6 +434,10 @@ harsh_quotas_occupation = {
 		custom_modifier_tooltip = "factory_sabotage_decrease_tooltip"
 	}
 
+	visible = {
+		NOT = { original_tag = FRA }
+	}
+
 	ai_will_do = {
 		# enabled if has damaged factories
 		# gets higher score if more are damaged
@@ -528,14 +534,12 @@ colonial_police = {
 				#NOT = { has_completed_focus = ITA_regional_development }
 				NOT = { has_country_flag = ITA_colonial_police_improved_flag }
 				OR = {
-					AND = {
-						has_completed_focus = ITA_albanian_fascist_militia
-						FROM = { original_tag = ALB }
-					}
-					AND = {
-						has_completed_focus = ITA_ministry_of_italian_africa
-						#FROM = { capital_scope = { is_on_continent = africa } }
-					}
+					#FROM = { original_tag = ALB }
+
+					#FROM = { original_tag = GRE }
+
+					#FROM = { original_tag = YUG }
+					FROM = { capital_scope = { is_on_continent = africa } }
 				}
 			}
 			AND = {
@@ -588,13 +592,12 @@ colonial_police_improved = {
 		original_tag = ITA
 		has_completed_focus = ITA_regional_development
 		NOT = { has_country_flag = ITA_colonial_police_final_flag }
-		OR = {
-			AND = {
-				FROM = { original_tag = ALB }
-				has_completed_focus = ITA_albanian_fascist_militia
+			OR = {
+				#FROM = { original_tag = ALB }
+				#FROM = { original_tag = GRE }
+				#FROM = { original_tag = YUG }
+				FROM = { capital_scope = { is_on_continent = africa } }
 			}
-			#FROM = { capital_scope = { is_on_continent = africa } }
-		}
 	}
 
 	state_modifier = {
@@ -639,13 +642,12 @@ colonial_police_final = {
 	visible = {
 		original_tag = ITA
 		has_completed_focus = ITA_polizia_dell_africa_italiana
-		OR = {
-			AND = {
-				FROM = { original_tag = ALB }
-				has_completed_focus = ITA_albanian_fascist_militia
+			OR = {
+				#FROM = { original_tag = ALB }
+				#FROM = { original_tag = GRE }
+				#FROM = { original_tag = YUG }
+				FROM = { capital_scope = { is_on_continent = africa } }
 			}
-			#FROM = { capital_scope = { is_on_continent = africa } }
-		}
 	}
 
 	state_modifier = {
@@ -727,7 +729,7 @@ secretaries_general = {
 }
 
 independent_rule = {
-	icon = 13
+	icon = 15
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
 
 	fallback_law = foreign_civilian_oversight
@@ -768,9 +770,9 @@ independent_rule = {
 	}
 }
 
-
-princely_subjugation= {
-	icon = 13
+# The idea for this law is that we exploit the people to get us extra resources fast, but builds up resistance much quicker
+princely_subjugation = {
+	icon = 14
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
 
 	fallback_law = military_governor_occupation
@@ -786,12 +788,12 @@ princely_subjugation= {
 	}
 
 	state_modifier = {
-		resistance_target 				= -0.40
-		compliance_gain 				= -0.05
+		resistance_target 				= 0.60
+		compliance_gain 				= -0.10
 		required_garrison_factor 		= 0.15
-		resistance_damage_to_garrison 	= 0.50
-		local_factories 				= 1
-		local_resources 				= 1
+		resistance_damage_to_garrison 	= -0.10
+		local_factories 				= 0.60
+		local_resources 				= 0.60
 
 	}
 
@@ -818,3 +820,172 @@ princely_subjugation= {
 		}
 	}
 }
+
+senbu_occupation_law = {
+	icon = 16
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	fallback_law = foreign_civilian_oversight
+
+	visible = {
+		
+		AND = {
+
+			OR = {
+				AND = {
+					original_tag = JAP
+					has_completed_focus = JAP_invest_in_senbu
+				}
+				AND = {
+					has_dlc = "No Compromise, No Surrender"
+					is_literally_china = yes 
+					has_completed_focus = CHI_tsr_the_reorganied_government
+				}
+			}
+			
+			FROM = { 
+				OR = {
+					is_literally_china = yes
+					tag = MEN
+					tag = MAN
+					tag = KOR
+					tag = MON
+					tag = TIB
+				}
+			}
+
+		}
+		
+	}
+
+	state_modifier = { #CHANGES HERE NEED TO BE APPLIED ALSO IN senbu_occupation_law_fake_idea idea
+		resistance_target 				= -0.2
+		compliance_gain 				= 0.01
+		required_garrison_factor 		= 0.05
+		resistance_damage_to_garrison	= -0.35
+		local_factories 				= -0.1
+		local_resources 				= -0.1
+	}
+
+	ai_will_do = {
+		base = 250
+		modifier = {
+			check_variable  = { resistance_target_without_law > 0.3}
+			add = 200
+		}
+
+		modifier = {
+			check_variable  = { resistance_target_without_law > 0.44}
+
+			set_temp_variable = { requirement_limit = 0.35 }
+			if = {
+				limit = { occupation_law = local_police_force_garrison }
+				set_temp_variable = { requirement_limit = 0.55 }
+			}
+			check_variable = { garrison_min_support_ratio < requirement_limit }
+
+			add = 350
+		}
+	}
+}
+
+GEACPS_exploitation_occupation_law = {
+	icon = 17
+	sound_effect = "Martial_Law_Interface_Harsh_Quotas_Occupation"
+
+	fallback_law = harsh_quotas_occupation
+
+	visible = {
+		
+		AND = {
+			original_tag = JAP
+			has_country_flag = JAP_chose_to_exploit_east_asia_flag
+			FROM = { capital_scope = { is_on_continent = asia } }
+		}
+		
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.40
+		compliance_gain 				= -0.08
+		required_garrison_factor 		= 0.3
+		resistance_damage_to_garrison 	= 0.6
+
+		local_factories 				= 0.2
+		local_resources 				= 0.6
+
+		repair_speed_arms_factory_factor = 0.25
+		repair_speed_industrial_complex_factor = 0.25
+
+		custom_modifier_tooltip = "factory_sabotage_decrease_tooltip"
+	}
+
+	ai_will_do = {
+		# enabled if has damaged factories
+		# gets higher score if more are damaged
+		base = 0
+
+		modifier = {
+			set_temp_variable = { num_damaged = damaged_building_level@arms_factory }
+			add_to_temp_variable = { num_damaged = damaged_building_level@industrial_complex }
+
+			check_variable = { num_damaged > 0 }
+			clamp_temp_variable = { var = num_damaged max = 4 }
+			multiply_temp_variable = { num_damaged = 50 }
+			add_to_temp_variable = { num_damaged = 150 }
+
+			add = num_damaged
+		}
+	}
+}
+
+GEACPS_prosperity_occupation_law = {
+	icon = 17
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	fallback_law = foreign_civilian_oversight
+
+	visible = {
+		
+		AND = {
+			original_tag = JAP
+			has_country_flag = JAP_chose_to_support_east_asia_flag
+			FROM = { capital_scope = { is_on_continent = asia } }
+		}
+		
+	}
+
+	state_modifier = { #CHANGES HERE NEED TO BE APPLIED ALSO IN senbu_occupation_law_fake_idea idea
+		resistance_target 				= -0.15
+		compliance_gain 				= 0
+		required_garrison_factor 		= 0.05
+		resistance_damage_to_garrison	= -0.25
+		local_factories 				= 0.1
+		local_resources 				= 0.05
+	}
+
+	ai_will_do = {
+		base = 250
+		modifier = {
+			check_variable  = { resistance_target_without_law > 0.3}
+			add = 200
+		}
+
+		modifier = {
+			check_variable  = { resistance_target_without_law > 0.44}
+
+			set_temp_variable = { requirement_limit = 0.35 }
+			if = {
+				limit = { occupation_law = local_police_force_garrison }
+				set_temp_variable = { requirement_limit = 0.55 }
+			}
+			check_variable = { garrison_min_support_ratio < requirement_limit }
+
+			add = 350
+		}
+	}
+}
+
+
+
+

@@ -1,0 +1,382 @@
+
+ideas = {
+
+###############################
+###############################
+#### WUW NATIONAL SPIRITS #####
+###############################
+###############################
+
+	country = {
+
+		IRE_Bunsreacht_na_hEireann_idea = {
+			picture = Constitution
+			allowed = {
+				always = yes
+			}
+
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.15
+				stability_factor = 0.05
+				political_power_factor = 0.15
+				war_support_factor = 0.05
+			}
+		}
+		IRE_welfare_state = {
+			picture = HABSBURG_economy
+			allowed = {
+				always = yes
+			}
+			name = "Welfare State"
+
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.3
+			}
+		}
+		
+		IRE_Celtic_Knowledge = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+
+			cancel = {
+			  NOT = {
+			  	OR = {
+			  		is_in_faction_with = IRE
+			  		original_tag = IRE
+			  	}
+			  }
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+		
+		IRE_Irish_family_values = {
+			picture = BEL_traditional_family_values
+			allowed = {
+				original_tag = IRE
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				monthly_population = 0.15
+			}
+		}
+		
+		IRE_Treaty_Ports = {
+			picture = ARG_british_influences
+			allowed = {
+				original_tag = IRE
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = -0.15
+				naval_morale_factor = -0.3
+				navy_org_factor = -0.3
+			}
+		}
+		
+		IRE_emergency_powers_act_idea = {
+			
+			picture = generic_production_bonus
+			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				conversion_cost_civ_to_mil_factor = -0.25
+				stability_factor = -0.1
+				conscription_factor = 0.15
+			}
+		}
+		
+		IRE_autonomous_dominion = {
+
+			picture = hol_caved_to_the_british
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.5
+			}
+		}
+		
+		IRE_anti_communist_action = {
+			picture = generic_communism_banned
+			allowed = {
+				original_tag = IRE
+			}
+
+			allowed_civil_war = { 
+				original_tag = IRE 
+			}
+			removal_cost = -1 
+			
+			modifier = {
+				communism_drift = -0.05
+				war_support_factor = 0.05
+				political_power_factor = 0.15
+			}
+		}
+		
+		IRE_oppressed_working_class = {
+			picture = SPR_crush_the_revolution
+			allowed = {
+				original_tag = IRE
+			}
+
+			allowed_civil_war = { 
+				original_tag = IRE 
+			}
+			removal_cost = -1 
+			
+			modifier = {
+				drift_defence_factor = -0.5
+				stability_factor = -0.1
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.1
+			}
+		}
+		
+		IRE_Sraitheanna_na_hEireann = {
+			picture = IRE_ira_loyal
+			allowed = {
+				original_tag = CHL
+			}
+
+			allowed_civil_war = { 
+				original_tag = CHL 
+			}
+			removal_cost = -1 
+			
+			modifier = {
+				conscription = 0.035
+				conscription_factor = 0.2
+				resistance_damage_to_garrison = -0.2
+			}
+		}
+		IRE_anti_british = {
+			picture = FIN_british_threat
+			allowed = {
+				original_tag = IRE
+			}
+
+			allowed_civil_war = { 
+				original_tag = IRE 
+			}
+			removal_cost = -1 
+			
+			modifier = {
+				war_support_factor = 0.05
+			}
+
+			targeted_modifier = {
+				tag = ENG
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		IRE_anti_soviet = {
+			picture = generic_attack_soviet_union
+			allowed = {
+				original_tag = IRE
+			}
+
+			allowed_civil_war = { 
+				original_tag = IRE 
+			}
+			removal_cost = -1 
+			
+			modifier = {
+				war_support_factor = 0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+		
+		IRE_Shipyard_Island = {
+			picture = generic_navy_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+						
+			equipment_bonus = {
+				ship_hull_submarine = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.2 instant = yes
+				}
+				ship_hull_heavy = {
+					build_cost_ic = -0.2 instant = yes
+				}
+				ship_hull_carrier = {
+					build_cost_ic = -0.2 instant = yes
+				}
+			}
+		}
+		
+		IRE_Irish_Diaspora = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = SPR_seize_the_gold_reserves
+			
+			modifier = {
+				army_defence_factor = 0.1
+				army_attack_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		IRE_Irish_Lost_Celtic_Lands = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = SPR_seize_the_gold_reserves
+			
+			modifier = {
+				army_defence_factor = 0.1
+				army_attack_factor = 0.1
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		IRE_state_unions_idea = {
+
+			allowed = {
+				always = no
+				tag = ARG
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			picture = FIN_finnish_federation_of_trade_unions
+			modifier = {
+				production_factory_max_efficiency_factor = 0.075
+				production_speed_arms_factory_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+		
+		IRE_invite_foreign_capital = {
+			allowed = {
+				original_tag = IRE
+				always = no
+			}
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				
+			}
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.05
+				production_speed_supply_node_factor = 0.1
+				production_speed_rail_way_factor = 0.1
+				research_speed_factor = 0.05
+			}
+		}
+		
+		IRE_Celtic_Navy = {
+			picture = generic_navy_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+						
+			equipment_bonus = {
+				ship_hull_submarine = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				ship_hull_heavy = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				ship_hull_carrier = {
+					build_cost_ic = -0.35 instant = yes
+				}
+			}
+		}
+		
+	}
+}

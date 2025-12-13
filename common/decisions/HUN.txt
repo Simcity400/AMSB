@@ -460,6 +460,82 @@ HUN_gyor_program_initiatives_category = {
 
 	}
 
+	# Invest in the Diósgyőri Gépgyárs Újgyár Azsia Plant
+	HUN_invest_in_the_diosgyor_azsia_plant_decision  = {
+
+		priority = 98
+
+		icon = GFX_decision_gre_investment_decisions
+
+		ai_will_do = {
+			base = 10
+		}
+
+		allowed = {  
+			original_tag = HUN
+		}
+
+		visible = { 
+			has_completed_focus = wuw_HUN_announce_the_gyor_program 
+			NOT = {
+				has_country_flag = HUN_invested_in_diosgyor_azsia_plant
+			}
+		}
+
+		available = {
+			has_completed_focus = wuw_HUN_announce_the_gyor_program
+			has_completed_focus = wuw_HUN_expand_the_diosgyor_machinery_factory
+			has_country_flag = HUN_activated_huba_1_flag
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+		} 
+
+		days_remove = 70
+
+		cost = 50
+
+		modifier = {
+			consumer_goods_factor = 0.15
+		}
+
+		complete_effect = { 
+			  
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = HUN_invested_in_diosgyor_azsia_plant
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}	
+			
+
+		} 
+
+	}
+
 	# Merge Companies into MWG/Rába
 	HUN_merge_companies_into_the_raba_family_decision  = {
 
@@ -488,6 +564,7 @@ HUN_gyor_program_initiatives_category = {
 		available = {
 			has_completed_focus = wuw_HUN_announce_the_gyor_program
 			has_completed_focus = wuw_HUN_the_botond
+			has_completed_focus = wuw_HUN_make_the_magyar_legiero_known
 			has_country_flag = HUN_activated_huba_1_flag
 			any_core_state = {
 				is_fully_controlled_by = ROOT
@@ -529,10 +606,17 @@ HUN_gyor_program_initiatives_category = {
 			}
 			
 			add_tech_bonus = {
-				bonus = 1
+				bonus = 0.3
 				uses = 1
 				category = motorized_equipment
 			}
+
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = light_air
+			}	
+			
 
 		} 
 
@@ -562,8 +646,10 @@ HUN_gyor_program_initiatives_category = {
 
 		available = {
 			has_completed_focus = wuw_HUN_announce_the_gyor_program
-			has_completed_focus = wuw_HUN_invest_in_ludovica_academy
-
+			OR = {
+				has_completed_focus = wuw_HUN_doctrinal_studies
+				has_completed_focus = wuw_HUN_form_the_gyorshadtest
+			}
 			any_core_state = {
 				is_fully_controlled_by = ROOT
 			}
@@ -804,12 +890,88 @@ HUN_gyor_program_initiatives_category = {
 
 	}
 
-	# Invest in the Magyar Ruggyantaárúgyár
-	HUN_invest_in_magyar_ruggyantaarugyar_decision  = {
+	# Resuscitate the Magyar Lloyd Repülőgép és motorgyár Részvény-Társaság
+	HUN_recusitate_the_hungarian_loyd_airraft_and_engine_factory_decision  = {
 
-		priority = 80
+		priority = 93
 
-		icon = GFX_decision_rubber
+		icon = GFX_decision_hol_attract_foreign_investors
+
+		ai_will_do = {
+			base = 3
+		}
+
+		allowed = {  
+			original_tag = HUN
+		}
+
+		visible = { 
+			has_completed_focus = wuw_HUN_announce_the_gyor_program 
+			NOT = {
+				has_country_flag = HUN_resuscitated_the_loyd_factory
+			}
+		}
+
+		available = {
+			has_completed_focus = wuw_HUN_announce_the_gyor_program
+			has_completed_focus = wuw_HUN_make_the_magyar_legiero_known
+			has_country_flag = HUN_activated_huba_1_flag
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+		} 
+
+		days_remove = 84
+
+		cost = 50
+
+		modifier = {
+			consumer_goods_factor = 0.20
+		}
+
+		complete_effect = { 
+			  
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = HUN_resuscitated_the_loyd_factory
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}	
+			
+
+		} 
+
+	}
+
+	# Open the Székesfehérvár-Sóstó Plant
+	HUN_open_the_szekesfehervar_sosto_plant_decision  = {
+
+		priority = 95
+
+		icon = GFX_decision_generic_merge_plant_aircraft
 
 		ai_will_do = {
 			base = 5
@@ -822,12 +984,16 @@ HUN_gyor_program_initiatives_category = {
 		visible = { 
 			has_completed_focus = wuw_HUN_announce_the_gyor_program 
 			NOT = {
-				has_country_flag = HUN_invested_in_magyar_ruggyantaarugyar_flag
+				OR = {
+					has_country_flag = HUN_opened_the_sosto_plant_flag
+					has_completed_focus = wuw_HUN_joint_air_development
+				}
 			}
 		}
 
 		available = {
 			has_completed_focus = wuw_HUN_announce_the_gyor_program
+			has_completed_focus = wuw_HUN_repulo_muszaki_intezet
 			has_country_flag = HUN_activated_huba_1_flag
 			any_core_state = {
 				is_fully_controlled_by = ROOT
@@ -836,7 +1002,7 @@ HUN_gyor_program_initiatives_category = {
 
 		days_remove = 35
 
-		cost = 50
+		cost = 25
 
 		modifier = {
 			consumer_goods_factor = 0.15
@@ -848,23 +1014,98 @@ HUN_gyor_program_initiatives_category = {
 
 		remove_effect = {
 			hidden_effect = {
-				set_country_flag = HUN_invested_in_magyar_ruggyantaarugyar_flag
+				set_country_flag = HUN_opened_the_sosto_plant_flag
 			}
 
-			43 = {
+			air_experience = 25
+
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
 				}
-				add_resource = {
-					type = rubber
-					amount = 16
-				}	
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
 			}
 			
 
 		} 
 
 	}
+
+	# Invest in the Dunai Repülőgépgyár
+	 HUN_invest_in_dunai_repulogepgyar_decision  = {
+
+		priority = 92
+
+		icon = GFX_decision_generic_air
+
+		ai_will_do = {
+			base = 5
+		}
+
+		allowed = {  
+			original_tag = HUN
+		}
+
+		visible = { 
+			has_completed_focus = wuw_HUN_announce_the_gyor_program 
+			NOT = {
+				OR = {
+					has_country_flag = HUN_invested_in_dunai_repulogepgyar_flag
+					has_completed_focus = wuw_HUN_repulo_muszaki_intezet
+				}
+			}
+		}
+
+		available = {
+			has_completed_focus = wuw_HUN_announce_the_gyor_program
+			has_completed_focus = wuw_HUN_joint_air_development
+			has_country_flag = HUN_activated_huba_1_flag
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+		} 
+
+		days_remove = 35
+
+		cost = 35
+
+		modifier = {
+			consumer_goods_factor = 0.15
+		}
+
+		complete_effect = { 
+			  
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = HUN_invested_in_dunai_repulogepgyar_flag
+			}
+
+			air_experience = 15
+
+			add_tech_bonus = {
+				name = HUN_tac_focus
+				bonus = 0.3
+				uses = 1
+				category = medium_air
+			}
+			
+
+		} 
+
+	}
+
 
 
 

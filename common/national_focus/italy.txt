@@ -955,7 +955,7 @@ focus_tree = {
 
 	focus = {
 		id = ITA_regional_development
-		icon = GFX_goal_generic_construction
+		icon = GFX_goal_italy_colonial_investments
 		prerequisite = { focus = ITA_develop_eritrea focus = ITA_develop_libya focus = ITA_develop_somaliland focus = ITA_develop_ethiopia }
 
 		x = 1
@@ -1713,13 +1713,13 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = oil
-				amount = 8
+				amount = 4
 				state = 450
 			}
 			450 = {
 				ITA_check_for_cooperatives_and_add_dm = yes #If appropriate, apply dm from Cooperatives for Intensive Exploitation 
 				set_state_flag = benghazi_oil_developed
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = synthetic_refinery
 					level = 2
@@ -1753,8 +1753,6 @@ focus_tree = {
 		}
 	}
 
-
-
 	focus = {
 		id = ITA_steel_industry_in_terni
 		icon = GFX_focus_generic_steel
@@ -1774,10 +1772,10 @@ focus_tree = {
 			add_to_variable = { ITA_iri_production_speed_arms_factory_factor = 0.025 }
 			custom_effect_tooltip = ITA_steel_industry_in_terni_ricostruzione_industriale_tt
 			2 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 				add_resource = {
@@ -1808,10 +1806,10 @@ focus_tree = {
 			custom_effect_tooltip = ITA_power_plants_in_terni_ricostruzione_industriale_tt
 
 			2 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1890,6 +1888,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ITA_industria_della_gomma_sintetica
+		mutually_exclusive = { focus = ITA_modernize_the_mezzogiorno }
 		cost = 10
 		available = {
 		}
@@ -1903,7 +1902,7 @@ focus_tree = {
 					158 = {
 						free_building_slots = {
 							building = industrial_complex
-							size > 0
+							size > 3
 							include_locked = yes
 						}
 					}
@@ -1912,7 +1911,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = industrial_complex
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -1923,7 +1922,7 @@ focus_tree = {
 						is_controlled_by = ROOT
 						free_building_slots = {
 							building = industrial_complex
-							size > 0
+							size > 3
 							include_locked = yes
 						}
 					}
@@ -1931,7 +1930,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = industrial_complex
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -1943,7 +1942,7 @@ focus_tree = {
 					159 = {
 						free_building_slots = {
 							building = arms_factory
-							size > 0
+							size > 3
 							include_locked = yes
 						}
 					}
@@ -1952,7 +1951,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = arms_factory
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -1963,7 +1962,7 @@ focus_tree = {
 						is_controlled_by = ROOT
 						free_building_slots = {
 							building = arms_factory
-							size > 0
+							size > 3
 							include_locked = yes
 						}
 					}
@@ -1971,7 +1970,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = arms_factory
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -1983,7 +1982,7 @@ focus_tree = {
 					161 = {
 						free_building_slots = {
 							building = industrial_complex
-							size > 0
+							size > 3
 							include_locked = yes
 						}
 					}
@@ -1992,7 +1991,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = industrial_complex
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -2003,7 +2002,7 @@ focus_tree = {
 						is_controlled_by = ROOT
 						free_building_slots = {
 							building = industrial_complex
-							size > 0
+							size > 3
 							include_locked = yes
 						}
 					}
@@ -2011,7 +2010,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = industrial_complex
-						level = 3
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -2022,8 +2021,8 @@ focus_tree = {
 					has_full_control_of_state = 160
 					160 = {
 						free_building_slots = {
-							building = dockyard
-							size > 0
+							building = arms_factory
+							size > 3
 							include_locked = yes
 						}
 					}
@@ -2031,8 +2030,8 @@ focus_tree = {
 				160 = { #VENETO (Venice )
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
-						type = dockyard
-						level = 3
+						type = arms_factory
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -2042,16 +2041,16 @@ focus_tree = {
 					limit = {
 						is_controlled_by = ROOT
 						free_building_slots = {
-							building = dockyard
-							size > 0
+							building = arms_factory
+							size > 3
 							include_locked = yes
 						}
 					}
 					prioritize = { 852 736 } #ISTRIA as main fallback
 					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
-						type = dockyard
-						level = 3
+						type = arms_factory
+						level = 4
 						instant_build = yes
 					}
 				}
@@ -2066,6 +2065,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_industria_della_gomma_sintetica
+		mutually_exclusive = { focus = ITA_strengthen_northern_industry }
 		cost = 10
 		available = {
 		}
@@ -2085,6 +2085,8 @@ focus_tree = {
 					}
 				}
 				117 = { #CAMPAGNA (Napoli)
+
+					add_extra_state_shared_building_slots = 5
 					if = {
 						limit = {
 							infrastructure < 5
@@ -2095,7 +2097,6 @@ focus_tree = {
 							instant_build = yes						
 						}
 					}
-					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -2131,6 +2132,8 @@ focus_tree = {
 						}
 					}
 					prioritize = { 156 2 162 } #CALABRIA as main fallback
+
+					add_extra_state_shared_building_slots = 5
 					if = {
 						limit = {
 							infrastructure < 5
@@ -2141,7 +2144,6 @@ focus_tree = {
 							instant_build = yes						
 						}
 					}
-					add_extra_state_shared_building_slots = 5
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -2165,6 +2167,8 @@ focus_tree = {
 					has_full_control_of_state = 849
 				}
 				849 = { #PUGLIA (Taranto, Bari, Foggia)
+
+					add_extra_state_shared_building_slots = 5
 					if = {
 						limit = {
 							infrastructure < 5
@@ -2175,7 +2179,16 @@ focus_tree = {
 							instant_build = yes						
 						}
 					}
-					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
 					add_building_construction = {
 						type = dockyard
 						level = 2
@@ -2196,6 +2209,8 @@ focus_tree = {
 				}
 
 				115 = { #SICILY (Palermo, Messina, Catania)
+
+					add_extra_state_shared_building_slots = 5
 					if = {
 						limit = {
 							infrastructure < 5
@@ -2206,7 +2221,16 @@ focus_tree = {
 							instant_build = yes						
 						}
 					}
-					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
 					add_building_construction = {
 						type = dockyard
 						level = 2
@@ -2232,28 +2256,38 @@ focus_tree = {
 					has_full_control_of_state = 114
 				}
 				114 = { #SARDINIA (Cagliari)
+					add_extra_state_shared_building_slots = 5
 					if = {
 						limit = {
 							infrastructure < 5
-						}
-						add_extra_state_shared_building_slots = 5
-						add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes
 						}
 						add_building_construction = {
 							type = infrastructure
 							level = 1
 							instant_build = yes						
 						}
-						add_building_construction = {
-							type = naval_base
-							level = 2
-							instant_build = yes
-							province = 11773					
-						}
 					}
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 11773					
+					}			
 				}
 			}
 
@@ -2262,15 +2296,9 @@ focus_tree = {
 					has_full_control_of_state = 162 #TOSCANA
 				}
 				162 = {
-					add_extra_state_shared_building_slots = 5
-					add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes
-					}
 					add_resource = {
 						type = steel
-						amount = 50
+						amount = 24
 					}
 				}
 			}
@@ -2504,16 +2532,16 @@ focus_tree = {
 					159 = {
 						free_building_slots = {
 							building = arms_factory
-							size > 2
+							size > 1
 							include_locked = yes
 						}
 					}
 				}
 				159 = { #LOMBARDY (Milano)
-					add_extra_state_shared_building_slots = 3
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = arms_factory
-						level = 3
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -2524,7 +2552,7 @@ focus_tree = {
 						is_controlled_by = ROOT
 						free_building_slots = {
 							building = arms_factory
-							size > 2
+							size > 1
 							include_locked = yes
 						}
 					}
@@ -2532,7 +2560,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = arms_factory
-						level = 3
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -2930,274 +2958,11 @@ focus_tree = {
 		}
 	}
 
-focus = {
-		id = ITA_Brigate_Nere
-		icon = GFX_SOV_fortify_mongolian_border_ccp_2d_sov_compatibility
-		prerequisite = { 
-			focus = ITA_army_primacy_bba
-		}
-		x = 0
-		y = 1
-		relative_position_id = ITA_army_primacy_bba
-
-		cost = 10
-
-		available = {
-			date > 1941.1.1
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {		
-			custom_effect_tooltip = GER_create_unit_mainland_tt
-			hidden_effect = {	
-				division_template = {
-					name = "Brigate Nere"
-					priority = 2
-					division_names_group = ITA_INF_01
-					is_locked = yes
-					regiments = {
-						infantry = { x = 0 y = 0 }
-						infantry = { x = 0 y = 1 }
-						infantry = { x = 0 y = 2 }
-
-		        		infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-						infantry = { x = 1 y = 2 }
-
-						infantry = { x = 2 y = 0 }
-						infantry = { x = 2 y = 1 }
-
-						infantry = { x = 3 y = 0 }
-						infantry = { x = 3 y = 1 }
-					}
-					support = {
-						anti_tank = { x = 0 y = 0 }
-						anti_air = { x = 0 y = 1 }
-					}
-				}
-
-				random_owned_controlled_state = {
-					prioritize = { 2 }
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-					create_unit = {
-						division = "name = \"Brigate Nere\" division_template = \"Brigate Nere\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = ITA
-					}	
-				}
-			}
-
-		}
-	}
-
-
 	focus = {
 		id = ITA_preserve_army_traditions
 		icon = GFX_focus_generic_little_entente
 		prerequisite = { focus = ITA_army_primacy_bba }
-		# mutually_exclusive = { focus = ITA_a_bandits_war }
+		mutually_exclusive = { focus = ITA_a_bandits_war focus = ITA_follow_pariani_plan }
 		x = -4
 		y = 1
 		relative_position_id = ITA_army_primacy_bba
@@ -3215,11 +2980,17 @@ focus = {
 
 			army_experience = 25
 
+			add_mastery= {
+				amount = 150
+				grand_doctrine = grand_battleplan
+				track = infantry
+			}
+
 			add_doctrine_cost_reduction = {
 				name = ITA_preserve_army_traditions
-				cost_reduction = 0.75
+				cost_reduction = 0.5
 				uses = 1
-				category = cat_grand_battle_plan
+				category = land_doctrine
 			}
 		}
 	}
@@ -3464,7 +3235,7 @@ focus = {
 		id = ITA_a_bandits_war
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = ITA_army_primacy_bba }
-		# mutually_exclusive = { focus = ITA_preserve_army_traditions }
+		mutually_exclusive = { focus = ITA_preserve_army_traditions focus = ITA_follow_pariani_plan }
 		x = 4
 		y = 1
 		relative_position_id = ITA_army_primacy_bba
@@ -3482,11 +3253,18 @@ focus = {
 			custom_effect_tooltip = available_chief_of_army
 			show_ideas_tooltip = ITA_alberto_pariani
 
+			add_mastery_bonus = {
+				name = ITA_a_bandits_war
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_mobile_warfare
+				track = infantry
+			}
 			add_doctrine_cost_reduction = {
 				name = ITA_a_bandits_war
-				cost_reduction = 0.5
-				uses = 2
-				category = cat_mobile_warfare
+				cost_reduction = 0.25
+				uses = 1
+				category = land_doctrine
 			}
 
 			add_tech_bonus = {
@@ -3496,7 +3274,6 @@ focus = {
 				category = motorized_equipment
 				category = recon_tech
 			}
-
 			if = {
 				limit = {
 					has_dlc = "La Resistance"
@@ -3521,9 +3298,35 @@ focus = {
 					}
 					set_technology = {
 						trench_warfare = 0
-						mobile_warfare = 1
+						 
 					}
 				}
+			}
+		}
+	}
+
+	focus = {
+		id = ITA_follow_pariani_plan
+		icon = GFX_goal_generic_occupy_start_war
+		prerequisite = { focus = ITA_army_primacy_bba }
+		mutually_exclusive = { focus = ITA_a_bandits_war focus = ITA_preserve_army_traditions }
+		x = 0
+		y = 1
+		relative_position_id = ITA_army_primacy_bba
+		cost = 5
+
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY_XP}
+
+		completion_reward = {
+			add_to_variable = { ITA_re_army_attack_factor = 0.05 }
+			add_to_variable = { ITA_re_max_command_power_mult = 0.10 }
+			custom_effect_tooltip = ITA_follow_pariani_plan_re_tt
+
+			add_doctrine_cost_reduction = {
+				name = ITA_follow_pariani_plan
+				cost_reduction = 0.25
+				uses = 3
+				category = cat_superior_firepower
 			}
 		}
 	}
@@ -3556,7 +3359,7 @@ focus = {
 	focus = {
 		id = ITA_army_leaders
 		icon = GFX_focus_generic_military_mission
-		prerequisite = { focus = ITA_preserve_army_traditions focus = ITA_a_bandits_war }
+		prerequisite = { focus = ITA_preserve_army_traditions focus = ITA_a_bandits_war focus = ITA_follow_pariani_plan }
 
 		x = 1
 		y = 1
@@ -3609,7 +3412,7 @@ focus = {
 	focus = {
 		id = ITA_superesercito
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = ITA_preserve_army_traditions focus = ITA_a_bandits_war }
+		prerequisite = { focus = ITA_preserve_army_traditions focus = ITA_a_bandits_war focus = ITA_follow_pariani_plan }
 
 		x = 3
 		y = 1
@@ -3646,7 +3449,7 @@ focus = {
 	focus = {
 		id = ITA_italian_tankettes
 		icon = GFX_focus_generic_tankette
-		prerequisite = { focus = ITA_preserve_army_traditions focus = ITA_a_bandits_war }
+		prerequisite = { focus = ITA_preserve_army_traditions focus = ITA_a_bandits_war focus = ITA_follow_pariani_plan }
 
 		x = -1
 		y = 1
@@ -3684,6 +3487,44 @@ focus = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
+				}
+			}
+
+			if = {
+				limit = {
+					has_dlc = "No Step Back"
+				}
+				if = {
+					limit = {
+						has_tech = improved_light_tank_chassis
+					}
+					ITA_add_improved_light_tank_templates = yes
+				}
+				else = {
+					custom_effect_tooltip = ITA_italian_tankettes_light_hull_tt
+					effect_tooltip = {
+						ITA_add_improved_light_tank_templates = yes
+					}
+				}
+				
+				ITA_add_basic_light_tank_destroyer_template = yes
+
+				if = {
+					limit = {
+						is_special_project_completed = sp:sp_land_flamethrower_tank
+					}
+					#L3/35 lf Flamethrower
+					ITA_add_basic_light_flamethrower_template = yes
+				}
+				else = {
+					sp:sp_land_flamethrower_tank = {
+						add_project_progress_ratio = 0.5
+					}
+					custom_effect_tooltip = ITA_italian_tankettes_flamethrower_tt
+					effect_tooltip = {
+						#L3/35 lf Flamethrower
+						ITA_add_basic_light_flamethrower_template = yes
+					}
 				}
 			}
 		}
@@ -3901,7 +3742,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_superesercito
-		cost = 10
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -4119,7 +3960,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_end_fiat_ansaldo_duopoly
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -4201,12 +4042,12 @@ focus = {
 
 	focus = {
 		id = ITA_air_innovations_bba
-		icon = GFX_goal_expand_the_luftwaffe
+		icon = GFX_goal_ITA_regia_aeronautica
 
 		x = 9
 		y = 0
 		relative_position_id = ITA_army_primacy_bba
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -4346,7 +4187,7 @@ focus = {
 		x = 4
 		y = 1
 		relative_position_id = ITA_air_innovations_bba
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -4373,7 +4214,7 @@ focus = {
 		x = -2
 		y = 1
 		relative_position_id = ITA_citta_dell_aria
-		cost = 10
+		cost = 5
 		available = {
 			has_full_control_of_state = 161
 		}
@@ -4924,7 +4765,7 @@ focus = {
 
 	focus = {
 		id = ITA_naval_power_projection
-		icon = GFX_goal_generic_build_navy
+		icon = GFX_goal_ITA_Regia_Marina
 
 		x = 11
 		y = 0
@@ -4949,7 +4790,7 @@ focus = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -4965,7 +4806,7 @@ focus = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -4994,7 +4835,7 @@ focus = {
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 				}
@@ -5009,7 +4850,7 @@ focus = {
 					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 3
 						instant_build = yes
 					}
 				}				
@@ -5056,11 +4897,18 @@ focus = {
 				}
 			}
 			else = {
+				add_mastery_bonus = {
+					name = ITA_intensify_torpedo_manufacturing
+					bonus = 0.1
+					days = 180
+					grand_doctrine = new_convoy_raiding
+					track = submarines
+				}
 				add_doctrine_cost_reduction = {
 					name = ITA_intensify_torpedo_manufacturing
 					cost_reduction = 0.5
-					uses = 2
-					category = cat_trade_interdiction
+					uses = 1
+					category = naval_doctrine
 				}
 			}
 		}
@@ -5120,7 +4968,7 @@ focus = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -5160,7 +5008,7 @@ focus = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = dockyard
-						level = 1
+						level = 2
 						instant_build = yes
 					}
 				}
@@ -5519,7 +5367,7 @@ focus = {
 		x = -2
 		y = 1
 		relative_position_id = ITA_expand_naval_facilities
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -5916,7 +5764,7 @@ focus = {
 		x = -6
 		y = 1
 		relative_position_id = ITA_supermarina
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -5992,7 +5840,7 @@ focus = {
 
 	focus = {
 		id = ITA_incrociatori_leggeri
-		icon = GFX_focus_generic_cruiser2
+		icon = GFX_goal_italy_cavagnari
 		prerequisite = { focus = ITA_supermarina }
 		mutually_exclusive = { focus = ITA_incrociatori_pesanti }
 		x = -2
@@ -6016,18 +5864,26 @@ focus = {
 
 			navy_experience = 25
 
+			add_mastery_bonus = {
+				name = ITA_incrociatori_leggeri
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_convoy_raiding
+				track = screens
+			}
+
 			add_doctrine_cost_reduction = {
 				name = ITA_incrociatori_leggeri
-				cost_reduction = 0.75
-				uses = 2
-				category = cat_trade_interdiction
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
 			}
 
 			add_tech_bonus = {
 				name = ITA_incrociatori_leggeri
 				bonus = 1
 				uses = 1
-				category = cl_tech
+				category = ca_tech
 			}
 
 			#Update NS icon
@@ -6037,7 +5893,7 @@ focus = {
 
 	focus = {
 		id = ITA_incrociatori_pesanti
-		icon = GFX_focus_generic_navy_battleship2
+		icon = GFX_goal_italy_campioni
 		prerequisite = { focus = ITA_supermarina }
 		mutually_exclusive = { focus = ITA_incrociatori_leggeri }
 		x = 2
@@ -6061,11 +5917,19 @@ focus = {
 
 			navy_experience = 25
 
+			add_mastery_bonus = {
+				name = ITA_incrociatori_pesanti
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_fleet_in_being
+				track = capital_ships
+			}
+
 			add_doctrine_cost_reduction = {
 				name = ITA_incrociatori_pesanti
-				cost_reduction = 0.75
-				uses = 2
-				category = cat_fleet_in_being
+				cost_reduction = 0.50
+				uses = 1
+				category = naval_doctrine
 			}
 
 			add_tech_bonus = {
@@ -6111,7 +5975,7 @@ focus = {
 		x = 6
 		y = 1
 		relative_position_id = ITA_supermarina
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -6148,7 +6012,7 @@ focus = {
 		x = -4
 		y = 1
 		relative_position_id = ITA_incrociatori_leggeri
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -6156,12 +6020,16 @@ focus = {
 
 		completion_reward = {
 			navy_experience = 15
-			add_doctrine_cost_reduction = {
+
+
+			add_mastery_bonus = {
 				name = ITA_cruiser_submarines
-				cost_reduction = 0.5
-				uses = 1
-				category = trade_interdiction_tree
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_convoy_raiding
+				track = submarines
 			}
+			
 
 			add_tech_bonus = {
 				name = ITA_cruiser_submarines
@@ -6169,6 +6037,7 @@ focus = {
 				uses = 1
 				category = ss_tech
 			}
+			
 			
 			if = {
 				limit = {
@@ -6204,7 +6073,7 @@ focus = {
 		x = -2
 		y = 1
 		relative_position_id = ITA_incrociatori_leggeri
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -6212,12 +6081,15 @@ focus = {
 
 		completion_reward = {
 			navy_experience = 15
-			add_doctrine_cost_reduction = {
+
+			add_mastery_bonus = {
 				name = ITA_midget_submarines
-				cost_reduction = 0.5
-				uses = 1
-				category = trade_interdiction_tree
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_convoy_raiding
+				track = submarines
 			}
+			
 
 			add_tech_bonus = {
 				name = ITA_midget_submarines
@@ -6291,11 +6163,20 @@ focus = {
 
 		completion_reward = {
 			navy_experience = 15
+
+			add_mastery_bonus = {
+				name = ITA_cacciatorpediniere_di_scorta
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_base_strike
+				track = screens
+			}
+
 			add_doctrine_cost_reduction = {
 				name = ITA_cacciatorpediniere_di_scorta
-				cost_reduction = 0.50
-				uses = 2
-				category = convoy_defense_tree
+				cost_reduction = 0.25
+				uses = 1
+				category = naval_doctrine
 			}
 
 			add_tech_bonus = {
@@ -6583,11 +6464,19 @@ focus = {
 
 		completion_reward = {
 			navy_experience = 15
+
+			add_mastery_bonus = {
+				name = ITA_navi_da_battaglia
+				bonus = 0.2
+				days = 180
+				grand_doctrine = new_fleet_in_being
+				track = capital_ships
+			}
 			add_doctrine_cost_reduction = {
 				name = ITA_navi_da_battaglia
-				cost_reduction = 0.50
-				uses = 2
-				category = fleet_in_being_tree
+				cost_reduction = 0.25
+				uses = 1
+				category = naval_doctrine
 			}
 
 			add_tech_bonus = {
@@ -6681,7 +6570,7 @@ focus = {
 		x = 2
 		y = 1
 		relative_position_id = ITA_incrociatori_pesanti
-		cost = 10
+		cost = 5
 		available = {
 			if = { # MTG tech
 				limit = {
@@ -6807,7 +6696,7 @@ focus = {
 		x = 4
 		y = 1
 		relative_position_id = ITA_incrociatori_pesanti
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -7889,24 +7778,10 @@ focus = {
 
 		mutually_exclusive = { focus = ITA_convene_the_grand_council focus = ITA_defy_the_duce }
 
-		allow_branch = {
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				NOT = { has_completed_focus = ITA_defy_the_duce }
-				NOT = { has_completed_focus = ITA_convene_the_grand_council }
-			}
-		}
-
 		x = 0
 		y = 2
 		relative_position_id = ITA_triumph_in_africa_bba
-		cost = 5
+		cost = 10
 		available = {
 			has_country_leader = {
 				character = ITA_benito_mussolini
@@ -7920,21 +7795,7 @@ focus = {
 			add_country_leader_trait = lion_tamer
 
 			ITA_bop_very_low_increase_effect = yes
-
-			if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
-		upgrade_economy_law = yes
-		add_ideas = SPA_expand_conscription
 		}
-		
-
 	}
 	
 	focus = {
@@ -8182,7 +8043,7 @@ focus = {
 
 	focus = {
 		id = ITA_strengthen_the_regime
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_ITA_bold_fascism
 		prerequisite = { focus = ITA_la_battaglia_per_le_nascite }
 
 		x = 0
@@ -8475,7 +8336,7 @@ focus = {
 		relative_position_id = ITA_security_militias
 
 
-		cost = 10
+		cost = 5
 		available = {
 			has_government = fascism
 			ITA_has_disbanded_blackshirts = no
@@ -8499,7 +8360,7 @@ focus = {
 		x = 2
 		y = 0
 		relative_position_id = ITA_battaglioni_d_assalto
-		cost = 10
+		cost = 5
 		available = {
 			has_government = fascism
 			any_owned_state = {
@@ -8857,7 +8718,7 @@ focus = {
 		x = -5
 		y = 1
 		relative_position_id = ITA_towards_a_greater_italy
-		cost = 10
+		cost = 5
 		available = {
 		}
 
@@ -8979,7 +8840,7 @@ focus = {
 		x = -3
 		y = 1
 		relative_position_id = ITA_towards_a_greater_italy
-		cost = 10
+		cost = 5
 		available = {
 			has_country_leader = {
 				character = ITA_benito_mussolini
@@ -9165,7 +9026,7 @@ focus = {
 			}
 		}
 
-		x = 13
+		x = 12
 		y = 1
 		relative_position_id = ITA_triumph_in_africa_bba
 		cost = 5
@@ -9303,11 +9164,11 @@ focus = {
 
 	focus = {
 		id = ITA_pact_of_steel
-		icon = GFX_goal_support_fascism
+		icon = GFX_goal_further_military_cooperation_with_germany
 		prerequisite = {  focus = ITA_foreign_affairs }
 	
 		x = 0
-		y = 3
+		y = 2
 		relative_position_id = ITA_foreign_affairs
 		cost = 5
 
@@ -9355,7 +9216,7 @@ focus = {
 		prerequisite = { focus = ITA_pact_of_steel }
 
 		x = -2
-		y = 1
+		y = 2
 		relative_position_id = ITA_pact_of_steel
 		cost = 5
 		available = {
@@ -9376,6 +9237,7 @@ focus = {
 		prerequisite = { 
 			focus = ITA_german_military_cooperation 
 			focus = ITA_treaty_with_germany
+			focus = ITA_befriend_japan
 		}
 
 		x = 1
@@ -9390,17 +9252,20 @@ focus = {
 
 		completion_reward = {
 			navy_experience = 25
+
 			add_tech_bonus = {
 				name = ITA_sea_wolves_bba
 				bonus = 1.0
 				uses = 1
 				category = ss_tech
 			}
-			add_doctrine_cost_reduction = {
+
+			add_mastery_bonus = {
 				name = ITA_sea_wolves_bba
-				cost_reduction = 0.5
-				uses = 2
-				category = submarine_doctrine
+				bonus = 0.2
+				days = 240
+				grand_doctrine = new_convoy_raiding
+				track = submarines
 			}
 		}
 	}
@@ -9411,6 +9276,7 @@ focus = {
 		prerequisite = { 
 			focus = ITA_german_military_cooperation 
 			focus = ITA_treaty_with_germany
+			focus = ITA_befriend_japan
 		}
 
 		x = 3
@@ -9444,8 +9310,8 @@ focus = {
 		icon = GFX_focus_chi_mission_to_germany
 		prerequisite = { focus = ITA_pact_of_steel }
 
-		x = 2
-		y = 1
+		x = 0
+		y = 2
 		relative_position_id = ITA_pact_of_steel
 		cost = 5
 		available = {
@@ -9455,6 +9321,12 @@ focus = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+			GER = {
+				add_relation_modifier = {
+					target = ROOT
+					modifier = ITA_military_agreements
+				}
+			}
 			if = {
 				limit = {
 					has_dlc = "Arms Against Tyranny"
@@ -9502,8 +9374,8 @@ focus = {
 		icon = GFX_focus_chi_collaboration_with_the_japanese
 		prerequisite = { focus = ITA_pact_of_steel  }
 
-		x = 4
-		y = 1
+		x = 2
+		y = 2
 		relative_position_id = ITA_pact_of_steel
 		cost = 5
 
@@ -9543,7 +9415,7 @@ focus = {
 		x = 2
 		y = 1
 		relative_position_id = ITA_foreign_affairs
-		cost = 2
+		cost = 5
 
 		bypass = {
 
@@ -9616,7 +9488,7 @@ focus = {
 		x = 0
 		y = 1
 		relative_position_id = ITA_corpo_di_truppe_volontarie
-		cost = 1
+		cost = 5
 		available = {
 			if = {
 				limit = {
@@ -11409,8 +11281,6 @@ focus = {
 		icon = GFX_goal_generic_construction2
 		prerequisite = { 
 			focus = ITA_modernize_the_mezzogiorno
-		}
-		prerequisite = { 
 			focus = ITA_strengthen_northern_industry
 		}
 
@@ -11485,93 +11355,9 @@ focus = {
 		}
 	}
 
-
-
-	focus = {
-		id = ITA_prepare_for_the_coming_wars
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = ITA_redirect_alfa_romeo_production }
-
-		x = 0
-		y = 1
-		relative_position_id = ITA_redirect_alfa_romeo_production
-		cost = 5
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				set_state_flag = ITA_prepare_for_the_coming_wars
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					NOT = { has_state_flag = ITA_prepare_for_the_coming_wars }
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				set_state_flag = ITA_prepare_for_the_coming_wars
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					NOT = { has_state_flag = ITA_prepare_for_the_coming_wars }
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				set_state_flag = ITA_prepare_for_the_coming_wars
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-
-			#Clear stuff thanks
-			hidden_effect = {
-				every_core_state = {
-					limit = {
-						has_state_flag = ITA_prepare_for_the_coming_wars
-					}
-					clr_state_flag = ITA_prepare_for_the_coming_wars
-				}
-			}
-		}
-	}
-
 	focus = {
 		id = ITA_mobilize_the_railway_guns
 		icon = GFX_focus_generic_railway_gun    
-		prerequisite = { focus = ITA_superesercito }
 		prerequisite = { focus = ITA_italian_tankettes }
 		prerequisite = { focus = ITA_reorganize_regio_esercito }
 
@@ -11579,11 +11365,11 @@ focus = {
 		y = 1
 		relative_position_id = ITA_superesercito
 		cost = 5
-
-
+		
 
 		available = {
 			has_tech = armored_train
+			has_war = yes
 		}
 
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -11660,7 +11446,7 @@ focus = {
 		x = 1
 		y = 1
 		relative_position_id = ITA_improve_the_industries
-		cost = 5
+		cost = 10
 		available = {
 		}
 
@@ -12023,11 +11809,11 @@ focus = {
 				}
 				add_resource = {
 			    	type = oil
-			    	amount = 16
+			    	amount = 8
 			    	state = 448   
 				}
 				448 = { #TRIPOLI
-					add_extra_state_shared_building_slots = 4
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = fuel_silo
 						level = 1
@@ -12095,7 +11881,7 @@ focus = {
 				    state = 448  
 				}
 				448 = { #TRIPOLI
-					add_extra_state_shared_building_slots = 5
+					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -12548,11 +12334,9 @@ focus = {
 		}
 	}
 
-
-
 	focus = {
 		id = ITA_the_italian_legions
-		icon = GFX_focus_generic_fascist_troops
+		icon = GFX_ITA_viva_il_duce
 		#GFX_focus_generic_fascist_troops
 		prerequisite = { focus = ITA_mare_nostrum_bba }
 
@@ -12628,260 +12412,6 @@ focus = {
 	}
 
 	focus = {
-		id = ITA_caligulas_pride
-		icon = GFX_focus_generic_navy_battleship2
-		prerequisite = { focus = ITA_spreading_the_eagles_wings }
-
-		x = 2
-		y = 1
-		relative_position_id = ITA_spreading_the_eagles_wings
-		cost = 5
-		available = {
-			is_special_project_completed = sp:sp_naval_super_heavy_battleship
-			#if = {
-				#limit = {
-					#has_dlc = "Man the Guns"
-				#}
-				#has_tech = ship_hull_super_heavy
-			#}
-			#else = {
-				#has_tech = heavy_battleship
-			#}
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = dockyard
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				add_tech_bonus = {
-					name = ITA_caligulas_pride
-					ahead_reduction = 2
-					bonus = 1.0
-					uses = 1
-					category = bb_tech
-					category = bc_tech
-					category = cat_ship_heavy_battery
-				}
-				custom_effect_tooltip = ITA_caligulas_pride_military_industry_dm_tt
-				hidden_effect = {
-					add_ideas = ITA_hidden_super_heavy_bb_ns
-				}
-
-				create_equipment_variant = {
-					name = "Neptunus Class"
-					type = ship_hull_super_heavy_1
-					name_group = ITA_BB_HISTORICAL
-					parent_version = 0
-					allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-					modules = {
-						front_1_custom_slot = ship_anti_air_2
-						front_2_custom_slot = ship_super_heavy_battery_1
-						mid_1_custom_slot = ship_secondaries_2
-						mid_2_custom_slot = ship_secondaries_2
-						mid_3_custom_slot = ship_anti_air_2
-						rear_1_custom_slot = ship_super_heavy_battery_1
-						rear_2_custom_slot = ship_airplane_launcher_2
-						fixed_ship_battery_slot = ship_super_heavy_battery_1
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_fire_control_system_slot = ship_fire_control_system_1
-						fixed_ship_radar_slot = ship_radar_1
-						fixed_ship_engine_slot = heavy_ship_engine_3
-						fixed_ship_secondaries_slot = dp_ship_secondaries_2
-						fixed_ship_armor_slot = ship_armor_shbb
-					}
-				}
-
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_super_heavy_1
-						creator = "ITA"
-						version_name = "Neptunus Class"
-					}
-					name = "Neptunus"
-					requested_factories = 2
-					progress = 0.75
-					amount = 1
-				}
-			}
-			else = {
-				if = {
-					limit = {
-						NOT = { has_tech = heavy_battleship2 }
-					}
-					add_tech_bonus = {
-						name = ITA_caligulas_pride
-						ahead_reduction = 2
-						bonus = 1.0
-						uses = 1
-						category = shbb_tech
-					}
-				}
-
-				create_equipment_variant = {
-					name = "Neptunus Class"
-					type = SH_battleship_1
-					allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-					upgrades = {
-						ship_reliability_upgrade = 2
-						ship_engine_upgrade = 2
-						ship_armor_upgrade = 3
-						ship_gun_upgrade = 3
-					}
-				}
-
-				#Line Production
-				add_equipment_production = {
-					equipment = {
-						type = SH_battleship_1
-						creator = "ITA"
-						version_name = "Neptunus Class"
-					}
-					name = "Neptunus"
-					requested_factories = 2
-					progress = 0.6
-					amount = 1
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			
-			add_breakthrough_progress = {
-				specialization = specialization_naval
-				value = 0.5
-			}
-
-			if = {
-				limit = {
-					has_dlc = "Gotterdammerung"
-				}
-				if = {
-					limit = {
-						NOT = { is_special_project_completed = sp_naval_ice_carrier }
-					}
-					custom_effect_tooltip = ITA_modify_regia_marina_dynamic_modifier_ns_intro
-					add_to_variable = { 
-						ITA_rm_sp_naval_ice_carrier_speed_factor = 0.2
-						tooltip = sp_naval_ice_carrier_speed_factor_tt
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ITA_the_king_of_the_skies
-		icon = GFX_focus_generic_long_range_aircraft
-		prerequisite = { focus = ITA_italys_destiny }
-
-		x = -2
-		y = 1
-		relative_position_id = ITA_italys_destiny
-		cost = 10
-		available = {
-			has_full_control_of_state = 2
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				has_tech = improved_large_airframe
-				has_tech = engines_4
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name = ITA_the_king_of_the_skies
-				ahead_reduction = 2
-				bonus = 1.0
-				uses = 1
-				category = heavy_air
-			}
-
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				custom_effect_tooltip = ITA_the_king_of_the_skies_military_industry_dm_tt
-				hidden_effect = {
-					add_ideas = ITA_hidden_super_heavy_aircraft_ns
-				}
-
-				ITA_add_the_king_of_the_skies_template_production_and_wing = yes
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.5
-			}
-
-			if = {
-				limit = {
-					has_dlc = "Gotterdammerung"
-				}
-				custom_effect_tooltip = ITA_modify_regia_aeronautica_dynamic_modifier_ns_intro
-				if = {
-					limit = {
-						NOT = { is_special_project_completed = sp_air_intercontinental_bomber }
-					}
-					add_to_variable = { 
-						ITA_ra_sp_air_intercontinental_bomber_speed_factor = 0.2
-						tooltip = sp_air_intercontinental_bomber_speed_factor_tt
-					}
-				}
-				if = {
-					limit = {
-						NOT = { is_special_project_completed = sp_air_mothership_aircraft }
-					}
-					add_to_variable = { 
-						ITA_ra_sp_air_mothership_aircraft_speed_factor = 0.2
-						tooltip = sp_air_mothership_aircraft_speed_factor_tt
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
         id = ITA_a_greater_purpose
         icon = GFX_focus_generic_italy_first
         prerequisite = { focus = ITA_strengthen_the_regime  }
@@ -12950,7 +12480,6 @@ focus = {
             }
         }
     }
-
 	focus = {
         id = ITA_italian_hegemony
         icon = GFX_focus_ITA_italian_hegemony
@@ -12998,7 +12527,7 @@ focus = {
 	focus = {
         id = ITA_reorganize_regio_esercito
         icon = GFX_focus_generic_combined_arms
-        prerequisite = { focus = ITA_preserve_army_traditions focus = ITA_a_bandits_war }
+        prerequisite = { focus = ITA_preserve_army_traditions focus = ITA_a_bandits_war focus = ITA_follow_pariani_plan }
         mutually_exclusive = { focus = ITA_reinforce_regia_aeronautica }
         relative_position_id = ITA_a_bandits_war
         x = -3
@@ -13021,25 +12550,20 @@ focus = {
     }
 
 
-
 	focus = {
 		id = ITA_balkan_ambition
-		icon = GFX_focus_generic_balkans_focus
-		#GFX_focus_generic_balkans_focus
+		icon = GFX_goal_BUL_divide_yugoslavia
 		prerequisite = { focus = ITA_pact_of_steel }
 	
 
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = ITA_pact_of_steel
 		cost = 1
 		available = {
 			GER = { has_war = yes }
-			GRE = { exists = yes }
-			NOT = { is_in_faction_with = GRE }
-			NOT = { has_guaranteed = GRE }
-			NOT = { has_non_aggression_pact_with = GRE }
-			NOT = { GRE = { is_subject_of = ROOT } }
+			GER = { controls_state = 16 }
+			is_subject = no
 
 			YUG = { exists = yes }
 			NOT = { is_in_faction_with = YUG }
@@ -13051,10 +12575,6 @@ focus = {
 		bypass = {
 			is_subject = no
 			OR = {
-				GRE = { is_subject_of = ROOT }
-				GRE = { exists = no }
-				is_in_faction_with = GRE
-
 				YUG = { is_subject_of = ROOT }
 				YUG = { exists = no }
 				is_in_faction_with = YUG
@@ -13063,38 +12583,50 @@ focus = {
 		search_filters = {}
 
 		completion_reward = {
-				YUG = {
-					every_owned_state = {
-						limit = {
-							is_core_of = PREV
-							is_on_continent = europe
-						}
-						ROOT = {
-							add_state_claim = PREV
-							annex_country = { target = YUG}
-						}
-					}
-				}
-				create_wargoal = {
+	
+			create_wargoal = {
 				type = annex_everything
-					target = YUG
-				}
-				create_wargoal = {
-					type = annex_everything
-						target = YUG
-					}
+				target = YUG
+			}
+		
+		}
+	}
 
-				GRE = {
-								every_owned_state = {
-									limit = {
-										is_core_of = PREV
-										is_on_continent = europe
-									}
-									ROOT = {
-										add_state_claim = PREV
-										annex_country = { target = GRE}
-									}
-								}
+	focus = {
+		id = ITA_war_with_greece
+		icon = GFX_goal_italy_attack_greece
+		#GFX_focus_generic_balkans_focus
+		prerequisite = { focus = ITA_pact_of_steel }
+	
+
+		x = 1
+		y = 1
+		relative_position_id = ITA_pact_of_steel
+		cost = 1
+		available = {
+			GER = { has_war = yes }
+			GER = { controls_state = 16 }
+			is_subject = no
+			GRE = { exists = yes }
+			NOT = { is_in_faction_with = GRE }
+			NOT = { has_guaranteed = GRE }
+			NOT = { has_non_aggression_pact_with = GRE }
+			NOT = { GRE = { is_subject_of = ROOT } }
+		}
+
+		bypass = {
+			is_subject = no
+			OR = {
+				GRE = { is_subject_of = ROOT }
+				GRE = { exists = no }
+				is_in_faction_with = GRE
+			}
+		}
+		search_filters = {}
+
+		completion_reward = {
+	
+
 
 			create_wargoal = {
 				type = annex_everything
@@ -13103,5 +12635,4 @@ focus = {
 		
 		}
 	}
-}
 }

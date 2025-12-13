@@ -154,51 +154,51 @@ ideas = {
 			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
 				small_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				cv_small_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				small_plane_cas_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				cv_small_plane_cas_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				small_plane_naval_bomber_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				cv_small_plane_naval_bomber_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				medium_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				medium_plane_fighter_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				medium_plane_scout_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				large_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				large_plane_maritime_patrol_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 				transport_plane_equipment = {
 					instant = yes
-					build_cost_ic = -0.05
+					build_cost_ic = -0.025
 				}
 			}
 		}
@@ -220,51 +220,51 @@ ideas = {
 			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
 				small_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				cv_small_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				small_plane_cas_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				cv_small_plane_cas_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				small_plane_naval_bomber_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				cv_small_plane_naval_bomber_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				medium_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				medium_plane_fighter_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				medium_plane_scout_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				large_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				large_plane_maritime_patrol_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 				transport_plane_equipment = {
 					instant = yes
-					build_cost_ic = 0.05
+					build_cost_ic = 0.025
 				}
 			}
 		}
@@ -962,7 +962,7 @@ ideas = {
 			}
 					
 			modifier = {
-				consumer_goods_expected_value = -0.10
+				consumer_goods_factor = -0.10
 			}
 		}
 
@@ -1229,6 +1229,31 @@ ideas = {
 				mechanized_equipment = {
 					instant = yes
 					build_cost_ic = -0.1
+				}
+			}
+		}
+
+		italian_arms_discount = { # MSB addition
+			
+			name = italian_arms_discount
+
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
 				}
 			}
 		}
@@ -2628,7 +2653,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.15
 				production_speed_dockyard_factor = 0.2
 				navy_capital_ship_attack_factor = 0.1
-				positioning = 0.1
+				# positioning = 0.1
 				spotting_chance = 0.15
 			}
 		}
@@ -3153,8 +3178,8 @@ ideas = {
 				compliance_growth = 0.05
 				resistance_decay = 0.01
 				subjects_autonomy_gain = -0.1
-				army_core_defence_factor = 0.1
-				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.15
 			}
 		}
 
@@ -3242,7 +3267,28 @@ ideas = {
 				army_org_factor = 0.15
 				compliance_gain = 0.05
 				war_support_factor = 0.1
-				production_factory_max_efficiency_factor = 0.03
+			}
+		}
+
+		ITA_mare_nostrum_achieved = { 
+	
+			picture = ITA_impero_italiano
+	
+			removal_cost = -1	
+	
+			allowed = {
+				original_tag = ITA
+			}
+
+			allowed_civil_war = {
+				has_completed_focus = ITA_mare_nostrum_bba
+			}
+			
+			modifier = {
+				compliance_gain = 0.05
+				resistance_damage_to_garrison = -0.10
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
 
