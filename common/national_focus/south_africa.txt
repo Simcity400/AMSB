@@ -127,10 +127,11 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
+				prioritize = { 681 }
 				add_extra_state_shared_building_slots = 4
 			}
 			random_owned_controlled_state = {
-				
+				prioritize = { 681 }
 				add_extra_state_shared_building_slots = 4
 			}
 			add_ideas = SAF_civilian_complex_expansion 
@@ -154,9 +155,7 @@ focus_tree = {
 		}
 
 		available = {
-			date > 1940.6.1
-	
-
+			has_idea = partial_economic_mobilisation
 		}
 		
 		bypass = {
@@ -169,10 +168,11 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
+				prioritize = { 681 }
 				add_extra_state_shared_building_slots = 4
 			}
 			random_owned_controlled_state = {
-				
+				prioritize = { 681 }
 				add_extra_state_shared_building_slots = 4
 			}
 			
@@ -189,7 +189,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = SAF_south_african_railways_harbours
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 45
@@ -220,7 +220,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_fund_the_university_of_south_africa
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 45
@@ -250,13 +250,13 @@ focus_tree = {
 	
 	focus = {
 		id = SAF_expand_manufacturing_industry
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_SOV_eastern_development_ccp_2d_sov_compatibility
 		prerequisite = { focus = SAF_new_machine_tools }
 		x = 0
 		y = 1
 		relative_position_id = SAF_new_machine_tools
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 45
@@ -296,13 +296,13 @@ focus_tree = {
 	
 	focus = {
 		id = SAF_shift_away_from_agrarianism
-		icon = GFX_focus_research
+		icon = GFX_SOV_the_trade_union_as_labor_organizer_ccp_2d_sov_compatibility
 		prerequisite = { focus = SAF_fund_the_university_of_south_africa }
 		x = 0
 		y = 3
 		relative_position_id = SAF_fund_the_university_of_south_africa
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 45
@@ -334,13 +334,13 @@ focus_tree = {
 	
 	focus = {
 		id = SAF_electronic_engineering
-		icon = GFX_focus_research
+		icon = GFX_focus_ARG_develop_the_electricity_sector
 		prerequisite = { focus = SAF_fund_the_university_of_south_africa }
 		x = 1
 		y = 1
 		relative_position_id = SAF_fund_the_university_of_south_africa
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 45
@@ -376,7 +376,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_electronic_engineering
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 5
@@ -412,7 +412,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_south_african_railways_harbours
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -561,7 +561,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_railway_expansion
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -581,6 +581,7 @@ focus_tree = {
 
 		completion_reward = {
 			random_owned_controlled_state = {
+				prioritize = { 275 }
 				limit = {
 					free_building_slots = {
 						building = industrial_complex
@@ -605,7 +606,7 @@ focus_tree = {
 		x = 13
 		y = 0
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -672,7 +673,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_status_of_the_union_act
 
-		cost = 7.15
+		cost = 5
 
 		ai_will_do = {
 			factor = 15
@@ -703,7 +704,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_representation_of_natives_act
 
-		cost = 7.15
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -734,7 +735,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_native_laws_amendment_act
 
-		cost = 7.15
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -768,7 +769,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_status_of_the_union_act
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -799,7 +800,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_voortrekker_monument
 
-		cost = 7.15
+		cost = 5
 
 		ai_will_do = {
 			factor = 2
@@ -835,7 +836,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_iscor_pretoria_works
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -957,7 +958,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_war_measures_act
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -1003,7 +1004,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_lenz_bomb_factory
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -1033,13 +1034,13 @@ focus_tree = {
 	
 	focus = {
 		id = SAF_allied_research_effort
-		icon = GFX_focus_research
+		icon = GFX_focus_research2
 		prerequisite = { focus = SAF_lenz_bomb_factory }
 		x = 0
 		y = 1
 		relative_position_id = SAF_lenz_bomb_factory
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -1077,7 +1078,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_war_measures_act
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 15
@@ -1112,7 +1113,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_pegging_act
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1147,7 +1148,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_war_measures_act
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1181,7 +1182,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = SAF_reconstitute_the_cape_corps
 
-		cost = 7.15
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1241,7 +1242,7 @@ focus_tree = {
 	
 	focus = {
 		id = SAF_field_marshall_jan_smuts
-		icon = GFX_goal_generic_construction2
+		icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
 		prerequisite = { focus = SAF_war_measures_act }
 		x = 1
 		y = 1

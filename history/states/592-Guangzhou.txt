@@ -10,15 +10,9 @@ state={
 	}
 
 	history={
-				# No Asia + Scraping
-		1936.1.1.13 = { owner = WST add_core_of = WST }
-		1936.1.1.14 = { owner = WST add_core_of = WST }
+		owner = CHI
+		
 
-        owner = CHI
-
-       # Less Minors
-		1936.1.1.15 = { owner = CHI add_core_of = CHI }
-		add_core_of = CHI
 		add_core_of = CHI
 		
 		
@@ -27,7 +21,6 @@ state={
 			arms_factory = 2
 			industrial_complex = 2
 			air_base = 3
-			dockyard = 1
 			1047 = { # Guangzhou
 				naval_base = 5
 				coastal_bunker = 1
@@ -35,18 +28,20 @@ state={
 			}
 
 		}
+
 		victory_points = {
-			1047 5 # Guangzhou
+			1047 10 # Guangzhou
+		}
+
+		victory_points = {
+			12077 1 # Maoming
 		}
 
 		1938.10.25 = {
-			if = {
-				limit = {
-					NOT = { has_dlc = "Waking the Tiger" }
-				}
-				remove_core_of = CHI
-				CHI = { transfer_state = PREV }
-			}
+			
+			remove_core_of = GXC
+			owner = CHI
+			
 			JAP = {
 				set_province_controller = 1047
 				set_province_controller = 7152

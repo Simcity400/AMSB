@@ -1,0 +1,52 @@
+ability = {
+
+	ger_barb_makeshift_bridges = {
+		name = ABILITY_MAKESHIFT_BRIDGES
+		desc = ABILITY_MAKESHIFT_BRIDGES_DESC
+		icon = GFX_ability_makeshift_bridges
+		
+		type = army_leader
+		
+		allowed = {
+			has_ability = makeshift_bridges
+			is_border_war = no
+			OWNER = {
+				AND = { 
+					has_game_rule = { 
+					rule = larp_barb
+					option = on
+					}
+				OR = { 
+					has_idea = GER_barbarossa
+					has_idea = german_1942_offensive
+					has_idea =  soviet_winter_offensive2 
+					#has_idea = german_citidel
+					#has_idea = zugs_last_offensive
+					}
+				}
+			}
+		}
+		
+		unit_modifiers = {
+			river_crossing_factor = -0.4
+			river = {
+				attack = 0.2
+			}
+		}
+		
+		cost = 0.05
+		duration = 336
+		
+		ai_will_do = {
+			factor = -1
+			modifier = {
+				FROM = {
+					command_power > 2.0
+				}
+				check_variable = { num_units_crossing_river > 5 }
+				
+				add = 2
+			}
+		}
+	}
+}

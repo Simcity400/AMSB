@@ -317,6 +317,15 @@ continuous_focus_palette = {
 	}
 
 	focus = {
+		id = continuous_recruitment_drive	
+		icon = GFX_focus_ger_oppose_hitler
+		modifier = { mobilization_speed = 1.0	}
+		#available = { NOT = { AND ={  tag = EFR date < 1940.1.1 }}   }
+		daily_cost = 1	
+		available_if_capitulated = yes
+	}
+
+	focus = {
 		id = continuous_reduce_training_time
 		
 		icon = GFX_goal_continuous_reduce_training_time
@@ -326,6 +335,62 @@ continuous_focus_palette = {
 		
 		modifier = {
 			training_time_army_factor = -0.25
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25		
+				is_government_in_exile = yes  
+				original_tag = ETH
+			}
+		}
+		
+		supports_ai_strategy = ai_focus_defense
+		
+		daily_cost = 1
+		
+		available_if_capitulated = yes
+	}
+
+	focus = {
+		id = continuous_reduce_ship_training_time
+		
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		
+		available = {
+		}
+		
+		modifier = {
+			experience_gain_navy_unit_factor = 0.25
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25		
+				is_government_in_exile = yes  
+				original_tag = ETH
+			}
+		}
+		
+		supports_ai_strategy = ai_focus_defense
+		
+		daily_cost = 1
+		
+		available_if_capitulated = yes
+	}
+
+	focus = {
+		id = continuous_reduce_air_training_time
+		
+		icon = GFX_SOV_ground_support_ccp_2d_sov_compatibility
+		
+		available = {
+		}
+		
+		modifier = {
+			air_training_xp_gain_factor = 0.25
 		}
 		
 		ai_will_do = {
@@ -496,15 +561,6 @@ continuous_focus_palette = {
 		
 		daily_cost = 1
 		
-		available_if_capitulated = yes
-	}
-
-	focus = {
-		id = continuous_recruitment_drive	
-		icon = GFX_focus_ger_oppose_hitler
-		modifier = { mobilization_speed = 10.0	}
-		#available = { NOT = { AND ={  tag = EFR date < 1940.1.1 }}   }
-		daily_cost = 1	
 		available_if_capitulated = yes
 	}
 

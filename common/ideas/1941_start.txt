@@ -1,0 +1,206 @@
+ideas = { 
+    country = { 
+        winter_of_1941 = {
+                picture = tur_sub_zero_survival_training
+                allowed = { 
+                    always = no
+                }
+            modifier = {
+				army_attack_factor = -1
+                army_defence_factor = -0.50
+                breakthrough_factor = -0.60
+                winter_attrition_factor = 0.50
+                consumer_goods_factor = 0.80
+            }
+        }
+        winter_of_1942 = {
+                picture = tur_sub_zero_survival_training
+            allowed = { 
+                always = yes
+            }
+            modifier = {
+				army_attack_factor = -0.75
+                army_defence_factor = -0.30
+                breakthrough_factor = -0.40
+                winter_attrition_factor = 0.25
+            }
+        }
+            click_barb = {
+            picture = generic_acquire_tanks
+            allowed = { 
+                always = no
+			}
+            equipment_bonus = {
+                mechanized_equipment = { 
+                hardness = -0.1
+                    }
+                }
+            modifier = {
+                army_defence_factor = -0.10
+                #army_attack_factor = -0.30
+                breakthrough_factor = 0.10
+                supply_consumption_factor = -0.3
+                supply_node_range = 0.2
+                #army_armor_attack_factor = -0.20
+               #army_morale_factor = 0.25
+            }
+        }
+        soviet_winter_offensive = {
+            picture = generic_communist_army
+            allowed = { 
+                always = no
+			}
+            modifier = {
+                army_attack_factor = 0.80
+                army_defence_factor = 0.50
+               # army_attack_speed_factor = 0.20
+                breakthrough_factor = 0.60
+                winter_attrition_factor = -0.50
+                command_power_gain_mult = 0.25
+            }
+        }
+
+        germans_frozen = {
+            picture = SOV_the_road_of_life
+            allowed = { 
+             NOT = { 
+                tag = SOV
+             }
+			}
+            modifier = {
+                command_abilities_cost_factor = 0.50
+                army_defence_factor = -0.30
+                dig_in_speed_factor = 0.30
+                winter_attrition_factor = 0.50
+                army_org_factor = -0.15
+				army_morale_factor = -0.10
+                attrition = 0.15
+                disable_strategic_redeployment = 1
+            }
+        }
+          soviet_winter_offensive2 = {
+            picture = generic_communist_army
+            allowed = { 
+                always = no
+			}
+            modifier = {
+                army_attack_factor = 0.60
+                army_defence_factor = 0.35
+                army_attack_speed_factor = 0.10
+                breakthrough_factor = 0.35
+                winter_attrition_factor = -0.50
+            }
+        }
+          Rasputitsa = {
+                picture = tur_tuz_golu_training_facility
+                allowed = { 
+                    always = no
+                }
+            modifier = {
+				army_attack_factor = -0.50
+                army_defence_factor = -0.20
+                breakthrough_factor = -0.70
+                army_speed_factor = -0.40
+                attrition = 0.20
+            }
+        }
+        shinzou_soviet = { 
+            picture = ETH_conservative_high_command
+            allowed = { 
+                always = no
+            }
+            modifier = { 
+                cas_damage_reduction = -0.10
+                disable_strategic_redeployment = 1
+                pocket_penalty = -0.15
+                army_speed_factor = -2
+                army_defence_factor = -0.20
+            }
+        }
+        german_fall_blau = { 
+
+            picture = generic_acquire_tanks
+
+            allowed = { 
+                always = no
+            }
+
+         targeted_modifier = { 
+            tag = SOV
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.05
+            }
+        }
+          german_citidel = { 
+
+            picture = generic_acquire_tanks
+
+            allowed = { 
+               #SOV = { 
+                   # surrender_progress < 0.30
+               # }
+               always = no
+            }
+
+         targeted_modifier = { 
+            tag = SOV
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.05
+            }
+        }
+        war_against_humanity = { 
+
+            picture = GER_iron_front
+            allowed = { 
+                always = no
+            }
+
+            modifier = { 
+                training_time_army_factor = -0.35 
+            }
+        }
+        german_economy = { 
+            picture = generic_economic_crisis
+
+            allowed = { 
+                always = no
+            }
+
+            modifier = { 
+                consumer_goods_factor = 1
+            }
+        }
+    }
+
+
+##     ## #### ########  ########  ######## ##    ##    #### ########  ########    ###     ######
+##     ##  ##  ##     ## ##     ## ##       ###   ##     ##  ##     ## ##         ## ##   ##    ##
+##     ##  ##  ##     ## ##     ## ##       ####  ##     ##  ##     ## ##        ##   ##  ##
+#########  ##  ##     ## ##     ## ######   ## ## ##     ##  ##     ## ######   ##     ##  ######
+##     ##  ##  ##     ## ##     ## ##       ##  ####     ##  ##     ## ##       #########       ##
+##     ##  ##  ##     ## ##     ## ##       ##   ###     ##  ##     ## ##       ##     ## ##    ##
+##     ## #### ########  ########  ######## ##    ##    #### ########  ######## ##     ##  ######
+
+
+hidden_ideas = { 
+
+    no_intel_advantage = { 
+        removal_cost = -1
+
+        allowed = { 
+            always = no
+     }
+
+        modifier = { 
+           # army_intel_to_others = -50
+           # army_intel_factor = -10
+            decryption_factor = -10
+            encryption = -10
+            decryption_power = -100
+            agency_upgrade_time = -10
+           # intel_from_combat_factor = -10
+           # intel_network_gain_factor = -10
+            }   
+        }
+    }
+}

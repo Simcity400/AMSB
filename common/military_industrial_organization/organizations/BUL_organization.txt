@@ -35,12 +35,16 @@ BUL_varna_naval_dockyard_organization = {
 	icon = GFX_idea_generic_naval_manufacturer_2
 	
 	allowed = {	
-		original_tag = BUL
+		tag = BUL
+		has_dlc = "Battle for the Bosporus"
 	}
 	
 	available = {
-
+		FROM = { has_completed_focus = BUL_expand_varna_naval_base }
 	}
+
+	research_bonus = 0
+
 	add_trait = { 
 		token = BUL_mio_trait_an_aegean_sea_fleet
 		name = BUL_an_aegean_sea_fleet
@@ -55,8 +59,12 @@ BUL_varna_naval_dockyard_organization = {
 			}
 		}
 
-		equipment_bonus = {
-			build_cost_ic = -0.02
+		organization_modifier = {
+			military_industrial_organization_research_bonus = @prussia_of_the_balkans_research_bonus
+		}
+
+		production_bonus = {
+			production_capacity_factor = @prussia_of_the_balkans_production_capacity_factor
 		}
 	}
 }
@@ -78,6 +86,83 @@ BUL_varna_naval_dockyard_organization = {
 
 ###########################
 
+BUL_dar_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_bul_dar
+	
+	allowed = {	
+		tag = BUL
+	}
+
+	available = {
+		if = {
+			limit = {
+				has_dlc = "Battle for the Bosporus"
+			}
+			FROM = { has_completed_focus = BUL_darzhavna_aeroplanna_rabotilnitsa }
+		}
+	}
+
+	add_trait = { 
+		token = BUL_mio_trait_prussia_of_the_balkans
+		name = BUL_prussia_of_the_balkans
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=@prussia_of_the_balkans_position_X y=@prussia_of_the_balkans_position_Y }
+		
+		available = {
+			FROM = {
+				has_completed_focus = BUL_prussia_of_the_balkans
+			}
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = @prussia_of_the_balkans_research_bonus
+		}
+
+		production_bonus = {
+			production_capacity_factor = @prussia_of_the_balkans_production_capacity_factor
+		}
+	}
+}
+
+BUL_kaproni_bulgarski_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_bul_kaproni_bulgarski
+	
+	allowed = {	
+		tag = BUL
+		has_dlc = "Battle for the Bosporus"
+	}
+
+	available = {
+		FROM = { has_completed_focus = BUL_kaproni_bulgarski }
+	}
+
+	add_trait = { 
+		token = BUL_mio_trait_prussia_of_the_balkans
+		name = BUL_prussia_of_the_balkans
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		position = { x=@prussia_of_the_balkans_position_X y=@prussia_of_the_balkans_position_Y }
+		
+		available = {
+			FROM = {
+				has_completed_focus = BUL_prussia_of_the_balkans
+			}
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = @prussia_of_the_balkans_research_bonus
+		}
+
+		production_bonus = {
+			production_capacity_factor = @prussia_of_the_balkans_production_capacity_factor
+		}
+	}
+}
 
 ### Foreign Subsidiaries
 
@@ -100,12 +185,16 @@ BUL_varna_naval_dockyard_organization = {
 BUL_dvf_organization = {
 	include = generic_infantry_equipment_organization
 	icon = GFX_idea_bul_darzhavna_voenna_fabrika
+	
 	allowed = {	
-		original_tag = BUL
+		tag = BUL
+		has_dlc = "Battle for the Bosporus"
 	}
+	
 	available = {
-
+		FROM = { has_completed_focus = BUL_darzhavna_voenna_fabrika }
 	}
+
 	add_trait = { 
 		token = BUL_mio_trait_prussia_of_the_balkans
 		name = BUL_prussia_of_the_balkans
@@ -120,8 +209,12 @@ BUL_dvf_organization = {
 			}
 		}
 
-		equipment_bonus = {
-			build_cost_ic = -0.02
+		organization_modifier = {
+			military_industrial_organization_research_bonus = @prussia_of_the_balkans_research_bonus
+		}
+
+		production_bonus = {
+			production_capacity_factor = @prussia_of_the_balkans_production_capacity_factor
 		}
 	}
 }
@@ -129,12 +222,16 @@ BUL_dvf_organization = {
 BUL_dvf_sopot_organization = {
 	include = generic_artillery_organization
 	icon = GFX_idea_bul_darzhavna_voenna_fabrika
+	
 	allowed = {	
-		original_tag = BUL
+		tag = BUL
+		has_dlc = "Battle for the Bosporus"
 	}
-	available = {
 
+	available = {
+		FROM = { has_completed_focus = BUL_found_dvf_sopot }
 	}
+
 	add_trait = { 
 		token = BUL_mio_trait_prussia_of_the_balkans
 		name = BUL_prussia_of_the_balkans
@@ -148,8 +245,13 @@ BUL_dvf_sopot_organization = {
 				has_completed_focus = BUL_prussia_of_the_balkans
 			}
 		}
-		equipment_bonus = {
-			build_cost_ic = -0.02
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = @prussia_of_the_balkans_research_bonus
+		}
+
+		production_bonus = {
+			production_capacity_factor = @prussia_of_the_balkans_production_capacity_factor
 		}
 	}
 }

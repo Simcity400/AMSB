@@ -9,7 +9,7 @@
 #	In a script file:
 #
 #	trigger = {
-#		exampel_trigger = yes
+#		example_trigger = yes
 #	}
 #
 
@@ -77,6 +77,7 @@ check_has_focus_tree_to_switch_to_fascism = {
 		AND = {
 			tag = SAF
 			has_dlc = "Together for Victory"
+			has_completed_focus = SAF_south_africa_first
 		}
 	}
 	NOT = {
@@ -120,6 +121,18 @@ check_has_focus_tree_to_switch_to_fascism = {
 			has_dlc = "Gotterdammerung"
 		}
 	}
+	NOT = {
+		AND = {
+			original_tag = PHI
+			has_dlc =  "No Compromise, No Surrender"
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = CHI
+			has_dlc =  "No Compromise, No Surrender"
+		}
+	}
 }
 
 check_has_focus_tree_to_switch_to_democratic = {
@@ -149,6 +162,18 @@ check_has_focus_tree_to_switch_to_democratic = {
 		AND = {
 			tag = GER
 			has_dlc = "Waking the Tiger"
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = PHI
+			has_dlc =  "No Compromise, No Surrender"
+		}
+	}
+	NOT = {
+		AND = {
+			original_tag = CHI 
+			has_dlc =  "No Compromise, No Surrender"
 		}
 	}
 }
@@ -218,6 +243,12 @@ check_has_focus_tree_to_switch_to_communism = {
 			has_dlc =  "Gotterdammerung"
 		}
 	}
+	NOT = {
+		AND = {
+			original_tag = PHI
+			has_dlc =  "No Compromise, No Surrender"
+		}
+	}
 }
 
 #State scope
@@ -269,6 +300,20 @@ is_controlled_by_ROOT_or_ally = {
 	}
 }
 
+#State scope
+is_not_controlled_by_ROOT_or_ally = {
+	custom_trigger_tooltip = {
+		tooltip = is_not_controlled_by_ROOT_or_ally
+		CONTROLLER = {
+			NOT = {
+				tag = ROOT
+				is_subject_of = ROOT
+				is_in_faction_with = ROOT
+			}
+		}
+	}
+}
+
 is_csa_state = {
 	OR = {
 		state = 366
@@ -291,49 +336,6 @@ has_naval_treaty_trigger = {
 		has_idea = MTG_naval_treaty_cheating
 		has_idea = MTG_naval_treaty_adherent_reduced
 		has_idea = MTG_naval_treaty_cheating_reduced
-	}
-}
-
-ai_air_doctrine_tier_1_trigger = {
-	OR = {
-		has_tech = naval_strike_tactics
-		has_tech = direct_ground_support
-		has_tech = low_echelon_support
-	}
-}
-
-ai_air_doctrine_tier_2_trigger = {
-	OR = {
-		has_tech = multialtitude_flying
-		has_tech = hunt_and_destroy
-		has_tech = operational_destruction
-	}
-}
-ai_air_doctrine_tier_3_trigger = {
-	OR = {
-		has_tech = flying_fortress
-		has_tech = naval_strike_torpedo_tactics
-		has_tech = infiltration_bombing
-	}
-}
-
-ai_land_doctrine_tier_1_trigger = {
-	OR = {
-		has_tech = elastic_defence
-		has_tech = mobile_defence
-		has_tech = grand_assault
-		has_tech = defence_in_depth
-	}
-}
-
-ai_land_doctrine_tier_2_trigger = {
-	OR = {
-		has_tech = kampfgruppe
-		has_tech = mechanised_offensive
-		has_tech = branch_interoperation
-		has_tech = infiltration_assault
-		has_tech = vast_offensives
-		has_tech = large_front_offensive
 	}
 }
 
@@ -620,16 +622,27 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 }
 
 is_available_to_collaboration_government = { # occupied_countries.1 should be updated along with this
-	NOT = {
-		AND = {
-			FROM = { original_tag = YUG }
+	is_subject = no
+	if = {
+		limit = {
 			original_tag = ITA
 		}
-		AND = {
-			FROM = { original_tag = DNZ }
+		NOT = { FROM = { original_tag = YUG } }
+	}
+
+	if = {
+		limit = {
 			original_tag = POL
 		}
-		TUR_cannot_form_kurdish_collaboration_government = yes
+		NOT = { FROM = { original_tag = DNZ } }
+	}
+	if = {
+		limit = {
+			original_tag = TUR
+		}
+		NOT = { FROM = { original_tag = KUR } }
+	}
+	NOT = {
 		any_country_with_original_tag = {
 			original_tag_to_check = FROM
 			is_puppet_of = PREV # if already created one do not create another
@@ -777,7 +790,6 @@ state_is_in_the_mediterranean_sea = {
 			state = 22
 			state = 21
 			state = 851
-			state = 911
 			state = 735
 			state = 162
 			state = 2
@@ -908,7 +920,6 @@ is_initial_ethiopian_state = {
 
 has_subject_autonomy_feature = {
 	has_dlc = "Together for Victory"
-	#TODO_Manu: More DLCs?
 }
 
 is_organization_of_african_unity_member = {
@@ -1001,6 +1012,8 @@ is_alpine_state = {
 			state = 153 #Tyrol - AUS 
 			state = 152 #Upper Austria - AUS 
 			state = 4 #Lower Austria 
+			state = 975 #Burgenland
+			state = 976 #Steiermark-Kömten 
 		}
 	}
 }
@@ -1031,6 +1044,10 @@ state_has_any_resource = {
 			resource = chromium
 			amount > 0
 		}
+		has_resources_amount = {
+			resource = coal
+			amount > 0
+		}
 	}
 }
 
@@ -1045,6 +1062,7 @@ country_can_be_reasonable_target_of_wargoal = { #Expected scopes: Target country
 	}
 }
 
+# Countries will be less likely to try and liberate or puppet these nations 
 is_unlikely_country_tag = {
 	OR = {
 	    tag = BRI
@@ -1112,6 +1130,22 @@ is_unlikely_country_tag = {
 		tag = THU
 		tag = HES
 		tag = RHI
+		tag = RNG 
+		tag = PSR 
+		tag = GXC
+		tag = YUN
+		tag = SHX
+		tag = XSM
+		tag = SIK
+		tag = GDC
+		tag = SND
+		tag = SIC
+		tag = NXM
+		tag = GSM
+		tag = XIC
+		tag = KHM
+		tag = KUM
+		tag = HBC
 	}
 }
 
@@ -1387,43 +1421,6 @@ FROM_is_twice_as_weak = {
 	}
 }
 
-ai_has_completed_army_doctrine = {
-	is_ai = yes
-	OR = {
-		has_tech = werwolf_guerillas
-		has_tech = modern_blitzkrieg
-		has_tech = air_land_battle
-		has_tech = shock_and_awe
-		has_tech = c3i_theory
-		has_tech = infiltration_in_depth
-		has_tech = continuous_offensive
-		has_tech = guerilla_warfare
-	}
-}
-
-ai_has_completed_air_doctrine = {
-	is_ai = yes
-	OR = {
-		has_tech = offensive_formations
-		has_tech = mass_destruction
-		has_tech = forward_interception
-		has_tech = high_level_bombing
-	}
-}
-
-ai_has_completed_naval_doctrine = {
-	is_ai = yes
-	OR = {
-		has_tech = grand_battlefleet
-		has_tech = submarine_offensive
-		has_tech = floating_airfield
-		has_tech = combined_operations_raiding
-		has_tech = integrated_convoy_defence
-		has_tech = submarine_offensive_bs
-		has_tech = carrier_battlegroups
-	}
-}
-
 ### Neutrality Act - only trade with countries at peace 
 trade_partner_not_at_war = {
 	custom_trigger_tooltip = {
@@ -1463,6 +1460,17 @@ is_allied_seller_trigger = {
 	custom_trigger_tooltip = {
 		tooltip = subsidy_allied_nation_tt
 		FROM = { is_in_faction_with = ROOT }
+	}
+}
+
+should_play_south_american_music = {
+	capital_scope = { is_on_continent = south_america }
+}
+
+check_allow_alternate_political_events = {
+	OR = {
+		original_tag = PHI
+		#
 	}
 }
 

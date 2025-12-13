@@ -1,6 +1,39 @@
 ideas = {
 
 	country = {
+
+		################ MSB ################
+			r56_ger_naval_treaty = {
+			allowed = {
+				original_tag = GER
+				always = no
+			}
+			cancel = {
+				OR = {
+					has_war = yes
+					is_in_faction_with = ENG
+					is_subject_of = ENG
+					NOT = {
+						country_exists = ENG
+					}
+					ENG = {
+						is_subject = yes
+					}
+				}
+			}
+			removal_cost = -1
+			picture = generic_the_london_naval_treaty
+			modifier = {
+				production_speed_dockyard_factor = -0.1
+				industrial_capacity_dockyard = -0.15
+				ship_hull_submarine_design_cost_factor = 0.5
+				ship_hull_heavy_design_cost_factor = 0.5
+			}
+		}
+
+		################ MSB ################
+
+
 		sour_loser = {
 			
 			allowed = {
@@ -1128,10 +1161,12 @@ ideas = {
 
 			targeted_modifier = {
 				tag = SOV
-				attack_bonus_against = 0.15
-				defense_bonus_against = 0.10
+				attack_bonus_against = 0.10
+				defense_bonus_against = 0.05
 			}
-
+			modifier = {
+				supply_node_range = 0.1
+			}
 		}
 
 		GER_alpine_warfare_idea = {
@@ -2206,7 +2241,7 @@ ideas = {
 
 			equipment_bonus = {
 				small_plane_airframe = {
-					build_cost_ic = -0.05 
+					build_cost_ic = -0.05
 					instant = yes
 				}
 			}
@@ -2237,8 +2272,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				air_intercept_efficiency = 0.1
-			 	air_superiority_efficiency = 0.1
+				#air_intercept_efficiency = 0.05
+			 	#air_superiority_efficiency = 0.05
 			 	air_night_penalty = -0.1
 			}
 		}
@@ -5562,8 +5597,8 @@ ideas = {
 			}
 
 			modifier = {
-				production_speed_synthetic_refinery_factor = 0.1
-				production_speed_fuel_silo_factor = 0.1
+				production_speed_synthetic_refinery_factor = 0.15
+				production_speed_fuel_silo_factor = 0.15
 			}
 			
 			traits = { refinery_concern }

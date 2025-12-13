@@ -1643,15 +1643,6 @@ operation_collaboration_government = { ### 10 2/55
 			target = FROM
 			value < 1.0
 		}
-		OR = {
-			ROOT = { is_major = yes }
-			ROOT = {tag = JAP}
-		}
-
-		custom_trigger_tooltip = {
-        	tooltip = GER_SOV_COLLAB_LIMIT_TT
-			NOT = {FROM = { has_country_flag = ger_completed_sov_collab_op }}
-			}
 	}
 	risk_chance = 0.1
 	experience = 1.5
@@ -1662,12 +1653,6 @@ operation_collaboration_government = { ### 10 2/55
 				target = FROM
 				value = 0.35
 			}
-			if = {
-				limit = {
-					FROM = { tag = SOV }           
-				}
-				SOV = { set_country_flag = ger_completed_sov_collab_op }
-			}
 		}
 	}
 	outcome_extra_execute = { # SCOPE_OPERATION
@@ -1675,12 +1660,6 @@ operation_collaboration_government = { ### 10 2/55
 			add_collaboration = {
 				target = FROM
 				value = 0.35
-			}
-			if = {
-				limit = {
-					FROM = { tag = SOV }           
-				}
-				SOV = { set_country_flag = ger_completed_sov_collab_op }
 			}
 		}
 	}
@@ -1690,12 +1669,6 @@ operation_collaboration_government = { ### 10 2/55
 			add_collaboration = {
 				target = FROM
 				value = 0.35
-			}
-			if = {
-				limit = {
-					FROM = { tag = SOV }           
-				}
-				SOV = { set_country_flag = ger_completed_sov_collab_op }
 			}
 		}
 	}
@@ -1870,7 +1843,8 @@ operation_steal_tech_civilian = { ### 12 3/35
 	operatives = 3
 	cost_multiplier = 0.05
 
-	visible = {
+	visible = { #civi steal
+		always = no
 		num_of_operatives > 0
 		network_national_coverage = {
 			target = FROM
@@ -2429,7 +2403,8 @@ operation_steal_tech_army = { ### 16 3/55
 	operatives = 3
 	cost_multiplier = 0.05
 
-	visible = {
+	visible = { #army steal
+		always = no
 		num_of_operatives > 1
 		network_national_coverage = {
 			target = FROM
@@ -2440,7 +2415,6 @@ operation_steal_tech_army = { ### 16 3/55
 			tag = FROM
 			token = token_army
 		}
-		NOT = {FROM = {tag = SWE}}
 	}
 
 	equipment = {
@@ -2695,7 +2669,8 @@ operation_steal_tech_navy = { ### 17 3/55
 	operatives = 3
 	cost_multiplier = 0.05
 
-	visible = {
+	visible = { #navy steal
+		always = no
 		num_of_operatives > 1
 		network_national_coverage = {
 			target = FROM
@@ -2917,7 +2892,8 @@ operation_steal_tech_airforce = { ### 18 3/55
 	operatives = 3
 	cost_multiplier = 0.05
 
-	visible = {
+	visible = { #air steal 
+		always = no
 		num_of_operatives > 1
 		network_national_coverage = {
 			target = FROM

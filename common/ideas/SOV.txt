@@ -10,7 +10,90 @@ ideas = {
 
 
 	country= {
+		SOV_tankograd_idea = {
+			name = "Tankograd"
 
+			removal_cost = -1
+
+			picture = man_five_year_plan_tank # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.05
+				}
+			}
+		}
+		SOV_tankograd_idea2 = {
+			name = "Tankograd"
+
+			removal_cost = -1
+
+			picture = man_five_year_plan_tank # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.15
+					hardness = -0.2
+				}
+			}
+		}
+		SOV_guards_ideas = {
+				name = "Red Guard"
+
+			removal_cost = -1
+
+			picture = ger_the_great_red_menace # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				command_abilities_cost_factor = -0.25
+			}
+		}
+		SOV_slack_inf = {
+				name = "Cheap Guns"
+
+			removal_cost = -1
+
+			picture = generic_infantry_equipment_manufacturer_2 # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
+		
+		}
+		SOV_technical_assistance  = {
+			name = "Technical Assistance"
+
+			removal_cost = -1
+
+			picture = generic_research_bonus # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		
+		}
 		SOV_second_five_year_plan_fake_1936_ns = { #Only used for 1936 bookmark (dynamic modifiers don't show up there)
 			name = SOV_second_five_year_plan_dynamic_modifier
 
@@ -91,27 +174,7 @@ ideas = {
 				stability_factor = -0.05
 			}
 		}
-		SOV_new_officer_core = {
-			
-			name = new_officer_corps
 
-			allowed = {
-				always = no
-			}
-			
-			removal_cost = -1
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			picture = generic_army_problems
-			
-			modifier = {
-				army_morale = 0.10
-				army_org_factor = 0.05
-			}
-		}
 		home_of_revolution = {
 			removal_cost = -1
 
@@ -125,10 +188,10 @@ ideas = {
 
 			modifier = {
 				drift_defence_factor = 0.5
-				production_speed_bunker_factor = -1
 			}
 			rule = {
-				can_create_factions = yes
+				can_join_factions = no
+				can_create_factions = no
 			}
 		}
 
@@ -1211,21 +1274,6 @@ ideas = {
 				industrial_capacity_dockyard = 0.03
 			}
 		}
-		
-		SOV_new_floor_managers = {
-
-			picture = SOV_stakhanovite_movement
-
-			removal_cost = -1
-
-			allowed = {
-				always = no 
-			}
-
-			modifier = {
-				production_factory_efficiency_gain_factor = 0.10
-			}
-		}
 
 		SOV_war_heroes_ns = {
 			name = SOV_war_heroes
@@ -1269,7 +1317,6 @@ ideas = {
 				conscription_factor = 0.15
 				non_core_manpower = 0.05
 				army_morale_factor = 0.05
-				air_superiority_efficiency = 0.10
 			}
 		}
 
@@ -1291,7 +1338,6 @@ ideas = {
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.05
 				research_speed_factor = 0.02
-				industrial_capacity_factory = 0.05
 			}
 		}
 
@@ -1316,7 +1362,6 @@ ideas = {
 				drift_defence_factor = 0.05
 				communism_drift = 0.05
 				consumer_goods_factor = -0.05
-				industrial_capacity_factory = 0.05
 			}
 		}
 
@@ -10206,6 +10251,5 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 			}
 		}
-
-}
+	}
 }

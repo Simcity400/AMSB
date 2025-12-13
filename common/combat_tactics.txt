@@ -704,7 +704,6 @@ tactic_defender_hb_skillful_defence = {
 	base =  { factor = 2 }
 	picture = defender_hb_skillful_defence
 	display_phase = hold_bridge
-	
 	combat_width = -0.25
 	attacker = 0.1
 	defender = 0.05
@@ -719,6 +718,9 @@ tactic_guerrilla_tactics = { #People's army defender tactic. also for German vol
 			skill > 2
 			has_trait = trickster
 		}
+		NOT = {
+			is_fighting_in_terrain = plains
+		}
 	}
 	
 	active = no
@@ -727,11 +729,12 @@ tactic_guerrilla_tactics = { #People's army defender tactic. also for German vol
 		factor = 4
 	}
 	picture = tactic_guerrilla_tactics
+
+	countered_by = tactic_partisan_sweeps
 	
 	combat_width = -0.5
 	attacker = -0.7
 	defender = -0.6
-	countered_by = tactic_masterful_blitz
 }
 
 tactic_human_wave_tactics = { #People's army attacker tactic
@@ -889,7 +892,7 @@ tactic_masterful_blitz = { #Improved version of Blitz for Soviets
 	is_attacker = yes
 	trigger = {
 		is_attacker = yes
-		hardness > 0.3
+		hardness > 0.5
 		phase = no
 		OR = {
 			skill > 2
@@ -901,7 +904,7 @@ tactic_masterful_blitz = { #Improved version of Blitz for Soviets
 	active = no
 	
 	base =  { 
-		factor = 30
+		factor = 4
 		modifier = {
 			add = 4
 			OR = {
@@ -912,12 +915,49 @@ tactic_masterful_blitz = { #Improved version of Blitz for Soviets
 	}
 	
 	picture = SOV_tank_desant_blitz
+	countered_by = tactic_elastic_defense
 	
 	attacker_movement_speed = 0.5
+	combat_width = 0.1
+	attacker = 0.25
+	defender = -0.2
+}
+
+#Anti-Partisan, purpose is to counter guerrilla 
+tactic_partisan_sweeps = {
+
+    is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		hardness > 0.3
+		phase = no
+		OR = {
+			skill > 2
+			has_trait = panzer_leader
+			skill_advantage > 1
+		}
+	}
+    
+    active = no
+
+   	base =  { 
+		factor = 15
+		modifier = {
+			add = 5
+			OR = {
+				has_trait = panzer_expert
+				has_trait = combined_arms_expert
+			}
+		}
+	}
+    
+    picture = partisan_sweeps
+    
 	combat_width = 0.1
 	attacker = 0.2
 	defender = -0.2
 }
+
 
 tactic_urban_defense = { 
 	is_attacker = no

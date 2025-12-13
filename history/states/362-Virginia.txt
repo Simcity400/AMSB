@@ -4,14 +4,7 @@ state={
 	name="STATE_362"
 
 	history={
-		# No Asia + Scraping
-		1936.1.1.13 = { owner = WST add_core_of = WST }
-		1936.1.1.14 = { owner = WST add_core_of = WST }
-
-		# Less Minors
-		1936.1.1.15 = { owner = USA add_core_of = USA }
-
-        owner = USA
+		owner = USA
 		buildings = {
 			infrastructure = 3 #was: 6
 			industrial_complex = 2
@@ -20,7 +13,12 @@ state={
 			fuel_silo = 1
 			788 = {
 				naval_base = 10
-
+				naval_headquarters = {
+					level = 1
+					allowed = {
+						has_dlc = "No Compromise, No Surrender"
+					}
+				}
 			}
 
 		}
@@ -48,6 +46,10 @@ state={
 
 	local_supplies=11.0
 	manpower=2249080
+
+	resources = {
+		coal = 11 #initial distribution = with infra 28.8 / 1280 total
+	}
 	buildings_max_level_factor=1.000
 	state_category=large_city
 }

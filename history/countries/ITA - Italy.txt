@@ -120,7 +120,6 @@ if = {
 ################ BOP ##################
 #######################################
 
-#set_variable = { ITA_cores_lost_for_modifiers = 0 } #TODO_Manu: This will be killed once there is code support for has_bop_modifier or something like that
 set_variable = { ITA_bop_take_over_ministry_cost = 50 }
 set_variable = { ITA_bop_resign_ministry_cost = 15 }
 set_variable = { ITA_bop_liturgical_reforms_cd = 365 }
@@ -191,14 +190,14 @@ set_variable = { ITA_ultimatum_days = 14 }
 }
 
 #RICOSTRUZIONE INDUSTRIALE
-set_variable = { ITA_iri_production_speed_industrial_complex_factor = 0.1 }
+set_variable = { ITA_iri_production_speed_industrial_complex_factor = 0.05 }
 set_variable = { ITA_iri_industrial_concern_cost_factor = -0.35 }
 set_variable = { ITA_iri_tank_manufacturer_cost_factor = -0.15 }
 set_variable = { ITA_iri_materiel_manufacturer_cost_factor = -0.15 }
 set_variable = { ITA_iri_aircraft_manufacturer_cost_factor = -0.15 }
 set_variable = { ITA_iri_naval_manufacturer_cost_factor = -0.15 }
 
-set_variable = { ITA_iri_production_speed_arms_factory_factor = 0.05 }
+set_variable = { ITA_iri_production_speed_arms_factory_factor = 0 }
 set_variable = { ITA_iri_consumer_goods_factor = 0 }
 set_variable = { ITA_iri_local_resources_factor = 0 }
 set_variable = { ITA_iri_production_speed_infrastructure_factor = 0 }
@@ -210,9 +209,9 @@ add_dynamic_modifier = { modifier = ITA_ricostruzione_industriale_dynamic_modifi
 
 #MILITARY INDUSTRY
 set_variable = { ITA_military_industry_dm_production_factory_start_efficiency_factor = -0.05 }
-set_variable = { ITA_military_industry_dm_factory_max_efficiency_factor = -0.05 }
+set_variable = { ITA_military_industry_dm_factory_max_efficiency_factor = -0.1 }
 set_variable = { ITA_military_industry_dm_production_factory_efficiency_gain_factor = -0.05 }
-set_variable = { ITA_military_industry_dm_industrial_capacity_factory = -0.05 }
+set_variable = { ITA_military_industry_dm_industrial_capacity_factory = -0.1 }
 
 set_variable = { ITA_military_industry_dm_line_change_production_efficiency_factor = 0 }
 set_variable = { ITA_military_industry_dm_production_lack_of_resource_penalty_factor = 0 }
@@ -221,7 +220,7 @@ set_variable = { ITA_military_industry_dm_industrial_capacity_dockyard = 0 }
 set_variable = { ITA_military_industry_air_equipment_upgrade_xp_cost = 0 }
 
 add_dynamic_modifier = { modifier = ITA_military_industry_dynamic_modifier }
-add_ideas = ITA_hidden_research_penalties_ns #TODO_Manu: Hidden NS to apply research penalties as part of the Military Industry Dynamic Modifier. Delete when code support is in
+add_ideas = ITA_hidden_research_penalties_ns # Hidden NS to apply research penalties as part of the Military Industry Dynamic Modifier.
 
 
 #REGIO ESERCITO
@@ -364,12 +363,14 @@ set_technology = {
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
-	trench_warfare = 1
-	fleet_in_being = 1
 	fuel_silos = 1
 	fuel_refining = 1
 	basic_train = 1
 }
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
 if = {
 	limit = {
 		has_dlc = "La Resistance"
@@ -426,7 +427,7 @@ if = {
 		basic_battery = 1
 		basic_cruiser_armor_scheme = 1
 		basic_heavy_battery = 1
-		basic_medium_battery = 1
+		#basic_medium_battery = 1
 		basic_light_battery = 1
 		basic_heavy_armor_scheme = 1
 		early_ship_hull_submarine = 1
@@ -439,9 +440,7 @@ if = {
 		basic_ship_hull_heavy = 1
 		mtg_transport = 1
 		coastal_defense_ships = 1
-		improved_airplane_launcher = 1
-		basic_heavy_shell = 1
-		improved_heavy_battery = 1
+		#improved_airplane_launcher = 1
 	}
 	set_naval_oob = "ITA_1936_naval_mtg"
 }
@@ -613,18 +612,11 @@ if = {
 		support_weapons2 = 1
 		tech_recon = 1
 
-		#doctrines
-		grand_battle_plan = 1
-		prepared_defense = 1
-		battlefleet_concentration = 1
-		submarine_operations = 1
-		
 		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-		low_echelon_support = 1
-		dispersed_fighting = 1
-
+		#force_rotation = 1
+		#fighter_baiting = 1
+		#low_echelon_support = 1
+		#dispersed_fighting = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -647,6 +639,15 @@ if = {
 		concentrated_industry2 = 1
 		concentrated_industry3 = 1
 	}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_operational_integrity	
+set_sub_doctrine = defensive_postures
+add_mastery = {
+    amount = 100
+    sub_doctrine = defensive_postures
+}
 	
 	complete_special_project = {
 		project = sp:sp_air_radar
@@ -714,7 +715,7 @@ if = {
 			has_dlc = "Man the Guns"
 		}
 		set_technology = {
-			improved_airplane_launcher = 1
+			#improved_airplane_launcher = 1
 			
 		}
 		set_naval_oob = "ITA_1939_naval_mtg"
@@ -952,8 +953,9 @@ if = {
 		name = "CR.32" #
 		type = small_plane_airframe_0
 		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			engine_type_slot = engine_1_1x
+			fixed_main_weapon_slot = light_mg_4x
+			fixed_auxiliary_weapon_slot_1 = light_mg_4x
+			engine_type_slot = engine_2_1x
 			special_type_slot_1 = empty
 		}
 	}
@@ -961,8 +963,9 @@ if = {
 		name = "Ca.111" #
 		type = small_plane_cas_airframe_0
 		modules = {
-			fixed_main_weapon_slot = small_bomb_bay
-			engine_type_slot = engine_1_1x
+			fixed_main_weapon_slot = bomb_locks
+			fixed_auxiliary_weapon_slot_1 = bomb_locks
+			engine_type_slot = engine_2_1x
 			special_type_slot_1 = empty
 		}
 		obsolete = yes
@@ -973,7 +976,9 @@ if = {
 		type = medium_plane_airframe_0
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
-			engine_type_slot = engine_1_3x
+			fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting
+			engine_type_slot = engine_2_3x
 			special_type_slot_1 = lmg_defense_turret
 		}
 		obsolete = yes
@@ -985,7 +990,9 @@ if = {
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			fixed_auxiliary_weapon_slot_1 = bomb_locks
-			engine_type_slot = engine_1_3x
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting
+			fixed_auxiliary_weapon_slot_3 = torpedo_mounting
+			engine_type_slot = engine_2_3x
 			special_type_slot_1 = lmg_defense_turret_2x
 		}
 		obsolete = yes
@@ -997,7 +1004,9 @@ if = {
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			engine_type_slot = engine_1_3x
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting
+			fixed_auxiliary_weapon_slot_3 = torpedo_mounting
+			engine_type_slot = engine_2_3x
 			special_type_slot_1 = lmg_defense_turret_2x
 		}
 		obsolete = yes
@@ -1009,7 +1018,9 @@ if = {
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
-			engine_type_slot = engine_1_3x
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting
+			fixed_auxiliary_weapon_slot_3 = torpedo_mounting
+			engine_type_slot = engine_2_3x
 			special_type_slot_1 = lmg_defense_turret_2x
 		}
 		icon = "GFX_ITA_early_bomber_medium"
@@ -1020,6 +1031,7 @@ if = {
 		modules = {
 			fixed_main_weapon_slot = medium_bomb_bay
 			fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+			fixed_auxiliary_weapon_slot_2 = torpedo_mounting
 			engine_type_slot = engine_2_3x
 			special_type_slot_1 = lmg_defense_turret_2x
 		}
@@ -1029,8 +1041,8 @@ if = {
 		name = "Ba.65" #
 		type = small_plane_cas_airframe_1
 		modules = {
-			fixed_main_weapon_slot = small_bomb_bay
-			fixed_auxiliary_weapon_slot_1 = light_mg_2x
+			fixed_main_weapon_slot = bomb_locks
+			fixed_auxiliary_weapon_slot_1 = bomb_locks
 			engine_type_slot = engine_2_1x
 			special_type_slot_1 = empty
 		}
