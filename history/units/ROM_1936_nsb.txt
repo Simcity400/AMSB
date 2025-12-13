@@ -65,6 +65,35 @@ division_template = {
 
 ### Starting Production ###
 instant_effect = {
+
+
+if = {
+	limit = {
+		has_game_rule = { 
+			rule = larp_barb
+			option = on
+		}
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		NOT = {
+			has_game_rule = { 
+			rule = larp_barb
+			option = on
+			}
+		}
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+}
+
 	add_equipment_production = {
 		equipment = {
 			type = infantry_equipment_1

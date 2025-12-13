@@ -57,12 +57,6 @@
 		
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 		completion_reward = {
-			310 = {
-				add_extra_state_shared_building_slots = 5
-			}
-			694 = {
-				add_extra_state_shared_building_slots = 5
-			}
 				20 = {
 				limit = {
 					is_controlled_by = ROOT
@@ -1229,7 +1223,7 @@
 		
 		prerequisite = {}
 		mutually_exclusive = { }
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1263,7 +1257,6 @@
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_political_power = 50
 			806 = {
 				limit = {
 					is_controlled_by = ROOT
@@ -1271,7 +1264,7 @@
 				}
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -1282,7 +1275,7 @@
 				}
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -1386,7 +1379,7 @@
 				name = FRA_methodical_battle
 				cost_reduction = 0.5
 				uses = 3
-				category = cat_grand_battle_plan
+				category = land_doctrine
 			}
 		}
 	}
@@ -1632,239 +1625,14 @@
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {		
-			custom_effect_tooltip = FRA_create_unit_mainland_tt
-			hidden_effect = {	
-				division_template = {
-					name = "Defenders of the Mainland"
-					priority = 2
-					division_names_group = FRA_INF_01
-					is_locked = yes
-					regiments = {
-						infantry = { x = 0 y = 0 }
-						infantry = { x = 0 y = 1 }
-						infantry = { x = 0 y = 2 }
-		
-		        		infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-						infantry = { x = 1 y = 2 }
-
-						infantry = { x = 2 y = 0 }
-						infantry = { x = 2 y = 1 }
-
-						infantry = { x = 3 y = 0 }
-						infantry = { x = 3 y = 1 }
-					}
-					support = {
-						anti_tank = { x = 0 y = 0 }
-						anti_air = { x = 0 y = 1 }
-					}
-				}
-	
-				random_owned_controlled_state = {
-					prioritize = { 785 }
-					create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				create_unit = {
-						division = "name = \"Defenders of the Mainland\" division_template = \"Defenders of the Mainland\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
-						owner = FRA
-					}	
-				}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 31300
 			}
-
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 24124
+			}
 		}
 	}
 	focus = {
@@ -2351,7 +2119,7 @@
 			factor = 4
 		}
 		available = {
-			GER = { has_completed_focus = GER_anschluss }
+			GER = { has_completed_focus = GER_demand_sudetenland }
 		}
 		completion_reward = {
 			if = {
@@ -3235,7 +3003,7 @@
 			#FRA_communism_riot_effect = yes
 			}
 			remove_ideas = FRA_political_violence
-			694 = {
+			695 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
@@ -3727,11 +3495,6 @@ focus = {
 			factor = 4
 		}
 		completion_reward = {
-			add_tech_bonus = {
-				category = dispersed_industry_category
-				uses = 1
-				bonus = 1.5
-			}
 			if = {
 				limit = {
 					has_idea = FRA_inefficient_economy_1
@@ -3759,7 +3522,7 @@ focus = {
 		prerequisite = { focus = FRA_colonial_industry focus = FRA_military_factories focus = FRA_industrial_expansion  }
 		mutually_exclusive = { }
 		relative_position_id = FRA_military_factories
-		cost = 5
+		cost = 10
 	
 		ai_will_do = {
 			factor = 1
@@ -4009,8 +3772,8 @@ focus = {
 	focus = {
 		id = FRA_rally_defectors
 		icon = GFX_focus_fra_milice
-		x = 18
-		y = 7
+		x = 19
+		y = 10
 	
 		
 		cost = 1
@@ -4018,10 +3781,13 @@ focus = {
 		ai_will_do = {
 			factor = 1
 		}
+		allow_branch = {
+		#	has_global_flag = fall_of_france
+		}
 		
 	
 		available = {
-			has_global_flag = fall_of_france
+			has_capitulated = yes
 		}
 		
 		bypass = {
@@ -4033,36 +3799,51 @@ focus = {
 	
 		search_filters = { FOCUS_FILTER_POLITICAL  }
 		completion_reward = {
-			310 = {
-				add_extra_state_shared_building_slots = 6
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+			
+			add_timed_idea = { 
+				idea = FRA_eco_post_cap_idea 
+				days = 60 
+			}
+			EFR = {
+				every_army_leader = {
+					set_nationality = FRA
+					limit = {
+						NOT = {
+							has_trait = old_guard
+						}
+					}
 				}
 			}
-			694 = {
-				add_extra_state_shared_building_slots = 6
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
+			hidden_effect = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4
 			}
-			695 = {
-				add_extra_state_shared_building_slots = 6
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+				
+				add_ideas = SPA_death_before_surrender
+				add_state_core = 730
+				EFR = {
+					give_resource_rights = {
+						receiver = GER
+						state = 22
+					}
+					give_resource_rights = {
+						receiver = GER
+						state = 20
+					}
+					give_resource_rights = {
+						receiver = GER
+						state = 32
+					}
+					give_resource_rights = {
+						receiver = GER
+						state = 21
+					}
+					give_resource_rights = {
+						receiver = ITA
+						state = 459
+					}
 				}
-			}
-			FRA = { transfer_state = 695 }
-			add_state_core = 695
-			add_timed_idea = {
-            idea = FRA_post_cap_boost
-            days = 40
-        }
 			# FRA SPAWN INS
 
 				division_template = {
@@ -4138,44 +3919,12 @@ focus = {
 					}
 			
 				}
-			EFR = {
-				every_army_leader = {
-					set_nationality = FRA
-					limit = {
-						NOT = {
-							has_trait = old_guard
-						}
-					}
-				}
-			}
-			hidden_effect = {
-				add_ideas = SPA_death_before_surrender
-				add_state_core = 730
-				EFR = {
-					give_resource_rights = {
-						receiver = GER
-						state = 22
-					}
-					give_resource_rights = {
-						receiver = GER
-						state = 20
-					}
-					give_resource_rights = {
-						receiver = GER
-						state = 32
-					}
-					give_resource_rights = {
-						receiver = GER
-						state = 21
-					}
-					give_resource_rights = {
-						receiver = ITA
-						state = 459
-					}
-				}
+			# FRA SPAWN INS POST CAP END
+
 			}
 		}
 	}
+
 	focus = {
 		id = FRA_appeal_to_the_french_nation
 		icon = GFX_SOV_collectivist_propaganda_ccp_2d_sov_compatibility
@@ -4303,7 +4052,7 @@ focus = {
 		completion_reward = {
 			add_offsite_building = {
 				type = industrial_complex
-				level = 12
+				level = 8
 			}
 
 		}
@@ -4540,7 +4289,6 @@ focus = {
 			army_experience = 30
 		}
 	}
-	
 	focus = {
 		id = FRA_continue_the_fight2
 		icon = GFX_focus_hol_the_fourth_ally
@@ -4571,7 +4319,7 @@ focus = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			add_manpower = 420000
+			add_manpower = 22000
 			set_nationality = {
     				target_country = FRA
     				character = FRA_henri_giraud
@@ -4886,7 +4634,7 @@ focus = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			army_experience = 10	
-			add_manpower = 690067
+			add_manpower = 180000
 			add_ideas = { FRA_colonial_recruitment }
 		}
 	}
@@ -5026,7 +4774,6 @@ focus = {
 			remove_ideas = { FRA_defeatism }
 		}
 	}
-
 	focus = {
 		id = FRA_the_maquis
 		icon = GFX_focus_focus_fra_maquis
@@ -5071,7 +4818,6 @@ focus = {
 			}
 		}
 	}
-
 	focus = {
 		id = FRA_radio_londre
 		icon = GFX_focus_SWE_radiotjanst
@@ -5106,7 +4852,6 @@ focus = {
 			add_manpower = 7000
 		}
 	}
-
 	focus = {
 		id = FRA_passive_resistance
 		icon = GFX_focus_spr_torchbearers_of_tomorrow
@@ -5140,7 +4885,6 @@ focus = {
 			add_stability = 0.05
 		}
 	}
-
 	focus = {
 		id = FRA_train_resistance
 		icon = GFX_focus_generic_limited_social_mobilization
@@ -5178,7 +4922,6 @@ focus = {
 			}
 		}
 	}
-
 	focus = {
 		id = FRA_underground_newspaper
 		icon = GFX_focus_renounce_the_treaty_of_trianon
@@ -5211,7 +4954,6 @@ focus = {
 			add_war_support = 0.08
 		}
 	}
-
 
 	focus = {
 		id = FRA_improvised_weapons
@@ -5253,7 +4995,6 @@ focus = {
 			}
 		}
 	}
-
 	focus = {
 		id = FRA_drop_weapons
 		icon = GFX_focus_generic_paratrooper
@@ -5299,8 +5040,6 @@ focus = {
 			}
 		}
 	}
-
-
 	focus = {
 		id = FRA_resistance_capital
 		icon = GFX_focus_hol_united_netherlands

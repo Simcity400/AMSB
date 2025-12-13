@@ -48,7 +48,7 @@ equipments = {
 		lend_lease_cost = 8
 		manpower = 20
 		fuel_consumption = 0.05
-		build_cost_ic = 11
+		build_cost_ic = 13
 		resources = {
 			aluminium = 1
 			rubber = 1
@@ -82,6 +82,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 				}
 			}
 
@@ -122,6 +123,11 @@ equipments = {
 		module_count_limit = {
 			module = self_sealing_fuel_tanks_small
 			count < 2
+		}
+
+		module_count_limit = {
+			module = armor_plate_small
+			count < 3
 		}
 
 		module_count_limit = {
@@ -242,7 +248,7 @@ equipments = {
 		weight = 4
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 13
+		build_cost_ic = 16
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -274,6 +280,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 				}
 			}
 
@@ -318,7 +325,7 @@ equipments = {
 		weight = 5
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 16
+		build_cost_ic = 18
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -361,6 +368,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 					plane_jet_engine_type
 					twin_plane_jet_engine_type
 					plane_rocket_engine_type
@@ -418,10 +426,10 @@ equipments = {
 		maximum_speed = 475
 		air_agility = 50
 		air_defence = 12
-		weight = 6
+		weight = 5
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 18
+		build_cost_ic = 20
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -472,6 +480,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 					plane_jet_engine_type
 					twin_plane_jet_engine_type
 					plane_rocket_engine_type
@@ -543,7 +552,7 @@ equipments = {
 		weight = 6
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 26
+		build_cost_ic = 28
 		resources = {
 			aluminium = 4
 			rubber = 1
@@ -597,6 +606,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 					plane_jet_engine_type
 					twin_plane_jet_engine_type
 					plane_rocket_engine_type
@@ -649,6 +659,10 @@ equipments = {
 					plane_special_module_defense_turret
 				}
 			}
+		}
+		module_count_limit = {
+			module = armor_plate_small
+			count < 3
 		}
 	}
 
@@ -734,6 +748,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_jet_engine_type
+					twin_plane_jet_engine_type
 					plane_rocket_engine_type
 				}
 			}
@@ -793,6 +808,10 @@ equipments = {
 			special_type_slot_1 = empty
 			special_type_slot_2 = empty
 		}
+		module_count_limit = {
+			module = armor_plate_small
+			count < 3
+		}
 	}
 
 	cv_small_plane_airframe = {
@@ -844,7 +863,7 @@ equipments = {
 		lend_lease_cost = 8
 		manpower = 20
 		fuel_consumption = 0.05
-		build_cost_ic = 11
+		build_cost_ic = 13
 		resources = {
 			aluminium = 1
 			rubber = 1
@@ -876,6 +895,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 				}
 			}
 
@@ -917,6 +937,11 @@ equipments = {
 		module_count_limit = {
 			module = self_sealing_fuel_tanks_small
 			count < 2
+		}
+
+		module_count_limit = {
+			module = armor_plate_small
+			count < 3
 		}
 
 		module_count_limit = {
@@ -1016,7 +1041,7 @@ equipments = {
 		maximum_speed = 400
 		air_agility = 30
 		air_defence = 7
-		weight = 4
+		weight = 3
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 
@@ -1036,10 +1061,10 @@ equipments = {
 		maximum_speed = 425
 		air_agility = 35
 		air_defence = 9
-		weight = 5
+		weight = 4
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 13
+		build_cost_ic = 16
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -1070,6 +1095,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 				}
 			}
 
@@ -1111,10 +1137,10 @@ equipments = {
 		maximum_speed = 450
 		air_agility = 40
 		air_defence = 11
-		weight = 6
+		weight = 5
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 16
+		build_cost_ic = 18
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -1157,6 +1183,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 					plane_jet_engine_type
 					twin_plane_jet_engine_type
 				}
@@ -1213,10 +1240,10 @@ equipments = {
 		maximum_speed = 475
 		air_agility = 45
 		air_defence = 12
-		weight = 6
+		weight = 5
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 18
+		build_cost_ic = 20
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -1267,6 +1294,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 					plane_jet_engine_type
 					twin_plane_jet_engine_type
 				}
@@ -1324,7 +1352,7 @@ equipments = {
 		weight = 6
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 26
+		build_cost_ic = 28
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -1378,6 +1406,7 @@ equipments = {
 				required = yes
 				allowed_module_categories = {
 					plane_engine_type
+					twin_plane_engine_type
 					plane_jet_engine_type
 					twin_plane_jet_engine_type
 				}
@@ -1464,7 +1493,7 @@ equipments = {
 		lend_lease_cost = 10
 		manpower = 40
 		fuel_consumption = 0
-		build_cost_ic = 16
+		build_cost_ic = 21
 		resources = {
 			aluminium = 1
 			rubber = 1
@@ -1710,7 +1739,7 @@ equipments = {
 		weight = 8
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 21
+		build_cost_ic = 26
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -1841,7 +1870,7 @@ equipments = {
 		weight = 12
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 26
+		build_cost_ic = 30
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -1989,9 +2018,9 @@ equipments = {
 		weight = 14
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 34
+		build_cost_ic = 36
 		resources = {
-			aluminium = 3
+			aluminium = 2
 			rubber = 1
 		}
 		module_slots = {
@@ -2149,7 +2178,7 @@ equipments = {
 		weight = 16
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 36
+		build_cost_ic = 40
 		resources = {
 			aluminium = 3
 			rubber = 1
@@ -2336,7 +2365,7 @@ equipments = {
 		lend_lease_cost = 10
 		manpower = 80
 		fuel_consumption = 0.16
-		build_cost_ic = 42
+		build_cost_ic = 47
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -2578,7 +2607,7 @@ equipments = {
 		weight = 18
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 47
+		build_cost_ic = 52
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -2718,7 +2747,7 @@ equipments = {
 		weight = 20
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 52
+		build_cost_ic = 57
 		resources = {
 			aluminium = 2
 			rubber = 1
@@ -2884,7 +2913,7 @@ equipments = {
 		weight = 22
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 57
+		build_cost_ic = 60
 		resources = {
 			aluminium = 3
 			rubber = 1
@@ -3050,7 +3079,7 @@ equipments = {
 		weight = 24
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
-		build_cost_ic = 60
+		build_cost_ic = 63
 		resources = {
 			aluminium = 4
 			rubber = 1

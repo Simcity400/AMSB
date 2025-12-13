@@ -557,12 +557,12 @@ characters = {
 		
 		corps_commander = {
 			visible = { has_completed_focus = GER_adopt_new_panzer_doctrine }
-			traits = { trait_reckless media_personality armor_officer war_hero trickster }
-			skill = 4
-			attack_skill = 5
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 2
+			traits = { trait_reckless media_personality armor_officer war_hero trickster cavalry_officer panzer_leader trait_engineer skilled_staffer cavalry_leader ranger commando urban_assault_specialist camouflage_expert hill_fighter } 
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 7
+			logistics_skill = 6
 			legacy_id = 4
 		}
 	}
@@ -588,8 +588,48 @@ characters = {
 			}
 		}
 		
-		corps_commander = {
-			traits = { brilliant_strategist panzer_leader trickster trait_engineer skilled_staffer cavalry_leader organizer }
+		field_marshal = {
+			visible = {
+				NOT = { 
+					has_game_rule = { 
+						rule = larp_barb
+						option = on
+					}
+				}
+			}
+			traits = { brilliant_strategist panzer_leader trickster trait_engineer skilled_staffer cavalry_leader organizer ranger }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 7
+			planning_skill = 6
+			logistics_skill = 6
+			legacy_id = 5
+		}
+	}
+
+	GER_erich_von_manstein_barb = {
+		name = GER_erich_von_manstein
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_erich_von_manstein
+				small = GFX_idea_manstein
+			}
+		}
+		advisor = { 
+			slot = high_command
+			traits = {
+				army_regrouping_2
+			}
+		}
+		
+		field_marshal = {
+				visible = {
+					has_game_rule = { 
+					rule = larp_barb
+					option = on
+				}
+			}
+			traits = { adaptable brilliant_strategist logistics_wizard thorough_planner aggressive_assaulter panzer_leader trickster trait_engineer skilled_staffer cavalry_leader organizer ranger urban_assault_specialist }
 			skill = 6
 			attack_skill = 4
 			defense_skill = 7
@@ -624,11 +664,51 @@ characters = {
 		}
 		
 		corps_commander = {
-			visible = { has_completed_focus = GER_adopt_new_panzer_doctrine }
-			traits = { brilliant_strategist career_officer panzer_leader trickster trait_engineer skilled_staffer cavalry_leader organizer ranger urban_assault_specialist }
+			visible = { has_completed_focus = GER_adopt_new_panzer_doctrine 
+			NOT = { 
+				has_game_rule = { 
+					rule = larp_barb
+					option = on
+					}
+				} 
+			}
+			traits = { career_officer panzer_leader trickster trait_engineer skilled_staffer cavalry_leader organizer ranger }
 			skill = 6
-			attack_skill = 4
+			attack_skill = 5
 			defense_skill = 7
+			planning_skill = 7
+			logistics_skill = 6
+			legacy_id = 6
+		}
+	}
+
+	GER_heinz_guderian_barb = {
+		name = GER_heinz_guderian
+		portraits = {
+			army = {
+				large = GFX_portrait_GER_heinz_guderian
+				small = GFX_idea_heinz_guderian
+			}
+		}
+
+		advisor = { 
+			slot = high_command
+			traits = {
+				army_CombinedArms_2
+			}
+		}
+		
+		field_marshal = {
+			visible = {
+				has_game_rule = { 
+					rule = larp_barb
+					option = on
+					}
+				} 
+			traits = { career_officer combined_arms_expert expert_improviser offensive_doctrine fortress_buster panzer_leader trickster trait_engineer skilled_staffer cavalry_leader organizer ranger }
+			skill = 6
+			attack_skill = 5
+			defense_skill = 8
 			planning_skill = 6
 			logistics_skill = 6
 			legacy_id = 6
@@ -681,13 +761,18 @@ characters = {
 				small = GFX_portrait_GER_fedor_von_bock_small
 			}
 		}
+		advisor = {
+			slot = high_command
+			idea_token = GER_fedor_von_bock
+			traits = { army_CombinedArms_2 }
+		}
 		corps_commander = {
-			traits = { cavalry_officer harsh_leader brilliant_strategist }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 4
-			logistics_skill = 3
+			traits = { cavalry_officer panzer_leader trickster trait_engineer skilled_staffer cavalry_leader ranger commando urban_assault_specialist hill_fighter camouflage_expert } 
+			skill = 8
+			attack_skill = 7
+			defense_skill = 7
+			planning_skill = 7
+			logistics_skill = 6
 			legacy_id = 9
 		}
 	}
@@ -701,12 +786,12 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { cavalry_officer panzer_leader trickster trait_engineer skilled_staffer cavalry_leader organizer commando } 
-			skill = 6
-			attack_skill = 5
-			defense_skill = 7
-			planning_skill = 7
-			logistics_skill = 6
+			traits = { cavalry_officer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
 			legacy_id = 11
 		}
 	}

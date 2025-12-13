@@ -1,0 +1,268 @@
+	barbarossa_category = { 
+
+		winter_of_1941_tick = {
+		
+		activation = {
+				AND = { 
+						has_start_date = 1941.1.1.12
+						has_game_rule = {
+						rule = larp_barb
+						option = on
+						}
+				  	}
+				}
+		
+		allowed = { 
+			#has_country_flag = barbstart
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		
+		visible = {
+			always = yes
+		}
+		
+		cancel_trigger = {
+			always = no
+		}
+		
+		days_mission_timeout = 340
+		is_good = no
+		fire_only_once = yes
+		timeout_effect = {
+			activate_mission = mud_season
+			activate_mission = german_1942_offensive
+			activate_mission = winter_of_1942_tick
+			#activate_mission = zugs_last_offensive
+				add_timed_idea = { 
+				idea = winter_of_1941 days = 75
+			}
+			add_timed_idea = { 
+				idea = war_against_humanity
+				days = 730
+			}
+			if = {
+				limit = {
+					NOT = { 
+						tag = SOV
+						}
+					}
+					add_timed_idea = { idea = germans_frozen days = 14 
+				}
+			}
+			SOV = { 
+			add_timed_idea = { 
+				idea = soviet_winter_offensive days = 30
+				}
+			}
+		}
+	}
+	winter_of_1942_tick = {
+		allowed = { 
+			always = no
+		}
+		activation = {
+			
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		cancel_trigger = {
+			always = no
+		}
+		visible = {
+			always = no
+		}
+		days_mission_timeout = 360
+		is_good = no
+		fire_only_once = yes
+		timeout_effect = {
+				activate_mission = mud_season
+				add_timed_idea = { 
+				idea = winter_of_1942 days = 75
+			SOV = { 
+				add_timed_idea = { 
+				idea = soviet_winter_offensive2 days = 30
+					}
+				}
+			}
+		}
+	}
+
+	mud_season = {
+		allowed = { 
+			always = no
+		}
+		activation = {
+			
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		cancel_trigger = {
+			always = no
+		}
+		visible = {
+			always = no
+		}
+		days_mission_timeout = 75
+		is_good = no
+		fire_only_once = yes
+		timeout_effect = {
+				add_timed_idea = { 
+				idea = Rasputitsa days = 50
+			}
+		}
+	}
+	german_1942_offensive = {
+		allowed = { 
+			always = no
+		}
+		activation = {
+			
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		cancel_trigger = {
+			always = no
+		}
+		visible = {
+			always = no
+		}
+		days_mission_timeout = 200
+		is_good = no
+		fire_only_once = yes
+		timeout_effect = { 
+			GER = { 
+			add_timed_idea = { 
+				idea = german_fall_blau
+				days = 80
+				}
+			}
+		}
+	}
+
+	
+	economy_of_conquest_barb = { 
+			activation = {
+				AND = { 
+					has_start_date = 1941.1.1.12
+					has_game_rule = {
+					rule = larp_barb
+					option = on
+					}
+				}
+			}
+		
+		allowed = { 
+			#has_country_flag = barbstart
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		
+		visible = {
+			always = yes
+		}
+		
+		cancel_trigger = { 
+			AND = { 
+			219 = { 
+				is_controlled_by = GER
+			}
+			OR = { 
+				195 = { 
+					is_controlled_by = GER
+				}
+				217 = { 
+					is_controlled_by = GER
+						}
+					}
+				}
+			}
+		days_mission_timeout = 920
+		is_good = no
+		fire_only_once = yes
+		timeout_effect = {
+				GER = { 
+			add_ideas = german_economy
+			add_stability = -0.15
+			add_war_support = -0.15
+			}
+			activate_mission = zugs_last_offensive
+		}
+	}
+
+
+	zugs_last_offensive = {
+		allowed = { 
+			always = no
+		}
+		activation = {
+			
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+		cancel_trigger = {
+			always = no
+		}
+		visible = {
+			always = no
+		}
+		days_mission_timeout = 90
+		is_good = no
+		fire_only_once = yes
+		timeout_effect = { 
+			GER = { 
+			add_timed_idea = { 
+				idea = german_citidel
+				days = 70
+				}
+			}
+			activate_mission = zugs_successful_offensive
+		}
+	}
+
+	zugs_successful_offensive = {
+		allowed = { 
+			tag = GER
+		}
+		activation = {
+			has_idea = german_citidel
+
+			}
+	
+		available = {
+			OR = {
+			219 = { 
+				is_controlled_by = GER
+					}
+				195 = { 
+					is_controlled_by = GER
+				}
+				217 = { 
+					is_controlled_by = GER
+					}
+				}
+		}
+		cancel_trigger = {
+
+		}
+		visible = {
+			always = no
+		}
+		days_mission_timeout = 70
+		is_good = no
+		fire_only_once = yes
+		complete_effect = { 
+			GER = { 
+			remove_ideas = german_economy
+			add_stability = 0.10
+			add_war_support = 0.15
+			}
+		}
+	}
+}

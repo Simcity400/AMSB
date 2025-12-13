@@ -9,7 +9,7 @@ news_event = {
 	id = news.6969
 	title = news.6969.t
 	desc = news.6969.d
-	picture = GFX_news_event_herman_goring
+	picture = GFX_news_event_033
 	
 	major = yes
 	
@@ -3474,14 +3474,21 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		336 = { is_controlled_by = JAP }
+		1021 = { 
+			controller = {
+				OR = {
+					original_tag = JAP
+					is_ally_with = JAP
+				}
+			}
+		}
 		OR = {
-			336 = {
+			1021 = {
 				is_owned_by = ENG
 			}
 			MAL = {
 				is_subject_of = ENG
-				owns_state = 336
+				owns_state = 1021
 			}
 		}
 		JAP = { has_war_with = ENG }
@@ -3508,7 +3515,19 @@ news_event = {
 	}
 	option = {
 		name = news.117.b
-		trigger = { TAG = JAP }
+		trigger = { 
+			TAG = JAP 
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = SEA_japan_news_events.03.a
+		trigger = { 
+			TAG = JAP 
+			has_government = communism
+		}
 	}
 	option = {
 		name = news.100.c
@@ -3660,8 +3679,8 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		613 = { is_controlled_by = JAP }
-		613 = { is_owned_by = CHI }
+		1035 = { is_controlled_by = JAP }
+		1035 = { is_owned_by = CHI }
 		JAP = { has_war_with = CHI }
 		NOT = { has_global_flag = fall_of_nanjing }
 	}
@@ -3746,7 +3765,14 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		326 = { is_controlled_by = JAP }
+		326 = { 
+			controller = {
+				OR = {
+					original_tag = JAP
+					is_ally_with = JAP
+				}
+			}
+		}
 		326 = { is_owned_by = ENG }
 		JAP = { has_war_with = ENG }
 		NOT = { has_global_flag = fall_of_hong_kong }
@@ -3771,7 +3797,19 @@ news_event = {
 	}
 	option = {
 		name = news.117.b
-		trigger = { TAG = JAP }
+		trigger = { 
+			TAG = JAP 
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = SEA_japan_news_events.03.a
+		trigger = { 
+			TAG = JAP 
+			has_government = communism
+		}
 	}
 	option = {
 		name = news.100.c
@@ -3789,7 +3827,12 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		327 = { is_controlled_by = JAP }
+		327 = {
+			OR = {
+				is_controlled_by = JAP
+				is_controlled_by = PSR	#Japanese puppet state
+			}
+		}
 		327 = { is_owned_by = PHI }
 		JAP = { has_war_with = PHI }
 		NOT = { has_global_flag = fall_of_manila }
@@ -3797,6 +3840,25 @@ news_event = {
 	
 	immediate = {
 		set_global_flag = fall_of_manila
+		hidden_effect = {
+			if = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				PHI = {
+					country_event = SEA_PHI_political_events.54
+				}
+			}
+		}
+	}
+
+	show_major = {
+		NOT = {
+			AND = {
+				has_dlc = "No Compromise, No Surrender"
+				tag = PHI
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -3895,7 +3957,14 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		439 = { is_controlled_by = JAP }
+		439 = { 
+			controller = {
+				OR = {
+					original_tag = JAP
+					is_ally_with = JAP
+				}
+			}
+		}
 		OR = {
 			439 = {
 				is_owned_by = ENG
@@ -3929,7 +3998,19 @@ news_event = {
 	}
 	option = {
 		name = news.117.b
-		trigger = { TAG = JAP }
+		trigger = { 
+			TAG = JAP 
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = SEA_japan_news_events.03.a
+		trigger = { 
+			TAG = JAP 
+			has_government = communism
+		}
 	}
 	option = {
 		name = news.100.c
@@ -5156,7 +5237,7 @@ news_event = {
 				}
 			}
 			create_country_leader = {
-				name = "Harry Pollitt"
+				name = ENG_harry_pollitt
 				desc = "POLITICS_HARRY_POLLITT_DESC"
 				picture = GFX_portrait_Harry_Pollitt
 				expire = "1965.1.1"
@@ -7561,9 +7642,6 @@ news_event = {
 			}
 			NOT = {
 				has_war_with = SOV
-			}
-			NOT = {
-				TAG = ROM
 			}
 		}
 	}
@@ -11223,6 +11301,9 @@ news_event = {
 	title = news.288.t
 	desc = news.288.desc
 	picture = GFX_news_event_chinese_soldiers_march
+	immediate = {
+		set_global_flag = chiang_needs_to_die
+	}
 	
 	major = yes
 	
@@ -11274,6 +11355,15 @@ news_event = {
 	major = yes
 
 	is_triggered_only = yes
+	trigger = { # Added to minimise the amount of spam non-chinese player about the United Front joining
+		FROM = { 
+			is_chinese_warlord = no
+			NOT = {
+				has_faction_template = faction_template_chinese_united_front
+				is_ally_with = event_target:WTT_current_china_leader 
+			}
+		}
+	}
 
 	#Together we will prevail.
 	option = {
@@ -13525,13 +13615,10 @@ news_event = {
 		name = news.409.c
 		trigger = {
 			NOT = {
-				OR = {
-					TAG = CHI
-					OR = {
-						TAG = JAP
-						is_in_faction_with = JAP
-					}
-				}
+				TAG = CHI
+				TAG = JAP
+				is_in_faction_with = JAP
+				is_in_faction_with = CHI
 			}
 		}
 	}

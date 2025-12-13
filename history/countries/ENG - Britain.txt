@@ -4,15 +4,35 @@ if = {
 	limit = {
 		NOT = {
 			has_dlc = "No Step Back"
+			has_dlc = "La Resistance"
 		}
 	}
 	set_oob = "ENG_1936"
 }
 if = {
 	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+		has_dlc = "La Resistance"
+	}
+	set_oob = "ENG_1936_LaR"
+}
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "La Resistance"
+		}
 		has_dlc = "No Step Back"
 	}
 	set_oob = "ENG_1936_nsb"
+}
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+		has_dlc = "No Step Back"
+	}
+	set_oob = "ENG_1936_nsb_LaR"
 }
 
 starting_train_buffer = 4
@@ -26,24 +46,15 @@ if = {
 		set_naval_oob = "ENG_1936_Naval_Legacy"
 	}
 }
-complete_special_project = {
-	project = sp:sp_air_radar
-	scientist = ENG_robert_watson_watt
-}
 
-add_breakthrough_progress = {
-	specialization = specialization_naval
-	value = 0.6
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
 }
-add_breakthrough_progress = {
-	specialization = specialization_air
-	value = 0.5
-}
-recruit_character = ENG_john_cockcroft
-recruit_character = ENG_charles_goodeve
-recruit_character = ENG_nevil_shute
-recruit_character = ENG_robert_watson_watt
-
 
 if = {
 	limit = { has_dlc = "By Blood Alone" }
@@ -61,6 +72,7 @@ if = {
 			basic_small_airframe = 1
 			air_torpedoe_1 = 1
 			photo_reconnaisance = 1
+			bba_early_transport_plane = 1
 			tech_mountaineers = 1
 			marines  = 1
 			paratroopers = 1
@@ -98,13 +110,27 @@ set_technology = {
 	gw_artillery = 1
 	interwar_antiair = 1
 	basic_train = 1
-	trench_warfare = 1
-	fleet_in_being = 1
 	electronic_mechanical_engineering = 1
 	radio = 1
-	cavity_magnatron = 1
 	fuel_silos = 1
 	fuel_refining = 1
+}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
+complete_special_project = {
+	project = sp:sp_air_radar
+	scientist = ENG_robert_watson_watt
+}
+
+add_breakthrough_progress = {
+	specialization = specialization_naval
+	value = 0.6
+}
+add_breakthrough_progress = {
+	specialization = specialization_air
+	value = 0.5
 }
 
 if = {
@@ -167,7 +193,7 @@ if = {
 		basic_ship_hull_carrier = 1
 		basic_battery = 1
 		basic_light_battery = 1
-		basic_medium_battery = 1
+		#basic_medium_battery = 1
 		basic_heavy_battery = 1
 		basic_torpedo = 1
 		sonar = 1
@@ -182,15 +208,6 @@ if = {
 	add_ideas = MTG_naval_treaty_adherent
 	set_global_flag = MTG_second_london_conference
 	set_global_flag = { flag = MTG_naval_treaty_signatories value = 5 }
-}
-
-if = {
-	limit = {
-		has_dlc = "La Resistance"
-	}
-	set_technology = {
-		armored_car1 = 1
-	}
 }
 
 set_variable = { var = eng_gateway_to_europe_influence value = 0 }
@@ -212,10 +229,6 @@ if = {
 			has_dlc = "Together for Victory"
 			has_dlc = "Man the Guns"
 		}
-	}
-	set_autonomy = {
-		target = MAL
-		autonomous_state = autonomy_integrated_puppet
 	}
 	set_autonomy = {
 		target = RAJ
@@ -243,7 +256,6 @@ if = {
 		freedom_level = 0.2
 	}
 	else = {
-		puppet = MAL
 		puppet = RAJ
 	}
 }
@@ -358,7 +370,7 @@ if = {
 
 		#doctrines
 		#Air
-		air_superiority = 1
+		
 		home_defence = 1
 		naval_strike_tactics = 1
 
@@ -477,15 +489,15 @@ set_popularities = {
 
 create_faction = Allies
 add_to_faction = ENG
-#add_to_faction = FRA
+add_to_faction = FRA
 add_to_faction = CAN
 add_to_faction = AST
-add_to_faction = NZL
+# add_to_faction = NZL
 add_to_faction = SAF
 
 give_military_access = RAJ
 add_to_faction = RAJ		# Must be after puppet
-add_to_faction = MAL
+# add_to_faction = MAL
 
 ##give_guarantee = CZE
 

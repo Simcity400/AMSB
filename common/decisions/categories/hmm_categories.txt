@@ -1,23 +1,45 @@
+E_ll = {
+	icon = GFX_decision_categ
+
+	allowed = {
+		always = yes
+	}
+}
+
 Technologies = {
 	icon = generic_propaganda
 
 	visible = {
-        always = yes
+        has_game_rule = {
+			rule = auto_tech_rush
+			option = on
+		}
 	}
 }
 
-#VP System
+templates = {
+	icon = GFX_decision_category_military_operation
 
-MOD_countdown_to_victory_cat = {
-
-	icon = border_conflicts
-
-	priority = 95
-	visible_when_empty = yes
 	allowed = {
-		is_playable_country = yes
-	}
-	visible = {
-		has_global_flag = victory_system_active
+		always = yes
 	}
 }
+game_check = {
+    icon = GFX_decision_category_generic
+
+    allowed = {
+        is_playable_country = yes
+    }
+
+    visible = {
+        always = yes
+    }
+
+    priority = -1000
+    
+    scripted_gui = check_gamerules_decision_ui
+    
+    visible_when_empty = yes
+}
+
+

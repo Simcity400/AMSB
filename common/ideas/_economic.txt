@@ -27,6 +27,7 @@ ideas = {
 				max_fuel_factor = -0.45
 				fuel_gain_factor = -0.6
 				agency_upgrade_time = 1.0
+				factory_energy_consumption = -0.3
 			}
 
 			allowed_to_remove = {
@@ -73,6 +74,7 @@ ideas = {
 				max_fuel_factor = -0.35
 				fuel_gain_factor = -0.5
 				agency_upgrade_time = 0.8
+				factory_energy_consumption = -0.3
 			}
 			allowed_to_remove = {
 				IF = {
@@ -110,6 +112,7 @@ ideas = {
 				conversion_cost_mil_to_civ_factor = 0.3
 				max_fuel_factor = -0.25
 				fuel_gain_factor = -0.4
+				factory_energy_consumption = -0.3
 			}
 
 			default = yes
@@ -218,6 +221,7 @@ ideas = {
 				production_speed_industrial_complex_factor = -0.1
 				production_speed_arms_factory_factor = -0.1
 				fuel_gain_factor = -0.25
+				factory_energy_consumption = -0.15
 			}
 
 			cancel_if_invalid = no
@@ -266,8 +270,10 @@ ideas = {
 						}
 					}
 					ELSE = {
-						has_completed_focus = HUN_secret_rearmament
-						NOT = { has_idea = HUN_treaty_of_triannon }
+						OR = {
+							has_completed_focus = HUN_secret_rearmament
+							NOT = { has_idea = HUN_treaty_of_triannon }
+						}
 					}
 				}
 				ELSE_IF = {
@@ -285,8 +291,10 @@ ideas = {
 						}
 					}
 					ELSE = {
-						has_completed_focus = wuw_HUN_secret_rearmament
-						NOT = { has_idea = HUN_treaty_of_triannon_wuw }
+						OR = {
+							has_completed_focus = wuw_HUN_secret_rearmament
+							NOT = { has_idea = HUN_treaty_of_triannon_wuw }
+						}
 					}
 				}
 
@@ -357,6 +365,17 @@ ideas = {
 				}
 				
 				modifier = {
+					original_tag = SIA
+					NOT = { 
+						OR = {
+							has_idea = war_economy 
+							has_idea = tot_economic_mobilisation
+						}
+					}
+					add = 1200 #Prep for invasion
+				}
+
+				modifier = {
 					factor = 100
 					OR = {
 						original_tag = URG
@@ -378,6 +397,29 @@ ideas = {
 				OR = {
 					has_government = fascism
 					has_government = communism
+					if = {
+						limit = {
+							PHI_SEA = yes
+						}
+						if = {
+							limit = {
+								has_idea = PHI_ties_with_nationalist_spain
+							}
+							has_idea = PHI_ties_with_nationalist_spain
+						}
+						else_if = {
+							limit = {
+								has_idea = PHI_ties_with_nationalist_spain_2
+							}
+							has_idea = PHI_ties_with_nationalist_spain_2
+						}
+						else = {
+							hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+						}
+					}
+					else = {
+						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+					}
 					custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
 					AND = {
 						has_war = yes
@@ -476,6 +518,7 @@ ideas = {
 				production_speed_arms_factory_factor = 0.2
 				conversion_cost_civ_to_mil_factor= -0.2
 				conversion_cost_mil_to_civ_factor = -0.2
+				factory_energy_consumption = 0.15
 			}
 
 			cancel_if_invalid = no
@@ -528,6 +571,18 @@ ideas = {
 					has_civil_war = yes
 					has_government = neutrality
 				}
+
+				modifier = {
+					# They will take the focus to gain this for free, so they shouldn't spend pp on it too willy-nilly 
+					factor = 0.5
+					original_tag = JAP
+					OR = {
+						is_historical_focus_on = yes
+						has_country_flag = JAP_AI_RANDOM_FASCIST
+						has_country_flag = JAP_AI_RANDOM_NEUTRALITY
+					}
+
+				}
    			}
 		}
 
@@ -539,6 +594,15 @@ ideas = {
 						original_tag = GER
 					}
 					NOT = { has_completed_focus = GER_totaler_krieg }
+				}
+				if = {
+					limit = {
+						original_tag = JAP
+					}
+					NOT = { 
+						has_completed_focus = JAP_sea_national_defense_state 
+						has_completed_focus = JAP_prepare_for_the_final_war 
+					}
 				}
 			}
 
@@ -640,7 +704,7 @@ ideas = {
 				}
 			}
 			ai_will_do = {
-   				factor = 1
+   				base = 1
 
 				modifier = {
 					factor = 25
@@ -669,7 +733,7 @@ ideas = {
 					factor = 0
 
 					tag = GER
-					NOT = { has_tech = volkssturm }
+					NOT = { has_doctrine = last_stand }
 					has_war = yes
 					date < 1944.01.01
 				}
@@ -699,6 +763,7 @@ ideas = {
 				production_speed_arms_factory_factor = 0.3
 				conversion_cost_civ_to_mil_factor= -0.3
 				conversion_cost_mil_to_civ_factor = -0.3
+				factory_energy_consumption = 0.3
 			}
 
 			cancel_if_invalid = no
@@ -729,12 +794,56 @@ ideas = {
 			modifier = {
 				consumer_goods_expected_value = 0.15
 				conscription = -0.02
+				production_factory_max_efficiency_factor = 0.05
 				production_speed_arms_factory_factor = 0.3
 				production_speed_dockyard_factor = 0.3
 				conversion_cost_civ_to_mil_factor= -0.3
 				conversion_cost_mil_to_civ_factor = -0.3
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
+				factory_energy_consumption = 0.3
+			}
+			cancel_if_invalid = no
+		}
+
+		national_defense_state = { 
+
+			picture = JAP_national_defense_state
+
+			visible = {
+				original_tag = JAP
+				OR = {
+					has_completed_focus = JAP_prepare_for_the_final_war
+					has_completed_focus = JAP_sea_national_defense_state
+				}
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = JAP_prepare_for_the_final_war
+					has_completed_focus = JAP_sea_national_defense_state
+				}
+				OR = {
+					has_war_with_major = yes
+					has_war_support > 0.75
+				}
+				any_enemy_country = {
+					ic_ratio = {
+						tag = ROOT
+						ratio > 0.5
+					}
+				}
+			}
+
+			cost = 150
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = 0.15
+				production_speed_arms_factory_factor = 0.3
+				conversion_cost_civ_to_mil_factor= -0.3
+				conversion_cost_mil_to_civ_factor = -0.3
+				factory_energy_consumption = 0.25
 			}
 			cancel_if_invalid = no
 		}
@@ -758,7 +867,7 @@ ideas = {
 			modifier = {
 				consumer_goods_expected_value = 0.15
 				production_speed_buildings_factor = -0.15
-
+				factory_energy_consumption = 0.05
 			}
 
 			cancel_if_invalid = no
@@ -788,6 +897,76 @@ ideas = {
 				consumer_goods_expected_value = 0.10
 				production_speed_buildings_factor = -0.2
 				global_building_slots_factor = 0.1
+				factory_energy_consumption = 0.15
+			}
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+
+		capital_investment_model = {
+			name = capital_investment_model
+
+			picture = RAJ_trickle_down_economy
+
+			allowed = {
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = 0.15
+				production_speed_industrial_complex_factor = 0.15
+				conversion_cost_civ_to_mil_factor = -0.4
+				production_speed_infrastructure_factor = 0.15
+				production_speed_arms_factory_factor = -0.15
+				trade_opinion_factor = 0.75
+				stability_factor = -0.15
+				political_power_factor = -0.1
+				factory_energy_consumption = 0.15
+
+			}
+
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 0
+   			}
+		}
+
+		JAP_war_communism_idea = {
+
+			picture = new_economic_policy
+
+			allowed = {
+				always = no
+			}
+			allowed_to_remove = {
+				OR = {
+					surrender_progress > 0.75
+					NOT = { has_government = communism }
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = 0.15
+				production_speed_industrial_complex_factor = -0.1
+				global_building_slots_factor = 0.1
+				factory_energy_consumption = 0.3
+				war_support_factor = 0.1
+				stability_factor = -0.1
+				conscription = 0.02
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_arms_factory_factor = 0.2
+				production_speed_dockyard_factor = 0.2
 			}
 
 			cancel_if_invalid = no
@@ -885,6 +1064,14 @@ ideas = {
 					}
 					NOT = { has_completed_focus = GER_autarky_efforts }
 				}
+
+				if = {
+					limit = {
+						original_tag = PRC
+						has_dlc = "No Compromise, No Surrender"
+					}
+					NOT = { has_completed_focus = PRC_promote_paper_bills }
+				}
 			}
 
 			cost = 150
@@ -962,6 +1149,14 @@ ideas = {
 					}
 					NOT = { has_completed_focus = GER_autarky_efforts }
 				}
+
+				if = {
+					limit = {
+						original_tag = PRC
+						has_dlc = "No Compromise, No Surrender"
+					}
+					NOT = { has_completed_focus = PRC_promote_paper_bills }
+				}
 			}
 
 
@@ -1009,6 +1204,93 @@ ideas = {
    			}
 		}
 
+		autarkic_economy = {
+			visible = {
+				original_tag = GER
+				has_completed_focus = GER_autarky_efforts
+				NOT = { has_completed_focus = GER_autarky_achieved }
+			}
+
+			available = {
+			}
+
+			cost = 150
+			removal_cost = -1
+
+			modifier = {
+				min_export = 0.35
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.05
+				lend_lease_tension = 0.20
+				faction_trade_opinion_factor = 0.25
+				local_resources_factor = 0.1
+				#cic_construction_boost = -0.05
+			}
+
+			cancel_if_invalid = no
+
+			ai_will_do = { #Germany should always for AutarkicEconomy if its available
+   				factor = 100
+
+   				modifier = {
+   					add = 500
+   					has_idea = limited_exports
+   				}
+
+   				modifier = {
+   					add = 1500
+   					has_idea = closed_economy
+   					has_large_ally_not_pick_closed_economy = yes
+   				}
+   			}
+		}
+
+		autarkic_economy_improved = {
+			picture = autarkic_economy
+			name = autarkic_economy
+			visible = {
+				original_tag = GER
+				has_completed_focus = GER_autarky_achieved
+			}
+
+			available = {
+			}
+
+			cost = 150
+			removal_cost = -1
+
+			modifier = {
+				min_export = 0.5
+				industrial_capacity_factory = 0.15
+				industrial_capacity_dockyard = 0.15
+				production_speed_buildings_factor = 0.20
+				research_speed_factor = 0.05
+				lend_lease_tension = 0.20
+				faction_trade_opinion_factor = 0.5
+				local_resources_factor = 0.10
+				#cic_construction_boost = -0.05
+			}
+
+			cancel_if_invalid = no
+
+			ai_will_do = { #Germany should always for AutarkicEconomy if its available
+   				factor = 100
+
+   				modifier = {
+   					add = 500
+   					has_idea = limited_exports
+   				}
+
+   				modifier = {
+   					add = 1500
+   					has_idea = closed_economy
+   					has_large_ally_not_pick_closed_economy = yes
+   				}
+   			}
+		}
+
 		limited_exports = {
 			available = {
 				OR = {
@@ -1039,8 +1321,17 @@ ideas = {
 							}
 						}
 					}
+					if = {
+						limit = {
+							original_tag = RAJ
+							has_dlc = "Graveyard of Empires"
+						}
+						has_completed_focus = RAJ_raise_import_duties
+					}
+					else = {
+						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
+					}
 				}
-
 
 				if = {
 					limit = {
@@ -1118,111 +1409,55 @@ ideas = {
    			}
 		}
 
-		autarkic_economy = {
-			visible = {
-				original_tag = GER
-				has_completed_focus = GER_autarky_efforts
-				NOT = { has_completed_focus = GER_autarky_achieved }
-			}
-
-			available = {
-			}
-
-			cost = 150
-			removal_cost = -1
-
-			modifier = {
-				min_export = 0.5
-				industrial_capacity_factory = 0.1
-				industrial_capacity_dockyard = 0.1
-				production_speed_buildings_factor = 0.1
-				research_speed_factor = 0.05
-				lend_lease_tension = 0.20
-				faction_trade_opinion_factor = 0.25
-				local_resources_factor = 0.1
-				#cic_construction_boost = -0.05
-			}
-
-			cancel_if_invalid = no
-
-			ai_will_do = { #Germany should always for AutarkicEconomy if its available
-   				factor = 100
-
-   				modifier = {
-   					add = 500
-   					has_idea = limited_exports
-   				}
-
-   				modifier = {
-   					add = 1500
-   					has_idea = closed_economy
-   					has_large_ally_not_pick_closed_economy = yes
-   				}
-   			}
-		}
-
-		autarkic_economy_improved = {
-			picture = autarkic_economy
-			name = autarkic_economy
-			visible = {
-				original_tag = GER
-				has_completed_focus = GER_autarky_achieved
-			}
-
-			available = {
-			}
-
-			cost = 150
-			removal_cost = -1
-
-			modifier = {
-				min_export = 0.15
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.05
-				production_speed_buildings_factor = 0.1
-				research_speed_factor = 0.05
-				lend_lease_tension = 0.20
-				faction_trade_opinion_factor = 0.5
-				#cic_construction_boost = -0.05
-			}
-
-			cancel_if_invalid = no
-
-			ai_will_do = { #Germany should always for AutarkicEconomy if its available
-   				factor = 100
-
-   				modifier = {
-   					add = 500
-   					has_idea = limited_exports
-   				}
-
-   				modifier = {
-   					add = 1500
-   					has_idea = closed_economy
-   					has_large_ally_not_pick_closed_economy = yes
-   				}
-   			}
-		}
-
 		closed_economy = {
 
 
 			available = {
+
 				has_war = yes
-				OR = {
-					has_government = fascism
-					has_government = communism
+
+				IF = {
+					limit = {
+						NOT = {
+							original_tag = JAP
+						}
+					}
+					OR = {
+						has_government = fascism
+						has_government = communism
+					}
 				}
+				ELSE_IF = {
+					limit = {
+						original_tag = JAP
+					}
+					OR = {
+						has_government = fascism
+						has_government = communism
+						AND = {
+							has_completed_focus = JAP_sea_state_general_mobilization_law
+							has_government = neutrality
+						}
+					}
+				}
+				
 				OR = {
 					has_idea = war_economy
 					has_idea = tot_economic_mobilisation
-					if = {
+					IF = {
 						limit = {
 							original_tag = GER
 						}
 						has_idea = totaler_krieg_economy
 					}
-					else = {
+					ELSE_IF = {
+						limit = {
+							original_tag = JAP
+						}
+						#has_completed_focus = JAP_sea_state_general_mobilization_law
+						has_idea = national_defense_state
+					}
+					ELSE = {
 						hidden_trigger = { always = no } #NEED TO HAVE AN ALWAYS AS AN END STATEMENT IF URE USING AN IF ELSE IN AN OR STATEMENT OTHERWISE THE EVALUATION BREAKS!!
 					}
 				}
@@ -1231,13 +1466,14 @@ ideas = {
 					NOT = { has_opinion_modifier = MR_pact }
 				}
 
-				if = {
+				IF = {
 					limit = {
 						original_tag = CHI
 						has_dlc = "Waking the Tiger"
 					}
 					NOT = { has_idea = CHI_nine_power_treaty }
 				}
+
 			}
 
 			rule = {
@@ -1293,6 +1529,39 @@ ideas = {
 					}
 				}
    			}
+		}
+
+		special_economic_zones = {
+			available = {
+				always = no
+			}
+			visible = {
+				original_tag = RAJ
+				has_completed_focus = RAJ_special_economic_zones
+			}
+			available = {
+
+			}
+			picture = RAJ_special_economic_zones
+			cost = 0
+			removal_cost = -1
+
+			research_bonus = {
+				industry = 0.15
+			}
+
+			modifier = {
+				min_export = 0.9
+				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.2
+				production_speed_buildings_factor = 0.2
+				civilian_intel_to_others = 80
+				navy_intel_to_others = 30.0
+				resource_trade_cost_bonus_per_factory = 1
+			}
+
+			cancel_if_invalid = no
+
 		}
 	}
 }

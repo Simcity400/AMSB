@@ -3,19 +3,11 @@ state = {
 	name = "STATE_530" # Shikoku
 	manpower = 3310000
 
-	state_category = large_city
+	state_category = town # was large_city
 
 	history = {
 
-		# No Asia + Scraping
-		1936.1.1.13 = { owner = WST add_core_of = WST }
-		1936.1.1.14 = { owner = WST add_core_of = WST }
-
-		# Less Minors
-		1936.1.1.15 = { owner = JAP add_core_of = JAP }
-
-
-        owner = JAP
+		owner = JAP
 		add_core_of = JAP
 
 		buildings = {
@@ -23,6 +15,9 @@ state = {
 			air_base = 3
 			arms_factory = 1
 			industrial_complex = 2
+			4179 = {
+				naval_base = 1
+			}
 		}
 		
 		victory_points = {
