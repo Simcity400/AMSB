@@ -1,39 +1,4 @@
 JAP_propaganda_campaigns = {
-	JAP_china_prop = { # ID = 2
-		priority = 12
-
-		icon = eng_propaganda_campaigns
-
-		allowed = {
-			original_tag = JAP
-		}
-
-		available = {
-			JAP_propaganda_poster_slot_available = yes
-		#	has_war = yes
-		}
-		days_remove = 365
-
-		days_re_enable = 360
-
-		cost = 25
-
-		modifier = {
-			compliance_gain = 0.02
-			resistance_target = -0.05
-		}
-
-		complete_effect = {
-			set_variable = { JAP_new_propaganda_campaign = 2 }
-			JAP_pick_propaganda_campaign_slot_effect = yes
-		}
-
-		remove_effect = {
-			set_variable = { JAP_propaganda_campaign_to_remove = 2 }
-			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
-		}
-	}
 
 	JAP_tech_prop = { # ID = 3
 		priority = 11
@@ -128,7 +93,7 @@ JAP_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			industrial_capacity_factory = 0.05
+			industrial_capacity_factory = 0.025
 			production_lack_of_resource_penalty_factor = -0.2
 		}
 
@@ -235,7 +200,7 @@ JAP_propaganda_campaigns = {
 
 		available = {
 			JAP_propaganda_poster_slot_available = yes
-			has_completed_focus = JAP_ministry_of_colonial_affairs
+			has_completed_focus = JAP_the_manchurian_project
 		}
 
 		days_remove = 365
@@ -275,7 +240,7 @@ JAP_propaganda_campaigns = {
 		available = {
 			JAP_propaganda_poster_slot_available = yes
 			OR = {
-				has_completed_focus = JAP_develop_new_fighters
+				has_completed_focus = JAP_the_zero
 			}
 		}
 
@@ -396,46 +361,6 @@ JAP_propaganda_campaigns = {
 			set_variable = { JAP_propaganda_campaign_to_remove = 11 }
 			JAP_reset_propaganda_campaign_slot_effect = yes
 			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
-		}
-	}	
-
-	JAP_tank2_prop = { # ID = 12
-		priority = 2
-
-		icon = eng_propaganda_campaigns
-
-		allowed = {
-			original_tag = JAP
-		}
-
-		available = {
-			JAP_propaganda_poster_slot_available = yes
-			has_completed_focus = JAP_reform_the_army
-
-		}
-
-		days_remove = 365
-
-		days_re_enable = 360
-
-		cost = 25
-
-		modifier = {
-			army_armor_attack_factor = 0.15
-			army_armor_defence_factor = 0.1
-		}
-
-		complete_effect = {
-			set_variable = { JAP_new_propaganda_campaign = 12 }
-			JAP_pick_propaganda_campaign_slot_effect = yes
-			
-		}
-
-		remove_effect = {
-			set_variable = { JAP_propaganda_campaign_to_remove = 12 }
-			JAP_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
-			
 		}
 	}	
 

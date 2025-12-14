@@ -21,8 +21,8 @@ FRA_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			army_core_defence_factor = 0.05
-			dig_in_speed_factor = 0.5
+			army_core_defence_factor = 0.025
+			dig_in_speed_factor = 0.15
 		}
 
 		complete_effect = {
@@ -58,7 +58,7 @@ FRA_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			consumer_goods_factor = -0.09
+			consumer_goods_factor = -0.10
 			political_power_gain = 0.10
 		}
 
@@ -69,46 +69,6 @@ FRA_propaganda_campaigns = {
 
 		remove_effect = {
 			set_variable = { FRA_propaganda_campaign_to_remove = 3 }
-			FRA_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
-		}
-	}
-
-	FRA_air_force = { # ID = 4
-		priority = 16
-
-		icon = eng_propaganda_campaigns
-
-		allowed = {
-			original_tag = FRA
-		}
-
-		available = {
-			FRA_propaganda_poster_slot_available = yes
-		}
-
-		days_remove = 365
-
-		days_re_enable = 360
-
-		cost = 25
-
-		modifier = {
-			air_advisor_cost_factor = -0.1
-			air_home_defence_factor = 0.1
-			paratrooper_aa_defense = 0.15
-			air_training_xp_gain_factor = 0.2
-			air_untrained_pilots_penalty_factor = -0.1
-			experience_gain_air_factor = 0.2
-		}
-
-		complete_effect = {
-			set_variable = { FRA_new_propaganda_campaign = 4 }
-			FRA_pick_propaganda_campaign_slot_effect = yes
-		}
-
-		remove_effect = {
-			set_variable = { FRA_propaganda_campaign_to_remove = 4 }
 			FRA_reset_propaganda_campaign_slot_effect = yes
 			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
 		}
@@ -193,81 +153,6 @@ FRA_propaganda_campaigns = {
 		}
 	}
 
-	FRA_intel_prop = { # ID = 7
-		priority = 13
-
-		icon = eng_propaganda_campaigns
-
-		allowed = {
-			original_tag = FRA
-		}
-
-		available = {
-			FRA_propaganda_poster_slot_available = yes
-			threat > 0.10
-		}
-
-		days_remove = 365
-
-		days_re_enable = 360
-
-		cost = 25
-
-		modifier = {
-			intelligence_agency_defense = 0.5
-			operative_slot = 1
-		}
-
-		complete_effect = {
-			set_variable = { FRA_new_propaganda_campaign = 7 }
-			FRA_pick_propaganda_campaign_slot_effect = yes
-		}
-
-		remove_effect = {
-			set_variable = { FRA_propaganda_campaign_to_remove = 7 }
-			FRA_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
-		}
-	}
-
-	FRA_air_prop = { # ID = 8
-		priority = 12
-
-		icon = eng_propaganda_campaigns
-
-		allowed = {
-			original_tag = FRA
-		}
-
-		available = {
-			FRA_propaganda_poster_slot_available = yes
-			has_global_flag = fall_of_france
-			NOT = { has_government = fascism }
-		}
-
-		days_remove = 365
-
-		days_re_enable = 360
-
-		cost = 25
-
-		modifier = {
-			air_attack_factor = 0.10
-			air_defence_factor = 0.10
-		}
-
-		complete_effect = {
-			set_variable = { FRA_new_propaganda_campaign = 8 }
-			FRA_pick_propaganda_campaign_slot_effect = yes
-		}
-
-		remove_effect = {
-			set_variable = { FRA_propaganda_campaign_to_remove = 8 }
-			FRA_reset_propaganda_campaign_slot_effect = yes
-			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
-		}
-	}
-
 	FRA_inevitable_prop = { # ID = 9
 		priority = 11
 
@@ -303,8 +188,8 @@ FRA_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			army_core_defence_factor = 0.1
-			army_core_attack_factor = 0.1
+			army_core_defence_factor = 0.025
+			army_core_attack_factor = 0.025
 			supply_combat_penalties_on_core_factor = -0.15
 		}
 
@@ -342,7 +227,7 @@ FRA_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			industrial_capacity_factory = 0.075
+			industrial_capacity_factory = 0.025
 		}
 
 		complete_effect = {
@@ -427,7 +312,7 @@ FRA_propaganda_campaigns = {
 
 		targeted_modifier = {
 			tag = GER
-			attack_bonus_against = 0.1
+			attack_bonus_against = 0.025
 		}
 
 		complete_effect = {
