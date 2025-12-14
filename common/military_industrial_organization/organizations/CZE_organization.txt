@@ -1,13 +1,3 @@
-#####################
-
-###  ##  #  # # #  ## 
- #  #  # ## # # # #   
- #  #### # ## ##   #  
- #  #  # #  # # #   # 
- #  #  # #  # # # ## 
-
- #################### 
-
 CZE_ckd_organization = {
 	include = generic_mobile_tank_organization
 	icon = GFX_idea_CZE_ckd
@@ -16,37 +6,8 @@ CZE_ckd_organization = {
 		OR = {
 			tag = CZE
 			AND = {
-				tag = ETH 
+				tag = AOI 
 				has_dlc = "By Blood Alone"
-			}
-		}
-	}
-
-	visible = {
-		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
-		}
-	}
-
-	available = {
-		# When in a Foreign MIO, countries need to be at peace with original country
-		IF = {
-			limit = {
-				FROM = { NOT = { original_tag = CZE } }
-			}
-			FROM = { NOT = { has_war_with = CZE } }
-		}
-
-		IF = {
-			limit = {
-				FROM = { original_tag = ETH }
-			}
-			custom_trigger_tooltip = {
-				tooltip = has_invited_mio_tt
-				FROM = {
-					has_country_flag = has_invited_CZE_ckd_organization_flag
-				}
 			}
 		}
 	}
@@ -68,187 +29,54 @@ CZE_skoda_armor_organization = {
 		OR = {
 			tag = CZE
 			AND = {
-				tag = ETH 
+				tag = AOI 
 				has_dlc = "By Blood Alone"
 			}
-			AND = {
-				tag = HUN 
-				has_dlc = "Gotterdammerung"
-			}
-			AND = {
-				tag = PER
-				has_dlc = "Graveyard of Empires"
-				has_dlc = "Arms Against Tyranny"
-			}
-		}
-	}
-	
-	visible = {
-		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
-		}
-		IF = {
-			limit = { FROM = { original_tag = HUN } }
-			FROM = { has_completed_focus = wuw_HUN_integrate_bohemian_and_austrian_industries }
-		}
-		IF = {
-			limit = { FROM = { original_tag = PER } }
-			FROM = { has_completed_focus = PER_czech_tanks }
-		}
-	}
-
-	available = {
-		# When in a Foreign MIO, countries need to be at peace with original country
-		IF = {
-			limit = {
-				FROM = { NOT = { original_tag = CZE } }
-			}
-			FROM = { NOT = { has_war_with = CZE } }
-		}
-
-		IF = {
-			limit = {
-				FROM = { original_tag = ETH }
-			}
-			custom_trigger_tooltip = {
-				tooltip = has_invited_mio_tt
-				FROM = {
-					has_country_flag = has_invited_CZE_skoda_armor_organization_flag
-				}
-			}
-		}
-		IF = {
-			limit = { FROM = { original_tag = PER } }
-			FROM = { has_completed_focus = PER_czech_tanks }
 		}
 	}
 }
-
-#####################
-
- ## #  # ### ###   ## 
-#   #  #  #  #  # #   
- #  ####  #  ###   #  
-  # #  #  #  #      # 
-##  #  # ### #    ##  
- 
-#####################
 
 CZE_skoda_shipyards_organization = {
-	include = generic_escort_ship_organization
-	icon = GFX_idea_CZE_skoda_shipyards
-	allowed = { 
-		tag = CZE
-	}
+ 	include = generic_escort_ship_organization
+ 	icon = GFX_idea_CZE_skoda_shipyards
+ 	allowed = { 
+ 		tag = CZE
+ 	}
 }
 
-###########################
-
-###  #    ##  #  # ###  ## 
-#  # #   #  # ## # #   #   
-###  #   #### # ## ##   #  
-#    #   #  # #  # #     # 
-#    ### #  # #  # ### ##  
-
-###########################
-
 CZE_ckd_praga_organization = {
-	include = generic_naval_aircraft_organization
-	icon = GFX_idea_CZE_ckd_praga
-	allowed = { 
-		OR = {
-			tag = CZE
-			AND = {
-				tag = ETH 
-				has_dlc = "By Blood Alone"
-			}
-			AND = {
-				tag = HUN 
-				has_dlc = "Gotterdammerung"
-			}
-		}
-	}
-
-	visible = {
-		IF = {
-			limit = { FROM = { original_tag = HUN } }
-			FROM = { has_completed_focus = wuw_HUN_integrate_bohemian_and_austrian_industries }
-		}
-	}
+ 	include = generic_naval_aircraft_organization
+ 	icon = GFX_idea_CZE_ckd_praga
+ 	allowed = { 
+ 		tag = CZE
+ 	}
 }
 
 CZE_aero_organization = {
-	include = generic_medium_aircraft_organization
-	icon = GFX_idea_CZE_aero
-	allowed = { 
-		tag = CZE
-	}
+ 	include = generic_medium_aircraft_organization
+ 	icon = GFX_idea_CZE_aero
+ 	allowed = { 
+ 		tag = CZE
+ 	}
 }
 
 CZE_letov_organization = {
-	include = generic_heavy_aircraft_organization
-	icon = GFX_idea_CZE_letov
-	allowed = { 
-		tag = CZE
-	}
+ 	include = generic_heavy_aircraft_organization
+ 	icon = GFX_idea_CZE_letov
+ 	allowed = { 
+ 		tag = CZE
+ 	}
 }
 
 CZE_avia_organization = {
-name = CZE_avia
-	include = generic_light_aircraft_organization
-	icon = GFX_idea_CZE_avia
-	allowed = { 
-		OR = {
-			tag = CZE 
-			AND = {
-				tag = ETH
-				has_dlc = "By Blood Alone"
-			}
-		}
-	}
-
-	visible = {
-		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
-		}
-	}
-
-	available = {
-		# When in a Foreign MIO, countries need to be at peace with original country
-		IF = {
-			limit = {
-				FROM = { NOT = { original_tag = CZE } }
-			}
-			FROM = { NOT = { has_war_with = CZE } }
-		}
-
-		IF = {
-			limit = {
-				FROM = { original_tag = ETH }
-			}
-			custom_trigger_tooltip = {
-				tooltip = has_invited_mio_tt
-				FROM = {
-					has_country_flag = has_invited_CZE_avia_organization_flag
-				}
-			}
-		}
-	}
+ name = CZE_avia
+ 	include = generic_light_aircraft_organization
+ 	icon = GFX_idea_CZE_avia
+ 	allowed = { 
+ 		tag = CZE
+ 	}
 }
-
-################################### 
-
-#   #  ##  ### ### ###  ### ### #   
-## ## #  #  #  #   #  #  #  #   #   
-# # # ####  #  ##  ###   #  ##  #   
-#   # #  #  #  #   #  #  #  #   #   
-#   # #  #  #  ### #  # ### ### ### 
-
-
-###################################
-
+ 
 CZE_zbrojovka_brno_organization = {
 	include = generic_infantry_equipment_organization
 	icon = GFX_idea_CZE_zbrojovka_brno
@@ -264,37 +92,8 @@ CZE_skoda_artillery_organization = {
 		OR = {
 			tag = CZE 
 			AND = {
-				tag = ETH
+				tag = AOI
 				has_dlc = "By Blood Alone"
-			}
-		}
-	}
-
-	visible = {
-		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
-		}
-	}
-
-	available = {
-		# When in a Foreign MIO, countries need to be at peace with original country
-		IF = {
-			limit = {
-				FROM = { NOT = { original_tag = CZE } }
-			}
-			FROM = { NOT = { has_war_with = CZE } }
-		}
-
-		IF = {
-			limit = {
-				FROM = { original_tag = ETH }
-			}
-			custom_trigger_tooltip = {
-				tooltip = has_invited_mio_tt
-				FROM = {
-					has_country_flag = has_invited_CZE_skoda_artillery_organization_flag
-				}
 			}
 		}
 	}
