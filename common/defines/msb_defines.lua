@@ -34,14 +34,14 @@ NDefines.NMilitary.UNIT_LEADER_ASSIGN_TRAIT_COST = 0.1
 NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 30                           -- Up from 10, should allow for more flexibility with picking focuses while doing something else, like tank templates
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROLLED = 0
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROL_DIFF = 0
-NDefines.NGame.GAME_SPEED_SECONDS = { 1000.0, 0.26, 0.20, 0.12, 0.08 } -- Speed Defines
+NDefines.NGame.GAME_SPEED_SECONDS = { 1, 0.20, 0.11, 0.07, 0 } -- Speed Defines
 NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 720
 NDefines.NGame.LAG_DAYS_FOR_PAUSE = 30
-NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 14 							    -- WAS 48 | drastically cuts down on save file sizes after WW2 starts and well into barbarossa
+NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 6 							    -- WAS 48 | drastically cuts down on save file sizes after WW2 starts and well into barbarossa
 NDefines.NGame.MESSAGE_TIMEOUT_DAYS = 14					     	    -- WAS 60 | less messages lying around at the top of your screen
 
-NDefines_CareerProfile.NCareerProfile.MOD_STATISTICS_GROUP = "MSB"
-NDefines_CareerProfile.NCareerProfile.MOD_STATISTICS_GROUP_NAME = "MSB"
+NDefines_CareerProfile.NCareerProfile.MOD_STATISTICS_GROUP = "AMSB"
+NDefines_CareerProfile.NCareerProfile.MOD_STATISTICS_GROUP_NAME = "AMSB"
 
 NDefines.NCountry.POPULATION_YEARLY_GROWTH_BASE = 0                     -- Removed for game stability/reducing chance of desync
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 9999						    -- Unlimited special forces
@@ -226,7 +226,7 @@ NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.01 -- How much range affects
 NDefines.NDiplomacy.BASE_SEND_ATTACHE_COST = 0				-- Political power cost to send attache
 
 
-NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 20
+NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 15
 NDefines.NProduction.FLOATING_HARBOR_MAX_NAV_FACTORIES_PER_LINE = 50
 NDefines.NProduction.CONVOY_MAX_NAV_FACTORIES_PER_LINE = 150 
 NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 10
@@ -290,4 +290,8 @@ NDefines.NNavy.BASE_NAVAL_INVASION_DIVISION_CAP = 10 -- base cap of divisions th
 
 -- faster dominance gain
 NDefines.NNavy.DOMINANCE_DAILY_GAIN_FACTOR = 0.04							-- Daily dominance gain, as a fraction of target value 
+
+-- Navy No Org Loss When Moving
+NDefines.NNavy.MAX_ORG_ON_MANUAL_MOVE = 1
+NDefines.NNavy.MIN_ORG_ON_MANUAL_MOVE = 1
 
