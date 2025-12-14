@@ -128,13 +128,13 @@ ideas = {
 			allowed = {
 				is_in_faction_with = ENG
 			}
-			allowed_civil_war = { always = no }
+			allowed_civil_war = {	always = no	}
 
 			removal_cost = -1		
 			modifier = {
-				consumer_goods_factor = -0.1
+				consumer_goods_factor = -0.20
 				production_speed_buildings_factor = 0.1
-				conversion_cost_civ_to_mil_factor = -0.1
+				conversion_cost_civ_to_mil_factor = -0.20
 			}
 		}
 		ENG_british_commonwealth_air_training_plan_1 = {
@@ -248,6 +248,7 @@ ideas = {
 			production_speed_buildings_factor = -0.1
 			consumer_goods_factor = 0.15
 			industrial_capacity_factory = -0.1
+			political_power_cost = 0.75
 			}	
 		}
 		ENG_state_of_the_economy_two = {
@@ -265,8 +266,9 @@ ideas = {
 
 			modifier = {
 			production_speed_buildings_factor = -0.05
-			consumer_goods_factor = 0.1
-			industrial_capacity_factory = -0.05
+			consumer_goods_factor = 0.075
+			industrial_capacity_factory = -0.05 
+			political_power_cost = 0.50
 			}	
 		}
 		ENG_state_of_the_economy_three = {
@@ -285,8 +287,9 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0
 				consumer_goods_factor = 0.05
-				industrial_capacity_factory = 0
-			}	
+				industrial_capacity_factory = -0.05
+				political_power_cost = 0.25
+				}	
 		}
 		ENG_state_of_the_economy_four = {
 			allowed = {
@@ -304,10 +307,10 @@ ideas = {
 			modifier = {
 				production_speed_buildings_factor = 0.05
 				consumer_goods_factor = 0
-				industrial_capacity_factory = 0.05
-			}	
+				industrial_capacity_factory = -0.05
+				political_power_cost = 0
+				}	
 		}
-
 		ENG_state_of_the_economy_five = {
 			allowed = {
 				always = yes
@@ -322,14 +325,24 @@ ideas = {
 			picture = eng_guided_by_britain
 
 			modifier = {
-				production_speed_buildings_factor = 0.1
-				consumer_goods_factor = 0
-				industrial_capacity_factory = 0.1
-				production_factory_max_efficiency_factor = 0.05
-				global_building_slots = 5
-			}	
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				political_power_cost = 0
+				global_building_slots_factor = 0.50
+				}	
+			
 		}
-
+		public_school_funding = {
+			allowed = {
+				always = no
+			}
+			picture = generic_army_war_college
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
 		ENG_devaluated_pound = {
 			removal_cost = -1
 
@@ -344,8 +357,7 @@ ideas = {
 			}
 					
 			modifier = {
-				consumer_goods_factor = -0.15
-				stability_factor = -0.05
+				consumer_goods_factor = -0.1
 			}
 		}
 
@@ -403,20 +415,27 @@ ideas = {
 			}
 		}
 
-		ENG_raf_idea = { 
+		ENG_quality_RAF_pilots = { 
+		
+			name = ENG_quality_RAF_pilots
 			
 			allowed = {
+				original_tag = ENG
 				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
 			}
 
 			removal_cost = -1
 
-			picture = raf
+			picture = generic_army_war_college
 			
 			modifier = {
-				air_superiority_efficiency = 0.1
 				air_range_factor = 0.1
-				# air_home_defence_factor = 0.1
+				air_superiority_efficiency = 0.1
+
 			}
 		}
 
@@ -985,6 +1004,31 @@ ideas = {
 				army_armor_defence_factor = 0.05
 				army_armor_speed_factor = 0.1
 			}
+		}
+		motorized_army_four = {
+			
+			name = motorized_army_four
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = vauxhall
+			
+			modifier = {
+				mechanized_attack_factor = 0.05
+				mechanized_defence_factor = 0.05
+				army_armor_attack_factor = 0.1
+				army_armor_defence_factor = 0.05
+				army_armor_speed_factor = 0.1
+			}
+			
 		}
 		british_patriotism = {
 			
@@ -2663,9 +2707,10 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				#air_superiority_efficiency = 0.1
 				experience_gain_air = 0.05
 				experience_gain_air_factor = 0.1
-				air_mission_xp_gain_factor = 0.05
+				air_mission_xp_gain_factor = 0.1
 				air_training_xp_gain_factor = 0.2
 			}
 		}

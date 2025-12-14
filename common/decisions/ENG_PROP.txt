@@ -50,7 +50,6 @@ ENG_propaganda_campaigns = {
 
 		available = {
 			ENG_propaganda_poster_slot_available = yes
-			has_completed_focus = ENG_time_of_economic_prosperity
 		}
 
 		days_remove = 365
@@ -60,7 +59,7 @@ ENG_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			production_factory_start_efficiency_factor = 0.1
+			production_factory_start_efficiency_factor = 0.05
 			line_change_production_efficiency_factor = 0.05
 		}
 
@@ -97,7 +96,7 @@ ENG_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			air_home_defence_factor = 0.1
+			#air_home_defence_factor = 0.25
 			army_core_attack_factor = 0.2
 			army_core_defence_factor = 0.2
 			minimum_training_level = -0.2
@@ -126,7 +125,6 @@ ENG_propaganda_campaigns = {
 
 		available = {
 			ENG_propaganda_poster_slot_available = yes
-			has_completed_focus = ENG_expand_the_secret_intelligence_service_focus 
 		}
 
 		days_remove = 365
@@ -166,7 +164,7 @@ ENG_propaganda_campaigns = {
 
 		available = {
 			ENG_propaganda_poster_slot_available = yes
-			has_completed_focus = ENG_raf
+			date > 1942.1.1
 			has_war = yes
 		}
 
@@ -324,7 +322,7 @@ ENG_propaganda_campaigns = {
 		available = {
 			ENG_propaganda_poster_slot_available = yes
 			has_completed_focus = aircraft_production_focus
-			has_tech = advanced_small_airframe
+			has_war_with = JAP
 		}
 
 		days_remove = 365
@@ -336,14 +334,14 @@ ENG_propaganda_campaigns = {
 		complete_effect = {
 			set_variable = { ENG_new_propaganda_campaign = 10 }
 			ENG_pick_propaganda_campaign_slot_effect = yes
-			add_ideas = ROM_local_development_2
+			add_ideas = ENG_fighter_idea
 		}
 
 		remove_effect = {
 			set_variable = { ENG_propaganda_campaign_to_remove = 10 }
 			ENG_reset_propaganda_campaign_slot_effect = yes
 			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
-			remove_ideas = ROM_local_development_2
+			remove_ideas = ENG_fighter_idea
 		}
 	}
 	
@@ -440,7 +438,6 @@ ENG_propaganda_campaigns = {
 
 		available = {
 			ENG_propaganda_poster_slot_available = yes
-			has_completed_focus = limited_rearmament_focus
 		}
 
 		days_remove = 365
@@ -450,7 +447,7 @@ ENG_propaganda_campaigns = {
 		cost = 25
 
 		modifier = {
-			consumer_goods_factor = -0.1
+			consumer_goods_factor = -0.15
 		}
 
 		complete_effect = {
