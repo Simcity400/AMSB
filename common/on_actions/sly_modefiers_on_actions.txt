@@ -1,0 +1,146 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			# When Italy starts a war, activate the Gazala mechanic
+			if = {
+				limit = {
+					tag = ITA
+					NOT = { has_country_flag = war_of_gazala_activated }
+				}
+					ENG = { 
+						# Ethiopia goes to UK
+						transfer_state = 550
+						transfer_state = 842
+						transfer_state = 908
+						transfer_state = 841
+						transfer_state = 843
+						transfer_state = 840
+						transfer_state = 839
+						transfer_state = 271
+						transfer_state = 838
+						transfer_state = 837
+						transfer_state = 836 
+						transfer_state = 835
+						transfer_state = 844
+						transfer_state = 559
+						}
+				every_state = {
+					limit = {
+						OR = {
+							state = 448 # Libya (Benghazi)
+							state = 661 # Libya (Derna)
+							state = 449 # Libya (Tripoli)
+							state = 662 # Libya (Misrata)
+							state = 450 # Libya (Sirte)
+							state = 663 # Libya (Ghadames)
+							state = 451 # Cyrenaica (Tobruk)
+							state = 452 # Cyrenaica (Barce)
+							state = 447 # Fezzan (Ghat)
+							state = 907 # Tunisia (Bizerte)
+							state = 446 # Tunisia (Tunis)
+							state = 453 # Algeria (Annaba)
+							state = 454 # Algeria (Constantine)
+							state = 455 # Algeria (Algiers)
+							state = 553 # Egypt (Mersa Matruh)
+							state = 554 # Egypt (Alexandria)
+							state = 667 # Sudan (Port Sudan)
+							state = 799 # Ethiopia (Kassala)
+							state = 456 # Eritrea (Asmara)
+							state = 457 # Somalia (Mogadishu)
+						}
+					}
+					set_state_flag = war_in_africa
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ITA } #axis ig
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = GER }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = HUN }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = BUL }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ROM }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = FIN }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = SPR }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ENG }#allies
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = FRA }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = SAF }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = CAN }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = RAJ }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = AST }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = BRA }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = MEX }
+					add_dynamic_modifier = { modifier = war_of_gazala_speed_modifier }
+				}
+				# Start at -0.5% attack
+				set_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = -0.5 }
+				set_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = -0.25 }
+				set_country_flag = war_of_gazala_activated
+			}
+			#Remove Africa modifiers when Japan declares war on the USA - #TODO DOESN'T WORK!!! CURRENTLY
+			if = {
+				limit = {
+					FROM = { tag = JAP }
+					TARGET = { tag = USA }
+				}
+				# Remove modifier from every state with the Africa flag
+				every_state = {
+					limit = {
+						has_state_flag = war_in_africa
+						has_dynamic_modifier = war_of_gazala_modifier
+					}
+					remove_dynamic_modifier = { modifier = war_of_gazala_modifier }
+					clr_state_flag = war_in_africa
+				}
+				clr_country_flag = war_of_gazala_activated
+				clr_variable = global.war_of_gazala_modifier_attack_factor_var
+				clr_variable = global.war_of_gazala_modifier_speed_factor_var
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = war_of_gazala_activated
+					check_variable = { global.war_of_gazala_modifier_attack_factor_var < 0 }
+				}
+				# Increase by +0.05% each month
+				add_to_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0.05 }
+				if = {
+					limit = {
+						check_variable = { global.war_of_gazala_modifier_attack_factor_var = 0 }
+					}
+					# When it hits 0 or above, clean up because we don't want to get stats in africa bruh
+					set_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0 }
+					clr_country_flag = war_of_gazala_activated
+
+					every_state = {
+						limit = {
+							OR = {
+								state = 448 # Libya (Benghazi)
+								state = 661 # Libya (Derna)
+								state = 449 # Libya (Tripoli)
+								state = 662 # Libya (Misrata)
+								state = 450 # Libya (Sirte)
+								state = 663 # Libya (Ghadames)
+								state = 451 # Cyrenaica (Tobruk)
+								state = 452 # Cyrenaica (Barce)
+								state = 447 # Fezzan (Ghat)
+								state = 907 # Tunisia (Bizerte)
+								state = 446 # Tunisia (Tunis)
+								state = 453 # Algeria (Annaba)
+								state = 454 # Algeria (Constantine)
+								state = 455 # Algeria (Algiers)
+								state = 553 # Egypt (Mersa Matruh)
+								state = 554 # Egypt (Alexandria)
+								state = 667 # Sudan (Port Sudan)
+								state = 799 # Ethiopia (Kassala)
+								state = 456 # Eritrea (Asmara)
+								state = 457 # Somalia (Mogadishu)
+							}
+						}
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier }
+						clr_state_flag = war_in_africa
+					}
+					clr_variable = global.war_of_gazala_modifier_attack_factor_var
+				}
+			}
+		}
+	}
+}
