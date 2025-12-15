@@ -167,8 +167,8 @@ equipments = {
 		}
 		default_modules = {
 			main_armament_slot = empty
-			turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
+			turret_type_slot = tank_light_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
 		}
@@ -218,7 +218,7 @@ equipments = {
 		priority = 2000
 		module_slots = inherit
 		maximum_speed = 5
-		build_cost_ic = 3.35
+		build_cost_ic = 6.75
 		reliability = 0.95
 		armor_value = 15
 		soft_attack = -2
@@ -235,7 +235,7 @@ equipments = {
 		parent = light_tank_chassis_1
 		priority = 2000
 		module_slots = inherit
-		build_cost_ic = 3.7
+		build_cost_ic = 7.1
 		maximum_speed = 6
 		reliability = 1.1
 		armor_value = 20
@@ -254,7 +254,7 @@ equipments = {
 		parent = light_tank_chassis_2
 		priority = 2000
 		module_slots = inherit
-		build_cost_ic = 4
+		build_cost_ic = 7.4
 		maximum_speed = 7
 		reliability = 1.3
 		armor_value = 25
@@ -426,8 +426,8 @@ equipments = {
 		}
 		default_modules = {
 			main_armament_slot = empty
-			turret_type_slot = tank_medium_one_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
 		}
@@ -461,7 +461,7 @@ equipments = {
 			tank_nsb_armor_upgrade
 		}
 		maximum_speed = 4
-		build_cost_ic = 4.5
+		build_cost_ic = 7.9
 		reliability = 0.75
 		armor_value = 20
 		soft_attack = -4
@@ -482,7 +482,7 @@ equipments = {
 		priority = 2000
 		module_slots = inherit
 		armor_value = 30
-		build_cost_ic = 4.75
+		build_cost_ic = 8.15
 		reliability = 0.8
 		maximum_speed = 5
 		soft_attack = -2
@@ -502,7 +502,7 @@ equipments = {
 		priority = 2000
 		module_slots = inherit
 		maximum_speed = 6
-		build_cost_ic = 5
+		build_cost_ic = 8.4
 		reliability = 1
 		armor_value = 40
 		breakthrough = 26.25
@@ -520,7 +520,7 @@ equipments = {
 		priority = 2000
 		module_slots = inherit
 		maximum_speed = 6
-		build_cost_ic = 5.25
+		build_cost_ic = 8.65
 		reliability = 1.2
 		armor_value = 50
 		soft_attack = 4
@@ -690,8 +690,8 @@ equipments = {
 		}
 		default_modules = {
 			main_armament_slot = empty
-			turret_type_slot = tank_heavy_two_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_interleaved_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
 		}
@@ -726,7 +726,7 @@ equipments = {
 			tank_nsb_armor_upgrade
 		}
 		maximum_speed = 3
-		build_cost_ic = 10
+		build_cost_ic = 13.4
 		reliability = 0.75
 		armor_value = 35
 		soft_attack = -4
@@ -749,6 +749,7 @@ equipments = {
 		soft_attack = -3
 		hard_attack = -3
 		breakthrough = 23.25
+		build_cost_ic = 14.4
 		resources = {
 			steel = 1
 			chromium = 1
@@ -764,7 +765,7 @@ equipments = {
 		parent = heavy_tank_chassis_1
 		priority = 2000
 		module_slots = inherit
-		build_cost_ic = 12
+		build_cost_ic = 15.4
 		maximum_speed = 5
 		reliability = 1.2
 		armor_value = 65
@@ -786,7 +787,7 @@ equipments = {
 		parent = heavy_tank_chassis_2
 		priority = 2000
 		module_slots = inherit
-		build_cost_ic = 13
+		build_cost_ic = 16.4
 		maximum_speed = 5
 		reliability = 1.2
 		armor_value = 75
@@ -959,7 +960,7 @@ equipments = {
 		default_modules = {
 			main_armament_slot = empty
 			turret_type_slot = tank_modern_tank_turret
-			suspension_type_slot = tank_bogie_suspension
+			suspension_type_slot = tank_interleaved_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
 		}
@@ -995,6 +996,7 @@ equipments = {
 		priority = 2000
 		module_slots = inherit
 		breakthrough = 21.25
+		build_cost_ic = 10.4
 
 		upgrades = {
 			tank_nsb_engine_upgrade
@@ -1155,7 +1157,7 @@ equipments = {
 		default_modules = {
 			main_armament_slot = empty
 			turret_type_slot = tank_super_heavy_three_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
+			suspension_type_slot = tank_interleaved_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
 		}
@@ -1356,7 +1358,7 @@ equipments = {
 		default_modules = {
 			main_armament_slot = empty
 			turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
+			suspension_type_slot = tank_interleaved_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
 		}
@@ -1386,6 +1388,7 @@ equipments = {
 		archetype = amphibious_tank_chassis
 		priority = 2000
 		breakthrough = 21.25
+		build_cost_ic = 7.9
 		upgrades = {
 			tank_nsb_engine_upgrade
 			tank_nsb_armor_upgrade
