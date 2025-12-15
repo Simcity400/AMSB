@@ -203,7 +203,12 @@ ITA_propaganda_campaigns = {
 
 		available = {
 			ITA_propaganda_poster_slot_available = yes
-			has_war = yes
+			NOT = {
+				any_state = {
+					is_controlled_by = ITA
+					is_on_continent = africa
+				}
+			}
 		}
 
 		days_remove = 365
@@ -399,9 +404,9 @@ ITA_propaganda_campaigns = {
 
 		targeted_modifier = {
 			tag = GER
-			license_purchase_cost = -0.2
-			license_production_speed = 0.2
-			license_tech_difference_speed = 0.2
+			license_purchase_cost = -0.25
+			license_production_speed = 0.25
+			license_tech_difference_speed = 0.25
 		}
 
 		complete_effect = {
