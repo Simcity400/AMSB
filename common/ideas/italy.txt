@@ -69,11 +69,6 @@ ideas = {
 					build_cost_ic = -0.05
 					reliability = 0.05
 				}
-				medium_tank_chassis = {
-					instant = yes
-					build_cost_ic = -0.05
-					reliability = 0.05
-				}
 			}
 		}
 
@@ -159,40 +154,6 @@ ideas = {
 			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
 				small_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.05
-				}
-				cv_small_plane_airframe = {
-					instant = yes
-					build_cost_ic = -0.05
-				}
-				#small_plane_cas_airframe = {
-				#	instant = yes
-					#build_cost_ic = -0.05
-			#	}
-				#cv_small_plane_cas_airframe = {
-				#	instant = yes
-				#	build_cost_ic = -0.05
-				#}
-			}
-		}
-
-		ITA_hidden_specialization_ns = { #Hidden idea to apply arty production bonuses. Communicated in ITA_regia_aeronautica_dynamic_modifier (used as NS)
- 			name = ITA_specialization #Just in case it shows up anywhere
-			removal_cost = -1
-
-			picture = GFX_idea_ITA_regia_aeronautica_3 #Icon needs to match the one in ITA_regia_aeronautica_dynamic_modifier modifiers (NS icon shows up in tech tab)
-				
-			allowed = {
-				original_tag = ITA
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-					
-			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
-				small_plane_airframe = {
-					instant = yes
 					build_cost_ic = -0.025
 				}
 				cv_small_plane_airframe = {
@@ -235,10 +196,76 @@ ideas = {
 					instant = yes
 					build_cost_ic = -0.025
 				}
-				#transport_plane_equipment = {
-				#	instant = yes
-				#	build_cost_ic = -0.025
-				#}
+				transport_plane_equipment = {
+					instant = yes
+					build_cost_ic = -0.025
+				}
+			}
+		}
+
+		ITA_hidden_specialization_ns = { #Hidden idea to apply arty production bonuses. Communicated in ITA_regia_aeronautica_dynamic_modifier (used as NS)
+ 			name = ITA_specialization #Just in case it shows up anywhere
+			removal_cost = -1
+
+			picture = GFX_idea_ITA_regia_aeronautica_3 #Icon needs to match the one in ITA_regia_aeronautica_dynamic_modifier modifiers (NS icon shows up in tech tab)
+				
+			allowed = {
+				original_tag = ITA
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+					
+			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
+				small_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				cv_small_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				small_plane_cas_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				cv_small_plane_cas_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				small_plane_naval_bomber_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				cv_small_plane_naval_bomber_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				medium_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				medium_plane_fighter_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				medium_plane_scout_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				large_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				large_plane_maritime_patrol_plane_airframe = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
+				transport_plane_equipment = {
+					instant = yes
+					build_cost_ic = 0.025
+				}
 			}
 		}
 
@@ -848,7 +875,7 @@ ideas = {
 			}
 					
 			modifier = {
-				
+				operative_slot = 1
 			}
 		}
 
@@ -889,7 +916,7 @@ ideas = {
 			}
 					
 			modifier = {
-				
+				operative_slot = 2
 				enemy_operative_detection_chance_factor = 0.1
 				root_out_resistance_effectiveness_factor = 0.1
 				enemy_operative_intel_extraction_rate = 0.05
@@ -912,7 +939,7 @@ ideas = {
 			}
 					
 			modifier = {
-				
+				operative_slot = 3
 				enemy_operative_detection_chance_factor = 0.1
 				root_out_resistance_effectiveness_factor = 0.1
 				enemy_operative_intel_extraction_rate = 0.1
@@ -935,7 +962,7 @@ ideas = {
 			}
 					
 			modifier = {
-				consumer_goods_expected_value = -0.10
+				consumer_goods_factor = -0.10
 			}
 		}
 
@@ -1901,7 +1928,7 @@ ideas = {
 			}
 					
 			modifier = {
-				
+				operative_slot = 1
 				operation_make_resistance_contacts_outcome = 0.15
 				operation_boost_resistance_outcome = 0.15
 				target_sabotage_factor = 0.1
@@ -2042,7 +2069,7 @@ ideas = {
 			modifier = {
 				political_power_factor = 0.05
 				stability_factor = 0.1
-				
+				operative_slot = 1
 			}
 		}
 
@@ -2154,7 +2181,7 @@ ideas = {
 				political_power_factor = 0.05
 				neutrality_drift = 0.01
 				stability_factor = 0.05
-				
+				operative_slot = 1
 				intel_network_gain_factor = 0.1
 			}
 		}
@@ -2202,7 +2229,7 @@ ideas = {
 				political_power_factor = 0.1
 				neutrality_drift = 0.02
 				stability_factor = 0.08
-				
+				operative_slot = 1
 				intel_network_gain_factor = 0.1
 				compliance_growth = 0.05
 			}
@@ -2251,7 +2278,7 @@ ideas = {
 				political_power_factor = 0.15
 				neutrality_drift = 0.02
 				stability_factor = 0.08
-				
+				operative_slot = 1
 				intel_network_gain_factor = 0.1
 				compliance_growth = 0.05
 				puppet_cost_factor = -0.1
@@ -2303,7 +2330,7 @@ ideas = {
 				political_power_factor = 0.15
 				neutrality_drift = 0.02
 				stability_factor = 0.08
-				
+				operative_slot = 1
 				intel_network_gain_factor = 0.1
 				compliance_growth = 0.05
 				puppet_cost_factor = -0.1
@@ -2359,7 +2386,7 @@ ideas = {
 				political_power_factor = 0.2
 				neutrality_drift = 0.05
 				stability_factor = 0.1
-				
+				operative_slot = 2
 				intel_network_gain_factor = 0.1
 				compliance_growth = 0.1
 				puppet_cost_factor = -0.1
@@ -2491,7 +2518,7 @@ ideas = {
 				weekly_manpower = 400
 				communism_drift = 0.01
 				resistance_damage_to_garrison_on_our_occupied_states = 0.1
-				
+				operative_slot = 1
 				#TODO_Manu: Allows generation of female generals, aces and admirals
 			}
 		}
@@ -2956,7 +2983,7 @@ ideas = {
 			}
 
 			modifier = {
-				
+				operative_slot = 1
 				intel_from_operatives_factor = 0.15
 			}
 		}
@@ -2975,7 +3002,7 @@ ideas = {
 			}
 	
 			modifier = {
-				
+				operative_slot = 1
 				intel_from_operatives_factor = 0.15
 			}
 		}
@@ -2995,7 +3022,7 @@ ideas = {
 			}
 	
 			modifier = {
-				
+				operative_slot = 2
 				intel_from_operatives_factor = 0.2
 			}
 		}
