@@ -24,27 +24,8 @@ state = {
 		}
 
 
-
-		1938.10.25 = {
-			IF = {
-				limit = {
-					NOT = {
-						has_dlc = "Waking the Tiger"
-					}
-				}
-				CHI = {
-					transfer_state = PREV
-				}
-			}
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender" 
-				}
-				remove_core_of = XIC
-			}		
-			owner = CHI
-			controller = CHI
-		}
+		# No Asia
+		1936.1.1.13 = { owner = WST add_core_of = WST }
 	}
 
 	provinces = {

@@ -135,60 +135,7 @@ operations = {
 				}
 			}
 		}
-		annex_new_zealand = {
-			# icon = generic_operation
-			allowed = {
-				tag = AST
-			}
-			fire_only_once = yes
-			cost = 0
-			ai_will_do = {
-				factor = 0
-			}
-			available = {
-				NZL = {
-					is_ai = yes
-				}
-				ENG = {
-						has_completed_focus = uk_new_zealand_focus
-				}
-				NZL = {
-						has_completed_focus = NZL_think_big
-				}
-	
-			}
-			targets = {
-				NZL
-			}
-			complete_effect = {
-				NZL = {
-					transfer_units_fraction = {
-						target = AST
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
-				AST = {
-					annex_country = {
-						target = NZL
-						transfer_troops = yes
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = NZL
-						is_controlled_by = AST
-					}
-					add_core_of = AST
-				}
-			}
-		}
+
     	annex_east_indies = {
 			# icon = generic_operation
 			allowed = {
@@ -1107,7 +1054,6 @@ E_ll = {
 		}
 	}
 }	
-
 
 
 
