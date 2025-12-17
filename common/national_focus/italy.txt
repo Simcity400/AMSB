@@ -12466,7 +12466,6 @@ focus = {
 		cost = 1
 		available = {
 			GER = { has_war = yes }
-			GER = { controls_state = 16 }
 			is_subject = no
 
 			YUG = { exists = yes }
@@ -12487,50 +12486,38 @@ focus = {
 		search_filters = {}
 
 		completion_reward = {
-	
-			create_wargoal = {
+				YUG = {
+					every_owned_state = {
+						limit = {
+							is_core_of = PREV
+							is_on_continent = europe
+						}
+						ROOT = {
+							add_state_claim = PREV
+							annex_country = { target = YUG}
+						}
+					}
+				}
+				create_wargoal = {
 				type = annex_everything
-				target = YUG
-			}
-		
-		}
-	}
+					target = YUG
+				}
+				create_wargoal = {
+					type = annex_everything
+						target = YUG
+					}
 
-	focus = {
-		id = ITA_war_with_greece
-		icon = GFX_goal_italy_attack_greece
-		#GFX_focus_generic_balkans_focus
-		prerequisite = { focus = ITA_pact_of_steel }
-	
-
-		x = 1
-		y = 1
-		relative_position_id = ITA_pact_of_steel
-		cost = 1
-		available = {
-			GER = { has_war = yes }
-			GER = { controls_state = 16 }
-			is_subject = no
-			GRE = { exists = yes }
-			NOT = { is_in_faction_with = GRE }
-			NOT = { has_guaranteed = GRE }
-			NOT = { has_non_aggression_pact_with = GRE }
-			NOT = { GRE = { is_subject_of = ROOT } }
-		}
-
-		bypass = {
-			is_subject = no
-			OR = {
-				GRE = { is_subject_of = ROOT }
-				GRE = { exists = no }
-				is_in_faction_with = GRE
-			}
-		}
-		search_filters = {}
-
-		completion_reward = {
-	
-
+				GRE = {
+								every_owned_state = {
+									limit = {
+										is_core_of = PREV
+										is_on_continent = europe
+									}
+									ROOT = {
+										add_state_claim = PREV
+										annex_country = { target = GRE}
+									}
+								}
 
 			create_wargoal = {
 				type = annex_everything
@@ -12538,5 +12525,6 @@ focus = {
 			}
 		
 		}
+	}
 	}
 }
