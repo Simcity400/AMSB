@@ -1110,31 +1110,12 @@ focus_tree = {
 
 		completion_reward = {
 			air_experience = 25
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				add_tech_bonus = {
-					technology =  photo_reconnaisance
-					bonus = 0.75
-					uses = 1
-				}
-			}
-			else_if = {
-				if = {
-					limit = {
-						has_dlc = "La Resistance"
-					}
-					add_tech_bonus = {
+			add_tech_bonus = {
 						name = scout_plane
 						bonus = 1.0
 						uses = 1
 						category = cat_scout_plane
-					}				
-				}			
-			}
-		
-			add_ideas = ENG_quality_RAF_pilots
+					}
 					
 			random_owned_controlled_state = {
 				limit = {
@@ -1355,7 +1336,7 @@ focus_tree = {
 				air_experience = 25
 				add_tech_bonus = {
 					name = fighter_command_focus
-					bonus = 1.0
+					bonus = 1.5
 					uses = 2
 					category = light_fighter
 					category = cat_heavy_fighter
@@ -1368,9 +1349,9 @@ focus_tree = {
 				air_experience = 25
 				add_tech_bonus = {
 					name = fighter_command_focus
-					bonus = 1.0
+					bonus = 1.5
 					uses = 1
-					category = light_air
+					category = light_fighter
 				}
 				add_tech_bonus = {
 					bonus = 1.0
@@ -1423,9 +1404,9 @@ focus_tree = {
 				add_tech_bonus = {
 					name = bomber_command_focus
 					bonus = 1.0
-					uses = 1
-					category = heavy_air
-					category = medium_air
+					uses = 2
+					category = cat_strategic_bomber
+					category = tactical_bomber
 				}
 				add_doctrine_cost_reduction = {
 					name = ENG_bomber_command_focus #land_doc_bonus
@@ -1506,30 +1487,6 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = british_fighter_discount
 		}
-	}
-	focus = {
-		id = uk_jet_focus
-		prerequisite = { focus = aircraft_production_focus }
-		icon = GFX_focus_generic_jet_planes
-		x = 0
-		y = 1
-		relative_position_id = aircraft_production_focus
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = uk_jet_focus
-				bonus = 1.0
-				uses = 4
-				category = jet_technology
-			}
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 	focus = {
 		id = naval_rearmament_focus
