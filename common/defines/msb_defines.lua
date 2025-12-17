@@ -238,8 +238,8 @@ NDefines.NAir.INTERCEPTION_DISTANCE_SCALE = 5000 -- At this many pixels of path 
 NDefines.NAir.INTERCEPTION_DAMAGE_SCALE = 0.0 -- Multiply the interception damage with this value. Works as a cap when interception distance is at maximum.
 
 -- Increased General Size Limit
-NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 50
-NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 50
+NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 72
+NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 72
 NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 7
 
 -- TY ASKAR

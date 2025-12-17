@@ -33,6 +33,7 @@ is_border_conflict_defender_vs_FROM = {
 }
 
 has_not_initiated_border_incident_with_FROM = {
+	# NOTE this check is very expensive! Use it with caution.
 	custom_trigger_tooltip = {
 		tooltip = not_initiated_border_incident_with_FROM
 		NOT = {
@@ -44,6 +45,7 @@ has_not_initiated_border_incident_with_FROM = {
 }
 
 has_not_initiated_border_incident_with_ROOT = {
+	# NOTE this check is very expensive! Use it with caution.
 	custom_trigger_tooltip = {
 		tooltip = not_initiated_border_incident_with_ROOT
 		NOT = {
@@ -1473,4 +1475,3 @@ check_allow_alternate_political_events = {
 		#
 	}
 }
-
