@@ -4060,14 +4060,7 @@ focus_tree = {
 				name = ITA_air_innovations_bba #fighter_bonus
 				bonus = 1
 				uses = 1
-				technology = improved_small_airframe
-			}
-
-				add_tech_bonus = {
-				name = ITA_air_innovations_bba #fighter_bonus
-				bonus = 1
-				uses = 1
-				technology = engines_3
+				technology = fighter2
 			}
 
 			add_doctrine_cost_reduction = {
@@ -4097,10 +4090,13 @@ focus_tree = {
 		completion_reward = {
 
 			add_tech_bonus = {
-				name = ITA_citta_dell_aria
-				bonus = 0.25
-				uses = 3 # was 4
-				category = air_equipment
+				name = naval_air_effort
+				bonus = 1.0
+				uses = 1
+				category = naval_bomber
+				#technology = naval_bomber1
+				#technology = naval_bomber2
+				#technology = naval_bomber3
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -4194,15 +4190,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_air_ace_generation_chance_factor = 0.05 }
-			add_to_variable = { ITA_ra_air_night_penalty = -0.1 }
-			add_to_variable = { ITA_ra_air_weather_penalty = -0.1 }
-			add_to_variable = { ITA_ra_air_training_xp_gain_factor = 0.05 }
-			custom_effect_tooltip = ITA_expand_rome_flying_school_ra_tt
-
-			air_experience = 25
-
-			custom_effect_tooltip = ITA_reduced_chance_of_air_accidents_tt
+			air_experience = 300
 		}
 	}
 
@@ -4268,7 +4256,7 @@ focus_tree = {
 				name = ITA_reggianes_exports
 				bonus = 0.50
 				uses = 1
-				category = air_equipment #Maybe more specific stuff? (Light/Medium bombers, fighters...)
+				category = naval_bomber #Maybe more specific stuff? (Light/Medium bombers, fighters...)
 			}
 
 			if = {
@@ -4297,27 +4285,13 @@ focus_tree = {
 
 		completion_reward = {
 			air_experience = 15
-			if = {
-				limit = {
-					country_exists = GER
-					NOT = { has_war_with = GER }
-				}
-				add_equipment_to_stockpile = { 
-					type = small_plane_cas_airframe_1
-					amount = 100
-					producer = GER
-					variant_name = "Ju 87"
-				}
-			}
-			else = {
-				add_tech_bonus = {
+			add_tech_bonus = {
 					name = ITA_diving_bombers
 					bonus = 0.5
 					uses = 1
 					category = cas_bomber
 					category = naval_bomber
 				}	
-			}
 			#NTH_Manu: Sends a request to Germany to purchase CAS and/or licensing design templates (historically 100 Ju87)
 		}
 	}
@@ -4340,21 +4314,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_air_mission_efficiency = 0.05 }
-			add_to_variable = { ITA_ra_air_mission_xp_gain_factor = 0.05 }
-			add_to_variable = { ITA_ra_air_doctrine_cost_factor = -0.1 }
-			custom_effect_tooltip = ITA_superaereo_ra_tt
-
-			air_experience = 50
-			#if = {
-			#	limit = {
-			#		has_dlc = "No Step Back"
-			#	}
-			#	custom_effect_tooltip = "TODO_Manu: Cost reduction for Airforce spirits. Code support"
-			#}
-
-			#Update NS icon
-			ITA_improve_regia_aeronautica_dm_effect = yes
+			air_experience = 100
 		}
 	}
 
@@ -4369,26 +4329,13 @@ focus_tree = {
 		relative_position_id = ITA_superaereo
 		cost = 5
 		available = {
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				has_tech = improved_small_airframe
-				has_tech = improved_medium_airframe
-			}
-			else = {
-				has_tech = fighter2
-				has_tech = tactical_bomber2
-			}
+			has_tech = fighter2
+			has_tech = tactical_bomber2
 		}
 
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_air_night_penalty = -0.05 }
-			add_to_variable = { ITA_ra_air_weather_penalty = -0.05 }
-			add_to_variable = { ITA_ra_air_accidents_factor = -0.1 }
-			custom_effect_tooltip = ITA_officers_of_the_service_role_ra_tt
 
 			air_experience = 25
 
@@ -4438,10 +4385,9 @@ focus_tree = {
 		
 			add_tech_bonus = {
 				name = ITA_standardization
-				bonus = 0.75
+				bonus = 0.5
 				uses = 1
 				category = tactical_bomber
-				category = light_fighter
 				category = cat_strategic_bomber
 			}
 
@@ -4497,11 +4443,11 @@ focus_tree = {
 			air_experience = 15
 	
 			add_tech_bonus = {
-				name = ITA_specialization
-				bonus = 0.5
-				uses = 2
-				category = air_equipment
-			}
+					name = ITA_specialization
+					bonus = 1
+					uses = 1
+					category = cas_bomber
+				}
 
 			random_core_state = {
 				limit = {
@@ -4541,10 +4487,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_strategic_bomb_visibility = -0.05 }
-			add_to_variable = { ITA_ra_air_strategic_bomber_bombing_factor = 0.05 }
-			add_to_variable = { ITA_ra_air_range_factor = 0.05 }
-			custom_effect_tooltip = ITA_long_range_aircraft_ra_tt
+			air_experience = 25
 
 			random_core_state = {
 				limit = {
@@ -4561,13 +4504,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				ITA_add_long_range_aircraft_templates = yes
 			}
 		}
 	}
@@ -4605,13 +4541,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				ITA_add_bomber_designs_templates = yes
-			}
 		}
 	}
 
@@ -4647,13 +4576,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			}
-
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				ITA_add_fighter_designs_templates = yes
 			}
 		}
 	}
@@ -4695,13 +4617,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				ITA_add_multirole_aircraft_templates = yes
-			}
 		}
 	}
 
@@ -4720,10 +4635,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIR_XP}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_air_superiority_bonus_in_combat = 0.05 }
-			add_to_variable = { ITA_ra_air_superiority_efficiency = 0.05 }
-			add_to_variable = { ITA_ra_air_intercept_efficiency = 0.05 }
-			custom_effect_tooltip = ITA_supremacy_in_the_skies_ra_tt
 
 			air_experience = 50
 
@@ -4742,13 +4653,6 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-			}
-
-			if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				ITA_add_supremacy_in_the_skies_templates = yes
 			}
 		}
 	}
@@ -12562,7 +12466,6 @@ focus = {
 		cost = 1
 		available = {
 			GER = { has_war = yes }
-			GER = { controls_state = 16 }
 			is_subject = no
 
 			YUG = { exists = yes }
@@ -12583,50 +12486,38 @@ focus = {
 		search_filters = {}
 
 		completion_reward = {
-	
-			create_wargoal = {
+				YUG = {
+					every_owned_state = {
+						limit = {
+							is_core_of = PREV
+							is_on_continent = europe
+						}
+						ROOT = {
+							add_state_claim = PREV
+							annex_country = { target = YUG}
+						}
+					}
+				}
+				create_wargoal = {
 				type = annex_everything
-				target = YUG
-			}
-		
-		}
-	}
+					target = YUG
+				}
+				create_wargoal = {
+					type = annex_everything
+						target = YUG
+					}
 
-	focus = {
-		id = ITA_war_with_greece
-		icon = GFX_goal_italy_attack_greece
-		#GFX_focus_generic_balkans_focus
-		prerequisite = { focus = ITA_pact_of_steel }
-	
-
-		x = 1
-		y = 1
-		relative_position_id = ITA_pact_of_steel
-		cost = 1
-		available = {
-			GER = { has_war = yes }
-			GER = { controls_state = 16 }
-			is_subject = no
-			GRE = { exists = yes }
-			NOT = { is_in_faction_with = GRE }
-			NOT = { has_guaranteed = GRE }
-			NOT = { has_non_aggression_pact_with = GRE }
-			NOT = { GRE = { is_subject_of = ROOT } }
-		}
-
-		bypass = {
-			is_subject = no
-			OR = {
-				GRE = { is_subject_of = ROOT }
-				GRE = { exists = no }
-				is_in_faction_with = GRE
-			}
-		}
-		search_filters = {}
-
-		completion_reward = {
-	
-
+				GRE = {
+								every_owned_state = {
+									limit = {
+										is_core_of = PREV
+										is_on_continent = europe
+									}
+									ROOT = {
+										add_state_claim = PREV
+										annex_country = { target = GRE}
+									}
+								}
 
 			create_wargoal = {
 				type = annex_everything
@@ -12634,5 +12525,6 @@ focus = {
 			}
 		
 		}
+	}
 	}
 }
