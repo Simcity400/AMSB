@@ -284,6 +284,9 @@ NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = 0 --Vanilla -0.12
  NDefines.NAir.EFFICIENCY_REGION_CHANGE_DAILY_GAIN_TACTICAL_BOMBER = 0.06	-- How much efficiency to regain per day. Gain applied hourly.
  NDefines.NAir.EFFICIENCY_REGION_CHANGE_DAILY_GAIN_FIGHTER = 1.5			-- How much efficiency to regain per day. Gain applied hourly.
  NDefines.NAir.EFFICIENCY_REGION_CHANGE_PENALTY_FACTOR = 1.0				-- Penalty applied for changing region
+ NDefines.NProduction.RESOURCE_TO_ENERGY_COEFFICIENT = 900.0		-- How much energy per coal produces
+ NDefines.NProduction.ENERGY_SCALING_COST_BY_FACTORY_COUNT = 0.0001 -- Scales energy cost based on the total number of factories
+ NDefines.NProduction.BASE_ENERGY_COST = 0.001					-- How much energy per factory consumes
  
 NDefines.NNavy.MISSION_FUEL_COSTS = {  -- fuel cost for each mission
 		0.0, -- HOLD (consumes fuel HOLD_MISSION_MOVEMENT_COST fuel while moving)
