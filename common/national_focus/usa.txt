@@ -3313,14 +3313,16 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 	
 		completion_reward = {
-			air_experience = 25
-			add_doctrine_cost_reduction = {
-				name = USA_air_war_plans_division
-				cost_reduction = 0.5
-				uses = 2
-				category = air_doctrine
-			} # REVISIT May use modifier?
+				add_tech_bonus = {
+					name = USA_air_war_plans_division
+					bonus = 1
+					uses = 1
+					category = light_fighter
+					category = cat_heavy_fighter
+				} # REVISIT May use modifier?
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = air_war_plans_division_focus
+			air_experience = 200
 			#hidden_effect = {
 			#	add_ideas = air_war_plans_division_focus_hidden
 			#}
@@ -3476,7 +3478,7 @@ focus_tree = {
 				name = USA_combined_bomber_offensive
 				bonus = 1.0
 				uses = 1
-				category = heavy_air
+				category = cat_strategic_bomber
 			}
 			add_ideas = combined_bomber_offensive
 		}
@@ -3508,11 +3510,18 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+			air_experience = 500
 			add_tech_bonus = {
 				name = USA_escort_fighters
 				bonus = 3.0
 				uses = 1
 				category = cat_heavy_fighter
+				}
+			add_tech_bonus = {
+				name = USA_escort_fighters
+				bonus = 2
+				uses = 1
+				category = light_fighter
 				}
 			}
 		}

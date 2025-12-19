@@ -1,0 +1,46 @@
+ENG_the_rock = { #STATE MODIFIER
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SOV_armored_battery
+	
+	army_defence_factor = 0.15
+	cas_damage_reduction = 0.50
+	dig_in_speed_factor = 0.25
+	max_dig_in_factor = 0.1
+	pocket_penalty = -0.20
+}
+
+ENG_Gib_line_dynamic_modifier = { #State Modifer
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_defense
+    state_bunker_max_level_terrain_limit = 5
+	state_coastal_bunker_max_level_terrain_limit = 5
+}
+
+war_of_gazala_modifier = { #ATTACK MODIFIER
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SOV_armored_battery
+	army_attack_factor = global.war_of_gazala_modifier_attack_factor_var
+	
+}
+war_of_gazala_speed_modifier = { #SPEED MOD 
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SOV_armored_battery
+	army_speed_factor = global.war_of_gazala_modifier_speed_factor_var
+}
+
+JAP_Jigoku_de_au_ze = { # state modifier
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SOV_armored_battery
+
+	army_defence_factor = 0.1
+	army_attack_factor = 0.1
+	cas_damage_reduction = 0.15
+	max_dig_in_factor = 0.1
+	pocket_penalty = -0.15
+
+}

@@ -1,0 +1,1222 @@
+on_actions = {
+	on_startup = {
+		effect = {
+		if = { #eng civs for no tradeback
+			limit = {
+				has_game_rule = {
+					rule = tradebacks
+					option = on
+				}
+			}
+			ENG = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 6
+				}
+				add_offsite_building = {
+					type = arms_factory
+					level = 8
+				}
+			}
+		}
+		YUG = { 
+			add_ideas = secure_our_borders
+		}
+		GRE = { 
+			add_ideas = secure_our_borders
+		}
+			if = { 
+				limit = { 
+					BUL = { 
+						is_ai = yes
+					}
+				}
+				BUL = {
+					add_ideas = war_economy
+					add_ideas = slystorical_ai
+					add_stability = 0.30
+					add_war_support = 0.30
+					complete_national_focus = BUL_power_to_the_tsar
+					complete_national_focus = BUL_appoint_right_wing_ministers
+					complete_national_focus = BUL_national_railway_lines
+					complete_national_focus = BUL_light_metal_exploitation
+					unlock_national_focus = BUL_negotiate_bulgarian_rearmament
+					
+					set_politics = { #DLC
+						ruling_party = fascism
+						last_election = "1935.1.22"
+						election_frequency = 48
+						elections_allowed = no
+					}
+					set_popularities = { #VANILLA
+						democratic = 5
+						fascism = 60
+						neutrality = 35
+					}
+					remove_ideas = BUL_army_restrictions_aat
+					remove_ideas = BUL_army_restrictions
+				}
+			}
+		USA = { 
+			diplomatic_relation = {   
+			country = ENG    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = FRA   
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = CAN    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = AST    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = HOL    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = BEL    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = RAJ    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = BRA   
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = SAF    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = NZL    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			diplomatic_relation = {   
+			country = MEX    
+			relation = military_access 
+			active = yes 
+			} 
+		}
+		USA = { 
+			load_oob = "USA_CONV"
+		}
+		if = { 
+			limit = { 
+				has_game_rule = { 
+                    rule = china_war_difficulty
+                    option = spawns
+                    }
+				}
+			CHI = {
+				add_ideas = SPA_death_before_surrender
+				add_ideas = kwantung_army
+				remove_ideas = CHI_army_corruption_1
+				set_technology = {
+					infantry_weapons1 = 1 
+					pocket_defence = 1
+					defence_in_depth = 1
+					peoples_army = 1
+					human_infantry_offensive = 1
+					large_front_offensive = 1
+					human_wave_offensive = 1
+					guerilla_warfare = 1
+				}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 150000
+				producer = CHI	
+				}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 500000
+				producer = CHI	
+				}
+				add_equipment_to_stockpile = {
+				type = anti_air_equipment_1
+				amount = 10000
+				producer = CHI	
+				}
+			}
+			JAP = { 
+				load_oob = "JAP_1936_spawns"
+				#add_timed_idea = { 
+			#	idea = kwantung_army days = 1200
+				#}
+				#add_ideas = imperial_society
+			}
+			528 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			530 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			531 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			532 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			535 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			534 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			533 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			282 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			536 = { 
+				add_extra_state_shared_building_slots = 15
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+			every_country = {
+				limit = {
+					is_playable_country = yes
+				}
+				add_ideas = {
+					peace_training
+				}
+				#create_intelligence_agency = yes
+			}
+			every_country = {
+				limit = {
+					is_playable_country = yes
+				}
+				add_ideas = {
+					sees_more
+				}
+				#create_intelligence_agency = yes
+			}
+			every_country = {
+				every_army_leader = {
+					limit = {
+						NOT = { 
+							has_trait = no_grind
+						}
+					}
+				add_unit_leader_trait = no_grind
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						ai_annex = yes
+						ai_rk = yes
+						ai_manpower = yes
+						ai_black = yes
+					}
+				}
+				country_lock_all_division_template = yes
+				add_ideas = {
+					ai_tradelaw
+				}
+			}
+			118 = { 
+				if = { 
+					limit = { 
+						ENG = { 
+							owns_state = 118
+						}
+					}
+					add_dynamic_modifier = { modifier = ENG_the_rock scope = ENG }
+				}
+			
+			}
+
+			524 = { 
+				if = { 
+					limit = { 
+						JAP = { 
+							owns_state = 524
+						}
+					}
+					add_dynamic_modifier = { modifier = JAP_Jigoku_de_au_ze scope = JAP }
+				}
+			
+			}
+
+			526 = { 
+				if = { 
+					limit = { 
+						JAP = { 
+							owns_state = 526
+						}
+					}
+					add_dynamic_modifier = { modifier = JAP_Jigoku_de_au_ze scope = JAP }
+				}
+			
+			}
+
+			645 = { 
+				if = { 
+					limit = { 
+						JAP = { 
+							owns_state = 645
+						}
+					}
+					add_dynamic_modifier = { modifier = JAP_Jigoku_de_au_ze scope = JAP }
+				}
+			
+			}
+			SOV = { 
+					
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_closed_eco
+						option = on
+					}
+				}
+				add_ideas = SOV_collectivized_society
+				}
+				country_event = {
+					id = mexico.21 # Mexico returns trotsky
+					days = 396 # Feb 37
+				}
+			}
+			if = { # Japan Closed Eco Game Rule
+				limit = {
+					has_game_rule = {
+						rule = japan_closed_eco
+						option = on
+					}
+				}
+				JAP = {
+					add_ideas = SOV_collectivized_society
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						ai_annex = yes
+						ai_black = yes
+					}
+				}
+				add_ideas = {
+					ai_annex
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						ai_manpower = yes
+					}
+				}
+				add_ideas = {
+					ai_war
+				}
+			}
+
+			every_country = {
+				limit = {
+					AND = {
+						is_playable_country = yes
+						NOT = {
+							tag = SPR
+						}
+					}
+
+				}
+				add_ideas = {
+					novols
+				}
+			}
+	#		SPR = {
+	#			add_ideas = {
+	#				no_faction
+	#			}
+	#		}
+			every_country = {
+				add_ideas = {
+					Spies_no_capture
+				}
+			}
+			GER = {
+				country_event = {
+					id = DOD_yugoslavia.20
+					days = 912
+				}
+			}
+			FRA = {
+				country_event = {
+					id = DOD_yugoslavia.20
+					days = 912
+				}
+			}
+			##### Turning King Edward's abdication into an on_startup event instead of MTTH to help performance####
+			ENG = {
+				country_event = {
+					id = britain.16
+					days = 20
+				}
+				country_event = {
+					id = mtg_britain.1
+					days = 190
+				}
+				country_event = {
+					id = britain.22
+					days = 513
+				}
+				country_event = {
+					id = DOD_yugoslavia.20
+					days = 912
+				}
+			}
+			ITA = {
+				ITA_end_the_italo_ethiopian_war = yes
+				annex_country = {
+                    target = ETH
+                    transfer_troops = no
+                }
+                complete_national_focus = ITA_solid_progress 
+				complete_national_focus = ITA_ethiopian_war_logistics_bba
+				country_event = {
+					id = DOD_yugoslavia.20
+					days = 912
+				}
+			}
+
+			#if = {
+               # limit = {
+                  #  date < 1936.1.22
+                #}
+               # random_country = { news_event = { id = msb.6 } }
+           # }
+			if = {
+                limit = {
+                    date < 1936.1.21
+                }
+                random_country = { news_event = { id = sly.1 } }
+            }
+			126 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			127 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			1017 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			123 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			328 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			125 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			129 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			132 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			931 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			128 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			121 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			136 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			133 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			120 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			932 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			119 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			113 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			134 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			135 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			131 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			338 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			122 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			933 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			337 = {
+				add_building_construction = {
+					type = air_base
+					level = 15
+					instant_build = yes
+				}
+			}
+			every_country = {
+                hidden_effect = {
+                    set_technology = { everyone_airport_technology = 1 popup = no }
+                }
+            }
+		}	
+	}
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {date > 1939.12.31
+				NOT = { ITA = {has_war_with = ENG }}
+			}
+				ITA = {
+					declare_war_on = {
+					target = ENG
+					type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1941.7.31
+					NOT = { GER = {has_war_with = SOV}}
+				}
+				GER = {
+					declare_war_on = {
+						target = SOV
+						type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					date > 1941.2.28
+					NOT = { JAP = {has_war_with = USA}}
+				}
+				JAP = {
+					declare_war_on = {
+						target = USA
+						type = annex_everything
+					}
+					add_timed_idea = { 
+						idea = JAP_tora_tora_tora_idea days = 150
+					}
+					set_technology = { special_tungsten_bullets = 1 popup = no }
+				}
+			}
+			if = {
+				limit = {
+						BEL = {
+							has_capitulated = yes
+						}
+						HOL = {
+							has_capitulated = yes
+						}
+						LUX = {
+							has_capitulated = yes
+						}
+						DEN = {
+							has_capitulated = yes
+						}
+						NOR = {
+							has_capitulated = yes
+						}
+						POL = {
+							has_capitulated = yes
+						}
+				}
+				every_country = {
+					limit = {
+						axis = yes
+					}
+					every_army_leader = {
+						remove_unit_leader_trait = no_grind
+					}
+					set_global_flag = grind_allowed
+				}
+			}
+			every_country = {
+				limit = {
+					is_playable_country = yes
+					NOT = {
+						OR = {
+							has_war = yes
+							has_idea = peace_training
+							AND = {
+								tag = SPR
+								any_country = {
+									has_volunteers_amount_from = {
+										tag = SPR
+										count > 0
+									} 
+								}	
+							}
+						}
+					}
+				}
+				add_ideas = peace_training
+			}
+			if = {
+				limit = {
+					HOL = {
+						has_equipment = {
+							convoy_1 < 1000
+						}
+						has_capitulated = yes
+					}
+				}
+				HOL = {
+					add_equipment_to_stockpile = {
+						type = convoy
+						amount = 1000
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR={
+						BEL = {
+							has_capitulated = no
+						}
+						HOL = {
+							has_capitulated = no
+						}
+						LUX = {
+							has_capitulated = no
+						}
+						DEN = {
+							has_capitulated = no
+						}
+						NOR = {
+							has_capitulated = no
+						}
+						POL = {
+							has_capitulated = no
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						axis = yes
+						NOT = {
+							has_global_flag = grind_allowed
+						}
+					}
+					every_army_leader = {
+						limit = {
+							NOT = { 
+								has_trait = no_grind
+							}
+						}
+						add_unit_leader_trait = no_grind
+					}
+				}
+			}
+			if = {
+				limit = {
+					GER = {has_war = no }
+				}
+				every_country = {
+					limit = {
+						allies = yes
+					}
+					every_army_leader = {
+						limit = {
+							NOT = { 
+								has_trait = no_grind
+							}
+						}
+						add_unit_leader_trait = no_grind
+					}
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			hmm_capitulations_on_actions = yes
+
+			
+		}
+	}
+
+
+	on_war_relation_added = {
+        effect = {
+            if = {
+                limit = {
+                    tag = JAP
+                    FROM = {
+                        is_in_faction_with = ENG
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = ENG
+                    }
+                    add_to_war = {
+                        targeted_alliance = FROM
+                        enemy = JAP
+                        hostility_reason = asked_to_join
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = JAP
+                    }
+                    add_to_war = {
+                        targeted_alliance = ROOT
+                        enemy = FROM
+                        hostility_reason = asked_to_join
+                    }
+                }
+            }
+			#VP System
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+					}
+					has_game_rule = {
+							rule = vp_system
+							option = ENABLED
+					}
+				}
+				initilize_victory_system = yes
+			}
+			if = {
+                limit = {
+                    tag = GER
+                    FROM = {
+                       tag = SOV
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = GER
+                    }
+                    add_to_war = {
+                        targeted_alliance = ROOT
+                        enemy = SOV
+                        hostility_reason = asked_to_join
+                    }
+                }
+            }
+        }
+    }
+	on_declare_war = {
+		effect = {
+			if = { 
+				limit = { 
+					FROM = { 
+						tag = ITA
+						}
+					}
+				add_to_variable = { 
+					war_of_gazala_modifier_attack_factor = -0.5
+					tooltip = army_attack_factor_tt
+					}
+				}
+			if = {
+				limit = {
+					FROM = {
+						tag = POL
+					}
+				}
+				
+				every_country = {
+					limit = {
+						allies = yes
+					}
+					every_army_leader = {
+						remove_unit_leader_trait = no_grind
+					}
+				}		
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						allies = yes
+						NOT = { tag = SOV}
+					}
+				}
+				ENG = {
+					add_to_faction = FROM
+				}
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						tag = EFR
+					}
+				}
+				
+				GER = {
+					annex_country = {
+						target = EFR
+						transfer_troops = no
+					}
+				}
+			}
+			
+			if = {
+                limit = {
+                    FROM = {
+                        tag = ALB
+                    }
+                }
+                ALB = {
+                    load_oob = "ALB_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = BEL
+                    }
+                }
+                BEL = {
+					add_ideas = ai_cap_progress
+                    load_oob = "BEL_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = DEN
+                    }
+                }
+                DEN = {
+					add_ideas = ai_cap_progress
+                    load_oob = "DEN_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = HOL
+                    }
+                }
+                HOL = {
+					add_ideas = ai_cap_progress
+                    load_oob = "HOL_CHROM_SPAWN"
+                }
+				ENG = { 
+					set_autonomy = {
+						target = HOL
+						autonomous_state = autonomy_gov_exile
+					}
+				}
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = LUX
+                    }
+                }
+                LUX = {
+                    load_oob = "LUX_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = NOR
+                    }
+                }
+                NOR = {
+					add_ideas = ai_cap_progress
+                    load_oob = "NOR_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = POL
+                    }
+                }
+                POL = {
+					add_ideas = ai_cap_progress
+                   load_oob = "POL_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = YUG
+                    }
+                }
+                YUG = {
+					add_ideas = ai_cap_progress
+                    load_oob = "YUG_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = GRE
+                    }
+                }
+                GRE = {
+					add_ideas = ai_cap_progress
+                    load_oob = "GRE_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+					FROM = { tag = CHI }
+				OR = {
+					has_game_rule = {
+                        rule = china_war_difficulty
+                        option = yes
+                   	 	}
+					 has_game_rule = {
+                        rule = china_war_difficulty
+                        option = spawns
+                   	 	}
+               		}
+				}
+                CHI = {
+					add_ideas = ai_cap_progress
+                    load_oob = "CHI_CHROM_SPAWN"
+                }
+            }
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+					}
+				}
+				SOV = { 
+					add_ideas = easier_cap_progress
+				}
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+					}
+					has_game_rule = {
+						rule = larp_barb
+						option = on
+					}
+				}
+				SOV = { 
+					load_oob = "SOV_barb" # USSR Spawn ins for funny scenario
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+					}
+					has_game_rule = {
+						rule = larp_barb
+						option = on
+					}
+				}
+				SOV = { 
+					add_timed_idea = { 
+						idea = shinzou_soviet
+						days = 20
+					}
+				}
+			} 
+		}
+	}
+
+	on_naval_invasion = {
+		effect = { 
+			THIS = {
+				if = {
+					limit = {
+						NOT = { CONTROLLER = { tag = ROOT } }
+						NOT = { CONTROLLER = { has_country_flag = notif_disable_inv_warning } }
+					}
+					save_global_event_target_as = invaded_state
+					# If the one getting dropped on, Give the alert
+					CONTROLLER = {
+						set_country_flag = ui_show_invasion_warning
+						set_variable = { ui_invaded_state = PREV }
+						set_variable = { ui_invaded_country = PREV.owner }
+						set_variable = { ui_invader_country = ROOT }
+					}
+					# If its a puppet, alert the overlord
+					if = {
+						limit = { CONTROLLER = { is_puppet = yes } }
+						CONTROLLER = {
+							OVERLORD = {
+								set_country_flag = ui_show_invasion_warning
+								set_variable = { ui_invaded_state = PREV.PREV }
+								set_variable = { ui_invaded_country = PREV.PREV.owner }
+								set_variable = { ui_invader_country = ROOT }
+							}
+						}
+					} 
+					# If its in the same faction as that country landed in, alert them
+					every_country = {
+						if = { 
+							limit = { 
+								THIS = { is_in_faction_with = PREV.PREV.CONTROLLER }
+							}
+							set_country_flag = ui_show_invasion_warning
+							set_variable = { ui_invaded_state = PREV }
+							set_variable = { ui_invaded_country = PREV.CONTROLLER }
+							set_variable = { ui_invader_country = ROOT }
+						}
+					}
+
+				}
+			}
+		}
+	}
+	on_paradrop = {
+		effect = { 
+			THIS = {
+				if = {
+					limit = {
+						NOT = { CONTROLLER = { tag = ROOT } }
+						NOT = { CONTROLLER = { has_country_flag = notif_disable_para_warning } }
+					}
+					# If the one getting dropped on, Give the alert
+					CONTROLLER = {
+						set_country_flag = ui_show_paradrop_warning
+						set_variable = { ui_invaded_state = PREV }
+						set_variable = { ui_invaded_country = PREV.owner }
+						set_variable = { ui_invader_country = ROOT }
+					}
+					save_global_event_target_as = paradropped_state
+					# If its a puppet, alert the overlord
+					if = {
+						limit = { CONTROLLER = { is_puppet = yes } }
+						CONTROLLER = {
+							OVERLORD = {
+								set_country_flag = ui_show_paradrop_warning
+								set_variable = { ui_invaded_state = PREV.PREV }
+								set_variable = { ui_invaded_country = PREV.PREV.owner }
+								set_variable = { ui_invader_country = ROOT }
+							}
+						}
+					} 
+					# If its in the same faction as that country landed in, alert them
+					every_country = {
+						if = { 
+							limit = { 
+								THIS = { is_in_faction_with = PREV.PREV.CONTROLLER } 
+							}
+							set_country_flag = ui_show_paradrop_warning
+							set_variable = { ui_invaded_state = PREV }
+							set_variable = { ui_invaded_country = PREV.CONTROLLER }
+							set_variable = { ui_invader_country = ROOT }
+						}
+					}
+				}
+			}
+		}
+	}
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					NOT = {
+						OR = {
+							original_tag = GER original_TAG = FRA original_TAG = SOV original_tag = USA original_TAG = JAP original_TAG = ENG original_TAG = ITA original_TAG = CAN
+						}
+						
+					}
+				}
+				add_ideas = meme_minors
+				
+			}
+			
+		}
+	}	
+}
