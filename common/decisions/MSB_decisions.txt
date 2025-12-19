@@ -29,6 +29,55 @@ operations = {
         }
     }
 
+	annex_newzealand = {
+            # icon = generic_operation
+            allowed = {
+                tag = AST
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            available = {
+                NZL = {
+                    is_ai = yes
+                }
+            }
+            targets = {
+                NZL
+            }
+            complete_effect = {
+                NZL = {
+                    transfer_units_fraction = {
+                        target = AST
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            always = no
+                        }
+                    }
+                }
+                AST = {
+                    annex_country = {
+                        target = NZL
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = NZL
+                        is_controlled_by = AST
+                    }
+                    add_core_of = AST
+                }
+            }
+
+        }
+
 		annex_bulgaria= {
 			# icon = generic_operation
 			allowed = {
@@ -182,6 +231,37 @@ operations = {
 
     political_actions = {
 
+	uk_texas_oil = {
+        icon = GFX_decision_oil
+        allowed = {
+            tag = ENG
+        }
+        fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            available = {
+                ENG = {
+                    has_war = yes
+                }
+            }
+			visible = {
+        		country_exists = USA
+    		}
+            targets = {
+                USA
+            }
+            complete_effect = {
+                USA = {
+                    give_resource_rights = {
+					receiver = ENG
+					state = 375
+				}
+                }
+            }
+    }	
+
 	move_capital_to_cascablanca = {
 		fire_only_once = yes
 		allowed = {
@@ -328,7 +408,7 @@ Technologies = {
             }
 
             complete_effect = {
-              	set_technology = { advanced_medium_airframe = 1 }
+              	set_technology = { heavy_fighter3 = 1 }
 				add_ideas = air_support_focus
             }
     }
