@@ -85,6 +85,29 @@ equipment_modules = {
 		}
 	}
 
+	tank_welded_armor = {
+		abbreviation = "wel"
+		category = tank_armor_type
+		sfx = sfx_ui_sd_module_sonar
+		
+
+		add_stats = {
+			defense = 3
+			breakthrough = 3
+			max_strength = 1
+		}
+		dismantle_cost_ic = 1
+		
+		multiply_stats = {
+			armor_value = 0.3
+			build_cost_ic = 0.10
+		}
+
+		build_cost_resources = {
+			chromium = 0
+		}
+	}
+
 	tank_cast_armor = {
 		abbreviation = "cas"
 		category = tank_armor_type
@@ -121,6 +144,17 @@ equipment_modules = {
 		}
 	}
 	###Suspension Types
+
+	tank_bogie_suspension = {
+		abbreviation = "bog"
+		category = tank_suspension_type
+		sfx = sfx_ui_sd_module_sonar
+
+		add_stats = {
+		}
+		dismantle_cost_ic  = 1
+
+	}
 
 	tank_torsion_bar_suspension = {
 		abbreviation = "tor"
