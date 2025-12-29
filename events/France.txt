@@ -173,7 +173,7 @@ country_event = {
 	
 	trigger = {
 		original_tag = FRA
-	    surrender_progress = 0.32
+	    surrender_progress = 0.35
 	}
 
 	immediate = {
@@ -191,6 +191,7 @@ country_event = {
 		#custom_effect_tooltip = france.10.b_tt
 		# set_country_flag = GER_dont_seize_gold_reserves_flag #Can't allow Germany to seize out gold reserves just yet
 		hidden_effect = {
+			add_ideas = force_france_cap
 			514 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
 			459 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
 			32 = {remove_dynamic_modifier = {modifier = no_building_in_french_mainland}}
