@@ -1024,12 +1024,6 @@ E_ll = {
 		visible = {	
 			OR = {
 				original_tag = ITA
-				original_tag = HUN
-				original_tag = ROM
-				original_tag = BUL
-				original_tag = FIN
-				original_tag = SPR
-				original_tag = IRQ
 			}
 			NOT = { has_country_flag = sending_ll_to_ger }
 		}
@@ -1048,12 +1042,6 @@ E_ll = {
 		visible = {	
 			OR = {
 				original_tag = ITA
-				original_tag = HUN
-				original_tag = ROM
-				original_tag = BUL
-				original_tag = FIN
-				original_tag = SPR
-				original_tag = IRQ
 			}
 			has_country_flag = sending_ll_to_ger
 		}
@@ -1069,12 +1057,6 @@ E_ll = {
 		allowed = {	 
 			OR = { 
 				original_tag = ITA
-				original_tag = HUN
-				original_tag = ROM
-				original_tag = BUL
-				original_tag = FIN
-				original_tag = SPR
-				original_tag = IRQ
 			} 
 		}
 		available = {
@@ -1103,12 +1085,6 @@ E_ll = {
 		allowed = {	 
 			OR = { 
 				original_tag = ITA
-				original_tag = HUN
-				original_tag = ROM
-				original_tag = BUL
-				original_tag = FIN
-				original_tag = SPR
-				original_tag = IRQ
 			} 
 		}
 		available = {
@@ -1131,6 +1107,98 @@ E_ll = {
 				send_equipment = { equipment = medium_plane_fighter_airframe amount = 10000 target = GER }
 			}
 			activate_mission = GER_recieving_ll_1		
+		}
+	}
+
+	ITA_start_ll = {
+		icon = GFX_decision_generic_air
+
+		visible = {	
+			OR = {
+				original_tag = GER
+			}
+			NOT = { has_country_flag = sending_ll_to_ita }
+		}
+		available = {
+			#date > 1938.1.1
+		}
+
+		complete_effect = {
+			activate_mission = ITA_recieving_ll_1
+			set_country_flag = sending_ll_to_ita
+		}
+	}
+	ITA_close_ll = {
+		icon = GFX_decision_generic_air
+
+		visible = {	
+			OR = {
+				original_tag = GER
+			}
+			has_country_flag = sending_ll_to_ita
+		}
+		available = {
+			#date > 1938.1.1
+		}
+
+		complete_effect = {
+			clr_country_flag = sending_ll_to_ita
+		}
+	}
+	ITA_recieving_ll_1 = {
+		allowed = {	 
+			OR = { 
+				original_tag = GER
+			} 
+		}
+		available = {
+			NOT = { has_country_flag = sending_ll_to_ita }
+		}
+		icon = generic_army_support
+		is_good = yes
+		activation = { always = no }
+		days_mission_timeout = 30
+
+		timeout_effect = {
+			if = { 
+				limit = { 
+					has_country_flag = sending_ll_to_ita 
+				}  
+				send_equipment = { equipment = small_plane_airframe amount = 10000 target = ITA }
+				send_equipment = { equipment = large_plane_airframe amount = 10000 target = ITA }
+				send_equipment = { equipment = small_plane_cas_airframe amount = 10000 target = ITA }
+				send_equipment = { equipment = medium_plane_airframe amount = 10000 target = ITA }
+				send_equipment = { equipment = medium_plane_fighter_airframe amount = 10000 target = ITA }
+			}
+			activate_mission = ita_recieving_ll_2		
+		}
+	}
+	ITA_recieving_ll_2 = {
+		allowed = {	 
+			OR = { 
+				original_tag = GER
+			} 
+		}
+		available = {
+			NOT = { has_country_flag = sending_ll_to_ita }
+		}
+		icon = generic_army_support
+		is_good = yes
+		activation = { always = no }
+		days_mission_timeout = 30
+
+		timeout_effect = {
+			if = { 
+				limit = { 
+					has_country_flag = sending_ll_to_ita 
+				}  
+				send_equipment = { equipment = small_plane_airframe amount = 10000 target = ITA }
+				send_equipment = { equipment = large_plane_airframe amount = 10000 target = ITA }
+				send_equipment = { equipment = small_plane_cas_airframe amount = 10000 target = ITA }
+				send_equipment = { equipment = medium_plane_airframe amount = 10000 target = ITA }
+				send_equipment = { equipment = medium_plane_fighter_airframe amount = 10000 target = ITA }
+			}
+			activate_mission = ITA_recieving_ll_1		
 		}
 	}
 }	
