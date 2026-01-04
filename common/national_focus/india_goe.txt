@@ -21855,23 +21855,7 @@ focus = {
 
 
         completion_reward = {
-            if = {
-                limit = {
-                    has_dlc = "Arms Against Tyranny"
-                }
-                mio:RAJ_ammunition_factory_khadki_organization = {
-                    add_mio_size = 1
-                    unlock_mio_trait_tooltip = {
-                        trait = RAJ_mio_trait_rifle_factory_ishapore
-                    }
-                }
-            }
-            else = {
-                upgrade_ordance_factories_no_aat = yes
-            }
-
             try_build_mil_in_core_otherwise_build_in_controlled = yes
-            
         }
     }
 
@@ -21904,31 +21888,6 @@ focus = {
 
 
         completion_reward = {
-            
-            if = {
-                limit = {
-                    has_dlc = "Arms Against Tyranny"
-                }
-
-                mio:RAJ_ammunition_factory_khadki_organization = {
-                    add_mio_size = 1
-                    unlock_mio_trait_tooltip = {
-                        trait = RAJ_mio_trait_ordnance_factory_kanpur_uttar_pradesh_inf
-                    }
-                }
-
-                mio:RAJ_ordnance_factory_kanpur_organization = {
-                    add_mio_size = 1
-                    unlock_mio_trait_tooltip = {
-                        trait = RAJ_mio_trait_ordnance_factory_kanpur_uttar_pradesh_art
-                    }
-                }
-            }
-            else = {
-                upgrade_ordance_factories_no_aat = yes
-                upgrade_ordance_factories_art_no_aat = yes
-            }
-
             try_build_mil_in_core_otherwise_build_in_controlled = yes
         }
     }
@@ -21962,28 +21921,6 @@ focus = {
         search_filters = { FOCUS_FILTER_RESEARCH }
 
         completion_reward = {
-            if = {
-                limit = {
-                    has_dlc = "Arms Against Tyranny"
-                }
-
-                mio:RAJ_ordnance_factory_medak_organization = {
-                    add_mio_size = 1
-                    unlock_mio_trait_tooltip = {
-                        trait = RAJ_mio_trait_apc_research_effort
-                    }
-                }
-            }
-            else = {
-                add_tech_bonus = {
-                    name = RAJ_ordnance_factory_medak
-                    bonus = 0.75
-                    uses = 1
-                    category = cat_mechanized_equipment # optional 
-                    # technology  = technology_id # optional
-                }
-
-            }
             try_build_mil_in_core_otherwise_build_in_controlled = yes
 
         }
@@ -22028,37 +21965,6 @@ focus = {
                 category = cat_mechanized_equipment # optional 
                 name = RAJ_chariot_of_victory
                 # technology  = technology_id # optional
-            }
-            if = {
-                limit = {
-                    has_dlc = "Arms Against Tyranny"
-                }
-
-                mio:RAJ_ordnance_factory_medak_organization = {
-                    add_mio_size = 1
-                    unlock_mio_trait_tooltip = {
-                        trait = RAJ_mio_trait_chariot_of_victory
-                    }
-                }
-            }
-            else = {
-                if = {
-                    limit = {
-                        has_idea = idea_medak
-                    }
-                    swap_ideas = {
-                        remove_idea = idea_medak
-                        add_idea = idea_medak_1
-                    }
-                }
-                else = {
-                    effect_tooltip = {
-                        swap_ideas = {
-                            remove_idea = idea_medak
-                            add_idea = idea_medak_1
-                        }
-                    }
-                }
             }
 
             try_build_mil_in_core_otherwise_build_in_controlled = yes
@@ -22140,21 +22046,6 @@ focus = {
         search_filters = {FOCUS_FILTER_INDUSTRY}
 
         completion_reward = {
-            if = {
-                limit = {
-                    has_dlc = "Arms Against Tyranny"
-                }
-                mio:RAJ_ordnance_factory_kanpur_organization = {
-                    add_mio_size = 1
-                    unlock_mio_trait_tooltip = {
-                        trait = RAJ_mio_trait_cordite_factory_aruvankadu_tamil_nadu
-                        show_modifiers = yes
-                    }
-                }
-            }
-            else = {
-                upgrade_ordance_factories_art_no_aat = yes
-            }
 
              try_build_mil_in_core_otherwise_build_in_controlled = yes
         }
@@ -22541,24 +22432,7 @@ focus = {
 
         search_filters = {FOCUS_FILTER_INDUSTRY}
 
-        completion_reward = {
-            if = {
-                limit = {
-                    has_dlc = "Arms Against Tyranny"
-                }
-
-                mio:RAJ_ammunition_factory_khadki_organization = {
-                    add_mio_size = 1
-                    unlock_mio_trait_tooltip = {
-                        trait = RAJ_mio_trait_ordnance_factory_khamaria_jabalpur
-                    }
-                }
-            }
-            else = {
-                upgrade_ordance_factories_no_aat = yes
-            }
-
-             
+        completion_reward = {             
              try_build_mil_in_core_otherwise_build_in_controlled = yes
         }
     }
