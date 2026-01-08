@@ -176,30 +176,6 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					date > 1941.12.31
-					NOT = { GER = {has_war_with = SOV}}
-				}
-				GER = {
-					declare_war_on = {
-						target = SOV
-						type = annex_everything
-					}
-				}
-			}
-			if = {
-				limit = {
-					date > 1941.2.28
-					NOT = { JAP = {has_war_with = USA}}
-				}
-				JAP = {
-					declare_war_on = {
-						target = USA
-						type = annex_everything
-					}
-				}
-			}
-			if = {
-				limit = {
 						BEL = {
 							has_capitulated = yes
 						}
