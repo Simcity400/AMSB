@@ -176,30 +176,6 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					date > 1941.12.31
-					NOT = { GER = {has_war_with = SOV}}
-				}
-				GER = {
-					declare_war_on = {
-						target = SOV
-						type = annex_everything
-					}
-				}
-			}
-			if = {
-				limit = {
-					date > 1941.2.28
-					NOT = { JAP = {has_war_with = USA}}
-				}
-				JAP = {
-					declare_war_on = {
-						target = USA
-						type = annex_everything
-					}
-				}
-			}
-			if = {
-				limit = {
 						BEL = {
 							has_capitulated = yes
 						}
@@ -592,55 +568,52 @@ on_actions = {
 
 	on_weekly = {
 		effect = {
-			limit = {
-					has_idea = peace_training
-				}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = infantry
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = combat_support
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = armor
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = operations
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = capital_ships
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = carriers
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = screens
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = submarines
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = fighter_aircraft
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = strike_aircraft
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = medium_aircraft
 			}
 			add_mastery = {
-				amount = 10
+				amount = 40
 				track = heavy_aircraft
 			}
 		}
