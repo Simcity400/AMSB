@@ -10,10 +10,6 @@ technologies = {
 			leads_to_tech = improved_transport_plane
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = helicopter1
-			research_cost_coeff = 1
-		}
 		research_cost = 2
 		start_year = 1933
 		folder = {
@@ -115,7 +111,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = naval_bomber1
+			leads_to_tech = cv_naval_bomber1
 			research_cost_coeff = 1
 		}
 		
@@ -854,59 +850,6 @@ technologies = {
 			}
 		}
 	}
-
-	naval_bomber1 = {
-
-		enable_equipments = {
-			nav_bomber_equipment_1
-		}
-	
-		path = {
-			leads_to_tech = naval_bomber2
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2
-		start_year = 1936
-		folder = {
-			name = air_techs_folder
-			position = { x = 4 y = 4 }
-		}
-		
-		sub_technologies = {
-			cv_naval_bomber1
-		}
-		
-		categories = {
-			naval_air
-			naval_bomber
-			air_equipment
-			mio_cat_all_naval_bomber_and_modules
-			mio_cat_all_light_aircraft_and_modules
-		}
-		special_project_specialization = { specialization_air }
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				OR = {
-					has_war_with = ENG
-					has_war_with = USA
-					has_war_with = JAP
-				}
-				factor = 3
-			}
-			modifier = {
-				factor = 5
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 5
-				tag = JAP
-			}
-		}
-	}
 	
 	cv_naval_bomber1 = {
 
@@ -917,6 +860,16 @@ technologies = {
 		research_cost = 1.0 #Carrier Variant
 		start_year = 1936
 		
+		path = {
+			leads_to_tech = cv_naval_bomber2
+			research_cost_coeff = 1
+		}
+
+		folder = {
+			name = air_techs_folder
+			position = { x = 4 y = 4 }
+		}
+
 		categories = {
 			naval_air
 			air_equipment
@@ -959,66 +912,6 @@ technologies = {
 		}
 	}
 	
-	naval_bomber2 = {
-
-		enable_equipments = {
-			nav_bomber_equipment_2
-		}
-	
-		path = {
-			leads_to_tech = naval_bomber3
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2
-		start_year = 1940
-		folder = {
-			name = air_techs_folder
-			position = { x = 4 y = 6 }
-		}
-		
-		sub_technologies = {
-			cv_naval_bomber2
-		}
-		
-		categories = {
-			naval_air
-			air_equipment
-			naval_bomber
-			mio_cat_all_naval_bomber_and_modules
-			mio_cat_all_light_aircraft_and_modules
-		}
-		special_project_specialization = { specialization_air }
-		
-		ai_will_do = {
-			factor = 1.5
-			modifier = {
-				OR = {
-					has_war_with = ENG
-					has_war_with = USA
-					has_war_with = JAP
-				}
-				factor = 3
-			}
-			modifier = {
-				has_deployed_air_force_size = {
-					size > 500
-					type = naval_bomber
-				}
-				factor = 1.5
-			}
-			modifier = {
-				factor = 5
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 5
-				tag = JAP
-			}
-		}
-	}
-	
 	cv_naval_bomber2 = {
 
 		enable_equipments = {
@@ -1028,6 +921,14 @@ technologies = {
 		research_cost = 1.0 #Carrier Variant
 		start_year = 1940
 		
+		path = {
+			leads_to_tech = cv_naval_bomber3
+			research_cost_coeff = 1
+		}
+		folder = {
+			name = air_techs_folder
+			position = { x = 4 y = 6 }
+		}
 		categories = {
 			naval_air
 			air_equipment
@@ -1071,67 +972,6 @@ technologies = {
 		}
 	}
 	
-	naval_bomber3 = {
-
-		enable_equipments = {
-			nav_bomber_equipment_3
-		}
-		
-		path = {
-			leads_to_tech = jet_fighter1
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 2
-		start_year = 1944
-		folder = {
-			name = air_techs_folder
-			position = { x = 4 y = 8 }
-		}
-		
-		sub_technologies = {
-			cv_naval_bomber3
-		}
-		
-		categories = {
-			naval_air
-			naval_bomber
-			air_equipment
-			mio_cat_all_naval_bomber_and_modules
-			mio_cat_all_light_aircraft_and_modules
-		}
-
-		special_project_specialization = { specialization_air }
-		
-		ai_will_do = {
-			factor = 1.5
-			modifier = {
-				OR = {
-					has_war_with = ENG
-					has_war_with = USA
-					has_war_with = JAP
-				}
-				factor = 3
-			}
-			modifier = {
-				has_deployed_air_force_size = {
-					size > 500
-					type = naval_bomber
-				}
-				factor = 1.5
-			}
-			modifier = {
-				factor = 5
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 5
-				tag = JAP
-			}
-		}
-	}
-	
 	cv_naval_bomber3 = {
 
 		enable_equipments = {
@@ -1141,6 +981,11 @@ technologies = {
 		research_cost = 1.0 #Carrier Variant
 		start_year = 1944
 		
+		folder = {
+			name = air_techs_folder
+			position = { x = 4 y = 8 }
+		}
+
 		categories = {
 			naval_air
 			air_equipment
@@ -1311,26 +1156,6 @@ technologies = {
 		}
 	}
 
-	helicopter1 = {
-		enable_equipments = {
-			helicopter_equipment_1
-		}
-		enable_subunits = { 
-			helicopter_brigade
-		}
-		research_cost = 1.75
-		start_year = 1937
-		folder = {
-			name = air_techs_folder
-			position = { x = -6 y = 7 }
-		}
-		
-		categories = {
-			air_equipment
-			mio_cat_all_medium_aircraft_and_modules
-		}
-		special_project_specialization = { specialization_air }
-	}
 	scout_plane1 = {
 
 		enable_equipments = {
