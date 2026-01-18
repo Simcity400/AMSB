@@ -10360,11 +10360,10 @@ focus_tree = {
 					NOT = { BEL = { is_in_faction_with = GER } }
 					NOT = { has_war_with = BEL }
 				}
-				declare_war_on = {
-					target = BEL
-					type = take_state_focus
-					generator = { 6 }
-				}
+				create_wargoal = {
+				type = annex_everything
+				target = BEL
+			}
 			}
 			if =  {
 				limit = {
@@ -10373,11 +10372,10 @@ focus_tree = {
 					NOT = { has_war_with = HOL }
 					NOT = { HOL = { has_completed_focus = HOL_cave_to_the_germans } }
 				}
-				declare_war_on = {
-					target = HOL
-					type = take_state_focus
-					generator = { 7 }
-				}
+				create_wargoal = {
+				type = annex_everything
+				target = HOL
+			}
 			}
 			if =  {
 				limit = {
@@ -10397,11 +10395,10 @@ focus_tree = {
 					NOT = { LUX = { is_in_faction_with = GER } }
 					NOT = { has_war_with = LUX }
 				}
-				declare_war_on = {
-					target = LUX
-					type = take_state_focus
-					generator = { 8 }
-				}		
+				create_wargoal = {
+				type = annex_everything
+				target = LUX
+			}		
 				add_ai_strategy = { 
 					type = conquer
 					id = LUX
@@ -10460,22 +10457,6 @@ focus_tree = {
 				}
 			}
 
-			10 = {
-				controller = {
-					OR = {
-						is_in_faction_with = ROOT
-						original_tag = GER
-					}
-				}
-			}
-			85 = {
-				controller = {
-					OR = {
-						is_in_faction_with = ROOT
-						original_tag = GER
-					}
-				}
-			}
 			OR = { 
 				has_war_with = ENG
 				NOT = {country_exists = ENG}
