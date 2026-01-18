@@ -227,8 +227,8 @@ NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.034   -- global damage mo
 NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.041 -- was 0.027 -- vanilla 0.053
 NDefines.NMilitary.LAND_COMBAT_COLLATERAL_FORT_FACTOR = 0.003		-- Factor to scale collateral damage to forts with.
 NDefines.NMilitary.LAND_COMBAT_COLLATERAL_INFRA_FACTOR = 0.002	-- Factor to scale collateral damage to infra with.
-NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.025    -- air global damage modifier
-NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.018    -- global damage modifier
+NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.10    -- global damage modifier
+NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.05    -- air global damage modifier
 NDefines.NMilitary.EQUIPMENT_COMBAT_LOSS_FACTOR = 0.56 -- vanilla 0.70,
 
 -- FUWG/TFB style converts
@@ -270,7 +270,8 @@ NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 1.0   --vanilla 
 NDefines.NAir.DISRUPTION_FACTOR = 5.5 --cas enters battle at 30+%
 NDefines.NAir.AIR_MORE_GROUND_CREWS_COST = 0.0
 NDefines.NAir.COMBAT_MULTIPLANE_CAP = 3					-- How many planes can shoot at each plane on other side ( if there are 100 planes we are atttacking COMBAT_MULTIPLANE_CAP * 100 of our planes can shoot )
-NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.50				-- Higher value = more shot down planes
+NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.45				-- Higher value = more shot down planes
+NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_CHANCE = 0.033
 -- Bombing Fix
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
 NDefines.NAir.AIR_WING_BOMB_DAMAGE_FACTOR = 0.6 --Chrom Bombing Fix; HMM = 0.6
