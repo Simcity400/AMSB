@@ -53,3 +53,55 @@ GER_seize_gold_reserves_cat = {
 		}
 	}
 	}
+
+debug_decisions = {
+	debug_tradeback = {		
+		icon = GFX_decision_generic_debug		
+	
+		available = {
+			not = {
+				has_idea = tradeback_is_cancer
+			}	
+				
+		}		
+				
+		
+		visible = {	
+			is_debug = yes	
+		}		
+
+		cost = 0		
+
+		complete_effect = {	
+				add_ideas = tradeback_is_cancer
+				set_country_flag = tradebackon
+		}		
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
+
+	debug_remove_tradeback = {		
+		icon = GFX_decision_generic_debug		
+	
+		available = {
+			has_idea = tradeback_is_cancer		
+		}		
+				
+		
+		visible = {	
+			is_debug = yes	
+		}		
+
+		cost = 0		
+
+		complete_effect = {
+			remove_ideas = tradeback_is_cancer
+		}		
+
+		ai_will_do = {	
+			factor = 0			
+		}
+	}
+}
