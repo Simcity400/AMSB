@@ -227,6 +227,59 @@ operations = {
 		
 			}
 		}
+		
+		annex_finland= {
+			# icon = generic_operation
+			allowed = {
+				tag = GER
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			available = {
+				FIN = {
+					is_ai = yes
+				}
+			}
+            visible = {
+				FIN = {
+					is_ai = yes
+				}
+			}
+			targets = {
+				FIN	
+			}
+			complete_effect = {
+				FIN = {
+					transfer_units_fraction = {
+						target = GER
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				GER = {
+					annex_country = {
+						target = FIN
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = FIN 
+						is_controlled_by = GER
+					}
+					add_compliance = 100
+				}
+			}
+		}
     }
 
     political_actions = {
