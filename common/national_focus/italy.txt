@@ -12484,31 +12484,59 @@ focus = {
 		search_filters = {}
 
 		completion_reward = {
-				YUG = {
-					every_owned_state = {
-						limit = {
-							is_core_of = PREV
-							is_on_continent = europe
+					ITA = {
+						annex_country = {
+								target = YUG
+								transfer_troops = no
+							}
+						every_state = {
+							limit = {
+								is_core_of = YUG
+								is_controlled_by = ITA
+							}
+							set_compliance = 80
 						}
-						ROOT = {
-							add_state_claim = PREV
-							annex_country = { target = YUG}
+						
+						add_named_threat = { 
+							threat = 12
+							name = YUG_peace
+						}
+						if = {
+							limit = { NOT = { has_idea = peace_training } }
+							add_ideas = peace_training
 						}
 					}
-				}
+
 				GRE = {
-								every_owned_state = {
-									limit = {
-										is_core_of = PREV
-										is_on_continent = europe
-									}
-									ROOT = {
-										add_state_claim = PREV
-										annex_country = { target = GRE}
-									}
+							transfer_navy = { target = ITA }
+						}
+						BUL = {
+							transfer_state = 731 # THESALONIKI JEWISH STATE!!
+							transfer_state = 184 # THRACE
+						}
+						
+						ITA = {
+							annex_country = {
+								target = GRE
+								transfer_troops = no
+							}
+							every_state = {
+								limit = {
+									is_core_of = GRE
+									is_controlled_by = ITA
 								}
-		
-		}
-	}
-	}
+								set_compliance = 80
+							}
+							
+							add_named_threat = { 
+								threat = 12
+								name = GRE_peace
+							}
+							if = {
+								limit = { NOT = { has_idea = peace_training } }
+								add_ideas = peace_training
+							}
+						}
+					}
+			}
 }
