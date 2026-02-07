@@ -223,13 +223,13 @@ NDefines.NMilitary.COMBAT_VALUE_STR_IMPORTANCE = 0 		-- VANILLA 1  - changed to 
 NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.4 -- vanilla 0.25
 NDefines.NTechnology.MAX_SUBTECHS = 4
 NDefines.NMilitary.RELIABILTY_RECOVERY = 0
-NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.06   -- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
-NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.041 -- was 0.027 -- vanilla 0.053
-NDefines.NMilitary.LAND_COMBAT_COLLATERAL_FORT_FACTOR = 0.003		-- Factor to scale collateral damage to forts with.
-NDefines.NMilitary.LAND_COMBAT_COLLATERAL_INFRA_FACTOR = 0.002	-- Factor to scale collateral damage to infra with.
-NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.050    -- global damage modifier
-NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.035    -- air global damage modifier
-NDefines.NMilitary.EQUIPMENT_COMBAT_LOSS_FACTOR = 0.60 -- vanilla 0.70,
+NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.06  --vanilla 0.06 -- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
+NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.053 -- was 0.027 -- vanilla 0.053
+NDefines.NMilitary.LAND_COMBAT_COLLATERAL_FORT_FACTOR = 0.005	--vanilla 0.005	-- Factor to scale collateral damage to forts with.
+NDefines.NMilitary.LAND_COMBAT_COLLATERAL_INFRA_FACTOR = 0.002 --vanilla 0.0022	-- Factor to scale collateral damage to infra with.
+NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.10   --vanilla 0.1 -- global damage modifier
+NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.05   --vanilla 0.05 -- air global damage modifier
+NDefines.NMilitary.EQUIPMENT_COMBAT_LOSS_FACTOR = 0.70 -- vanilla 0.70,
 
 -- FUWG/TFB style converts
 NDefines.NMilitary.BATALION_CHANGED_EXPERIENCE_DROP = 0 
