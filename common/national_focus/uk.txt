@@ -128,20 +128,9 @@ focus_tree = {
 				NOT = { has_government = democratic }
 				num_of_factories > 30
 			}
-			NOt = {
+			NOT = {
 				has_war_with = USA
 			}
-			USA = { 
-				has_government = ROOT
-				has_war = no
-				NOT = {
-					OR = {
-						has_idea = undisturbed_isolation
-						has_idea = isolation
-					}
-				}
-			}
-			
 		} 
 		prerequisite = { focus = crypto_bomb_focus }
 		prerequisite = { focus = radar_focus }
