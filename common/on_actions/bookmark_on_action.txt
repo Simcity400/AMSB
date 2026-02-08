@@ -10,7 +10,7 @@ on_actions = {
 
 					add_offsite_building = {
 						type = industrial_complex
-						level = 16
+						level = 20
 					}
 
 					country_event = { 
@@ -23,7 +23,7 @@ on_actions = {
 				SOV = {
 					add_offsite_building = {
 						type = industrial_complex
-						level = 16
+						level = 12
 					}
 				}
 
@@ -40,22 +40,12 @@ on_actions = {
 						receiver = ENG
 						state = 374
 					}
-				}
-			}
-			if = { 
-				limit = {
-					NOT = { country_exists = CHI }
-				}
-
-				WST = {
 					country_event = { 
 						id = msb.3
 						days = 560 
 					} 
 				}
-			
-			}
+			}	
 		}
 	}
 }
-
