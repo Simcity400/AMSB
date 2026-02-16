@@ -266,13 +266,14 @@ NDefines.NMilitary.COMBAT_OVER_WIDTH_PENALTY = -1.5
 NDefines.NGeography.MEDITERRANEAN_SEA_REGIONS = { 15, 29, 68, 69, 168, 169, 202, 253, 294, 295, } -- The sea regions that are considered as part of the Mediterranean sea
 
 -- Air Rework
-NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 1.0   --vanilla 3
-NDefines.NAir.DISRUPTION_FACTOR = 5.5 --cas enters battle at 30+%
+NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 3.0   --vanilla 3
+NDefines.NAir.DISRUPTION_FACTOR = 4 --cas enters battle at 30+% -was 5.5
 NDefines.NAir.AIR_MORE_GROUND_CREWS_COST = 0.0
 NDefines.NAir.COMBAT_MULTIPLANE_CAP = 3					-- How many planes can shoot at each plane on other side ( if there are 100 planes we are atttacking COMBAT_MULTIPLANE_CAP * 100 of our planes can shoot )
 NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.45				-- Higher value = more shot down planes
-NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_CHANCE = 0.08
-NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_FACTOR = 0.5					-- Anti Air Gun Damage factor
+NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_FACTOR = 0.2		-- Vanilla 0.8			-- Anti Air Gun Damage factor
+NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_CHANCE = 0.08       -- vanilla 0.1    -- Anti Air Gun hit chance
+
 -- Bombing Fix
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
 NDefines.NAir.AIR_WING_BOMB_DAMAGE_FACTOR = 0.6 --Chrom Bombing Fix; HMM = 0.6
