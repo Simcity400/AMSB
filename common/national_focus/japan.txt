@@ -5805,6 +5805,7 @@ focus_tree = {
 		}
 
 		available = {
+			date > 1942.1.1
 			
 			has_resources_in_collection = {
 				collection = collection:country_and_all_subjects
@@ -6729,7 +6730,7 @@ focus_tree = {
 				}
 			}
 			add_tech_bonus = {
-				name = FRA_usa_equipement
+				name = JAP_army_at
 				bonus = 0.5
 				uses = 2
 				category = cat_anti_tank
@@ -8559,17 +8560,6 @@ focus_tree = {
 				callsign = Lookout
 				type = fighter_unique
 			}
-
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				mio:JAP_yokosuka_organization = {
-					unlock_mio_trait_tooltip = JAP_mio_trait_type_91_aerial_torpedo_integration
-				}
-			}
-
 		}
 	}
 
@@ -9235,7 +9225,7 @@ focus_tree = {
 		prerequisite = { focus = JAP_the_imperial_defense_plan }
 
 		relative_position_id = JAP_the_imperial_defense_plan
-		x = 9
+		x = 8
 		y = 1
 
 		cost = 5
@@ -9259,66 +9249,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-
-			if = {
-				limit = {
-					282 = {
-						is_fully_controlled_by = ROOT
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-				}
-				282 = {
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
+			536 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
 						type = dockyard
-						level = 3
+						level = 5
 						instant_build = yes
 					}
-				}
 			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_fully_controlled_by = ROOT
-						NOT = {
-							has_state_category = small_island
-							has_state_category = tiny_island
-						}
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}	
-				custom_effect_tooltip = available_mio_tt
-				show_mio_tooltip = JAP_kure_naval_arsenal_organization
-				mio:JAP_kure_naval_arsenal_organization = {
-					add_mio_size = 2
-				}
-			}
-			ELSE = {
-				custom_effect_tooltip = available_designer
-				show_ideas_tooltip = kure_naval_arsenal
-			}
-
 		}
 
 	}
@@ -9337,7 +9275,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
@@ -9535,14 +9473,17 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
 		}
 
 		available = {
-			JAP_naval_faction_is_not_subdued = yes
+			OR = {
+				JAP_naval_faction_is_greater_than_army = yes
+				JAP_naval_faction_is_same_as_army = yes
+			}
 		}
 
 		bypass = {
@@ -9556,25 +9497,21 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_IMPERIAL_INFLUENCE }
 
 		completion_reward = {
-			
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}	
-				mio:JAP_kawasaki_dockyards_organization = {
-					add_mio_size = 1
+			hidden_effect = {
+				JAP_nishizo_tsukahara = {
+					add_skill_level = 5
+					add_coordination = -1
+					add_maneuver = -1
+					remove_unit_leader_trait = old_guard_navy
+					add_unit_leader_trait = blockade_runner
+					add_unit_leader_trait = superior_tactician
 				}
-				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+			custom_effect_tooltip = jap_focus_on_aircraft_carriers
 
-			navy_experience = 50
-
-			add_mastery_bonus = {
-				bonus = 0.25
-				days = 240
-				track = carriers 
-				name = JAP_focus_on_aircraft_carriers
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			navy_experience = 50	
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -9584,26 +9521,14 @@ focus_tree = {
 				ahead_reduction = 1
 				uses = 1
 				category = mio_cat_tech_all_carrier_and_modules
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			random_navy_leader = {	
-				limit = {
-					NOT = {
-						has_trait = air_controller
-					}
-				}	
-				add_trait = { trait = air_controller }
-			}
-			
+			}		
 		}
 
 	}
 
 	focus = {
-		id = JAP_yokosuka_naval_air_technical_arsenal
-		icon = GFX_goal_generic_navy_carrier
+		id = JAP_establish_the_mine_warfare_force
+		icon = GFX_focus_JAP_mine_warfare_force
 		
 		#mutually_exclusive = {
 		#	focus = 
@@ -9622,77 +9547,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_tech = improved_ship_hull_carrier
-			custom_trigger_tooltip = {
-				tooltip = JAP_expand_hiratsuka_navy_arsenal_tt
-				NOT = {
-					has_idea = MTG_naval_treaty_adherent
-				}
-			}
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {
-
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}	
-				mio:JAP_yokosuka_naval_arsenal_organization = {
-					add_mio_funds_gain_factor = 0.15
-				}
-				mio:JAP_yokosuka_organization = {
-					add_mio_funds_gain_factor = 0.15
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.15
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			
-			JAP_add_or_modify_army_and_naval_air_services = yes
-			add_to_variable = { JAP_airforce_sortie_efficiency = 0.05 tooltip = sortie_efficiency_tt }
-		}
-
-	}
-
-	focus = {
-		id = JAP_establish_the_mine_warfare_force
-		icon = GFX_focus_JAP_mine_warfare_force
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_yokosuka_naval_air_technical_arsenal }
-		prerequisite = { focus = JAP_improve_the_type_91_aerial_torpedo }
-
-		relative_position_id = JAP_yokosuka_naval_air_technical_arsenal
-		x = -2
-		y = 1
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			has_tech = magnetic_detonator
-			has_tech = improved_naval_mines
+			JAP_naval_faction_is_at_least_influential = yes
 		}
 
 		bypass = {
@@ -9707,7 +9562,7 @@ focus_tree = {
 
 		completion_reward = {
 			JAP_add_or_modify_imperial_navy = yes
-			add_to_variable = { JAP_navy_naval_torpedo_hit_chance_factor = 0.05 tooltip = naval_torpedo_hit_chance_factor_tt }
+			add_to_variable = { JAP_navy_naval_torpedo_hit_chance_factor = 0.1 tooltip = naval_torpedo_hit_chance_factor_tt }
 			add_to_variable = { JAP_navy_naval_mine_hit_chance = 0.1 tooltip = naval_mine_hit_chance_tt }
 			add_to_variable = { JAP_navy_naval_mines_damage_factor = 0.1 tooltip = naval_mines_damage_factor_tt }
 		}
@@ -9729,14 +9584,17 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
 		}
 
 		available = {
-			JAP_naval_faction_is_not_subdued = yes
+			OR = {
+				JAP_naval_faction_is_greater_than_army = yes
+				JAP_naval_faction_is_same_as_army = yes
+			}
 		}
 
 		bypass = {
@@ -9750,25 +9608,26 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_IMPERIAL_INFLUENCE }
 
 		completion_reward = {
-			
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}	
-				mio:JAP_yokosuka_naval_arsenal_organization = {
-					add_mio_size = 1
+			hidden_effect = {
+				JAP_jisaburo_ozawa = {
+					add_skill_level = 1
 				}
-				custom_effect_tooltip = generic_skip_one_line_tt
+				JAP_soemu_toyoda = {
+					add_skill_level = 3
+					add_attack = -2
+					add_defense = -2
+					add_maneuver = -1
+					add_coordination = -1
+				}
+				JAP_nishizo_tsukahara = {
+					add_skill_level = 3
+					add_attack = -2
+					add_defense = -2
+					add_maneuver = -1
+					add_coordination = -1
+				}	
 			}
-
-			navy_experience = 50
-
-			add_doctrine_cost_reduction = {
-				name = JAP_balanced_naval_approach
-				cost_reduction = 0.25
-				uses = 2
-				category = naval_doctrine
-			}
+			custom_effect_tooltip = jap_balanced_navy_approach
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -9785,25 +9644,10 @@ focus_tree = {
 				uses = 1
 				category = mio_cat_tech_all_capital_ship_and_modules
 			}
-			
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			random_navy_leader = {	
-				limit = {
-					NOT = {
-						has_trait = air_controller
-					}
-				}	
-				add_trait = { trait = air_controller }
-			}
-			random_navy_leader = {	
-				limit = {
-					NOT = {
-						has_trait = ironside
-					}
-				}	
-				add_trait = { trait = ironside }
-			}
+			navy_experience = 50
 
 		}
 
@@ -9824,14 +9668,17 @@ focus_tree = {
 		x = 3
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
 		}
 
 		available = {
-			JAP_naval_faction_is_not_subdued = yes
+			OR = {
+				JAP_naval_faction_is_greater_than_army = yes
+				JAP_naval_faction_is_same_as_army = yes
+			}
 		}
 
 		bypass = {
@@ -9845,25 +9692,20 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_IMPERIAL_INFLUENCE } 
 
 		completion_reward = {
-			
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
+			hidden_effect = {
+				JAP_soemu_toyoda = {
+					add_skill_level = 5
+					add_coordination = -1
+					add_maneuver = -1
+					remove_unit_leader_trait = old_guard_navy
+					add_unit_leader_trait = blockade_runner
+					add_unit_leader_trait = superior_tactician
 				}	
-				mio:JAP_kure_naval_arsenal_organization = {
-					add_mio_size = 1
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+			custom_effect_tooltip = jap_battleship_initiative
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			navy_experience = 50
-
-			add_mastery_bonus = {
-				bonus = 0.25
-				days = 240
-				track = capital_ships
-				name = JAP_sea_battleship_initiative
-			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -9873,17 +9715,6 @@ focus_tree = {
 				ahead_reduction = 1
 				uses = 1
 				category = mio_cat_tech_all_capital_ship_and_modules
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			random_navy_leader = {	
-				limit = {
-					NOT = {
-						has_trait = ironside
-					}
-				}	
-				add_trait = { trait = ironside }
 			}
 		}
 
@@ -10014,68 +9845,18 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
+			add_tech_bonus = {
+				name = JAP_navy_dd
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}	
 
-			create_equipment_variant = {
-				name = "Akizuki Class"
-				name_group = JAP_DD_HISTORICAL
-				allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-				type = ship_hull_light_2
-				parent_version = 0
-				modules = {
-					fixed_ship_battery_slot = dp_light_battery_2
-					fixed_ship_anti_air_slot = ship_anti_air_2
-					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-					fixed_ship_radar_slot = empty
-					fixed_ship_engine_slot = light_ship_engine_2
-					fixed_ship_torpedo_slot = ship_torpedo_1
-					mid_1_custom_slot = ship_anti_air_2
-					rear_1_custom_slot = ship_depth_charge_1
-					front_1_custom_slot = dp_light_battery_1
-				}
-				design_team = mio:JAP_maizuru_naval_arsenal_organization
-			}
-			
-			add_equipment_production = {
-				equipment = {
-					type = ship_hull_light_2
-					creator = "JAP" 
-					version_name = "Akizuki Class"
-				}
-				name = "Akizuki" 
-				requested_factories = 1
-				progress = 0.5
-				amount = 1
-				industrial_manufacturer = mio:JAP_maizuru_naval_arsenal_organization
-			}
-			add_equipment_production = {
-				equipment = {
-					type = ship_hull_light_2
-					creator = "JAP" 
-					version_name = "Akizuki Class"
-				}
-				name = "Teruzuki" 
-				requested_factories = 1
-				progress = 0.5
-				amount = 1
-				industrial_manufacturer = mio:JAP_maizuru_naval_arsenal_organization
-			}
-			add_equipment_production = {
-				equipment = {
-					type = ship_hull_light_2
-					creator = "JAP" 
-					version_name = "Akizuki Class"
-				}
-				name = "Suzutsuki" 
-				requested_factories = 1
-				progress = 0.5
-				amount = 1
-				industrial_manufacturer = mio:JAP_maizuru_naval_arsenal_organization
-			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			JAP_add_or_modify_imperial_navy = yes
-			add_to_variable = { JAP_navy_navy_anti_air_attack_factor = 0.05 tooltip = navy_anti_air_attack_factor_tt }
+			add_to_variable = { JAP_navy_navy_anti_air_attack_factor = 0.075 tooltip = navy_anti_air_attack_factor_tt }
 
 		}
 
@@ -10108,6 +9889,7 @@ focus_tree = {
 					has_idea = MTG_naval_treaty_adherent
 				}
 			}
+			JAP_naval_faction_is_greater_than_army = yes
 		}
 
 		bypass = {
@@ -10123,7 +9905,7 @@ focus_tree = {
 		completion_reward = {
 			
 			JAP_add_or_modify_army_and_naval_air_services = yes
-			add_to_variable = { JAP_airforce_sortie_efficiency = 0.1 tooltip = sortie_efficiency_tt }
+			add_to_variable = { JAP_airforce_sortie_efficiency = 0.15 tooltip = sortie_efficiency_tt }
 
 		}
 
@@ -10156,6 +9938,7 @@ focus_tree = {
 					has_idea = MTG_naval_treaty_adherent
 				}
 			}
+			JAP_naval_faction_is_at_least_influential = yes
 		}
 
 		bypass = {
@@ -10186,371 +9969,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = JAP_naval_armaments_program
-		icon = GFX_focus_JAP_naval_armaments_program
-
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_form_the_kido_butai focus = JAP_sea_heavier_naval_guns }
-
-		relative_position_id = JAP_form_the_kido_butai
-		x = -2
-		y = 1
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			JAP_naval_faction_is_at_least_influential = yes
-			OR = {
-				AND = {
-					has_tech = improved_ship_hull_carrier
-					has_completed_focus = JAP_focus_on_aircraft_carriers
-				}
-				AND = {
-					has_tech = improved_ship_hull_carrier
-					is_special_project_completed = sp:sp_naval_super_heavy_battleship
-					has_completed_focus = JAP_balanced_naval_approach
-				}
-				AND = {
-					is_special_project_completed = sp:sp_naval_super_heavy_battleship
-					has_completed_focus = JAP_sea_battleship_initiative	
-				}
-			}
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_IMPERIAL_INFLUENCE }
-
-		completion_reward = {
-
-			add_breakthrough_progress = {
-				specialization = specialization_naval
-				value = 0.25
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			IF = {
-				limit = {
-					NOT = {
-						has_completed_focus = JAP_focus_on_aircraft_carriers
-						has_completed_focus = JAP_balanced_naval_approach
-						has_completed_focus = JAP_sea_battleship_initiative
-					}
-				}
-				custom_effect_tooltip = JAP_naval_armaments_program_tt
-			}
-			ELSE_IF = {
-				limit = {
-					has_completed_focus = JAP_focus_on_aircraft_carriers
-				}
-				create_equipment_variant = {
-					name = "Shokaku Class"				
-					name_group = JAP_CV_HISTORICAL
-					type = ship_hull_carrier_2
-					modules = {
-						fixed_ship_deck_slot_1 = ship_deck_space
-						fixed_ship_deck_slot_2 = ship_deck_space
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_engine_slot = carrier_ship_engine_3
-						fixed_ship_secondaries_slot = empty
-						front_1_custom_slot = ship_deck_space
-						mid_1_custom_slot = ship_armor_carrier_deck
-					}
-					design_team = mio:JAP_yokosuka_naval_arsenal_organization
-				}
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_2
-						creator = "JAP"
-						version_name = "Shokaku Class"
-					}
-					name = "Shokaku"
-					requested_factories = 1
-					progress = 0.75
-					amount = 1
-					industrial_manufacturer = mio:JAP_yokosuka_naval_arsenal_organization
-				}
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_2
-						creator = "JAP"
-						version_name = "Shokaku Class"
-					}
-					name = "Zaikaku"
-					requested_factories = 1
-					progress = 0.75
-					amount = 1
-					industrial_manufacturer = mio:JAP_yokosuka_naval_arsenal_organization
-				}
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_2
-						creator = "JAP"
-						version_name = "Shokaku Class"
-					}
-					name = "Jun'yō" 
-					requested_factories = 1
-					progress = 0.75
-					amount = 1
-					industrial_manufacturer = mio:JAP_yokosuka_naval_arsenal_organization
-				}
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_2
-						creator = "JAP"
-						version_name = "Shokaku Class"
-					}
-					name = "Katsuragi" 
-					requested_factories = 1
-					progress = 0.5
-					amount = 1
-					industrial_manufacturer = mio:JAP_yokosuka_naval_arsenal_organization
-				}
-			}
-			ELSE_IF = {
-				limit = {
-					has_completed_focus = JAP_balanced_naval_approach
-				}
-				create_equipment_variant = {
-					name = "Shokaku Class"				
-					name_group = JAP_CV_HISTORICAL
-					type = ship_hull_carrier_2
-					modules = {
-						fixed_ship_deck_slot_1 = ship_deck_space
-						fixed_ship_deck_slot_2 = ship_deck_space
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_engine_slot = carrier_ship_engine_3
-						fixed_ship_secondaries_slot = empty
-						front_1_custom_slot = ship_deck_space
-						mid_1_custom_slot = ship_armor_carrier_deck
-					}
-					design_team = mio:JAP_yokosuka_naval_arsenal_organization
-				}
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_2
-						creator = "JAP"
-						version_name = "Shokaku Class"
-					}
-					name = "Shokaku"
-					requested_factories = 1
-					progress = 0.75
-					amount = 1
-					industrial_manufacturer = mio:JAP_yokosuka_naval_arsenal_organization
-				}
-				add_equipment_production = {
-					equipment = {
-						type = ship_hull_carrier_2
-						creator = "JAP"
-						version_name = "Shokaku Class"
-					}
-					name = "Zaikaku"
-					requested_factories = 1
-					progress = 0.75
-					amount = 1
-					industrial_manufacturer = mio:JAP_yokosuka_naval_arsenal_organization
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				create_equipment_variant = {
-					name = "Yamato Class"
-					type = ship_hull_super_heavy_1
-					name_group = JAP_BB_HISTORICAL
-					parent_version = 0
-					allow_without_tech = yes #Makes no difference since focus grants appropriate tech (above), but it improves tooltip
-					modules = {
-						fixed_ship_battery_slot = ship_super_heavy_battery_1
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_fire_control_system_slot = ship_fire_control_system_1
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = heavy_ship_engine_2
-						fixed_ship_secondaries_slot = ship_secondaries_2
-						fixed_ship_armor_slot = ship_armor_shbb
-						front_1_custom_slot = ship_anti_air_1
-						front_2_custom_slot = empty
-						mid_1_custom_slot = empty
-						mid_2_custom_slot = ship_secondaries_2
-						mid_3_custom_slot = ship_secondaries_2
-						rear_1_custom_slot = ship_super_heavy_battery_1
-						rear_2_custom_slot = ship_airplane_launcher_1
-					}
-					design_team = mio:JAP_kure_naval_arsenal_organization
-				}
-				#custom_effect_tooltip = JAP_yamato_tt
-				#hidden_effect = {
-					add_equipment_production = {
-						equipment = {
-							type = ship_hull_super_heavy_1
-							creator = "JAP" 
-							version_name = "Yamato Class"
-						}
-						name = "Yamato" 
-						requested_factories = 1
-						progress = 0.75
-						amount = 1
-						industrial_manufacturer = mio:JAP_kure_naval_arsenal_organization
-					}
-					add_equipment_production = {
-						equipment = {
-							type = ship_hull_super_heavy_1
-							creator = "JAP" 
-							version_name = "Yamato Class"
-						}
-						name = "Musashi" 
-						requested_factories = 1
-						progress = 0.75
-						amount = 1
-						industrial_manufacturer = mio:JAP_kure_naval_arsenal_organization
-					}
-				#}
-			}
-			ELSE = {
-				create_equipment_variant = {
-					name = "Yamato Class"
-					type = ship_hull_super_heavy_1
-					name_group = JAP_BB_HISTORICAL
-					parent_version = 0
-					allow_without_tech = yes #Makes no difference since focus grants appropriate tech (above), but it improves tooltip
-					modules = {
-						fixed_ship_battery_slot = ship_super_heavy_battery_1
-						fixed_ship_anti_air_slot = ship_anti_air_2
-						fixed_ship_fire_control_system_slot = ship_fire_control_system_1
-						fixed_ship_radar_slot = empty
-						fixed_ship_engine_slot = heavy_ship_engine_2
-						fixed_ship_secondaries_slot = ship_secondaries_2
-						fixed_ship_armor_slot = ship_armor_shbb
-						front_1_custom_slot = ship_anti_air_1
-						front_2_custom_slot = empty
-						mid_1_custom_slot = empty
-						mid_2_custom_slot = ship_secondaries_2
-						mid_3_custom_slot = ship_secondaries_2
-						rear_1_custom_slot = ship_super_heavy_battery_1
-						rear_2_custom_slot = ship_airplane_launcher_1
-					}
-					design_team = mio:JAP_kure_naval_arsenal_organization
-				}
-				#custom_effect_tooltip = JAP_yamato_tt
-				#hidden_effect = {
-					add_equipment_production = {
-						equipment = {
-							type = ship_hull_super_heavy_1
-							creator = "JAP" 
-							version_name = "Yamato Class"
-						}
-						name = "Yamato" 
-						requested_factories = 1
-						progress = 0.75
-						amount = 1
-						industrial_manufacturer = mio:JAP_kure_naval_arsenal_organization
-					}
-					add_equipment_production = {
-						equipment = {
-							type = ship_hull_super_heavy_1
-							creator = "JAP" 
-							version_name = "Yamato Class"
-						}
-						name = "Musashi" 
-						requested_factories = 1
-						progress = 0.75
-						amount = 1
-						industrial_manufacturer = mio:JAP_kure_naval_arsenal_organization
-					}
-					add_equipment_production = {
-						equipment = {
-							type = ship_hull_super_heavy_1
-							creator = "JAP" 
-							version_name = "Yamato Class"
-						}
-						name = "Shinano"
-						requested_factories = 1
-						progress = 0.75
-						amount = 1
-						industrial_manufacturer = mio:JAP_kure_naval_arsenal_organization
-					}
-					add_equipment_production = {
-						equipment = {
-							type = ship_hull_super_heavy_1
-							creator = "JAP" 
-							version_name = "Yamato Class"
-						}
-						name = "Nara" 
-						requested_factories = 1
-						progress = 0.5
-						amount = 1
-						industrial_manufacturer = mio:JAP_kure_naval_arsenal_organization
-					}
-				#}
-			}
-
-		}
-
-	}
-
-	focus = {
-		id = JAP_radio_guided_missiles
-		icon = GFX_focus_JAP_radio_guided_missiles
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_naval_armaments_program }
-		prerequisite = { focus = JAP_rockets_development }
-
-		relative_position_id = JAP_naval_armaments_program
-		x = -1
-		y = 2
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {
-			
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.75
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			JAP_add_or_modify_advanced_weapon_projects = yes
-			add_to_variable = { JAP_advanced_weapons_sp_tag_rocket_speed_factor = 0.1 tooltip = sp_tag_rocket_speed_factor_tt }
-
-		}
-
-	}
-
-	focus = {
 		id = JAP_assure_superior_naval_quality
 		icon = GFX_focus_JAP_assure_superior_naval_quality
 		
@@ -10561,8 +9979,8 @@ focus_tree = {
 		prerequisite = { focus = JAP_form_the_kido_butai focus = JAP_sea_heavier_naval_guns }
 
 		relative_position_id = JAP_form_the_kido_butai
-		x = 0
-		y = 1
+		x = -1
+		y = 3
 
 		cost = 5
 
@@ -10571,7 +9989,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_war_with_major = yes
 			JAP_naval_faction_is_at_least_influential = yes
 		}
 
@@ -10589,7 +10006,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = JAP_assure_superior_naval_quality
-				bonus = 0.33
+				bonus = 0.5
 				uses = 2
 				category = naval_armor
 			}	
@@ -10597,7 +10014,8 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			JAP_add_or_modify_imperial_navy = yes
-			add_to_variable = { JAP_navy_navy_org_factor = 0.05 tooltip = navy_org_factor_tt }
+			add_to_variable = { JAP_navy_naval_agility_factor = 0.05 tooltip = naval_agility_factor_tt }
+			add_to_variable = { JAP_navy_navy_org_factor = 0.1 tooltip = navy_org_factor_tt }
 			add_to_variable = { JAP_navy_experience_gain_navy_unit_factor = 0.05 tooltip = experience_gain_navy_unit_factor_tt }
 		}
 	}
@@ -10613,8 +10031,8 @@ focus_tree = {
 		prerequisite = { focus = JAP_form_the_kido_butai focus = JAP_sea_heavier_naval_guns }
 
 		relative_position_id = JAP_form_the_kido_butai
-		x = 2
-		y = 1
+		x = 3
+		y = 3
 
 		cost = 5
 
@@ -10623,7 +10041,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_war_with_major = yes
 			JAP_naval_faction_is_at_least_influential = yes
 		}
 
@@ -10648,8 +10065,8 @@ focus_tree = {
 			}
 
 			JAP_add_or_modify_early_industrialization = yes
-			add_to_variable = { JAP_industry_industrial_capacity_dockyard = 0.05 tooltip = industrial_capacity_dockyard_tt }
-			add_to_variable = { JAP_industry_production_speed_dockyard_factor = 0.1 tooltip = production_speed_dockyard_factor_tt }
+			add_to_variable = { JAP_industry_industrial_capacity_dockyard = 0.10 tooltip = industrial_capacity_dockyard_tt }
+			add_to_variable = { JAP_industry_production_speed_dockyard_factor = 0.15 tooltip = production_speed_dockyard_factor_tt }
 
 		}
 
@@ -10666,7 +10083,7 @@ focus_tree = {
 		prerequisite = { focus = JAP_form_the_kido_butai focus = JAP_sea_heavier_naval_guns }
 
 		relative_position_id = JAP_form_the_kido_butai
-		x = 4
+		x = 1
 		y = 1
 
 		cost = 5
@@ -10676,7 +10093,6 @@ focus_tree = {
 		}
 
 		available = {
-			JAP_naval_faction_is_at_least_influential = yes
 		}
 
 		bypass = {
@@ -10690,48 +10106,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_IMPERIAL_INFLUENCE }
 
 		completion_reward = {
-			if = {
-				limit = {
-					531 = {
-						is_fully_controlled_by = ROOT
-						free_building_slots = {
-							building = dockyard
-							size > 1
-							include_locked = yes
-						}
-					}
-				}
-				531 = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
+			536 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
 						type = dockyard
-						level = 2
+						level = 5
 						instant_build = yes
 					}
-				}
-			}
-			else = {
-				random_core_state = {
-					limit = {
-						is_fully_controlled_by = ROOT
-						is_coastal = yes
-						NOT = {
-							has_state_category = small_island
-							has_state_category = tiny_island
-						}
-						free_building_slots = {
-							building = dockyard
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = dockyard
-						level = 2
-						instant_build = yes
-					}
-				}
 			}
 		}
 	}
@@ -10750,14 +10131,14 @@ focus_tree = {
 		x = 0
 		y = 1
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 3
 		}
 
 		available = {
-			
+			JAP_naval_faction_is_at_least_influential = yes
 		}
 
 		bypass = {
@@ -10779,48 +10160,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = JAP_secure_the_sea_lanes
-		icon = GFX_goal_generic_navy_anti_submarine
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_naval_armaments_program focus = JAP_assure_superior_naval_quality focus = JAP_seek_strength_in_numbers focus = JAP_nationalize_suzuka_naval_arsenal }
-
-		relative_position_id = JAP_seek_strength_in_numbers
-		x = -2
-		y = 1
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			has_war_with_major = yes
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { }
-
-		completion_reward = {
-			JAP_add_or_modify_imperial_navy = yes
-			add_to_variable = { JAP_navy_naval_detection = 0.05 tooltip = naval_detection_tt }
-			add_to_variable = { JAP_navy_convoy_escort_efficiency = 0.1 tooltip = convoy_escort_efficiency_tt }
-		}
-
-	}
-
-	focus = {
 		id = JAP_fix_flawed_naval_designs
 		icon = GFX_focus_generic_navy_research_bonus
 		
@@ -10828,10 +10167,10 @@ focus_tree = {
 		#	focus = 
 		#}
 
-		prerequisite = { focus = JAP_naval_armaments_program focus = JAP_assure_superior_naval_quality focus = JAP_seek_strength_in_numbers focus = JAP_nationalize_suzuka_naval_arsenal }
+		prerequisite = { focus = JAP_assure_superior_naval_quality focus = JAP_seek_strength_in_numbers }
 
 		relative_position_id = JAP_seek_strength_in_numbers
-		x = 0
+		x = -2
 		y = 1
 
 		cost = 5
@@ -10857,186 +10196,9 @@ focus_tree = {
 		completion_reward = {
 			JAP_add_or_modify_imperial_navy = yes
 			add_to_variable = { JAP_navy_naval_accidents_chance = -0.1 tooltip = naval_accidents_chance_tt }
+			add_to_variable = { JAP_navy_naval_detection = 0.05 tooltip = naval_detection_tt }
+			add_to_variable = { JAP_navy_convoy_escort_efficiency = 0.1 tooltip = convoy_escort_efficiency_tt }
 		}
-	}
-
-	focus = {
-		id = JAP_f_go_nuclear_project
-		icon = GFX_focus_JAP_f_go_nuclear_project
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_fix_flawed_naval_designs }
-		prerequisite = { focus = JAP_secure_the_sea_lanes }
-
-		relative_position_id = JAP_fix_flawed_naval_designs
-		x = -1
-		y = 1
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			has_war_with_major = yes
-			JAP_naval_faction_is_at_least_influential = yes
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_IMPERIAL_INFLUENCE }
-
-		completion_reward = {
-
-			IF = {
-				limit = {
-					NOT = { has_completed_focus = JAP_ni_go_nuclear_project }
-				}
-				add_tech_bonus = {
-					name = JAP_f_go_nuclear_project
-					bonus = 0.25
-					uses = 1
-					category = nuclear
-				}
-				add_breakthrough_progress = {
-					specialization = specialization_nuclear
-					value = 0.15
-				}
-			}
-			ELSE = {
-				add_tech_bonus = {
-					name = JAP_f_go_nuclear_project
-					bonus = 1
-					uses = 1
-					category = nuclear
-				}
-				add_breakthrough_progress = {
-					specialization = specialization_nuclear
-					value = 0.5
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			JAP_add_or_modify_advanced_weapon_projects = yes
-			add_to_variable = { JAP_advanced_weapons_sp_nuclear_engines_speed_factor = 0.25 tooltip = sp_nuclear_engines_speed_factor_tt }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			JAP_small_naval_faction_gain = yes
-
-		}
-
-	}
-
-	focus = {
-		id = JAP_combined_nuclear_research_efforts
-		icon = GFX_focus_wonderweapons
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_f_go_nuclear_project }
-		prerequisite = { focus = JAP_ni_go_nuclear_project }
-
-		relative_position_id = JAP_f_go_nuclear_project
-		x = -9
-		y = 1
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			JAP_naval_faction_is_same_as_army = yes
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-
-		completion_reward = {
-			add_breakthrough_progress = {
-				specialization = specialization_nuclear
-				value = 1
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			JAP_add_or_modify_advanced_weapon_projects = yes
-			add_to_variable = { JAP_advanced_weapons_production_speed_nuclear_reactor_factor = 0.15 tooltip = production_speed_nuclear_reactor_factor_tt }
-		}
-	}
-
-	focus = {
-		id = JAP_end_the_interservice_rivalry
-		icon = GFX_focus_JAP_end_the_interservice_rivalry
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_combined_nuclear_research_efforts }
-
-		relative_position_id = JAP_combined_nuclear_research_efforts
-		x = 0
-		y = 1
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			JAP_naval_faction_is_same_as_army = yes
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_IMPERIAL_INFLUENCE }
-
-		completion_reward = {
-
-			add_war_support = 0.1
-			add_command_power = 50
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			custom_effect_tooltip = JAP_end_the_interservice_rivalry_tt
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			
-			JAP_army_faction_swap_away_from_interservice_rivalry_effect = yes
-			JAP_naval_faction_swap_away_from_interservice_rivalry_effect = yes
-			
-		}
-
 	}
 
 	
