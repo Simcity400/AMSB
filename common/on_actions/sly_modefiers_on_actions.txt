@@ -101,10 +101,10 @@ on_actions = {
 					check_variable = { global.war_of_gazala_modifier_attack_factor_var < 0 }
 				}
 				# Increase by +0.05% each month
-				add_to_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0.05 }
+				add_to_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0.083 }
 				if = {
 					limit = {
-						check_variable = { global.war_of_gazala_modifier_attack_factor_var = 0 }
+						check_variable = { global.war_of_gazala_modifier_attack_factor_var >= 0 }
 					}
 					# When it hits 0 or above, clean up because we don't want to get stats in africa bruh
 					set_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0 }
