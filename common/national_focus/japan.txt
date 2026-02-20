@@ -4581,7 +4581,7 @@ focus_tree = {
 		}
 		
 		relative_position_id = JAP_sea_purge_the_kodoha_faction
-		x = 10
+		x = 12
 		y = 0
 
 
@@ -5922,7 +5922,7 @@ focus_tree = {
 		prerequisite = { focus = JAP_ministry_of_commerce_and_industry }
 
 		relative_position_id = JAP_ministry_of_commerce_and_industry
-		x = -3
+		x = -4
 		y = 1
 
 		cost = 5
@@ -6094,8 +6094,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = JAP_manchuria_five_year_plan
-		icon = GFX_focus_jap_manchurian_project
+		id = JAP_improve_agricultural_output
+		icon = GFX_focus_generic_modernizing_agriculture
 		
 		#mutually_exclusive = {
 		#	focus = 
@@ -6114,13 +6114,127 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				has_subject = MAN
-				any_controlled_state = {
-					is_core_of = MAN
-					is_fully_controlled_by = ROOT
+			524 = {
+				state_is_fully_controlled_by_ROOT_or_subject = yes
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+
+			524 = {
+				add_extra_state_shared_building_slots = 2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			JAP_add_or_modify_early_industrialization = yes
+
+			add_to_variable = { JAP_industry_consumer_goods_factor = -0.05 tooltip = consumer_goods_factor_tt }
+
+		}
+
+	}	
+	
+	focus = {
+		id = JAP_upgrade_the_oriental_development_company
+		icon = GFX_focus_JAP_upgrade_the_oriental_development_company
+		
+		#mutually_exclusive = {
+		#	focus = 
+		#}
+
+		prerequisite = { focus = JAP_improve_agricultural_output }
+		prerequisite = { focus = JAP_increase_crop_yields }
+
+		relative_position_id = JAP_improve_agricultural_output
+		x = 0
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
+
+		completion_reward = {
+			
+			IF = {
+				limit = {
+					has_idea = oriental_development_company
+				}
+				swap_ideas = {
+					remove_idea = oriental_development_company
+					add_idea = oriental_development_company_upgraded
 				}
 			}
+			ELSE = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = oriental_development_company
+						add_idea = oriental_development_company_upgraded
+					}
+				}
+			}
+			
+			524 = {
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 12027
+					}
+				}
+			}
+
+		}
+	}
+
+	focus = {
+		id = JAP_manchuria_five_year_plan
+		icon = GFX_focus_jap_manchurian_project
+		
+		#mutually_exclusive = {
+		#	focus = 
+		#}
+
+		prerequisite = { focus = JAP_ministry_of_colonial_affairs }
+
+		relative_position_id = JAP_ministry_of_colonial_affairs
+		x = -2
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
 		}
 
 		bypass = {
@@ -6150,6 +6264,24 @@ focus_tree = {
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+			every_state = {
+				limit = {
+					is_controlled_by = JAP
+					is_core_of = CHI
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 
 			IF = {
 				limit = {
@@ -6171,23 +6303,6 @@ focus_tree = {
 					has_subject = MAN
 				}
 				MAN  = {
-					every_core_state = {
-						limit = {
-							is_fully_controlled_by = PREV
-							free_building_slots = {
-								building = industrial_complex
-								size > 1
-								include_locked = yes
-							}
-						}
-						random_select_amount = 2
-						add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
 				}
 			}
 			ELSE = {
@@ -6216,101 +6331,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = JAP_establish_manchuria_airplane_manufacturing_company
-		icon = GFX_focus_JAP_manchuria_airplane_manufacturing_company
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_manchuria_five_year_plan }
-
-		relative_position_id = JAP_manchuria_five_year_plan
-		x = 1
-		y = 1
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			OR = {
-				has_subject = MAN
-				any_controlled_state = {
-					is_core_of = MAN
-				}
-			}
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY }
-
-		completion_reward = {
-			if = {
-				limit = {
-					has_subject = MAN
-				}
-				MAN  = {
-					every_core_state = {
-						limit = {
-							is_fully_controlled_by = PREV
-							free_building_slots = {
-								building = arms_factory
-								size > 1
-								include_locked = yes
-							}
-						}
-						random_select_amount = 2
-						add_extra_state_shared_building_slots = 2
-						add_building_construction = {
-							type = arms_factory
-							level = 2
-							instant_build = yes
-						}
-					}
-					add_breakthrough_progress = {
-						specialization = specialization_air
-						value = 0.15
-					}
-					
-				}
-			}
-			else = {
-				random_controlled_state = {
-					limit = {
-						is_core_of = MAN
-						is_fully_controlled_by = ROOT
-						free_building_slots = {
-							building = arms_factory
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				add_breakthrough_progress = {
-					specialization = specialization_air
-					value = 0.15
-				}
-			}
-		}
-	}
-
-	focus = {
 		id = JAP_eastern_road_and_steel_expansion
 		icon = GFX_focus_generic_road_investment
 		
@@ -6321,7 +6341,7 @@ focus_tree = {
 		prerequisite = { focus = JAP_manchuria_five_year_plan }
 
 		relative_position_id = JAP_manchuria_five_year_plan
-		x = -1
+		x = 0
 		y = 1
 
 		cost = 10
@@ -6359,8 +6379,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_HISTORICAL }
 
-		completion_reward = {
-
+		completion_reward = {			
 			328 = {
 				add_resource = {
 					type = aluminium
@@ -6375,233 +6394,17 @@ focus_tree = {
 					amount = 6
 				}
 			}
-
-			IF = {
-				limit = {
-					328 = { #Kirin
-						infrastructure < 5
-					}
-				}
-				328 = {
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-
-			IF = {
-				limit = {
-					has_subject = MAN
-				}
-				MAN = {
-					IF = {
-						limit = {
-							controls_state = 328
-							controls_state = 715
-							controls_state = 716
-						}
-						build_railway = { #in Kirin
-							path = { 4572 }
-						}
-						build_railway = { #in Liaoning
-							path = { 916 4642 4572 }
-						}
-						build_railway = { #in Liaotung
-							path = { 11808 }
-						}
-					}
-					ELSE_IF = {
-						limit = {
-							controls_state = 328
-							controls_state = 717
-						}
-						build_railway = { #in Kirin
-							path = { 4572 7663 9913 9928 }
-						}
-						build_railway = { #in Sungkiang
-							path = { 11893 6964 9897 }
-						}
-					}
-					IF = {
-						limit = {
-							controls_state = 716
-						}
-						build_railway = { #Mukden-Korean border
-							path = { 11771 9885 3895 3839 3970 6981 }
-						}
-						build_railway = { #Mukden - Dalian
-							path = { 11771 987 9781 11764 964 3783 6851 1150 }
-						}
-					}
-					IF = {
-						limit = {
-							controls_state = 716
-							controls_state = 610
-						}
-						build_railway = { #Mukden - Chinese border
-							path = { 11771 6951 11815 9835 6837 11886 3900 }
-						}
-					}
-				}
-			}
-			ELSE = {
-				IF = {
-					limit = {
-						controls_state = 716
-					}
-					build_railway = { #Mukden-Korean border
-						path = { 11771 9885 3895 3839 3970 6981	}
-					}
-					build_railway = { #Mukden - Dalian
-						path = { 11771 987 9781 11764 964 3783 6851 1150 }
-					}
-				}
-				IF = {
-					limit = {
-						controls_state = 716
-						controls_state = 610
-					}
-					build_railway = { #Mukden - Chinese border
-						path = { 11771 6951 11815 9835 6837 11886 3900 }
-					}
-				}
-			}
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = JAP_yosuke_matsuoka
 
-		}
-
-	}
-
-	focus = {
-		id = JAP_sea_promote_japanese_settlement
-		icon = GFX_focus_JAP_promote_japanese_settlement
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_eastern_road_and_steel_expansion focus = JAP_establish_manchuria_airplane_manufacturing_company }
-
-		relative_position_id = JAP_eastern_road_and_steel_expansion
-		x = 0
-		y = 1
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			715 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
-			610 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
-			328 = { state_is_fully_controlled_by_ROOT_or_subject = yes }
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-		completion_reward = {
-
-			715 = { add_extra_state_shared_building_slots = 2 }
-			610 = { add_extra_state_shared_building_slots = 2 }
-			328 = { add_extra_state_shared_building_slots = 2 }
-
 			custom_effect_tooltip = generic_skip_one_line_tt
-
 			JAP_add_or_modify_early_industrialization = yes
+			add_to_variable = { JAP_industry_consumer_goods_factor = -0.05 tooltip = consumer_goods_factor_tt }
 
-			add_to_variable = { JAP_industry_consumer_goods_factor = -0.1 tooltip = consumer_goods_factor_tt }
 
-		}
-
-	}
-
-	focus = {
-		id = JAP_construct_the_sui_ho_dam
-		icon = GFX_focus_IRQ_construct_the_kut_barrage
-		
-		#mutually_exclusive = {
-		#	focus = 
-		#}
-
-		prerequisite = { focus = JAP_eastern_road_and_steel_expansion focus = JAP_establish_manchuria_airplane_manufacturing_company }
-
-		relative_position_id = JAP_eastern_road_and_steel_expansion
-		x = 2
-		y = 1
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			716 = {
-				state_is_fully_controlled_by_ROOT_or_subject = yes
-			}
-		}
-
-		bypass = {
-			
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY }
-
-		completion_reward = {
-
-			JAP_add_or_modify_early_industrialization = yes
-
-			add_to_variable = { JAP_industry_consumer_goods_factor = -0.1 tooltip = consumer_goods_factor_tt }
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			IF = {
-				limit = {
-					MAN = {
-						exists = yes
-						is_ally_with = ROOT
-					}
-				}
-				MAN = {
-					add_ideas = MAN_hydroelectric_power
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-
-			716 = {
-				add_building_construction = {
-					type = dam
-					level = 1
-					instant_build = yes
-					province = 6860
-				}
-			}
-			custom_effect_tooltip = {
-				localization_key = building_state_modifier|dam
-				INDENT = "    "
-			}
-
-			
-			
 		}
 
 	}
@@ -6619,7 +6422,7 @@ focus_tree = {
 		}
 		
 		relative_position_id = JAP_ministry_of_commerce_and_industry
-		x = 22
+		x = 23
 		y = 0
 
 		cost = 3 #This times perfect with the Kodoha Coup event
@@ -10200,10 +10003,132 @@ focus_tree = {
 			add_to_variable = { JAP_navy_convoy_escort_efficiency = 0.1 tooltip = convoy_escort_efficiency_tt }
 		}
 	}
-
 	
+	focus = {
+		id = JAP_build_up_korean_industries
+		icon = GFX_focus_JAP_build_up_korean_industries
+
+		#mutually_exclusive = {
+		#	focus = 
+		#}
+
+		prerequisite = { focus = JAP_ministry_of_colonial_affairs }
+
+		relative_position_id = JAP_ministry_of_colonial_affairs
+		x = 2
+		y = 1
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			OR = {
+				has_subject = KOR
+				any_controlled_state = {
+					is_core_of = KOR
+					is_fully_controlled_by = ROOT
+				}
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
+
+		completion_reward = {			
+			every_controlled_state = {
+				limit = {
+					is_core_of = KOR
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+	}
+
+	focus = {
+		id = JAP_increase_agricultural_export
+		icon = GFX_focus_generic_agricultural_subsidies
+		
+		#mutually_exclusive = {
+		#	focus = 
+		#}
+
+		prerequisite = { focus = JAP_build_up_korean_industries }
+
+		relative_position_id = JAP_build_up_korean_industries
+		x = 0
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			OR = {
+				has_subject = KOR
+				any_controlled_state = {
+					is_core_of = KOR
+					is_fully_controlled_by = ROOT
+				}
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+
+		completion_reward = {
 
 
+			every_controlled_state = {
+				limit = {
+					is_core_of = KOR
+					is_fully_controlled_by = ROOT
+					has_state_category = town
+				}
+				add_extra_state_shared_building_slots = 2
+				add_dynamic_modifier = { modifier = JAP_regional_development }
+			}
+			
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			JAP_add_or_modify_early_industrialization = yes
+
+			add_to_variable = { JAP_industry_consumer_goods_factor = -0.1 tooltip = consumer_goods_factor_tt }
+
+		}
+	}
 
 
 
