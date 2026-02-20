@@ -14889,7 +14889,7 @@ SOV_soviet_civil_war_dec_cat = {
 		visible = {
 			OR = {
 				FROM = { has_state_flag = SOV_exiles_state }
-				FROM = { is_owned_by = MAN}
+				FROM = { is_owned_by = JAP}
 			}
 			NOT = { has_global_flag = SOV_soviet_civil_war }
 		}
@@ -14952,7 +14952,7 @@ SOV_soviet_civil_war_dec_cat = {
 		visible = {
 			OR = {
 				FROM = { has_state_flag = SOV_exiles_state }
-				FROM = { is_owned_by = MAN}
+				FROM = { is_owned_by = JAP}
 			}
 			has_completed_focus = SOV_approach_semyonov
 			NOT = { has_global_flag = SOV_soviet_civil_war }
@@ -17659,22 +17659,17 @@ operations = {
 
 		available = {
 			JAP = { has_completed_focus = JAP_pre_emptive_coup }
-			MAN = { is_puppet = no }
-			NOT = {
-				has_war_with = MAN
-			}
 		}
 
 		cost = 25
 		fire_only_once = yes
 		visible = {
 			JAP = { has_completed_focus = JAP_strengthen_civilian_government }
-			MAN = { exists = yes }
 		}
 
 		complete_effect = {
 			create_wargoal = {
-				target = MAN
+				target = JAP
 				type = annex_everything
 			}
 		}
@@ -17682,7 +17677,7 @@ operations = {
 		ai_will_do = {
 			base = 1
 			modifier = {
-				MAN = {
+				JAP = {
 					is_ai = no
 				}
 				factor = 0 #we're mean but not that mean
@@ -17714,7 +17709,6 @@ political_actions = {
 					owns_state = 717
 				}
 				AND = {
-					MAN = { is_puppet_of = SOV }
 					owns_state = 610
 					owns_state = 716
 					owns_state = 328
