@@ -53,7 +53,6 @@ operations = {
 				BUL	
 			}
 			complete_effect = {
-                add_ideas = extra_cp
 				SPR = { add_ideas = extra_cp }
 				BUL = {
 					transfer_units_fraction = {
@@ -78,58 +77,6 @@ operations = {
 					limit = {
 						is_core_of = BUL 
 						is_controlled_by = ITA
-					}
-					add_compliance = 100
-				}
-			}
-		}
-	
-	
-		annex_manchukuo = {
-			# icon = generic_operation
-			allowed = {
-				tag = JAP
-			}
-			available = {
-				MAN = {
-					is_ai = yes
-				}
-			}
-			fire_only_once = yes
-			cost = 0
-			ai_will_do = {
-				factor = 0
-			}
-			visible = {
-				tag = JAP
-			}
-			targets = {
-				MAN
-			}
-			complete_effect = {
-				MAN = {
-					transfer_units_fraction = {
-						target = JAP
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
-				JAP = {
-					annex_country = {
-						target = MAN
-						transfer_troops = yes
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = MAN
-						is_controlled_by = JAP
 					}
 					add_compliance = 100
 				}

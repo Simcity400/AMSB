@@ -17,14 +17,7 @@ on_actions = {
 						id = msb.4
 						days = 1825
 					} 
-
-				}
-
-				SOV = {
-					add_offsite_building = {
-						type = industrial_complex
-						level = 12
-					}
+					add_ideas = extra_cp_UK
 				}
 
 				WST = {
@@ -46,6 +39,33 @@ on_actions = {
 					} 
 				}
 			}	
+			if = {
+				limit = {
+					NOT = {country_exists = HUN}
+				}
+				ROM = {
+					give_resource_rights = {
+						receiver = ITA
+						state = 155
+					}
+					give_resource_rights = {
+						receiver = ITA
+						state = 974
+					}
+					give_resource_rights = {
+						receiver = ITA
+						state = 43
+					}
+				}
+			}
+			if = {
+				if = {
+				limit = {
+					NOT = {country_exists = BUL}
+				}
+				SPR = { add_ideas = extra_cp }
+			}
+			}
 		}
 	}
 }

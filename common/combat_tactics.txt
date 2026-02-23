@@ -264,12 +264,7 @@ tactic_shock = { #counters delay
 tactic_tactical_withdrawal = { #counters encirclement
 	is_attacker = no
 	trigger = {
-		is_attacker = no
-		phase = no
-		OR = {
-			skill_advantage > 0
-			has_trait = trickster
-		}
+		always = no
 	}
 	
 	active = no
