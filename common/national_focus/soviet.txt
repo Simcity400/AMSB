@@ -720,9 +720,9 @@ focus_tree = {
 			add_tech_bonus = {
 				name = SOV_shift_to_armaments_production
 				ahead_reduction = 2
-				bonus = 1.0
+				bonus = 1
 				uses = 1
-				category = industry
+				category = dispersed_industry_category
 			}
 		}
 	}
@@ -1025,14 +1025,14 @@ focus_tree = {
 		icon = GFX_sov_stalingrad
 		prerequisite = { focus = SOV_finish_the_five_year_plan }
 		x = 3
-		y = 1
+		y = 1g
 		relative_position_id = SOV_finish_the_five_year_plan
 		cost = 5
 
 		mutually_exclusive = { focus = SOV_foreign_experts }
 
 		available = {
-
+			has_completed_focus = SOV_the_anti_soviet_trotskyist_center
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
@@ -1060,7 +1060,7 @@ focus_tree = {
 		mutually_exclusive = { focus = SOV_national_specialists }
 
 		available = {
-
+			has_completed_focus = SOV_the_zinovyevite_terrorist_center
 		}
 		
 		search_filters = {FOCUS_FILTER_INDUSTRY}
@@ -1469,7 +1469,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-
+			has_completed_focus = SOV_the_anti_soviet_trotskyist_center
 		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -5968,7 +5968,7 @@ focus_tree = {
 			
 			#New
 			hidden_effect = {
-				set_technology = { masterful_blitz = 1 popup = no }
+			    unlock_tactic = tactic_masterful_blitz
 			}
 			custom_effect_tooltip = SOV_the_glory_of_the_red_army_masterful_blitz_tactic_tt
 
