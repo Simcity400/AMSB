@@ -32,13 +32,7 @@ operations = {
 		annex_bulgaria= {
 			# icon = generic_operation
 			allowed = {
-				if = {
-					limit = { USA = { exists = yes } }
-					tag = SPR
-				}
-				else = {
-					tag = ITA
-				}
+
 			}
 			fire_only_once = yes
 			cost = 0
@@ -57,8 +51,12 @@ operations = {
 				}
 			}
             visible = {
-				BUL = {
-					is_ai = yes
+				if = {
+					limit = { USA = { exists = yes } }
+					tag = SPR
+				}
+				else = {
+					tag = ITA
 				}
 			}
 			targets = {
