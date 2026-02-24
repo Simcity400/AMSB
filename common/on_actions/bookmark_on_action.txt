@@ -1,6 +1,24 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			if = {
+				limit = {
+					BUL = {exists = yes}
+					BUL = {is_ai = no}
+					USA = {exists = no}
+				}
+				ITA = {
+					add_offsite_building = {
+						type = industrial_complex
+						level = 11
+					}
+					add_offsite_building = {
+						type = arms_factory
+						level = 15
+					}
+					set_country_flag = italy_no_bulgaia_no_asia
+				}
+			}
 			if = { 
 				limit = {
 					NOT = { country_exists = USA }
@@ -45,15 +63,15 @@ on_actions = {
 				}
 				ROM = {
 					give_resource_rights = {
-						receiver = ITA
+						receiver = SPR
 						state = 155
 					}
 					give_resource_rights = {
-						receiver = ITA
+						receiver = SPR
 						state = 974
 					}
 					give_resource_rights = {
-						receiver = ITA
+						receiver = SPR
 						state = 43
 					}
 				}

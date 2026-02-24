@@ -62,8 +62,28 @@ operations = {
 			targets = {
 				BUL	
 			}
+
 			complete_effect = {
+				hidden_effect = {
+					BUL = {
+						if = {
+							limit = { NOT = {has_completed_focus = BUL_reorganize_the_military_industry_2} }
+							complete_national_focus = BUL_reorganize_the_military_industry_2
+							}
+						}
+					}
 				SPR = { add_ideas = extra_cp }
+				if = {
+					limit = { ITA = { has_country_flag = italy_no_bulgaia_no_asia } }
+					add_offsite_building = {
+						type = industrial_complex
+						level = -11
+					}
+					add_offsite_building = {
+						type = arms_factory
+						level = -15
+					}
+				}
 				if = {
 					limit = { USA = { exists = yes } }
 				BUL = {
