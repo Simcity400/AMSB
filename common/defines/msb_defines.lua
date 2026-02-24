@@ -271,8 +271,7 @@ NDefines.NAir.DISRUPTION_FACTOR = 4 --cas enters battle at 30+% -was 5.5
 NDefines.NAir.AIR_MORE_GROUND_CREWS_COST = 0.0
 NDefines.NAir.COMBAT_MULTIPLANE_CAP = 3					-- How many planes can shoot at each plane on other side ( if there are 100 planes we are atttacking COMBAT_MULTIPLANE_CAP * 100 of our planes can shoot )
 NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.45				-- Higher value = more shot down planes
-NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_FACTOR = 0.2		-- Vanilla 0.8			-- Anti Air Gun Damage factor
-NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_CHANCE = 0.08       -- vanilla 0.1    -- Anti Air Gun hit chance
+NDefines.NMilitary.ANTI_AIR_ATTACK_TO_AMOUNT = 0.0025		--	vanilla	0.005	-- Balancing value to convert equipment stat anti_air_attack to the random % value of airplanes being hit.
 
 -- Bombing Fix
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
