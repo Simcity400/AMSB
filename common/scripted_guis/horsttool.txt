@@ -39,11 +39,10 @@ st_country_powers = {
                 }
             }
             else = {
-                every_country = {
-                    limit = { is_ai = no }
-                    change_tag_from = ROOT.target_switch_var
-                }
-                clear_variable = target_switch_var
+                # FIX: do NOT loop every_country (that causes player-tag roulette).
+				# Switch once: from ROOT (current player country) to the stored country in target_switch_var.
+				var:target_switch_var = { change_tag_from = ROOT }
+				clear_variable = target_switch_var
             }
 			clear_variable = target_country
     		clear_variable = receiver_country
@@ -298,11 +297,10 @@ st_country_powers = {
 					}
 				}
 				else = {
-					every_country = {
-						limit = { is_ai = no }
-						change_tag_from = ROOT.target_switch_var
-					}
-					clear_variable = target_switch_var
+					# FIX: do NOT loop every_country (that causes player-tag roulette).
+				# Switch once: from ROOT (current player country) to the stored country in target_switch_var.
+				var:target_switch_var = { change_tag_from = ROOT }
+				clear_variable = target_switch_var
 				}
 				clear_variable = selected_cheat
 				clr_country_flag = cheating
@@ -478,38 +476,38 @@ st_country_powers = {
 			set_variable = { ROOT.taker = this}
 			var:taker = {
 				owner = { set_variable = { Root.target_country = this }
-					if = { limit= { check_variable = { Root.selected_cheat = 1 } } generic_bonus_1 = yes }
-					if = { limit= { check_variable = { Root.selected_cheat = 2 } } generic_bonus_3 = yes }
-					if = { limit= { check_variable = { Root.selected_cheat = 3 } } generic_bonus_2y = yes }
-					if = { limit= { check_variable = { Root.selected_cheat = 4 } } generic_bonus_999 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 5 } } add_tech_bonus = { name=armor_bonus bonus = 1 uses = 1 category = armor } }
-					if = { limit = { check_variable = { Root.selected_cheat = 6 } } add_tech_bonus = { name=armor_bonus ahead_reduction = 2 uses = 1 category = armor } }
-					if = { limit = { check_variable = { Root.selected_cheat = 7 } } add_tech_bonus = { name=air_equipment bonus = 1 uses = 1 category = air_equipment } }
-					if = { limit = { check_variable = { Root.selected_cheat = 8 } } add_tech_bonus = { name=industry_bonus bonus = 1 uses = 1 category = industry } }
-					if = { limit = { check_variable = { Root.selected_cheat = 9 } } scoped_sound_effect = "earrape_sound_effect" }
-					if = { limit = { check_variable = { Root.selected_cheat = 10 } } army_experience = 50 }
-					if = { limit = { check_variable = { Root.selected_cheat = 11 } } air_experience = 50 }
-					if = { limit = { check_variable = { Root.selected_cheat = 12 } } navy_experience = 50 }
-					if = { limit = { check_variable = { Root.selected_cheat = 13 } } scoped_sound_effect = "schizophrenic_meltdown_sound_effect" }
-					if = { limit = { check_variable = { Root.selected_cheat = 14 } } add_command_power = 25 }
-					if = { limit = { check_variable = { Root.selected_cheat = 15 } } armor_bonus_50 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 16 } } armor_bonus_999 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 17 } } armor_bonus_1y = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 18 } } air_bonus_50 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 19 } } air_bonus_1y = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 20 } } air_bonus_2y = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 21 } } air_bonus_999 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 22 } } industry_bonus_50 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 23 } } industry_bonus_1y = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 24 } } industry_bonus_2y = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 25 } } industry_bonus_999 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 26 } } naval_bonus_50 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 27 } } naval_bonus_100 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 28 } } naval_bonus_999 = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 29 } } naval_bonus_1y = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 30 } } naval_bonus_2y = yes }
-					if = { limit = { check_variable = { Root.selected_cheat = 31 } } add_equipment_to_stockpile = { type = convoy_1 amount = 100 } }
-					if = { limit = { check_variable = { Root.selected_cheat = 32 } } add_fuel = 50000 }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 1 } } } generic_bonus_1 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 2 } } } generic_bonus_3 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 3 } } } generic_bonus_2y = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 4 } } } generic_bonus_999 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 5 } } } add_tech_bonus = { name=armor_bonus bonus = 1 uses = 1 category = armor } }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 6 } } } add_tech_bonus = { name=armor_bonus ahead_reduction = 2 uses = 1 category = armor } }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 7 } } } add_tech_bonus = { name=air_equipment bonus = 1 uses = 1 category = air_equipment } }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 8 } } } add_tech_bonus = { name=industry_bonus bonus = 1 uses = 1 category = industry } }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 9 } } } scoped_sound_effect = "earrape_sound_effect" }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 10 } } } army_experience = 50 }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 11 } } } air_experience = 50 }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 12 } } } navy_experience = 50 }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 13 } } } scoped_sound_effect = "schizophrenic_meltdown_sound_effect" }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 14 } } } add_command_power = 25 }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 15 } } } armor_bonus_50 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 16 } } } armor_bonus_999 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 17 } } } armor_bonus_1y = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 18 } } } air_bonus_50 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 19 } } } air_bonus_1y = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 20 } } } air_bonus_2y = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 21 } } } air_bonus_999 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 22 } } } industry_bonus_50 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 23 } } } industry_bonus_1y = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 24 } } } industry_bonus_2y = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 25 } } } industry_bonus_999 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 26 } } } naval_bonus_50 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 27 } } } naval_bonus_100 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 28 } } } naval_bonus_999 = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 29 } } } naval_bonus_1y = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 30 } } } naval_bonus_2y = yes }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 31 } } } add_equipment_to_stockpile = { type = convoy_1 amount = 100 } }
+					if = { limit = { ROOT = { check_variable = { Root.selected_cheat = 32 } } } add_fuel = 50000 }
 				}	
 			}
 			GER={
