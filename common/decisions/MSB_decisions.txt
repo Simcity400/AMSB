@@ -32,7 +32,13 @@ operations = {
 		annex_bulgaria= {
 			# icon = generic_operation
 			allowed = {
-				tag = ITA
+				if = {
+					limit = { USA = { exists = yes } }
+					tag = SPR
+				}
+				else = {
+					tag = ITA
+				}
 			}
 			fire_only_once = yes
 			cost = 0
@@ -42,6 +48,12 @@ operations = {
 			available = {
 				BUL = {
 					is_ai = yes
+				}
+				if = {
+					limit = { USA = { exists = yes }}
+					SPR = {
+						has_idea = tot_economic_mobilisation
+					}
 				}
 			}
             visible = {
@@ -54,6 +66,36 @@ operations = {
 			}
 			complete_effect = {
 				SPR = { add_ideas = extra_cp }
+				if = {
+					limit = { USA = { exists = yes } }
+				BUL = {
+					transfer_units_fraction = {
+						target = SPR
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				SPR = {
+					annex_country = {
+						target = BUL
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = BUL 
+						is_controlled_by = SPR
+					}
+					add_compliance = 100
+				}
+			}
+			else = {
 				BUL = {
 					transfer_units_fraction = {
 						target = ITA
@@ -82,6 +124,7 @@ operations = {
 				}
 			}
 		}
+	}
 
     	annex_east_indies = {
 			# icon = generic_operation
