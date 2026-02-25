@@ -2,6 +2,27 @@ on_actions = {
 	on_startup = {
 		effect = {
 			if = {
+				limit = {GER = {has_country_flag = barbstart}}
+				GER = {
+					add_offsite_building = {
+						type = industrial_complex
+						level = 138
+					}
+					add_offsite_building = {
+						type = arms_factory
+						level = 109
+					}
+				}
+				
+				SOV = {
+					add_offsite_building = {
+						type = arms_factory
+						level = 30
+					}
+				}
+
+			}
+			if = {
 				limit = {
 					BUL = {exists = yes}
 					BUL = {is_ai = no}
