@@ -12510,10 +12510,6 @@ focus = {
 				GRE = {
 							transfer_navy = { target = ITA }
 						}
-						BUL = {
-							transfer_state = 731 # THESALONIKI JEWISH STATE!!
-							transfer_state = 184 # THRACE
-						}
 						
 						ITA = {
 							annex_country = {
@@ -12535,6 +12531,16 @@ focus = {
 							if = {
 								limit = { NOT = { has_idea = peace_training } }
 								add_ideas = peace_training
+							}
+							if = {
+								limit = {BUL = {exists = yes }}
+							BUL = {
+								transfer_state = 731 # Central Macedonia
+								transfer_state = 184 # Thrace
+								transfer_state = 970 # Debar
+								transfer_state = 106 # Macedonia
+								transfer_state = 803 # Southern Serbia
+								}
 							}
 						}
 					}
