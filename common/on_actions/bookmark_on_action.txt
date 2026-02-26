@@ -3,6 +3,12 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {GER = {has_country_flag = barbstart}}
+				if = {
+                limit = {
+                    date < 1941.1.21
+                }
+                random_country = { news_event = { id = barbmode.1 } }
+            }
 				every_country = {
 					limit = {
 						is_playable_country = yes
