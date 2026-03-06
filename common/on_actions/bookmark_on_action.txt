@@ -49,24 +49,6 @@ on_actions = {
 				}
 
 			}
-			if = {
-				limit = {
-					BUL = {exists = yes}
-					BUL = {is_ai = no}
-					USA = {exists = no}
-				}
-				ITA = {
-					add_offsite_building = {
-						type = industrial_complex
-						level = 11
-					}
-					add_offsite_building = {
-						type = arms_factory
-						level = 15
-					}
-					set_country_flag = italy_no_bulgaia_no_asia
-				}
-			}
 			if = { 
 				limit = {
 					NOT = { country_exists = USA }
@@ -123,14 +105,6 @@ on_actions = {
 						state = 43
 					}
 				}
-			}
-			if = {
-				if = {
-				limit = {
-					NOT = {country_exists = BUL}
-				}
-				SPR = { add_ideas = extra_cp }
-			}
 			}
 		}
 	}
