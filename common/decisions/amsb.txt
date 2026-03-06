@@ -105,3 +105,30 @@ debug_decisions = {
 		}
 	}
 }
+
+political_actions = {
+	join_allies = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+		
+		}
+
+		visible = {
+			FRA ={
+				NOT = {is_in_faction = yes }
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		ai_will_do = {
+		}
+
+		complete_effect = {
+			ENG = {add_to_faction = FRA}
+		}
+	}
+}
