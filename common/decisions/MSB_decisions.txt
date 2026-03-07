@@ -43,18 +43,25 @@ operations = {
 				BUL = {
 					is_ai = yes
 				}
-				
-				SPR = {
-					has_idea = tot_economic_mobilisation
+				if = {
+					limit = { USA = { exists = yes }}
+					SPR = {
+						has_idea = tot_economic_mobilisation
+					}
 				}
-	
 			}
             visible = {
-				tag = SPR
+				if = {
+					limit = { USA = { exists = yes } }
+					tag = SPR
 				}
+				else = {
+					tag = ITA
+				}
+			}
 			targets = {
 				BUL	
-				}
+			}
 
 			complete_effect = {
 				hidden_effect = {
@@ -66,7 +73,19 @@ operations = {
 						}
 					}
 				SPR = { add_ideas = extra_cp }
-				
+				if = {
+					limit = { ITA = { has_country_flag = italy_no_bulgaia_no_asia } }
+					add_offsite_building = {
+						type = industrial_complex
+						level = -11
+					}
+					add_offsite_building = {
+						type = arms_factory
+						level = -15
+					}
+				}
+				if = {
+					limit = { USA = { exists = yes } }
 				BUL = {
 					transfer_units_fraction = {
 						target = SPR
@@ -92,7 +111,36 @@ operations = {
 						is_controlled_by = SPR
 					}
 					add_compliance = 100
-				}	
+				}
+			}
+			else = {
+				BUL = {
+					transfer_units_fraction = {
+						target = ITA
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				ITA = {
+					annex_country = {
+						target = BUL
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = BUL 
+						is_controlled_by = ITA
+					}
+					add_compliance = 100
+				}
+			}
 		}
 	}
 
