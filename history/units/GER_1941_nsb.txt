@@ -57,7 +57,7 @@ if = {
 	}
 division_template = {
 
-	name = "German Medium Metar tank"
+	name = "German Medium Meta Tank"
 	priority = 2
 	regiments = {
 		mechanized = { x = 0 y = 0 }
@@ -76,19 +76,19 @@ division_template = {
 		medium_armor = { x = 2 y = 2 }
 		medium_armor = { x = 2 y = 3 }
 		medium_armor = { x = 2 y = 4 }
-		
-		medium_tank_destroyer_brigade = { x = 3 y = 0 }
-		medium_tank_destroyer_brigade = { x = 3 y = 1 }
+		medium_armor = { x = 3 y = 0 }
+		medium_armor = { x = 3 y = 1 }
+
 		medium_tank_destroyer_brigade = { x = 3 y = 2 }
 		medium_tank_destroyer_brigade = { x = 3 y = 3 }
 		medium_tank_destroyer_brigade = { x = 3 y = 4 }
-		medium_tank_destroyer_brigade = { x = 4 y = 0 }
+		
 	}
 	support = {
-		field_hospital = { x = 0 y = 0 }
+		super_heavy_artillery = { x = 0 y = 0 }
 		light_tank_recon = { x = 0 y = 1  }
 		armored_maintenance ={ x = 0 y = 2 }
-		logistics_company = { x = 0 y = 3 }
+		artillery = { x = 0 y = 3 }
 		armored_engineer = { x = 0 y = 4  }
 		medium_flame_tank = { x = 0 y = 5 }
 		}
@@ -104,7 +104,7 @@ if = {
 	}
 
 division_template = {
-	name = "German Medium Meta tank"
+	name = "German Medium Meta Tank"
 	priority = 2
 	regiments = {
 		mechanized = { x = 0 y = 0 }
@@ -132,12 +132,12 @@ division_template = {
 		medium_tank_destroyer_brigade = { x = 4 y = 0 }
 	}
 	support = {
-		field_hospital = { x = 0 y = 0 }
+		super_heavy_art = { x = 0 y = 0 }
 		light_tank_recon = { x = 0 y = 1  }
 		armored_maintenance ={ x = 0 y = 2 }
-		logistics_company = { x = 0 y = 3 }
+		artillery = { x = 0 y = 3 }
 		armored_engineer = { x = 0 y = 4  }
-		signal_company = { x = 0 y = 5 }
+		medium_flame_tank = { x = 0 y = 5 }
 		}
 	}
 }
@@ -320,8 +320,6 @@ division_template = {
 		}
 	}
 	
-	recruit_character = GER_erich_von_manstein_barb
-	recruit_character = GER_heinz_guderian_barb
 	
 
 	# Setup proper 1941 technologies
@@ -385,36 +383,12 @@ division_template = {
 
 		# Doctrines
 		 
-		delay = 1
-		
-		armored_spearhead = 1
-		schwerpunk = 1
-		blitzkrieg = 1
-		kampfgruppe = 1
-		#volksstrum = 1
-		firebrigades = 1
-		backhand_blow = 1
-		modern_blitzkrieg = 1
-		#nd_conscription = 1
-		#werwolf_guerillas = 1
-		convoy_interdiction_ti = 1
-		unrestricted_submarine_warfare = 1
-		raider_patrols = 1
+	
 		
 
 		# Air
 		
-		infrastructure_destruction = 1
-		home_defence = 1
-		naval_strike_tactics = 1
-		dogfighting_experience = 1
-		multialtitude_flying = 1
-		logistical_bombing = 1
-		day_bombing = 1
-		air_offense = 1
-		flying_fortress = 1
-		mass_destruction = 1
-		offensive_formations = 1
+		
 
 
 		# Electronics
@@ -467,6 +441,11 @@ division_template = {
 		project = sp:sp_air_radar
 		scientist = GER_konrad_zuse
 		state = 62
+	}
+	complete_special_project = {
+		project = sp:sp_land_super_heavy_howitzer
+		scientist = GER_konrad_zuse
+		state = 219
 	}
 	if = {
 		limit = {
@@ -672,7 +651,7 @@ division_template = {
 			design_team = mio:GER_porsche_organization
 			parent_version = 0
 			modules = {
-				main_armament_slot = tank_high_velocity_cannon_3
+				main_armament_slot = tank_heavy_cannon_3
 				turret_type_slot = tank_medium_fixed_superstructure_turret
 				suspension_type_slot = tank_bogie_suspension
 				armor_type_slot = tank_riveted_armor
@@ -680,7 +659,7 @@ division_template = {
 				special_type_slot_1 = empty
 				special_type_slot_2 = squeezebore_adaptor
 				special_type_slot_3 = secondary_turret_small_cannon
-				special_type_slot_4 = secondary_turret_small_cannon
+				special_type_slot_4 = wet_ammo_storage
 				special_type_slot_5 = easy_maintenance
 			}
 			upgrades = {
@@ -702,24 +681,24 @@ division_template = {
 	create_equipment_variant = {
 		name = "Panzer IV"
 		type = medium_tank_chassis_2
-		design_team = mio:GER_alkett_organization
+		design_team = mio:GER_man_organization
 		parent_version = 0
 		#obsolete = no
 		modules = {
 			main_armament_slot = tank_medium_cannon_3
 			turret_type_slot = tank_medium_three_man_tank_turret
-			suspension_type_slot = tank_torsion_bar_suspension
+			suspension_type_slot = tank_interleaved_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
 			special_type_slot_1 = tank_radio_3
 			special_type_slot_2 = squeezebore_adaptor
 			special_type_slot_3 = secondary_turret_small_cannon
-			special_type_slot_4 = secondary_turret_small_cannon
+			special_type_slot_4 = wet_ammo_storage
 			special_type_slot_5 = easy_maintenance
 		}
 		upgrades = {
-			tank_nsb_engine_upgrade = 14
-			tank_nsb_armor_upgrade = 14
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
 		}
 		icon = "GFX_GER_improved_medium_tank_medium"
 		}
@@ -741,7 +720,7 @@ division_template = {
 		modules = {
 			main_armament_slot = advanced_flamethrower
 			turret_type_slot = tank_medium_three_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
+			suspension_type_slot = tank_interleaved_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_petrol_electric_engine
 			special_type_slot_1 = tank_radio_3
@@ -752,8 +731,8 @@ division_template = {
 		}
 
 		upgrades = {
-			tank_nsb_engine_upgrade = 17
-			tank_nsb_armor_upgrade = 14
+			tank_nsb_engine_upgrade = 0
+			tank_nsb_armor_upgrade = 0
 		}
 		icon = "GFX_GER_improved_medium_tank_medium"
 		}
@@ -773,42 +752,31 @@ division_template = {
 			design_team = mio:GER_henschel_organization
 				parent_version = 0
 				modules = {
-					main_armament_slot = tank_high_velocity_cannon
+					main_armament_slot = advanced_flamethrower
 					turret_type_slot = tank_light_three_man_tank_turret
-					suspension_type_slot = tank_wheeled_suspension
-					armor_type_slot = tank_welded_armor
+					suspension_type_slot = tank_interleaved_suspension
+					armor_type_slot = tank_riveted_armor
 					engine_type_slot = tank_petrol_electric_engine
 					special_type_slot_1 = tank_radio_3
-					special_type_slot_2 = auto_loader
+					special_type_slot_2 = extra_ammo_storage
 					special_type_slot_3 = smoke_launchers
 					special_type_slot_4 = wet_ammo_storage
 					special_type_slot_5 = easy_maintenance
 				}
 			upgrades = {
-				tank_nsb_engine_upgrade = 17
-				tank_nsb_armor_upgrade = 17
+				tank_nsb_engine_upgrade = 0
+				tank_nsb_armor_upgrade = 0
 			}
 		icon = "GFX_GER_advanced_light_tank_medium"
 		}
 	}
-	add_equipment_production = {
-		equipment = {
-			type = infantry_equipment_3
-			creator = GER
-		}
-		requested_factories = 10
-		progress = 1
-		efficiency = 10
-		industrial_manufacturer = mio:GER_mauser_organization
-	}
-	add_equipment_production = {
-		equipment = {
-			type = train_equipment_1
-			creator = "GER" 
-		}
-		requested_factories = 1
-		progress = 1
-		efficiency = 100
+	if = {
+		limit = {
+				has_game_rule = { 
+				rule = larp_barb
+				option = on
+				}
+			}
 	}
 	if = {
 		limit = {
@@ -817,17 +785,6 @@ division_template = {
 				option = on
 				}
 			}
-	add_equipment_production = {
-		equipment = {
-			type = light_tank_equipment_3
-			creator = GER 
-			version_name = "Panzerkampfwagen Leopard"
-		}
-		requested_factories = 7
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
-		}
 	}
 	if = {
 		limit = {
@@ -836,36 +793,6 @@ division_template = {
 				option = on
 				}
 			}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_equipment_3
-			creator = GER 
-			version_name = "Panther"
-		}
-		requested_factories = 125
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
-		}
-	}
-	if = {
-		limit = {
-				has_game_rule = { 
-				rule = larp_barb
-				option = on
-				}
-			}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_destroyer_equipment_3
-			creator = GER 
-			version_name = "JagdpantherPz"
-		}
-		requested_factories = 20
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
-		}
 	}
 	if = {
 		limit = {
@@ -876,17 +803,6 @@ division_template = {
 				}
 			}
 		}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_chassis_2
-			creator = GER 
-			version_name = "Panzer IV"
-		}
-		requested_factories = 75
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
-		}
 	}
 	if = {
 		limit = {
@@ -896,17 +812,6 @@ division_template = {
 				option = on
 				}
 			}
-		}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_destroyer_chassis_2
-			creator = GER 
-			version_name = "JagdPz IV"
-		}
-		requested_factories = 75
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
 		}
 	}
 		
@@ -917,16 +822,15 @@ division_template = {
 				option = on
 				}
 			}
-	add_equipment_production = {
-		equipment = {
-			type = heavy_tank_equipment_2
-			creator = GER
-			version_name = "Tiger"
-		}
-		requested_factories = 10
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
+	}
+	if = {
+		limit = {
+			NOT = { 
+				has_game_rule = { 
+				rule = larp_barb
+				option = on
+				}
+			}
 		}
 	}
 	if = {
@@ -938,81 +842,6 @@ division_template = {
 				}
 			}
 		}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_flame_chassis_2
-			creator = GER 
-			version_name = "Medium Flame Tank II"
-		}
-		requested_factories = 5
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
-		}
-	}
-	add_equipment_production = {
-		equipment = { 
-			type = mechanized_equipment_1
-			creator = GER
-			version_name = "Sd.Kfz 11 B"
-		}
-		requested_factories = 30
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_opel_organization
-	}
-	add_equipment_production = {
-		equipment = { 
-			type = support_equipment_1
-			creator = GER
-		}
-		requested_factories = 8
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_carl_walther_organization
-	}
-	add_equipment_production = {
-		equipment = { 
-			type = motorized_equipment_1
-			creator = GER
-			version_name = "Opel Blitz A"
-		}
-		requested_factories = 10
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_opel_organization
-	}
-	if = {
-		limit = {
-			NOT = { 
-				has_game_rule = { 
-				rule = larp_barb
-				option = on
-				}
-			}
-		}
-	add_equipment_production = {
-		equipment = {
-			type = light_tank_chassis_3
-			creator = GER 
-			version_name = "Panzer II-Ausf.C"
-		}
-		requested_factories = 5
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
-		}
-	}
-	add_equipment_production = {
-		equipment = {
-			type = armored_support_vehicle_1
-			creator = GER
-			version_name = "Armored Support Vehicle B"
-		}
-		requested_factories = 5
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:GER_alkett_organization
 	}
 	add_equipment_to_stockpile = { 
 		type = armored_support_vehicle_1

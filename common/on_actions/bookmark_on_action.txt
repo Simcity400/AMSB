@@ -1,70 +1,168 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			if = { 
-				limit = {
-					NOT = { country_exists = USA }
-				}
-				ENG = {
-					add_research_slot = 1
-
-					add_offsite_building = {
-						type = industrial_complex
-						level = 20
-					}
-
-					country_event = { 
-						id = msb.4
-						days = 1825
-					} 
-					add_ideas = extra_cp_UK
-				}
-
-				WST = {
-					give_resource_rights = {
-						receiver = ENG
-						state = 378
-					}
-					give_resource_rights = {
-						receiver = ENG
-						state = 375
-					}
-					give_resource_rights = {
-						receiver = ENG
-						state = 374
-					}
-					country_event = { 
-						id = msb.3
-						days = 560 
-					} 
-				}
-			}	
 			if = {
-				limit = {
-					NOT = {country_exists = HUN}
-				}
-				ROM = {
-					give_resource_rights = {
-						receiver = ITA
-						state = 155
-					}
-					give_resource_rights = {
-						receiver = ITA
-						state = 974
-					}
-					give_resource_rights = {
-						receiver = ITA
-						state = 43
-					}
-				}
-			}
-			if = {
+				limit = { NOT = { has_global_flag = bookmark_on_startup_done } }
+				set_global_flag = bookmark_on_startup_done
+
 				if = {
-				limit = {
-					NOT = {country_exists = BUL}
+					limit = { GER = { has_country_flag = barbstart } }
+					if = {
+						limit = {
+							date < 1941.1.21
+						}
+						random_country = { news_event = { id = barbmode.1 } }
+					}
+					every_country = {
+						limit = {
+							is_playable_country = yes
+						}
+						add_ideas = tradeback_is_cancer
+					}
+					GER = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 118
+						}
+						add_offsite_building = {
+							type = arms_factory
+							level = 99
+						}
+						add_political_power = 999
+						army_experience = 999
+						navy_experience = 999
+						air_experience = 999
+					}
+
+					SOV = {
+						add_offsite_building = {
+							type = arms_factory
+							level = 180
+						}
+						add_political_power = 999
+						army_experience = 999
+						navy_experience = 999
+						air_experience = 999
+					}
+
+					ROM = {
+						add_political_power = 999
+						army_experience = 999
+						navy_experience = 999
+						air_experience = 999
+					}
 				}
-				SPR = { add_ideas = extra_cp }
-			}
+
+				if = {
+					limit = {
+						BUL = { exists = yes }
+						BUL = { is_ai = no }
+						USA = { exists = no }
+					}
+					ITA = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 11
+						}
+						add_offsite_building = {
+							type = arms_factory
+							level = 15
+						}
+						set_country_flag = italy_no_bulgaia_no_asia
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = { country_exists = USA }
+					}
+					ENG = {
+						add_research_slot = 1
+
+						add_offsite_building = {
+							type = industrial_complex
+							level = 20
+						}
+
+						country_event = {
+							id = msb.4
+							days = 1825
+						}
+						add_ideas = extra_cp_UK
+					}
+
+					WST = {
+						give_resource_rights = {
+							receiver = ENG
+							state = 378
+						}
+						give_resource_rights = {
+							receiver = ENG
+							state = 375
+						}
+						give_resource_rights = {
+							receiver = ENG
+							state = 374
+						}
+						country_event = {
+							id = msb.3
+							days = 560
+						}
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = { country_exists = HUN }
+					}
+					43 = {
+						add_resource = {
+							type = rubber
+							amount = 16
+						}
+					}
+					682 = {
+						add_resource = {
+							type = aluminium
+							amount = 24
+						}
+					}
+					863 = {
+						add_resource = {
+							type = aluminium
+							amount = 10
+						}
+					}
+					468 = {
+						add_resource = {
+							type = aluminium
+							amount = 10
+						}
+					}
+					ROM = {
+						give_resource_rights = {
+							receiver = SPR
+							state = 155
+						}
+						give_resource_rights = {
+							receiver = SPR
+							state = 974
+						}
+						give_resource_rights = {
+							receiver = SPR
+							state = 43
+						}
+					}
+				}
+
+				if = {
+					if = {
+						limit = {
+							NOT = { country_exists = BUL }
+						}
+						SPR = { add_ideas = extra_cp }
+					}
+				}
 			}
 		}
 	}

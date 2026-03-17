@@ -8,6 +8,22 @@ add_namespace = givetankssaf
 add_namespace = givetanksast
 add_namespace = draftcountdown
 add_namespace = dday
+add_namespace = barbmode
+
+news_event = {
+	id = barbmode.1
+	title = barbmode.1.t
+	desc = barbmode.1.desc
+	picture = GFX_news_event_002
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = barbmode.1.a
+	}
+}
+
 
 country_event = {
 	id = draftcountdown.1
@@ -30,6 +46,7 @@ news_event = {
     major = yes
 
     trigger = {
+		NOT = {GER = {has_country_flag = barbstart}}
         OR = { 
             NOT = { ENG = {controls_province = 540} }
             NOT = {  ENG = {controls_province = 3369} }
