@@ -227,8 +227,8 @@ NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.06  --vanilla 0.06 -- glo
 NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.053 -- was 0.027 -- vanilla 0.053
 NDefines.NMilitary.LAND_COMBAT_COLLATERAL_FORT_FACTOR = 0.005	--vanilla 0.005	-- Factor to scale collateral damage to forts with.
 NDefines.NMilitary.LAND_COMBAT_COLLATERAL_INFRA_FACTOR = 0.002 --vanilla 0.0022	-- Factor to scale collateral damage to infra with.
-NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.10   --vanilla 0.1 -- global damage modifier
-NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.05   --vanilla 0.05 -- air global damage modifier
+NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.035   --vanilla 0.1 -- global damage modifier
+NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.035   --vanilla 0.05 -- air global damage modifier
 NDefines.NMilitary.EQUIPMENT_COMBAT_LOSS_FACTOR = 0.70 -- vanilla 0.70,
 
 -- FUWG/TFB style converts
@@ -253,10 +253,10 @@ NDefines.NCountry.CONVOY_LENDLEASE_RANGE_FACTOR = 0.01 -- How much range affects
 NDefines.NDiplomacy.BASE_SEND_ATTACHE_COST = 0				-- Political power cost to send attache
 NDefines.NDiplomacy.BASE_SEND_ATTACHE_CP_COST = 0	-- vanilla 50.0, -- Command Power sent attache usage cost
 
-NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 15
+NDefines.NProduction.DEFAULT_MAX_NAV_FACTORIES_PER_LINE = 150
 NDefines.NProduction.FLOATING_HARBOR_MAX_NAV_FACTORIES_PER_LINE = 50
 NDefines.NProduction.CONVOY_MAX_NAV_FACTORIES_PER_LINE = 150 
-NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 10
+NDefines.NProduction.CAPITAL_SHIP_MAX_NAV_FACTORIES_PER_LINE = 150
 NDefines.NProduction.BASE_FACTORY_SPEED_NAV = 3
 NDefines.NNavy.MAX_ORG_ON_MANUAL_MOVE = 1
 NDefines.NNavy.MIN_ORG_ON_MANUAL_MOVE = 1
@@ -271,8 +271,7 @@ NDefines.NAir.DISRUPTION_FACTOR = 4 --cas enters battle at 30+% -was 5.5
 NDefines.NAir.AIR_MORE_GROUND_CREWS_COST = 0.0
 NDefines.NAir.COMBAT_MULTIPLANE_CAP = 3					-- How many planes can shoot at each plane on other side ( if there are 100 planes we are atttacking COMBAT_MULTIPLANE_CAP * 100 of our planes can shoot )
 NDefines.NAir.COMBAT_DAMAGE_SCALE = 0.45				-- Higher value = more shot down planes
-NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_FACTOR = 0.2		-- Vanilla 0.8			-- Anti Air Gun Damage factor
-NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_CHANCE = 0.08       -- vanilla 0.1    -- Anti Air Gun hit chance
+NDefines.NMilitary.ANTI_AIR_ATTACK_TO_AMOUNT = 0.005		--	vanilla	0.005	-- Balancing value to convert equipment stat anti_air_attack to the random % value of airplanes being hit.
 
 -- Bombing Fix
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9

@@ -164,6 +164,18 @@ on_actions = {
 	on_monthly = {
 		effect = {
 			if = {
+				limit = {date >1939.12.31}
+				WST = {
+					send_embargo = GER
+					send_embargo = ITA
+					send_embargo = ROM
+					send_embargo = HUN
+					send_embargo = BUL
+					send_embargo = FIN
+					send_embargo = SPR
+				}
+			}
+			if = {
 				limit = {date > 1939.12.31
 				NOT = { ITA = {has_war_with = ENG }}
 			}
