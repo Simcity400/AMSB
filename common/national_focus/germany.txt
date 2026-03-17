@@ -11135,26 +11135,10 @@ focus_tree = {
 
 		completion_reward = {
 
-			IF = {
-				limit = { SOV = { has_civil_war = no } }
-				declare_war_on = {
-					target = SOV
-					type = take_state_focus
-					generator = { 206 }
+			create_wargoal = {
+				type = annex_everything
+				target = SOV
 				}
-			}
-			ELSE = {
-				every_country = {
-					limit = { original_tag = SOV }
-					GER = {
-						declare_war_on = {
-							target = SOV
-							type = take_state_focus
-							generator = { 206 }
-						}
-					}
-				}
-			}
 
 			IF = {
 				limit = {
