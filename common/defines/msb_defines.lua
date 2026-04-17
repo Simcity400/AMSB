@@ -218,9 +218,9 @@ NDefines.NMilitary.ENEMY_AIR_SUPERIORITY_SPEED_IMPACT = -0.10 --- modifier for d
 NDefines.NCountry.REINFORCEMENT_MANPOWER_DELIVERY_SPEED = 20.0 -- vanilla 10 Modifier for army manpower reinforcement delivery speed (travel time)
 NDefines.NMilitary.SOFT_ATTACK_TARGETING_FACTOR = 1.0		-- vanilla 1 -- How much we care about potential soft attacks when evaluating priority combat target
 NDefines.NMilitary.HARD_ATTACK_TARGETING_FACTOR = 1.2	--vanilla 1.2 --  How much we care about potential hard attacks when evaluating priority combat target
-NDefines.NMilitary.COMBAT_VALUE_ORG_IMPORTANCE = 0 		-- VANILLA 1 - changed to force tanks into battle first (most of the time) |  Multiplier on TotalOrganisation when determining the combat value of a division
-NDefines.NMilitary.COMBAT_VALUE_STR_IMPORTANCE = 0 		-- VANILLA 1  - changed to force tanks into battle first (most of the time) |  Multiplier on TotalStrength when determining the combat value of a division
-NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.4 -- vanilla 0.25
+NDefines.NMilitary.COMBAT_VALUE_ORG_IMPORTANCE = 0.8 		-- VANILLA 1 - changed to force tanks into battle first (most of the time) |  Multiplier on TotalOrganisation when determining the combat value of a division
+NDefines.NMilitary.COMBAT_VALUE_STR_IMPORTANCE = 0.8		-- VANILLA 1  - changed to force tanks into battle first (most of the time) |  Multiplier on TotalStrength when determining the combat value of a division
+NDefines.NMilitary.RETREAT_SPEED_FACTOR = 0.5 -- vanilla 0.25
 NDefines.NTechnology.MAX_SUBTECHS = 4
 NDefines.NMilitary.RELIABILTY_RECOVERY = 0
 NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.06  --vanilla 0.06 -- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
@@ -238,9 +238,9 @@ NDefines.NAir.INTERCEPTION_DISTANCE_SCALE = 5000 -- At this many pixels of path 
 NDefines.NAir.INTERCEPTION_DAMAGE_SCALE = 0.0 -- Multiply the interception damage with this value. Works as a cap when interception distance is at maximum.
 
 -- Increased General Size Limit
-NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 72
-NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 72
-NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 7
+NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 100
+NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 100
+NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 10
 
 -- TY ASKAR
 NDefines.NAir.AIR_WING_ATTACK_LOGISTICS_RAILWAY_DAMAGE_SPILL_FACTOR = 0 -- Portion of train damage to additionally deal to railways
@@ -289,6 +289,9 @@ NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = 0 --Vanilla -0.12
  NDefines.NProduction.RESOURCE_TO_ENERGY_COEFFICIENT = 900.0		-- How much energy per coal produces
  NDefines.NProduction.ENERGY_SCALING_COST_BY_FACTORY_COUNT = 0.0001 -- Scales energy cost based on the total number of factories
  NDefines.NProduction.BASE_ENERGY_COST = 0.001					-- How much energy per factory consumes
+ 
+ --AMSB--
+  NDefines.NProject.SCIENTIST_BASIC_RESEARCH_DAILY_XP_GAIN = 0.40 --vannila 0.28 base gain of having a scientist working in the special research facility
  
 NDefines.NNavy.MISSION_FUEL_COSTS = {  -- fuel cost for each mission
 		0.0, -- HOLD (consumes fuel HOLD_MISSION_MOVEMENT_COST fuel while moving)

@@ -1257,6 +1257,7 @@
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_ideas = saf_expand_tank_production
 			806 = {
 				limit = {
 					is_controlled_by = ROOT
@@ -1336,12 +1337,6 @@
 
 		completion_reward = {
 			add_ideas = { FRA_firepower }
-			add_tech_bonus = {
-					name = FRA_firepower_kills
-					bonus = 1.0
-					uses = 1
-					category = artillery
-			}
 		}
 	}
 	focus = {
@@ -1478,7 +1473,7 @@
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_ideas = saf_expand_tank_production
+			add_ideas = fra_expand_tank_production
 		}
 	}
 	focus = {
@@ -1624,7 +1619,13 @@
 		available_if_capitulated = no
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
-		completion_reward = {		
+		completion_reward = {
+			add_tech_bonus = {
+					name = FRA_firepower_kills
+					bonus = 1.0
+					uses = 1
+					category = artillery
+			}		
 			add_equipment_to_stockpile = {
 				type = infantry_equipment_0
 				amount = 31300
@@ -4066,7 +4067,7 @@ focus = {
 		completion_reward = {
 			add_offsite_building = {
 				type = industrial_complex
-				level = 8
+				level = 10
 			}
 
 		}
@@ -5117,19 +5118,108 @@ focus = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			
+
+			FRA = {
+				transfer_state = 783
+				transfer_state = 178
+				transfer_state = 697
+			}
+
+			if =  {
+				limit = {
+					country_exists = EFR
+					NOT = { EFR = { is_in_faction_with = FRA } }
+					NOT = { has_war_with = EFR }
+				}
+				declare_war_on = {
+					target = EFR
+					type = take_state_focus
+				}
+			}
 			if = {
 				limit = {
 					country_exists = EFR
 				}
-				create_wargoal = {
-					target = EFR
-					type = topple_government
-					expire = 0
-				}
 			}
+						# FRA SPAWN INS
+
+				division_template = {
+					name = "40w"
+					priority = 2
+					division_names_group = FRA_INF_01
+					is_locked = no
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						marine = { x = 0 y = 3 }
+		
+		        		marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						marine = { x = 1 y = 3 }
+
+						marine = { x = 2 y = 0 }
+						marine = { x = 2 y = 1 }
+						marine = { x = 2 y = 2 }
+						marine = { x = 2 y = 3 }
+
+						marine = { x = 3 y = 0 }
+						marine = { x = 3 y = 1 }
+						marine = { x = 3 y = 2 }
+						marine = { x = 3 y = 3 }
+
+						marine = { x = 4 y = 0 }
+						marine = { x = 4 y = 1 }
+						marine = { x = 4 y = 2 }
+						marine = { x = 4 y = 3 }
+						
+					}
+					support = {
+						
+					}
+				}
+
+			random_owned_controlled_state = {
+					prioritize = { 783 }
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}	
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}	
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}
+					create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}	
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}	
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}
+				create_unit = {
+						division = "name = \"40w\" division_template = \"40w\" start_experience_factor = 0.6 start_equipment_factor = 1.0" 
+						owner = FRA
+					}
+			
+				}
 		}
+		
 	}
+
 	# focus = {
 	# 	id = FRA_resistance1
 	# 	icon = GFX_focus_SOV_support_spanish_poum
@@ -5848,7 +5938,6 @@ focus = {
 			division_template = {
 				name = "FFI Demi-Brigade" 	
 				division_names_group = FRA_INF_01
-				is_locked = yes
 				regiments = {
 					militia = { x = 0 y = 0 }		
 					militia = { x = 0 y = 1 }		
