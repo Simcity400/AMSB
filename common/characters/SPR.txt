@@ -552,12 +552,12 @@ characters={
 			}
 
 			field_marshal={
-				traits={ logistics_wizard organisational_leader expert_delegator trait_SPA_nationalist_sympathies }
-				skill=3
-				attack_skill=3
-				defense_skill=2
-				planning_skill=3
-				logistics_skill=2
+				traits={ logistics_wizard organisational_leader expert_delegator trait_SPA_nationalist_sympathies  brilliant_strategist }
+				skill = 5
+				attack_skill = 4
+				defense_skill = 5
+				planning_skill = 5
+				logistics_skill = 5
 				legacy_id=1108
 				visible = {
 					OR = {
@@ -647,12 +647,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ trickster career_officer trait_SPA_nationalist_sympathies panzer_leader cavalry_leader infantry_leader commando skilled_staffer hill_fighter desert_fox }
-			skill = 6
-			attack_skill = 6
+			traits={ trickster career_officer trait_SPA_nationalist_sympathies panzer_leader cavalry_leader infantry_leader commando skilled_staffer hill_fighter desert_fox  war_hero trait_engineer ranger }
+			skill = 8
+			attack_skill = 7
 			defense_skill = 7
-			planning_skill = 5
-			logistics_skill = 5
+			planning_skill = 6
+			logistics_skill = 6
 			legacy_id=1109
 		}
 	}
@@ -667,11 +667,11 @@ characters={
 		}
 		corps_commander={
 			traits={ infantry_officer trait_SPA_nationalist_sympathies }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=2
-			logistics_skill=2
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
 			legacy_id=1110
 		}
 	}
@@ -721,12 +721,12 @@ characters={
 			}
 			
 			field_marshal={
-				traits={ trait_cautious trait_SPA_nationalist_sympathies thorough_planner organisational_leader }
-				skill=3
-				attack_skill=2
-				defense_skill=2
-				planning_skill=4
-				logistics_skill=2
+				traits={ trait_cautious trait_SPA_nationalist_sympathies thorough_planner organisational_leader  brilliant_strategist }
+				skill = 5
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 5
+				logistics_skill = 4
 				legacy_id=1111
 				visible = {
 					OR = {
@@ -822,11 +822,11 @@ characters={
 			}
 
 			field_marshal ={
-				traits={ brilliant_strategist trait_reckless trait_SPA_nationalist_sympathies panzer_leader cavalry_leader infantry_leader organizer ranger urban_assault_specialist trickster }
+				traits={ brilliant_strategist trait_reckless trait_SPA_nationalist_sympathies panzer_leader cavalry_leader infantry_leader organizer ranger urban_assault_specialist trickster  trait_engineer skilled_staffer }
 				skill = 6
-				attack_skill = 5
-				defense_skill = 7
-				planning_skill = 4
+				attack_skill = 6
+				defense_skill = 5
+				planning_skill = 6
 				logistics_skill = 5
 				legacy_id=1112
 				visible = {
@@ -954,12 +954,12 @@ characters={
 			}
 			
 			corps_commander={
-				traits={ infantry_officer trait_SPA_nationalist_sympathies }
-				skill=3
-				attack_skill=2
-				defense_skill=3
-				planning_skill=3
-				logistics_skill=2
+				traits={ infantry_officer trait_SPA_nationalist_sympathies  panzer_leader combined_arms_expert trickster trait_engineer  war_hero skilled_staffer ranger }
+				skill = 8
+				attack_skill = 7
+				defense_skill = 7
+				planning_skill = 6
+				logistics_skill = 6
 				legacy_id=1113
 			}
 		}
@@ -1059,12 +1059,12 @@ characters={
 			}
 
 			corps_commander={
-				traits={ trait_SPA_nationalist_sympathies organizer infantry_leader }
-				skill=3
-				attack_skill=3
-				defense_skill=2
-				planning_skill=3
-				logistics_skill=2
+				traits={ trait_SPA_nationalist_sympathies organizer infantry_leader  panzer_leader trickster trait_engineer war_hero }
+				skill = 6
+				attack_skill = 5
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 3
 				legacy_id=1114
 				visible = {
 					OR = {
@@ -1250,11 +1250,11 @@ characters={
 		}
 		corps_commander={
 			traits={ trait_reckless war_hero trait_SPA_nationalist_sympathies }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=2
-			logistics_skill=2
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
 			legacy_id=1116
 		}
 	}
@@ -4756,6 +4756,48 @@ characters={
 			traits = {
 				regional_traditionalist_leader 
 			}
+		}
+	}
+
+	SPR_mechanized_warfare_school = {
+		name = SPR_mechanized_warfare_school
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SPR_mechanized_warfare_school
+			ledger = army
+			allowed = {
+				original_tag = SPR
+			}
+			traits = {
+				army_CombinedArms_2
+			}
+			cost = 150
+		}
+	}
+
+	SPR_commando_warfare_school = {
+		name = SPR_commando_warfare_school
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SPR_commando_warfare_school
+			ledger = army
+			allowed = {
+				original_tag = SPR
+			}
+			traits = {
+				army_commando_2
+			}
+			cost = 150
 		}
 	}
 }

@@ -203,12 +203,12 @@ characters = {
 			}
 		}
 		field_marshal = {
-			traits = { career_officer politically_connected trait_BUL_tsar_loyalist fortress_buster }
-			skill = 4
-			attack_skill = 4
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 3
+			traits = { career_officer politically_connected trait_BUL_tsar_loyalist fortress_buster  brilliant_strategist thorough_planner }
+			skill = 6
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 6
+			logistics_skill = 5
 			legacy_id = 1201
 		}
 	}
@@ -226,12 +226,12 @@ characters = {
 				}
 			}
 			corps_commander = {
-				traits = { infantry_officer war_hero skilled_staffer }
-				skill = 4
-				attack_skill = 3
-				defense_skill = 3
-				planning_skill = 3
-				logistics_skill = 4
+				traits = { infantry_officer war_hero skilled_staffer  panzer_leader trickster trait_engineer ranger }
+				skill = 8
+				attack_skill = 7
+				defense_skill = 7
+				planning_skill = 6
+				logistics_skill = 6
 				legacy_id = 1202
 			}
 		}
@@ -247,12 +247,12 @@ characters = {
 				}
 			}
 			field_marshal = {
-				traits = { defensive_doctrine }
-				skill = 4
-				attack_skill = 2
-				defense_skill = 4
-				planning_skill = 3
-				logistics_skill = 4
+				traits = { defensive_doctrine  brilliant_strategist }
+				skill = 6
+				attack_skill = 5
+				defense_skill = 5
+				planning_skill = 6
+				logistics_skill = 5
 				legacy_id = -1
 			}
 		}
@@ -268,9 +268,9 @@ characters = {
 		}
 		corps_commander = {
 			traits = { trait_reckless cavalry_leader }
-			skill = 3
+			skill = 4
 			attack_skill = 4
-			defense_skill = 2
+			defense_skill = 3
 			planning_skill = 3
 			logistics_skill = 3
 			legacy_id = 1205
@@ -286,12 +286,12 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { old_guard infantry_leader commando }
-			skill = 4
+			traits = { old_guard infantry_leader commando  ranger }
+			skill = 5
 			attack_skill = 4
 			defense_skill = 4
-			planning_skill = 2
-			logistics_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
 			legacy_id = 1206
 		}
 	}
@@ -310,10 +310,10 @@ characters = {
 			}
 			corps_commander = {
 				traits = { career_officer infantry_officer }
-				skill = 2
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 2
+				skill = 4
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 3
 				logistics_skill = 3
 				legacy_id = 1207
 			}
@@ -358,11 +358,11 @@ characters = {
 		}
 		corps_commander = {
 			traits = { trait_cautious trait_BUL_tsar_loyalist }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
 			legacy_id = 1209
 		}
 	}
@@ -377,11 +377,11 @@ characters = {
 		}
 		corps_commander = {
 			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer }
-			skill = 4
-			attack_skill = 3
+			skill = 5
+			attack_skill = 4
 			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 5
+			planning_skill = 4
+			logistics_skill = 4
 			legacy_id = 1210
 		}
 	}
@@ -595,11 +595,11 @@ characters = {
 		name = BUL_konstantin_lukash
 		corps_commander = {
 			traits = { infantry_officer }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 2
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
 			planning_skill = 3
-			logistics_skill = 1
+			logistics_skill = 3
 			legacy_id = 1208
 		}
 		portraits = {
@@ -644,12 +644,12 @@ characters = {
 			}
 			name = BUL_nikola_hadzipetkov
 			corps_commander = {
-				traits = { brilliant_strategist infantry_officer organizer }
-				skill = 4
-				attack_skill = 2
-				defense_skill = 4
-				planning_skill = 4
-				logistics_skill = 3
+				traits = { brilliant_strategist infantry_officer organizer  war_hero trickster trait_engineer skilled_staffer }
+				skill = 8
+				attack_skill = 7
+				defense_skill = 7
+				planning_skill = 6
+				logistics_skill = 6
 				legacy_id = 1203
 			}
 			portraits = {
@@ -794,11 +794,11 @@ characters = {
 			}
 			corps_commander = {
 				traits = { cavalry_officer trait_BUL_tsar_loyalist }
-				skill = 3
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 2
+				skill = 5
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 4
 				legacy_id = 1204
 			}
 		}
@@ -832,11 +832,11 @@ characters = {
 			}
 			corps_commander = {
 				traits = { armor_officer }
-				skill = 3
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 3
+				skill = 5
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 4
 				legacy_id = -1
 			}
 		}
@@ -2296,6 +2296,48 @@ characters = {
 		}
 	}
 
+
+	BUL_mechanized_warfare_school = {
+		name = BUL_mechanized_warfare_school
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_5"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = BUL_mechanized_warfare_school
+			ledger = army
+			allowed = {
+				original_tag = BUL
+			}
+			traits = {
+				army_CombinedArms_2
+			}
+			cost = 150
+		}
+	}
+
+	BUL_commando_warfare_school = {
+		name = BUL_commando_warfare_school
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_3"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = BUL_commando_warfare_school
+			ledger = army
+			allowed = {
+				original_tag = BUL
+			}
+			traits = {
+				army_commando_2
+			}
+			cost = 150
+		}
+	}
 }
 
 
