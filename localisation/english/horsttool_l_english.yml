@@ -14,9 +14,6 @@
  OBSERVER:0 "§HObserve§!\nMoves player to observer mode\n\n"
  OBSERVER_DELAYED:0 ""
 
- WHITEPEACE:0 "§HWhitepeace§!\nCountry will be whitepeaced with every enemy\n\n"
- WHITEPEACE_DELAYED:0 ""
-
  CLEAR_ALL_MARKINGS:0 "§HClear Every single mark§!\nResets all host tool settings including marked states, target/receiver countries, pause blocking, and cheat selection\n\n"
  CLEAR_ALL_MARKINGS_DELAYED:0 "This is the big red button that resets everything. Use it when you want to refresh the host tool or remove something you did not want to select."
 
@@ -98,9 +95,6 @@
  REST_SET:0 "§RSet resistance"
 
 
- BUILDING_MENU_DELAYED:0 "§RTO BE MADE!"
- BUILDING_MENU:0 "State Builder Menu - Dropdown"
-
  WS_SUB_5_TT:0"§H§RRemove 5% War Support§W"
  WS_ADD_5_TT:0"§H§GAdd 5% War Support§W"
  WS_ICON_TT:0"§H§YBy clicking either 5%+/- on a country selected state you will remove/add 5WS§W"
@@ -174,12 +168,12 @@
  PAUSE_BLOCKER_MAJORS_DELAYED:0 "Oligarchy mode: Only the big boys get to pause. Minors cry in corner."
 
 
- DECLARE_WAR:0 "§HDeclare War§!\n[?ROOT.target_country.GetName] will declare war on [?ROOT.receiver_country.GetName]\n\n"
- DECLARE_WAR_DELAYED:0 "Time for some good old fashioned violence! Make sure you selected the right countries or this will be awkward..."
+ DECLARE_WAR:0 "§HDeclare War§!\nMark the DEFENDER's state, select the attacker's state, click\n\n"
+ DECLARE_WAR_DELAYED:0 "Mark a state of the country being declared ON, then select a state of the attacker and click. Make sure you picked the right countries or this will be awkward..."
 
  
- TAGSWTICH_HOST:0 "§HTag Switch Players§!\nMove player from [?ROOT.target_country.GetName] to [?ROOT.receiver_country.GetName]\n\n"
- TAGSWTICH_HOST_DELAYED:0 "Musical chairs, but with countries! Player gets yeeted from one nation to another."
+ TAGSWTICH_HOST:0 "§HTag Switch Players§!\nMark the player's CURRENT country's state, select the destination, click\n\n"
+ TAGSWTICH_HOST_DELAYED:0 "Mark a state of the country the player is ON (from), then select a state of the destination country (to) and click. Musical chairs, but with countries!"
 
  DOCKADD:0 "§HAdd 1 Dockyard§!\nClicking this button will add one offmap dockyard to [This.Owner.GetName].\n\n"
  DOCKADD_DELAYED:0 "More boats = more problems. But also more naval supremacy!"
@@ -212,9 +206,6 @@
  HORST_HELP:0 "§HHelp§!\nClicking this button will trigger a small help event explaning how to use the host tool.\n\n"
  HOST_HELP_DELAYED:0 "Need help with the host tool?Waza hana ktzet ezra."
 
- TARGET_COUNTRY_FLAG:0 "Currently selected target country"
- RECEIVER_COUNTRY_FLAG:0 "Currently selected receiver country"
-
  pause_blocker_selected_tt:0 "§HPause Setting§!\nClick to cycle through the pause settings\n\n"
  pause_blocker_selected_delayed_tt:0 "Choose who is allowed to pause the game: Everyone, Host Only or Majors Only."
 
@@ -237,26 +228,26 @@
  AIF_ADJ:0 "Parked"
  AIF_neutrality:0 "AI Fix Parking"
 
- HT_BLD_ADD_TT:0 "§GAdd one level§! of this building to the selected state (instant)"
- HT_BLD_REM_TT:0 "§RRemove one level§! of this building from the selected state"
+ BUILDING_MENU:0 "§HState Builder§!\nToggle the building +/- panel\n\n"
+ BUILDING_MENU_DELAYED:0 "Opens a panel under the host tool with +/- buttons for 8 building types. They apply to ALL marked states if any are marked, otherwise the selected state."
 
- HT_WP_TT:0 "§HTargeted White Peace§!\nWhite peace between Target and Receiver only\n\n"
- HT_WP_TT_DELAYED:0 "Unlike the old white peace button (which peaces a country out of ALL its wars), this only ends the war between the two picked countries. Requires Target and Receiver to be set and at war with each other."
- HT_TRUCE_TT:0 "§HSet Truce§!\nSets a 6 month truce between Target and Receiver\n\n"
- HT_TRUCE_TT_DELAYED:0 "Stops instant re-declares after drama. Both directions are set."
- HT_TRUCE_CLR_TT:0 "§HClear Truce§!\nRemoves any truce between Target and Receiver\n\n"
- HT_TRUCE_CLR_TT_DELAYED:0 "Clears the truce in both directions so an agreed war can happen immediately."
- HT_WG_TT:0 "§HDelete War Goals§!\nRemoves all war goals of Target against Receiver\n\n"
- HT_WG_TT_DELAYED:0 "Removes every justification type the Target has against the Receiver. Direction matters: Target's goals against Receiver only."
- HT_FADD_TT:0 "§HJoin Faction§!\nAdds Receiver to Target's faction\n\n"
- HT_FADD_TT_DELAYED:0 "Target must be the faction LEADER. Receiver gets added as a member."
- HT_FKICK_TT:0 "§HKick from Faction§!\nRemoves Receiver from Target's faction\n\n"
- HT_FKICK_TT_DELAYED:0 "Target must be the faction LEADER. Receiver gets kicked out."
+ HT_BLD_ADD_TT:0 "§GAdd one level§! of this building - to ALL marked states if any are marked, otherwise the selected state (instant)"
+ HT_BLD_REM_TT:0 "§RRemove one level§! of this building - from ALL marked states if any are marked, otherwise the selected state"
 
- HT_DOM_TT:0 "§HSet Autonomy: Dominion§!\nSelected country becomes a Dominion of its overlord\n\n"
- HT_COL_TT:0 "§HSet Autonomy: Colony§!\nSelected country becomes a Colony of its overlord\n\n"
- HT_INT_TT:0 "§HSet Autonomy: Integrated Puppet§!\nSelected country becomes an Integrated Puppet of its overlord\n\n"
- HT_AUTO_TT_DELAYED:0 "Only works if the selected state's owner is already a subject of someone. Use Puppet / Free Country for entering or leaving subject status."
+ HT_WP_TT:0 "§HWhite Peace§!\nMarks set: peace between selected and marked country\nNo marks: selected country peaces out of ALL wars\n\n"
+ HT_WP_TT_DELAYED:0 "One button, two modes. With a state marked, only the war between the selected country and the marked country's owner ends. With no marks, the selected country is white peaced with every country it is fighting. Clear All Markings first if you want the all-wars mode!"
+ HT_TRUCE_CLR_TT:0 "§HClear Truce§!\nMark one country's state, select the other, click\n\n"
+ HT_TRUCE_CLR_TT_DELAYED:0 "Clears the truce in both directions so an agreed war can happen immediately. Mark a state of one country and select a state of the other."
+ HT_WG_TT:0 "§HDelete War Goals§!\nWipes ALL justifications between two countries, both directions\n\n"
+ HT_WG_TT_DELAYED:0 "Mark a state of one country and select a state of the other. Every justification type between the two is removed, in both directions."
+ HT_FADD_TT:0 "§HJoin Faction§!\nMark a state of any faction member, select the joiner's state, click\n\n"
+ HT_FADD_TT_DELAYED:0 "Mark one state of ANY country in the destination faction, then select a state of the country that should join and press this. The tool finds the faction leader itself."
+ HT_FKICK_TT:0 "§HKick from Faction§!\nKicks the SELECTED country out of its current faction\n\n"
+ HT_FKICK_TT_DELAYED:0 "No marking or pickers needed - select a state of the country and press this. Faction leaders cannot be kicked from their own faction."
+
+ HT_AUTO_UP_TT:0 "§HRaise Autonomy§!\nSelected subject moves one level up (toward Dominion)\n\n"
+ HT_AUTO_DOWN_TT:0 "§HLower Autonomy§!\nSelected subject moves one level down (toward Integrated Puppet)\n\n"
+ HT_AUTO_TT_DELAYED:0 "Steps the standard ladder: Integrated Puppet - Puppet - Colony - Dominion. Only works if the selected state's owner is already a subject. Use Puppet / Free Country for entering or leaving subject status; special modded subject types are not touched."
 
  HT_FUNC_TT:0 "§HFocus: Undo Mode§!\nToggle the focus UNDO picker for the selected country\n\n"
  HT_FCOM_TT:0 "§HFocus: Add Mode§!\nToggle the focus COMPLETE picker for the selected country\n\n"

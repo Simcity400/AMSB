@@ -233,7 +233,7 @@ country_event = {
     option = {
         name = "Yes, move the host tool"
         # Store new host globally BEFORE clearing flags
-        set_global_variable = { new_host_country = temp_new_host }
+        set_variable = { global.new_host_country = temp_new_host }
         # Clear host flag from everyone
         every_country = {
             clr_country_flag = host
@@ -268,7 +268,7 @@ news_event = {
     option = {
         name = "Understood"
         # Clear the global variable after showing the notification
-        clear_global_variable = new_host_country
+        clear_variable = global.new_host_country
     }
 }
 # Pause blocker events
@@ -294,8 +294,8 @@ news_event = {
     is_triggered_only = yes
     option = {
         name = "War in my war game?Bruh"
-        clear_global_variable = war_declarer
-        clear_global_variable = war_target
+        clear_variable = global.war_declarer
+        clear_variable = global.war_target
     }
 }
 
@@ -309,8 +309,8 @@ news_event = {
     is_triggered_only = yes
     option = {
         name = "Hope they like their new home!"
-        clear_global_variable = switch_from
-        clear_global_variable = switch_to
+        clear_variable = global.switch_from
+        clear_variable = global.switch_to
     }
 }
 
@@ -695,8 +695,8 @@ news_event = {
     is_triggered_only = yes
     option = {
         name = "Acknowledged"
-        clear_global_variable = compliance_value
-        clear_global_variable = compliance_state
+        clear_variable = global.compliance_value
+        clear_variable = global.compliance_state
     }
 }
 
@@ -710,8 +710,8 @@ news_event = {
     is_triggered_only = yes
     option = {
         name = "Acknowledged"
-        clear_global_variable = resistance_value
-        clear_global_variable = resistance_state
+        clear_variable = global.resistance_value
+        clear_variable = global.resistance_state
     }
 }
 
@@ -732,7 +732,7 @@ country_event = {
             limit = { is_ai = no }
             news_event = { id = hosttool.62 }
         }
-        clear_global_variable = ai_fix_return_country
+        clear_variable = global.ai_fix_return_country
     }
 }
 
@@ -782,8 +782,8 @@ country_event = {
                 }
             }
         }
-        set_global_variable = { ht_diplo_a = ROOT.target }
-        set_global_variable = { ht_diplo_b = ROOT.taker }
+        set_variable = { global.ht_diplo_a = ROOT.target }
+        set_variable = { global.ht_diplo_b = ROOT.taker }
         every_country = { limit = { is_ai = no } news_event = { id = hosttool.64 } }
         for_each_scope_loop = {
             array = marked_states
@@ -827,18 +827,6 @@ news_event = {
 }
 
 news_event = {
-    id = hosttool.66
-    title = "Host Tool - Truce Set"
-    desc = "The host has set a 6 month truce between [?global.ht_diplo_a.GetName] and [?global.ht_diplo_b.GetName]."
-    picture = GFX_news_event_001
-    major = yes
-    is_triggered_only = yes
-    option = {
-        name = "Cool off"
-    }
-}
-
-news_event = {
     id = hosttool.67
     title = "Host Tool - Truce Cleared"
     desc = "The host has cleared the truce between [?global.ht_diplo_a.GetName] and [?global.ht_diplo_b.GetName]."
@@ -877,7 +865,7 @@ news_event = {
 news_event = {
     id = hosttool.71
     title = "Host Tool - War Goals Removed"
-    desc = "The host has removed all war goals of [?global.ht_diplo_a.GetName] against [?global.ht_diplo_b.GetName]."
+    desc = "The host has removed all war goals between [?global.ht_diplo_a.GetName] and [?global.ht_diplo_b.GetName] (both directions)."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -907,5 +895,17 @@ news_event = {
     is_triggered_only = yes
     option = {
         name = "History rewritten"
+    }
+}
+
+news_event = {
+    id = hosttool.74
+    title = "Host Tool - White Peace (All Wars)"
+    desc = "The host has white peaced [?global.ht_diplo_a.GetName] out of all of its wars."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "Peace in our time"
     }
 }
