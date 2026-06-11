@@ -1324,15 +1324,31 @@ GER_price_controls_cat = {
 
 		visible = {
 			has_dlc = "Gotterdammerung"
-			HUN = {
-				exists = yes
-				has_capitulated = no
+			OR = {
+				HUN = {
+					exists = yes
+					has_capitulated = no
+				}
+				# Hungary merged into Romania (STB Asia / Scraping): the union honors the treaty
+				AND = {
+					NOT = { country_exists = HUN }
+					ROM = {
+						owns_state = 43
+						has_capitulated = no
+					}
+				}
 			}
 		}
 
 		available = {
-			HUN = {
-				has_idea = HUN_gombos_trade_treaty
+			OR = {
+				HUN = {
+					has_idea = HUN_gombos_trade_treaty
+				}
+				AND = {
+					NOT = { country_exists = HUN }
+					ROM = { owns_state = 43 }
+				}
 			}
 		}
 
@@ -1350,16 +1366,26 @@ GER_price_controls_cat = {
 			GER_reduce_mefo_bills_penalty = yes
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			HUN = {
-				country_event = {
-					id = wuw_GER_diplomacy.56
-					hours = 2
-				}	
-			}
-			effect_tooltip = {
+			if = {
+				limit = { country_exists = HUN }
 				HUN = {
-					
-					remove_ideas = HUN_gombos_trade_treaty
+					country_event = {
+						id = wuw_GER_diplomacy.56
+						hours = 2
+					}
+				}
+				effect_tooltip = {
+					HUN = {
+						remove_ideas = HUN_gombos_trade_treaty
+					}
+				}
+			}
+			else = {
+				ROM = {
+					country_event = {
+						id = wuw_GER_diplomacy.56
+						hours = 2
+					}
 				}
 			}
 		}
