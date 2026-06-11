@@ -32,10 +32,10 @@ add_breakthrough_progress = {
 
 set_grand_doctrine = new_mobile_warfare
 set_grand_doctrine = new_convoy_raiding
-set_grand_doctrine = new_battlefield_support
+set_grand_doctrine = new_operational_integrity
 
 if = {
-	limit = { always = no }
+	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "GER_1936_air_bba"
 		set_technology = {
 			aa_lmg = 1
@@ -82,8 +82,6 @@ set_technology = {
 	tech_engineers = 1
 	tech_mountaineers = 1
 	tech_trucks = 1
-	rangers_tech = 1
-	marines = 1
 	motorised_infantry = 1
 	gw_artillery = 1
 	interwar_antiair = 1
@@ -92,6 +90,13 @@ set_technology = {
 	synth_oil_experiments = 1
 	fuel_silos = 1
 	fuel_refining = 1
+
+	#MSB change
+	interwar_antitank = 1 
+	armor_tech_1 = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+
 }
 if = {
 	limit = {
@@ -301,8 +306,6 @@ set_variable = { GER_military_air_cas_efficiency = 0 }
 set_variable = { GER_military_air_strategic_bomber_bombing_factor = 0 }
 set_variable = { GER_military_air_range_factor = 0 }
 set_variable = { GER_military_air_fuel_consumption_factor = 0 }
-set_variable = { GER_military_air_attack_factor = 0.05 }
-
 add_dynamic_modifier = { modifier = GER_airforce_modifier }
 
 #CROSSING THE ATLANTIC
@@ -616,7 +619,7 @@ if = {
 	recruit_character = GER_otto_strasser
 	recruit_character = GER_otto_grotewohl
 
-	recruit_character = GER_henrich_focke #Heli Scientist
+	#recruit_character = GER_henrich_focke #Heli Scientist
 }
 
 if = {
@@ -626,7 +629,7 @@ if = {
 			has_dlc = "No Step Back"
 		}
 	}
-	recruit_character = GER_karl_heinrich_emil_becker #Artillery Scientist
+	#recruit_character = GER_karl_heinrich_emil_becker #Artillery Scientist
 }
 
 # Recruiting Starting Operatives
@@ -685,11 +688,11 @@ if = {
 	}
 	add_timed_idea = {
 		idea = add_production_efficiency_41
-		days = 5
+		days = 2
 	}
 	# Adding Ministers and Ideas
 	add_ideas = {
-		tradeback_is_cancer
+
 		# Company if no AAT
 		henschel
 
@@ -712,6 +715,11 @@ if = {
 		totaler_krieg_economy
 		extensive_conscription
 
+	}
+	
+	add_timed_idea = {
+		idea = tradeback_is_cancer
+		days = 60
 	}
 	
 	# BARB MINORS

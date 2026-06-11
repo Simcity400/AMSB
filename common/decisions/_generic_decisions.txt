@@ -120,11 +120,11 @@ political_actions = {
 			modifier = {
 				factor = 0 
 				tag = GER
-				has_completed_focus = GER_oppose_hitler_ww
+				always = no
 				NOT = { 
 					OR = {
-						has_completed_focus = GER_the_peoples_victory 
-						has_completed_focus = GER_monarchist_sentiment 
+						always = no 
+						always = no 
 					}
 				}
 			}
@@ -228,6 +228,7 @@ economy_decisions = {
 
 		visible = { 
 			OR = {
+				tag = JAP
 				is_major = no
 				AND = {
 					is_faction_leader = yes
@@ -1728,7 +1729,7 @@ war_measures = {
         			has_idea = tot_economic_mobilisation
 					has_idea = totaler_krieg_economy
 				}
-				NOT = { has_completed_focus = GER_womens_rights_and_equality }
+				NOT = { always = no }
 			}
 			else_if = {
 				limit = {
@@ -1738,7 +1739,7 @@ war_measures = {
 					has_idea = tot_economic_mobilisation
 					has_idea = national_defense_state
 				}
-				NOT = { has_completed_focus = JAP_democratic_women_in_the_workforce }
+				NOT = { always = no }
 			}
             OR = {
                 AND = {
@@ -1769,7 +1770,7 @@ war_measures = {
             	limit = {
             		original_tag = GER
             	}
-            	NOT = { has_completed_focus = GER_womens_rights_and_equality }
+            	NOT = { always = no }
             }
         }
         cost = 100
@@ -1785,7 +1786,7 @@ war_measures = {
         				NOT = { has_idea = tot_economic_mobilisation }
         				NOT = { has_idea = totaler_krieg_economy }
         			}
-        			has_completed_focus = GER_womens_rights_and_equality
+        			always = no
         		}
             }
             else_if = {
@@ -1936,6 +1937,7 @@ war_measures = {
 					tag = USA #has a focus
 					tag = SOV #has a focus
 					tag = JAP #has a focus
+					tag = AST #has a focus
 					tag = FRA #has a focus
 					tag = GER #has a focus
 				}
@@ -1946,6 +1948,7 @@ war_measures = {
 		}
 
 		visible = {
+			is_major = yes
 			date > 1940.1.1
 			IF = {
 				limit = {
@@ -2043,6 +2046,7 @@ foreign_politics = {
         days_re_enable = 30
 
         available = {
+			is_ai = no
         }
 
         visible = {
@@ -2060,7 +2064,7 @@ foreign_politics = {
 			NOT = {
 				AND = {
 					original_tag = SPR
-					has_completed_focus = SPR_regional_defense_council_of_aragon
+					always = no
 				}
 			}
 		}

@@ -7,9 +7,10 @@ elwolfmod_vichy_france = {
 		remove_ideas = FRA_full_employment
 		remove_ideas = FRA_protected_by_the_maginot_line
 		remove_ideas = FRA_victors_of_wwi
-		remove_ideas = FRA_disjointed_government
-		remove_ideas FRA_inefficient_economy_1
-		remove_ideas FRA_inefficient_economy_2
+		remove_ideas = FPM_disjointed_government1
+		remove_ideas = FPM_disjointed_government
+		remove_ideas = FRA_inefficient_economy_1
+		remove_ideas = FRA_inefficient_economy_2
 		add_equipment_to_stockpile = {
 			type = convoy_1
 			amount = 200
@@ -20,7 +21,7 @@ elwolfmod_vichy_france = {
 		}
 	}
 	EFR = {
-		#Mainland vichy shit
+		#Mainland Vichy
 		transfer_state = 26
 		set_capital = {
 			state = 26
@@ -32,13 +33,15 @@ elwolfmod_vichy_france = {
 		transfer_state = 31
 		transfer_state = 25
 		transfer_state = 33
-		#Algeria vichy shit
+
+		#Algeria Vichy
 		transfer_state = 459
 		transfer_state = 461
 		transfer_state = 462
 		transfer_state = 462
 		transfer_state = 460
 		transfer_state = 513
+
 		462 = {
 			set_demilitarized_zone = yes
 		}
@@ -54,6 +57,46 @@ elwolfmod_vichy_france = {
 		460 = {
 			set_demilitarized_zone = yes
 		}
+
+		every_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_compliance = 70
+		}
+
+		give_resource_rights = {
+			receiver = GER
+			state = 22
+		}
+		give_resource_rights = {
+			receiver = GER
+			state = 20
+		}
+		give_resource_rights = {
+			receiver = GER
+			state = 32
+		}
+		give_resource_rights = {
+			receiver = GER
+			state = 21
+		}
+		give_resource_rights = {
+			receiver = ITA
+			state = 459
+		}
+		
+		diplomatic_relation = {
+			country = GER
+			relation = military_access
+			active = yes
+		}
+
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			producer = FRA
+			amount = 100000
+		}
 	}
 	GER = {
 		diplomatic_relation = {   
@@ -61,22 +104,30 @@ elwolfmod_vichy_france = {
 			relation = guarantee   
 			active = yes 
 		} 
+		diplomatic_relation = {
+			country = EFR
+			relation = military_access
+			active = yes
+		}
 	}
 	
 	ITA = { 
+		diplomatic_relation = {
+			country = EFR
+			relation = military_access
+			active = yes
+		}
 		transfer_state = 735 
 		transfer_state = 851 
 		transfer_state = 1 
 		transfer_state = 665
 		transfer_state = 458
-		735 = { 
-			add_compliance = 30 
-		}
-		1 = { 
-			add_compliance = 30 
-		}
-		851 = { 
-			add_compliance = 30 
+
+		every_state = {
+			limit = {
+				is_core_of = FRA
+			}
+			add_compliance = 70
 		}
 	}
 }

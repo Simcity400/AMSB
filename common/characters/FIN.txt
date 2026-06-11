@@ -231,7 +231,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { trait_mountaineer commando trickster reckless }
+			traits = { trait_mountaineer commando trickster trait_reckless }
 			skill = 3
 			attack_skill = 3
 			defense_skill = 3
@@ -305,7 +305,7 @@ characters = {
 			logistics_skill = 2
 			legacy_id = -1
 			visible = {
-				has_completed_focus = FIN_patriotic_peoples_movement
+				always = no
 				NOT = { has_government = communism }
 			}
 		}
@@ -474,7 +474,7 @@ characters = {
 			logistics_skill = 1
 			legacy_id = -1
 			visible = {
-				has_completed_focus = FIN_military_promotions
+				always = no
 				NOT = { has_government = communism }
 			}
 		}
@@ -520,9 +520,9 @@ characters = {
 			legacy_id = -1
 			visible = {
 				OR = {
-					has_completed_focus = FIN_social_democracy
+					always = no
 					has_completed_focus = FIN_political_unity
-					has_completed_focus = FIN_cooperate_with_social_democrats
+					always = no
 				}
 				NOT = { has_government = fascism }
 			}
@@ -538,7 +538,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { infantry_officer reckless }
+			traits = { infantry_officer trait_reckless }
 			skill = 3
 			attack_skill = 2
 			defense_skill = 3
@@ -546,7 +546,7 @@ characters = {
 			logistics_skill = 2
 			legacy_id = -1
 			visible = {
-				has_completed_focus = FIN_the_second_finnish_civil_war
+				always = no
 			}
 		}
 		advisor = {
@@ -559,7 +559,7 @@ characters = {
 			}
 
 			available = {
-				has_completed_focus = FIN_the_second_finnish_civil_war
+				always = no
 			}
 			
 			traits = {
@@ -637,10 +637,10 @@ characters = {
 			legacy_id = -1
 			visible = {
 				OR = {
-					has_completed_focus = FIN_approach_the_soviets
-					has_completed_focus = FIN_confederated_finno_russian_republics
+					always = no
+					always = no
 				}
-				has_completed_focus = FIN_the_second_finnish_civil_war #So the character is available once the Civil War starts
+				always = no #So the character is available once the Civil War starts
 				has_government = communism
 			}
 		}
@@ -655,7 +655,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { career_officer engineer infantry_officer jaeger }
+			traits = { career_officer trait_engineer infantry_officer jaeger }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 1
@@ -664,10 +664,10 @@ characters = {
 			legacy_id = -1
 			visible = {
 				OR = {
-					has_completed_focus = FIN_approach_the_soviets
-					has_completed_focus = FIN_confederated_finno_russian_republics
+					always = no
+					always = no
 				}
-				has_completed_focus = FIN_the_second_finnish_civil_war #So the character is available once the Civil War starts
+				always = no #So the character is available once the Civil War starts
 				has_government = communism
 			}
 		}
@@ -691,10 +691,10 @@ characters = {
 			legacy_id = -1
 			visible = {
 				OR = {
-					has_completed_focus = FIN_approach_the_soviets
-					has_completed_focus = FIN_confederated_finno_russian_republics
+					always = no
+					always = no
 				}
-				has_completed_focus = FIN_the_second_finnish_civil_war #So the character is available once the Civil War starts
+				always = no #So the character is available once the Civil War starts
 				has_government = communism
 			}
 		}
@@ -707,10 +707,10 @@ characters = {
 			available = {
 				has_government = communism
 				OR = {
-					has_completed_focus = FIN_approach_the_soviets
-					has_completed_focus = FIN_confederated_finno_russian_republics
+					always = no
+					always = no
 				}
-				has_completed_focus = FIN_the_second_finnish_civil_war #So the character is available once the Civil War starts
+				always = no #So the character is available once the Civil War starts
 			}
 			traits = {
 				army_chief_planning_1
@@ -1359,7 +1359,7 @@ characters = {
 					NOT = {
 						has_government = communism
 						has_government = democratic
-						has_completed_focus = FIN_suomalainen_sosialismi
+						always = no
 					}
 				}
 				else = {
@@ -1721,7 +1721,7 @@ characters = {
 				logistics_skill = 2
 				legacy_id = -1
 				visible = {
-					has_completed_focus = FIN_military_promotions
+					always = no
 					NOT = { has_government = communism }
 				}
 			}
@@ -1732,7 +1732,7 @@ characters = {
 					original_tag = FIN
 				}
 				available = {
-					has_completed_focus = FIN_right_wing_policies
+					always = no
 					NOT = { has_government = communism }
 				}
 				cost = 100
@@ -1744,7 +1744,7 @@ characters = {
 					modifier = {
 						factor = 200
 						FIN_is_fascist_ai = yes
-						NOT = { has_completed_focus = FIN_a_fascist_regime }
+						NOT = { always = no }
 					}
 					modifier = {
 						factor = 0
@@ -1799,7 +1799,7 @@ characters = {
 					}
 					OR = {
 						has_completed_focus = FIN_political_unity
-						has_completed_focus = FIN_patriotic_peoples_movement
+						always = no
 					}
 				}
 				else = {
@@ -1841,7 +1841,7 @@ characters = {
 				has_dlc = "Arms Against Tyranny"
 			}
 			available = {
-				has_completed_focus = FIN_maan_turva
+				always = no
 				NOT = { has_government = communism }
 			}
 			cost = 70
@@ -1866,7 +1866,7 @@ characters = {
 				has_dlc = "Arms Against Tyranny"
 			}
 			available = {
-				has_completed_focus = FIN_sotilaalliset_kappalaiset
+				always = no
 				NOT = { has_government = communism }
 			}
 			cost = 70
@@ -1896,8 +1896,8 @@ characters = {
 					}
 					OR = {
 						has_completed_focus = FIN_political_unity
-						has_completed_focus = FIN_finnish_irredentism
-						has_completed_focus = FIN_intellectual_elite
+						always = no
+						always = no
 					}
 				}
 				else = {
@@ -1938,8 +1938,8 @@ characters = {
 				available = {
 					is_country_leader = no
 					OR = {
-						has_completed_focus = FIN_social_democracy
-						has_completed_focus = FIN_cooperate_with_social_democrats
+						always = no
+						always = no
 						has_completed_focus = FIN_collaboration_with_the_left
 					}
 				}
@@ -2002,8 +2002,8 @@ characters = {
 				}
 				available = {
 					OR = {
-						has_completed_focus = FIN_social_democracy
-						has_completed_focus = FIN_cooperate_with_social_democrats
+						always = no
+						always = no
 						has_completed_focus = FIN_collaboration_with_the_left
 					}
 				}
@@ -2071,7 +2071,7 @@ characters = {
 					original_tag = FIN
 				}
 				available = {
-					has_completed_focus = FIN_suomalainen_sosialismi
+					always = no
 				}
 				cost = 100
 				traits = {
@@ -2131,7 +2131,7 @@ characters = {
 				has_dlc = "Arms Against Tyranny"
 			}
 			available = {
-				has_completed_focus = FIN_social_democratic_womens_union
+				always = no
 			}
 			cost = 70
 			traits = {
@@ -2195,7 +2195,7 @@ characters = {
 				}
 				available = {
 					is_country_leader = no
-					has_completed_focus = FIN_approach_the_soviets
+					always = no
 				}
 				cost = 70
 				traits = {
@@ -2229,7 +2229,7 @@ characters = {
 				}
 				available = {
 					is_country_leader = no
-					has_completed_focus = FIN_approach_the_soviets
+					always = no
 				}
 				cost = 70
 				traits = {
@@ -2281,7 +2281,7 @@ characters = {
 					original_tag = FIN
 				}
 				available = {
-					has_completed_focus = FIN_suomalainen_sosialismi
+					always = no
 				}
 				cost = 100
 				traits = {
@@ -2345,7 +2345,7 @@ characters = {
 			}
 			available = {
 				is_country_leader = no
-				has_completed_focus = FIN_towards_a_red_government
+				always = no
 			}
 			cost = 70
 			traits = {
@@ -2355,7 +2355,7 @@ characters = {
 				base = 1
 				modifier = {
 					add = 10
-					NOT = { has_completed_focus = FIN_the_second_finnish_civil_war }
+					NOT = { always = no }
 				}
 			}
 		}
@@ -2376,7 +2376,7 @@ characters = {
 				has_dlc = "Arms Against Tyranny"
 			}
 			available = {
-				has_completed_focus = FIN_towards_a_red_government
+				always = no
 			}
 			cost = 70
 			traits = {
@@ -2404,8 +2404,8 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = FIN_the_peoples_democratic_league
-					has_completed_focus = FIN_sosialistinen_eduskuntaryhma
+					always = no
+					always = no
 				}
 			}
 			cost = 70
@@ -2438,8 +2438,8 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = FIN_the_peoples_democratic_league
-					has_completed_focus = FIN_sosialistinen_eduskuntaryhma
+					always = no
+					always = no
 				}
 			}
 			cost = 70
@@ -2472,8 +2472,8 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = FIN_the_workers_state
-					has_completed_focus = FIN_social_democratic_womens_union
+					always = no
+					always = no
 				}
 			}
 			cost = 70
@@ -2527,7 +2527,7 @@ characters = {
 				has_dlc = "Arms Against Tyranny"
 			}
 			available = {
-				has_completed_focus = FIN_antagonize_the_soviets
+				always = no
 				OR = {
 					has_government = democratic
 					has_government = communism

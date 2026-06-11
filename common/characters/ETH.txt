@@ -725,50 +725,105 @@ characters = {
 	}
 
 	ETH_abebe_aregai = {
-		name = ETH_abebe_aregai
-		allowed_civil_war = {
-			NOT = { has_government = fascism }
-		}
-		portraits = {
-			army = {
-				large=GFX_portrait_ETH_abebe_aregai
-				small=GFX_portrait_ETH_abebe_aregai_small
+		instance = {
+			allowed = {
+				has_dlc = "La Resistance"
 			}
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = ETH_abebe_aregai
-			allowed  = {
-				original_tag  = ETH
-			}
-			available = {
+
+			name = ETH_abebe_aregai
+			allowed_civil_war = {
 				NOT = { has_government = fascism }
-				NOT = { has_idea_with_trait = minister_of_the_interior_abate }
 			}
-			traits = {
-				minister_of_the_interior_aregai
-			}
-			on_add = {
-				owner = {
-					ETH_BOP_decentralization_small_effect = yes
+			portraits = {
+				army = {
+					large=GFX_portrait_ETH_abebe_aregai
+					small=GFX_portrait_ETH_abebe_aregai_small
 				}
 			}
-			on_remove = {
-				owner = {
-					ETH_BOP_centralization_small_effect = yes
+			advisor = {
+				slot = political_advisor
+				idea_token = ETH_abebe_aregai
+				allowed  = {
+					original_tag  = ETH
+				}
+				available = {
+					NOT = { has_government = fascism }
+					NOT = { has_idea_with_trait = minister_of_the_interior_abate }
+				}
+				traits = {
+					minister_of_the_interior_aregai
+				}
+				on_add = {
+					owner = {
+						ETH_BOP_decentralization_small_effect = yes
+					}
+				}
+				on_remove = {
+					owner = {
+						ETH_BOP_centralization_small_effect = yes
+					}
 				}
 			}
-		}
-		corps_commander = {
-			traits = { trickster }
-			skill = 1
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id = -1
+			corps_commander = {
+				traits = { trickster }
+				skill = 1
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+				legacy_id = -1
+			}
 		}
 
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "La Resistance" }
+			}
+
+			name = ETH_abebe_aregai
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+			portraits = {
+				army = {
+					large=GFX_portrait_ETH_abebe_aregai
+					small=GFX_portrait_ETH_abebe_aregai_small
+				}
+			}
+			advisor = {
+				slot = political_advisor
+				idea_token = ETH_abebe_aregai
+				allowed  = {
+					original_tag  = ETH
+				}
+				available = {
+					NOT = { has_government = fascism }
+					NOT = { has_idea_with_trait = minister_of_the_interior_abate }
+				}
+				traits = {
+					minister_of_the_interior_aregai_no_lar
+				}
+				on_add = {
+					owner = {
+						ETH_BOP_decentralization_small_effect = yes
+					}
+				}
+				on_remove = {
+					owner = {
+						ETH_BOP_centralization_small_effect = yes
+					}
+				}
+			}
+			corps_commander = {
+				traits = { trickster }
+				skill = 1
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+				legacy_id = -1
+			}
+		}
 	}
 
 	ETH_ayalew_birru = {

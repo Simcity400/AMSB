@@ -77,6 +77,18 @@ instant_effect = {
 		sp_armored_advanced_flamethrower_tech = 1
 
 		# Doctrines
+		 
+		pocket_defence = 1
+		defence_in_depth = 1
+		peoples_army = 1
+		human_infantry_offensive = 1
+		large_front_offensive = 1
+		human_wave_offensive = 1
+		guerilla_warfare = 1
+		# Air
+		formation_flying = 1		
+		dive_bombing = 1
+		direct_ground_support = 1
 
 		# Electronics
 		electronic_mechanical_engineering = 1
@@ -127,27 +139,74 @@ instant_effect = {
 		} 
 		add_equipment_to_stockpile = { 
 			type = infantry_equipment_2 
-			amount = 187500 
+			amount = 89500 
 		}
 		add_equipment_to_stockpile = { 
 			type = support_equipment_1 
-			amount = 7800 
+			amount = 2300 
 		}
 		add_equipment_to_stockpile = { 
 			type = motorized_equipment_1 
-			amount = 6000 
+			amount = 3500 
 		} 
 		add_equipment_to_stockpile = { 
 			type = artillery_equipment_2 
-			amount = 1660 
+			amount = 930 
 		}
 		add_equipment_to_stockpile = { 
 			type = anti_tank_equipment_2 
-			amount = 5000 
+			amount = 3800 
 		}
 		add_equipment_to_stockpile = { 
 			type = train_equipment_1 
-			amount = 134 
+			amount = 67 
+		}
+		add_equipment_production = {
+			equipment = {
+				type = infantry_equipment_3
+				creator = "ROM"
+			}
+			requested_factories = 30
+			progress = 1
+			efficiency = 65
+			industrial_manufacturer = mio:ROM_cugir_organization
+		}
+		add_equipment_production = {
+			equipment = {
+			type = train_equipment_1
+			creator = "ROM" 
+			}
+			requested_factories = 1
+			progress = 1
+			efficiency = 100
+		}
+		add_equipment_production = {
+			equipment = {
+				type = support_equipment_1
+				creator = "ROM" 
+			}
+				requested_factories = 5
+				progress = 1
+				efficiency = 80
+		}
+		add_equipment_production = {
+			equipment = {
+				type = motorized_equipment_1
+				creator = "ROM" 
+			}
+			requested_factories = 1
+			progress = 1
+			efficiency = 100
+		}
+		add_equipment_production = {
+			equipment = {
+				type = anti_tank_equipment_3
+				creator = "ROM" 
+			}
+			requested_factories = 18
+			progress = 1
+			efficiency = 60
+			industrial_manufacturer = mio:ROM_resita_works_organization
 		}
 		#Convoy
 		add_equipment_to_stockpile = { 

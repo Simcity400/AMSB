@@ -243,9 +243,9 @@ country_event = {
 				is_guaranteed_by = GER
 				GER = {
 					OR = {
-						has_completed_focus = GER_safeguard_poland
-						has_completed_focus = GER_danzig_for_guarantees
-						has_completed_focus = GER_danzig_for_guarantees_ww
+						always = no
+						always = no
+						always = no
 					}
 				}
 			}
@@ -943,7 +943,7 @@ country_event = {
 			}
 		}
 		POL = {
-			add_opinion_modifier = { target = PREV modifier = POL_annexation_refused }
+			
 			country_event = { hours = 2 id = poland.1502 }
 			if = { limit = { is_in_faction_with = LIT }
 				remove_from_faction = LIT
@@ -1650,7 +1650,7 @@ country_event = { #Event to alert Poland of the Peasant's Strike beginning
 			factor = 50
 		}
 		effect_tooltip = {
-			activate_mission = POL_peasants_strike
+			#activate_mission = POL_peasants_strike
 			swap_ideas = {
 				remove_idea = POL_looming_peasants_strike
 				add_idea = POL_great_peasants_strike

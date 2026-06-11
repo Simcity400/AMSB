@@ -28,7 +28,7 @@ if = {
 }
 
 if = {
-	limit = { always = no }
+	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "FRA_1936_air_bba"
 		set_technology = {
 			aa_lmg = 1
@@ -95,8 +95,8 @@ set_technology = {
 	tech_recon = 1
 	tech_mountaineers = 1
 	marines  = 1
-	rangers_tech = 1
-	paratroopers = 1 
+	paratroopers = 1
+	rangers_tech = 1 
 	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
@@ -221,7 +221,6 @@ if = {
 	    FRA_matignon_agreements
 		#laws
 		partial_economic_mobilisation
-		FRA_no_cap
 	}
 
 	complete_national_focus = FRA_begin_rearmament
@@ -443,6 +442,9 @@ recruit_character = FRA_francois_darlan
 recruit_character = FRA_jeanmarie_charles_abrial
 recruit_character = FRA_jeanpierre_esteva
 recruit_character = FRA_jean_de_laborde
+#recruit_character = FRA_jean_romatet
+#recruit_character = FRA_emile_laure
+#recruit_character = FRA_joseph_doumenc
 # recruit_character = FRA_denis_guillaumat # Has been removed to make way for Charles Maurras, but might be readded
 recruit_character = FRA_philippe_fequant
 recruit_character = FRA_victor_denain
@@ -485,10 +487,19 @@ recruit_character = FRA_irene_joliot_curie
 recruit_character = FRA_frederic_joliot_curie
 recruit_character = FRA_francois_hussenot
 recruit_character = FRA_louis_renault
-recruit_character = FRA_emile_rimailho
-recruit_character = FRA_eugene_schneider_ii
 recruit_character = FRA_henri_edmond_fouche
 recruit_character = FRA_joseph_bethenod
+
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Gotterdammerung"
+			has_dlc = "No Step Back"
+		}
+	}
+	recruit_character = FRA_emile_rimailho #Artillery Scientist
+	recruit_character = FRA_eugene_schneider_ii #Artillery Scientist
+}
 
 
 if = {

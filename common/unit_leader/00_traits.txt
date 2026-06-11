@@ -704,13 +704,13 @@ leader_traits = {
 			modifier = { #ITALY
 				factor = 2
 				FROM = {
-					has_completed_focus = ITA_comandante_diavolo
+					always = no
 				}
 			}
 			modifier = { #ITALY
 				factor = 2
 				FROM = {
-					has_completed_focus = ITA_proclaim_the_italian_empire
+					always = no
 				}
 			}
 		}
@@ -767,7 +767,7 @@ leader_traits = {
 			modifier = { #ITALY
 				factor = 2
 				FROM = {
-					has_completed_focus = ITA_strengthen_ascari_corps
+					always = no
 				}
 			}
 			modifier = { #ITALY
@@ -851,7 +851,7 @@ leader_traits = {
 				factor = 2
 				FROM = {
 					OR = {
-						has_completed_focus = ITA_divino_duce
+						always = no
 						has_completed_focus = ITA_a_greater_purpose
 					}
 				}
@@ -3139,11 +3139,72 @@ leader_traits = {
 	recently_promoted = {
 		type = all
 		trait_type = status_trait
-		
-		attack_skill = -1
-		defense_skill = -1
-		logistics_skill = -1
-		planning_skill = -1
+
+
+	}
+
+	motivated = {
+		type = land
+		trait_type = status_trait
+
+		attack_skill = 1
+
+		non_shared_modifier = {
+			army_morale_factor = 0.10
+		}
+	}
+
+	trait_JAP_kodoha_sympathizer = {
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				original_tag = JAP
+			}
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	JAP_royal_lineage = {
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				original_tag = JAP
+			}
+		}
+		modifier = {
+
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	CHI_dubious_loyalty = {
+		type = { land }
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			factor = 0
+		}
+
+		modifier = {
+
+		}
 	}
 
 	# defective_geneseed = { #needs more code support, remove before launch
@@ -3282,12 +3343,12 @@ leader_traits = {
 				FROM = {
 					OR = {
 						neutrality < 0.05
-						has_completed_focus = BUL_overthrow_the_tsar
-						has_completed_focus = BUL_abolish_the_monarchy
-						has_completed_focus = BUL_depose_the_tsar
+						always = no
+						always = no
+						always = no
 						AND = {
-							has_completed_focus = BUL_plot_against_boris
-							NOT = { has_completed_focus = BUL_the_return_of_ferdinand_i }
+							always = no
+							NOT = { always = no }
 						}
 					}
 				}

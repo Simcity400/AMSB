@@ -29,253 +29,26 @@ operations = {
         }
     }
 
-		annex_bulgaria= {
-			# icon = generic_operation
-			allowed = {
-
-			}
-			fire_only_once = yes
-			cost = 0
-			ai_will_do = {
-				factor = 0
-			}
-			available = {
-				BUL = {
-					is_ai = yes
-				}
-				if = {
-					limit = { USA = { exists = yes }}
-					SPR = {
-						has_idea = tot_economic_mobilisation
-					}
-				}
-			}
-            visible = {
-				if = {
-					limit = { USA = { exists = yes } }
-					tag = SPR
-				}
-				else = {
-					tag = ITA
-				}
-			}
-			targets = {
-				BUL	
-			}
-
-			complete_effect = {
-				hidden_effect = {
-					BUL = {
-						if = {
-							limit = { NOT = {has_completed_focus = BUL_reorganize_the_military_industry_2} }
-							complete_national_focus = BUL_reorganize_the_military_industry_2
-							}
-						}
-					}
-				SPR = { add_ideas = extra_cp }
-				if = {
-					limit = { ITA = { has_country_flag = italy_no_bulgaia_no_asia } }
-					add_offsite_building = {
-						type = industrial_complex
-						level = -11
-					}
-					add_offsite_building = {
-						type = arms_factory
-						level = -15
-					}
-				}
-				if = {
-					limit = { USA = { exists = yes } }
-				BUL = {
-					transfer_units_fraction = {
-						target = SPR
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
-				SPR = {
-					annex_country = {
-						target = BUL
-						transfer_troops = yes
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = BUL 
-						is_controlled_by = SPR
-					}
-					add_compliance = 100
-				}
-			}
-			else = {
-				BUL = {
-					transfer_units_fraction = {
-						target = ITA
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
-				ITA = {
-					annex_country = {
-						target = BUL
-						transfer_troops = yes
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = BUL 
-						is_controlled_by = ITA
-					}
-					add_compliance = 100
-				}
-			}
+	fra_join_allies= { 
+		name = FRA_go_with_britain
+		icon = GFX_decision_eng_blackshirt_speech
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			is_in_faction = no
+		}
+		targets = {
+			ENG	
+		}
+		complete_effect = {
+			ENG = { country_event = { id = britain.13 } }
 		}
 	}
-
-    	annex_east_indies = {
-			# icon = generic_operation
-			allowed = {
-				tag = USA
-			}
-			fire_only_once = yes
-			cost = 0
-			ai_will_do = {
-				factor = 0
-			}
-			visible = {
-				always = no
-			}
-			available = {
-                date > 1940.03.01
-				HOL = {
-                    has_capitulated = yes
-					is_ai = yes
-				}
-				JAP = {has_war = no }
-			}
-			targets = {
-				HOL	
-			}
-			complete_effect = {
-		
-				USA = {
-               	    transfer_state = 672
-			        transfer_state = 334
-			        transfer_state = 335
-			        transfer_state = 667
-			        transfer_state = 673
-			        transfer_state = 668
-			        #transfer_state = 669
-			        transfer_state = 309
-			        #transfer_state = 695
-                    transfer_state = 721 
-                    transfer_state = 738   
-				}
-		
-			}
-		}
-		
-		annex_finland= {
-			# icon = generic_operation
-			allowed = {
-				tag = GER
-			}
-			fire_only_once = yes
-			cost = 0
-			ai_will_do = {
-				factor = 0
-			}
-			available = {
-				FIN = {
-					is_ai = yes
-				}
-			}
-            visible = {
-				FIN = {
-					is_ai = yes
-				}
-			}
-			targets = {
-				FIN	
-			}
-			complete_effect = {
-				FIN = {
-					transfer_units_fraction = {
-						target = GER
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
-				GER = {
-					annex_country = {
-						target = FIN
-						transfer_troops = yes
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = FIN 
-						is_controlled_by = GER
-					}
-					add_compliance = 100
-				}
-			}
-		}
-    }
-
-    political_actions = {
-
-	uk_texas_oil = {
-        icon = GFX_decision_oil
-        allowed = {
-            tag = ENG
-        }
-        fire_only_once = yes
-            cost = 0
-            ai_will_do = {
-                factor = 0
-            }
-            available = {
-                ENG = {
-                    has_war = yes
-                }
-            }
-			visible = {
-        		country_exists = USA
-    		}
-            targets = {
-                USA
-            }
-            complete_effect = {
-                USA = {
-                    give_resource_rights = {
-					receiver = ENG
-					state = 375
-				}
-                }
-            }
-    }	
-
 	move_capital_to_cascablanca = {
-		fire_only_once = yes
+		#fire_only_once = yes
 		allowed = {
 			tag = FRA
 		}
@@ -291,9 +64,8 @@ operations = {
 			}
 		}
 	}
-
 	move_capital_to_gabon = {
-		fire_only_once = yes
+		#fire_only_once = yes
 		allowed = {
 			tag = FRA
 		}
@@ -309,9 +81,8 @@ operations = {
 			}
 		}
 	}
-
 	move_capital_to_brest = {
-		fire_only_once = no
+		#fire_only_once = no
 		allowed = {
 			tag = FRA
 		}
@@ -329,9 +100,8 @@ operations = {
 			}
 		}
 	}
-
 	move_capital_to_paris = {
-		fire_only_once = no
+		#fire_only_once = no
 		allowed = {
 			tag = FRA
 		}
@@ -349,7 +119,6 @@ operations = {
 			}
 		}
 	}
-
 	move_capital_to_Kazan = {
 		fire_only_once = yes
 		allowed = {
@@ -396,11 +165,164 @@ operations = {
 		}
 	}
 
-}
+	###################
+	# ANNEX DECISIONS #
+	###################
+
+		annex_bulgaria= {
+			# icon = generic_operation
+			allowed = {
+				tag = ITA
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			available = {
+				BUL = {
+					is_ai = yes
+				}
+			}
+            visible = {
+				BUL = {
+					is_ai = yes
+				}
+			}
+			targets = {
+				BUL	
+			}
+			complete_effect = {
+                add_ideas = extra_cp
+				# SPR = { add_ideas = extra_cp }
+				BUL = {
+					transfer_units_fraction = {
+						target = ITA
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				ITA = {
+					annex_country = {
+						target = BUL
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = BUL 
+						is_controlled_by = ITA
+					}
+					add_compliance = 100
+				}
+			}
+		}
+	
+	
+		annex_manchukuo = {
+			# icon = generic_operation
+			allowed = {
+				tag = JAP
+			}
+			available = {
+				MAN = {
+					is_ai = yes
+				}
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			visible = {
+				tag = JAP
+			}
+			targets = {
+				MAN
+			}
+			complete_effect = {
+				MAN = {
+					transfer_units_fraction = {
+						target = JAP
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				JAP = {
+					annex_country = {
+						target = MAN
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = MAN
+						is_controlled_by = JAP
+					}
+					add_compliance = 100
+				}
+			}
+		}
+
+    	annex_east_indies = {
+			# icon = generic_operation
+			allowed = {
+				tag = USA
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			visible = {
+				always = no
+			}
+			available = {
+                date > 1940.03.01
+				HOL = {
+                    has_capitulated = yes
+					is_ai = yes
+				}
+				JAP = {has_war = no }
+			}
+			targets = {
+				HOL	
+			}
+			complete_effect = {
+		
+				USA = {
+               	    transfer_state = 672
+			        transfer_state = 334
+			        transfer_state = 335
+			        transfer_state = 667
+			        transfer_state = 673
+			        transfer_state = 668
+			        #transfer_state = 669
+			        transfer_state = 309
+			        #transfer_state = 695
+                    transfer_state = 721 
+                    transfer_state = 738   
+				}
+		
+			}
+		}
+    }
 
 Technologies = {
 
-	uk_hf3_usa = {
+		uk_hf3_usa = {
             icon = GFX_decision_generic_merge_plant_aircraft
             allowed = {
                 tag = ENG
@@ -420,70 +342,70 @@ Technologies = {
             }
 
             complete_effect = {
-              	set_technology = { heavy_fighter3 = 1 }
+              	set_technology = { advanced_medium_airframe = 1 }
 				add_ideas = air_support_focus
             }
-    }
+    	}
 
-	hosttool_mech = {
-    	# icon = generic_operation
-    	allowed = {
-    	}
-    	fire_only_once = no
-    	cost = 0
-    	ai_will_do = {
-        	factor = 0
-    	}
-    	visible = {
-        	NOT = {
-                tag = HOL
-            	}
-    	}
-    	available = {
-            date > 1937.08.01
-        }
-    	complete_effect = {
-        	SWE = {
-            	create_production_license = {
-                	target = ROOT
-                	equipment = {
-                    	type = mechanized_equipment_1
-                    	version = 1
-                	}
-                	cost_factor = 0
-           		}
-        	}
-    	}
-    }
+		hosttool_mech = {
+			# icon = generic_operation
+			allowed = {
+			}
+			fire_only_once = no
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			visible = {
+				NOT = {
+					tag = HOL
+					}
+			}
+			available = {
+				date > 1937.01.01
+			}
+			complete_effect = {
+				SWE = {
+					create_production_license = {
+						target = ROOT
+						equipment = {
+							type = mechanized_equipment_1
+							version = 1
+						}
+						cost_factor = 0
+					}
+				}
+			}
+		}
 
-    hosttool_amtrac = {
-        # icon = generic_operation
-        allowed = {}
-        fire_only_once = no
-        cost = 0
-        ai_will_do = {
-            factor = 0
-        }
-        visible = {}
-        available = {
-           date > 1939.6.1
-        }
-        complete_effect = {
-            SWE = {
-                create_production_license = {
-                    target = ROOT
-                        equipment = {
-                            type = amphibious_mechanized_equipment_1
-                            version = 0
-                            new_prioritised = yes
-                        }
-                    cost_factor = 0
-                }
-            }
-        }
-	}
+		hosttool_amtrac = {
+			# icon = generic_operation
+			allowed = {}
+			fire_only_once = no
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			visible = {}
+			available = {
+			date > 1940.1.1
+			}
+			complete_effect = {
+				SWE = {
+					create_production_license = {
+						target = ROOT
+							equipment = {
+								type = amphibious_mechanized_equipment_1
+								version = 0
+								new_prioritised = yes
+							}
+						cost_factor = 0
+					}
+				}
+			}
+		}
     
-    hosttool_aa2 = {
+    	hosttool_aa2 = {
             # icon = generic_operation
             allowed = {
             }
@@ -511,8 +433,8 @@ Technologies = {
                     }
                 }
             }
-    }
-    hosttool_aa3 = {
+    	}
+    	hosttool_aa3 = {
             # icon = generic_operation
             allowed = {
             }
@@ -541,38 +463,38 @@ Technologies = {
                     }
                 }
             }
-    }
+    	}
     
-    hosttool_gun2 = {
-        # icon = generic_operation
-        allowed = {
-        }
-        fire_only_once = no
-        cost = 0
-        ai_will_do = {
-            factor = 0
-        }
-        
-        available = {
-            AND = {
-                date > 1938.02.1
-                
-            }
-        }
-        complete_effect = {
-            SWE = {
-                create_production_license = {
-                    target = ROOT
-                    equipment = {
-                        type = infantry_equipment_2
-                        version = 0
-                        
-                    }
-                    cost_factor = 0
-                }
-            }
-        }
-}
+		hosttool_gun2 = {
+			# icon = generic_operation
+			allowed = {
+			}
+			fire_only_once = no
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			
+			available = {
+				AND = {
+					date > 1938.02.1
+					
+				}
+			}
+			complete_effect = {
+				SWE = {
+					create_production_license = {
+						target = ROOT
+						equipment = {
+							type = infantry_equipment_2
+							version = 0
+							
+						}
+						cost_factor = 0
+					}
+				}
+			}
+		}
                 hosttool_gun3 = {
                     # icon = generic_operation
                     allowed = {
@@ -1011,11 +933,11 @@ E_ll = {
 	
 		icon = GFX_decision_generic_air
 			
-			allowed = {
+		allowed = {
 		}
 		
 		available = {
-				date > 1940.10.01	
+			date > 1941.1.1
 		} 
 		fire_only_once = yes
 		visible = {
@@ -1036,6 +958,12 @@ E_ll = {
 		visible = {	
 			OR = {
 				original_tag = ITA
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+				original_tag = SPR
+				original_tag = IRQ
 			}
 			NOT = { has_country_flag = sending_ll_to_ger }
 		}
@@ -1054,6 +982,12 @@ E_ll = {
 		visible = {	
 			OR = {
 				original_tag = ITA
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+				original_tag = SPR
+				original_tag = IRQ
 			}
 			has_country_flag = sending_ll_to_ger
 		}
@@ -1069,6 +1003,12 @@ E_ll = {
 		allowed = {	 
 			OR = { 
 				original_tag = ITA
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+				original_tag = SPR
+				original_tag = IRQ
 			} 
 		}
 		available = {
@@ -1097,6 +1037,12 @@ E_ll = {
 		allowed = {	 
 			OR = { 
 				original_tag = ITA
+				original_tag = HUN
+				original_tag = ROM
+				original_tag = BUL
+				original_tag = FIN
+				original_tag = SPR
+				original_tag = IRQ
 			} 
 		}
 		available = {
@@ -1121,99 +1067,8 @@ E_ll = {
 			activate_mission = GER_recieving_ll_1		
 		}
 	}
-
-	ITA_start_ll = {
-		icon = GFX_decision_generic_air
-
-		visible = {	
-			OR = {
-				original_tag = GER
-			}
-			NOT = { has_country_flag = sending_ll_to_ita }
-		}
-		available = {
-			#date > 1938.1.1
-		}
-
-		complete_effect = {
-			activate_mission = ITA_recieving_ll_1
-			set_country_flag = sending_ll_to_ita
-		}
-	}
-	ITA_close_ll = {
-		icon = GFX_decision_generic_air
-
-		visible = {	
-			OR = {
-				original_tag = GER
-			}
-			has_country_flag = sending_ll_to_ita
-		}
-		available = {
-			#date > 1938.1.1
-		}
-
-		complete_effect = {
-			clr_country_flag = sending_ll_to_ita
-		}
-	}
-	ITA_recieving_ll_1 = {
-		allowed = {	 
-			OR = { 
-				original_tag = GER
-			} 
-		}
-		available = {
-			NOT = { has_country_flag = sending_ll_to_ita }
-		}
-		icon = generic_army_support
-		is_good = yes
-		activation = { always = no }
-		days_mission_timeout = 30
-
-		timeout_effect = {
-			if = { 
-				limit = { 
-					has_country_flag = sending_ll_to_ita 
-				}  
-				send_equipment = { equipment = small_plane_airframe amount = 10000 target = ITA }
-				send_equipment = { equipment = large_plane_airframe amount = 10000 target = ITA }
-				send_equipment = { equipment = small_plane_cas_airframe amount = 10000 target = ITA }
-				send_equipment = { equipment = medium_plane_airframe amount = 10000 target = ITA }
-				send_equipment = { equipment = medium_plane_fighter_airframe amount = 10000 target = ITA }
-			}
-			activate_mission = ita_recieving_ll_2		
-		}
-	}
-	ITA_recieving_ll_2 = {
-		allowed = {	 
-			OR = { 
-				original_tag = GER
-			} 
-		}
-		available = {
-			NOT = { has_country_flag = sending_ll_to_ita }
-		}
-		icon = generic_army_support
-		is_good = yes
-		activation = { always = no }
-		days_mission_timeout = 30
-
-		timeout_effect = {
-			if = { 
-				limit = { 
-					has_country_flag = sending_ll_to_ita 
-				}  
-				send_equipment = { equipment = small_plane_airframe amount = 10000 target = ITA }
-				send_equipment = { equipment = large_plane_airframe amount = 10000 target = ITA }
-				send_equipment = { equipment = small_plane_cas_airframe amount = 10000 target = ITA }
-				send_equipment = { equipment = medium_plane_airframe amount = 10000 target = ITA }
-				send_equipment = { equipment = medium_plane_fighter_airframe amount = 10000 target = ITA }
-			}
-			activate_mission = ITA_recieving_ll_1		
-		}
-	}
 }	
+
 
 
 

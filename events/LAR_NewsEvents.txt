@@ -69,7 +69,7 @@ news_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_completed_focus = SPA_the_phalanx_ascendant
+					always = no
 				}
 				set_global_flag = SPR_falange_won
 			}
@@ -81,7 +81,7 @@ news_event = {
 			}
 			if = {
 				limit = {
-					has_completed_focus = SPA_supremacy_of_the_communion
+					always = no
 				}
 				set_global_flag = SPR_carlists_won
 			}
@@ -107,7 +107,7 @@ news_event = {
 				if = {
 					limit = {
 						tag = SPA
-						has_completed_focus = SPA_the_fifth_column
+						always = no
 					}
 					delete_unit_template_and_units = {
 						division_template = "Fifth Columnist Brigade"
@@ -361,7 +361,7 @@ news_event = {
 			if = {
 				limit = {
 					tag = SPA
-					has_completed_focus = SPA_the_fifth_column
+					always = no
 				}
 				delete_unit_template_and_units = {
 					division_template = "Fifth Columnist Brigade"
@@ -475,14 +475,14 @@ news_event = {
 		text = lar_news.2.desc_republic_no_help
 		trigger = {
 			has_global_flag = SPR_democrats_won
-			NOT = { SPD = {  has_completed_focus = SPR_expand_soviet_aid } }
+			NOT = { SPD = {  always = no } }
 		}
 	}
 	desc = {
 		text = lar_news.2.desc_republic_soviet_help
 		trigger = {
 			has_global_flag = SPR_democrats_won
-			SPD = { has_completed_focus = SPR_expand_soviet_aid }
+			SPD = { always = no }
 		}
 	}
 	desc = {
@@ -513,19 +513,19 @@ news_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_completed_focus = SPR_regional_defense_council_of_aragon
+					always = no
 				}
 				set_global_flag = SPR_anarchists_won
 			}
 			if = {
 				limit = {
-					has_completed_focus = SPR_hinder_nkvd_interference
+					always = no
 				}
 				set_global_flag = SPR_poum_won
 			}
 			if = {
 				limit = {
-					has_completed_focus = SPR_the_stalinist_doctrine
+					always = no
 				}
 				set_global_flag = SPR_stalinists_won
 			}
@@ -545,7 +545,7 @@ news_event = {
 				if = {
 					limit = {
 						tag = SPC
-						SPC = { has_completed_focus = SPR_regional_defense_council_of_aragon }
+						SPC = { always = no }
 					}
 					set_global_flag = { flag = SPR_anarchist_victory_timer_flag value = 1 days = 365 }
 				}
@@ -748,7 +748,7 @@ news_event = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = SPR_expand_soviet_aid
+						always = no
 					}
 					SOV = {
 						country_event = { id = lar_spain.81 hours = 6 }
@@ -764,7 +764,7 @@ news_event = {
 					has_global_flag = SPR_poum_won
 					SOV = {
 						OR = { #Do not trigger if Soviet civil war has finished or was bypassed
-							NOT = {	has_completed_focus = SOV_coup_detat }
+							NOT = {	always = no }
 							has_global_flag = SOV_soviet_civil_war
 						}
 					}
@@ -791,7 +791,7 @@ news_event = {
 			SPC = { has_capitulated = no }
 			NOT = { tag = SPC }
 			NOT = { original_tag = SPR }
-			SPC = { has_completed_focus = SPR_regional_defense_council_of_aragon }
+			SPC = { always = no }
 		}
 	}
 	option = {
@@ -822,7 +822,7 @@ news_event = {
 			country_exists = SPC
 			SPC = { has_capitulated = no }
 			NOT = { tag = SPC }
-			SPC = { has_completed_focus = SPR_hinder_nkvd_interference }
+			SPC = { always = no }
 		}
 	}
 	option = {
@@ -863,7 +863,7 @@ news_event = {
 			country_exists = SPC
 			SPC = { has_capitulated = no }
 			NOT = { tag = SPC }
-			SPC = { has_completed_focus = SPR_hinder_nkvd_interference }
+			SPC = { always = no }
 		}
 	}
 	option = {
@@ -891,7 +891,7 @@ news_event = {
 			country_exists = SPC
 			SPC = { has_capitulated = no }
 			NOT = { tag = SPC }
-			SPC = { has_completed_focus = SPR_hinder_nkvd_interference }
+			SPC = { always = no }
 		}
 	}
 	option = {
@@ -913,8 +913,8 @@ news_event = {
 				has_government = communism
 			}
 			NOT = {
-				SPD = { has_completed_focus = SPR_the_stalinist_doctrine }
-				SPD = { has_completed_focus = SPR_expand_soviet_aid }
+				SPD = { always = no }
+				SPD = { always = no }
 			}
 			country_exists = SPD
 			SPD = { has_capitulated = no }
@@ -927,8 +927,8 @@ news_event = {
 			NOT = { original_tag = SPR }
 			tag = SOV
 			NOT = {
-				SPD = { has_completed_focus = SPR_the_stalinist_doctrine }
-				SPD = { has_completed_focus = SPR_expand_soviet_aid }
+				SPD = { always = no }
+				SPD = { always = no }
 			}
 			country_exists = SPD
 			SPD = { has_capitulated = no }
@@ -941,8 +941,8 @@ news_event = {
 			NOT = { original_tag = SPR }
 			tag = SOV
 			OR = {
-				SPD = { has_completed_focus = SPR_the_stalinist_doctrine }
-				SPD = { has_completed_focus = SPR_expand_soviet_aid }
+				SPD = { always = no }
+				SPD = { always = no }
 			}
 			country_exists = SPD
 			SPD = { has_capitulated = no }
@@ -965,8 +965,8 @@ news_event = {
 				}
 			}
 			OR = {
-				SPD = { has_completed_focus = SPR_the_stalinist_doctrine }
-				SPD = { has_completed_focus = SPR_expand_soviet_aid }
+				SPD = { always = no }
+				SPD = { always = no }
 			}
 			country_exists = SPD
 			SPD = { has_capitulated = no }
@@ -1004,7 +1004,7 @@ news_event = {
 			if = {
 				limit = {
 					tag = SPC
-					SPC = { has_completed_focus = SPR_regional_defense_council_of_aragon }
+					SPC = { always = no }
 				}
 				set_global_flag = { flag = SPR_anarchist_victory_timer_flag value = 1 days = 365 }
 			}
@@ -1396,10 +1396,10 @@ news_event = {
 		trigger = {
 			OR = {
 				has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
-				has_completed_focus = ENG_god_save_the_king
-				has_completed_focus = GER_return_of_the_kaiser
-				has_completed_focus = ROM_his_majestys_loyal_government
-				has_completed_focus = SPA_restore_the_monarchy
+				always = no
+				always = no
+				always = no
+				always = no
 				has_completed_focus = HOL_the_only_man_in_the_dutch_government
 			}
 		}
@@ -1425,10 +1425,11 @@ news_event = {
 					has_government = neutrality
 					NOT = {
 						has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
-						has_completed_focus = ENG_god_save_the_king
-						has_completed_focus = GER_return_of_the_kaiser
-						has_completed_focus = ROM_his_majestys_loyal_government
-						has_completed_focus = SPA_restore_the_monarchy
+						always = no
+						always = no
+						always = no
+						always = no
+						always = no
 						has_completed_focus = HOL_the_only_man_in_the_dutch_government
 						tag = FRA
 					}
@@ -2781,7 +2782,7 @@ news_event = {
 		name = lar_news.28.d
 		trigger = {
 			tag = SPA
-			has_completed_focus = SPA_the_phalanx_ascendant
+			always = no
 		}
 		#effect_tooltip = {
 		#	every_state = {
@@ -2815,7 +2816,7 @@ news_event = {
 		name = lar_news.28.f
 		trigger = {
 			tag = SPA
-			has_completed_focus = SPA_supremacy_of_the_communion
+			always = no
 		}
 		#effect_tooltip = {
 		#	every_state = {
@@ -2923,8 +2924,8 @@ news_event = {
 		trigger = {
 			tag = SPD
 			OR = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_hinder_nkvd_interference
+				always = no
+				always = no
 			}
 		}
 		#effect_tooltip = {
@@ -2944,7 +2945,7 @@ news_event = {
 			tag = SPD
 			OR = {
 				has_completed_focus = SPR_maintain_the_second_republic
-				has_completed_focus = SPR_the_stalinist_doctrine
+				always = no
 			}
 		}
 		#effect_tooltip = {

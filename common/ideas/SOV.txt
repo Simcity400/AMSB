@@ -2973,7 +2973,7 @@ ideas = {
 				always = no
 			}
 			allowed_civil_war = {
-				has_completed_focus = SOV_the_fourth_international
+				always = no
 				SOV_is_left_opposition = yes
 			}
 
@@ -4479,6 +4479,13 @@ ideas = {
 			allowed = {
 				OR = {
 					original_tag = SOV
+					AND = {
+						OR = {
+							is_literally_china = yes
+							tag = MAN
+						}
+						has_dlc = "Waking the Tiger"
+					}
 				}
 			}
 
@@ -4495,6 +4502,7 @@ ideas = {
 					limit = {
 						OR = {
 							is_literally_china = yes
+							tag = MAN
 						}
 					}
 					has_completed_focus = CHI_hire_soviet_designer

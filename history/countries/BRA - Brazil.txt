@@ -8,7 +8,7 @@ every_core_state = {
 	}
 }
 IF = {
-	limit = { always = no }
+	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "BRA_1936_air_bba"
 	ELSE = {
 		set_air_oob = "BRA_1936_air_legacy"
@@ -259,7 +259,8 @@ set_technology = {
 	basic_train = 1	
 	tech_mountaineers = 1
 	marines  = 1
-	paratroopers = 1 
+	paratroopers = 1
+	rangers_tech = 1 
 }
 
 IF = {
@@ -397,13 +398,7 @@ recruit_character = BRA_random_army_chief
 		
 
 		#doctrines
-		
-		grand_battle_plan = 1
-		 
-		
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
+		#air_superiority = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -424,6 +419,11 @@ recruit_character = BRA_random_army_chief
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_operational_integrity
+
 	complete_special_project = {
 		project = sp:sp_air_radar
 	}
@@ -463,7 +463,7 @@ IF = {
 		has_dlc = "Man the Guns"
 	}
 	create_equipment_variant = {
-		name = "Minas Geras Class"
+		name = "Minas Geraes Class"
 		type = ship_hull_heavy_1
 		name_group = BRA_BB_HISTORICAL
 		parent_version = 0

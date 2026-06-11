@@ -38,7 +38,7 @@ ideas = {
 					OR = {
 						has_war_support > 0.5
 						has_war = yes
-						has_completed_focus = USA_limited_intervention
+						always = no
 					}
 				}
 				ELSE = {
@@ -84,7 +84,7 @@ ideas = {
 					OR = {
 						has_war_support > 0.75
 						has_war = yes
-						has_completed_focus = USA_limited_intervention
+						always = no
 					}
 				}
 				ELSE = {
@@ -182,7 +182,7 @@ ideas = {
 
 				if = {
 					limit = {
-						has_completed_focus = USA_limited_intervention
+						always = no
 						has_defensive_war = no
 					}
 					has_war_support > 0.3
@@ -195,9 +195,24 @@ ideas = {
 					}
 					NOT = {
 						OR = {
-							has_active_mission = TUR_etatism_crisis_2
-							has_active_mission = TUR_etatism_crisis_3
-							has_active_mission = TUR_etatism_crisis_4
+							always = no
+							always = no
+							always = no
+						}
+					}
+				}
+				if = {
+					limit = {
+						original_tag = CZE
+						has_dlc = "Peace For Our Time"
+					}
+					custom_trigger_tooltip = {
+						tooltip = CZE_bop_no_industrialists_tt
+						NOT = {
+							OR = {
+								has_idea = CZE_industrialists_veto
+								has_idea = CZE_industrialists_veto_2
+							}
 						}
 					}
 				}
@@ -206,7 +221,7 @@ ideas = {
 				if = {
 					limit = {
 						tag = USA
-						has_completed_focus = USA_limited_intervention
+						always = no
 						has_defensive_war = no
 					}
 					USA_congress_large_opposition = yes
@@ -300,7 +315,7 @@ ideas = {
 
 				if = {
 					limit = {
-						has_completed_focus = USA_limited_intervention
+						always = no
 						has_defensive_war = no
 					}
 					has_war_support > 0.5
@@ -313,9 +328,24 @@ ideas = {
 					}
 					NOT = {
 						OR = {
-							has_active_mission = TUR_etatism_crisis_1
-							has_active_mission = TUR_etatism_crisis_3
-							has_active_mission = TUR_etatism_crisis_4
+							always = no
+							always = no
+							always = no
+						}
+					}
+				}
+				if = {
+					limit = {
+						original_tag = CZE
+						has_dlc = "Peace For Our Time"
+					}
+					custom_trigger_tooltip = {
+						tooltip = CZE_bop_no_industrialists_tt
+						NOT = {
+							OR = {
+								has_idea = CZE_industrialists_veto
+								has_idea = CZE_industrialists_veto_2
+							}
 						}
 					}
 				}
@@ -337,7 +367,7 @@ ideas = {
 				if = {
 					limit = {
 						tag = USA
-						has_completed_focus = USA_limited_intervention
+						always = no
 						has_defensive_war = no
 					}
 					USA_congress_large_opposition = yes
@@ -489,7 +519,7 @@ ideas = {
 
 				if = {
 					limit = {
-						has_completed_focus = USA_limited_intervention
+						always = no
 						has_defensive_war = no
 					}
 					has_war_support > 0.75
@@ -502,9 +532,24 @@ ideas = {
 					}
 					NOT = {
 						OR = {
-							has_active_mission = TUR_etatism_crisis_1
-							has_active_mission = TUR_etatism_crisis_2
-							has_active_mission = TUR_etatism_crisis_4
+							always = no
+							always = no
+							always = no
+						}
+					}
+				}
+				if = {
+					limit = {
+						original_tag = CZE
+						has_dlc = "Peace For Our Time"
+					}
+					custom_trigger_tooltip = {
+						tooltip = CZE_bop_no_industrialists_tt
+						NOT = {
+							OR = {
+								has_idea = CZE_industrialists_veto
+								has_idea = CZE_industrialists_veto_2
+							}
 						}
 					}
 				}
@@ -526,7 +571,7 @@ ideas = {
 				if = {
 					limit = {
 						tag = USA
-						has_completed_focus = USA_limited_intervention
+						always = no
 						has_defensive_war = no
 					}
 					USA_congress_large_opposition = yes
@@ -601,7 +646,7 @@ ideas = {
 					}
 					NOT = { 
 						has_completed_focus = JAP_sea_national_defense_state 
-						has_completed_focus = JAP_prepare_for_the_final_war 
+						always = no 
 					}
 				}
 			}
@@ -673,7 +718,7 @@ ideas = {
 				
 				if = {
 					limit = {
-						has_completed_focus = USA_limited_intervention
+						always = no
 						has_defensive_war = no
 					}
 					has_war_support > 0.9
@@ -686,9 +731,24 @@ ideas = {
 					}
 					NOT = {
 						OR = {
-							has_active_mission = TUR_etatism_crisis_1
-							has_active_mission = TUR_etatism_crisis_2
-							has_active_mission = TUR_etatism_crisis_3
+							always = no
+							always = no
+							always = no
+						}
+					}
+				}
+				if = {
+					limit = {
+						original_tag = CZE
+						has_dlc = "Peace For Our Time"
+					}
+					custom_trigger_tooltip = {
+						tooltip = CZE_bop_no_industrialists_tt
+						NOT = {
+							OR = {
+								has_idea = CZE_industrialists_veto
+								has_idea = CZE_industrialists_veto_2
+							}
 						}
 					}
 				}
@@ -697,7 +757,7 @@ ideas = {
 				if = {
 					limit = {
 						tag = USA
-						has_completed_focus = USA_limited_intervention
+						always = no
 						has_defensive_war = no
 					}
 					USA_congress_large_opposition = yes
@@ -806,6 +866,33 @@ ideas = {
 			cancel_if_invalid = no
 		}
 
+		sov_totaler_krieg_economy = {
+			picture = new_economic_policy
+
+			visible = {
+				original_tag = SOV
+				has_completed_focus = SOV_war_mobilisation
+			}
+
+			available = {
+				has_completed_focus = SOV_war_mobilisation
+			}
+
+			cost = 150
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				production_speed_rail_way_factor = 0.5
+				production_speed_supply_node_factor = 0.5
+				production_speed_arms_factory_factor = 0.3
+				conversion_cost_civ_to_mil_factor= -0.3
+				conversion_cost_mil_to_civ_factor = -0.3
+				factory_energy_consumption = 0.10
+			}
+			cancel_if_invalid = no
+		}
+
 		national_defense_state = { 
 
 			picture = JAP_national_defense_state
@@ -813,14 +900,14 @@ ideas = {
 			visible = {
 				original_tag = JAP
 				OR = {
-					has_completed_focus = JAP_prepare_for_the_final_war
+					always = no
 					has_completed_focus = JAP_sea_national_defense_state
 				}
 			}
 
 			available = {
 				OR = {
-					has_completed_focus = JAP_prepare_for_the_final_war
+					always = no
 					has_completed_focus = JAP_sea_national_defense_state
 				}
 				OR = {
@@ -1056,7 +1143,7 @@ ideas = {
 						original_tag = SPR
 						has_dlc = "La Resistance"
 					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
+					NOT = { always = no }
 				}
 				if = {
 					limit = {
@@ -1141,7 +1228,7 @@ ideas = {
 						original_tag = SPR
 						has_dlc = "La Resistance"
 					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
+					NOT = { always = no }
 				}
 				if = {
 					limit = {
@@ -1218,7 +1305,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.50
+				min_export = 0.35
 				industrial_capacity_factory = 0.1
 				industrial_capacity_dockyard = 0.1
 				production_speed_buildings_factor = 0.1
@@ -1345,7 +1432,7 @@ ideas = {
 						original_tag = SPR
 						has_dlc = "La Resistance"
 					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
+					NOT = { always = no }
 				}
 			}
 

@@ -326,7 +326,7 @@ ideas = {
 				consumer_goods_factor = 0
 				industrial_capacity_factory = 0.1
 				production_factory_max_efficiency_factor = 0.05
-				global_building_slots = 5
+				global_building_slots_factor = 1
 			}	
 		}
 
@@ -355,7 +355,7 @@ ideas = {
 			picture = NOR_printing_money
 				
 			allowed = { 
-				alwyas = yes
+				always = yes
 				}
 
 			allowed_civil_war = {
@@ -373,7 +373,7 @@ ideas = {
 			picture = NOR_printing_money
 				
 			allowed = { 
-				alwyas = yes
+				always = yes
 				}
 
 			allowed_civil_war = {
@@ -381,7 +381,8 @@ ideas = {
 			}
 					
 			modifier = {
-				industrial_capacity_factory = 0.075
+				industrial_capacity_factory = 0.10
+				war_support_weekly = 0.005
 			}
 		}
 		
@@ -1028,9 +1029,73 @@ ideas = {
 				consumer_goods_factor = -0.15
 			}
 		}
-		
-		ENG_colonial_elite = {
+
+
+		ENG_blitz_spirit_idea = {
 			
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				consumer_goods_factor = -0.2
+				war_support_factor = 0.05
+				weekly_bombing_war_support = 0.001
+			}
+		}
+		
+		ENG_desperate_defense_of_the_homeland = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = YUG_federal_defense_council
+
+			modifier = {
+				weekly_manpower = 150
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.05
+			}
+		}
+
+		ENG_home_guard_assistance_in_factories = {
+
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_improved_industries
+
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.05
+				conscription_factor = -0.05
+			}
+		}
+
+		ENG_colonial_elite = {
+
 			name = ENG_colonial_elite
 
 			allowed = {
@@ -2720,26 +2785,6 @@ ideas = {
 			}
 		}
 
-		ENG_secure_the_imperial_shipping_routes = {
-
-			picture = generic_coastal_defense_ships
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				NOT = { has_government = communism }
-			}
-			
-			removal_cost = -1
-						
-			equipment_bonus = {
-				ship_hull_cruiser = {
-					build_cost_ic = -0.1 instant = yes
-				}
-			}
-		}
 
 		ENG_expand_the_repair_yards = {
 
@@ -2813,7 +2858,7 @@ ideas = {
 
 			available = {
 				OR = {
-					has_completed_focus = ENG_opposition_to_the_national_government
+					always = no
 					has_government = communism
 				}
 				if = {
@@ -2858,7 +2903,7 @@ ideas = {
 					limit = {
 						has_dlc = "Man the Guns"
 					}
-					NOT = { has_completed_focus = ENG_a_change_in_course }
+					NOT = { always = no }
 				}
 				if = {
 					limit = { has_dlc = "Man the Guns" }	
@@ -2891,7 +2936,7 @@ ideas = {
 
 			available = {
 				OR = {
-					has_completed_focus = ENG_right_wing_rhetoric
+					always = no
 					has_government = fascism
 				}
 					
@@ -2922,17 +2967,17 @@ ideas = {
 					limit = {
 						has_dlc = "Man the Guns"
 					}
-					NOT = { has_completed_focus = ENG_no_further_appeasement }
+					NOT = { always = no }
 					has_government = democratic
 				}
 				NOT = {
 					OR = {
 						AND = {
-							has_completed_focus = ENG_concessions_to_the_trade_unions
+							always = no
 							date < 1940.01.01
 						}
 						AND = {
-							has_completed_focus = ENG_opposition_to_the_national_government
+							always = no
 							date < 1940.01.01
 						}
 						has_government = communism
@@ -2949,7 +2994,7 @@ ideas = {
 				factor = 10
 				modifier = {
 					factor = 0
-					has_completed_focus = ENG_organize_the_blackshirts
+					always = no
 					date > 1937.06.01
 				}
 			}						
@@ -2962,11 +3007,11 @@ ideas = {
 			available = {
 				OR = {
 					AND = {
-						has_completed_focus = ENG_concessions_to_the_trade_unions
+						always = no
 						date < 1940.01.01
 					}
 					AND = {
-						has_completed_focus = ENG_opposition_to_the_national_government
+						always = no
 						date < 1940.01.01
 					}					
 					has_government = communism
@@ -3101,7 +3146,7 @@ ideas = {
 
 			available = {
 				has_government = neutrality
-				has_completed_focus = ENG_the_kings_party
+				always = no
 				if = {
 					limit = { has_dlc = "Man the Guns" }	
 					NOT = { has_autonomy_state = autonomy_supervised_state }
@@ -3126,7 +3171,7 @@ ideas = {
 
 			available = {
 				has_government = neutrality
-				has_completed_focus = ENG_the_kings_party
+				always = no
 			}
 			
 			allowed = {
@@ -3147,7 +3192,7 @@ ideas = {
 
 			available = {
 				has_government = neutrality
-				has_completed_focus = ENG_the_kings_party
+				always = no
 			}
 			
 			allowed = {
@@ -3169,10 +3214,10 @@ ideas = {
 				OR = {
 					AND = {
 						has_government = neutrality
-						has_completed_focus = ENG_the_kings_party						
+						always = no						
 					}
-					has_completed_focus = ENG_organize_the_blackshirts
-					has_completed_focus = ENG_cable_street
+					always = no
+					always = no
 				}
 				NOT = {
 					has_government = communism
@@ -3671,7 +3716,7 @@ ideas = {
 							has_global_flag = can_tfv_focus_tree
 						}
 					}
-					has_completed_focus = r56_CAN_fairchild_aircraft_company
+					always = no
 				}				
 			}
 			

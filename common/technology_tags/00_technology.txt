@@ -39,7 +39,6 @@ technology_categories = {
 	cas_bomber
 	ship_modules_tech
 	dd_tech
-	cl_tech
 	ca_tech
 	cv_tech
 	bc_tech
@@ -150,74 +149,35 @@ technology_folders = {
 	armour_folder = {
 		ledger = army
 		available = {
-			always = yes
+				has_game_rule = { 
+					rule = larp_barb
+					option = on
+				}
+			}
 		}
-	}
 	nsb_armour_folder = {
 		ledger = army
 		available = {
-			always = yes
+			has_dlc = "No Step Back"
+			NOT = { 
+				has_game_rule = { 
+					rule = larp_barb 
+					option = on
+					}
+				}
 			}
 		}
 	artillery_folder = {
 		ledger = army
 	}
 	air_techs_folder = {
-		available = {
-			AND = {
-				NOT = { 
-					has_country_flag = barbstart
-				}
-				NOT = { 
-					tag = FIN
-				}
-				NOT = { 
-					tag = HUN
-				}
-				NOT = { 
-					tag = ROM
-				}
-				NOT = { 
-					tag = MEX
-				}
-				NOT = { 
-					tag = BRA
-				}
-				NOT = { 
-					tag = FRA
-				}
-				NOT = { 
-					tag = SPR
-				}
-				NOT = { 
-					tag = SAF
-				}
-				NOT = { 
-					tag = AST
-				}
-				NOT = { 
-					tag = RAJ
-				}
-				NOT = { 
-					tag = BUL
-				}
-				NOT = { 
-					tag = NZL
-				}
-				NOT = { 
-					tag = CAN
-				}
-			}
-		}
+		available = { NOT = { has_dlc = "By Blood Alone" } }
 		ledger = air
 	}
 	bba_air_techs_folder = {
 		available = {
-				has_game_rule = { 
-					rule = bba_air
-					option = on
-				}
-			}
+			has_dlc = "By Blood Alone"
+		}
 		ledger = air
 	}
 	naval_folder = {

@@ -26,7 +26,14 @@ mobile_infantry = {
 
     # EFFECTS
     enable_tactic = tactic_overwhelming_fire
-
+    effect = {
+        add_tech_bonus = {
+            bonus = 0.5
+            uses = 1
+            category = motorized_equipment
+            name = SUBDOCTRINE_MOBILE_INFANTRY
+        }
+    }
 
     rewards = {
         cavalry_charge = {
@@ -79,12 +86,13 @@ defensive_postures = {
         modifier = {
             factor = 95
             OR = {
-            original_tag = ENG
-            original_tag = AST
-            original_tag = NZL
-            original_tag = CAN
-            original_tag = SAF
-            original_tag = ITA
+                original_tag = ENG
+                original_tag = AST
+                original_tag = NZL
+                original_tag = CAN
+                original_tag = SAF
+                original_tag = ITA
+                original_tag = FIN
             }
         }
     }
@@ -189,7 +197,7 @@ large_unit_tactics = {
                 max_organisation = 10
                 soft_attack = 0.1
             }
-            army_morale = 0.2
+            army_morale = 0.1
             
         }
         motorization_initiative = {
@@ -631,6 +639,15 @@ irregulars = {
                 max_organisation = 10
                 soft_attack = 0.1
             }
+
+            effect = {
+                add_tech_bonus = {
+                    bonus = 0.5
+                    uses = 2
+                    category = support_tech
+                    name = SUBDOCTRINE_IRREGULARS
+                }
+             }
         }
 
     }
@@ -691,7 +708,7 @@ peoples_war = {
         #2
             mastery = 50
             category_light_infantry = {
-                default_morale = 0.2
+                default_morale = 0.1
             }
             militia = {
                 equipment_capture_factor = 0.01

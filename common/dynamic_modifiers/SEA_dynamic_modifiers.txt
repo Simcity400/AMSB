@@ -239,7 +239,7 @@ JAP_imperial_army_dm = {
 	org_loss_when_moving = JAP_army_org_loss_when_moving
 	army_org_factor = JAP_army_army_org_factor
 	attrition = JAP_army_attrition
-	air_superiority_bonus_in_combat = JAP_army_air_superiority_bonus_in_combat
+	army_bonus_air_superiority_factor = JAP_army_air_superiority_bonus_in_combat
 	coordination_bonus = JAP_army_coordination_bonus
 	conscription = JAP_army_conscription
 	training_time_factor = JAP_army_training_time_factor
@@ -275,7 +275,7 @@ JAP_national_army_dm = {
 	org_loss_when_moving = JAP_army_org_loss_when_moving
 	army_org_factor = JAP_army_army_org_factor
 	attrition = JAP_army_attrition
-	air_superiority_bonus_in_combat = JAP_army_air_superiority_bonus_in_combat
+	army_bonus_air_superiority_factor = JAP_army_air_superiority_bonus_in_combat
 	coordination_bonus = JAP_army_coordination_bonus
 	conscription = JAP_army_conscription
 	training_time_factor = JAP_army_training_time_factor
@@ -316,7 +316,6 @@ JAP_japanese_navy_dm = {
 	icon = GFX_idea_JAP_imperial_navy
 	enable = { always = yes }
 
-	naval_agility_factor = JAP_navy_naval_agility_factor
 	naval_torpedo_hit_chance_factor = JAP_navy_naval_torpedo_hit_chance_factor
 	ships_at_battle_start = JAP_navy_ships_at_battle_start
 	navy_max_range_factor = JAP_navy_navy_max_range_factor
@@ -686,6 +685,13 @@ JAP_urban_investments_modifier = { #STATE MODIFIER
 	
 }
 
+BRM_blown_up_oil_fields = {
+	enable = { always = yes }
+	icon = GFX_modifiers_sabotaged_resource
+
+	state_resources_factor = -0.95
+}
+
 
 
 #  #  ##  ###      ##  #  # ### 
@@ -834,7 +840,7 @@ CHI_ROCAF = {
 	air_manpower_requirement_factor = CHI_ROCAF_air_manpower_requirement_factor 
 	air_interception_detect_factor = CHI_ROCAF_air_interception_detect_factor 
 	air_intercept_efficiency = CHI_ROCAF_air_intercept_efficiency 
-	air_superiority_bonus_in_combat = CHI_ROCAF_air_superiority_bonus_in_combat 
+	army_bonus_air_superiority_factor = CHI_ROCAF_air_superiority_bonus_in_combat 
 	air_range_factor = CHI_ROCAF_air_range_factor
 	sp_tag_rocket_speed_factor = CHI_ROCAF_sp_tag_rocket_speed_factor
 	sp_tag_jet_speed_factor = CHI_ROCAF_sp_tag_jet_speed_factor
@@ -881,7 +887,7 @@ CHI_decisive_battle_idea = {
 	modifier_army_sub_unit_armored_car_recon_attack_factor = CHI_decisive_battle_modifier_army_sub_unit_armored_car_recon_attack_factor
 	modifier_army_sub_unit_armored_car_recon_max_org_factor = CHI_decisive_battle_modifier_army_sub_unit_armored_car_recon_max_org_factor
 	special_forces_cap = CHI_decisive_battle_special_forces_cap
-	invasion_preparation = CHI_decisive_battle_invasion_preparation
+	naval_invasion_prep_speed = CHI_decisive_battle_invasion_preparation
 }
 
 CHI_unstructured_logistics = {
@@ -1979,34 +1985,6 @@ CHI_warlord_army_dynamic_modifier = {
 
 }
 
-XSM_the_military_governor_dynamic_modifier = {
-	enable = { always = yes }
-	icon = GFX_idea_chi_whampoa_military_academy
-	
-	army_core_attack_factor = XSM_the_military_governor_army_core_attack_factor
-	supply_combat_penalties_on_core_factor = XSM_the_military_governor_supply_combat_penalties_on_core_factor
-	stability_factor = XSM_the_military_governor_stability_factor
-	war_support_factor = XSM_the_military_governor_war_support_factor
-
-}
-
-SIC_sichuan_clique_dynamic_modifier = {
-	enable = { always = yes }
-	icon = GFX_idea_chi_whampoa_military_academy
-	
-	army_core_attack_factor = SIC_sichuan_clique_army_core_attack_factor
-	army_core_defence_factor = SIC_sichuan_clique_army_core_defence_factor
-	supply_combat_penalties_on_core_factor = SIC_sichuan_clique_supply_combat_penalties_on_core_factor
-	stability_factor = SIC_sichuan_clique_stability_factor
-	war_support_factor = SIC_sichuan_clique_war_support_factor
-	political_power_gain = SIC_sichuan_clique_political_power_gain
-	surrender_limit = SIC_sichuan_clique_surrender_limit
-	research_speed_factor = SIC_sichuan_clique_research_speed_factor
-	conscription_factor = SIC_sichuan_clique_recruitable_population_factor
-	production_speed_buildings_factor = SIC_sichuan_clique_production_speed_buildings_factor
-
-}
-
 MAN_state_shintoism_dm = {
 	icon = GFX_idea_state_shintoism
 	enable = { always = yes }
@@ -2036,3 +2014,16 @@ RNG_state_shintoism_dm = {
 	political_power_gain = RNG_state_shintoism_political_power_gain
 
 }
+
+CHI_ma_clique_collective = {
+	icon = GFX_idea_CHI_blue_shirt_society
+
+	cavalry_attack_factor = CHI_ma_clique_collective_cavalry_attack_factor
+	political_power_factor = CHI_ma_clique_collective_political_power_factor
+	production_speed_infrastructure_factor = CHI_ma_clique_collective_production_speed_infrastructure_factor
+	conscription_factor = CHI_ma_clique_collective_conscription_factor
+	cavalry_defence_factor = CHI_ma_clique_collective_cavalry_defence_factor
+	army_core_defence_factor = CHI_ma_clique_collective_army_core_defence_factor
+
+}
+

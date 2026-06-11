@@ -1,9 +1,9 @@
-﻿1936.1.1.12 = {
+﻿
 ####
 #### NO STEP BACK
 ####
 
-shared_focus = soviet_joint_focus_barb
+#shared_focus = soviet_joint_focus_barb
 
 #You don't want Russian party names? Just remove these lines
 set_party_name = {
@@ -115,6 +115,7 @@ recruit_character = SOV_sergey_gorshkov
 recruit_character = SOV_stepan_krasovsky
 recruit_character = SOV_vasily_blyukher
 recruit_character = SOV_vasily_chuykov
+#recruit_character = SOV_aleksandr_cherepanov
 recruit_character = SOV_vasily_kuznetsov
 recruit_character = SOV_vladimir_kasatonov
 recruit_character = SOV_vladimir_tributs
@@ -187,6 +188,12 @@ SOV_georgy_zhukov = {
 	set_character_flag = SOV_safe_from_purge_flag
 }
 SOV_nikolay_vatutin = {
+	set_character_flag = SOV_safe_from_purge_flag
+}
+SOV_nikolay_voznesensky = {
+	set_character_flag = SOV_safe_from_purge_flag
+}
+SOV_mikhail_kalinin = {
 	set_character_flag = SOV_safe_from_purge_flag
 }
 
@@ -609,8 +616,10 @@ set_variable = { SOV_defense_industry_army_artillery_defence_factor = 0 } #-> Mi
 #THE RED ARMY NATIONAL SPIRIT VARS
 set_variable = { SOV_the_red_army_mobilization_laws_cost_factor = -0.1 }
 set_variable = { SOV_the_red_army_army_org_factor = -0.15 } # -> Restore Cossack Units / Cohsesion First #Meant to represent disgruntledness
-set_variable = { SOV_the_red_army_experience_gain_army_factor = -0.1 }
 set_variable = { SOV_the_red_army_experience_loss_factor = 0.25 }
+set_variable = { SOV_the_red_army_mastery_loss_factor = -0.15 }
+set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
 
 set_variable = { SOV_the_red_army_mobilization_speed = 0 } #-> Strengthen the Mobilization Plan
 set_variable = { SOV_the_red_army_conscription_factor = 0 } #-> Strengthen the Mobilization Plan
@@ -743,7 +752,7 @@ if = {
 	}
 }
 if = {
-	limit = { always = no }
+	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "SOV_1936_air_bba"
 		set_technology = {
 			iw_small_airframe = 1
@@ -797,7 +806,6 @@ set_technology = { #WARNING: Do not just remove techs from here -> It can impact
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	tech_recon = 1
-	rangers_tech = 1
 	tech_support = 1		
 	tech_engineers = 1
 	tech_military_police = 1
@@ -807,6 +815,7 @@ set_technology = { #WARNING: Do not just remove techs from here -> It can impact
 	paratroopers = 1
 	gw_artillery = 1
 	interwar_antiair = 1
+	interwar_antitank = 1
 	fuel_silos = 1
 	fuel_refining = 1
 	basic_train = 1
@@ -910,6 +919,7 @@ create_faction_from_template = faction_template_comintern
 add_to_faction = SOV
 #add_to_faction = MON
 #add_to_faction = TAN
+add_faction_initiative = 1
 
 if = {
 	limit = {
@@ -1101,6 +1111,12 @@ if = {
 			fixed_ship_engine_slot = sub_ship_engine_1
 			rear_1_custom_slot = empty
 		}
+		optional_assets = {
+			{
+				icon = "GFX_SOV_submarine_shchuka"
+				model = "SOV_submarine_entity"
+			}
+		}
 		obsolete = yes
 	}
 	create_equipment_variant = {
@@ -1123,6 +1139,12 @@ if = {
 			fixed_ship_torpedo_slot = ship_torpedo_sub_2
 			fixed_ship_engine_slot = sub_ship_engine_2
 			rear_1_custom_slot = empty
+		}
+		optional_assets = {
+			{
+				icon = "GFX_SOV_submarine_shchuka"
+				model = "SOV_submarine_entity"
+			}
 		}
 	}
 	# Destroyers #
@@ -1279,163 +1301,10 @@ if = {
 			mid_1_custom_slot = empty
 			mid_2_custom_slot = empty
 			rear_1_custom_slot = empty
-			}
 		}
 	}
 }
-# 1939 Start #
-1939.1.1 = {
-	if = {
-		limit = {
-			has_dlc = "By Blood Alone"
-		}
-		create_equipment_variant = {
-			name = "I-153" #
-			type = small_plane_airframe_0
-			modules = {
-				fixed_main_weapon_slot = light_mg_4x
-				fixed_auxiliary_weapon_slot_1 = rocket_rails
-				engine_type_slot = engine_1_1x
-				special_type_slot_1 = empty
-			}
-		}
-		create_equipment_variant = {
-			name = "I-16 Type 10" #
-			type = small_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = light_mg_4x
-				fixed_auxiliary_weapon_slot_1 = empty
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = empty
-			}
-		}
-		create_equipment_variant = {
-			name = "MBR-2" #
-			type = small_plane_cas_airframe_1
-			modules = {
-				fixed_main_weapon_slot = bomb_locks
-				fixed_auxiliary_weapon_slot_1 = empty
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = floats
-				special_type_slot_2 = fuel_tanks_small
-			}
-		}
-		create_equipment_variant = {
-			name = "Pe-8" #
-			type = large_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = large_bomb_bay
-				fixed_auxiliary_weapon_slot_1 = large_bomb_bay
-				engine_type_slot = engine_3_4x #Increased tier due to thrust/weight issues
-				special_type_slot_1 = lmg_defense_turret
-				special_type_slot_2 = cannon_defense_turret_2x
-			}
-		}
-	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		# Ship variants #
-		create_equipment_variant = {
-			name = "Series X Shchuka"
-			type = submarine_2
-			upgrades = {
-				ship_reliability_upgrade = 3
-				sub_engine_upgrade = 3
-				sub_stealth_upgrade = 3
-				sub_torpedo_upgrade = 3
-			}
-		}
 
-		create_equipment_variant = {
-			name = "Maxim Gorky Class"
-			type = heavy_cruiser_2
-			upgrades = {
-				ship_reliability_upgrade = 2
-				ship_engine_upgrade = 2
-				ship_armor_upgrade = 2
-				ship_gun_upgrade = 2
-			}
-		}
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		# Submarines #
-		create_equipment_variant = {
-			name = "Series XIII Leninets"				
-			type = ship_hull_submarine_2
-			name_group = SOV_SS_LENINETS
-			parent_version = 0
-			modules = {
-				fixed_ship_torpedo_slot = ship_torpedo_sub_2
-				fixed_ship_engine_slot = sub_ship_engine_2
-				rear_1_custom_slot = ship_mine_layer_sub
-			}
-		}
-		create_equipment_variant = {
-			name = "Series XIV K-Class"				
-			type = ship_hull_submarine_3
-			name_group = SOV_SS_SHCHUKA
-			parent_version = 0
-			modules = {
-				fixed_ship_torpedo_slot = ship_torpedo_sub_2
-				fixed_ship_engine_slot = sub_ship_engine_3
-				front_1_custom_slot = ship_mine_layer_sub
-				mid_1_custom_slot = empty
-				rear_1_custom_slot = ship_torpedo_sub_2
-			}
-		}
-		# Destroyers #
-		create_equipment_variant = {
-			name = "Gnevnyy Class"				
-			type = ship_hull_light_2
-			name_group = SOV_DD_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_light_battery_2
-				fixed_ship_anti_air_slot = empty
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = light_ship_engine_2
-				fixed_ship_torpedo_slot = empty
-				mid_1_custom_slot = empty
-				rear_1_custom_slot = ship_depth_charge_1
-			}
-			obsolete = yes
-		}
-		create_equipment_variant = {
-			name = "Soobrazitelnyi Class"				
-			type = ship_hull_light_3
-			name_group = SOV_DD_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_light_battery_2
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = light_ship_engine_2
-				fixed_ship_torpedo_slot = empty
-				mid_1_custom_slot = empty
-				rear_1_custom_slot = ship_depth_charge_1
-			}
-		}
-		create_equipment_variant = {
-			name = "Tashkent Class"				
-			type = ship_hull_light_3
-			name_group = SOV_DD_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_light_battery_2
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = light_ship_engine_3
-				fixed_ship_torpedo_slot = ship_torpedo_1
-				mid_1_custom_slot = ship_anti_air_1
-				rear_1_custom_slot = ship_depth_charge_1
-			}
-		}
-	}
-}
 1941.1.1 = {
 	set_oob = "SOV_1941_nsb"
 	set_air_oob = "SOV_1941_air_bba"
@@ -1446,10 +1315,13 @@ if = {
 		remove_idea = trotskyite_plot_nsb
 		add_idea = trotskyite_plot_purged
 	}
-	add_ideas = {tradeback_is_cancer}
+	add_timed_idea = {
+		idea = tradeback_is_cancer
+		days = 60
+	}
 	add_timed_idea = {
 		idea = add_production_efficiency_41
-		days = 5
+		days = 2
 	}
 	recruit_character = SOV_georgy_zhukov_barb
 	recruit_character = SOV_konstantin_rokossovsky_barb

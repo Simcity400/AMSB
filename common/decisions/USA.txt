@@ -27,9 +27,7 @@ war_measures = {
 
 		visible = {
 			has_defensive_war = yes
-			CSA = {
-				exists = no
-			}
+			
 		}
 
 		complete_effect = {
@@ -80,7 +78,7 @@ war_measures = {
 		}
 
 		available = {
-			has_completed_focus = USA_ally_with_the_silver_shirts
+			always = no
 		}
 		visible = {
 			has_civil_war = yes
@@ -153,7 +151,7 @@ war_measures = {
 			}
 		}
 		visible = {
-			has_completed_focus = USA_recruit_the_free_corps
+			always = no
 			not = { has_country_flag = USA_free_corps_raised }
 			not = { has_government = democratic }
 		}
@@ -596,7 +594,7 @@ war_measures = {
 		visible = {
 			country_exists = USB
 			not = { has_war_with = USB }
-			USB = { is_in_faction = no }
+			
 		}
 		days_remove = 45
 		cost = 25
@@ -618,18 +616,14 @@ war_measures = {
 		}
 		complete_effect = {
 			add_to_variable = { USB.USB_factories_available = -3 }
-			USB = {
-				add_offsite_building = { type = industrial_complex level = 2 }
-			}
+			
 		}
 		remove_effect = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 2500
 			}
-			USB = {
-				add_offsite_building = { type = industrial_complex level = -2 }
-			}
+			
 			add_to_variable = { USB.USB_factories_available = 3 }
 		}
 	}
@@ -653,7 +647,7 @@ war_measures = {
 		visible = {
 			country_exists = USB
 			not = { has_war_with = USB }
-			USB = { is_in_faction = no }
+			
 		}
 		days_remove = 60
 		cost = 50
@@ -675,18 +669,14 @@ war_measures = {
 		}
 		complete_effect = {
 			add_to_variable = { USB.USB_factories_available = -6 }
-			USB = {
-				add_offsite_building = { type = industrial_complex level = 5 }
-			}
+			
 		}
 		remove_effect = {
 			add_equipment_to_stockpile = {
 				type = artillery_equipment
 				amount = 75
 			}
-			USB = {
-				add_offsite_building = { type = industrial_complex level = -5 }
-			}
+			
 			add_to_variable = { USB.USB_factories_available = 6 }
 		}
 	}
@@ -710,7 +700,7 @@ war_measures = {
 		visible = {
 			country_exists = USB
 			not = { has_war_with = USB }
-			USB = { is_in_faction = no }
+			
 		}
 		days_remove = 60
 		cost = 50
@@ -732,26 +722,7 @@ war_measures = {
 		}
 		complete_effect = {
 			add_to_variable = { USB.USB_factories_available = -6 }
-			USB = {
-				add_offsite_building = { type = industrial_complex level = 5 }
-				if = {
-					limit = {
-						has_dlc = "By Blood Alone"
-						NOT = { has_country_flag = USB_fighter_template_active }
-					}
-					create_equipment_variant = {
-						name = "P-44 Bald Eagle" #
-						type = small_plane_airframe_1
-						allow_without_tech = yes
-						modules = {
-							fixed_main_weapon_slot = heavy_mg_4x
-							fixed_auxiliary_weapon_slot_1 = bomb_locks
-							engine_type_slot = engine_2_1x
-						}
-					}
-					set_country_flag = USB_fighter_template_active
-				}
-			}
+			
 		}
 		remove_effect = {
 			if = {
@@ -774,9 +745,7 @@ war_measures = {
 					variant_name = "P-44 Bald Eagle"
 				}
 			}
-			USB = {
-				add_offsite_building = { type = industrial_complex level = -5 }
-			}
+			
 			add_to_variable = { USB.USB_factories_available = 6 }
 		}
 	}
@@ -800,7 +769,7 @@ war_measures = {
 		visible = {
 			country_exists = USB
 			not = { has_war_with = USB }
-			USB = { is_in_faction = no }
+			
 		}
 		days_remove = 60
 		cost = 50
@@ -822,27 +791,7 @@ war_measures = {
 		}
 		complete_effect = {
 			add_to_variable = { USB.USB_factories_available = -6 }
-			USB = {
-				add_offsite_building = { type = industrial_complex level = 5 }
-				if = {
-					limit = {
-						has_dlc = "By Blood Alone"
-						NOT = { has_country_flag = USB_bomber_template_active }
-					}
-					create_equipment_variant = {
-						name = "B-13 Raven" #
-						type = medium_plane_airframe_1
-						allow_without_tech = yes
-						modules = {
-							fixed_main_weapon_slot = medium_bomb_bay
-							fixed_auxiliary_weapon_slot_1 = bomb_locks
-							engine_type_slot = engine_2_2x
-							special_type_slot_1 = lmg_defense_turret
-						}
-					}
-					set_country_flag = USB_bomber_template_active
-				}
-			}
+			
 		}
 		remove_effect = {
 			if = {
@@ -863,9 +812,7 @@ war_measures = {
 					variant_name = "B-13 Raven"
 				}
 			}
-			USB = {
-				add_offsite_building = { type = industrial_complex level = -5 }
-			}
+			
 			add_to_variable = { USB.USB_factories_available = 6 }
 		}
 	}
@@ -1058,12 +1005,12 @@ foreign_support = {
 			}
 		}
 
-		targets = { CHI PRC GXC YUN SHX XSM SIK }
+		targets = { CHI PRC }
 		targets_dynamic = yes
 
 		target_root_trigger = {
 			OR = {
-				has_completed_focus = USA_limited_intervention
+				always = no
 				has_completed_focus = USA_lend_lease_act
 			}
 		}
@@ -1150,7 +1097,7 @@ foreign_support = {
 			}
 		}
 
-		targets = { CHI PRC GXC YUN SHX XSM SIK }
+		targets = { CHI PRC }
 		targets_dynamic = yes
 
 		target_trigger = {
@@ -1217,7 +1164,7 @@ USA_foreign_support = {
 			has_war = no
 		}
 		visible = {
-			has_completed_focus = USA_invite_foreign_support
+			always = no
 			has_war = no
 		}
 		target_trigger = {
@@ -1246,7 +1193,7 @@ USA_foreign_support = {
 			has_war = no
 		}
 		visible = {
-			has_completed_focus = USA_invite_foreign_support
+			always = no
 			has_war = no
 
 		}
@@ -1276,7 +1223,7 @@ USA_foreign_support = {
 			has_war = no
 		}
 		visible = {
-			has_completed_focus = USA_invite_foreign_support
+			always = no
 			has_war = no
 		}
 		target_trigger = {
@@ -1306,7 +1253,7 @@ USA_foreign_support = {
 			has_war = no
 		}
 		visible = {
-			has_completed_focus = USA_invite_foreign_support
+			always = no
 			has_war = no
 		}
 		target_trigger = {
@@ -1338,7 +1285,7 @@ USA_foreign_support = {
 			has_war = no
 		}
 		visible = {
-			has_completed_focus = USA_invite_foreign_support
+			always = no
 			has_war = no
 		}
 		target_trigger = {
@@ -1550,7 +1497,7 @@ economy_decisions = {
 			}
 		}
 		visible = {
-			has_completed_focus = USA_communal_property_act
+			always = no
 		}
 		cost = 50
 		ai_will_do = {
@@ -1597,7 +1544,7 @@ foreign_politics = {
 		}
 
 		target_root_trigger = {
-			has_completed_focus = USA_anti_bolshevist_aid
+			always = no
 		}
 
 		target_trigger = {
@@ -1608,7 +1555,7 @@ foreign_politics = {
 		}
 
 		visible = {
-			has_completed_focus = USA_anti_bolshevist_aid
+			always = no
 			
 			FROM = {
 				has_war_with = SOV
@@ -1723,7 +1670,7 @@ foreign_politics = {
 				has_war = yes
 				is_in_faction_with = USA
 			}
-			has_completed_focus = USA_unholy_alliance
+			always = no
 		}
 		available = {
 			SOV = {
@@ -1765,7 +1712,7 @@ USA_war_plans = {
 			has_war_with = MEX
 		}
 		visible = {
-			has_completed_focus = USA_war_plan_green
+			always = no
 		}
 		ai_will_do = {
 			factor = 1
@@ -1787,7 +1734,7 @@ USA_war_plans = {
 			has_war_with = ENG
 		}
 		visible = {
-			has_completed_focus = USA_war_plan_red
+			always = no
 		}
 		ai_will_do = {
 			factor = 1
@@ -1828,7 +1775,7 @@ USA_war_plans = {
 			has_war_with = RAJ
 		}
 		visible = {
-			has_completed_focus = USA_war_plan_ruby
+			always = no
 		}
 		ai_will_do = {
 			factor = 1
@@ -1848,7 +1795,7 @@ USA_war_plans = {
 			has_war_with = NZL
 		}
 		visible = {
-			has_completed_focus = USA_war_plan_scarlet_garnet
+			always = no
 		}
 		ai_will_do = {
 			factor = 1
@@ -1889,6 +1836,11 @@ USA_war_plans = {
 			defense_bonus_against = 0.1
 		}
 		targeted_modifier = {
+			tag = MAN
+			attack_bonus_against = 0.1
+			defense_bonus_against = 0.1
+		}
+		targeted_modifier = {
 			tag = MEN
 			attack_bonus_against = 0.1
 			defense_bonus_against = 0.1
@@ -1900,16 +1852,11 @@ USA_war_plans = {
 			OR = {
 				has_war_with = CHI
 				has_war_with = PRC
-				has_war_with = SHX
-				has_war_with = YUN
-				has_war_with = GXC
-				has_war_with = XSM
-				has_war_with = SIK
 
 			}
 		}
 		visible = {
-			has_completed_focus = USA_war_plan_yellow
+			always = no
 		}
 		ai_will_do = {
 			factor = 1
@@ -1926,31 +1873,6 @@ USA_war_plans = {
 			attack_bonus_against = 0.1
 			defense_bonus_against = 0.1
 		}
-		targeted_modifier = {
-			tag = SHX
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
-		targeted_modifier = {
-			tag = YUN
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
-		targeted_modifier = {
-			tag = XSM
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
-		targeted_modifier = {
-			tag = GXC
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
-		targeted_modifier = {
-			tag = SIK
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
 	}
 	USA_execute_war_plan_crimson = {
 		icon = generic_operation
@@ -1958,7 +1880,7 @@ USA_war_plans = {
 			has_war_with = CAN
 		}
 		visible = {
-			has_completed_focus = USA_war_plan_crimson
+			always = no
 		}
 		ai_will_do = {
 			factor = 1
@@ -2044,7 +1966,7 @@ USA_war_plans = {
 			has_war_with = SOU
 		}
 		visible = {
-			has_completed_focus = USA_war_plan_white
+			always = no
 		}
 		ai_will_do = {
 			factor = 1
@@ -2102,9 +2024,7 @@ USA_intervention_mandate = {
 USA_decolonisation = {
 	USA_freedom_for_Papua = {
 		available = {
-			PNG = {
-				exists = no
-			}
+			
 			controls_state = 523
 			controls_state = 737
 		}
@@ -2115,10 +2035,7 @@ USA_decolonisation = {
 		fire_only_once = yes
 		days_remove = 180
 		remove_effect = {
-			PNG = {
-				transfer_state = 523
-				transfer_state = 737 
-			}
+			
 		}
 	}
 	USA_indonesian_liberation = {

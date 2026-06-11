@@ -201,15 +201,10 @@ guiTypes = {
 		position = { x = -250 y = 100 }
 		Orientation = UPPER_RIGHT
 		clipping = no
-	
-		# Add this trigger to make it only appear when the game rule is enabled
-		trigger = {
-			has_game_rule = {
-				rule = naval_cap
-				option = on
-			}
-		}
-	
+
+		# NOTE: visibility-by-game-rule belongs in the scripted_guis definition (visible = { }),
+		# not here — a trigger block in a .gui layout file fails to parse on 1.18.3
+
 		background = {
 			name = "Background"		
 			quadTextureSprite ="GFX_theatre_selection_background"

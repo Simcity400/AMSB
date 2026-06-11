@@ -2279,9 +2279,9 @@ ITA_balance_of_power_category = {
 
 		visible = {
 			OR = {
-				has_completed_focus = ITA_italo_balbo_focus
-				has_completed_focus = ITA_dino_grandi_focus
-				has_completed_focus = ITA_monarchia_d_italia
+				always = no
+				always = no
+				always = no
 				has_completed_focus = ITA_triumph_in_africa_bba
 			}
 		}
@@ -2386,8 +2386,8 @@ ITA_balance_of_power_category = {
 			original_tag = ITA
 			has_civil_war = no
 			OR = {
-				has_completed_focus = ITA_italo_balbo_focus
-				has_completed_focus = ITA_dino_grandi_focus
+				always = no
+				always = no
 				has_completed_focus = ITA_culto_del_duce
 			}
 		}
@@ -2409,10 +2409,7 @@ ITA_balance_of_power_category = {
 						amount = 50
 						producer = ROOT
 					}
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = SOV_sent_us_weapons
-					}
+					
 				}
 			}
 			hidden_effect = {
@@ -2487,9 +2484,9 @@ ITA_balance_of_power_category = {
 
 		visible = {
 			OR = {
-				has_completed_focus = ITA_italo_balbo_focus
-				has_completed_focus = ITA_dino_grandi_focus
-				has_completed_focus = ITA_monarchia_d_italia
+				always = no
+				always = no
+				always = no
 				has_completed_focus = ITA_triumph_in_africa_bba
 			}
 		}
@@ -2555,9 +2552,9 @@ ITA_balance_of_power_category = {
 
 		visible = {
 			OR = {
-				has_completed_focus = ITA_italo_balbo_focus
-				has_completed_focus = ITA_dino_grandi_focus
-				has_completed_focus = ITA_monarchia_d_italia
+				always = no
+				always = no
+				always = no
 				has_completed_focus = ITA_triumph_in_africa_bba
 			}
 		}
@@ -2623,9 +2620,9 @@ ITA_balance_of_power_category = {
 
 		visible = {
 			OR = {
-				has_completed_focus = ITA_italo_balbo_focus
-				has_completed_focus = ITA_dino_grandi_focus
-				has_completed_focus = ITA_monarchia_d_italia
+				always = no
+				always = no
+				always = no
 				has_completed_focus = ITA_triumph_in_africa_bba
 			}
 		}
@@ -2692,7 +2689,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_revoke_the_acerbo_law
+			always = no
 		}
 
 		available = {
@@ -2739,7 +2736,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_power_to_the_king
+			always = no
 		}
 
 		available = {
@@ -2786,13 +2783,13 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_power_to_the_king
-			NOT = { has_completed_focus = ITA_seek_papal_support }
+			always = no
+			NOT = { always = no }
 			NOT = { has_country_flag = ITA_expanded_lateran_treaty_flag }
 		}
 
 		available = {
-			NOT = { has_completed_focus = ITA_seek_papal_support }
+			NOT = { always = no }
 			NOT = { has_country_flag = ITA_expanded_lateran_treaty_flag }
 		}
 
@@ -2822,7 +2819,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_seek_papal_support
+			always = no
 			NOT = { has_country_flag = ITA_revoked_lateran_treaty_flag }
 		}
 
@@ -2859,7 +2856,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_strengthen_the_papacy
+			always = no
 		}
 
 		available = {
@@ -2892,14 +2889,14 @@ ITA_balance_of_power_category = {
 
 		visible = {
 			OR = {
-				has_completed_focus = ITA_seek_papal_support
-				has_completed_focus = ITA_disband_the_blackshirts
+				always = no
+				always = no
 			}
 		}
 
 		available = {
-			has_completed_focus = ITA_seek_papal_support
-			has_completed_focus = ITA_disband_the_blackshirts
+			always = no
+			always = no
 		}
 
 		cost = 70
@@ -2968,7 +2965,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_the_popular_front
+			always = no
 		}
 
 		available = {
@@ -3001,7 +2998,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_a_leader_steps_forward
+			always = no
 		}
 
 		available = {
@@ -3040,7 +3037,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_common_ground
+			always = no
 		}
 
 		available = {
@@ -3099,7 +3096,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_italian_socialism
+			always = no
 		}
 
 		available = {
@@ -3132,7 +3129,7 @@ ITA_balance_of_power_category = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_cooperate_with_the_mafia
+			always = no
 		}
 
 		available = {
@@ -3215,7 +3212,7 @@ ETH_italian_occupation_category = {
 			set_country_flag = expanding_regional_control_flag
 			set_variable = { state_integrated = FROM }
 			hidden_effect = {
-				FROM = { owner = { activate_mission = ETH_italian_control_mission } } # Starts "warning timer" for Original owner
+				#FROM = { owner = { activate_mission = ETH_italian_control_mission } } # Starts "warning timer" for Original owner
 			}
 		}
 
@@ -3780,8 +3777,8 @@ ITA_colonial_management_dec_cat = {
 			modifier = {
 				factor = 3
 				OR = {
-					has_completed_focus = ITA_comandante_diavolo
-					has_completed_focus = ITA_irregulars
+					always = no
+					always = no
 				}
 			}
 		}
@@ -3795,7 +3792,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_strengthen_ascari_corps
+			always = no
 			NOT = { has_country_flag = ITA_improved_ascari_templates_flag }
 		}
 
@@ -4065,8 +4062,8 @@ ITA_colonial_management_dec_cat = {
 			modifier = {
 				factor = 3
 				OR = {
-					has_completed_focus = ITA_strengthen_ascari_corps
-					has_completed_focus = ITA_ascari
+					always = no
+					always = no
 				}
 			}
 		}
@@ -4301,74 +4298,46 @@ ITA_colonial_management_dec_cat = {
 				set_global_flag = italian_east_africa_flag
 
 				# Shewa
-				AOI = {
-					transfer_state = 271
-				}
+				
 
 				# Wello
-				AOI = {
-					transfer_state = 843
-				}
+				
 
 				# Afar
-				AOI = {
-					transfer_state = 908
-				}
+				
 
 				# Tigray
-				AOI = {
-					transfer_state = 842
-				}
+				
 
 				# Begemder
-				AOI = {
-					transfer_state = 841
-				}
+				
 
 				# Eritrea
-				AOI = {
-					transfer_state = 550
-				}
+				
 
 				# Gojjam
-				AOI = {
-					transfer_state = 840
-				}
+				
 
 				# Welega
-				AOI = {
-					transfer_state = 839
-				}
+				
 
 				# Illubabor-Kaffa
-				AOI = {
-					transfer_state = 838
-				}
+				
 
 				# Sidamo
-				AOI = {
-					transfer_state = 837
-				}
+				
 
 				# Bale
-				AOI = {
-					transfer_state = 836
-				}
+				
 
 				# Hararghe
-				AOI = {
-					transfer_state = 835
-				}
+				
 
 				# Somaliland
-				AOI = {
-					transfer_state = 559
-				}
+				
 
 				# Jubaland
-				AOI = {
-					transfer_state = 844
-				}
+				
 
 				set_autonomy = {
 				    target = AOI
@@ -4377,27 +4346,7 @@ ITA_colonial_management_dec_cat = {
 				    end_civil_wars = no
 				}
 
-				AOI = {
-					add_manpower = 100000
-					add_ideas = {
-						AOI_enrico_cerulli
-						AOI_africa_orientale_italiana_idea
-					}
-					add_offsite_building = { type = industrial_complex level = 4 }
-					add_offsite_building = { type = arms_factory level = 4 }
-					add_equipment_to_stockpile = {
-					    type = infantry_equipment
-					    amount = 5000
-					    producer = ITA
-					}
-					if = {
-						limit = {
-							has_dlc = "La Resistance"
-						}
-						create_intelligence_agency = yes
-					}
-					set_cosmetic_tag = AOI_Italian
-				}
+				
 			}
 		}
 
@@ -4425,9 +4374,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			
 			OR = {
 				ITA = {
 				controls_state = 269 # British Somaliland
@@ -4451,9 +4398,7 @@ ITA_colonial_management_dec_cat = {
 		complete_effect = {
 
 			# British Somaliland
-			AOI = {
-				transfer_state = 269
-			}
+			
 
 			hidden_effect = {
 				set_global_flag = italian_east_africa_has_somaliland_flag
@@ -4478,9 +4423,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			
 			OR = {
 				ITA = {
 				controls_state = 268 # French Somaliland
@@ -4504,9 +4447,7 @@ ITA_colonial_management_dec_cat = {
 		complete_effect = {
 
 			# French Somaliland
-			AOI = {
-				transfer_state = 268
-			}
+			
 
 			hidden_effect = {
 				set_global_flag = italian_east_africa_has_djibouti_flag
@@ -4531,9 +4472,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			
 			OR = {
 				ITA = {
 				controls_state = 903 # Garissa
@@ -4557,9 +4496,7 @@ ITA_colonial_management_dec_cat = {
 		complete_effect = {
 
 			# Garissa
-			AOI = {
-				transfer_state = 903
-			}
+			
 
 			hidden_effect = {
 				set_global_flag = italian_east_africa_has_garissa_flag
@@ -4584,9 +4521,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			
 			ITA = {
 				has_manpower > 10000
 			}
@@ -4604,10 +4539,7 @@ ITA_colonial_management_dec_cat = {
 				add_manpower = -10000
 			}
 
-			AOI = {
-				add_manpower = 10000
-				army_experience = 15
-			}
+			
 			every_state = {
 				limit = {
 					is_owned_and_controlled_by = AOI
@@ -4638,9 +4570,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			
 			OR = {
 				ITA = {
 					has_equipment = {
@@ -4721,7 +4651,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_abolish_the_colonies
+			always = no
 		}
 
 		available = {
@@ -5060,10 +4990,7 @@ ITA_naval_cooperation_programs_dec_cat = {
 				add_political_power = 50
 				custom_effect_tooltip = ITA_cede_aquila_class_destroyers_tt
 				FROM = {
-					add_opinion_modifier = {
-						modifier = ITA_ceded_destroyers
-						target = ROOT
-					}
+					
 				}
 			}
 		}
@@ -5201,7 +5128,7 @@ ITA_diplomacy_balkan_decision_category = {
 		}
 
 		target_root_trigger = {
-			has_completed_focus = ITA_potential_allies_in_the_balkans
+			always = no
 			is_subject = no
 		}
 
@@ -5271,7 +5198,7 @@ ITA_diplomacy_balkan_decision_category = {
 		}
 
 		target_root_trigger = {
-			has_completed_focus = ITA_potential_allies_in_the_balkans
+			always = no
 		}
 
 		allowed = {
@@ -5432,7 +5359,7 @@ ITA_diplomacy_balkan_decision_category = {
 		}
 
 		target_root_trigger = {
-			has_completed_focus = ITA_potential_allies_in_the_balkans
+			always = no
 			is_subject = no
 		}
 
@@ -5506,18 +5433,7 @@ ITA_diplomacy_balkan_decision_category = {
 
 		available = {
 			is_subject = no
-			CRO = {
-				exists = yes
-				NOT = { has_war_with = ITA }
-				OR = {
-					is_subject = no
-					is_subject_of = ITA
-				}
-				OR = {
-					has_government = fascism
-					has_government = neutrality
-				}
-			}
+			
 		}
 
 		visible = {
@@ -5539,19 +5455,9 @@ ITA_diplomacy_balkan_decision_category = {
 		remove_effect = {
 			IF = {
 				limit = {
-					CRO = {
-						NOT = {
-							is_subject_of = ITA
-						}
-					}
+					
 				}
-				CRO = {
-					country_event = {
-					    id = BBA_italy_interaction_events.4
-					    days = 1
-					    random = 2
-					}
-				}
+				
 			}
 			set_country_flag = ITA_aimones_coronation
 			hidden_effect = {
@@ -5580,10 +5486,7 @@ ITA_diplomacy_balkan_decision_category = {
 		}
 
 		available = {
-			CRO = {
-				exists = yes
-				is_subject_of = ITA
-			}
+			
 			has_country_flag = ITA_aimones_coronation
 		}
 
@@ -5618,52 +5521,13 @@ ITA_diplomacy_balkan_decision_category = {
 			}
 			IF = {
 				limit = { ITA = { has_government = fascism } }
-				CRO = {
-					ITA_prince_aimone = {
-						add_country_leader_role = {
-						  character = ITA_tomislav
-						  promote_leader = yes
-						  country_leader = {
-						    ideology = fascism_ideology
-						    expire = "1970.1.1.1"
-						    traits = { ITA_tomislav_of_croatia }
-						  }
-						}
-					}
-				}
+				
 			}
 			IF = {
 				limit = { ITA = { has_government = neutrality } }
-				CRO = {
-					ITA_prince_aimone = {
-						add_country_leader_role = {
-						  character = ITA_tomislav
-						  promote_leader = yes
-						  country_leader = {
-						    ideology = despotism
-						    expire = "1970.1.1.1"
-						    traits = { ITA_tomislav_of_croatia }
-						  }
-						}
-					}
-				}
+				
 			}
-			CRO = {
-				add_political_power = 75
-				division_template = {
-				    name = "Tomislav's Royal Guards"
-				    is_locked = yes
-				    division_names_group = ITA_INF_01
-				    regiments = {
-				        infantry = { x = 0 y = 0 }
-				        infantry = { x = 0 y = 1 }
-				        infantry = { x = 0 y = 2 }
-				        infantry = { x = 1 y = 0 }
-				        infantry = { x = 1 y = 1 }
-				        infantry = { x = 1 y = 2 }
-				    }
-				}
-			}
+			
 			109 = {
 				create_unit = {
 				    division = "name = \"Tomislav's Royal Guards\" division_template = \"Tomislav's Royal Guards\" start_experience_factor = 0.5 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
@@ -5833,9 +5697,7 @@ ITA_diplomacy_balkan_decision_category = {
 		}
 
 		available = {
-			MNT = {
-				exists = no
-			}
+			
 			105 = {
 				is_controlled_by = ITA
 			}
@@ -5859,9 +5721,7 @@ ITA_diplomacy_balkan_decision_category = {
 		cost = 50
 
 		complete_effect = {
-			MNT = {
-				transfer_state = 105
-			}
+			
 			IF = {
 				limit = {
 					has_dlc = "Together for Victory"
@@ -5885,21 +5745,7 @@ ITA_diplomacy_balkan_decision_category = {
 					puppet = MNT
 				}
 			}
-			MNT = {
-				division_template = {
-				    name = "Montenegrin Chetniks"
-				    is_locked = yes
-				    division_names_group = ITA_INF_01
-				    regiments = {
-				        mountaineers = { x = 0 y = 0 }
-				        mountaineers = { x = 0 y = 1 }
-				        mountaineers = { x = 0 y = 2 }
-				        mountaineers = { x = 1 y = 0 }
-				        mountaineers = { x = 1 y = 1 }
-				        mountaineers = { x = 1 y = 2 }
-				    }
-				}
-			}
+			
 			105 = {
 				create_unit = {
 				    division = "name = \"First Montenegrin Chetnik Brigade\" division_template = \"Montenegrin Chetniks\" start_experience_factor = 0.5 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
@@ -5919,12 +5765,7 @@ ITA_diplomacy_balkan_decision_category = {
 
 			hidden_effect = {
 				set_country_flag = ITA_established_montenegro
-				MNT = {
-					country_event = {
-					    id = BBA_italy_interaction_events.7
-					    days = 0
-					}
-				}
+				
 			}
 		}
 	}
@@ -6254,7 +6095,7 @@ ITA_diplomacy_balkan_decision_category = {
 
 		available = {
 			ITA = {
-				has_completed_focus = ITA_befriend_greece
+				always = no
 			}
 			any_country = {
 				controls_state = 342
@@ -6316,7 +6157,7 @@ ITA_diplomacy_balkan_decision_category = {
 
 		available = {
 			
-			has_completed_focus = ITA_befriend_greece
+			always = no
 			is_faction_leader = yes
 			is_subject = no
 			controls_state = 164
@@ -6394,7 +6235,7 @@ ITA_diplomacy_balkan_decision_category = {
 
 		available = {
 			
-			has_completed_focus = ITA_befriend_turkey
+			always = no
 			is_faction_leader = yes
 			is_subject = no
 			controls_state = 164
@@ -6902,7 +6743,7 @@ political_actions = {
 		}
 
 		visible = {
-			has_completed_focus = ITA_power_to_the_king
+			always = no
 			has_country_leader = {
 				character = ITA_vittorio_emanuele_iii
 				ruling_only = yes
@@ -6936,7 +6777,7 @@ ITA_italian_mafia_dec_cat = {
 			}
 			OR = {
 				NOT = { original_tag = ITA }
-				has_completed_focus = ITA_crush_the_mafia
+				always = no
 			}
 		}
 		state_target = yes

@@ -16,13 +16,12 @@ IF = {
 }
 
 IF = {
-	limit = { always = no }
+	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "HUN_1936_air_bba"
 		set_technology = {
 			iw_small_airframe = 1
 			engines_1 = 1
 			early_bombs = 1
-			photo_reconnaisance = 1
 			aa_lmg = 1
 		}
 	ELSE = {
@@ -31,6 +30,15 @@ IF = {
 			early_fighter = 1
 			CAS1 = 1
 		}
+	}
+}
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+		has_dlc = "By Blood Alone"
+	}
+	set_technology = {
+					photo_reconnaisance = 1
 	}
 }
 
@@ -86,19 +94,13 @@ set_technology = {
 	gw_artillery = 1
 	tech_mountaineers = 1
 	marines  = 1
-	rangers_tech = 1
-	paratroopers = 1 
+	paratroopers = 1
+	rangers_tech = 1 
 
 	fuel_silos = 1
 	basic_train = 1
 }
 
-if = {
-	limit = {
-		has_dlc = "Battle for the Bosporus"
-	}
-	set_technology = { camelry = 1 } #for digz
-}
 IF = {
 	limit = {
 		NOT = {
@@ -161,26 +163,14 @@ IF = {
 
 	### OPINION MODIFIERS ###
 
-	add_opinion_modifier = {
-		target = GER
-		modifier = HUN_GER_trade_modifier
-	}	
+	
 	GER = {
-		add_opinion_modifier = {
-			target = HUN
-			modifier = HUN_GER_trade_modifier
-		}	
+		
 	}
 
-	add_opinion_modifier = {
-		target = POL
-		modifier = HUN_POL_friendship_modifier
-	}	
+	
 	POL = {
-		add_opinion_modifier = {
-			target = HUN
-			modifier = HUN_POL_friendship_modifier
-		}	
+		
 	}
 
 	IF = {
@@ -322,18 +312,9 @@ IF = {
 
 }
 
-add_opinion_modifier = { 
-	target = CZE
-	modifier = BFTB_incongruous_neighbors
-}
-add_opinion_modifier = { 
-	target = ROM
-	modifier = BFTB_incongruous_neighbors
-}
-add_opinion_modifier = { 
-	target = YUG
-	modifier = BFTB_incongruous_neighbors
-}
+
+
+
 
 # SETUP HUNGARIAN POLITICS
 set_politics = {
@@ -376,10 +357,14 @@ IF = {
 	recruit_character = HUN_shvoy_kalman
 	recruit_character = HUN_sandor_magyarossy
 	recruit_character = HUN_bela_rakosi
+	recruit_character = HUN_kalman_kanya
 	recruit_character = HUN_jozsef_szell
 	recruit_character = HUN_vilmos_roder
+	recruit_character = HUN_zoltan_tildy
+	recruit_character = HUN_laszlo_rajk
 	recruit_character = HUN_kalman_daranyi
 	recruit_character = HUN_lajos_remenyi_schneller
+	recruit_character = HUN_gusztav_gratz
 	recruit_character = HUN_gyula_gombos_de_jakfa
 	recruit_character = HUN_otto_von_habsburg
 	recruit_character = HUN_franz_friedrich
@@ -406,10 +391,14 @@ IF = {
 	recruit_character = HUN_dezso_laszlo
 	recruit_character = HUN_shvoy_kalman
 	recruit_character = HUN_sandor_magyarossy
+	recruit_character = HUN_kalman_kanya
 	recruit_character = HUN_jozsef_szell
 	recruit_character = HUN_vilmos_roder
+	recruit_character = HUN_zoltan_tildy
+	recruit_character = HUN_laszlo_rajk
 	recruit_character = HUN_kalman_daranyi
 	recruit_character = HUN_lajos_remenyi_schneller
+	recruit_character = HUN_gusztav_gratz
 	recruit_character = HUN_gyula_gombos_de_jakfa
 	recruit_character = HUN_otto_von_habsburg
 	recruit_character = HUN_franz_friedrich
@@ -437,13 +426,23 @@ IF = {
 	recruit_character = HUN_bela_imredy
 	recruit_character = HUN_pal_teleki
 	recruit_character = HUN_ferenc_fischer
+	recruit_character = HUN_erno_gero
+	recruit_character = HUN_fidel_palffy
 	recruit_character = HUN_istvan_friedrich
+	recruit_character = HUN_magdolna_purgly
+	recruit_character = HUN_sandor_garbai
 	recruit_character = HUN_istvan_bethlen
 	recruit_character = HUN_gyula_kadar
+	recruit_character = HUN_imre_nagy
+	recruit_character = HUN_miklos_horthy_jr
 	recruit_character = HUN_pal_kiraly
+	recruit_character = HUN_janos_kadar
+	recruit_character = HUN_lennart_bernadotte
 	recruit_character = HUN_pal_pronay
 	recruit_character = HUN_imre_kemeri_nagy
+	recruit_character = HUN_jusztinian_seredi
 	recruit_character = HUN_vasyl_vyshyvanyi
+	recruit_character = HUN_jozsef_kelen
 	recruit_character = HUN_hermann_pokorny
 	recruit_character = HUN_dezso_magos
 	recruit_character = HUN_kalman_hardy
@@ -453,7 +452,6 @@ IF = {
 }
 
 #Scientists always recruited
-recruit_character = ROM_gheorghe_mihail
 recruit_character = HUN_nicholas_straussler
 recruit_character = HUN_leo_szilard
 recruit_character = HUN_john_von_neumann
@@ -480,87 +478,11 @@ add_breakthrough_progress = {
 }
 
 
-# SETUP THE 1939 SCENARIO
-1939.1.1 = {
+	###################### HUNGARY IN 1941 START ######################
 
-	# WITHOUT THE WW DLC
-	IF = {
-		limit = {
-			NOT = {
-				has_dlc = "Gotterdammerung"
-			}
-		}
-
-		set_politics = {
-			ruling_party = fascism
-			last_election = "1939.5.29"
-			election_frequency = 48
-			elections_allowed = yes
-		}
-		set_popularities = {
-			democratic = 27
-			fascism = 70
-			communism = 3
-		}
-
-		IF = {
-			limit = {
-				has_dlc = "Arms Against Tyranny"
-			}
-			remove_ideas = HUN_treaty_of_triannon_aat
-		}
-		IF = {
-			limit = {
-				NOT = { has_dlc = "Arms Against Tyranny" }
-			}
-			remove_ideas = HUN_treaty_of_triannon
-		}
-
-		add_political_power = 1198
-		add_command_power = 100
-
-		IF = {
-			limit = {
-				has_dlc = "Death or Dishonor"
-			}
-			complete_national_focus = HUN_economic_intervention
-			complete_national_focus = HUN_secret_rearmament
-			complete_national_focus = HUN_war_games
-			complete_national_focus = HUN_theoretical_air_efforts
-			complete_national_focus = HUN_trade_deal_with_germany
-			complete_national_focus = HUN_joint_aluminum_mining_company
-			complete_national_focus = HUN_reaffirm_territorial_claims
-			complete_national_focus = HUN_announce_the_gyor_program
-			complete_national_focus = HUN_civilian_industry
-			complete_national_focus = HUN_reintegrate_the_railroads
-			complete_national_focus = HUN_invite_foreign_investors
-			complete_national_focus = HUN_bled_agreement
-			complete_national_focus = HUN_army_maneuvers
-			complete_national_focus = HUN_establish_the_air_force
-			complete_national_focus = HUN_demand_southern_slovakia
-			complete_national_focus = HUN_mobile_focus
-			complete_national_focus = HUN_license_foreign_designs
-			
-			#Handle this manually
-			unlock_national_focus = HUN_renounce_the_treaty_of_trianon
-			add_ideas = {
-				limited_conscription
-				HUN_treaty_of_triannon_3
-			}
-
-			unlock_national_focus = HUN_strengthen_fascists #To avoid leader ID clash
-			add_ideas = HUN_strengthen_fascists
-
-		}
-		
-	}
-
+1941.1.1 = {
+		set_oob = "HUN_1941_nsb"
 	# WITH THE WW DLC
-	IF = {
-		limit = {
-			has_dlc = "Gotterdammerung"
-		}
-
 		set_politics = {
 			ruling_party = neutrality
 			last_election = "1935.3.31"
@@ -568,12 +490,11 @@ add_breakthrough_progress = {
 			elections_allowed = no
 		}
 		set_popularities = {
-			neutrality = 74
-			democratic = 2
-			fascism = 24
+			neutrality = 65
+			democratic = 0
+			fascism = 35
 			communism = 0
 		}
-
 		IF = {
 			limit = {
 				has_dlc = "Arms Against Tyranny"
@@ -586,10 +507,6 @@ add_breakthrough_progress = {
 			}
 			remove_ideas = HUN_treaty_of_triannon_wuw
 		}
-
-		add_political_power = 1100
-		add_command_power = 100
-
 		swap_ideas = {
 			remove_idea = HUN_levente_associations
 			add_idea = HUN_levente_associations_act_of_defense_and_secret_rearmament
@@ -605,19 +522,25 @@ add_breakthrough_progress = {
 		}		
 		retire_character = HUN_gyula_gombos_de_jakfa
 
-		add_ideas = { HUN_pal_teleki }
+		# 1941 characters
+		add_ideas = { 
+			HUN_jeno_ratz
+			HUN_henrik_werth
+			HUN_hugo_sonyi
+			HUN_pal_kiraly
+			HUN_istvan_horthy
+			HUN_gyula_kadar
+		}
+
 
 		hidden_effect = {
 			set_country_flag = HUN_gombos_has_died_flag
 			set_country_flag = HUN_horthy_aligned_the_move_flag
 		}
-
-		# COMPLETING FOCUSES
-
 		# ONES THAT CAN JUST BE COMPLETED NORMALLY
 		complete_national_focus = wuw_HUN_continue_the_regency
 		complete_national_focus = wuw_HUN_strengthen_horthys_reign
-		complete_national_focus = wuw_HUN_economic_intervention
+		complete_national_focus = wuw_HUN_avoid_interventionalist_destablilization
 		complete_national_focus = wuw_HUN_reintigrate_the_imperial_railroads
 		complete_national_focus = wuw_HUN_hold_war_games
 		complete_national_focus = wuw_HUN_expand_the_ganz_muvek
@@ -626,14 +549,24 @@ add_breakthrough_progress = {
 		complete_national_focus = wuw_HUN_spur_on_the_trianon_trauma
 		complete_national_focus = wuw_HUN_promote_increased_urbanization
 		complete_national_focus = wuw_HUN_absolute_rule_of_the_national_unity_party
-		complete_national_focus = wuw_HUN_reestablish_the_rongyos_garda
 		complete_national_focus = wuw_HUN_the_hungarian_life_and_renewal_party
 		complete_national_focus = wuw_HUN_make_the_magyar_legiero_known
 		complete_national_focus = wuw_HUN_act_of_defense
 		complete_national_focus = wuw_HUN_initiate_army_maneuvers
-		complete_national_focus = wuw_HUN_form_the_gyorshadtest
 		complete_national_focus = wuw_HUN_invest_in_ludovica_academy
-
+		complete_national_focus = wuw_HUN_danuvia_submachine_guns
+		complete_national_focus = wuw_HUN_expand_the_hungarian_academy_of_sciences
+		complete_national_focus = wuw_HUN_expand_the_lignite_industry
+		complete_national_focus = wuw_HUN_doctrinal_studies
+		complete_national_focus = wuw_HUN_expand_the_army
+		complete_national_focus = wuw_HUN_magyar_kiralyi_csendorseg
+		complete_national_focus = wuw_HUN_promote_hungarianism
+		complete_national_focus = wuw_HUN_strengthen_the_turani_vadaszok
+		complete_national_focus = wuw_HUN_manred_weiss_steel_and_metal_works
+		complete_national_focus = wuw_HUN_expand_the_aluminum_industry		
+		complete_national_focus = wuw_HUN_the_turul_association		
+		complete_national_focus = wuw_HUN_proclaim_greater_hungary
+		complete_national_focus = wuw_HUN_light_infantry_divisions_doctrine
 		# ONES THAT HAVE TO BE HANDELED MANUALLY
 		unlock_national_focus = wuw_HUN_secret_rearmament
 		unlock_national_focus = wuw_HUN_outlaw_the_party_of_national_will
@@ -641,72 +574,19 @@ add_breakthrough_progress = {
 		unlock_national_focus = wuw_HUN_negotiate_the_restrictions
 		unlock_national_focus = wuw_HUN_announce_the_gyor_program
 		unlock_national_focus = wuw_HUN_renounce_the_treaty_of_trianon
+		unlock_national_focus = wuw_HUN_demand_southern_slovakia
+		unlock_national_focus = wuw_HUN_claim_overlordship_over_slovakia
+		unlock_national_focus = wuw_HUN_demand_carpathian_ruthenia
+		unlock_national_focus = wuw_HUN_demand_transylvania
+		unlock_national_focus = wuw_HUN_demand_the_vojvodina
+		unlock_national_focus = wuw_HUN_reaffirm_territorial_claims
 
 		add_ideas = {
-			partial_economic_mobilisation
-			volunteer_only
+			tot_economic_mobilisation
+			service_by_requirement
+			HUN_secret_rearmament
+			tradeback_is_cancer
 		}
-
-		add_ideas = HUN_secret_rearmament
-		
-		add_stability = 0.05
-		add_war_support = 0.05
-
-	}
-
-	# TECHNOLOGIES
-	set_technology = {
-		infantry_weapons = 1
-		infantry_weapons1 = 1
-		tech_support = 1		
-		tech_recon = 1
-		tech_trucks = 1
-		gw_artillery = 1
-
-		fuel_silos = 1
-		basic_train = 1
-		
-		interwar_artillery = 1
-		interwar_antitank = 1
-		interwar_antiair = 1
-		tech_engineers = 1
-		tech_mountaineers = 1
-		paratroopers = 1
-		motorised_infantry = 1
-		infantry_weapons2 = 1
-		support_weapons = 1
-		tech_logistics_company = 1
-		tech_signal_company = 1
-		tech_maintenance_company = 1
-		tech_field_hospital = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		fuel_refining = 1
-	}
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
 	IF = {
 		limit = {
 			has_dlc = "La Resistance"
@@ -717,74 +597,8 @@ add_breakthrough_progress = {
 		# The Hivatal has already been established at this point 
 		create_intelligence_agency = yes
 	}
-
-	IF = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "HUN_1939_air_bba"
-			set_technology = {
-				iw_small_airframe = 1
-				basic_small_airframe = 1
-				aircraft_construction = 1
-				engines_2 = 1
-				engines_1 = 1
-				early_bombs = 1
-				photo_reconnaisance = 1
-				aa_lmg = 1
-			}	
-		ELSE = {
-			set_air_oob = "HUN_1939_air_legacy"
-			set_technology = {
-				fighter1 = 1
-				early_bomber = 1
-				tactical_bomber1 = 1
-				CAS1 = 1
-			}
-		}
-	}
-
-	IF = {
-		limit = {
-			NOT = {
-				has_dlc = "No Step Back"
-			}
-		}
-		set_technology = {
-			basic_light_tank = 1
-			gwtank = 1
-		}
-		set_oob = "HUN_1939"
-	}
-
-	IF = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		set_technology = {
-			gwtank_chassis = 1
-			basic_light_tank_chassis = 1
-		}
-
-		create_equipment_variant = {
-			name = "Toldi 38M"
-			type = light_tank_chassis_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_small_cannon
-				turret_type_slot = tank_light_two_man_tank_turret
-				suspension_type_slot = tank_torsion_bar_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_diesel_engine
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 3
-				tank_nsb_armor_upgrade = 2
-			}
-			icon = "GFX_generic_light_BAA_camo"
-		}
-		set_oob = "HUN_1939_nsb"
-	}
-	
 }
+
 
 
 

@@ -1,0 +1,26 @@
+msb_iran_script = {
+	ENG = {
+		annex_country = {
+			target = PER
+			transfer_troops = no
+		}
+	}
+	SOV = {
+		transfer_state = 419 #Tibriz (AZB)
+		transfer_state = 420 #Gilan (AZB)
+		transfer_state = 416 #Khorasan
+		transfer_state = 1000
+		transfer_state = 266
+		transfer_state = 1004
+	}
+	every_state = {
+		limit = {
+			is_core_of = PER
+			OR = {
+				is_controlled_by = ENG
+				is_controlled_by = SOV
+			}
+		}
+		add_compliance = 70
+	}
+}

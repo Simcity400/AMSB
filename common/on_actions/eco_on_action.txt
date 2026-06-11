@@ -4,20 +4,6 @@ on_actions = {
 
 		# NZL SPAWN IN
 			284 = {
-				add_extra_state_shared_building_slots = 6
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 6
-					instant_build = yes
-				}
-		
-			}
-			723 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = infrastructure
@@ -25,8 +11,53 @@ on_actions = {
 					instant_build = yes
 				}
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 4
+					instant_build = yes
+				}
+		
+			}
+			723 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+		
+			}
+
+		# CAN - Canada
+			862 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+		
+			}
+			682 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+		
+			}
+
+		# SAF
+			681 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
 					instant_build = yes
 				}
 		
@@ -50,10 +81,15 @@ on_actions = {
 				}
 			}
 			10 = {
-				add_extra_state_shared_building_slots = 6
+				add_extra_state_shared_building_slots = 11
 				add_building_construction = {
 					type = arms_factory
-					level = 6
+					level = 7
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -65,28 +101,28 @@ on_actions = {
 					instant_build = yes
 				}
 			}
-
-		# NOR - Norway
-			924 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			912 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			44 = {
+			86 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
-					type = dockyard
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			762 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+
+		# NOR - Norway DEN - Denmark # HOL
+			36 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
 					level = 3
 					instant_build = yes
 				}
@@ -99,7 +135,38 @@ on_actions = {
 					instant_build = yes
 				}
 			}
-
+			924 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			912 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			911 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			44 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
 			98 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -132,14 +199,6 @@ on_actions = {
 					instant_build = yes
 				}
 			}
-			106 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
 			853 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
@@ -153,23 +212,6 @@ on_actions = {
 				add_building_construction = {
 					type = arms_factory
 					level = 7
-					instant_build = yes
-				}
-			}
-
-			803 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			106 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
 					instant_build = yes
 				}
 			}
@@ -189,23 +231,7 @@ on_actions = {
 					instant_build = yes
 				}
 			}
-			36 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
 			37 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
-			911 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
@@ -245,14 +271,6 @@ on_actions = {
 					instant_build = yes
 				}
 			}
-			144 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = industrial_complex
-					level = 3
-					instant_build = yes
-				}
-			}
 			142 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -278,14 +296,6 @@ on_actions = {
 				}
 			}
 			923 = {
-				add_extra_state_shared_building_slots = 3
-				add_building_construction = {
-					type = arms_factory
-					level = 3
-					instant_build = yes
-				}
-			}
-			921 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
@@ -369,10 +379,10 @@ on_actions = {
 			}
 			# AUS - Austria
 			152 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 5
 					instant_build = yes
 				}
 			}
@@ -394,10 +404,10 @@ on_actions = {
 			}
 			# CZE
 			69 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -409,7 +419,40 @@ on_actions = {
 					instant_build = yes
 				}
 			}
+			74 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
 			9 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			972 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			# BEL - Belgium
+			980 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			977 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
 					type = industrial_complex
@@ -417,28 +460,11 @@ on_actions = {
 					instant_build = yes
 				}
 			}
-			# BEL - Belgium
-			980 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = arms_factory
-					level = 4
-					instant_build = yes
-				}
-			}
-			977 = {
-				add_extra_state_shared_building_slots = 4
-				add_building_construction = {
-					type = industrial_complex
-					level = 4
-					instant_build = yes
-				}
-			}
 			34 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -517,10 +543,15 @@ on_actions = {
 				}
 			}
 			596 = {
-				add_extra_state_shared_building_slots = 5
+				add_extra_state_shared_building_slots = 8
 				add_building_construction = {
 					type = arms_factory
 					level = 5
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -541,17 +572,41 @@ on_actions = {
 				}
 			}
 			592 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 3
+					instant_build = yes
+				}
+			}
+			591 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			734 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			1034 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
 					instant_build = yes
 				}
 			}
 
 		# Portugal Spawn in POR
 			180 = {
-				add_extra_state_shared_building_slots = 10
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = infrastructure
 					level = 2
@@ -559,7 +614,7 @@ on_actions = {
 				}
 				add_building_construction = {
 					type = industrial_complex
-					level = 10
+					level = 6
 					instant_build = yes
 				}
 			}
@@ -577,7 +632,7 @@ on_actions = {
 				}
 			}
 			112 = {
-				add_extra_state_shared_building_slots = 7
+				add_extra_state_shared_building_slots = 9
 				add_building_construction = {
 					type = infrastructure
 					level = 2
@@ -588,29 +643,35 @@ on_actions = {
 					level = 7
 					instant_build = yes
 				}
-		
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}		
 			}
 			179 = {
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}	
+				add_building_construction = {
+					type = arms_factory
+					level = 6
+					instant_build = yes
+				}
 			}
 			795 = {
+				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}	
-			}
-
-		# Former AI Ireland Docks now for UK
-			119 = {
-				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
-					type = dockyard
-					level = 5
+					type = arms_factory
+					level = 6
 					instant_build = yes
 				}
 			}
@@ -659,10 +720,10 @@ on_actions = {
 			}
 		# EST Estonia
 			812 = {
-				add_extra_state_shared_building_slots = 7
+				add_extra_state_shared_building_slots = 10
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 7
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -731,10 +792,10 @@ on_actions = {
 
 		# LAT Latvia
 			808 = {
-				add_extra_state_shared_building_slots = 6
+				add_extra_state_shared_building_slots = 8
 				add_building_construction = {
 					type = industrial_complex
-					level = 6
+					level = 8
 					instant_build = yes
 				}
 			}
@@ -826,6 +887,34 @@ on_actions = {
 				}
 			}
 
+			# MAN Manchuko
+			715 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			328 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+
 			# TAN
 			329 = {
 				add_building_construction = {
@@ -869,7 +958,92 @@ on_actions = {
 				}
 			}
 
+			# SOV - Soviet
+			195 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
 
+			# BUL - Bulgaria
+			48 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			212 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			# SPA SPR - Spain
+			171 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+
+
+		# Supply
+
+			# Iran
+			build_railway = {
+				path = { 5029 1957 5073 12748 12704 12818 10837 7969 4553 12793 1896 }
+			}
+			1000 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 1896
+					instant_build = yes
+				}
+			}
+
+			416 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 5029
+					instant_build = yes
+				}
+			}
+
+			build_railway = {
+				path = { 10837 10922 5067 2026 4928 5089 }
+			}
+			413 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 5089
+					instant_build = yes
+				}
+			}
+
+			build_railway = {
+				path = { 10837 10922 5067 8074 1963 8031 12780 12863 7982 }
+			}
+			412 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 7982
+					instant_build = yes
+				}
+			}
 
 		# EQ Equipment
 
@@ -1435,11 +1609,11 @@ on_actions = {
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 37733
+					amount = 47733
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 21600
+					amount = 51600
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
@@ -1447,11 +1621,11 @@ on_actions = {
 				}
 				add_equipment_to_stockpile = {
 					type = motorized_equipment_0
-					amount = 200
+					amount = 400
 				}
 				add_equipment_to_stockpile = {
 					type = motorized_equipment_1
-					amount = 100
+					amount = 300
 				}
 				add_equipment_to_stockpile = {
 					type = artillery_equipment_1
@@ -1742,11 +1916,11 @@ on_actions = {
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 0
+					amount = 2000
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 2000
+					amount = 40000
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
@@ -1872,49 +2046,11 @@ on_actions = {
 			RAJ = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 0
+					amount = 3900
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
 					amount = 2900
-				}
-				add_equipment_to_stockpile = {
-					type = support_equipment_1
-					amount = 0
-				}
-				add_equipment_to_stockpile = {
-					type = motorized_equipment_0
-					amount = 0
-				}
-				add_equipment_to_stockpile = {
-					type = motorized_equipment_1
-					amount = 0
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment_1
-					amount = 0
-				}
-				add_equipment_to_stockpile = {
-					type = anti_tank_equipment_1
-					amount = 0
-				}
-				add_equipment_to_stockpile = {
-					type = anti_air_equipment_1
-					amount = 0
-				}
-				add_equipment_to_stockpile = {
-					type = gw_armored_car_equipment
-					amount = 0
-				}
-			}
-			RAJ = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_0
-					amount = 2900
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_1
-					amount = 0
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
@@ -2292,11 +2428,11 @@ on_actions = {
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_0
-					amount = 65160
+					amount = 17070
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 17070
+					amount = 65160
 				}
 				add_equipment_to_stockpile = {
 					type = support_equipment_1
@@ -2435,7 +2571,7 @@ on_actions = {
 						is_playable_country = yes
 					}
 					#add_ideas = tradeback_is_cancer
-					#add_ideas = no_intel_advantage
+					add_ideas = no_intel_advantage
 				}
 			}
 

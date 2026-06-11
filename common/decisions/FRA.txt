@@ -73,7 +73,7 @@ FRA_civil_unrest_category = {
 			OR = {
 				has_stability > 0.25	
 				has_government = fascism
-				has_completed_focus = FRA_destroy_the_counter_revolution
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = french_communist_civil_war_intervention_tt 
 					AND = {
@@ -109,7 +109,7 @@ FRA_civil_unrest_category = {
 				}
 			}
 			has_completed_focus = FRA_form_the_popular_front
-			NOT = { has_completed_focus = FRA_destroy_the_counter_revolution }
+			NOT = { always = no }
 			not = { has_global_flag = flag_french_fascist_civil_war }
 		}
 
@@ -285,11 +285,7 @@ FRA_vichy_france = {
 	FRA_demand_unification_with_vichy = {
 		available = {
 			country_exists = VIC
-			VIC = {
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
+			
 			controls_state = 16 #Paris
 		}
 
@@ -354,7 +350,7 @@ category_test_decisions = {
 			factor = 0
 		}
 		complete_effect = {
-			load_focus_tree = free_french_focus
+			# free_french_focus tree was removed from the mod (free_france.txt blanked); loading it would be a dangling reference
 		}
 	}
 	test_vichy_france = {
@@ -1295,7 +1291,7 @@ political_actions = {
 		available = { }
 
 		visible = { 
-			has_completed_focus = FRA_utilize_the_leagues 
+			always = no 
 			NOT = { has_government = fascism }
 		}
 
@@ -1324,7 +1320,7 @@ political_actions = {
 		available = { }
 
 		visible = { 
-			has_completed_focus = FRA_utilize_the_leagues 
+			always = no 
 			NOT = { has_government = fascism }
 		}
 		days_re_enable = 30
@@ -1489,14 +1485,14 @@ FRA_intervention_in_overseas_territories = {
 			}
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_north_africa }
+		visible = { always = no }
 
 		complete_effect = { 
 			set_country_flag = FRA_north_africa_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
 				20 = {
-					VIC = { country_event = LaR_france_vichy_notification_events.5 }
+					
 					FRA_transfer_north_africa_effect = yes
 					every_owned_state = {
 						limit = {
@@ -1534,7 +1530,7 @@ FRA_intervention_in_overseas_territories = {
 		} 
 
 		visible = { 
-			has_completed_focus = FRA_intervention_in_north_africa 
+			always = no 
 		}
 
 		complete_effect = { 
@@ -1557,7 +1553,7 @@ FRA_intervention_in_overseas_territories = {
 		} 
 
 		visible = {
-			has_completed_focus = FRA_intervention_in_syria 
+			always = no 
 			NOT = {
 				FRA_controls_syria = yes
 			}
@@ -1570,7 +1566,7 @@ FRA_intervention_in_overseas_territories = {
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
 				30 = {
-					VIC = { country_event = LaR_france_vichy_notification_events.1 }
+					
 					FRA_transfer_syria_effect = yes
 					every_owned_state = {
 						limit = {
@@ -1604,7 +1600,7 @@ FRA_intervention_in_overseas_territories = {
 		} 
 
 		visible = { 
-			has_completed_focus = FRA_intervention_in_syria 
+			always = no 
 			NOT = {
 				FRA_controls_syria = yes
 			}
@@ -1649,7 +1645,7 @@ FRA_intervention_in_overseas_territories = {
 			} 
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_syria }
+		visible = { always = no }
 
 		complete_effect = { 
 			random_state = { #find a neighbouring state of Syria that is controlled by an ally or ourselves
@@ -1787,7 +1783,7 @@ FRA_intervention_in_overseas_territories = {
 			}
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_indochina }
+		visible = { always = no }
 
 		
 
@@ -1796,7 +1792,7 @@ FRA_intervention_in_overseas_territories = {
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
 				20 = {
-					VIC = { country_event = LaR_france_vichy_notification_events.2 }
+					
 					FRA_transfer_indochina_effect = yes
 					every_owned_state = {
 						limit = {
@@ -1829,7 +1825,7 @@ FRA_intervention_in_overseas_territories = {
 		} 
 
 		visible = { 
-			has_completed_focus = FRA_intervention_in_indochina 
+			always = no 
 		}
 
 		complete_effect = { 
@@ -1870,7 +1866,7 @@ FRA_intervention_in_overseas_territories = {
 			} 
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_indochina }
+		visible = { always = no }
 
 		complete_effect = { 
 			random_state = { #find a neighbouring state of Syria that is controlled by an ally or ourselves
@@ -2007,7 +2003,7 @@ FRA_intervention_in_overseas_territories = {
 			}
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_central_africa }
+		visible = { always = no }
 
 		
 
@@ -2016,7 +2012,7 @@ FRA_intervention_in_overseas_territories = {
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
 				25 = {
-					VIC = { country_event = LaR_france_vichy_notification_events.3 }
+					
 					FRA_transfer_central_africa_effect = yes
 					every_owned_state = {
 						limit = {
@@ -2051,7 +2047,7 @@ FRA_intervention_in_overseas_territories = {
 		} 
 
 		visible = { 
-			has_completed_focus = FRA_intervention_in_central_africa 
+			always = no 
 		}
 
 		complete_effect = {
@@ -2092,7 +2088,7 @@ FRA_intervention_in_overseas_territories = {
 			} 
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_central_africa }
+		visible = { always = no }
 
 		complete_effect = { 
 			random_state = { #find a neighbouring state of Syria that is controlled by an ally or ourselves
@@ -2238,7 +2234,7 @@ FRA_intervention_in_overseas_territories = {
 			}
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_west_africa }
+		visible = { always = no }
 
 		
 
@@ -2247,7 +2243,7 @@ FRA_intervention_in_overseas_territories = {
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
 				25 = {
-					VIC = { country_event = LaR_france_vichy_notification_events.4 }
+					
 					FRA_transfer_western_africa_effect = yes
 					every_owned_state = {
 						limit = {
@@ -2284,7 +2280,7 @@ FRA_intervention_in_overseas_territories = {
 		} 
 
 		visible = { 
-			has_completed_focus = FRA_intervention_in_west_africa 
+			always = no 
 		}
 
 		complete_effect = { 
@@ -2328,7 +2324,7 @@ FRA_intervention_in_overseas_territories = {
 			} 
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_west_africa }
+		visible = { always = no }
 
 		complete_effect = { 
 			random_state = { #find a neighbouring state of Syria that is controlled by an ally or ourselves
@@ -2484,14 +2480,14 @@ FRA_intervention_in_overseas_territories = {
 			}
 		} 
 
-		visible = { has_completed_focus = FRA_intervention_in_madagascar }
+		visible = { always = no }
 
 		complete_effect = { 
 			set_country_flag = FRA_madagascar_promised_independence
 			custom_effect_tooltip = FRA_promise_independence_tt
 			random_list = {
 				30 = {
-					VIC = { country_event = LaR_france_vichy_notification_events.6 }
+					
 					transfer_state = 543
 					543 = {
 						add_compliance = 5
@@ -2522,7 +2518,7 @@ FRA_intervention_in_overseas_territories = {
 		} 
 
 		visible = { 
-			has_completed_focus = FRA_intervention_in_madagascar
+			always = no
 		}
 
 		complete_effect = { 

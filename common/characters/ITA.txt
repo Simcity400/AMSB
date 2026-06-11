@@ -331,7 +331,7 @@ characters = {
 					limit = { has_dlc = "By Blood Alone" }
 					OR = {
 						NOT = { has_government = communism }
-						has_completed_focus = ITA_common_ground
+						always = no
 					}
 				}
 			}
@@ -709,7 +709,7 @@ characters = {
 			logistics_skill = 2
 			legacy_id = 0
 			visible = {
-				has_completed_focus = ITA_paramilitary_training
+				always = no
 			}
 		}
 	}
@@ -853,7 +853,7 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 3
 			legacy_id = 0
-			visible = { has_completed_focus = ITA_comandante_diavolo }
+			visible = { always = no }
 		}
 	}
 
@@ -891,14 +891,14 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { ascari_officer trickster guerilla_fighter reckless desert_fox } # Ascari
+			traits = { ascari_officer trickster guerilla_fighter trait_reckless desert_fox } # Ascari
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
 			planning_skill = 1
 			logistics_skill = 2
 			legacy_id = 0
-			visible = { has_completed_focus = ITA_strengthen_ascari_corps }
+			visible = { always = no }
 		}
 	}
 
@@ -920,7 +920,7 @@ characters = {
 			logistics_skill = 2
 			legacy_id = 0
 			visible = {
-				has_completed_focus = ITA_strengthen_ascari_corps
+				always = no
 				has_completed_focus = ITA_forza_navale_especiale
 			}
 		}
@@ -955,7 +955,7 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			traits = {
-				navy_chief_decisive_battle_2
+				navy_chief_decisive_battle_1
 			}
 			cost = 50
 			ai_will_do = {
@@ -991,7 +991,7 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			traits = {
-				navy_screen_2
+				navy_anti_submarine_1
 			}
 			cost = 50
 			ai_will_do = {
@@ -1604,7 +1604,7 @@ characters = {
 					has_government = fascism
 					has_government = neutrality
 				}
-				NOT = { has_completed_focus = ITA_disband_the_blackshirts }
+				NOT = { always = no }
 				has_completed_focus = ITA_army_leaders
 			}
 			traits = {
@@ -2075,7 +2075,7 @@ characters = {
 						limit = {
 							has_dlc = "By Blood Alone"
 						}
-						has_completed_focus = ITA_cooperate_with_moderates
+						always = no
 					}
 				}
 			}
@@ -2117,7 +2117,7 @@ characters = {
 					limit = {
 						has_dlc = "By Blood Alone"
 					}
-					NOT = { has_completed_focus = ITA_revoke_the_acerbo_law }
+					NOT = { always = no }
 				}
 			}
 			traits = {
@@ -2197,8 +2197,8 @@ characters = {
 					}
 					OR = {
 						has_government = fascism
-						has_completed_focus = ITA_utilize_the_blackshirts
-						has_completed_focus = ITA_cooperate_with_moderates
+						always = no
+						always = no
 					}
 				}
 				else = {
@@ -2373,8 +2373,8 @@ characters = {
 			visible = {
 				OR = {
 					has_completed_focus = ITA_the_carabinieri
-					has_completed_focus = ITA_empower_the_carabinieri
-					has_completed_focus = ITA_expand_the_royal_guard
+					always = no
+					always = no
 				}
 			}
 		}
@@ -2402,7 +2402,7 @@ characters = {
 						has_government = democratic
 						has_completed_focus = ITA_army_leaders
 					}
-					has_completed_focus = ITA_meritocracy
+					always = no
 				}
 			}
 			traits = {
@@ -2431,7 +2431,7 @@ characters = {
 						}
 						has_completed_focus = ITA_army_leaders
 					}
-					has_completed_focus = ITA_meritocracy
+					always = no
 				}
 			}
 		}
@@ -2456,8 +2456,8 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					has_completed_focus = ITA_italian_socialism
-					has_completed_focus = ITA_monarchia_d_italia
+					always = no
+					always = no
 				}
 			}
 		}
@@ -2483,7 +2483,7 @@ characters = {
 			visible = { 
 				OR = {
 					has_completed_focus = ITA_the_carabinieri
-					has_completed_focus = ITA_empower_the_carabinieri
+					always = no
 				}
 			}
 		}
@@ -2506,10 +2506,10 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_meritocracy
-					has_completed_focus = ITA_monarchia_d_italia
+					always = no
+					always = no
 					AND = {
-						has_completed_focus = ITA_common_ground
+						always = no
 						has_government = democratic
 					}
 				}
@@ -2548,8 +2548,8 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_revoke_the_acerbo_law
-					has_completed_focus = ITA_common_ground
+					always = no
+					always = no
 				}
 			}
 			traits = {
@@ -2580,7 +2580,7 @@ characters = {
 				has_dlc = "By Blood Alone"
 			}
 			available = {
-				has_completed_focus = ITA_convene_the_grand_council
+				always = no
 			}
 			traits = {
 				staunch_monarchist
@@ -2616,8 +2616,8 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_power_to_the_king
-					has_completed_focus = ITA_cooperate_with_moderates
+					always = no
+					always = no
 				}
 			}
 			traits = {
@@ -2713,10 +2713,10 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_revoke_the_acerbo_law
-					has_completed_focus = ITA_disband_the_blackshirts
+					always = no
+					always = no
 					AND = {
-						has_completed_focus = ITA_common_ground
+						always = no
 						has_government = democratic
 					}
 				}
@@ -2758,9 +2758,9 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_christian_democracy
+					always = no
 					AND = {
-						has_completed_focus = ITA_common_ground
+						always = no
 						has_government = democratic
 					}
 				}
@@ -2796,10 +2796,10 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_cooperate_with_moderates
-					has_completed_focus = ITA_italian_socialism
+					always = no
+					always = no
 					AND = {
-						has_completed_focus = ITA_common_ground
+						always = no
 						has_government = communism
 					}
 				}
@@ -2834,7 +2834,7 @@ characters = {
 				has_dlc = "By Blood Alone"
 			}
 			available = {
-				has_completed_focus = ITA_bring_back_exiled_intellectuals
+				always = no
 			}
 			traits = {
 				captain_of_industry # Ministry of Public Works and later Ambassador to USA
@@ -2863,7 +2863,7 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_defy_the_duce
+					always = no
 					ITA_is_in_liberation_war = yes
 				}
 			}
@@ -2908,7 +2908,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					has_completed_focus = ITA_defy_the_duce
+					always = no
 					ITA_is_in_liberation_war = yes
 				}
 				OR = {
@@ -2938,7 +2938,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					has_completed_focus = ITA_defy_the_duce
+					always = no
 					ITA_is_in_liberation_war = yes
 				}
 				OR = {
@@ -2969,7 +2969,7 @@ characters = {
 			logistics_skill = 2
 			legacy_id = 0
 			visible = {
-				has_completed_focus = ITA_gruppi_di_difesa_della_donna
+				always = no
 			}
 		}
 	}
@@ -2993,7 +2993,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					has_completed_focus = ITA_defy_the_duce
+					always = no
 					ITA_is_in_liberation_war = yes
 				}
 				OR = {
@@ -3024,7 +3024,7 @@ characters = {
 				OR = {
 					has_government = communism
 					AND = {
-						has_completed_focus = ITA_common_ground
+						always = no
 						has_government = democratic
 					}
 				}
@@ -3049,7 +3049,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					has_completed_focus = ITA_defy_the_duce
+					always = no
 					ITA_is_in_liberation_war = yes
 				}
 				OR = {
@@ -3121,10 +3121,10 @@ characters = {
 
 			available = {
 				OR = {
-					has_completed_focus = ITA_the_popular_front
+					always = no
 					AND = {
 						has_government = democratic
-						has_completed_focus = ITA_common_ground
+						always = no
 					}
 				}
 			}
@@ -3186,11 +3186,11 @@ characters = {
 				OR = {
 					AND = {
 						OR = {
-							has_completed_focus = ITA_unite_the_opposition
-							has_completed_focus = ITA_defy_the_duce
+							always = no
+							always = no
 						}
 						NOT = { has_completed_focus = ITA_culto_del_duce }
-						NOT = { has_completed_focus = ITA_convene_the_grand_council }
+						NOT = { always = no }
 						NOT = { 
 							has_country_leader = {
 								character = ITA_palmiro_togliatti
@@ -3245,11 +3245,11 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_the_abyssinian_fiasco
-					has_completed_focus = ITA_defy_the_duce
+					always = no
+					always = no
 				}
 				NOT = { has_completed_focus = ITA_culto_del_duce }
-				NOT = { has_completed_focus = ITA_convene_the_grand_council }
+				NOT = { always = no }
 				NOT = { 
 					has_country_leader = {
 						character = ITA_sandro_pertini
@@ -3289,10 +3289,10 @@ characters = {
 			}
 			available = {
 				OR = {
-					has_completed_focus = ITA_the_popular_front
+					always = no
 					AND = {
 						has_government = democratic
-						has_completed_focus = ITA_common_ground
+						always = no
 					}
 				}
 			}
@@ -3329,10 +3329,10 @@ characters = {
 				OR = {
 					AND = {
 						OR = {
-							has_completed_focus = ITA_the_popular_front
+							always = no
 							AND = {
 								has_government = democratic
-								has_completed_focus = ITA_common_ground
+								always = no
 							}
 						}
 					}
@@ -3365,7 +3365,7 @@ characters = {
 				has_dlc = "By Blood Alone"
 			}
 			available = {
-				has_completed_focus = ITA_the_popular_front
+				always = no
 			}
 			traits = {
 				partisans_organizer
@@ -3399,8 +3399,8 @@ characters = {
 				OR = {
 					AND = {
 						OR = {
-							has_completed_focus = ITA_the_path_to_progress
-							has_completed_focus = ITA_bring_back_exiled_intellectuals
+							always = no
+							always = no
 						}
 					}
 					SWE_refuge_for_revolutionaries_trigger = yes
@@ -3539,8 +3539,8 @@ characters = {
 		visible = {
 			owner = {
 				OR = {
-					has_completed_focus = ITA_meritocracy
-					has_completed_focus = ITA_bring_back_exiled_intellectuals
+					always = no
+					always = no
 				}
 			}
 		}
@@ -3555,8 +3555,8 @@ characters = {
 	#	}
 	#	available = {
 	#		OR = {
-	#			has_completed_focus = ITA_meritocracy
-	#			has_completed_focus = ITA_bring_back_exiled_intellectuals
+	#			always = no
+	#			always = no
 	#		}
 	#	}
 	#	research_bonus = {

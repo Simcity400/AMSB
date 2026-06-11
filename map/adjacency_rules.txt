@@ -63,41 +63,41 @@ adjacency_rule =
 #Gibraltar Strait
 adjacency_rule =
 {
-	name = "GIBRALTAR_STRAIT"
+    name = "GIBRALTAR_STRAIT"
 
-	contested =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	enemy =
-	{
-		army = no
-		navy = no
-		submarine = yes
-		trade = no
-	}
-	friend =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral =
-	{
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	
-	required_provinces = { 4135 }
-	
-	icon = 5407	
-	offset = { -31.0 0.0 -2.0 }
+    contested =
+    {
+        army = no
+        navy = no
+        submarine = yes
+        trade = no
+    }
+    enemy =
+    {
+        army = no
+        navy = no
+        submarine = yes
+        trade = no
+    }
+    friend =
+    {
+        army = yes
+        navy = yes
+        submarine = yes
+        trade = yes
+    }
+    neutral =
+    {
+        army = yes
+        navy = yes
+        submarine = yes
+        trade = yes
+    }
+
+    required_provinces = { 4135 }
+
+    icon = 5407
+    offset = { -31.0 0.0 -2.0 }
 }
 
 #Øresund - (Østersøen <-> Kattegat/Skagerak/Nordsøen)
@@ -134,10 +134,10 @@ adjacency_rule =
 		trade = yes
 	}
 	
-	required_provinces = { 6287 3277 3325 3260 394 }
+	required_provinces = { 316 9296 }
 	
-	icon = 2431
-	offset = { -2 0 -7 }
+    icon = 2455
+    offset = { -26 0 -13 }
 }
 
 #Panama Canal
@@ -450,8 +450,135 @@ adjacency_rule=
 		NOT = {
 			tag= SPR
 		}
-		
 	}
+}
+
+#Spain Strait
+adjacency_rule=
+{
+	name = "Galicia-Madrid"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 896 }
+	is_disabled = {
+		NOT = {
+			AND ={
+				tag = SPR
+				SPR = {
+					has_completed_focus = SPA_unite_iberia
+				}
+			}
+		}
+	}
+}
+
+#Øresund - Sweeden and Denmark
+adjacency_rule =
+{
+    name = "ORESUND_STRAIT"
+
+    contested =
+    {
+        army = no
+        navy = no
+        submarine = yes
+        trade = no
+    }
+    enemy =
+    {
+        army = no
+        navy = no
+        submarine = no
+        trade = no
+    }
+    friend =
+    {
+        army = yes
+        navy = yes
+        submarine = yes
+        trade = yes
+    }
+    neutral =
+    {
+        army = yes
+        navy = yes
+        submarine = yes
+        trade = yes
+    }
+
+    required_provinces = { 6345 6287 }
+
+    icon = 6287
+    offset = { 4 0 6 }
+}
+
+#Great Belt - Zealand (Sjælland) and Funen (Fyn) 
+#Little Belt - Jutland and Funen (Fyn) 
+adjacency_rule =
+{
+    name = "THE_BELTS"
+
+    contested =
+    {
+        army = no
+        navy = no
+        submarine = yes
+        trade = no
+    }
+    enemy =
+    {
+        army = no
+        navy = no
+        submarine = no
+        trade = no
+    }
+    friend =
+    {
+        army = yes
+        navy = yes
+        submarine = yes
+        trade = yes
+    }
+    neutral =
+    {
+        army = yes
+        navy = yes
+        submarine = yes
+        trade = yes
+    }
+
+    required_provinces = { 3260 3325 3277 3374 11251}
+
+    icon = 3325
+    offset = { 6 0 8 }
 }
 
 
@@ -493,6 +620,42 @@ adjacency_rule =
 		
 	icon = 4985
 	offset = { 6 0 8 }
+}
+
+#Fernando Torres Strait
+adjacency_rule={
+	name = "Fernando Torres Strait"
+	contested =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	required_provinces = { 1644 1310 }
+	icon = 5563
+	offset = { 10 0 5 }
 }
 
 #Strait of Sicily #Strait of Messina #Stretto di Messina

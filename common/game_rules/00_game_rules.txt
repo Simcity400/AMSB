@@ -102,6 +102,11 @@ select_host_country = {
 		desc = ""
 	}
 	option = {
+		name = BRA
+		text = "Brazil"
+		desc = ""
+	}
+	option = {
 		name = MEX
 		text = "Mexico"
 		desc = ""
@@ -117,33 +122,51 @@ vp_system = {
 	name = "Victory Points System"
 	group = "MSB Rules"
 	icon = GFX_decision_infiltrate_state
-	option = {
+	default = {
 		name = "ENABLED"
 		text = "Enabled"
 		desc = "Enable the Victory Points System (Hold 11/15 VP's for 365 days to win)"
 	}
-	default = {
+	option = {
 		name = "DISABLED"
 		text = "Disabled"
 		desc = "Disable the Victory Points System"
 	}
 
 }
-vichy_france = {
-	name = "Vichy France"
+
+force_attack_last_stand = {
+	name = "Force Attack Last Stand"
 	group = "MSB Rules"
 	icon = "GFX_decision_eng_trade_unions_support"
 	default = {
-		name = forced
-		text = "GForce"
-		desc = "Germany has to make Vichy (Recommmended)"
+		name = on
+		text = "GOn"
+		desc = "Normal like vanilla (Reccomended)"
 	}
 	option = {
-		name = banned
-		text = "RBanned"
-		desc = "Germany can't make Vichy (Not Recommmended)"
+		name = off
+		text = "ROff"
+		desc = "Banned (Not Reccomended)"
 	}
 }
+
+historical_war = {
+	name = "Automatic War Dates"
+	group = "MSB Rules"
+	icon = GFX_decision_hol_war_on_pacifism
+	default = {
+		name = on
+		text = "Forced"
+		desc = "Danzig or War (09/1939); Operation Barbarossa (07/1941) & The War in the Pacific (03/1941) will automatically start at their respectively set dates"
+	}
+	option = {
+		name = off
+		text = "Off"
+		desc = ""
+	}
+}
+
 danzig_date_lock = {
 	name = "Danzig or War"
 	group = "MSB Rules"
@@ -180,15 +203,15 @@ china_war_difficulty = {
 	name = "China War" 
 	group = "MSB Rules"
 	icon = "GFX_decision_jap_conquer_china"
-	default = {
-		name = no
-		text = "GEasy"
-		desc = "China will get no divisions at all (Recommmended)"
-	}
 	option = {
+		name = no
+		text = "REasy"
+		desc = "China will get no divisions at all (Not Recommmended)"
+	}
+	default = {
 		name = yes
-		text = "RNormal"
-		desc = "China will get 62 divisions in total which are all fully equipped (Not Recommended)"
+		text = "GNormal"
+		desc = "China will get 62 divisions in total which are all fully equipped (Recommended)"
 	}
 }
 
@@ -208,10 +231,42 @@ scw_difficulty = {
 	}
 }
 
+yug_gre_diff = {
+	name = "Balkan Wars" 
+	group = "MSB Rules"
+	icon = GFX_decision_generic_assassination
+	option = {
+		name = easy
+		text = "REasy"
+		desc = "Yugoslavia and Greece will NOT have any spawn-in Divisions. (Not Recommmended)"
+	}
+	default = {
+		name = normal
+		text = "GNormal"
+		desc = "Yugoslavia and Greece will have spawn-in Divisions. (Recommmended)"
+	}
+}
+
+vichy_france = {
+	name = "Vichy France"
+	group = "MSB Rules"
+	icon = GFX_decision_eng_trade_unions_support
+	default = {
+		name = forced
+		text = "GForce"
+		desc = "Germany has to make Vichy (Not Recommmended)"
+	}
+	option = {
+		name = banned
+		text = "RBanned"
+		desc = "Germany can't make Vichy (Recommmended)"
+	}
+}
+
 killable_fin = {
 	name = "Finland Border"
 	group = "MSB Rules"
-	icon = "GFX_decision_generic_coastal_fortification"
+	icon = GFX_decision_generic_coastal_fortification
 	default = {
 		name = off
 		text = "GImpassable"
@@ -224,10 +279,26 @@ killable_fin = {
 	}
 }
 
+axis_fuel = {
+	name = "Axis Oil Distribution"
+	group = "MSB Rules"
+	icon = GFX_decision_oil
+	option = {
+		name = off
+		text = "ROff"
+		desc = "Romania is in control of their oil"
+	}
+	default = {
+		name = on
+		text = "GOn"
+		desc = "Germany is in control of the romanian oil fields + gains an extra 2500 Fuel a day"
+	}
+}
+
 hospitals = {
 	name = "Allow Hospital 2"
 	group = "MSB Rules"
-	icon = "GFX_decision_generic_cavalry"
+	icon = GFX_decision_generic_cavalry
 	option = {
 		name = off
 		text = "ROff"
@@ -237,6 +308,22 @@ hospitals = {
 		name = on
 		text = "GOn"
 		desc = "You're ALLOWED to research Hospital 2 and onwards technology"
+	}
+}
+
+railway_gun= {
+	name = "Select if Railway Gun is allowed or not "
+	group = "MSB Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = off
+		text = "You CANNOT research Railway Battery."
+		desc = "###."
+	}
+	option = {
+		name = on
+		text = "You CAN research Railway Battery."
+		desc = "###"
 	}
 }
 
@@ -293,12 +380,12 @@ ger_autarky = {
 	name = "Germany Autarky Achieved"
 	group = "Economic Adjustments"
 	icon = GFX_decision_ger_reichskommissariats
-	default = {
+	option = {
 		name = banned
 		text = "GOff"
 		desc = ""
 	}
-	option = {
+	default = {
 		name = allowed
 		text = "ROn"
 		desc = ""
@@ -525,29 +612,13 @@ larp_barb = {
 	default = {
 		name = off
 		text = "GOff"
-		desc = "Standard MSB Barbarossa--no funnies, we love Shinzou (Recommmended)"
+		desc = "Standard MSB Barbarossa--no funnies, we love Shinzou"
 	}
 	option = {
 		name = on
 		text = "ROn"
-		desc = "Operation Barbarossa will have larp events (Not Recommmended)"
+		desc = "Operation Barbarossa will have larp events"
 	}
-}
-
-bba_air = {
-	name = "BBA Air Designer"
-	group =  "MSB Rules"
-	icon = "GFX_decision_SWE_set_air_budget"
-	option = {
-		name = "off"
-		text = "GOff"
-		desc =  "Air Desinger Will Be Disabled"
-	} 
-	option = {
-		name = "on"
-		text = "ROn"
-		desc =  "Air Desinger Will Be Enabled"
-	}	
 }
 
 # VANILLA GAME RULES 
@@ -961,8 +1032,8 @@ maximum_fort_level = {
 	group = "RULE_GROUP_GAMEPLAY"
 	icon = "GFX_maximum_fort_level"
 	default = {
-		name = level_2
-		text = "RULE_OPTION_2"
+		name = level_5
+		text = "RULE_OPTION_5"
 		desc = "RULE_MAXIMUM_FORT_LEVEL_DESC"
 	}
 	option = {
@@ -976,6 +1047,11 @@ maximum_fort_level = {
 		desc = "RULE_MAXIMUM_FORT_LEVEL_DESC"
 	}
 	option = {
+		name = level_2
+		text = "RULE_OPTION_2"
+		desc = "RULE_MAXIMUM_FORT_LEVEL_DESC"
+	}
+	option = {
 		name = level_3
 		text = "RULE_OPTION_3"
 		desc = "RULE_MAXIMUM_FORT_LEVEL_DESC"
@@ -983,11 +1059,6 @@ maximum_fort_level = {
 	option = {
 		name = level_4
 		text = "RULE_OPTION_4"
-		desc = "RULE_MAXIMUM_FORT_LEVEL_DESC"
-	}
-	options = {
-		name = level_5
-		text = "RULE_OPTION_5"
 		desc = "RULE_MAXIMUM_FORT_LEVEL_DESC"
 	}
 	option = {

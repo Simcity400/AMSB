@@ -11,11 +11,15 @@ if = {
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "GRE_1936_air_bba"
+		set_technology = {
+			bba_early_transport_plane = 1
+		}
 	else = {
 		set_air_oob = "GRE_1936_air_legacy"
 		set_technology = {
 			early_fighter = 1
 			early_bomber = 1
+			early_transport_plane = 1
 		}
 	}
 }
@@ -41,10 +45,12 @@ set_technology = {
 	tech_recon = 1
 	tech_trucks = 1
 	gw_artillery = 1
-	 
 	fuel_silos = 1
 	synth_oil_experiments = 1
 }
+
+set_grand_doctrine = grand_battleplan
+
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
@@ -78,26 +84,11 @@ if = {
 1936.1.1 = {
 	if = {
 		limit = { has_dlc = "Battle for the Bosporus" }
-		add_opinion_modifier = { 
-			target = ROM
-			modifier = BFTB_balkan_pact_ally
-		}
-		add_opinion_modifier = { 
-			target = TUR
-			modifier = BFTB_balkan_pact_ally
-		}
-		add_opinion_modifier = { 
-			target = YUG
-			modifier = BFTB_balkan_pact_ally
-		}
-		add_opinion_modifier = { 
-			target = BUL
-			modifier = BFTB_balkan_pact_enemy
-		}
-		add_opinion_modifier = { 
-			target = HUN
-			modifier = BFTB_balkan_pact_enemy
-		}
+		
+		
+		
+		
+		
 		set_country_flag = GRE_factions_unlocked
 		add_ideas = {
 			export_focus
@@ -116,15 +107,9 @@ if = {
 		set_variable = { var = GRE_debt_to_the_ifc_italy_var value = 10 }
 		set_variable = { var = GRE_debt_to_the_ifc_paid_var value = 0 }
 
-		add_opinion_modifier = { 
-			target = GER
-			modifier = GRE_strong_trading_ties
-		}
+		
 		GER = { 
-			add_opinion_modifier = { 
-				target = GRE
-				modifier = GRE_strong_trading_ties
-			}
+			
 		}
 	}
 
@@ -269,12 +254,7 @@ set_convoys = 10
 		support_weapons = 1
 
 		#doctrines
-		
-		grand_battle_plan = 1
-		 
-		
-		battlefleet_concentration = 1
-		convoy_sailing = 1
+		#air_superiority = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -297,6 +277,11 @@ set_convoys = 10
 		dispersed_industry2 = 1
 		dispersed_industry3 = 1
 	}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_operational_integrity
+
 	complete_special_project = {
 		project = sp:sp_air_radar
 	}
@@ -374,6 +359,7 @@ if = {
 	recruit_character = GRE_panagiotis_demestichas # Empty character -> Can become unit leader later
 	recruit_character = GRE_georgios_kosmidis
 	recruit_character = GRE_stylianos_gonatas
+	recruit_character = GRE_king_george_ii
 }
 
 if = {

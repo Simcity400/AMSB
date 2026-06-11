@@ -361,26 +361,6 @@ ideas = {
 				non_core_manpower = 0.08
 			}
 		}
-		fra_expand_tank_production = {
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_production_bonus
-
-			equipment_bonus = {
-				heavy_tank_chassis = {
-					build_cost_ic = -0.075
-					instant = yes 
-				}
-			}	
-		}
 		FRA_agricultural_protectionism = {
 			picture = generic_agrarian_reform
 			allowed = {
@@ -427,8 +407,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				production_speed_arms_factory_factor = 0.1
-				production_factory_efficiency_gain_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.02
 			}
 		}
 		FRA_market_dynamism = {
@@ -717,7 +697,7 @@ ideas = {
 			
 			modifier = {
 				line_change_production_efficiency_factor = 0.25
-				production_factory_start_efficiency_factor = 0.15
+				production_factory_start_efficiency_factor = 0.05
 			}
 		}
 		FRA_occupation_costs_4 = {
@@ -1047,7 +1027,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				production_speed_arms_factory_factor = 0.15
+				production_speed_arms_factory_factor = 0.1
 				}
 		}
 		FRA_hidden_materials = {
@@ -1339,15 +1319,8 @@ ideas = {
 			
 			modifier = {
 				conscription = -0.003
-				land_reinforce_rate = -0.02
 				army_morale_factor = -0.1
 				army_org_factor = -0.1
-				army_attack_factor = -0.1
-				army_core_attack_factor = 0.1
-				hidden_modifier = {
-					ai_desired_divisions_factor = -0.25
-					ai_focus_defense_factor = 0.25
-				}
 			}
 		}
 		FRA_inefficient_economy_1 = {
@@ -1416,7 +1389,7 @@ ideas = {
 				# custom_modifier_tooltip = FPM_political_violence_tt
 				political_power_cost = 0.8
 				stability_factor = -0.10
-				surrender_limit = -0.25
+				surrender_limit = -0.15
 			}
 		}
 		FPM_disjointed_government = {
@@ -1442,7 +1415,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.4
 				stability_factor = -0.05
-				surrender_limit = -0.125
+				surrender_limit = -0.10
 			}
 		}
 
@@ -1872,8 +1845,8 @@ ideas = {
 			picture = SOV_scientist_defect
 
 			modifier = {
-				production_speed_buildings_factor = 0.1
-				global_building_slots = 1
+				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.15
 			}
 		}
 		
@@ -1924,7 +1897,7 @@ ideas = {
 			picture = generic_tank_manufacturer_3
 
 			available = {
-				has_completed_focus = FRA_infantry_tanks
+				always = no
 			}
 						
 			allowed = {
@@ -2085,7 +2058,7 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
-			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			visible = { always = no }	
 			available = { has_country_flag = FRA_SNCAN_formed }	
 			research_bonus = {
 				air_equipment = 0.2
@@ -2098,7 +2071,7 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
-			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			visible = { always = no }	
 			available = { has_country_flag = FRA_SNCAO_formed }	
 			research_bonus = {
 				air_equipment = 0.2
@@ -2111,7 +2084,7 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
-			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			visible = { always = no }	
 			available = { has_country_flag = FRA_SNCASE_formed }	
 			research_bonus = {
 				air_equipment = 0.2
@@ -2124,7 +2097,7 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
-			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			visible = { always = no }	
 			available = { has_country_flag = FRA_SNCASO_formed }	
 			research_bonus = {
 				air_equipment = 0.2
@@ -2137,7 +2110,7 @@ ideas = {
 			allowed = {
 				original_tag = FRA
 			}
-			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			visible = { always = no }	
 			available = { has_country_flag = FRA_SNCAC_formed }	
 			research_bonus = {
 				air_equipment = 0.3
@@ -2319,26 +2292,6 @@ ideas = {
         
     }
 	hidden_ideas = {
-		FRA_no_cap = { 
-			
-			allowed = {
-				original_tag = FRA
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = democratic
-			}
-
-			removal_cost = -1
-
-			picture = generic_disjointed_gov
-			
-			modifier = {
-
-				surrender_limit = 99999
-			}
-		}
 		EFR_no_prod = { 
 			
 			allowed = {

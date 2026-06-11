@@ -212,8 +212,8 @@ country_event = {
 			if = {
 				limit = {
 					OR = {
-						has_completed_focus = USA_voter_registration_act
-						has_completed_focus = USA_union_representation_act
+						always = no
+						always = no
 					}
 				}
 				country_event = { id = usa.32 days = 730 } # midterms
@@ -235,10 +235,7 @@ country_event = {
 			factor = 75
 			modifier = {
 				OR = {
-					has_game_rule = {
-						rule = USA_ai_behavior
-						option = FASCIST
-					}
+					always = no
 					has_country_flag = USA_AI_RANDOM_FASCIST
 				}
 				has_dlc = "Man the Guns"
@@ -249,8 +246,8 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					has_completed_focus = USA_voter_registration_act
-					has_completed_focus = USA_union_representation_act
+					always = no
+					always = no
 				}
 			}
 			country_event = usa.32
@@ -281,19 +278,15 @@ country_event = {
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
-				has_game_rule = {
-					rule = USA_ai_behavior
-					option = DEFAULT
-				}
+				always = no
 			}
 		}		
 		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
-		set_variable_to_random = {
-          var = election_factor
-          min = 0.6
-          max = 0.8
-      }
-		add_to_variable = { election_factor = -0.6 }
+		set_variable = {
+                var = election_factor
+                value = -0.8
+            }
+		#add_to_variable = { election_factor = -0.6 }
 		USA_election_senate = yes
 		USA_election_house = yes
 		USA_flip_support = yes
@@ -347,8 +340,8 @@ country_event = {
 			if = {
 				limit = {
 					OR = {
-						has_completed_focus = USA_voter_registration_act
-						has_completed_focus = USA_union_representation_act
+						always = no
+						always = no
 					}
 				}
 				country_event = { id = usa.32 days = 730 } # midterms
@@ -367,8 +360,8 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					has_completed_focus = USA_voter_registration_act
-					has_completed_focus = USA_union_representation_act
+					always = no
+					always = no
 				}
 			}
 			country_event = usa.32
@@ -446,8 +439,8 @@ country_event = {
 			if = {
 				limit = {
 					OR = {
-						has_completed_focus = USA_voter_registration_act
-						has_completed_focus = USA_union_representation_act
+						always = no
+						always = no
 					}
 				}
 				country_event = { id = usa.32 days = 730 } # midterms
@@ -464,8 +457,8 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					has_completed_focus = USA_voter_registration_act
-					has_completed_focus = USA_union_representation_act
+					always = no
+					always = no
 				}
 			}
 			country_event = usa.32
@@ -498,8 +491,8 @@ country_event = {
 			if = {
 				limit = {
 					OR = {
-						has_completed_focus = USA_voter_registration_act
-						has_completed_focus = USA_union_representation_act
+						always = no
+						always = no
 					}
 				}
 				country_event = { id = usa.32 days = 730 } # midterms
@@ -527,8 +520,8 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					has_completed_focus = USA_voter_registration_act
-					has_completed_focus = USA_union_representation_act
+					always = no
+					always = no
 				}
 			}
 			country_event = usa.32
@@ -596,8 +589,8 @@ country_event = {
 			if = {
 				limit = {
 					OR = {
-						has_completed_focus = USA_voter_registration_act
-						has_completed_focus = USA_union_representation_act
+						always = no
+						always = no
 					}
 				}
 				country_event = { id = usa.32 days = 730 } # midterms
@@ -621,8 +614,8 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					has_completed_focus = USA_voter_registration_act
-					has_completed_focus = USA_union_representation_act
+					always = no
+					always = no
 				}
 			}
 			country_event = usa.32
@@ -678,8 +671,8 @@ country_event = {
 			if = {
 				limit = {
 					OR = {
-						has_completed_focus = USA_voter_registration_act
-						has_completed_focus = USA_union_representation_act
+						always = no
+						always = no
 					}
 				}
 				country_event = { id = usa.32 days = 730 } # midterms
@@ -710,8 +703,8 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					has_completed_focus = USA_voter_registration_act
-					has_completed_focus = USA_union_representation_act
+					always = no
+					always = no
 				}
 			}
 			country_event = usa.32
@@ -1229,8 +1222,8 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		OR = {
-			has_completed_focus = USA_voter_registration_act
-			has_completed_focus = USA_union_representation_act
+			always = no
+			always = no
 		}
 	}
 
@@ -1255,8 +1248,8 @@ country_event = {
 			limit = {
 				NOT = {
 					OR = {
-						has_completed_focus = USA_voter_registration_act
-						has_completed_focus = USA_union_representation_act
+						always = no
+						always = no
 					}
 				}
 			}
@@ -1308,8 +1301,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1335,8 +1328,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1364,8 +1357,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1391,8 +1384,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1419,8 +1412,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1446,8 +1439,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1474,8 +1467,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1501,8 +1494,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1526,8 +1519,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1610,8 +1603,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}
@@ -1698,8 +1691,8 @@ country_event = {
 		tag = USA
 		NOT = {
 			OR = {
-				has_completed_focus = USA_voter_registration_act
-				has_completed_focus = USA_union_representation_act
+				always = no
+				always = no
 			}
 		}
 	}

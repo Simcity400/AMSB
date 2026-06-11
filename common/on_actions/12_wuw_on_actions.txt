@@ -8,7 +8,7 @@ on_actions = {
 				limit = {
 					FROM = {
 						original_tag = GER
-						has_completed_focus = GER_shared_rd_programs_ww
+						always = no
 					}
 				}
 				FROM = {
@@ -115,63 +115,51 @@ on_actions = {
 				limit = {
 					OR = {
 						FROM = { 
-							has_opinion_modifier = GER_autarky_trade_opinion
+							always = no
 						}
 						ROOT = { #In case Germany isn't faction leader any more
-							has_opinion_modifier = GER_autarky_trade_opinion
+							always = no
 						}
 					}
 				}
 				if = { #If Germany is faction leader, remove German trade Influence
 					limit = {
 						FROM = { 
-							has_opinion_modifier = GER_autarky_trade_opinion
+							always = no
 						}
 					}
 					ROOT = { #Remove trade opinion
-						remove_opinion_modifier = {
-							target = FROM
-							modifier = GER_autarky_trade_opinion
-						}
+						
 					}
 				}
 				if = { #If Germany is NOT faction leader any more; remove German trade influence
 					limit = {
 						ROOT = { 
-							has_opinion_modifier = GER_autarky_trade_opinion
+							always = no
 						}
 					}
 					FROM = { #Remove trade opinion
-						remove_opinion_modifier = {
-							target = ROOT
-							modifier = GER_autarky_trade_opinion
-						}
+						
 					}
 				}
 				if = { #If Germany is faction leader; remove faction leader trade influence
 					limit = {
 						ROOT = { 
-							has_opinion_modifier = GER_german_trade_opinion
+							always = no
 						}
 					}
 					FROM = { #Remove trade opinion
-						remove_opinion_modifier = {
-							target = ROOT
-							modifier = GER_german_trade_opinion
-						}
+						
 					}
 				}
 				if = { #If Germany is NOT faction leader any more; remove faction leader trade influence
 					limit = {
 						FROM = { 
-							has_opinion_modifier = GER_german_trade_opinion
+							always = no
 						}
 					}
 					ROOT = { #Remove trade opinion
-						remove_opinion_modifier = {
-							target = FROM
-							modifier = GER_german_trade_opinion
-						}
+						
 					}
 				}
 			}
@@ -188,7 +176,7 @@ on_actions = {
 				limit = {
 					FROM = {
 						original_tag = GER
-						has_completed_focus = GER_shared_rd_programs_ww
+						always = no
 					}
 				}
 				FROM = {
@@ -314,27 +302,21 @@ on_actions = {
 				if = { #This is a fail safe to not boost trade relations to ridiculous levels 
 					limit = {
 						ROOT = {
-							NOT = { has_opinion_modifier = GER_german_trade_opinion }
+							NOT = { always = no }
 						}
 					}
 					FROM = { #Increase trade opinion, making it more likely that they trade and receive resources from Germany
-						add_opinion_modifier = {
-							target = ROOT
-							modifier = GER_german_trade_opinion
-						}
+						
 					}
 				}
 				if = {  #This is a fail safe to not boost trade relations to ridiculous levels 
 					limit = {
 						FROM = {
-							NOT = { has_opinion_modifier = GER_autarky_trade_opinion }
+							NOT = { always = no }
 						}
 					}
 					ROOT = { #Increase trade opinion, making it more likely that Germany trade and receive resources from ROOT
-						add_opinion_modifier = {
-							target = FROM
-							modifier = GER_autarky_trade_opinion
-						}
+						
 					}
 				}
 			}
@@ -348,27 +330,21 @@ on_actions = {
 				if = { #This is a fail safe to not boost trade relations to ridiculous levels 
 					limit = {
 						FROM = {
-							NOT = { has_opinion_modifier = GER_german_trade_opinion }
+							NOT = { always = no }
 						}
 					}
 					ROOT = { #Increase trade opinion, making it more likely that they trade and receive resources from Germany
-						add_opinion_modifier = {
-							target = FROM
-							modifier = GER_german_trade_opinion
-						}
+						
 					}
 				}
 				if = { #This is a fail safe to not boost trade relations to ridiculous levels 
 					limit = {
 						ROOT = {
-							NOT = { has_opinion_modifier = GER_autarky_trade_opinion }
+							NOT = { always = no }
 						}
 					}
 					FROM = { #Increase trade opinion, making it more likely that Germany trade and receive resources from ROOT
-						add_opinion_modifier = {
-							target = ROOT
-							modifier = GER_autarky_trade_opinion
-						}
+						
 					}
 				}
 			}
@@ -380,12 +356,12 @@ on_actions = {
 					FROM = {
 						original_tag = GER
 						OR = {
-							has_completed_focus = GER_pool_technical_know_how_ww
-							has_completed_focus = GER_pool_technical_know_how
-							has_completed_focus = GER_shared_rd_programs_ww
-							has_completed_focus = GER_shared_rd_programs
-							has_completed_focus = GER_establish_a_customs_union
-							has_completed_focus = GER_mitteleuropa_cooperation_sphere
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
 						}
 					}
 				}
@@ -419,7 +395,7 @@ on_actions = {
 				limit = {
 					ROOT = {
 						original_tag = GER
-						has_completed_focus = GER_shared_rd_programs_ww
+						always = no
 					}
 				}
 				ROOT = {
@@ -435,12 +411,12 @@ on_actions = {
 					ROOT = {
 						original_tag = GER
 						OR = {
-							has_completed_focus = GER_pool_technical_know_how_ww
-							has_completed_focus = GER_pool_technical_know_how
-							has_completed_focus = GER_shared_rd_programs_ww
-							has_completed_focus = GER_shared_rd_programs
-							has_completed_focus = GER_establish_a_customs_union
-							has_completed_focus = GER_mitteleuropa_cooperation_sphere
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
 						}
 					}
 				}
@@ -565,27 +541,21 @@ on_actions = {
 				if = { #This is a fail safe to not boost trade relations to ridiculous levels 
 					limit = {
 						FROM = {
-							NOT = { has_opinion_modifier = GER_german_trade_opinion }
+							NOT = { always = no }
 						}
 					}
 					ROOT = { #Increase trade opinion, making it more likely that they trade and receive resources from Germany
-						add_opinion_modifier = {
-							target = FROM
-							modifier = GER_german_trade_opinion
-						}
+						
 					}
 				}
 				if = { #This is a fail safe to not boost trade relations to ridiculous levels 
 					limit = {
 						ROOT = {
-							NOT = { has_opinion_modifier = GER_autarky_trade_opinion }
+							NOT = { always = no }
 						}
 					}
 					FROM = { #Increase trade opinion, making it more likely that Germany trade and receive resources from ROOT
-						add_opinion_modifier = {
-							target = ROOT
-							modifier = GER_autarky_trade_opinion
-						}
+						
 					}
 				}
 			}
@@ -599,27 +569,21 @@ on_actions = {
 				if = { #This is a fail safe to not boost trade relations to ridiculous levels 
 					limit = {
 						ROOT = {
-							NOT = { has_opinion_modifier = GER_german_trade_opinion }
+							NOT = { always = no }
 						}
 					}
 					FROM = { #Increase trade opinion, making it more likely that they trade and receive resources from Germany
-						add_opinion_modifier = {
-							target = ROOT
-							modifier = GER_german_trade_opinion
-						}
+						
 					}
 				}
 				if = {  #This is a fail safe to not boost trade relations to ridiculous levels 
 					limit = {
 						FROM = {
-							NOT = { has_opinion_modifier = GER_autarky_trade_opinion }
+							NOT = { always = no }
 						}
 					}
 					ROOT = { #Increase trade opinion, making it more likely that Germany trade and receive resources from ROOT
-						add_opinion_modifier = {
-							target = FROM
-							modifier = GER_autarky_trade_opinion
-						}
+						
 					}
 				}
 			}
@@ -770,7 +734,10 @@ on_actions = {
 				limit = {
 					FROM = {
 						original_tag = GER
-						has_completed_focus = GER_shared_rd_programs_ww
+						always = no
+					}
+					ROOT = {
+						NOT = { is_in_faction_with = FROM }
 					}
 				}
 				FROM = {
@@ -891,12 +858,12 @@ on_actions = {
 						original_tag = GER
 						is_faction_leader = yes
 						OR = {
-							has_completed_focus = GER_pool_technical_know_how_ww
-							has_completed_focus = GER_pool_technical_know_how
-							has_completed_focus = GER_shared_rd_programs_ww
-							has_completed_focus = GER_shared_rd_programs
-							has_completed_focus = GER_establish_a_customs_union
-							has_completed_focus = GER_mitteleuropa_cooperation_sphere
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
 						}
 					}
 				}
@@ -983,20 +950,6 @@ on_actions = {
 				}
 				101 = {
 					set_state_controller_to = GRN 
-				}
-			}
-		}
-
-		effect = {
-			IF = {
-				limit = {
-					FROM = {
-						original_tag = GER
-						has_completed_focus = GER_shared_rd_programs_ww
-					}
-				}
-				FROM = {
-					GER_one_more_member_increase_rnd_program_strength = yes
 				}
 			}
 		}
@@ -1113,12 +1066,12 @@ on_actions = {
 						original_tag = GER
 						is_faction_leader = yes
 						OR = {
-							has_completed_focus = GER_pool_technical_know_how_ww
-							has_completed_focus = GER_pool_technical_know_how
-							has_completed_focus = GER_shared_rd_programs_ww
-							has_completed_focus = GER_shared_rd_programs
-							has_completed_focus = GER_establish_a_customs_union
-							has_completed_focus = GER_mitteleuropa_cooperation_sphere
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
 						}
 					}
 				}
@@ -1143,16 +1096,7 @@ on_actions = {
 					}
 				}
 
-				TRA = {
-					capital_scope = {
-						add_to_array = {
-							array = AUS.expansion_targets
-							value = THIS
-						}
-
-						log = "[THIS.GetName] was added to array"
-					}
-				}
+				
 				
 			}
 		}
@@ -1204,16 +1148,7 @@ on_actions = {
 					}
 				}
 
-				TRA = {
-					capital_scope = {
-						add_to_array = {
-							array = AUS.expansion_targets
-							value = THIS
-						}
-
-						log = "[THIS.GetName] was added to array"
-					}
-				}
+				
 				
 			}
 		}
@@ -1430,9 +1365,9 @@ on_actions = {
 						is_major = yes
 					}
 				}
-			}
-			FROM = {
-				add_to_variable = { GER_capitulated_major_countries = 1 }
+				FROM = {
+					add_to_variable = { GER_capitulated_major_countries = 1 }
+				}
 			}
 		}
 	}
@@ -1486,7 +1421,7 @@ on_actions = {
 	
 					}
 					GER = {
-						has_completed_focus = GER_spheres_of_influence
+						always = no
 						has_country_flag = GER_SOV_agreed_sphere_of_influence
 					}
 	
@@ -1517,7 +1452,7 @@ on_actions = {
 		
 					}
 					GER = {
-						has_completed_focus = GER_spheres_of_influence
+						always = no
 						has_country_flag = GER_SOV_agreed_sphere_of_influence
 					}
 		
@@ -1550,10 +1485,7 @@ on_actions = {
 							}
 							OR = {
 								original_tag = GER
-								any_country = {
-									is_in_faction_with = GER
-							
-								}
+								is_in_faction_with = GER
 							}
 						}						
 					}
@@ -1621,8 +1553,8 @@ on_actions = {
 					original_tag = GER
 					NOT = { has_country_flag = GER_has_war_preparations_flag }
 					OR = {
-						has_completed_focus = GER_prepare_for_the_next_naval_blockade
-						has_completed_focus = GER_war_preparations
+						always = no
+						always = no
 					}
 				}
 				add_timed_idea = {
@@ -1879,6 +1811,23 @@ on_actions = {
 	            	ROOT = {
 	            		original_tag = HUN
 	            	}
+					FROM = {
+						NOT = {
+							AND = {
+								original_tag = RUT
+								is_in_faction = no
+								all_other_country = {
+									OR = {
+										NOT = {
+											has_guaranteed = PREV
+										}
+										is_ally_with = ROOT
+										has_guaranteed = ROOT
+									}
+								}
+							}
+						}
+					}
 	               	NOT = {
 	               		has_global_flag = HUN_entered_an_offensive_war_flag	
 	               	}
@@ -1914,7 +1863,7 @@ on_actions = {
 	    					has_global_flag = GER_eastern_bulwark_already_triggered_flag
 	    				}
 	    			}
-	    			GER = { has_completed_focus = GER_build_the_eastern_bulwark }
+	    			GER = { always = no }
 	    		}
 	    		hidden_effect = {
 	    			GER = { 
@@ -1969,12 +1918,6 @@ on_actions = {
 					value = THIS
 				}
 			}  
-		}
-
-		# Creates the Colonial Template Divisions for Belgium
-		effect = {
-			
-			
 		}
 
 		effect = {
@@ -2049,9 +1992,7 @@ on_actions = {
 					original_tag = COG
 					has_cosmetic_tag = COG_belgian_congo
 				}
-				COG = {
-					drop_cosmetic_tag = yes
-				}
+				
 			}
 		}
 
@@ -2088,9 +2029,7 @@ on_actions = {
 						is_subject_of = BEL
 					}
 				}
-				COG = {
-					drop_cosmetic_tag = yes
-				}
+				
 			}
 		}
 
@@ -2125,9 +2064,7 @@ on_actions = {
 						owns_state = 768
 						has_war = no
 					}
-					RWA = {
-						exists = no
-					}
+					
 					768 = {
 						NOT = {
 							is_core_of = COG
@@ -2154,9 +2091,7 @@ on_actions = {
 						owns_state = 769
 						has_war = no
 					}
-					BRD = {
-						exists = no
-					}
+					
 					769 = {
 						NOT = {
 							is_core_of = COG
@@ -2180,12 +2115,7 @@ on_actions = {
 			IF = {
 				limit = {
 					original_tag = ENG
-					COG = {
-						exists = yes
-						NOT = {
-							has_war_with = ENG
-						}
-					}
+					
 					has_global_flag = jan_zumbach_fled_to_britain
 					NOT = {
 						has_global_flag = jan_zumbach_wanted_to_go_to_the_congo
@@ -2209,7 +2139,7 @@ on_actions = {
 			IF = { #Check if Germany helped a country to the warm embrace of socialism
 				limit = {
 					GER = {
-						has_completed_focus = GER_strengthen_the_proletarian_international
+						always = no
 					}
 					ROOT = {
 						is_in_array = {
@@ -2225,7 +2155,7 @@ on_actions = {
 					limit = {
 						GER = {
 							NOT = { 
-								has_completed_focus = GER_root_out_imperialism
+								always = no
 							}
 						}
 						ROOT = {
@@ -2463,10 +2393,10 @@ on_actions = {
 					}
 					else_if =  {
 						limit = {
-							has_dynamic_modifier = { modifier = GER_navy_fascist_modifier }
+							has_dynamic_modifier = { modifier = GER_navy_imperial_modifier }
 						}
 						remove_dynamic_modifier = {
-							modifier = GER_navy_fascist_modifier
+							modifier = GER_navy_imperial_modifier
 						}
 						add_dynamic_modifier = {
 							modifier = GER_navy_communist_modifier
@@ -2520,6 +2450,36 @@ on_actions = {
 					}
 				}
 			}			
+		}
+
+		#Remove Inner Circle on ideology change despite going down the fascist path (e.g. being puppeted)
+		effect = {
+			if = {
+				limit = {
+					original_tag = GER
+					NOT = {
+						has_government = fascism
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { GER_ascended_advisor_1 = 0 compare = not_equals }
+					}
+					GER_remove_replaced_advisor_1_effects = yes
+				}
+				if = {
+					limit = {
+						check_variable = { GER_ascended_advisor_2 = 0 compare = not_equals }
+					}
+					GER_remove_replaced_advisor_2_effects = yes
+				}
+				if = {
+					limit = {
+						check_variable = { GER_ascended_advisor_3 = 0 compare = not_equals }
+					}
+					GER_remove_replaced_advisor_3_effects = yes
+				}
+			}
 		}
 	}
 
@@ -2872,8 +2832,8 @@ on_actions = {
 					GER = {
 						NOT = {
 							has_completed_focus = GER_anschluss
-							has_completed_focus = GER_oppose_hitler_ww
-							has_completed_focus = GER_oppose_hitler
+							always = no
+							always = no
 						}
 					}
 				}

@@ -98,7 +98,7 @@ focus_tree = {
 			NOT = {
 				OR = {
 					has_completed_focus = BRA_estado_novo
-					has_completed_focus = BRA_estado_moderno
+					always = no
 				}
 			}
 		}
@@ -121,8 +121,7 @@ focus_tree = {
 		id = BRA_estado_novo
 		icon = GFX_focus_BRA_estado_novo
 		prerequisite = { focus = BRA_cohen_plan }
-		mutually_exclusive = { focus = BRA_estado_moderno }
-		x = 0
+				x = 0
 		y = 2
 		relative_position_id = BRA_ensure_continued_military_support
 		cost = 5
@@ -231,7 +230,7 @@ focus_tree = {
 	focus = {
 		id = BRA_autarky
 		icon = GFX_focus_BRA_autarky
-		prerequisite = { focus = BRA_the_polaca focus = BRA_anaue }
+		prerequisite = { focus = BRA_the_polaca }
 		x = 0
 		y = 1
 		relative_position_id = BRA_the_polaca
@@ -1013,7 +1012,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			NOT = {
-				has_completed_focus = BRA_sway_the_cangaco
+				always = no
 			}
 		}
 
@@ -1574,7 +1573,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			unlock_decision_tooltip = BRA_federal_investment_in_rural_state
+			#unlock_decision_tooltip = BRA_federal_investment_in_rural_state
 			custom_effect_tooltip = BRA_financial_stimulation_tt
 		}
 	}
@@ -1943,10 +1942,7 @@ focus_tree = {
 					give_military_access = USA
 				}
 				USA = {
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = natal_airbase_modifier
-					}
+					
 				}
 			}
 
@@ -1963,10 +1959,7 @@ focus_tree = {
 					give_military_access = ENG
 				}
 				ENG = {
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = natal_airbase_modifier
-					}
+					
 				}
 			}
 
@@ -2050,8 +2043,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = BRA_potenji_river_conference
-		mutually_exclusive = { focus = BRA_south_american_research_cooperation }
-		cost = 5
+				cost = 5
 		ai_will_do = {
 			factor = 10
 		}

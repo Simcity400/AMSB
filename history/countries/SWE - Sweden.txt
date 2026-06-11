@@ -16,6 +16,7 @@ if = {
 			iw_small_airframe = 1
 			aa_lmg = 1
 			engines_1 = 1
+			bba_early_transport_plane = 1
 		}
 	else = {
 		set_air_oob = "SWE_1936_air_legacy"
@@ -25,6 +26,7 @@ if = {
 			naval_bomber1 = 1
 			cv_naval_bomber1 = 1
 			early_bomber = 1
+			early_transport_plane = 1
 		}
 	}
 }
@@ -251,12 +253,7 @@ if = {
 		support_weapons = 1
 
 		#doctrines
-		
-		grand_battle_plan = 1
-		 
-		
-		battlefleet_concentration = 1
-		submarine_operations = 1
+		#air_superiority = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -277,6 +274,11 @@ if = {
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_operational_integrity
+
 	complete_special_project = {
 		project = sp:sp_air_radar
 	}
@@ -771,6 +773,8 @@ if = {
 	set_variable = { SWE_cross_we_bear_conscription_increase = 0.005 }
 
 	set_variable = { SWE_hygenic_housing_cooldown = 0 }
+
+	set_variable = { SWE_civs_built = 0 }
 
 
 	# Election/BoP Stuff

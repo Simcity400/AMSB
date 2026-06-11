@@ -3,12 +3,9 @@ oob = "ROM_1936"
 set_naval_oob = "ROM_1936_naval_mtg"
 # create_intelligence_agency = yes
 set_research_slots = 3
-set_stability = 0.6
+set_stability = 0.5
 set_war_support = 0.3
-set_variable = {
-    var = min_fuel
-    value = 0.800
-}
+
 ROM = {
 	#Pick from list of the sane events first
 	random_list = {
@@ -85,8 +82,8 @@ set_technology = {
 	tech_engineers = 1
 	tech_mountaineers = 1
 	marines  = 1
-	rangers_tech = 1
-	paratroopers = 1 
+	paratroopers = 1
+	rangers_tech = 1 
 	tech_trucks = 1
 	motorised_infantry = 1
 	infantry_weapons = 1
@@ -133,8 +130,6 @@ add_ideas = ROM_waning_influence_of_democracy
 add_ideas = ROM_romanian_officers
 add_ideas = ROM_iron_guard
 add_ideas = ROM_king_carol_ii_hedonist
-add_ideas = ROM_oil_lend_lease
-add_ideas = ROM_more_slots
 
 set_convoys = 100
 
@@ -253,12 +248,7 @@ set_popularities = {
 	unlock_national_focus = ROM_army_maneuvers
 	unlock_national_focus = ROM_encourage_trade_with_germany
 	unlock_national_focus = ROM_trade_treaty_with_germany
-	unlock_national_focus = ROM_expand_fuel_stockpiles
-	
-	add_timed_idea = {
-		idea = add_production_efficiency_41
-		days = 5
-	}
+
 	add_ideas = {
 		## national spirit
 		ROM_german_influence
@@ -267,9 +257,10 @@ set_popularities = {
 		ROM_grand_army
 
 		## economy
-		ROM_oil_lend_lease
+		closed_economy
 		tot_economic_mobilisation
 		all_adults_serve
+		ROM_ROMLOC
 		ROM_nicolae_malaxa
 		tradeback_is_cancer
 		## high command
@@ -283,6 +274,10 @@ set_popularities = {
 		ROM_gheorghe_potopeanu
 	}
 
+	add_timed_idea = {
+		idea = tradeback_is_cancer
+		days = 60
+	}
 	remove_ideas = {
 		ROM_iron_guard
 		ROM_romanian_officers

@@ -154,8 +154,8 @@ ideas = {
 			
 			modifier = {
 				lend_lease_tension = -1
-				mobilization_laws_cost_factor = 0.75
-				economy_cost_factor = 0.75
+				#mobilization_laws_cost_factor = 0.75
+				#economy_cost_factor = 0.75
 			}
 		}
 		USA_lend_lease_act_na = {# version if player went down continue the new deal
@@ -409,8 +409,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.15
-				stability_factor = -0.05
+				consumer_goods_factor = 0.05
+				#stability_factor = -0.05
 			}
 		}
 		USA_the_pentagon = {
@@ -725,7 +725,9 @@ ideas = {
 			
 			modifier = {
 				min_export = -0.25
-				resource_trade_cost_bonus_per_factory = -20
+				production_lack_of_resource_penalty_factor = -0.2
+				factory_energy_consumption = -1
+				#resource_trade_cost_bonus_per_factory = -20
 			}
 		}
 		
@@ -765,6 +767,7 @@ ideas = {
 				spotting_chance = 0.2
 			}
 		}
+
 		USA_banking_sector_deregulation = {	
 			picture = generic_foreign_capital
 			allowed = {
@@ -779,8 +782,10 @@ ideas = {
 			
 			modifier = {
 				production_speed_industrial_complex_factor = 0.1
+				global_building_slots_factor = 0.25
 			}
 		}
+
 		USA_privatization = {
 			picture = man_five_year_plan_industry
 			
@@ -795,8 +800,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				production_factory_efficiency_gain_factor = -0.25
-				# production_factory_start_efficiency_factor = 0.05	
+				production_factory_efficiency_gain_factor = -0.1
+				#production_factory_start_efficiency_factor = 0.05	
 			}
 		}
 		USA_national_employment_strategy = {
@@ -1039,29 +1044,7 @@ ideas = {
 				production_speed_synthetic_refinery_factor = -1
 			}
 		}
-		
-			
-		USA_no_rubber_in_asia = {
-			
-			
-			allowed = {
-				always = no
-			}
 
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = ARG_public_works_investment
-			
-			modifier = {
-				production_speed_synthetic_refinery_factor = 0.10
-				global_building_slots_factor = 0.30
-			}
-		}
-		
 		USA_staunch_isolationists = {
 			
 			
@@ -1075,7 +1058,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_scw_intervention_nationalists_focus
+			picture = ARG_american_allyship
 			
 			modifier = {
 				war_support_factor = -1
@@ -1096,10 +1079,14 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = FRA_scw_intervention_nationalists_focus
+			picture = SOV_third_five_year_plan_civilian
 			
 			modifier = {
 				conversion_cost_civ_to_mil_factor = 1.2
+			}
+
+			cancel = {
+				has_war = yes
 			}
 		}
 		
@@ -2226,10 +2213,13 @@ ideas = {
 			
 			allowed = {
 				original_tag = USA
+			}	
+			visible = {
+				NOT = {
+					has_completed_focus = USA_rubber_reserve_company
+					has_completed_focus = USA_rubber_reserve_company_landon
+				}
 			}
-			
-
-			
 			research_bonus = {
 				industry = 0.05
 				synth_resources = 0.15
@@ -2239,6 +2229,36 @@ ideas = {
 			
 			modifier = {
 			}
+		}
+
+		standard_oil_california_rubber = {
+			name = 	standard_oil_california
+			picture = standard_oil_california
+			allowed = {
+				original_tag = USA
+			}
+			visible = {
+				OR = {
+					has_completed_focus = USA_rubber_reserve_company
+					has_completed_focus = USA_rubber_reserve_company_landon
+				}
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.10
+				production_speed_fuel_silo_factor = 0.10
+			}
+
+			traits = { refinery_concern }
 		}
 		
 		general_electric = {

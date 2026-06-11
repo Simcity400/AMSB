@@ -264,22 +264,27 @@ tactic_shock = { #counters delay
 tactic_tactical_withdrawal = { #counters encirclement
 	is_attacker = no
 	trigger = {
-		always = no
+		is_attacker = no
+		phase = no
+		OR = {
+			skill_advantage > 0
+			has_trait = trickster
+		}
 	}
 	
 	active = no
 	
 	base =  {
-		factor = 2
+		factor = 4
 	}
 	picture = withdraw
 	
 	phase = tactical_withdrawal
 	
-	attacker = -0.20
+	combat_width = -0.25
+	attacker = -0.25
 	defender = -0.05
 }
-
 ###tactical withdrawal tactics
 tactic_tw_attack = { 
 	is_attacker = yes
@@ -288,11 +293,12 @@ tactic_tw_attack = {
 		phase = tactical_withdrawal
 	}
 	
-	base =  { factor = 2 }
+	base =  { factor = 4 }
 	picture = tw_attack
 	display_phase = tactical_withdrawal
-
-	attacker = -0.15
+	
+	combat_width = -0.25	
+	attacker = -0.25
 	defender = -0.1
 }
 tactic_tw_defend = { 
@@ -306,7 +312,8 @@ tactic_tw_defend = {
 	picture = tw_defend
 	display_phase = tactical_withdrawal
 	
-	attacker = -0.05
+	combat_width = -0.25		
+	attacker = -0.3
 	defender = -0.05
 }
 tactic_tw_chase = { 
@@ -316,11 +323,13 @@ tactic_tw_chase = {
 		phase = tactical_withdrawal
 	}
 	
-	base =  { factor = 3 }
+	base =  { factor = 4 }
 	picture = tw_chase
 	display_phase = tactical_withdrawal
-			
-	attacker = -0.1
+	
+	
+	combat_width = -0.25		
+	attacker = -0.15
 	defender = -0.05
 }
 tactic_tw_evade = { 
@@ -333,8 +342,10 @@ tactic_tw_evade = {
 	base =  { factor = 4 }
 	picture = tw_evade
 	display_phase = tactical_withdrawal
-			
-	attacker = -0.2
+	
+	
+	combat_width = -0.25		
+	attacker = -0.4
 	defender = -0.1
 }
 tactic_tw_intercept = { 
@@ -344,7 +355,7 @@ tactic_tw_intercept = {
 		phase = tactical_withdrawal
 	}
 	
-	base =  { factor = 6 }
+	base =  { factor = 4 }
 	picture = tw_intercept
 	display_phase = tactical_withdrawal
 	
@@ -353,6 +364,8 @@ tactic_tw_intercept = {
 	attacker = -0.05
 	defender = -0.1
 }
+
+
 
 tactic_breakthrough = { #counters ambush
 	is_attacker = yes

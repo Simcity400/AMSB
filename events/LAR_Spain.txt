@@ -186,8 +186,8 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
+			add_threat = 2 # MSB No Volunteers so SCW needs more tension
 			every_owned_state = {
-				add_threat = 2 # MSB No Volunteers so SCW needs more tension
 				limit = {
 					is_core_of = ROOT
 				}
@@ -213,10 +213,7 @@ country_event = {
 					set_country_flag = SPR_republican_spain_flag
 					if = {
 						limit = {
-							has_game_rule = {
-								rule = spr_fragmentation_status
-								option = SPR_EU4
-							}
+							always = no
 						}
 						set_cosmetic_tag = SPR_republican_castille
 					}
@@ -281,10 +278,7 @@ country_event = {
 				set_country_flag = SPR_nationalist_spain_flag
 				if = {
 					limit = {
-						has_game_rule = {
-							rule = spr_fragmentation_status
-							option = SPR_EU4
-						}
+						always = no
 					}
 					set_cosmetic_tag = SPR_nationalist_castille
 				}
@@ -392,7 +386,21 @@ country_event = {
 					SPD = {
 						transfer_state = 41
 					}
-					
+					41 = {
+						set_state_flag = SPR_sided_with_republicans_flag
+						create_unit = {
+							division = "division_template = \"Guarnición Republicana\" start_experience_factor = 0.1" 
+							owner = SPD
+							allow_spawning_on_enemy_provs = yes
+							count = 1
+						}
+						create_unit = {
+							division = "division_template = \"Guarnición Nacionalista\" start_experience_factor = 0.1" 
+							owner = SPA
+							allow_spawning_on_enemy_provs = yes
+							count = 2
+						}
+					}
 				}
 				# If Madrid is controlled by Nationalists, but a random state exists that has total Republican garrison control, give that as capital first
 				if = {
@@ -567,7 +575,7 @@ country_event = {
 							engineer = { x = 0 y = 1 }
 						}
 					}
-					290 = {
+					171 = {
 						create_unit = {
 							division = "division_template = \"División del Ejército de África\" start_experience_factor = 0.3" 
 							owner = SPA
@@ -595,6 +603,214 @@ country_event = {
 						}
 					}
 				}
+				if = { # MSB easy spain game rule
+					limit = {
+						has_game_rule = {
+							rule = scw_difficulty
+							option = easy
+						}
+						# has_completed_focus = SPA_the_army_of_africa
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 50000
+					}
+					add_equipment_to_stockpile = {
+						type = train_equipment_1
+						amount = 50
+					}
+					add_ideas = tot_economic_mobilisation
+					add_ideas = extensive_conscription
+
+					division_template = {
+						name = "Noob assistance"
+						template_counter = 20
+						division_names_group = SPA_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+							infantry = { x = 2 y = 2 }
+							infantry = { x = 3 y = 0 }
+							infantry = { x = 3 y = 1 }
+							artillery_brigade = { x = 4 y = 0 }
+							artillery_brigade = { x = 4 y = 1 }
+							artillery_brigade = { x = 4 y = 3 }
+						}
+						support = {
+							recon = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+						}
+					}
+					174 = {
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+						create_unit = {
+							division = "division_template = \"Noob assistance\" start_experience_factor = 0.3" 
+							owner = SPR
+						}
+					}
+				}
+
 				# Republicans remove their army
 				SPD = {
 					delete_units = {
@@ -952,16 +1168,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -988,16 +1198,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1024,16 +1228,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1060,16 +1258,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1096,16 +1288,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1132,16 +1318,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1175,16 +1355,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -1211,16 +1385,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -1247,16 +1415,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -1283,16 +1445,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -1472,16 +1628,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1508,16 +1658,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1544,16 +1688,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1587,16 +1725,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -1623,16 +1755,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -1886,16 +2012,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1937,16 +2057,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -1988,16 +2102,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -2039,16 +2147,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -2090,16 +2192,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -2160,16 +2256,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -2197,16 +2287,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -2234,16 +2318,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -2271,16 +2349,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -2308,16 +2380,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -2485,10 +2551,7 @@ country_event = {
 				set_country_flag = SPR_republican_spain_flag
 				if = {
 					limit = {
-						has_game_rule = {
-							rule = spr_fragmentation_status
-							option = SPR_EU4
-						}
+						always = no
 					}
 					set_cosmetic_tag = SPR_republican_castille
 				}
@@ -3053,16 +3116,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3090,16 +3147,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3127,16 +3178,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3164,16 +3209,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3201,16 +3240,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3238,16 +3271,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3282,16 +3309,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -3319,16 +3340,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -3356,16 +3371,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -3393,16 +3402,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -3583,16 +3586,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3619,16 +3616,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3655,16 +3646,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -3698,16 +3683,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -3734,16 +3713,10 @@ country_event = {
 											OR = {
 												AND = {
 													is_historical_focus_on = yes
-													has_game_rule = {
-														rule = SPR_ai_behavior 
-														option = DEFAULT
-													}
+													always = no
 												}
 												has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = NATIONALIST_HISTORICAL
-												}
+												always = no
 											}
 										}
 									}
@@ -3998,16 +3971,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4035,16 +4002,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4072,16 +4033,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4109,16 +4064,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4146,16 +4095,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4201,16 +4144,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4238,16 +4175,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4275,16 +4206,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4312,16 +4237,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4349,16 +4268,10 @@ country_event = {
 										OR = {
 											AND = {
 												is_historical_focus_on = yes
-												has_game_rule = {
-													rule = SPR_ai_behavior 
-													option = DEFAULT
-												}
+												always = no
 											}
 											has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-											has_game_rule = {
-												rule = SPR_ai_behavior 
-												option = NATIONALIST_HISTORICAL
-											}
+											always = no
 										}
 									}
 								}
@@ -4508,20 +4421,14 @@ country_event = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_FALANGIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = FALANGIST
-					}
+					always = no
 				}
 			}
 			modifier = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_CARLIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = CARLIST
-					}
+					always = no
 				}
 			}
 		}
@@ -4540,17 +4447,14 @@ country_event = {
 	}
 	option = { # Option for Nationalists - Falangism
 		name = lar_spain.2.b
-		trigger = { has_completed_focus = SPA_sin_paquito }
+		trigger = { always = no }
 		ai_chance = {
 			base = 30
 			modifier = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_CARLIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = CARLIST
-					}
+					always = no
 				}
 			}
 			modifier = {
@@ -4558,16 +4462,10 @@ country_event = {
 				OR = {
 					AND = {
 						is_historical_focus_on = yes
-						has_game_rule = {
-							rule = SPR_ai_behavior 
-							option = DEFAULT
-						}
+						always = no
 					}
 					has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = NATIONALIST_HISTORICAL
-					}
+					always = no
 				}
 			}
 		}
@@ -4583,6 +4481,47 @@ country_event = {
 		}
 		complete_national_focus = SPA_the_phalanx_ascendant
 	}
+	option = { # Option for Nationalists - Carlism
+		name = lar_spain.2.c
+		trigger = { 
+			has_completed_focus = SPA_a_great_spain
+			is_ai = yes
+		}
+	
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				OR = {
+					has_country_flag = SPR_AI_RANDOM_FALANGIST
+					always = no
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						is_historical_focus_on = yes
+						always = no
+					}
+					has_country_flag = SPR_AI_RANDOM_NATIONALIST_HISTORICAL
+					always = no
+				}
+			}
+		}
+		# Remove Spirits that will no longer be relevant
+		custom_effect_tooltip = nationalists_chosen
+		remove_ideas = SPR_military_disloyalty
+		remove_ideas = SPR_political_violence
+		SPR_clr_national_strikes = yes
+		effect_tooltip = {
+			add_timed_idea = { idea = SPA_death_before_surrender days = 900 }
+			SPD = { add_timed_idea = { idea = SPR_death_before_surrender days = 900 } }
+			set_party_name = { ideology = neutrality long_name = SPR_neutrality_military_junta_party_long name = SPR_neutrality_military_junta_party }
+			kill_ideology_leader = fascism
+		}
+		complete_national_focus = SPA_supremacy_of_the_communion
+	}
 	option = { # Option for Republicans - Democratic
 		name = lar_spain.2.d
 		trigger = { has_completed_focus = SPR_the_popular_front }
@@ -4592,30 +4531,21 @@ country_event = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_ANARCHIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = ANARCHIST
-					}
+					always = no
 				}
 			}
 			modifier = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_INDEPENDENT_COMMUNIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = INDEPENDENT_COMMUNIST
-					}
+					always = no
 				}
 			}
 			modifier = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_STALINIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = STALINIST
-					}
+					always = no
 				}
 			}
 			modifier = {
@@ -4648,20 +4578,14 @@ country_event = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_ANARCHIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = ANARCHIST
-					}
+					always = no
 				}
 			}
 			modifier = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_SECOND_REPUBLIC
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = SECOND_REPUBLIC
-					}
+					always = no
 				}
 			}
 			modifier = {
@@ -4694,30 +4618,21 @@ country_event = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_SECOND_REPUBLIC
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = SECOND_REPUBLIC
-					}
+					always = no
 				}
 			}
 			modifier = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_INDEPENDENT_COMMUNIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = INDEPENDENT_COMMUNIST
-					}
+					always = no
 				}
 			}
 			modifier = {
 				factor = 0
 				OR = {
 					has_country_flag = SPR_AI_RANDOM_STALINIST
-					has_game_rule = {
-						rule = SPR_ai_behavior 
-						option = STALINIST
-					}
+					always = no
 				}
 			}
 			modifier = {
@@ -6083,7 +5998,7 @@ country_event = {
 				unlock_national_focus = SPA_secure_the_northern_garrisons
 				if = {
 					limit = {
-						SPA = { has_completed_focus = SPA_sin_paquito }
+						SPA = { always = no }
 					}
 					unlock_national_focus = SPA_sin_paquito
 				}
@@ -6296,10 +6211,7 @@ country_event = {
 				set_country_flag = SPR_nationalist_spain_flag
 				if = {
 					limit = {
-						has_game_rule = {
-							rule = spr_fragmentation_status
-							option = SPR_EU4
-						}
+						always = no
 					}
 					set_cosmetic_tag = SPR_nationalist_castille
 				}
@@ -6312,10 +6224,7 @@ country_event = {
 			set_country_flag = SPR_carlist_spain_flag
 			if = {
 				limit = {
-					has_game_rule = {
-						rule = spr_fragmentation_status
-						option = SPR_EU4
-					}
+					always = no
 				}
 				set_cosmetic_tag = SPR_carlist_castille
 			}
@@ -6837,15 +6746,12 @@ country_event = {
 							amount = 6
 							producer = SOV
 						}
-						add_opinion_modifier = {
-							target = SOV
-							modifier = SOV_sent_us_weapons
-						}
+						
 					}
 				}
 				if = { #If Right Opposition is still under Stalin's rule, volunteers come back
 					limit = {
-						SOV = { has_completed_focus = SOV_covert_support_for_spanish_poum }
+						SOV = { always = no }
 						SPD = {
 							has_volunteers_amount_from = {
 								tag = SOV
@@ -7264,9 +7170,9 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_completed_focus = SPR_the_anti_fascist_workers_revolution
+					always = no
 					NOT = {
-						has_completed_focus = SPR_the_stalinist_doctrine
+						always = no
 					}
 				}
 				complete_national_focus = SPR_the_stalinist_doctrine
@@ -7502,10 +7408,10 @@ country_event = {
 		hidden_effect = {
 			if = { #If POUM split + Right Oppo is in charge + tehy are supporting the POUM -> Then their volunteers stay in SPC
 				limit = {
-					has_completed_focus = SPR_the_anti_fascist_workers_revolution
+					always = no
 					SOV = {
-						has_completed_focus = SOV_covert_support_for_spanish_poum
-						has_completed_focus = SOV_coup_detat
+						always = no
+						always = no
 					}
 				}
 				every_other_country = { #Exclude SOV
@@ -7539,7 +7445,7 @@ country_event = {
 			set_global_flag = { flag = SPR_civil_war_startup value = 1 days = 3 } # Make AI avoid attacking for a few days
 			if = {
 				limit = {
-					has_completed_focus = SPR_regional_defense_council_of_aragon
+					always = no
 				}
 				set_politics = {
 					ruling_party = neutrality
@@ -7593,7 +7499,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_completed_focus = SPR_the_anti_fascist_workers_revolution
+					always = no
 				}
 				set_politics = {
 					ruling_party = communism
@@ -7697,10 +7603,7 @@ country_event = {
 						amount = 6
 						producer = SOV
 					}
-					add_opinion_modifier = {
-						target = SOV
-						modifier = SOV_sent_us_weapons
-					}
+					
 				}
 			}
 			remove_ideas = SPR_the_maximum_concession
@@ -7711,10 +7614,7 @@ country_event = {
 				set_country_flag = SPR_republican_spain_flag
 				if = {
 					limit = {
-						has_game_rule = {
-							rule = spr_fragmentation_status
-							option = SPR_EU4
-						}
+						always = no
 					}
 					set_cosmetic_tag = SPR_republican_castille
 				}
@@ -7727,10 +7627,7 @@ country_event = {
 			set_country_flag = SPR_anarchist_spain_flag
 			if = {
 				limit = {
-					has_game_rule = {
-						rule = spr_fragmentation_status
-						option = SPR_EU4
-					}
+					always = no
 				}
 				set_cosmetic_tag = SPR_anarchist_castille
 			}
@@ -8407,7 +8304,7 @@ country_event = {
 		effect_tooltip = {
 			if = {
 				limit = {
-					has_completed_focus = SPR_regional_defense_council_of_aragon
+					always = no
 					NOT = { has_government = neutrality }
 				}
 				set_politics = {
@@ -8443,7 +8340,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_completed_focus = SPR_the_anti_fascist_workers_revolution
+					always = no
 					NOT = { has_government = communism }
 				}
 				set_politics = {
@@ -10286,7 +10183,7 @@ country_event = {
 			    tag = ROOT
 			    count > 0
 			}
-			has_completed_focus = SPR_relocate_the_gold_reserves
+			always = no
 		}
 		OR = {
 			has_country_flag = SPR_relocated_gold_reserves_selection_flag_sov
@@ -11071,7 +10968,7 @@ country_event = {
 	desc = {
 		text = lar_spain.77.desc1
 		trigger = {
-			has_completed_focus = SPA_restore_the_monarchy
+			always = no
 			NOT = { has_country_flag = SPB_xavier_king }
 		}
 	}
@@ -11080,7 +10977,7 @@ country_event = {
 		trigger = {
 			NOT = {
 				AND = {
-					has_completed_focus = SPA_restore_the_monarchy
+					always = no
 					NOT = { has_country_flag = SPB_xavier_king }
 				}
 			}
@@ -11106,7 +11003,7 @@ country_event = {
 			is_ai = no
 		}
 		has_completed_focus = SPA_a_great_spain
-		NOT = { has_completed_focus = SPA_the_phalanx_ascendant }
+		NOT = { always = no }
 		NOT = { has_global_flag = SPB_alfonso_xiii_dead }
 		date > 1940.2.28
 	}
@@ -11247,7 +11144,7 @@ country_event = {
 	trigger = {
 		tag = SPA
 		has_completed_focus = SPA_caudillo_of_spain
-		NOT = { has_completed_focus = SPA_restore_the_monarchy }
+		NOT = { always = no }
 		date > 1950.1.1
 	}
 
@@ -11519,7 +11416,7 @@ country_event = {
 
 	trigger = {
 		tag = SPD
-		has_completed_focus = SPR_war_of_independence
+		always = no
 		has_country_flag = SOV_took_spanish_states
 		has_war_with = SOV
 		SOV = { owns_state = 165 }
@@ -11554,7 +11451,7 @@ country_event = {
 
 	trigger = {
 		tag = SPD
-		has_completed_focus = SPR_war_of_independence
+		always = no
 		has_country_flag = SOV_took_spanish_states
 		has_war_with = SOV
 		SOV = { owns_state = 167 }
@@ -11589,7 +11486,7 @@ country_event = {
 
 	trigger = {
 		tag = SPD
-		has_completed_focus = SPR_war_of_independence
+		always = no
 		has_country_flag = SOV_took_spanish_states
 		has_war_with = SOV
 		SOV = { owns_state = 794 }

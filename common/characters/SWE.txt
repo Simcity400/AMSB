@@ -65,7 +65,7 @@ characters={
 						if = {
 							limit = {
 								FIN = {
-									NOT = { has_completed_focus = FIN_approach_the_soviets }
+									NOT = { always = no }
 								}
 							}
 							SWE = { add_ideas =  SWE_committee_against_the_finnish_white_terror_idea } 
@@ -1563,35 +1563,11 @@ characters={
 							}
 						}
 
-						unlock_decision_tooltip = {
-						 	decision = SWE_ebba_add_research
-						 	show_effect_tooltip = yes # default is no
-						 	show_modifiers = yes # default is no
-						 }
-
-						unlock_decision_tooltip = {
-						 	decision = SWE_ebba_add_production
-						 	show_effect_tooltip = yes # default is no
-						 	show_modifiers = yes # default is no
-						 }
-						unlock_decision_tooltip = {
-						 	decision = SWE_ebba_political_clout
-						 	show_effect_tooltip = yes # default is no
-						 	show_modifiers = yes # default is no
-						 } 
-					}
+						
+																	}
 					else = {
-						unlock_decision_tooltip = {
-						 	decision = SWE_ebba_add_research
-						 }
-
-						unlock_decision_tooltip = {
-						 	decision = SWE_ebba_add_production
-						 }
-						unlock_decision_tooltip = {
-						 	decision = SWE_ebba_political_clout
-						 } 
-					}
+						
+																	}
 
 				}
 				set_character_flag = is_hired
@@ -1918,10 +1894,7 @@ characters={
 				base = 0
 				modifier ={
 					add = 150
-					has_game_rule = {
-						rule = SWE_ai_behavior
-						option = SWE_FASCIST_INDEPENDENT
-					}
+					always = no
 				}
 			}
 		}
@@ -1992,10 +1965,7 @@ characters={
 			ai_will_do = {
 				base = 0
 				modifier = {
-					has_game_rule = {
-						rule = SWE_ai_behavior
-						option = SWE_COMMUNISM
-					}
+					always = no
 					add = 200  
 				}
 			}

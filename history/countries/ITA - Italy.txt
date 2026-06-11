@@ -270,18 +270,25 @@ add_dynamic_modifier = { modifier = ITA_regio_esercito_dynamic_modifier }
 
 
 #REGIA AERONAUTICA
-set_variable = { GER_military_air_superiority_efficiency_factor = 0 }
-set_variable = { GER_military_air_accidents_factor = 0.10 }
-set_variable = { GER_military_air_manpower_requirement_factor = 0.10 }
-set_variable = { GER_military_air_agility_factor = 0 }
-set_variable = { GER_military_air_ace_generation_chance_factor = 0 }
-set_variable = { GER_military_air_nav_efficiency = 0 }
-set_variable = { GER_military_air_cas_efficiency = 0 }
-set_variable = { GER_military_air_strategic_bomber_bombing_factor = 0 }
-set_variable = { GER_military_air_range_factor = 0 }
-set_variable = { GER_military_air_fuel_consumption_factor = 0 }
-set_variable = { GER_military_air_attack_factor = 0.05 }
-add_dynamic_modifier = { modifier = GER_airforce_modifier }
+set_variable = { ITA_ra_air_ace_generation_chance_factor = 0.1 }
+set_variable = { ITA_ra_air_superiority_bonus_in_combat = 0.05 }
+set_variable = { ITA_ra_air_doctrine_cost_factor = 0.1 }
+set_variable = { ITA_ra_air_nav_efficiency = -0.1 }
+set_variable = { ITA_ra_air_night_penalty = 0.15 }
+set_variable = { ITA_ra_air_weather_penalty = 0.15 }
+set_variable = { ITA_ra_air_accidents_factor= 0.05 }
+
+set_variable = { ITA_ra_air_training_xp_gain_factor = 0 }
+set_variable = { ITA_ra_air_mission_xp_gain_factor = 0 }
+set_variable = { ITA_ra_strategic_bomb_visibility = 0 }
+set_variable = { ITA_ra_air_strategic_bomber_bombing_factor = 0 }
+set_variable = { ITA_ra_air_range_factor = 0 }
+set_variable = { ITA_ra_air_superiority_efficiency = 0 }
+set_variable = { ITA_ra_air_intercept_efficiency = 0 }
+set_variable = { ITA_ra_sp_air_intercontinental_bomber_speed_factor = 0 }
+set_variable = { ITA_ra_sp_air_mothership_aircraft_speed_factor = 0 }
+
+add_dynamic_modifier = { modifier = ITA_regia_aeronautica_dynamic_modifier }
 
 
 #REGIA MARINA
@@ -351,8 +358,8 @@ set_technology = {
 	tech_engineers = 1
 	tech_mountaineers = 1
 	marines  = 1
-	rangers_tech = 1
-	paratroopers = 1 
+	paratroopers = 1
+	rangers_tech = 1 
 	tech_trucks = 1
 	motorised_infantry = 1
 	gw_artillery = 1
@@ -435,12 +442,15 @@ if = {
 		mtg_transport = 1
 		coastal_defense_ships = 1
 		#improved_airplane_launcher = 1
+		basic_dp_light_battery = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
 	}
 	set_naval_oob = "ITA_1936_naval_mtg"
 }
 
 if = {
-	limit = { always = no }
+	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "ITA_1936_air_bba"
 		set_technology = {
 			aa_lmg = 1
@@ -463,7 +473,6 @@ if = {
 			naval_bomber1 = 1
 			CAS1 = 1
 			early_transport_plane = 1
-			fighter1 = 1
 		}
 	}
 }
@@ -864,7 +873,7 @@ recruit_character = ITA_curio_bernardis
 ##### MISSIOLINIS - TRIGGER EVENTS #####
 ########################################
 
-### IF NOT BBA, trigger the first Missiolini from here #TODO_Manu: PLEASE CHECK IF THIS ACTUALLY WORKS (character has just been recruited)
+### IF NOT BBA, trigger the first Missiolini from here
 if = {
 	limit = {
 		NOT = { has_dlc = "By Blood Alone" }
@@ -873,7 +882,7 @@ if = {
 }
 
 ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.11 days = 185 random_days = 5 } } # JUN 36 - Conquer Ethiopia  - DEC 36 - (170 days)
-#ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.21 days = 370 random_days = 5 } } # JAN 37 - Pacify Ethiopia - DEC 39 - (720 days) #TODO_Manu: This is now triggered after war with MTTH
+#ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.21 days = 370 random_days = 5 } } # JAN 37 - Pacify Ethiopia - DEC 39 - (720 days) #MM: This is now triggered after war with MTTH
 ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.31 days = 370 random_days = 5 } } # JAN 37 - Industrialization - DEC 37 - (350 days)
 ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.41 days = 735 random_days = 5 } } # JAN 38 - Increase Army - DEC 38 (350 days)
 ITA_benito_mussolini = { unit_leader_event = { id = BBA_italy_missiolinis.00 days = 1105 random_days = 5 } } # JAN 39 - Random mission dispatcher (350 days) - This event auto-triggers itself every 6 months
@@ -1101,7 +1110,7 @@ if = {
 		variant_name = "Fiat 3000B"
 	}
 
-	create_equipment_variant = {  #Note: There is a copy of this variant in Finnish National Focus file (FIN_bring_foreign_armor_experts). Any changes here should also be applied there
+	create_equipment_variant = {  #Note: There is a copy of this variant in Finnish National Focus file (FIN_bring_foreign_armor_experts) and Chinese history file. Any changes here should also be applied there
 		name = "L3/35"
 		type = light_tank_chassis_1
 		parent_version = 0
@@ -1498,6 +1507,61 @@ if = {
 				rear_1_custom_slot = ship_heavy_battery_2
 			}
 		}
+
+	# MSB FRENCH FLEET DESTROYERS
+	create_equipment_variant = {
+		name = "Bourrasque Class"				# represents Bourrasque and L'Adroit classes
+		type = ship_hull_light_1
+		name_group = FRA_DE_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+
+	create_equipment_variant = {
+		name = "Chacal Class"				# represents Chacal, Guépard, Agile, and Vauquelin classes
+		type = ship_hull_light_1
+		name_group = FRA_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+		obsolete = yes
+	}
+
+	create_equipment_variant = {
+		name = "Le Fantasque Class"
+		type = ship_hull_light_1
+		name_group = FRA_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_3
+			fixed_ship_torpedo_slot = ship_torpedo_2
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+
 	### Submarine Variants	
 	create_equipment_variant = {
 		name = "Mameli Class"
@@ -1544,6 +1608,176 @@ if = {
 			fixed_ship_torpedo_slot = ship_torpedo_sub_1
 			fixed_ship_engine_slot = sub_ship_engine_1
 			rear_1_custom_slot = ship_torpedo_sub_1
+		}
+	}
+
+	# MSB: variants required by ITA_1936_naval_mtg OOB (French designs from vanilla; 600/630 Series duplicate the Sirena design)
+	create_equipment_variant = {
+		name = "600 Series"
+		type = ship_hull_submarine_1
+		name_group = ITA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "630 Series"
+		type = ship_hull_submarine_1
+		name_group = ITA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Saphir Class"					# minelayers
+		type = ship_hull_submarine_1
+		name_group = FRA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Redoutable Class"				# represents Surcouf, Roubtable, L'Esoire, and Agosta classes
+		type = ship_hull_submarine_2
+		name_group = FRA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = ship_torpedo_sub_1
+		}
+	}
+	create_equipment_variant = {
+		name = "Surcouf Class"				# cruiser submarine
+		type = ship_hull_cruiser_submarine
+		name_group = FRA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_2
+			fixed_ship_engine_slot = sub_ship_engine_2
+			front_1_custom_slot = ship_light_battery_sub
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+		design_team = mio:FRA_acf_organization
+	}
+	create_equipment_variant = {
+		name = "Duguay-Trouin Class"			# represents Duguay-Trouin, Pluton, Jeanne d'Arc classes
+		type = ship_hull_cruiser_1
+		name_group = FRA_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = ship_light_medium_battery_1
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "La Galissonnière Class"
+		type = ship_hull_cruiser_1
+		name_group = FRA_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_anti_air_1
+			mid_2_custom_slot = ship_light_medium_battery_2
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+	}
+	create_equipment_variant = {
+		name = "Suffren Class"				# Duquesne and Suffren classes
+		type = ship_hull_cruiser_1
+		name_group = FRA_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_medium_battery_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Algérie Class"
+		type = ship_hull_cruiser_1
+		name_group = FRA_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_2
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_medium_battery_1
+			mid_2_custom_slot = ship_anti_air_1
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+	}
+	create_equipment_variant = {
+		name = "Courbet Class"
+		type = ship_hull_heavy_1
+		name_group = FRA_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = ship_heavy_battery_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Bretagne Class"
+		type = ship_hull_heavy_1
+		name_group = FRA_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = ship_heavy_battery_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_anti_air_1
+			rear_1_custom_slot = empty
 		}
 	}
 }

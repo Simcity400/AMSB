@@ -1905,8 +1905,7 @@ shared_focus = {
 	icon = GFX_focus_SMB_mountain_guns
 	relative_position_id = SMB_special_forces_option_1
 	prerequisite = { focus = SMB_special_forces_option_1 }
-	mutually_exclusive = { }
-	x = -2
+		x = -2
 	y = 1
 
 	cost = 5
@@ -3153,8 +3152,6 @@ shared_focus = {
 			has_idea = SMB_MTG_naval_arms_race_legacy
 		}
 		OR = {
-			original_
-			original_
 		}
 	}
 
@@ -3181,10 +3178,7 @@ shared_focus = {
 				limit = {
 					original_tag = USA
 				}
-				add_opinion_modifier = {
-					modifier = SMB_naval_arms_race
-					target = ROOT
-				}
+				
 			} 
 		} 
 		every_other_country = {
@@ -3195,10 +3189,7 @@ shared_focus = {
 				id = south_american_events.10
 				hours = 1
 			}
-			add_opinion_modifier = {
-				modifier = SMB_naval_arms_race
-				target = ROOT
-			}
+			
 		}
 	}
 }
@@ -3273,7 +3264,7 @@ shared_focus = {
 			name = SMB_coastal_fleet
 			bonus = 1.0
 			uses = 2
-			category = cl_tech
+			category = ca_tech
 			category = dd_tech
 		}
 	}

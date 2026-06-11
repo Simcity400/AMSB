@@ -164,17 +164,17 @@ country_event = {
 			modifier = {
 				factor = 0
 				tag = JAP
-				has_completed_focus = JAP_the_unthinkable_option
+				always = no
 			}
 			modifier = {
 				factor = 0
 				is_literally_china = yes
-				JAP = { has_completed_focus = JAP_purge_the_kodoha_faction }
+				JAP = { always = no }
 			}
 			modifier = {
 				factor = 0
 				tag = JAP
-				has_completed_focus = JAP_purge_the_kodoha_faction
+				always = no
 				date > 1938.1.1
 			}
 		}
@@ -1914,10 +1914,7 @@ country_event = {
 				factor = 0.5
 				OR = {
 					has_country_flag = AUS_AI_RANDOM_ANTI_ANSCLUSS_STRESS
-					has_game_rule = {
-						rule = AUS_AI_BEHAVIOR
-						option = AUS_ANTI_ANSCLUSS_STRESS
-					}
+					always = no
 				}
 			}
 		}
@@ -1940,7 +1937,7 @@ country_event = {
 				limit = {
 					ITA = {
 						OR = {
-							has_completed_focus = ITA_guarantee_austrian_independence
+							always = no
 							has_guaranteed = AUS
 						}
 					}
@@ -2072,18 +2069,9 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = ENG_ai_behavior
-						option = DEMOCRATIC_HISTORICAL
-					}
-					has_game_rule = {
-						rule = ENG_ai_behavior
-						option = DEMOCRATIC_ALTERNATE
-					}
-					has_game_rule = {
-						rule = ENG_ai_behavior
-						option = FASCIST
-					}
+					always = no
+					always = no
+					always = no
 					AND = {
 						has_global_flag = GER_has_started_war
 						NOT = { is_in_faction_with = GER }
@@ -2108,7 +2096,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_completed_focus = ENG_no_further_appeasement
+					always = no
 				}
 				add_political_power = -200
 			}
@@ -2341,7 +2329,7 @@ country_event = {
 			limit = {
 				is_in_faction_with = CZE
 				is_faction_leader = yes
-				has_completed_focus = FRA_strengthen_the_little_entente
+				always = no
 				NOT = { is_in_faction_with = ENG }
 			}
 			add_to_faction = ENG #Britain joins the little entente
@@ -2604,7 +2592,7 @@ country_event = {
 					AND = {
 						is_in_faction_with = HUN
 						HUN = {
-							has_completed_focus = wuw_HUN_a_danubian_federation
+							always = no
 						}
 					}
 				}	
@@ -2999,7 +2987,7 @@ country_event = {
 					AND = {
 						is_in_faction_with = HUN
 						HUN = {
-							has_completed_focus = wuw_HUN_a_danubian_federation
+							always = no
 						}
 					}
 				}
@@ -3113,7 +3101,7 @@ country_event = {
 					}
 					AND = {
 						HUN = {
-							has_completed_focus = wuw_HUN_a_danubian_federation
+							always = no
 						}
 						is_in_faction_with = HUN
 					}
@@ -3487,7 +3475,7 @@ country_event = {
 					}
 				}
 			}
-			SLO = { transfer_state = 70 }
+			
 		}
 		if = {
 			limit = {
@@ -3498,7 +3486,7 @@ country_event = {
 					}
 				}
 			}
-			SLO = { transfer_state = 71 }
+			
 		}
 		if = {
 			limit = {
@@ -3522,7 +3510,7 @@ country_event = {
 					}
 				}
 			}
-			SLO = { transfer_state = 73 }
+			
 		}
 		if = {
 			limit = {
@@ -3533,20 +3521,14 @@ country_event = {
 					}
 				}
 			}
-			SLO = { transfer_state = 664 }
+			
 		}
 		if = {
 			limit = { country_exists = CZE }
 			annex_country = { target = CZE }
 		}
 		add_to_faction = SLO
-		SLO = {
-			add_ai_strategy = {
-				type = alliance
-				id = "GER"
-				value = 200
-			}
-		}
+		
 		if = {
 			limit = {
 				72 = {
@@ -3673,14 +3655,8 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_game_rule = {
-						rule = ENG_ai_behavior
-						option = DEMOCRATIC_ALTERNATE
-					}
-					has_game_rule = {
-						rule = ENG_ai_behavior
-						option = FASCIST
-					}
+					always = no
+					always = no
 				}
 			}
 		}
@@ -3697,7 +3673,7 @@ country_event = {
 	option = { # Support France
 		name = germany.61.b
 		trigger = {
-			NOT = { has_completed_focus = ENG_a_change_in_course }
+			NOT = { always = no }
 		}
 		ai_chance = {
 			base = 10
@@ -3710,10 +3686,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = {
-					rule = ENG_ai_behavior
-					option = NEUTRALITY
-				}
+				always = no
 			}
 		}
 
@@ -3771,7 +3744,7 @@ country_event = {
 	option = {
 		name = germany.62.a
 		trigger = {
-			NOT = { has_completed_focus = ENG_a_change_in_course }
+			NOT = { always = no }
 		}
 
 		hidden_effect = {
@@ -3787,7 +3760,7 @@ country_event = {
 	option = {
 		name = germany.62.b
 		trigger = {
-			has_completed_focus = ENG_a_change_in_course
+			always = no
 		}
 
 		hidden_effect = {
@@ -3816,11 +3789,11 @@ country_event = {
 					tag = GER
 					ratio > 1.0
 				}
-				NOT = { has_idea = FRA_disjointed_government }
+				NOT = { has_idea = FPM_disjointed_government }
 			}
 			modifier = {
 				factor = 0.5
-				has_idea = FRA_disjointed_government
+				has_idea = FPM_disjointed_government
 			}
 			modifier = {
 				factor = 5
@@ -3828,7 +3801,7 @@ country_event = {
 					tag = GER
 					ratio > 10
 				}
-				NOT = { has_idea = FRA_disjointed_government }
+				NOT = { has_idea = FPM_disjointed_government }
 			}
 		}
 
@@ -3841,7 +3814,7 @@ country_event = {
 
 		if = {
 			limit = {
-				has_idea = FRA_disjointed_government
+				has_idea = FPM_disjointed_government
 				NOT = { has_government = communism }
 			}
 			custom_effect_tooltip = germany.60.a.tt
@@ -3854,7 +3827,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_idea = FRA_disjointed_government
+				has_idea = FPM_disjointed_government
 				has_government = communism
 			}
 			custom_effect_tooltip = germany.60.a.tt
@@ -3906,7 +3879,7 @@ country_event = {
 
 		if = {
 			limit = {
-				has_idea = FRA_disjointed_government
+				has_idea = FPM_disjointed_government
 				NOT = { has_government = communism }
 			}
 			custom_effect_tooltip = germany.60.a.tt
@@ -3919,7 +3892,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_idea = FRA_disjointed_government
+				has_idea = FPM_disjointed_government
 				has_government = communism
 			}
 			custom_effect_tooltip = germany.60.a.tt
@@ -3972,7 +3945,7 @@ country_event = {
 			}	
 			if = {
 				limit = {
-					has_idea = FRA_disjointed_government
+					has_idea = FPM_disjointed_government
 					NOT = { has_government = communism }
 				}
 				start_civil_war = {
@@ -3982,7 +3955,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_idea = FRA_disjointed_government
+					has_idea = FPM_disjointed_government
 					has_government = communism
 				}
 				start_civil_war = {
@@ -4085,7 +4058,7 @@ country_event = {
 			}	
 			if = {
 				limit = {
-					has_idea = FRA_disjointed_government
+					has_idea = FPM_disjointed_government
 					NOT = { has_government = communism }
 				}
 				start_civil_war = {
@@ -4095,7 +4068,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_idea = FRA_disjointed_government
+					has_idea = FPM_disjointed_government
 					has_government = communism
 				}
 				start_civil_war = {
@@ -5786,7 +5759,7 @@ country_event = {
 		GER = { country_event = { id = germany.81 days = 1 } }
 		effect_tooltip = {
 			if = {
-				limit = { SLO = { exists = yes } }
+				limit = {  }
 				annex_country = { target = SLO }
 			}
 			if = {
@@ -5866,7 +5839,7 @@ country_event = {
 	option = {
 		name = germany.81.a
 		if = {
-			limit = { SLO = { exists = yes } }
+			limit = {  }
 			POL = { annex_country = { target = SLO } }
 		}
 		if = {
@@ -6019,7 +5992,7 @@ country_event = {
 			OR = {
 				NOT = { FROM = { original_tag = POL } }
 				NOT = { original_tag = GER }
-				NOT = { has_completed_focus = GER_danzig_for_guarantees }
+				NOT = { always = no }
 			}
 		}
 	}
@@ -6028,7 +6001,7 @@ country_event = {
 		trigger = {
 			FROM = { original_tag = POL }
 			original_tag = GER
-			has_completed_focus = GER_danzig_for_guarantees
+			always = no
 		}
 	}
 	desc = {
@@ -6037,7 +6010,7 @@ country_event = {
 			OR = {
 				NOT = { FROM = { original_tag = POL } }
 				NOT = { original_tag = GER }
-				NOT = { has_completed_focus = GER_danzig_for_guarantees }
+				NOT = { always = no }
 			}
 		}
 	}
@@ -6046,7 +6019,7 @@ country_event = {
 		trigger = {
 			FROM = { original_tag = POL }
 			original_tag = GER
-			has_completed_focus = GER_danzig_for_guarantees
+			always = no
 		}
 	}
 	picture = GFX_report_event_soviet_tanks
@@ -6082,7 +6055,7 @@ country_event = {
 		trigger = {
 			NOT = { FROM = { original_tag = POL } }
 			NOT = { original_tag = GER }
-			NOT = { has_completed_focus = GER_danzig_for_guarantees }
+			NOT = { always = no }
 		}
 		ai_chance = {
 			base = 0
@@ -6113,33 +6086,6 @@ country_event = {
 	trigger = {
 		NOT = { has_war_with = GER }
 	}
-
-	option = {
-		name = germany.86.a
-		ai_chance = {
-			base = 20
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		GER = { country_event = { id = germany.87 days = 1 } }
-		effect_tooltip = {
-			GER = {
-				transfer_state = 85
-				add_state_core = 85
-				transfer_state = 807
-				add_state_core = 807
-				remove_state_claim = 86
-				remove_state_claim = 762
-			}
-		}
-		country_event = { id = poland.1 days = 7 }
-		hidden_effect = {
-			news_event = { id = news.203 hours = 6 }
-		}
-	}
-
 	option = {
 		name = germany.86.b
 		ai_chance = {
@@ -6314,7 +6260,7 @@ country_event = {
 				}
 			}
 		}
-		create_wargoal = {
+		declare_war_on = {
 			type = take_state
 			generator = { 85 807 }
 			target = POL
@@ -6760,24 +6706,7 @@ country_event = {
 		effect_tooltip = {
 			add_political_power = -25
 			add_named_threat = { threat = 3 name = GER_fate_of_yugoslavia }
-			CRO = {
-				if = {
-					limit = { YUG = { owns_state = 103 } }
-					transfer_state = 103
-				}
-				if = {
-					limit = { YUG = { owns_state = 104 } }
-					transfer_state = 104
-				}
-				if = {
-					limit = { YUG = { owns_state = 109 } }
-					transfer_state = 109
-				}
-				if = {
-					limit = { YUG = { owns_state = 804 } }
-					transfer_state = 804
-				}
-			}
+			
 			puppet = CRO
 			annex_country = { target = YUG transfer_troops = no }
 			custom_effect_tooltip = yugoslavia_mefo_bills_tt
@@ -6794,24 +6723,7 @@ country_event = {
 		effect_tooltip = {
 			add_named_threat = { threat = 2 name = GER_fate_of_yugoslavia }
 
-			CRO = {
-				if = {
-					limit = { YUG = { owns_state = 103 } }
-					transfer_state = 103
-				}
-				if = {
-					limit = { YUG = { owns_state = 104 } }
-					transfer_state = 104
-				}
-				if = {
-					limit = { YUG = { owns_state = 109 } }
-					transfer_state = 109
-				}
-				if = {
-					limit = { YUG = { owns_state = 804 } }
-					transfer_state = 804
-				}
-			}
+			
 			puppet = CRO
 			puppet = YUG
 			hidden_effect = {
@@ -8616,7 +8528,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				FRA = { has_completed_focus = FRA_strengthen_the_little_entente }
+				FRA = { always = no }
 			}
 			modifier = {
 				factor = 0

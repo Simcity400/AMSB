@@ -31,6 +31,35 @@ ideas = {
 			}
 		}
 
+		########### LARP BARB TREE ##########
+
+		GER_continuetheoffence = {
+			allowed = {
+				original_tag = GER
+				always = no
+			}
+			removal_cost = -1
+			picture = JAP_advanced_weapons_programs
+			modifier = {
+				planning_speed = 0.25
+				winter_attrition_factor = 0.2
+
+			}
+		}
+
+		GER_stop_the_offensive = {
+			allowed = {
+				original_tag = GER
+				always = no
+			}
+			removal_cost = -1
+			picture = SOV_the_road_of_life
+			modifier = {
+				command_power_gain = 0.2
+			}
+		}
+
+
 		################ MSB ################
 
 
@@ -1161,11 +1190,8 @@ ideas = {
 
 			targeted_modifier = {
 				tag = SOV
-				attack_bonus_against = 0.10
+				breakthrough_bonus_against = 0.15
 				defense_bonus_against = 0.05
-			}
-			modifier = {
-				supply_node_range = 0.1
 			}
 		}
 
@@ -2077,12 +2103,9 @@ ideas = {
 				}
 				if = {
 					limit = {
-						has_opinion_modifier = GER_trading_partners
+						always = no
 					}
-					remove_opinion_modifier = {
-						target = GER
-						modifier = GER_trading_partners
-					}
+					
 				}
 			}
 
@@ -2113,12 +2136,9 @@ ideas = {
 			on_remove = {
 				if = {
 					limit = {
-						has_opinion_modifier = GER_trading_partners
+						always = no
 					}
-					remove_opinion_modifier = {
-						target = GER
-						modifier = GER_trading_partners
-					}
+					
 				}
 			}
 
@@ -2148,12 +2168,9 @@ ideas = {
 			on_remove = {
 				if = {
 					limit = {
-						has_opinion_modifier = GER_trading_partners
+						always = no
 					}
-					remove_opinion_modifier = {
-						target = GER
-						modifier = GER_trading_partners
-					}
+					
 				}
 			}
 
@@ -5721,7 +5738,7 @@ ideas = {
 			visible = {
 				NOT = {
 					has_completed_focus = GER_employ_philipp_holzmann
-					has_completed_focus = GER_revitalize_the_nation
+					always = no
 				}
 			}
 			
@@ -5753,7 +5770,7 @@ ideas = {
 						has_completed_focus = GER_employ_philipp_holzmann
 						NOT = { has_completed_focus = GER_plenipotentiary_of_armaments }
 					}
-					has_completed_focus = GER_revitalize_the_nation
+					always = no
 				}
 			}
 			
@@ -5893,8 +5910,8 @@ ideas = {
 				NOT = { 
 					OR = {
 						has_completed_focus = GER_prioritize_the_four_year_plan 
-						has_completed_focus = GER_prepare_for_the_next_naval_blockade 
-						has_completed_focus = GER_effectivize_the_volkswerke 
+						always = no 
+						always = no 
 					}
 				}
 			}
@@ -5928,8 +5945,8 @@ ideas = {
 			visible = {	
 				OR = {
 					has_completed_focus = GER_prioritize_the_four_year_plan
-					has_completed_focus = GER_prepare_for_the_next_naval_blockade
-					has_completed_focus = GER_effectivize_the_volkswerke
+					always = no
+					always = no
 				}
 				NOT = {
 					has_completed_focus = GER_plenipotentiary_of_the_four_year_plan

@@ -1,0 +1,148 @@
+on_actions = {
+	on_naval_invasion = { # SPAIN & Portugal
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						state = 112
+						state = 165
+						state = 167
+						state = 168
+						state = 169
+						state = 171
+						state = 173
+						state = 177
+						state = 178
+						state = 179
+						state = 180
+						state = 290
+						state = 783
+						state = 790
+						state = 792
+
+					}
+				}
+				if = {
+					limit = {
+						SPR = {
+							has_completed_focus = SPA_unite_iberia
+						} 
+					}
+					teleport_armies = {
+						to_state = FROM 
+					}
+					PREV = { 
+						transfer_state_to = PREV
+					}
+				}
+			}
+		}
+	}
+	on_daily_SPR = {
+		effect = {
+			if = {
+				limit = {
+					SPR = {
+						has_completed_focus = SPA_unite_iberia
+					} 
+				}
+				every_owned_state = {
+					limit = { 
+						NOT = {
+							#state = 174
+							#state = 791
+							state = 171
+							state = 41
+						}
+					}
+					set_demilitarized_zone = yes
+					set_state_controller_to = SPR
+				}
+			}
+			if = {
+				limit = {
+					SPR = {
+						has_completed_focus = SPA_unite_iberia
+					}
+					SPR = { has_offensive_war = yes }
+				}
+				SPR = { add_ideas = SPR_offensive }
+			}
+			if = {
+				limit = {
+					SPR = {
+						has_completed_focus = SPA_unite_iberia
+					} 
+					GER = {
+						divisions_in_state = {
+							type = infantry
+							size > 0
+							state = 41
+						}
+					}
+				}
+				every_state = { 
+					limit = { is_core_of = SPR } 
+					teleport_armies = {
+						limit = {
+							OR = {
+								original_tag = GER
+								original_tag = ITA
+								original_tag = HUN
+								original_tag = ROM
+								original_tag = BUL
+								original_tag = SPR
+							}
+						} 
+						to_state = 64 
+					} 
+				}
+			}
+		}
+    }
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					SPR = {
+						has_completed_focus = SPA_unite_iberia
+					}
+				}
+				every_country = {
+					every_owned_state = {
+						limit = { 
+							OR = {
+								is_core_of = SPR
+								has_state_flag = spain_demilitarized_zone
+							}
+							NOT = {
+								OR = {
+									#state = 174
+									#state = 791
+									state = 171
+									state = 41
+								}
+							}	
+						}
+						set_state_flag = spain_demilitarized_zone
+						if = {
+							limit = {
+								OWNER = {
+									OR = {
+										tag = ROM
+										tag = HUN
+										tag = SPR
+										tag = BUL
+										# Add other tags here if needed
+									}
+								}
+							}
+							set_demilitarized_zone = yes
+						}
+					}
+				}
+			}
+		}
+    }
+}
+

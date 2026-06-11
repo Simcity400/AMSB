@@ -191,7 +191,8 @@ continuous_focus_palette = {
 		available_if_capitulated = yes
 
 		select_effect = {
-			activate_mission = SWI_building_up_military_readiness_mission
+			# activate_mission = SWI_building_up_military_readiness_mission
+			# mission removed: it lived in vanilla common/decisions/SWI.txt which is replace_path'd away
 			set_country_flag = SWI_building_up_mr_cont_focus_active
 		}
 		
@@ -319,7 +320,7 @@ continuous_focus_palette = {
 	focus = {
 		id = continuous_recruitment_drive	
 		icon = GFX_focus_ger_oppose_hitler
-		modifier = { mobilization_speed = 10	}
+		modifier = { mobilization_speed = 1.0	}
 		#available = { NOT = { AND ={  tag = EFR date < 1940.1.1 }}   }
 		daily_cost = 1	
 		available_if_capitulated = yes

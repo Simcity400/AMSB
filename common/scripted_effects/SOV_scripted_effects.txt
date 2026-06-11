@@ -2876,187 +2876,6 @@ SOV_foreign_politics_decision_cost_reduction_effect = { #Add more diplomacy vars
 	round_variable = SOV_sinkiang_proposal_cost
 }
 
-SOV_approach_sinkiang_diplomacy_effect = {
-	add_ai_strategy = {
-		type = befriend
-		id = SIK			
-		value = 15
-	}
-	add_ai_strategy = {
-		type = alliance
-		id = SIK		
-		value = 15
-	}
-	SIK = {
-		add_ai_strategy = {
-			type = befriend
-			id = SOV			
-			value = 10
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = CHI		
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = PRC		
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = XSM		
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = SHX		
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = YUN		
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = GXC		
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = MEN		
-			value = -5
-		}
-		add_ai_strategy = {
-			type = alliance
-			id = MAN		
-			value = -5
-		}
-	}
-}
-
-SOV_set_appropriate_national_academy_of_sciences_flag_effect = {
-	#log = "ROOT is [ROOT.GetName]"
-	#log = "FROM is [FROM.GetName]"
-	if = {
-		limit = {
-			FROM = { tag = BLR }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_BLR_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = UKR }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_UKR_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = KAZ }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_KAZ_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = GEO }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_GEO_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = ARM }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_ARM_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = AZR }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_AZR_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = UZB }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_UZB_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = TMS }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_TMS_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = KYR }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_KYR_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = TAJ }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_TAJ_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = TAN }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_TAN_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = DON }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_DON_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = KUB }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_KUB_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = EST }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_EST_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = LAT }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_LAT_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = LIT }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_LIT_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = POL }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_POL_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = FIN }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_FIN_flag }
-	}
-	else_if = {
-		limit = {
-			FROM = { tag = MON }
-		}
-		ROOT = { set_country_flag = SOV_national_academy_of_sciences_built_MON_flag }
-	}
-
-	# Add any new cosmetics/releasables here! (and also decisions for them) ((and also scripted triggers)) (((please just do not add any more cosmetics/releasables...)))
-}
-
 SOV_build_national_academy_of_sciences_effect = {
 	if = {
 		limit = {
@@ -3305,10 +3124,7 @@ SOV_apply_collective_ageement_on_mutual_assistance_effects_basic = {
 			active = yes
 		}
 		give_guarantee = ROOT
-		add_opinion_modifier = {
-			target = ROOT
-			modifier = SOV_policies_of_collective_security_opinion
-		}
+		
 	}
 
 	#SOV -> FRA
@@ -3318,10 +3134,7 @@ SOV_apply_collective_ageement_on_mutual_assistance_effects_basic = {
 		active = yes
 	}
 	give_guarantee = FROM
-	add_opinion_modifier = {
-		target = FROM
-		modifier = SOV_policies_of_collective_security_opinion
-	}
+	
 }
 
 
@@ -3335,10 +3148,7 @@ SOV_apply_collective_ageement_on_mutual_assistance_effects_poland_included = {
 		active = yes
 	}
 	give_guarantee = FROM
-	add_opinion_modifier = {
-		target = FROM
-		modifier = SOV_policies_of_collective_security_opinion
-	}
+	
 
 	#SOV -> POL
 	diplomatic_relation = {
@@ -3347,10 +3157,7 @@ SOV_apply_collective_ageement_on_mutual_assistance_effects_poland_included = {
 		active = yes
 	}
 	give_guarantee = POL
-	add_opinion_modifier = {
-		target = POL
-		modifier = SOV_policies_of_collective_security_opinion
-	}
+	
 
 	#FRA -> SOV
 	FROM = {
@@ -3360,10 +3167,7 @@ SOV_apply_collective_ageement_on_mutual_assistance_effects_poland_included = {
 			active = yes
 		}
 		give_guarantee = ROOT
-		add_opinion_modifier = {
-			target = ROOT
-			modifier = SOV_policies_of_collective_security_opinion
-		}
+		
 	}
 
 	#FRA -> POL
@@ -3374,10 +3178,7 @@ SOV_apply_collective_ageement_on_mutual_assistance_effects_poland_included = {
 			active = yes
 		}
 		give_guarantee = POL
-		add_opinion_modifier = {
-			target = POL
-			modifier = SOV_policies_of_collective_security_opinion
-		}
+		
 	}
 
 	#POL -> SOV
@@ -3388,10 +3189,7 @@ SOV_apply_collective_ageement_on_mutual_assistance_effects_poland_included = {
 			active = yes
 		}
 		give_guarantee = ROOT
-		add_opinion_modifier = {
-			target = ROOT
-			modifier = SOV_policies_of_collective_security_opinion
-		}
+		
 	}
 
 	#POL -> FRA
@@ -3402,10 +3200,7 @@ SOV_apply_collective_ageement_on_mutual_assistance_effects_poland_included = {
 			active = yes
 		}
 		give_guarantee = FROM
-		add_opinion_modifier = {
-			target = FROM
-			modifier = SOV_policies_of_collective_security_opinion
-		}
+		
 	}
 }
 
@@ -3712,10 +3507,10 @@ SOV_manage_spanish_generals_exiled_in_ussr_effect = {
 			SOV = {
 				has_country_flag = SOV_spanish_refugee_generals_welcome_flag
 				OR = {
-					has_completed_focus = SOV_the_left_opposition
+					always = no
 					AND = {
-						has_completed_focus = SOV_the_right_opposition
-						NOT = { has_completed_focus = SOV_covert_support_for_spanish_poum }
+						always = no
+						NOT = { always = no }
 					}
 				}
 			}
@@ -3752,7 +3547,7 @@ SOV_manage_spanish_generals_exiled_in_ussr_effect = {
 			ROOT = { tag = SPC }
 			SOV = {
 				has_country_flag = SOV_spanish_refugee_generals_welcome_flag
-				has_completed_focus = SOV_covert_support_for_spanish_poum
+				always = no
 			}
 		}
 		ROOT = { SPR_jose_rovira = { set_nationality = SOV } }
@@ -7165,7 +6960,7 @@ SOV_set_up_right_opposition_militia = {
 		# More Peasant Militia if collectivization has been reversed
 		IF = {
 			limit = {
-				ROOT = { has_completed_focus = SOV_reverse_the_collectivization_process }
+				ROOT = { always = no }
 				NOT = { has_state_category = enclave }
 				NOT = { has_state_category = wasteland }
 			}
@@ -7976,21 +7771,21 @@ SOV_start_civil_war = {
 		# Load the Focus Tree
 		load_focus_tree = { tree = soviet_focus keep_completed = yes }
 		if = {
-			limit = { has_completed_focus = SOV_the_left_opposition }
+			limit = { always = no }
 			uncomplete_national_focus = { # That was Trotzky's doing, not Stalin's
 				focus = SOV_the_left_opposition
 				uncomplete_children = yes
 			}
 		}
 		if = {
-			limit = { has_completed_focus = SOV_the_right_opposition }
+			limit = { always = no }
 			uncomplete_national_focus = { # Remove all traces of Bukharin's
 				focus = SOV_the_right_opposition
 				uncomplete_children = yes
 			}
 		}
 		if = {
-			limit = { has_completed_focus = SOV_beaten_but_not_defeated }
+			limit = { always = no }
 			uncomplete_national_focus = { # Remove all traces of exiles'
 				focus = SOV_beaten_but_not_defeated
 				uncomplete_children = yes
@@ -8290,7 +8085,7 @@ SOV_start_civil_war = {
 		# Add effects to SOS
 		IF = {
 			limit = {
-				GER = { has_completed_focus = GER_anti_soviet_pact }
+				GER = { always = no }
 			}
 			SOS = { add_opinion_modifier = { target = GER modifier = worse_pact_against_us } }
 		}
@@ -8344,7 +8139,7 @@ SOV_left_opposition_civil_war_start = {
 	# Modify Stability
 	IF = {
 		limit = {
-			has_completed_focus = SOV_gain_support_from_party_members
+			always = no
 		}
 		add_stability = 0.1
 	}
@@ -8368,7 +8163,7 @@ SOV_left_opposition_civil_war_start = {
 
 	# Check Foreign Funds
 	IF = {
-		limit = { has_completed_focus = SOV_funds_for_the_cause }
+		limit = { always = no }
 		add_timed_idea = {
 			idea = SOV_foreign_funds_idea
 			days = 365
@@ -8392,14 +8187,14 @@ SOV_right_opposition_civil_war_start = {
 	# Modify Stability
 	IF = {
 		limit = {
-			has_completed_focus = SOV_gain_support_from_party_members
+			always = no
 		}
 		add_stability = 0.1
 	}
 
 	# Reverse the collectivisation process
 	IF = {
-		limit = { has_completed_focus = SOV_reverse_the_collectivization_process }
+		limit = { always = no }
 		add_timed_idea = {
 			idea = SOV_support_from_farmers
 			days = 365
@@ -8566,7 +8361,7 @@ SOV_exiles_civil_war_start = {
 	# Cavalry
 	IF = {
 		limit = {
-			has_completed_focus = SOV_approach_semyonov
+			always = no
 		}
 		MAN = {
 			country_event = {
@@ -8746,50 +8541,24 @@ SOV_exiles_civil_war_start = {
 	# Vladimir Sidorin
 	IF = {
 		limit = {
-			DON = {
-				exists = no
-			}
+			
 		}
 
 		set_country_flag = DON_vladimir_sidorin_went_to_rejoin_the_russian_whites_flag
 
-		DON = {
-			DON_vladimir_sidorin = {
-				demote_leader = yes
-				remove_country_leader_role = {
-				    ideology = fascism_ideology
-				}
-				remove_country_leader_role = {
-				    ideology = despotism
-				}
-				set_nationality = SOV
-			}
-		}
+		
 
 	}
 
 	# Ivanis Vasily Nikolaevich
 	IF = {
 		limit = {
-			KUB = {
-				exists = no
-			}
+			
 		}
 
 		set_country_flag = KUB_ivanis_vasily_nikolaevich_went_to_rejoin_the_russian_whites_flag
 
-		KUB = {
-			KUB_ivanis_vasily_nikolaevich = {
-				demote_leader = yes
-				remove_country_leader_role = {
-				    ideology = fascism_ideology
-				}
-				remove_country_leader_role = {
-				    ideology = despotism
-				}
-				set_nationality = SOV
-			}
-		}
+		
 
 	}
 	

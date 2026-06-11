@@ -266,6 +266,94 @@ defined_text = {
 }
 
 defined_text = {
+    name = GetBalkanWarStatus
+    text = {
+        trigger = {
+            has_game_rule = {
+                rule = yug_gre_diff
+                option = easy
+            }
+        }
+        localization_key = "check_china_gamerules_on"
+    }
+    text = {
+        trigger = {
+            has_game_rule = {
+                rule = yug_gre_diff
+                option = normal
+            }
+        }
+        localization_key = "check_china_gamerules_off"
+    }
+}
+
+defined_text = {
+    name = GetVichyStatus
+    text = {
+        trigger = {
+            has_game_rule = {
+                rule = vichy_france
+                option = forced
+            }
+        }
+        localization_key = "check_vichy_gamerules_forced"
+    }
+    text = {
+        trigger = {
+            has_game_rule = {
+                rule = vichy_france
+                option = banned
+            }
+        }
+        localization_key = "check_vichy_gamerules_banned"
+    }
+}
+
+defined_text = {
+    name = GetkillablefinStatus
+    text = {
+        trigger = {
+            has_game_rule = {
+                rule = killable_fin
+                option = off
+            }
+        }
+        localization_key = "check_killable_fin_gamerules_off"
+    }
+    text = {
+        trigger = {
+            has_game_rule = {
+                rule = killable_fin
+                option = on
+            }
+        }
+        localization_key = "check_killable_fin_gamerules_on"
+    }
+}
+
+defined_text = {
+    name = GetaxisfuelStatus
+    text = {
+        trigger = {
+            has_game_rule = {
+                rule = axis_fuel
+                option = off
+            }
+        }
+        localization_key = "check_red_gamerules_off"
+    }
+    text = {
+        trigger = {
+            has_game_rule = {
+                rule = axis_fuel
+                option = on
+            }
+        }
+        localization_key = "check_green_gamerules_on"
+    }
+}
+
+defined_text = {
     name = GethospitalsStatus
     text = {
         trigger = {

@@ -154,51 +154,51 @@ ideas = {
 			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
 				small_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				cv_small_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				small_plane_cas_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				cv_small_plane_cas_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				small_plane_naval_bomber_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				cv_small_plane_naval_bomber_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				medium_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				medium_plane_fighter_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				medium_plane_scout_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				large_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				large_plane_maritime_patrol_plane_airframe = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 				transport_plane_equipment = {
 					instant = yes
-					build_cost_ic = -0.025
+					build_cost_ic = -0.05
 				}
 			}
 		}
@@ -220,51 +220,51 @@ ideas = {
 			equipment_bonus = { # WARNING!! Any changes here need to be applied in the Dynamic Modifier custom tooltip. Thanks for your attention.
 				small_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				cv_small_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				small_plane_cas_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				cv_small_plane_cas_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				small_plane_naval_bomber_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				cv_small_plane_naval_bomber_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				medium_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				medium_plane_fighter_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				medium_plane_scout_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				large_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				large_plane_maritime_patrol_plane_airframe = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 				transport_plane_equipment = {
 					instant = yes
-					build_cost_ic = 0.025
+					build_cost_ic = 0.05
 				}
 			}
 		}
@@ -748,6 +748,33 @@ ideas = {
 				compliance_growth = 0.2
 			}
 		}
+
+		umberto_idea = {
+
+			name = ITA_prince_umberto_king
+
+			picture = umberto_idea
+
+			allowed = {
+				original_tag = ITA
+			}
+
+			available = {
+				NOT = {
+					has_government = neutrality #remove if King in power
+				}
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = fascism }
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				party_popularity_stability_factor = 0.15 
+			}
+		}
                         
 
 		ITA_offensive_in_ethiopia = {
@@ -1165,7 +1192,7 @@ ideas = {
 			}
 
 			available = {
-				has_completed_focus = ITA_italian_irredentism
+				always = no
 			}
 					
 			modifier = {
@@ -1529,7 +1556,7 @@ ideas = {
 			}
 
 			modifier = {
-				air_superiority_bonus_in_combat = 0.05
+				army_bonus_air_superiority_factor = 0.05
 				air_cas_present_factor = 0.05
 				experience_gain_air_factor = 0.1
 			}
@@ -1554,7 +1581,7 @@ ideas = {
 			}
 
 			modifier = {
-				air_superiority_bonus_in_combat = 0.1
+				army_bonus_air_superiority_factor = 0.1
 				air_cas_present_factor = 0.1
 				experience_gain_air_factor = 0.15
 			}
@@ -1598,7 +1625,8 @@ ideas = {
 			}
 
 			modifier = {
-				local_intel_to_enemies = -0.1
+				civilian_intel_to_others = -0.1
+				army_intel_to_others = -0.1
 			}
 		}
 
@@ -1620,7 +1648,8 @@ ideas = {
 			}
 
 			modifier = {
-				local_intel_to_enemies = -0.15
+				civilian_intel_to_others = -0.15
+				army_intel_to_others = -0.15
 			}
 		}
 
@@ -2017,7 +2046,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_new_forms_of_weaponry
+				always = no
 			}
 
 			modifier = {
@@ -2040,7 +2069,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_monarchia_d_italia
+				always = no
 			}
 
 			modifier = {
@@ -2063,7 +2092,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_monarchia_d_italia
+				always = no
 			}
 
 			modifier = {
@@ -2087,7 +2116,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_monarchia_d_italia
+				always = no
 			}
 
 			modifier = {
@@ -2112,7 +2141,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_monarchia_d_italia
+				always = no
 			}
 
 			modifier = {
@@ -2131,7 +2160,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_setting_course
+				always = no
 			}
 
 			modifier = {
@@ -2152,7 +2181,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_seek_papal_support
+				always = no
 			}
 
 			modifier = {
@@ -2174,7 +2203,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_agents_of_the_church
+				always = no
 			}
 
 			modifier = {
@@ -2198,7 +2227,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_agents_of_the_church
+				always = no
 			}
 
 			modifier = {
@@ -2222,7 +2251,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_strengthen_the_papacy
+				always = no
 			}
 
 			modifier = {
@@ -2247,7 +2276,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_strengthen_the_papacy
+				always = no
 			}
 
 			modifier = {
@@ -2271,7 +2300,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_the_papacy_reborn
+				always = no
 			}
 
 			modifier = {
@@ -2297,7 +2326,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_the_papacy_reborn
+				always = no
 			}
 
 			modifier = {
@@ -2323,7 +2352,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_deus_vult
+				always = no
 			}
 
 			modifier = {
@@ -2352,7 +2381,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_deus_vult
+				always = no
 			}
 
 			modifier = {
@@ -2379,7 +2408,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_the_catholic_dominion
+				always = no
 			}
 
 			modifier = {
@@ -2413,7 +2442,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_the_catholic_dominion
+				always = no
 			}
 
 			modifier = {
@@ -2519,7 +2548,6 @@ ideas = {
 				communism_drift = 0.01
 				resistance_damage_to_garrison_on_our_occupied_states = 0.1
 				operative_slot = 1
-				#TODO_Manu: Allows generation of female generals, aces and admirals
 			}
 		}
 
@@ -2541,7 +2569,6 @@ ideas = {
 				weekly_manpower = 400
 				communism_drift = 0.01
 				resistance_damage_to_garrison_on_our_occupied_states = 0.1
-				#TODO_Manu: Allows generation of female generals, aces and admirals
 			}
 		}
 
@@ -2622,12 +2649,12 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_guarantee_austrian_independence
+				always = no
 			}
 			
 			modifier = {
 				industrial_capacity_factory = 0.05
-				supply_factor = 0.1
+				supply_consumption_factor = -0.1
 			}
 			targeted_modifier = {
 				tag = GER 
@@ -2653,7 +2680,7 @@ ideas = {
 				industrial_capacity_dockyard = 0.15
 				production_speed_dockyard_factor = 0.2
 				navy_capital_ship_attack_factor = 0.1
-				# positioning = 0.1
+				positioning = 0.1
 				spotting_chance = 0.15
 			}
 		}
@@ -2669,7 +2696,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_il_vento_aureo
+				always = no
 			}
 			
 			modifier = {
@@ -2691,7 +2718,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_political_commissars
+				always = no
 			}
 			
 			modifier = {
@@ -2734,7 +2761,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_empower_the_carabinieri
+				always = no
 			}
 			
 			modifier = {
@@ -2758,7 +2785,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_defense_against_capitalism
+				always = no
 			}
 			
 			modifier = {
@@ -2780,7 +2807,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_the_fight_against_stalinism
+				always = no
 			}
 			
 			targeted_modifier = {
@@ -2802,7 +2829,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_the_italian_confederation
+				always = no
 			}
 
 			cancel = {
@@ -2828,7 +2855,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_planned_economy
+				always = no
 			}
 
 			cancel = {
@@ -2903,7 +2930,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_aid_for_the_spanish_republic
+				always = no
 			}
 
 			cancel = {
@@ -2960,7 +2987,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_bring_down_fascist_strongholds
+				always = no
 			}
 	
 			modifier = {
@@ -2979,7 +3006,7 @@ ideas = {
 			}
 	
 			allowed_civil_war = {
-				has_completed_focus = ITA_union_in_the_party
+				always = no
 			}
 
 			modifier = {
@@ -2998,7 +3025,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_common_ground
+				always = no
 			}
 	
 			modifier = {
@@ -3018,7 +3045,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_appease_the_military
+				always = no
 			}
 	
 			modifier = {
@@ -3069,7 +3096,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_divino_duce
+				always = no
 			}
 	
 			modifier = {
@@ -3091,7 +3118,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_blackshirt_loyalty
+				always = no
 			}
 	
 			modifier = {
@@ -3213,7 +3240,7 @@ ideas = {
 			allowed_civil_war = {
 				OR = {
 					has_completed_focus = ITA_reorganize_regio_esercito
-					has_completed_focus = ITA_reinforce_regia_aeronautica
+					always = no
 				}
 			}
 					
@@ -3237,7 +3264,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_completed_focus = ITA_proclaim_the_italian_empire
+				always = no
 			}
 			
 			modifier = {
@@ -4503,7 +4530,7 @@ ideas = {
 			}
 			
 			available = {
-				has_completed_focus = ITA_new_ricostruzione_industriale
+				always = no
 			}
 			
 			research_bonus = {
@@ -4522,6 +4549,91 @@ ideas = {
 			}
 			
 			traits = { motorized_equipment_manufacturer }
+		}
+
+		ITA_ansaldo_manufacturer = { #NORTH
+
+			name = "ITA_ansaldo_train_organization"
+
+			picture = AUS_ansaldo
+			
+			allowed = {
+				original_tag = ITA
+			}
+
+			visible = {
+				NOT = {
+					AND = {
+						has_completed_focus = ITA_new_industrialization_program
+						has_completed_focus = ITA_strengthen_northern_industry
+					}
+				}
+			}
+
+			research_bonus = {
+				train_tech = 0.15
+				support_tech = 0.07
+			}
+
+			equipment_bonus = {
+				train_equipment = {
+					build_cost_ic = -0.10
+					armor_value = 0.10
+					air_attack = 0.10
+					instant = yes
+				}
+			}
+
+			cost = 150
+
+			traits = { train_equipment_manufacturer }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		ITA_ansaldo_manufacturer_improved = { #NORTH
+
+			name = "ITA_ansaldo_train_organization"
+
+			picture = AUS_ansaldo
+			
+			allowed = {
+				original_tag = ITA
+			}
+
+			visible = {
+				has_completed_focus = ITA_new_industrialization_program
+				has_completed_focus = ITA_strengthen_northern_industry
+			}
+
+			research_bonus = {
+				train_tech = 0.15
+				support_tech = 0.07
+				armor = 0.05
+			}
+
+			equipment_bonus = {
+				train_equipment = {
+					build_cost_ic = -0.15
+					armor_value = 0.15
+					air_attack = 0.15
+					instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+
+			cost = 150
+
+			traits = { train_equipment_manufacturer }
+
+			ai_will_do = {
+				factor = 0
+			}
 		}
 	}
 

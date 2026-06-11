@@ -154,9 +154,9 @@ faction_goal_secure_north_africa = {
 	}
 	available = {
 		OR = {
-			FROM = { has_completed_focus = ITA_italian_irredentism }
+			FROM = { always = no }
 			any_allied_country = {
-				has_completed_focus = ITA_italian_irredentism
+				always = no
 			}
 		}
 	}
@@ -1338,6 +1338,14 @@ faction_goal_air_superiority = {
 		}
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			add_tech_bonus = {
+				name = air_superiority_tech_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}
+		}
 	}
 	ai_will_do = {
 		base = 0
@@ -5141,9 +5149,9 @@ faction_goal_control_bosporus = {
 		}
 		any_collection_element = {
 			collection = {
-				 input = game:scope
-				 operators = { faction_members controlled_states }
-				 name = FACTION_CONTROLLED_STATES
+				input = game:scope
+				operators = { faction_members controlled_states }
+				name = FACTION_CONTROLLED_STATES
 			}
 			distance_to = {
 				target = 797
@@ -5198,29 +5206,24 @@ faction_goal_control_bosporus = {
 				province = 11829
 				instant_build = yes
 			}
-			add_building_construction = {
-				type = coastal_bunker
-				level = 1
-				province = 1155
-				instant_build = yes
+		}
+		IF = {
+			limit = {
+				347 = { is_controlled_by_ROOT_or_ally = yes }
 			}
-			add_building_construction = {
-				type = bunker
-				level = 1
-				province = 1155
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = coastal_bunker
-				level = 1
-				province = 9947
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = bunker
-				level = 1
-				province = 9947
-				instant_build = yes
+			347 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 1
+					province = 11811
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 11811
+					instant_build = yes
+				}
 			}
 		}
 	}

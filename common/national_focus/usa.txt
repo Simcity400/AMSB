@@ -162,6 +162,7 @@ focus_tree = {
 		}
 		mutually_exclusive = { focus = USA_continue_the_new_deal }
 		available = {
+			date < 1936.4.1
 			has_government = democratic
 		}
 		
@@ -173,23 +174,33 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_USA_CONGRESS}
+		
 		completion_reward = {
-		add_timed_idea = { idea = USA_establishing_the_gold_standard days = 300 }
-		custom_effect_tooltip = available_political_advisor
-		show_ideas_tooltip = USA_william_regnery 
-		add_ideas = USA_rubber_in_asia
-			add_timed_idea = { idea = USA_staunch_isolationists days = 1200 }
-			add_timed_idea = {
-				idea = USA_civilian_industry
-				days = 1791
-			IF = {
+			add_timed_idea = { idea = USA_establishing_the_gold_standard days = 300 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			#custom_effect_tooltip = available_political_advisor
+			activate_advisor = USA_william_regnery
+			#show_ideas_tooltip = USA_william_regnery 
+			custom_effect_tooltip = generic_skip_one_line_tt
+			#add_ideas = USA_rubber_in_asia
+			
+			add_ideas = USA_staunch_isolationists
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = USA_civilian_industry
+
+			if = {
 				limit = {
 					has_idea = new_deal
 				}
 				remove_ideas = new_deal
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = "The New Deal idea will be removed if it is currently instated."
-					hidden_effect = {
+			hidden_effect = {
 				if = {
 					limit = {
 						has_game_rule = {
@@ -198,7 +209,6 @@ focus_tree = {
 						}
 					}
 					mark_focus_tree_layout_dirty = yes
-					}
 				}
 			}
 		}
@@ -210,6 +220,185 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_reestablish_the_gold_standard }
 		relative_position_id = USA_reestablish_the_gold_standard
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			congress_medium_support_trigger = yes
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS}
+		completion_reward = {
+			add_political_power = 200
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+		random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_timed_idea = { idea = USA_adjusted_compensation_payment days = 70 }
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			USA_great_depression_level_down = yes
+			if = {
+				limit = {
+					not = { congress_medium_support_trigger = yes }
+				}
+				USA_congress_small_opposition = yes
+			}
+		}
+	}
+	
+		focus = {
+		id = USA_established_the_gold_standard
+		icon = GFX_focus_USA_the_goodwill_offensive
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_adjusted_compensation_act }
+		relative_position_id = USA_adjusted_compensation_act
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			#congress_medium_support_trigger = yes
+				NOT = {
+				has_country_leader = { ruling_only = yes character = USA_franklin_delano_roosevelt }
+			}
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS}
+		completion_reward = {
+	random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = USA_gold_standard
+			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			if = {
+				limit = {
+					communism < 0.1 
+				}
+				USA_congress_small_opposition = yes
+			}
+			else = {
+				USA_congress_medium_opposition = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_protectionist_tariffs
+		icon = GFX_focus_USA_strict_non_intervention
+		x = 0
+		y = 2
+		prerequisite = { focus = USA_established_the_gold_standard }
+		relative_position_id = USA_adjusted_compensation_act
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			congress_medium_support_trigger = yes
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER}
+		completion_reward = {
+	random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = industrial_complex
+					level = 5
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = isolation
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = USA_tariffs
+				days = 720
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			USA_great_depression_level_down = yes
+		}
+	}
+	
+	focus = {
+		id = USA_income_tax_reform
+		icon = GFX_focus_USA_defense_plant_corp
+		x = 0
+		y = 3
+		prerequisite = { focus = USA_protectionist_tariffs }
+		relative_position_id = USA_adjusted_compensation_act
 		cost = 10
 
 		ai_will_do = {
@@ -245,173 +434,14 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_timed_idea = { idea = USA_adjusted_compensation_payment days = 70 }
-			USA_great_depression_level_down = yes
-			if = {
-				limit = {
-					not = { congress_medium_support_trigger = yes }
-				}
-				USA_congress_small_opposition = yes
-			}
-			add_political_power = 200
-		}
-	}
-	
-		focus = {
-		id = USA_established_the_gold_standard
-		icon = GFX_focus_USA_the_goodwill_offensive
-		x = 0
-		y = 1
-		prerequisite = { focus = USA_adjusted_compensation_act }
-		relative_position_id = USA_adjusted_compensation_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			#congress_medium_support_trigger = yes
-				NOT = {
-				has_country_leader = { ruling_only = yes character = USA_franklin_delano_roosevelt }
-			}
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS}
-		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 5
-				add_building_construction = {
-					type = industrial_complex
-					level = 5
-					instant_build = yes
-				}
-			}
-			add_ideas = USA_gold_standard
-			if = {
-				limit = {
-					communism < 0.1 
-				}
-				USA_congress_small_opposition = yes
-			}
-			else = {
-				USA_congress_medium_opposition = yes
-			}
-		}
-	}
-	
-	focus = {
-		id = USA_protectionist_tariffs
-		icon = GFX_focus_USA_strict_non_intervention
-		x = 0
-		y = 2
-		prerequisite = { focus = USA_established_the_gold_standard }
-		relative_position_id = USA_adjusted_compensation_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER}
-		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 5
-				add_building_construction = {
-					type = industrial_complex
-					level = 5
-					instant_build = yes
-				}
-			}
-			USA_great_depression_level_down = yes
-			add_ideas = isolation
-			add_timed_idea = {
-				idea = USA_tariffs
-				days = 720
-			}
-		}
-	}
-	
-	focus = {
-		id = USA_income_tax_reform
-		icon = GFX_focus_USA_defense_plant_corp
-		x = 0
-		y = 3
-		prerequisite = { focus = USA_protectionist_tariffs }
-		relative_position_id = USA_adjusted_compensation_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			congress_high_support_trigger = yes
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS}
-		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 5
-				add_building_construction = {
-					type = industrial_complex
-					level = 5
-					instant_build = yes
-				}
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = civilian_economy
+			custom_effect_tooltip = generic_skip_one_line_tt
 			USA_great_depression_level_down = yes
 			USA_congress_medium_opposition = yes
 			unlock_decision_tooltip = { decision = USA_give_tax_break show_effect_tooltip = yes }
+		
+
 		}
 	}
 	focus = {
@@ -460,9 +490,34 @@ focus_tree = {
 		#}
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			remove_ideas = USA_rubber_in_asia
-			add_ideas = USA_no_rubber_in_asia
+			#remove_ideas = USA_rubber_in_asia
+			#add_ideas = USA_no_rubber_in_asia
+			if = {
+				limit = {
+					has_idea = standard_oil_california
+				}
+				swap_ideas = {
+					remove_idea = standard_oil_california
+					add_idea = standard_oil_california_rubber
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = standard_oil_california
+						add_idea = standard_oil_california_rubber
+					}
+				}
+			}
 
+			modify_building_resources = {
+        	   building = synthetic_refinery
+        	   resource = rubber
+        	   amount = 1
+        	}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			add_tech_bonus = {
 				name = USA_rubber_reserve_company
 				bonus = 1.0
@@ -517,7 +572,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_POLITICAL}
+
 		completion_reward = {
+			add_stability = 0.10
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_core_state = {
 				limit = {
 					is_controlled_by = ROOT
@@ -534,10 +592,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_stability = 0.10
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = USA_banking_sector_deregulation
-			}	
-		}
+		}	
+	}
 		    
 	focus = {
 		id = USA_national_prosperity_program
@@ -556,7 +614,7 @@ focus_tree = {
 		available = {
 			OR = {
 				GER = { has_war = yes }
-				date > 1939.7.1
+				date > 1939.9.1
 			}
 		}
 		bypass = {
@@ -567,37 +625,21 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_STABILITY}
+
 		completion_reward = {
-			random_core_state = {
-				limit = {
-					is_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 5
-				add_building_construction = {
-					type = industrial_complex
-					level = 5
-					instant_build = yes
-				}
-			}
-			368 = {
-				add_extra_state_shared_building_slots = 10
-			}
-			390 = {
-				add_extra_state_shared_building_slots = 10
-			}
-			373 = {
-				add_extra_state_shared_building_slots = 10
-			}
+		
 			swap_ideas = {
 				remove_idea = USA_gold_standard
 				add_idea = USA_gold_standard_2
 			}
-			add_timed_idea = { idea = USA_privatization days = 365 }
+			add_timed_idea = { 
+				idea = USA_privatization 
+				days = 365 
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			remove_ideas = USA_staunch_isolationists
 		}
 	}
 
@@ -635,10 +677,7 @@ focus_tree = {
 		    		is_ai = yes
 		    		OR = {
 						has_country_flag = USA_AI_RANDOM_COMMUNIST
-						has_game_rule = {
-							rule = USA_ai_behavior
-							option = COMMUNIST
-						}
+						always = no
 					}
 		    	}
 		    	add_ideas = earl_browder
@@ -708,7 +747,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_wpa
-		icon = GFX_focus_generic_low_cost_housing
+		icon = GFX_USA_WPA
 		prerequisite = { focus = USA_continue_the_new_deal }
 		relative_position_id = USA_continue_the_new_deal
 		x = -3
@@ -769,13 +808,31 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 10
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 10
+					level = 4
 					instant_build = yes
 				}
 			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			USA_great_depression_level_down = yes
 			set_country_flag = { flag = USA_great_depression_cooldown value = 1 days = 230 }
 			USA_congress_small_opposition = yes
@@ -816,6 +873,7 @@ focus_tree = {
 		continue_if_invalid = yes
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS}
+		
 		completion_reward = {
 			random_core_state = {
 				limit = {
@@ -826,13 +884,31 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 10
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 10
+					level = 4
 					instant_build = yes
 				}
 			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			USA_great_depression_level_down = yes
 			set_country_flag = { flag = USA_great_depression_cooldown value = 1 days = 230 }
 			custom_effect_tooltip = USA_great_depression_cooldown_tt
@@ -884,13 +960,31 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 10
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 10
+					level = 4
 					instant_build = yes
 				}
 			}
+			random_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			USA_great_depression_level_down = yes
 			USA_congress_medium_opposition = yes
 			custom_effect_tooltip = federal_housing_tt
@@ -997,7 +1091,7 @@ focus_tree = {
 		icon = GFX_focus_ARG_immigration_wave
 		prerequisite = { focus = USA_office_of_scientific_research_and_development }
 		available = {
-			
+			has_war_with = JAP
 		}
 		x = 2
 		y = 2
@@ -1008,6 +1102,32 @@ focus_tree = {
 		#}
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
+			if = {
+				limit = {
+					has_idea = standard_oil_california
+				}
+				swap_ideas = {
+					remove_idea = standard_oil_california
+					add_idea = standard_oil_california_rubber
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = standard_oil_california
+						add_idea = standard_oil_california_rubber
+					}
+				}
+			}
+
+			modify_building_resources = {
+        	   building = synthetic_refinery
+        	   resource = rubber
+        	   amount = 1
+        	}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_tech_bonus = {
 				name = USA_rubber_reserve_company
 				bonus = 1.0
@@ -1102,8 +1222,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		prerequisite = { focus = USA_continue_the_new_deal  focus = USA_reestablish_the_gold_standard }
-		mutually_exclusive = { focus = USA_limited_intervention }
-		relative_position_id = USA_continue_the_new_deal
+				relative_position_id = USA_continue_the_new_deal
 
 		cost = 10
 
@@ -1120,7 +1239,7 @@ focus_tree = {
 					}
 				}
 				NOT = {
-					has_completed_focus = USA_limited_intervention
+					always = no
 				}
 			}
 		}
@@ -1203,16 +1322,16 @@ focus_tree = {
 
 		}
 		available = {
-		has_tech = improved_radio
+			has_war = yes
 		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		completion_reward = {
-			add_war_support = 0.05
-				}
-	}
+			add_war_support = 0.10
+			}
+		}
 		    
 	focus = {
 		id = USA_lend_lease_act
@@ -1238,21 +1357,22 @@ focus_tree = {
 				}
 					has_war_support > 0.4
 			}
-			democratic > 0.95
-			custom_trigger_tooltip = {
-				tooltip = USA_lend_lease_act_neutrality_tt
-			}
-			if = {
-				limit = {
-					has_completed_focus = USA_neutrality_act
-				}
-				any_other_country = {
-					is_major = yes
-					has_government = ROOT
-					has_war = yes
-					surrender_progress > 0
-				}
-			}
+			# MSB: the conditions below were orphaned outside available by a stray brace and never applied; kept commented to preserve live behavior
+			#democratic > 0.95
+			#custom_trigger_tooltip = {
+			#	tooltip = USA_lend_lease_act_neutrality_tt
+			#}
+			#if = {
+			#	limit = {
+			#		has_completed_focus = USA_neutrality_act
+			#	}
+			#	any_other_country = {
+			#		is_major = yes
+			#		has_government = ROOT
+			#		has_war = yes
+			#		surrender_progress > 0
+			#	}
+			#}
 		
 		bypass = {
 
@@ -1263,24 +1383,24 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					has_completed_focus = USA_reestablish_the_gold_standard
 				}
-
 				add_timed_idea = { 
 					idea = USA_accumulated_wealth_tax_act days = 180
 				}
 
 				#add_stability = 0.05
-
+				custom_effect_tooltip = generic_skip_one_line_tt
 				ENG = { 
 					add_timed_idea = { 
-						idea = ENG_american_payment days = 180 
+						idea = ENG_american_payment days = 90
 					}
 				}
 			}
-
 			if = {
 				limit = {
 					has_completed_focus = USA_continue_the_new_deal
@@ -1291,17 +1411,17 @@ focus_tree = {
 				}
 
 				#add_war_support = 0.05
-
+				custom_effect_tooltip = generic_skip_one_line_tt
 				ENG = { 
 					add_timed_idea = {
 						idea = ENG_american_aid days = 180
 					}
 				}
 			}
-
 			else = {
 				add_ideas = USA_lend_lease_act_dummy #should never get here, just for tooltip purposes
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			if = {
 				limit = {
@@ -1512,6 +1632,18 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
+					OR = {
+						has_idea = isolation 
+						has_idea = undisturbed_isolation
+						has_country_flag = USA_the_giant_wakes_added_civ_eco
+					}
+				}
+				add_ideas = civilian_economy
+				set_country_flag = USA_the_giant_wakes_added_civ_eco
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
 					NOT = { has_idea = undisturbed_isolation }
 					NOT = { has_idea = isolation }
 					NOT = { has_country_flag = USA_the_giant_wakes_added_civ_eco }
@@ -1530,17 +1662,6 @@ focus_tree = {
 					instant_build = yes
 					}
 				}
-			}
-			if = {
-				limit = {
-					OR = {
-						has_idea = isolation 
-						has_idea = undisturbed_isolation
-						has_country_flag = USA_the_giant_wakes_added_civ_eco
-					}
-				}
-				add_ideas = civilian_economy
-				set_country_flag = USA_the_giant_wakes_added_civ_eco
 			}
 		}
 	}
@@ -1858,7 +1979,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_USACE_projects
-		icon = GFX_goal_generic_production
+		icon = GFX_USA_USACE
 		prerequisite = { focus = USA_military_construction }
 		available = {
 			OR = {
@@ -2202,8 +2323,8 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = { date > 1943.1.1
-
+		available = { 
+			date > 1943.1.1
 		}
 		
 		bypass = {
@@ -2211,7 +2332,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		add_ideas = USA_SHAEF
+			add_ideas = USA_SHAEF
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			if = {
 				limit = {
 					has_character = USA_dwight_d_eisenhower
@@ -2236,10 +2360,10 @@ focus_tree = {
 				USA_george_s_patton = {
 					add_trait = { trait = urban_assault_specialist }
 					add_trait = { trait = cavalry_leader }
-						}
-					}
 				}
 			}
+		}
+	}
 		
 	focus = {
 		id = USA_supreme_allied_commander_asia
@@ -2256,8 +2380,8 @@ focus_tree = {
 			factor = 1
 		}
 
-		available = { date > 1943.1.1
-
+		available = { 
+			date > 1943.1.1
 		}
 		
 		bypass = {
@@ -2265,7 +2389,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		add_ideas = USA_SCAP
+			add_ideas = USA_SCAP
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			if = {
 				limit = {
 					has_character = USA_mark_clark
@@ -2291,10 +2418,10 @@ focus_tree = {
 					add_trait = { trait = infantry_leader }
 					add_trait = { trait = organizer }
 					gain_xp = 4501
-						}
-					}
 				}
 			}
+		}
+	}
 	focus = {
 		id = USA_intervention_in_europe
 		icon = GFX_focus_usa_focus_on_europe
@@ -2337,8 +2464,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_war_plan_gold }
-		mutually_exclusive = { }
-		relative_position_id = USA_war_plan_gold
+				relative_position_id = USA_war_plan_gold
 		cost = 5
 
 		ai_will_do = {
@@ -2374,8 +2500,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		prerequisite = { focus = USA_intervention_in_europe }
-		mutually_exclusive = { }
-		relative_position_id = USA_intervention_in_europe
+				relative_position_id = USA_intervention_in_europe
 		cost = 5
 
 		ai_will_do = {
@@ -2419,8 +2544,7 @@ focus_tree = {
 			GER = {
 				add_opinion_modifier = { target = USA modifier = war_plan_black }
 			}
-			army_experience = 50
-			add_command_power = 50
+			#army_experience = 50
 			IF = {
 				limit = {
 					has_dlc = "La Resistance"
@@ -2549,6 +2673,8 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			add_command_power = 50
+			custom_effect_tooltip = generic_skip_one_line_tt
 				add_timed_idea = {
 						idea = USA_overlord
 						days = 90
@@ -3129,24 +3255,23 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = tank_destroyer_effort
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}	
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = USA_tank_destroyer_board_organization
+				mio:USA_tank_destroyer_board_organization = {
+					add_mio_size = 2
+				}
+			}
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = tank_destroyer_board
+			}
 		}
-	
-			### IF U WANT TO REVERT FOCUS 
-			#IF = {
-				#limit = {
-				#	has_dlc = "Arms Against Tyranny"
-				#}	
-				#custom_effect_tooltip = available_mio_tt
-				#show_mio_tooltip = USA_tank_destroyer_board_organization
-				#mio:USA_tank_destroyer_board_organization = {
-				#	add_mio_size = 2
-				#}
-			#}
-			#ELSE = {
-			#	custom_effect_tooltip = available_designer
-			#	show_ideas_tooltip = tank_destroyer_board
-			#	}
 	}
+	
 	focus = {
 		id = USA_main_battle_tanks
 		icon = GFX_focus_generic_combined_arms
@@ -3175,22 +3300,20 @@ focus_tree = {
 
 		completion_reward = {
 				add_ideas = main_tank_effort
-			
-			#### IF U ADD MIOS BACK PLS DONT  ####
-			#IF = {
-			#	limit = {
-			#		has_dlc = "Arms Against Tyranny"
-			#	}	
-			#	custom_effect_tooltip = available_mio_tt
-			##	show_mio_tooltip = USA_detroit_arsenal_organization
-			#	mio:USA_detroit_arsenal_organization = {
-			#		add_mio_size = 2
-			#	}
-			#}
-			#ELSE = {
-			#	custom_effect_tooltip = available_designer
-			#	show_ideas_tooltip = detroit_arsenal
-			#}
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}	
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = USA_detroit_arsenal_organization
+				mio:USA_detroit_arsenal_organization = {
+					add_mio_size = 2
+				}
+			}
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = detroit_arsenal
+			}
 		}
 	}
 		
@@ -3313,16 +3436,14 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 	
 		completion_reward = {
-				add_tech_bonus = {
-					name = USA_air_war_plans_division
-					bonus = 1
-					uses = 1
-					category = light_fighter
-					category = cat_heavy_fighter
-				} # REVISIT May use modifier?
-			custom_effect_tooltip = generic_skip_one_line_tt
+			air_experience = 25
+			add_doctrine_cost_reduction = {
+				name = USA_air_war_plans_division
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			} # REVISIT May use modifier?
 			add_ideas = air_war_plans_division_focus
-			air_experience = 200
 			#hidden_effect = {
 			#	add_ideas = air_war_plans_division_focus_hidden
 			#}
@@ -3478,7 +3599,7 @@ focus_tree = {
 				name = USA_combined_bomber_offensive
 				bonus = 1.0
 				uses = 1
-				category = cat_strategic_bomber
+				category = heavy_air
 			}
 			add_ideas = combined_bomber_offensive
 		}
@@ -3510,18 +3631,11 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			air_experience = 500
 			add_tech_bonus = {
 				name = USA_escort_fighters
 				bonus = 3.0
 				uses = 1
 				category = cat_heavy_fighter
-				}
-			add_tech_bonus = {
-				name = USA_escort_fighters
-				bonus = 2
-				uses = 1
-				category = light_fighter
 				}
 			}
 		}
@@ -3604,7 +3718,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -4225,8 +4339,11 @@ focus_tree = {
 		
 		completion_reward = {
 			add_ideas = USA_vic_plan
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = allied_vic_plan
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = USA_all_in
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_offsite_building = {
 				type = industrial_complex
 				level = 30
@@ -4235,7 +4352,7 @@ focus_tree = {
 				type = arms_factory
 				level = 30
 			}
-
+		custom_effect_tooltip = generic_skip_one_line_tt
 			ENG = {
 				add_ideas = allied_vic_plan
 				add_offsite_building = {

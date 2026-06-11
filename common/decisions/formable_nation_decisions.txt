@@ -1134,7 +1134,7 @@ form_austria_hungary_category = {
 			tag = HUN
 			OR = {
 				has_completed_focus = HUN_proclaim_the_restoration_of_austria_hungary
-				has_completed_focus = wuw_HUN_renovato_imperii
+				always = no
 			}
 			NOT = { has_global_flag = reintegrate_the_empire_flag }
 		}
@@ -2703,7 +2703,7 @@ form_european_union_category = {
 						character = ENG_oswald_mosley
 						ruling_only = yes
 					}
-					has_completed_focus = ENG_imperial_federation
+					always = no
 				}
 				AND = {
 					original_tag = HUN
@@ -2712,7 +2712,7 @@ form_european_union_category = {
 						ruling_only = yes
 					}
 					has_government = neutrality
-					has_completed_focus = wuw_HUN_renovato_imperii
+					always = no
 				}
 				AND = {
 					original_tag = AUS
@@ -2733,7 +2733,7 @@ form_european_union_category = {
 				}
 				AND = {
 					original_tag = GER
-					has_completed_focus = GER_european_confederation
+					always = no
 				}
 			}
 
@@ -5044,7 +5044,7 @@ form_roman_empire_category = { #rome
 			ITA = {
 				OR = {
 					has_completed_focus = ITA_mare_nostrum_bba
-					has_completed_focus = ITA_the_catholic_dominion
+					always = no
 				}
 			}
 		}
@@ -6604,7 +6604,7 @@ form_hre_category = {
 				OR = {
 					AND = {
 						original_tag = GER
-						has_completed_focus = GER_restore_the_holy_roman_empire
+						always = no
 					}
 					AND = {
 						original_tag = AUS
@@ -7130,7 +7130,7 @@ form_greater_german_state_category = {
 
 		visible = {
 			is_major = yes
-			has_completed_focus = GER_hegemony_over_europe
+			always = no
 			NOT = { has_global_flag = form_greater_proletarian_state_flag }
 		}
 
@@ -7438,7 +7438,7 @@ form_andalusia_category = {
 				original_tag = RIF
 			}
 			NOT = { has_global_flag = form_andalusia_flag }
-			ADU = { exists = no }
+			
 		}
 
 		complete_effect = {
@@ -8039,7 +8039,7 @@ form_polynesia_category = {
 				is_subject = no
 				has_autonomy_state = autonomy_dominion #New Zealand should be able to do it
 			}
-			has_completed_focus = NZL_maori_volunteers
+			always = no
 			hidden_trigger = {
 				NOT = { has_country_flag = is_demanding_flag }
 				any_country = {
@@ -8091,7 +8091,7 @@ form_polynesia_category = {
 		visible = {
 			original_tag = NZL
 			NOT = { has_global_flag = form_polynesia_flag }
-			has_completed_focus = NZL_maori_volunteers
+			always = no
 			hidden_trigger = {
 				NOT = { has_country_flag = is_demanding_flag }
 				any_country = {
@@ -9852,53 +9852,7 @@ form_transcaucasus_category = {
 				# Astrakhan
 				236 = { add_core_of = KAL }
 				
-				KAL = {
-					transfer_state = 237
-					transfer_state = 236
-					if = {
-						limit = {
-							ROOT = { controls_state = 217 } #Stalingrad
-						}
-						add_state_core = 217
-						transfer_state = 217
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 407 } #Uralsk
-						}
-						add_state_core = 407
-						transfer_state = 407
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 406 } #Guryev
-						}
-						add_state_core = 406
-						transfer_state = 406
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 401 } #Balakovo
-						}
-						add_state_core = 401
-						transfer_state = 401
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 829 } #Engels-Marxstadt
-						}
-						add_state_core = 829
-						transfer_state = 829
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 238 } #Volgodonsk
-						}
-						add_state_core = 238
-						transfer_state = 238
-					}
-					load_oob = "KAL_khanate_battalions"
-				}
+				
 				
 				puppet = KAL
 				
@@ -9906,13 +9860,7 @@ form_transcaucasus_category = {
 					limit = {
 						has_war_with = SOV
 					}
-					KAL = {
-						add_to_war = {
-							targeted_alliance = PREV 
-							enemy = SOV
-							hostility_reason = asked_to_join
-						}
-					}
+					
 				}
 				
 				
@@ -9971,60 +9919,7 @@ form_transcaucasus_category = {
 			
 				set_global_flag = crimean_khanate_restored_flag
 				
-				CRI = {
-					transfer_state = 137 # Crimea
-					transfer_state = 196 # Kherson
-					if = {
-						limit = {
-							ROOT = { controls_state = 200 } #Zaporozhe
-						}
-						add_state_core = 200
-						transfer_state = 200
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 227 } #Stalino
-						}
-						add_state_core = 227
-						transfer_state = 227
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 218 } #Rostov
-						}
-						add_state_core = 218
-						transfer_state = 218
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 228 } #Voroshilovgrad
-						}
-						add_state_core = 228
-						transfer_state = 228
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 234 } #Krasnodar
-						}
-						add_state_core = 234
-						transfer_state = 234
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 245 } #Millerovo
-						}
-						add_state_core = 245
-						transfer_state = 245
-					}
-					if = {
-						limit = {
-							ROOT = { controls_state = 226 } #Dnipropetrovsk
-						}
-						add_state_core = 226
-						transfer_state = 226
-					}
-					load_oob = "CRI_khanate_soldiers"
-				}
+				
 				
 				puppet = CRI
 				
@@ -10032,25 +9927,13 @@ form_transcaucasus_category = {
 					limit = {
 						has_war_with = SOV
 					}
-					CRI = {
-						add_to_war = {
-							targeted_alliance = ROOT 
-							enemy = SOV
-							hostility_reason = asked_to_join
-						}
-					}
+					
 				}
 				if = {
 					limit = {
 						has_war_with = UKR
 					}
-					CRI = {
-						add_to_war = {
-							targeted_alliance = ROOT 
-							enemy = UKR
-							hostility_reason = asked_to_join
-						}
-					}
+					
 				}
 				
 				
@@ -10108,19 +9991,7 @@ form_transcaucasus_category = {
 			
 				set_global_flag = anatolian_kurds_subjugated_flag
 				
-				KUR = {
-					transfer_state = 350 # Diyarbakir
-					transfer_state = 352 # Hakkari
-					transfer_state = 353 # Tunceli
-					if = {
-						limit = {
-							ROOT = { controls_state = 344 } #Malatya
-						}
-						add_state_core = 344
-						transfer_state = 344
-					}
-					load_oob = "KUR_liberation_troops"
-				}
+				
 				
 				puppet = KUR
 				
@@ -10128,13 +9999,7 @@ form_transcaucasus_category = {
 					limit = {
 						has_war_with = TUR
 					}
-					KUR = {
-						add_to_war = {
-							targeted_alliance = ROOT 
-							enemy = TUR
-							hostility_reason = asked_to_join
-						}
-					}
+					
 				}
 				
 				
@@ -12130,12 +11995,12 @@ form_sweden_hungary_category = {
 			
 			NOT = { has_global_flag = sweden_hungary_formed_flag }
 
-			has_completed_focus = wuw_HUN_elect_a_democratic_king
+			always = no
 			
 		}
 
 		available = {
-			has_completed_focus = wuw_HUN_elect_a_democratic_king # They have a Swedish King
+			always = no # They have a Swedish King
 			has_country_flag = HUN_carl_wilhelm_took_absolute_control
 			custom_trigger_tooltip = {
 				tooltip = sweden_hungary_required_states
@@ -13175,10 +13040,7 @@ germany_formable_category = {
 				original_tag = UBD # United Baltic Duchy
 				AND = {
 					original_tag = LUX # Luxembourg 
-					has_game_rule = {
-						rule = germany_fragmentation_status
-						option = GERMANY_FRAGMENTED
-					}
+					always = no
 				}
 				
 			}

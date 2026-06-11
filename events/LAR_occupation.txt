@@ -272,10 +272,7 @@ country_event = {
 							set_country_flag = ETH_supported_this_uprising_flag 
 								declare_war_on = { target = occupier_country type = independence_wargoal # swapping the direction of the DoW 
 							}
-							add_opinion_modifier = {
-								target = ETH
-								modifier = ETH_supported_independence # make new country like Ethiopia
-							}
+							
 							set_variable = { previous_overlord = var:occupier_country } # For use in decisions
 							set_rule = { can_join_factions = no } # To ensure they don't randomly join any faction. IF making generic; convert this to an idea that is removed once they have peace. 
 

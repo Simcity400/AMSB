@@ -1,4 +1,5 @@
 hmm_capitulations_on_actions = {
+	# Poland
 	if = {
 		limit = {
 			original_tag = POL
@@ -20,7 +21,7 @@ hmm_capitulations_on_actions = {
 		
 	}
 
-
+	# Netherlands
 	if = {
 		limit = {
 			original_tag = HOL
@@ -60,7 +61,19 @@ hmm_capitulations_on_actions = {
 		}
 	}
 
-
+	if = {
+		limit = {
+			original_tag = GRE
+			ITA = { has_war_with = GRE }
+		}
+		
+		ENG = {
+			annex_country = {
+				target = GRE
+				transfer_troops = no
+			}
+		}
+	}
 
 	# China
 	if = {
@@ -112,6 +125,23 @@ hmm_capitulations_on_actions = {
 				transfer_troops = no
 			}
 		}
+		if = { 
+			limit= { country_exists = ROM }  
+			ROM = {
+				transfer_state = 766
+				transfer_state = 78
+				transfer_state = 80
+			}
+		}
+		if = { 
+			limit= { country_exists = FIN }  
+			FIN = {
+				transfer_state = 213
+				transfer_state = 215
+				transfer_state = 216
+				transfer_state = 146
+			}
+		}
 	}
 	if = {
 		limit = { 
@@ -132,13 +162,7 @@ hmm_capitulations_on_actions = {
 		}
 		
 	}
-
-
-
 }
-
-
-		
 
 air_to_england = {
 	if = { limit = { tag = USA }

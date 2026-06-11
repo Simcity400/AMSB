@@ -30,12 +30,12 @@ containerWindowType = {
 		iconType = {
 			name ="host_icon"
 			spriteType = GFX_volunteers
-			position = { x = @GAMERULE_ICONS_X y = -25 }
+			position = { x = @GAMERULE_ICONS_X y = 0 }
 		}
 
 		instantTextBoxType = {
 			name ="host_text"
-			position = { x = @GAMERULE_NAMES_X y = -15 }
+			position = { x = @GAMERULE_NAMES_X y = 10 }
 			font = "hoi_18mbs"
 			text = "Host Tool"
 			format = left
@@ -44,7 +44,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="host_status"
-			position = { x = @STATUS_TEXT_X y = -15 }
+			position = { x = @STATUS_TEXT_X y = 10 }
 			font = "hoi_18mbs"
 			text = "host_status"
 			format = center
@@ -55,12 +55,12 @@ containerWindowType = {
 		iconType = {
 			name ="vp_system_icon"
 			spriteType = GFX_decision_infiltrate_state
-			position = { x = @GAMERULE_ICONS_X y = 15 }
+			position = { x = @GAMERULE_ICONS_X y = 40 }
 		}
 
 		instantTextBoxType = {
 			name ="vp_system_text"
-			position = { x = @GAMERULE_NAMES_X y = 25 }
+			position = { x = @GAMERULE_NAMES_X y = 50 }
 			font = "hoi_18mbs"
 			text = "Victory Points System"
 			format = left
@@ -69,7 +69,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="vp_system_status"
-			position = { x = @STATUS_TEXT_X y = 25 }
+			position = { x = @STATUS_TEXT_X y = 50 }
 			font = "hoi_18mbs"
 			text = "vp_system_status"
 			format = center
@@ -79,12 +79,12 @@ containerWindowType = {
     	iconType = {
 			name ="danzig_date_lock_icon"
 			spriteType = GFX_decision_border_war
-			position = { x = @GAMERULE_ICONS_X y = 55 }
+			position = { x = @GAMERULE_ICONS_X y = 80 }
 		}
 
 		instantTextBoxType = {
 			name ="danzig_date_lock_text"
-			position = { x = @GAMERULE_NAMES_X y = 65 }
+			position = { x = @GAMERULE_NAMES_X y = 90 }
 			font = "hoi_18mbs"
 			text = "Danzig or War"
 			format = left
@@ -93,7 +93,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="danzig_date_lock_status"
-			position = { x = @STATUS_TEXT_X y = 65 }
+			position = { x = @STATUS_TEXT_X y = 90 }
 			font = "hoi_18mbs"
 			text = "danzig_date_lock_status"
 			format = center
@@ -103,12 +103,12 @@ containerWindowType = {
     	iconType = {
 			name ="barb_date_lock_icon"
 			spriteType = GFX_decision_SOV_socialism_in_one_country
-			position = { x = @GAMERULE_ICONS_X y = 95 }
+			position = { x = @GAMERULE_ICONS_X y = 120 }
 		}
 
 		instantTextBoxType = {
 			name ="barb_date_lock_text"
-			position = { x = @GAMERULE_NAMES_X y = 105 }
+			position = { x = @GAMERULE_NAMES_X y = 130 }
 			font = "hoi_18mbs"
 			text = "War with the USSR"
 			format = left
@@ -117,7 +117,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="barb_date_lock_status"
-			position = { x = @STATUS_TEXT_X y = 105 }
+			position = { x = @STATUS_TEXT_X y = 130 }
 			font = "hoi_18mbs"
 			text = "barb_date_lock_status"
 			format = center
@@ -128,12 +128,12 @@ containerWindowType = {
     	iconType = {
 			name ="china_war_difficulty_icon"
 			spriteType = GFX_decision_jap_conquer_china
-			position = { x = @GAMERULE_ICONS_X y = 135 }
+			position = { x = @GAMERULE_ICONS_X y = 160 }
 		}
 
 		instantTextBoxType = {
 			name ="china_war_difficulty_text"
-			position = { x = @GAMERULE_NAMES_X y = 145 }
+			position = { x = @GAMERULE_NAMES_X y = 170 }
 			font = "hoi_18mbs"
 			text = "China War"
 			format = left
@@ -142,7 +142,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="china_war_difficulty_status"
-			position = { x = @STATUS_TEXT_X y = 145 }
+			position = { x = @STATUS_TEXT_X y = 170 }
 			font = "hoi_18mbs"
 			text = "china_war_difficulty_status"
 			format = center
@@ -153,12 +153,12 @@ containerWindowType = {
     	iconType = {
 			name ="scw_difficulty_icon"
 			spriteType = GFX_decision_spa_garrison_control_total
-			position = { x = @GAMERULE_ICONS_X y = 175 }
+			position = { x = @GAMERULE_ICONS_X y = 200 }
 		}
 
 		instantTextBoxType = {
 			name ="scw_difficulty_text"
-			position = { x = @GAMERULE_NAMES_X y = 185 }
+			position = { x = @GAMERULE_NAMES_X y = 210 }
 			font = "hoi_18mbs"
 			text = "Spanish Civil War"
 			format = left
@@ -167,9 +167,109 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="scw_difficulty_status"
-			position = { x = @STATUS_TEXT_X y = 185 }
+			position = { x = @STATUS_TEXT_X y = 210 }
 			font = "hoi_18mbs"
 			text = "scw_difficulty_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Balkan Wars ################
+    	iconType = {
+			name ="yug_gre_diff_icon"
+			spriteType = GFX_decision_generic_assassination
+			position = { x = @GAMERULE_ICONS_X y = 240 }
+		}
+
+		instantTextBoxType = {
+			name ="yug_gre_diff_text"
+			position = { x = @GAMERULE_NAMES_X y = 250 }
+			font = "hoi_18mbs"
+			text = "Balkan Wars"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="yug_gre_diff_status"
+			position = { x = @STATUS_TEXT_X y = 250 }
+			font = "hoi_18mbs"
+			text = "yug_gre_diff_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Vichy France ################
+    	iconType = {
+			name ="vichy_icon"
+			spriteType = GFX_decision_eng_trade_unions_support
+			position = { x = @GAMERULE_ICONS_X y = 280 }
+		}
+
+		instantTextBoxType = {
+			name ="vichy_text"
+			position = { x = @GAMERULE_NAMES_X y = 290 }
+			font = "hoi_18mbs"
+			text = "Vichy France"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="vichy_status"
+			position = { x = @STATUS_TEXT_X y = 290 }
+			font = "hoi_18mbs"
+			text = "vichy_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Finland Border ################
+    	iconType = {
+			name ="killable_fin_icon"
+			spriteType = GFX_decision_generic_coastal_fortification
+			position = { x = @GAMERULE_ICONS_X y = 320 }
+		}
+
+		instantTextBoxType = {
+			name ="killable_fin_text"
+			position = { x = @GAMERULE_NAMES_X y = 330 }
+			font = "hoi_18mbs"
+			text = "Finland Border"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "killable_fin_status"
+			position = { x = @STATUS_TEXT_X y = 330 }
+			font = "hoi_18mbs"
+			text = "killable_fin_status"
+			format = center
+			maxwidth = 110
+		}
+
+        ################ Axis Oil Distribution ################
+    	iconType = {
+			name ="axis_fuel_icon"
+			spriteType = GFX_decision_oil
+			position = { x = @GAMERULE_ICONS_X y = 360 }
+		}
+
+		instantTextBoxType = {
+			name ="axis_fuel_text"
+			position = { x = @GAMERULE_NAMES_X y = 370 }
+			font = "hoi_18mbs"
+			text = "Axis Oil Distribution"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "axis_fuel_status"
+			position = { x = @STATUS_TEXT_X y = 370 }
+			font = "hoi_18mbs"
+			text = "axis_fuel_status"
 			format = center
 			maxwidth = 110
 		}
@@ -178,12 +278,12 @@ containerWindowType = {
     	iconType = {
 			name ="hospitals_icon"
 			spriteType = GFX_decision_generic_cavalry
-			position = { x = @GAMERULE_ICONS_X y = 215 }
+			position = { x = @GAMERULE_ICONS_X y = 400 }
 		}
 
 		instantTextBoxType = {
 			name ="hospitals_text"
-			position = { x = @GAMERULE_NAMES_X y = 225 }
+			position = { x = @GAMERULE_NAMES_X y = 410 }
 			font = "hoi_18mbs"
 			text = "Allow Hospital 2"
 			format = left
@@ -192,7 +292,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="hospitals_status"
-			position = { x = @STATUS_TEXT_X y = 225 }
+			position = { x = @STATUS_TEXT_X y = 410 }
 			font = "hoi_18mbs"
 			text = "hospitals_status"
 			format = center
@@ -203,12 +303,12 @@ containerWindowType = {
     	iconType = {
 			name ="auto_tech_rush_icon"
 			spriteType = GFX_decision_generic_research
-			position = { x = @GAMERULE_ICONS_X y = 255 }
+			position = { x = @GAMERULE_ICONS_X y = 440 }
 		}
 
 		instantTextBoxType = {
 			name ="auto_tech_rush_text"
-			position = { x = @GAMERULE_NAMES_X y = 265 }
+			position = { x = @GAMERULE_NAMES_X y = 450 }
 			font = "hoi_18mbs"
 			text = "Auto Tech Rush"
 			format = left
@@ -217,7 +317,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="auto_tech_rush_status"
-			position = { x = @STATUS_TEXT_X y = 265 }
+			position = { x = @STATUS_TEXT_X y = 450 }
 			font = "hoi_18mbs"
 			text = "auto_tech_rush_status"
 			format = center
@@ -228,12 +328,12 @@ containerWindowType = {
     	iconType = {
 			name ="tradebacks_icon"
 			spriteType = GFX_decision_generic_forestry
-			position = { x = @GAMERULE_ICONS_X y = 295 }
+			position = { x = @GAMERULE_ICONS_X y = 480 }
 		}
 
 		instantTextBoxType = {
 			name ="tradebacks_text"
-			position = { x = @GAMERULE_NAMES_X y = 305 }
+			position = { x = @GAMERULE_NAMES_X y = 490 }
 			font = "hoi_18mbs"
 			text = "Tradeback Idea"
 			format = left
@@ -242,7 +342,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="tradebacks_status"
-			position = { x = @STATUS_TEXT_X y = 305 }
+			position = { x = @STATUS_TEXT_X y = 490 }
 			font = "hoi_18mbs"
 			text = "tradebacks_status"
 			format = center
@@ -253,12 +353,12 @@ containerWindowType = {
     	iconType = {
 			name ="Germany_Cancel_Mefo_icon"
 			spriteType = GFX_decision_ger_mefo_bills
-			position = { x = @GAMERULE_ICONS_X y = 335 }
+			position = { x = @GAMERULE_ICONS_X y = 520 }
 		}
 
 		instantTextBoxType = {
 			name ="Germany_Cancel_Mefo_text"
-			position = { x = @GAMERULE_NAMES_X y = 345 }
+			position = { x = @GAMERULE_NAMES_X y = 530 }
 			font = "hoi_18mbs"
 			text = "Germany MEFO Bills"
 			format = left
@@ -267,7 +367,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="Germany_Cancel_Mefo_status"
-			position = { x = @STATUS_TEXT_X y = 345 }
+			position = { x = @STATUS_TEXT_X y = 530 }
 			font = "hoi_18mbs"
 			text = "Germany_Cancel_Mefo_status"
 			format = center
@@ -278,12 +378,12 @@ containerWindowType = {
     	iconType = {
 			name ="ger_autarky_icon"
 			spriteType = GFX_decision_ger_reichskommissariats
-			position = { x = @GAMERULE_ICONS_X y = 375 }
+			position = { x = @GAMERULE_ICONS_X y = 560 }
 		}
 
 		instantTextBoxType = {
 			name ="ger_autarky_text"
-			position = { x = @GAMERULE_NAMES_X y = 385 }
+			position = { x = @GAMERULE_NAMES_X y = 570 }
 			font = "hoi_18mbs"
 			text = "Germany Autarky Achieved"
 			format = left
@@ -292,7 +392,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="ger_autarky_status"
-			position = { x = @STATUS_TEXT_X y = 385 }
+			position = { x = @STATUS_TEXT_X y = 570 }
 			font = "hoi_18mbs"
 			text = "ger_autarky_status"
 			format = center
@@ -303,12 +403,12 @@ containerWindowType = {
     	iconType = {
 			name ="sov_closed_eco_icon"
 			spriteType = GFX_decision_SOV_secure_the_administration
-			position = { x = @GAMERULE_ICONS_X y = 415 }
+			position = { x = @GAMERULE_ICONS_X y = 600 }
 		}
 
 		instantTextBoxType = {
 			name ="sov_closed_eco_text"
-			position = { x = @GAMERULE_NAMES_X y = 425 }
+			position = { x = @GAMERULE_NAMES_X y = 610 }
 			font = "hoi_18mbs"
 			text = "Soviet Closed Economy"
 			format = left
@@ -317,7 +417,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="sov_closed_eco_status"
-			position = { x = @STATUS_TEXT_X y = 425 }
+			position = { x = @STATUS_TEXT_X y = 610 }
 			font = "hoi_18mbs"
 			text = "sov_closed_eco_status"
 			format = center
@@ -328,12 +428,12 @@ containerWindowType = {
     	iconType = {
 			name ="japan_closed_eco_icon"
 			spriteType = GFX_decision_jap_pacific_guardian
-			position = { x = @GAMERULE_ICONS_X y = 455 }
+			position = { x = @GAMERULE_ICONS_X y = 640 }
 		}
 
 		instantTextBoxType = {
 			name ="japan_closed_eco_text"
-			position = { x = @GAMERULE_NAMES_X y = 465 }
+			position = { x = @GAMERULE_NAMES_X y = 650 }
 			font = "hoi_18mbs"
 			text = "Japan Closed Economy"
 			format = left
@@ -342,7 +442,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="japan_closed_eco_status"
-			position = { x = @STATUS_TEXT_X y = 465 }
+			position = { x = @STATUS_TEXT_X y = 650 }
 			font = "hoi_18mbs"
 			text = "japan_closed_eco_status"
 			format = center
@@ -353,12 +453,12 @@ containerWindowType = {
     	iconType = {
 			name ="ger_boost_icon"
 			spriteType = GFX_decision_generic_merge_plant_materiel
-			position = { x = @GAMERULE_ICONS_X y = 495 }
+			position = { x = @GAMERULE_ICONS_X y = 680 }
 		}
 
 		instantTextBoxType = {
 			name ="ger_boost_text"
-			position = { x = @GAMERULE_NAMES_X y = 505 }
+			position = { x = @GAMERULE_NAMES_X y = 690 }
 			font = "hoi_18mbs"
 			text = "German Civ Boost"
 			format = left
@@ -367,7 +467,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="ger_boost_status"
-			position = { x = @STATUS_TEXT_X y = 505 }
+			position = { x = @STATUS_TEXT_X y = 690 }
 			font = "hoi_18mbs"
 			text = "ger_boost_status"
 			format = center
@@ -378,12 +478,12 @@ containerWindowType = {
     	iconType = {
 			name ="jap_boost_icon"
 			spriteType = GFX_decision_generic_merge_plant_materiel
-			position = { x = @GAMERULE_ICONS_X y = 535 }
+			position = { x = @GAMERULE_ICONS_X y = 720 }
 		}
 
 		instantTextBoxType = {
 			name ="jap_boost_text"
-			position = { x = @GAMERULE_NAMES_X y = 545 }
+			position = { x = @GAMERULE_NAMES_X y = 730 }
 			font = "hoi_18mbs"
 			text = "Japan Civ Boost"
 			format = left
@@ -392,7 +492,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="jap_boost_status"
-			position = { x = @STATUS_TEXT_X y = 545 }
+			position = { x = @STATUS_TEXT_X y = 730 }
 			font = "hoi_18mbs"
 			text = "jap_boost_status"
 			format = center
@@ -402,12 +502,12 @@ containerWindowType = {
     	iconType = {
 			name ="ita_boost_icon"
 			spriteType = GFX_decision_generic_merge_plant_materiel
-			position = { x = @GAMERULE_ICONS_X y = 575 }
+			position = { x = @GAMERULE_ICONS_X y = 760 }
 		}
 
 		instantTextBoxType = {
 			name ="ita_boost_text"
-			position = { x = @GAMERULE_NAMES_X y = 585 }
+			position = { x = @GAMERULE_NAMES_X y = 770 }
 			font = "hoi_18mbs"
 			text = "Italy Civ Boost"
 			format = left
@@ -416,7 +516,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="ita_boost_status"
-			position = { x = @STATUS_TEXT_X y = 585 }
+			position = { x = @STATUS_TEXT_X y = 770 }
 			font = "hoi_18mbs"
 			text = "ita_boost_status"
 			format = center
@@ -427,12 +527,12 @@ containerWindowType = {
     	iconType = {
 			name ="sov_boost_icon"
 			spriteType = GFX_decision_generic_merge_plant_materiel
-			position = { x = @GAMERULE_ICONS_X y = 615 }
+			position = { x = @GAMERULE_ICONS_X y = 800 }
 		}
 
 		instantTextBoxType = {
 			name ="sov_boost_text"
-			position = { x = @GAMERULE_NAMES_X y = 625 }
+			position = { x = @GAMERULE_NAMES_X y = 810 }
 			font = "hoi_18mbs"
 			text = "Soviets Civ Boost"
 			format = left
@@ -441,7 +541,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="sov_boost_status"
-			position = { x = @STATUS_TEXT_X y = 625 }
+			position = { x = @STATUS_TEXT_X y = 810 }
 			font = "hoi_18mbs"
 			text = "sov_boost_status"
 			format = center
@@ -452,12 +552,12 @@ containerWindowType = {
     	iconType = {
 			name ="eng_boost_icon"
 			spriteType = GFX_decision_generic_merge_plant_materiel
-			position = { x = @GAMERULE_ICONS_X y = 655 }
+			position = { x = @GAMERULE_ICONS_X y = 840 }
 		}
 
 		instantTextBoxType = {
 			name ="eng_boost_text"
-			position = { x = @GAMERULE_NAMES_X y = 665 }
+			position = { x = @GAMERULE_NAMES_X y = 850 }
 			font = "hoi_18mbs"
 			text = "Britain Civ Boost"
 			format = left
@@ -466,7 +566,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="eng_boost_status"
-			position = { x = @STATUS_TEXT_X y = 665 }
+			position = { x = @STATUS_TEXT_X y = 850 }
 			font = "hoi_18mbs"
 			text = "eng_boost_status"
 			format = center
@@ -477,12 +577,12 @@ containerWindowType = {
     	iconType = {
 			name ="fra_boost_icon"
 			spriteType = GFX_decision_generic_merge_plant_materiel
-			position = { x = @GAMERULE_ICONS_X y = 695 }
+			position = { x = @GAMERULE_ICONS_X y = 880 }
 		}
 
 		instantTextBoxType = {
 			name ="fra_boost_text"
-			position = { x = @GAMERULE_NAMES_X y = 705 }
+			position = { x = @GAMERULE_NAMES_X y = 890 }
 			font = "hoi_18mbs"
 			text = "France Civ Boost"
 			format = left
@@ -491,7 +591,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="fra_boost_status"
-			position = { x = @STATUS_TEXT_X y = 705 }
+			position = { x = @STATUS_TEXT_X y = 890 }
 			font = "hoi_18mbs"
 			text = "fra_boost_status"
 			format = center
@@ -502,12 +602,12 @@ containerWindowType = {
     	iconType = {
 			name ="usa_boost_icon"
 			spriteType = GFX_decision_generic_merge_plant_materiel
-			position = { x = @GAMERULE_ICONS_X y = 735 }
+			position = { x = @GAMERULE_ICONS_X y = 920 }
 		}
 
 		instantTextBoxType = {
 			name ="usa_boost_text"
-			position = { x = @GAMERULE_NAMES_X y = 745 }
+			position = { x = @GAMERULE_NAMES_X y = 930 }
 			font = "hoi_18mbs"
 			text = "USA Civ Boost"
 			format = left
@@ -516,7 +616,7 @@ containerWindowType = {
 
 		instantTextBoxType = {
 			name ="usa_boost_status"
-			position = { x = @STATUS_TEXT_X y = 745 }
+			position = { x = @STATUS_TEXT_X y = 930 }
 			font = "hoi_18mbs"
 			text = "usa_boost_status"
 			format = center

@@ -111,7 +111,7 @@ characters={
 				}
 			}
 			available = {
-				has_completed_focus = SPA_primo_de_rivera_prisoner_exchange
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPA_not_republican_spain_tt
 					NOT = { tag = SPD }
@@ -499,9 +499,9 @@ characters={
 				}
 			}
 			available = {
-				has_completed_focus = SPR_demand_ministerial_positions
+				always = no
 				NOT = {
-					has_completed_focus = SPR_crush_the_revolution
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -649,8 +649,8 @@ characters={
 		corps_commander={
 			traits={ trickster career_officer trait_SPA_nationalist_sympathies panzer_leader cavalry_leader infantry_leader commando skilled_staffer hill_fighter desert_fox }
 			skill = 6
-			attack_skill = 5
-			defense_skill = 6
+			attack_skill = 6
+			defense_skill = 7
 			planning_skill = 5
 			logistics_skill = 5
 			legacy_id=1109
@@ -706,8 +706,8 @@ characters={
 	
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate
-						has_completed_focus = SPA_no_compromise_on_carlist_ideals
+						always = no
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPA_not_republican_spain_tt
@@ -808,7 +808,7 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPA_no_compromise_on_carlist_ideals
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPA_not_republican_spain_tt
@@ -822,12 +822,12 @@ characters={
 			}
 
 			field_marshal ={
-				traits={ brilliant_strategist trait_reckless trait_SPA_nationalist_sympathies panzer_leader cavalry_leader infantry_leader organizer ranger trickster }
+				traits={ brilliant_strategist trait_reckless trait_SPA_nationalist_sympathies panzer_leader cavalry_leader infantry_leader organizer ranger urban_assault_specialist trickster }
 				skill = 6
-				attack_skill = 4
-				defense_skill = 6
+				attack_skill = 5
+				defense_skill = 7
 				planning_skill = 4
-				logistics_skill = 4
+				logistics_skill = 5
 				legacy_id=1112
 				visible = {
 					OR = {
@@ -942,7 +942,7 @@ characters={
 					}
 				}
 				available = {
-					NOT = { has_completed_focus = SPA_supremacy_of_the_communion }
+					NOT = { always = no }
 					custom_trigger_tooltip = {
 						tooltip = SPA_not_republican_spain_tt
 						NOT = { tag = SPD }
@@ -1034,10 +1034,10 @@ characters={
 				available = {
 					if = {
 						limit = {
-							NOT = { has_completed_focus = SPA_supremacy_of_the_communion }
+							NOT = { always = no }
 						}
 						NOT = {
-							has_completed_focus = SPA_eliminate_the_carlists
+							always = no
 						}
 					}
 					if = {
@@ -1165,7 +1165,7 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPA_not_republican_spain_tt
@@ -1429,10 +1429,10 @@ characters={
 			available = {
 				if = {
 					limit = {
-						NOT = { has_completed_focus = SPA_supremacy_of_the_communion }
+						NOT = { always = no }
 					}
 					NOT = {
-						has_completed_focus = SPA_eliminate_the_carlists
+						always = no
 					}
 				}
 				if = {
@@ -1449,7 +1449,7 @@ characters={
 				}
 			}
 			traits = {
-				army_chief_entrenchment_2
+				army_chief_organizational_2
 			}
 			cost = 100
 		}
@@ -1484,10 +1484,10 @@ characters={
 			available = {
 				if = {
 					limit = {
-						NOT = { has_completed_focus = SPA_supremacy_of_the_communion }
+						NOT = { always = no }
 					}
 					NOT = {
-						has_completed_focus = SPA_eliminate_the_carlists
+						always = no
 					}
 				}
 				if = {
@@ -1533,7 +1533,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPA_no_compromise_on_carlist_ideals
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPA_not_republican_spain_tt
@@ -1574,7 +1574,7 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPA_no_compromise_on_carlist_ideals
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPA_not_republican_spain_tt
@@ -1648,7 +1648,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPA_eliminate_the_carlists
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPA_not_republican_spain_tt
@@ -1720,7 +1720,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPA_not_republican_spain_tt
@@ -1798,7 +1798,7 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPA_eliminate_the_carlists
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPA_not_republican_spain_tt
@@ -1876,8 +1876,8 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate
-						has_completed_focus = SPR_communists_in_the_government
+						always = no
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPR_not_nationalist_spain_tt
@@ -2051,7 +2051,7 @@ characters={
 				}
 			}
 			available = {
-				NOT = { has_completed_focus = SPR_masters_of_our_own_fate }
+				NOT = { always = no }
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2084,8 +2084,8 @@ characters={
 				}
 			}
 			available = {
-				has_completed_focus = SPR_masters_of_our_own_fate
-				NOT = { has_completed_focus = SPR_regional_defense_council_of_aragon }
+				always = no
+				NOT = { always = no }
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2116,10 +2116,10 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_communal_military_strategies
+				always = no
 			}
 			traits = { council_of_theorists }
 		}
@@ -2148,8 +2148,8 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate
-					has_completed_focus = SPR_communists_in_the_government
+					always = no
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -2184,11 +2184,11 @@ characters={
 			}
 			available = {
 				OR = {
-					has_completed_focus = SPR_demand_ministerial_positions
-					has_completed_focus = SPR_communists_in_the_government
+					always = no
+					always = no
 				}
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -2293,9 +2293,9 @@ characters={
 				}
 			}
 			available = {
-				has_completed_focus = SPR_demand_ministerial_positions
+				always = no
 				NOT = {
-					has_completed_focus = SPR_crush_the_revolution
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -2327,11 +2327,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2362,11 +2362,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2397,11 +2397,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2510,7 +2510,7 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPR_not_nationalist_spain_tt
@@ -2589,7 +2589,7 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPR_not_nationalist_spain_tt
@@ -2664,8 +2664,8 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_crush_the_revolution
-					has_completed_focus = SPR_regional_defense_council_of_aragon
+					always = no
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -2697,11 +2697,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2732,11 +2732,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2774,7 +2774,7 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPR_not_nationalist_spain_tt
@@ -2848,8 +2848,8 @@ characters={
 				}
 			}
 			available = {
-				has_completed_focus = SPR_masters_of_our_own_fate
-				NOT = { has_completed_focus = SPR_regional_defense_council_of_aragon }
+				always = no
+				NOT = { always = no }
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2880,11 +2880,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2915,11 +2915,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -2953,8 +2953,8 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate
-					has_completed_focus = SPR_communists_in_the_government
+					always = no
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -2989,11 +2989,11 @@ characters={
 			}
 			available = {
 				OR = {
-					has_completed_focus = SPR_demand_ministerial_positions
-					has_completed_focus = SPR_communists_in_the_government
+					always = no
+					always = no
 				}
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate
+					always = no
 					has_completed_focus = SPR_oppose_the_communists
 				}
 				custom_trigger_tooltip = {
@@ -3029,7 +3029,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate
+					always = no
 					has_completed_focus = SPR_oppose_the_communists
 				}
 				custom_trigger_tooltip = {
@@ -3069,8 +3069,8 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate
-						has_completed_focus = SPR_communists_in_the_government
+						always = no
+						always = no
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPR_not_nationalist_spain_tt
@@ -3146,8 +3146,8 @@ characters={
 				}
 			}
 			available = {
-				has_completed_focus = SPR_masters_of_our_own_fate
-				NOT = { has_completed_focus = SPR_regional_defense_council_of_aragon }
+				always = no
+				NOT = { always = no }
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3181,8 +3181,8 @@ characters={
 				}
 			}
 			available = {
-				has_completed_focus = SPR_masters_of_our_own_fate
-				NOT = { has_completed_focus = SPR_regional_defense_council_of_aragon }
+				always = no
+				NOT = { always = no }
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3216,8 +3216,8 @@ characters={
 			}
 			available = {
 				OR = {
-					has_completed_focus = SPR_the_stalinist_doctrine
-					has_completed_focus = SPR_communists_in_the_government
+					always = no
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -3252,7 +3252,7 @@ characters={
 			}
 			available = {
 				has_completed_focus = SPR_maintain_the_second_republic
-				NOT = { has_completed_focus = SPR_communists_in_the_government }
+				NOT = { always = no }
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3283,11 +3283,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3318,11 +3318,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3353,11 +3353,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3388,11 +3388,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3423,11 +3423,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3458,11 +3458,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3493,11 +3493,11 @@ characters={
 					tag = SPA
 					tag = SPB
 				}
-				has_completed_focus = SPR_regional_defense_council_of_aragon
+				always = no
 			}
 			available = {
-				has_completed_focus = SPR_regional_defense_council_of_aragon
-				has_completed_focus = SPR_masters_of_our_own_fate
+				always = no
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
 					NOT = { tag = SPA }
@@ -3539,8 +3539,8 @@ characters={
 					OR = {
 						AND = {
 							NOT = {
-								has_completed_focus = SPR_masters_of_our_own_fate 
-								has_completed_focus = SPR_communists_in_the_government 
+								always = no 
+								always = no 
 							}
 							custom_trigger_tooltip = {
 								tooltip = SPR_not_nationalist_spain_tt
@@ -3563,7 +3563,7 @@ characters={
 						factor = 0.000
 						OR = {
 							has_completed_focus = SPA_a_great_spain 
-							has_completed_focus = SPR_hinder_nkvd_interference 
+							always = no 
 						}
 					}
 				}
@@ -3625,8 +3625,8 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate 
-						has_completed_focus = SPR_communists_in_the_government 
+						always = no 
+						always = no 
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPR_not_nationalist_spain_tt
@@ -3645,7 +3645,7 @@ characters={
 						factor = 0.000
 						OR = {
 							has_completed_focus = SPA_a_great_spain 
-							has_completed_focus = SPR_hinder_nkvd_interference 
+							always = no 
 						}
 					}
 				}
@@ -3716,11 +3716,11 @@ characters={
 					OR = {
 						AND = {
 							OR = {
-								has_completed_focus = SPR_demand_ministerial_positions 
-								has_completed_focus = SPR_communists_in_the_government 
+								always = no 
+								always = no 
 							}
 							NOT = {
-								has_completed_focus = SPR_masters_of_our_own_fate 
+								always = no 
 							}
 							custom_trigger_tooltip = {
 								tooltip = SPR_not_nationalist_spain_tt
@@ -3740,7 +3740,7 @@ characters={
 					base = 1.000
 					modifier = {
 						factor = 0.000
-						has_completed_focus = SPR_the_stalinist_doctrine 
+						always = no 
 					}
 				}
 			}
@@ -3808,8 +3808,8 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate 
-					has_completed_focus = SPR_communists_in_the_government 
+					always = no 
+					always = no 
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -3827,8 +3827,8 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_regional_defense_council_of_aragon 
-						has_completed_focus = SPR_the_anti_fascist_workers_revolution 
+						always = no 
+						always = no 
 					}
 				}
 				modifier = {
@@ -3861,7 +3861,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_crush_the_revolution 
+					always = no 
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -3879,7 +3879,7 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_the_stalinist_doctrine 
+						always = no 
 						has_completed_focus = SPR_maintain_the_second_republic 
 					}
 				}
@@ -3909,7 +3909,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_crush_the_revolution 
+					always = no 
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -3927,7 +3927,7 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_the_stalinist_doctrine 
+						always = no 
 						has_completed_focus = SPR_maintain_the_second_republic 
 					}
 				}
@@ -3961,8 +3961,8 @@ characters={
 				}
 				available = {
 					NOT = {
-						has_completed_focus = SPR_masters_of_our_own_fate 
-						has_completed_focus = SPR_communists_in_the_government 
+						always = no 
+						always = no 
 					}
 					custom_trigger_tooltip = {
 						tooltip = SPR_not_nationalist_spain_tt
@@ -3981,7 +3981,7 @@ characters={
 						factor = 0.000
 						OR = {
 							has_completed_focus = SPA_a_great_spain 
-							has_completed_focus = SPR_hinder_nkvd_interference 
+							always = no 
 						}
 					}
 				}
@@ -4045,7 +4045,7 @@ characters={
 				OR = {
 					AND = {
 						NOT = {
-							has_completed_focus = SPR_crush_the_revolution 
+							always = no 
 						}
 						custom_trigger_tooltip = {
 							tooltip = SPR_not_nationalist_spain_tt
@@ -4066,7 +4066,7 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_the_stalinist_doctrine 
+						always = no 
 						has_completed_focus = SPR_maintain_the_second_republic 
 					}
 				}
@@ -4100,9 +4100,9 @@ characters={
 			available = {
 				OR = {
 					AND = {
-						has_completed_focus = SPR_masters_of_our_own_fate 
+						always = no 
 						NOT = {
-							has_completed_focus = SPR_regional_defense_council_of_aragon 
+							always = no 
 						}
 						custom_trigger_tooltip = {
 							tooltip = SPR_not_nationalist_spain_tt
@@ -4123,7 +4123,7 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_the_stalinist_doctrine 
+						always = no 
 						has_completed_focus = SPR_maintain_the_second_republic 
 					}
 				}
@@ -4153,9 +4153,9 @@ characters={
 				}
 			}
 			available = {
-				has_completed_focus = SPR_masters_of_our_own_fate 
+				always = no 
 				NOT = {
-					has_completed_focus = SPR_regional_defense_council_of_aragon 
+					always = no 
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -4173,7 +4173,7 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_the_stalinist_doctrine 
+						always = no 
 						has_completed_focus = SPR_maintain_the_second_republic 
 					}
 				}
@@ -4203,11 +4203,11 @@ characters={
 			}
 			available = {
 				OR = {
-					has_completed_focus = SPR_demand_ministerial_positions 
+					always = no 
 					has_completed_focus = SPR_new_leadership 
 				}
 				NOT = {
-					has_completed_focus = SPR_crush_the_revolution 
+					always = no 
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -4225,7 +4225,7 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_the_anti_fascist_workers_revolution 
+						always = no 
 					}
 				}
 			}
@@ -4254,8 +4254,8 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate 
-					has_completed_focus = SPR_hinder_nkvd_interference 
+					always = no 
+					always = no 
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -4273,14 +4273,14 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_hinder_nkvd_interference 
+						always = no 
 						has_completed_focus = SPR_oppose_the_communists 
 					}
 				}
 				modifier = {
 					factor = 5.000
 					OR = {
-						has_completed_focus = SPR_the_stalinist_doctrine 
+						always = no 
 					}
 				}
 			}
@@ -4309,8 +4309,8 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPR_masters_of_our_own_fate 
-					has_completed_focus = SPR_communists_in_the_government 
+					always = no 
+					always = no 
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPR_not_nationalist_spain_tt
@@ -4328,8 +4328,8 @@ characters={
 					factor = 0.000
 					OR = {
 						has_completed_focus = SPA_a_great_spain 
-						has_completed_focus = SPR_regional_defense_council_of_aragon 
-						has_completed_focus = SPR_the_anti_fascist_workers_revolution 
+						always = no 
+						always = no 
 					}
 				}
 			}
@@ -4426,7 +4426,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPA_no_compromise_on_carlist_ideals
+					always = no
 				}
 				custom_trigger_tooltip = {
 					tooltip = SPA_not_republican_spain_tt
@@ -4467,7 +4467,7 @@ characters={
 
 			available = {
 				NOT = {
-					has_completed_focus = SPA_no_compromise_on_carlist_ideals
+					always = no
 				}
 				NOT = {
 					has_completed_focus = SPA_banish_the_party_leaders
@@ -4506,7 +4506,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPA_no_compromise_on_carlist_ideals
+					always = no
 				}
 				NOT = { has_idea = SPA_ramon_serrano_suner }
 				has_completed_focus = SPA_banish_the_party_leaders
@@ -4548,10 +4548,10 @@ characters={
 			available = {
 				if = {
 					limit = {
-						NOT = { has_completed_focus = SPA_supremacy_of_the_communion }
+						NOT = { always = no }
 					}
 					NOT = {
-						has_completed_focus = SPA_eliminate_the_carlists
+						always = no
 					}
 				}
 				if = {
@@ -4596,10 +4596,10 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPA_the_phalanx_ascendant
-					has_completed_focus = SPA_supremacy_of_the_communion
-					has_completed_focus = SPR_regional_defense_council_of_aragon
-					has_completed_focus = SPR_the_anti_fascist_workers_revolution
+					always = no
+					always = no
+					always = no
+					always = no
 				}
 			}
 			traits = {
@@ -4631,7 +4631,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = SPA_no_compromise_on_carlist_ideals
+					always = no
 				}
 				NOT = { has_idea = SPA_raimundo_fernandez_cuesta }
 				custom_trigger_tooltip = {
@@ -4669,7 +4669,7 @@ characters={
 			}
 
 			available = {
-				has_completed_focus = SPA_supremacy_of_the_communion
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPA_not_republican_spain_tt
 					NOT = { tag = SPD }
@@ -4709,7 +4709,7 @@ characters={
 
 			available = {
 				OR = {
-					has_completed_focus = SPA_supremacy_of_the_communion
+					always = no
 					original_tag = CHL
 				}
 				custom_trigger_tooltip = {
@@ -4747,7 +4747,7 @@ characters={
 			}
 
 			available = {
-				has_completed_focus = SPA_supremacy_of_the_communion
+				always = no
 				custom_trigger_tooltip = {
 					tooltip = SPA_not_republican_spain_tt
 					NOT = { tag = SPD }

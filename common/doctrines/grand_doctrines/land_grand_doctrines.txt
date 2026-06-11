@@ -28,6 +28,7 @@ new_mobile_warfare = {
     }
 
     # EFFECTS
+	additional_brigade_column_size = 1
 	planning_speed = 0.20
 	army_speed_factor = 0.10
 	enable_tactic = tactic_unexpected_thrust
@@ -75,7 +76,6 @@ new_mobile_warfare = {
         }
         {
             #Armor
-	        additional_brigade_column_size = 1
             enable_tactic = tactic_blitz
 
             effect = {
@@ -150,6 +150,8 @@ superior_firepower = {
     category_support_artillery = {
         soft_attack = 0.05
     }
+	additional_brigade_column_size = 1
+
 
 
     milestones = {
@@ -174,7 +176,6 @@ superior_firepower = {
         }
         {
             #Artillery/Support
-            additional_brigade_column_size = 1
             category_support_battalions = {
                 max_organisation = 10
             }
@@ -200,7 +201,7 @@ superior_firepower = {
             #Armor
             enable_tactic = tactic_delay
             category_army = {
-                default_morale = 0.2
+                default_morale = 0.1
             }
 
             effect = {
@@ -219,8 +220,9 @@ superior_firepower = {
         }
         {
             #Operations
+            enable_tactic = tactic_tactical_withdrawal
             category_army = {
-                default_morale = 0.4
+                default_morale = 0.2
             }
             planning_decay_rate_factor = -0.1
 
@@ -271,11 +273,11 @@ grand_battleplan = {
     
     max_planning = 0.1
     command_power_gain = 0.25
+	additional_brigade_column_size = 1
 
     milestones = {
         {
             #Infantry 
-            additional_brigade_column_size = 1
             enable_tactic = tactic_elastic_defense
             max_dig_in_factor = 0.05
 
@@ -380,6 +382,7 @@ mass_assault = {
     # EFFECTS
     no_supply_grace = 48
     out_of_supply_factor = -0.10
+	additional_brigade_column_size = 1
     enable_tactic = tactic_relentless_assault
     
 
@@ -387,7 +390,6 @@ mass_assault = {
         {
             #Infantry
             enable_tactic = tactic_human_wave_tactics
-            additional_brigade_column_size = 1
 
             effect = {
                 if = {

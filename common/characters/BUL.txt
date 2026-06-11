@@ -275,26 +275,6 @@ characters = {
 			logistics_skill = 3
 			legacy_id = 1205
 		}
-		advisor = {
-			slot = army_chief
-			idea_token = BUL_ivan_markov
-			allowed = {
-				has_dlc = "Battle for the Bosporus"
-				original_tag = BUL
-			}
-			available = {
-				NOT = {
-					has_government = communism
-				}
-			}
-			traits = {
-				army_chief_morale_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
 	}
 
 	BUL_georgi_markov = {
@@ -305,13 +285,13 @@ characters = {
 				small = GFX_portrait_BUL_georgi_markov_small
 			}
 		}
-		field_marshal = {
-			traits = { old_guard infantry_leader organizer panzer_leader cavalry_leader ranger trickster brilliant_strategist }
-			skill = 6
+		corps_commander = {
+			traits = { old_guard infantry_leader commando }
+			skill = 4
 			attack_skill = 4
-			defense_skill = 6
-			planning_skill = 4
-			logistics_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 2
 			legacy_id = 1206
 		}
 	}
@@ -396,11 +376,11 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { trait_reckless trait_BUL_zveno_member panzer_leader cavalry_leader infantry_leader commando skilled_staffer hill_fighter }
-			skill = 6
-			attack_skill = 5
-			defense_skill = 6
-			planning_skill = 5
+			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
 			logistics_skill = 5
 			legacy_id = 1210
 		}
@@ -423,26 +403,6 @@ characters = {
 			logistics_skill = 3
 			legacy_id = 1211
 		}
-		advisor = {
-			slot = army_chief
-			idea_token = BUL_angel_dotsev
-			allowed = {
-				has_dlc = "Battle for the Bosporus"
-				original_tag = BUL
-			}
-			available = {
-				NOT = {
-					has_government = communism
-				}
-			}
-			traits = {
-				army_chief_drill_3
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 1.000
-			}
-		}	
 	}
 
 	BUL_nikola_nakov = {
@@ -483,7 +443,7 @@ characters = {
 			}
 			available = {
 				NOT = {
-					has_completed_focus = BUL_oppose_the_royal_dictatorship
+					always = no
 				}
 				NOT = {
 					has_government = communism
@@ -1643,7 +1603,7 @@ characters = {
 							BUL_is_monarchist_ferdinand_ai = yes
 							BUL_is_historical_ai = yes
 						}
-						NOT = { has_completed_focus = BUL_illusions_of_a_non_partisan_system }
+						NOT = { always = no }
 						democratic < 0.2
 					}
 					modifier = {
@@ -1652,7 +1612,7 @@ characters = {
 							BUL_is_monarchist_ferdinand_ai = yes
 							BUL_is_historical_ai = yes
 						}
-						has_completed_focus = BUL_illusions_of_a_non_partisan_system
+						always = no
 						democratic > 0.8
 					}
 				}
@@ -1693,7 +1653,7 @@ characters = {
 					original_tag = BUL
 				}
 				available = {
-					has_completed_focus = BUL_democratic_principles 
+					always = no 
 				}
 				traits = {
 					compassionate_gentleman 
@@ -1747,7 +1707,7 @@ characters = {
 				original_tag = BUL
 			}
 			available = {
-				has_completed_focus = BUL_democratic_principles 
+				always = no 
 			}
 			traits = {
 				industry_reformer 
@@ -1782,7 +1742,7 @@ characters = {
 			available = {
 				OR = {
 					has_completed_focus = BUL_limited_womens_suffrage 
-					has_completed_focus = BUL_full_voting_rights_for_women 
+					always = no 
 				}
 			}
 			traits = {
@@ -1803,13 +1763,13 @@ characters = {
 						BUL_is_monarchist_ferdinand_ai = yes
 						BUL_is_historical_ai = yes
 					}
-					NOT = { has_completed_focus = BUL_illusions_of_a_non_partisan_system }
+					NOT = { always = no }
 					democratic < 0.2
 				}
 				modifier = {
 					factor = 0.000
 					BUL_is_monarchist_ferdinand_ai = yes 
-					has_completed_focus = BUL_illusions_of_a_non_partisan_system 
+					always = no 
 				}
 			}
 		}
@@ -1868,7 +1828,7 @@ characters = {
 				original_tag = BUL
 			}
 			available = {
-				has_completed_focus = BUL_appoint_communist_ministers 
+				always = no 
 			}
 			traits = {
 				captain_of_industry 
@@ -1907,7 +1867,7 @@ characters = {
 				modifier = {
 					factor = 0
 					BUL_is_historical_ai = yes
-					#NOT = { has_completed_focus = BUL_illusions_of_a_non_partisan_system } #Better not to hire him Boris, he'll definitely make it easier for the Fatherland Front later on, even though you won't be there to see it
+					#NOT = { always = no } #Better not to hire him Boris, he'll definitely make it easier for the Fatherland Front later on, even though you won't be there to see it
 				}
 			}
 		}
@@ -1929,7 +1889,7 @@ characters = {
 			}
 			available = {
 				NOT = {
-					has_completed_focus = BUL_oppose_the_royal_dictatorship 
+					always = no 
 				}
 			}
 			traits = {
@@ -1947,7 +1907,7 @@ characters = {
 						BUL_is_monarchist_ferdinand_ai = yes
 						BUL_is_historical_ai = yes
 					}
-					NOT = { has_completed_focus = BUL_illusions_of_a_non_partisan_system }
+					NOT = { always = no }
 				}
 			}
 		}
@@ -1984,7 +1944,7 @@ characters = {
 						BUL_is_monarchist_ferdinand_ai = yes
 						BUL_is_historical_ai = yes
 					}
-					NOT = { has_completed_focus = BUL_illusions_of_a_non_partisan_system }
+					NOT = { always = no }
 				}
 			}
 		}
@@ -2049,7 +2009,7 @@ characters = {
 				}
 				available = {
 					NOT = {
-						has_completed_focus = BUL_oppose_the_royal_dictatorship 
+						always = no 
 					}
 				}
 				traits = {
@@ -2094,7 +2054,7 @@ characters = {
 		}
 	}
 	
-	BUL_bogdan_filov_fascism = { #TODO_Manu: THIS GUY IS SPLIT INTO TWO VERSIONS -> SHOULD UNIFY
+	BUL_bogdan_filov_fascism = { #MM: THIS GUY IS SPLIT INTO TWO VERSIONS -> SHOULD UNIFY
 		advisor = {
 			slot = political_advisor
 			idea_token = BUL_bogdan_filov_fascism

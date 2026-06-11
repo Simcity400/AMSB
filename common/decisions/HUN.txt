@@ -345,6 +345,23 @@ HUN_gyor_program_initiatives_category = {
 				set_country_flag = HUN_opened_factory_in_veszprem
 			}
 
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+
 			add_equipment_to_stockpile = { 
 				type = infantry_equipment
 				amount = 500
@@ -414,11 +431,104 @@ HUN_gyor_program_initiatives_category = {
 			hidden_effect = {
 				set_country_flag = HUN_expaned_the_mw_tank_plant
 			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
 			
 			add_tech_bonus = {
 				bonus = 1
 				uses = 1
 				category = cat_heavy_armor
+			}	
+			
+
+		} 
+
+	}
+
+	# Invest in the Diósgyőri Gépgyárs Újgyár Azsia Plant
+	HUN_invest_in_the_diosgyor_azsia_plant_decision  = {
+
+		priority = 98
+
+		icon = GFX_decision_gre_investment_decisions
+
+		ai_will_do = {
+			base = 10
+		}
+
+		allowed = {  
+			original_tag = HUN
+		}
+
+		visible = { 
+			has_completed_focus = wuw_HUN_announce_the_gyor_program 
+			NOT = {
+				has_country_flag = HUN_invested_in_diosgyor_azsia_plant
+			}
+		}
+
+		available = {
+			has_completed_focus = wuw_HUN_announce_the_gyor_program
+			has_completed_focus = wuw_HUN_expand_the_diosgyor_machinery_factory
+			has_country_flag = HUN_activated_huba_1_flag
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+		} 
+
+		days_remove = 70
+
+		cost = 50
+
+		modifier = {
+			consumer_goods_factor = 0.15
+		}
+
+		complete_effect = { 
+			  
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = HUN_invested_in_diosgyor_azsia_plant
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = artillery
 			}	
 			
 
@@ -454,6 +564,7 @@ HUN_gyor_program_initiatives_category = {
 		available = {
 			has_completed_focus = wuw_HUN_announce_the_gyor_program
 			has_completed_focus = wuw_HUN_the_botond
+			has_completed_focus = wuw_HUN_make_the_magyar_legiero_known
 			has_country_flag = HUN_activated_huba_1_flag
 			any_core_state = {
 				is_fully_controlled_by = ROOT
@@ -476,12 +587,36 @@ HUN_gyor_program_initiatives_category = {
 			hidden_effect = {
 				set_country_flag = HUN_merged_companies_into_raba
 			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
 			
 			add_tech_bonus = {
-				bonus = 1
+				bonus = 0.3
 				uses = 1
 				category = motorized_equipment
 			}
+
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = light_air
+			}	
+			
 
 		} 
 
@@ -511,8 +646,10 @@ HUN_gyor_program_initiatives_category = {
 
 		available = {
 			has_completed_focus = wuw_HUN_announce_the_gyor_program
-			has_completed_focus = wuw_HUN_invest_in_ludovica_academy
-
+			OR = {
+				has_completed_focus = wuw_HUN_doctrinal_studies
+				has_completed_focus = wuw_HUN_form_the_gyorshadtest
+			}
 			any_core_state = {
 				is_fully_controlled_by = ROOT
 			}
@@ -533,6 +670,40 @@ HUN_gyor_program_initiatives_category = {
 		remove_effect = {
 			hidden_effect = {
 				set_country_flag = HUN_activated_huba_1_flag
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
 			}	 
 			
 			random_owned_controlled_state = {
@@ -719,12 +890,88 @@ HUN_gyor_program_initiatives_category = {
 
 	}
 
-	# Invest in the Magyar Ruggyantaárúgyár
-	HUN_invest_in_magyar_ruggyantaarugyar_decision  = {
+	# Resuscitate the Magyar Lloyd Repülőgép és motorgyár Részvény-Társaság
+	HUN_recusitate_the_hungarian_loyd_airraft_and_engine_factory_decision  = {
 
-		priority = 80
+		priority = 93
 
-		icon = GFX_decision_rubber
+		icon = GFX_decision_hol_attract_foreign_investors
+
+		ai_will_do = {
+			base = 3
+		}
+
+		allowed = {  
+			original_tag = HUN
+		}
+
+		visible = { 
+			has_completed_focus = wuw_HUN_announce_the_gyor_program 
+			NOT = {
+				has_country_flag = HUN_resuscitated_the_loyd_factory
+			}
+		}
+
+		available = {
+			has_completed_focus = wuw_HUN_announce_the_gyor_program
+			has_completed_focus = wuw_HUN_make_the_magyar_legiero_known
+			has_country_flag = HUN_activated_huba_1_flag
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+		} 
+
+		days_remove = 84
+
+		cost = 50
+
+		modifier = {
+			consumer_goods_factor = 0.20
+		}
+
+		complete_effect = { 
+			  
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = HUN_resuscitated_the_loyd_factory
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+			
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}	
+			
+
+		} 
+
+	}
+
+	# Open the Székesfehérvár-Sóstó Plant
+	HUN_open_the_szekesfehervar_sosto_plant_decision  = {
+
+		priority = 95
+
+		icon = GFX_decision_generic_merge_plant_aircraft
 
 		ai_will_do = {
 			base = 5
@@ -737,12 +984,16 @@ HUN_gyor_program_initiatives_category = {
 		visible = { 
 			has_completed_focus = wuw_HUN_announce_the_gyor_program 
 			NOT = {
-				has_country_flag = HUN_invested_in_magyar_ruggyantaarugyar_flag
+				OR = {
+					has_country_flag = HUN_opened_the_sosto_plant_flag
+					has_completed_focus = wuw_HUN_joint_air_development
+				}
 			}
 		}
 
 		available = {
 			has_completed_focus = wuw_HUN_announce_the_gyor_program
+			has_completed_focus = wuw_HUN_repulo_muszaki_intezet
 			has_country_flag = HUN_activated_huba_1_flag
 			any_core_state = {
 				is_fully_controlled_by = ROOT
@@ -751,7 +1002,7 @@ HUN_gyor_program_initiatives_category = {
 
 		days_remove = 35
 
-		cost = 50
+		cost = 25
 
 		modifier = {
 			consumer_goods_factor = 0.15
@@ -763,23 +1014,98 @@ HUN_gyor_program_initiatives_category = {
 
 		remove_effect = {
 			hidden_effect = {
-				set_country_flag = HUN_invested_in_magyar_ruggyantaarugyar_flag
+				set_country_flag = HUN_opened_the_sosto_plant_flag
 			}
 
-			43 = {
+			air_experience = 25
+
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
 				}
-				add_resource = {
-					type = rubber
-					amount = 16
-				}	
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
 			}
 			
 
 		} 
 
 	}
+
+	# Invest in the Dunai Repülőgépgyár
+	 HUN_invest_in_dunai_repulogepgyar_decision  = {
+
+		priority = 92
+
+		icon = GFX_decision_generic_air
+
+		ai_will_do = {
+			base = 5
+		}
+
+		allowed = {  
+			original_tag = HUN
+		}
+
+		visible = { 
+			has_completed_focus = wuw_HUN_announce_the_gyor_program 
+			NOT = {
+				OR = {
+					has_country_flag = HUN_invested_in_dunai_repulogepgyar_flag
+					has_completed_focus = wuw_HUN_repulo_muszaki_intezet
+				}
+			}
+		}
+
+		available = {
+			has_completed_focus = wuw_HUN_announce_the_gyor_program
+			has_completed_focus = wuw_HUN_joint_air_development
+			has_country_flag = HUN_activated_huba_1_flag
+			any_core_state = {
+				is_fully_controlled_by = ROOT
+			}
+		} 
+
+		days_remove = 35
+
+		cost = 35
+
+		modifier = {
+			consumer_goods_factor = 0.15
+		}
+
+		complete_effect = { 
+			  
+		}
+
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = HUN_invested_in_dunai_repulogepgyar_flag
+			}
+
+			air_experience = 15
+
+			add_tech_bonus = {
+				name = HUN_tac_focus
+				bonus = 0.3
+				uses = 1
+				category = medium_air
+			}
+			
+
+		} 
+
+	}
+
 
 
 
@@ -887,7 +1213,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_south_slovakia_flag }
 			664 = {
@@ -900,7 +1226,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
+				always = no
 			}
 			controls_state = 664
 		}
@@ -974,7 +1300,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_west_slovakia_flag }
 			70 = {
@@ -987,7 +1313,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
+				always = no
 			}
 			controls_state = 70
 		}
@@ -1061,7 +1387,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_east_slovakia_flag }
 			71 = {
@@ -1074,7 +1400,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
+				always = no
 			}
 			controls_state = 71
 		}
@@ -1148,7 +1474,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_carpathia_flag }
 			73 = {
@@ -1161,7 +1487,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_reclaim_the_slovak_possessions
+				always = no
 			}
 			controls_state = 73
 		}
@@ -1235,7 +1561,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_revenge_for_1919
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_north_transylvania_flag }
 			76 = {
@@ -1248,7 +1574,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_revenge_for_1919
+				always = no
 			}
 			controls_state = 76
 		}
@@ -1322,7 +1648,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_revenge_for_1919
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_south_transylvania_flag }
 			84 = {
@@ -1335,7 +1661,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_revenge_for_1919
+				always = no
 			}
 			controls_state = 84
 		}
@@ -1409,7 +1735,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_revenge_for_1919
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_crisana_flag }
 			83 = {
@@ -1422,7 +1748,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_revenge_for_1919
+				always = no
 			}
 			controls_state = 83
 		}
@@ -1496,7 +1822,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_revenge_for_1919
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_banat_flag }
 			82 = {
@@ -1509,7 +1835,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_revenge_for_1919
+				always = no
 			}
 			controls_state = 82
 		}
@@ -1583,7 +1909,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_west_banat_flag }
 			764 = {
@@ -1596,7 +1922,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
+				always = no
 			}
 			controls_state = 764
 		}
@@ -1670,7 +1996,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_vojvodina_flag }
 			45 = {
@@ -1683,7 +2009,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
+				always = no
 			}
 			controls_state = 45
 		}
@@ -1856,15 +2182,13 @@ HUN_territorial_revision_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_revenge_for_the_brusilov_offensive
+			always = no
 			NOT = { has_country_flag = HUN_created_ukrainian_habsburg_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_revenge_for_the_brusilov_offensive
-			UKR = {
-				exists = no
-			}
+			always = no
+			
 			is_subject = no
 			custom_trigger_tooltip = {
 				tooltip = wuw_HUN_the_kingdom_of_ukraine_required_states_tt
@@ -2147,13 +2471,7 @@ HUN_territorial_revision_category = {
 					add_core_of = UKR
 				}
 
-				UKR = {
-					drop_cosmetic_tag = yes
-					country_event = {
-					    id = WW_hungary.54
-					    days = 0
-					}
-				}
+				
 				
 				puppet = UKR 
 
@@ -2191,7 +2509,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_croatia_flag }
 			109 = {
@@ -2204,7 +2522,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
+				always = no
 			}
 			controls_state = 109
 		}
@@ -2278,7 +2596,7 @@ HUN_territorial_revision_category = {
 			original_tag = HUN
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
+				always = no
 			}
 			NOT = { has_country_flag = HUN_reintigrated_dalmatia_flag }
 			103 = {
@@ -2291,7 +2609,7 @@ HUN_territorial_revision_category = {
 		available = {
 			OR = {
 				has_completed_focus = wuw_HUN_reaffirm_territorial_claims
-				has_completed_focus = wuw_HUN_undoing_the_yugoslav_mistake
+				always = no
 			}
 			controls_state = 103
 		}
@@ -2357,7 +2675,7 @@ HUN_territorial_revision_category = {
 		}
 
 		visible = {
-			has_completed_focus = wuw_HUN_hold_territorial_referendums
+			always = no
 		}
 
 		target_trigger = {
@@ -2389,7 +2707,7 @@ HUN_territorial_revision_category = {
 		}
 
 		available = {
-			has_completed_focus = wuw_HUN_hold_territorial_referendums
+			always = no
 			is_subject = no
 			OR = {
 				has_government = democratic
@@ -2438,7 +2756,7 @@ HUN_territorial_revision_category = {
 		}
 
 		visible = {
-			has_completed_focus = wuw_HUN_hold_territorial_referendums
+			always = no
 		}
 
 		target_trigger = {
@@ -2470,7 +2788,7 @@ HUN_territorial_revision_category = {
 		}
 
 		available = {
-			has_completed_focus = wuw_HUN_hold_territorial_referendums
+			always = no
 			is_subject = no
 			OR = {
 				has_government = democratic
@@ -2520,7 +2838,7 @@ HUN_territorial_revision_category = {
 		}
 
 		visible = {
-			has_completed_focus = wuw_HUN_hold_territorial_referendums
+			always = no
 		}
 
 		target_trigger = {
@@ -2552,7 +2870,7 @@ HUN_territorial_revision_category = {
 		}
 
 		available = {
-			has_completed_focus = wuw_HUN_hold_territorial_referendums
+			always = no
 			is_subject = no
 			OR = {
 				has_government = democratic
@@ -2601,7 +2919,7 @@ HUN_territorial_revision_category = {
 		}
 
 		visible = {
-			has_completed_focus = wuw_HUN_hold_territorial_referendums
+			always = no
 		}
 
 		target_trigger = {
@@ -2633,7 +2951,7 @@ HUN_territorial_revision_category = {
 		}
 
 		available = {
-			has_completed_focus = wuw_HUN_hold_territorial_referendums
+			always = no
 			is_subject = no
 			OR = {
 				has_government = democratic
@@ -2699,7 +3017,7 @@ HUN_the_empire_category = {
 
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_demand_austrian_restoration
+			always = no
 			NOT = { has_country_flag = HUN_reannexed_burgenland_flag }
 			975 = {
 				NOT = {
@@ -2709,7 +3027,7 @@ HUN_the_empire_category = {
 		} 
 
 		available = {
-			has_completed_focus = wuw_HUN_demand_austrian_restoration
+			always = no
 			OR = {
 				controls_state = 975
 				any_country = {
@@ -2785,12 +3103,12 @@ HUN_the_empire_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_demand_austrian_restoration
+			always = no
 			NOT = { has_country_flag = HUN_created_austrian_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_demand_austrian_restoration
+			always = no
 			is_subject = no
 			OR = {
 				AUS = {
@@ -2877,12 +3195,12 @@ HUN_the_empire_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_demand_wiedist_restoration
+			always = no
 			NOT = { has_country_flag = HUN_created_wiedist_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_demand_wiedist_restoration
+			always = no
 			has_government = neutrality
 			is_subject = no
 			OR = {
@@ -2966,12 +3284,12 @@ HUN_the_empire_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_a_habsburg_poland
+			always = no
 			NOT = { has_country_flag = HUN_created_polish_habsburg_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_a_habsburg_poland
+			always = no
 			has_government = neutrality
 			is_subject = no
 			AND = {
@@ -3061,12 +3379,12 @@ HUN_the_empire_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_habsburg_ascension_in_spain
+			always = no
 			NOT = { has_country_flag = HUN_created_spanish_habsburg_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_habsburg_ascension_in_spain
+			always = no
 			has_government = neutrality
 			is_subject = no
 			AND = {
@@ -3145,12 +3463,12 @@ HUN_the_empire_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_protect_czechoslovakia
+			always = no
 			NOT = { has_country_flag = HUN_created_bohemian_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_protect_czechoslovakia
+			always = no
 			is_subject = no
 			OR = {
 				CZE = {
@@ -3241,12 +3559,12 @@ HUN_the_empire_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_press_maximilians_and_the_iturbides_claims
+			always = no
 			NOT = { has_country_flag = HUN_created_mexican_habsburg_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_press_maximilians_and_the_iturbides_claims
+			always = no
 			has_government = neutrality
 			is_subject = no
 			OR = {
@@ -3339,19 +3657,17 @@ HUN_the_empire_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_the_triple_kingdom
+			always = no
 			NOT = { has_country_flag = HUN_created_croatian_habsburg_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_the_triple_kingdom
+			always = no
 			has_government = neutrality
 			is_subject = no
 			OR = {
 				AND = {
-					CRO = {
-						exists = no
-					}
+					
 					OR = {
 						109 = {
 							is_controlled_by = ROOT
@@ -3362,9 +3678,7 @@ HUN_the_empire_category = {
 						}
 					}
 				}
-				CRO = {
-					is_subject_of = ROOT
-				}
+				
 			}	
 		}
 	
@@ -3385,47 +3699,15 @@ HUN_the_empire_category = {
 				add_core_of = CRO
 			}
 
-			CRO = {
-				every_core_state = {
-					limit = {
-						OR = {
-							is_controlled_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								controls_state = PREV
-							}
-						}
-						NOT = {
-							is_core_of = ROOT
-						}
-						NOT = {
-							is_owned_and_controlled_by = CRO
-						}
-					}
-					transfer_state_to = CRO
-				}
-			}
+			
 
 			custom_effect_tooltip = HUN_croatia_slavonia_tt
 
-			CRO = {
-				hidden_effect = {
-					drop_cosmetic_tag = yes
-					set_cosmetic_tag = CRO_croatia_slavonia_kingdom
-				}
-				country_event = {
-					id = WW_hungary.65
-					hours = 0
-				}	
-			}
+			
 
 			IF = {
 				limit = {
-					CRO = {
-						NOT = {
-							is_subject_of = ROOT
-						}
-					}
+					
 				}
 				puppet = CRO 
 			}
@@ -3497,19 +3779,17 @@ HUN_the_empire_category = {
 	
 		visible = { 
 			original_tag = HUN
-			has_completed_focus = wuw_HUN_restore_the_lombardo_venetian_kingdom
+			always = no
 			NOT = { has_country_flag = HUN_created_lombardo_venetian_habsburg_monarchy }
 		} 
 	
 		available = {
-			has_completed_focus = wuw_HUN_restore_the_lombardo_venetian_kingdom
+			always = no
 			has_government = neutrality
 			is_subject = no
 			OR = {
 				AND = {
-					LBV = {
-						exists = no
-					}
+					
 					AND = {
 						OR = {
 							160 = {
@@ -3531,9 +3811,7 @@ HUN_the_empire_category = {
 						}
 					}
 				}
-				LBV = {
-					is_subject_of = ROOT
-				}
+				
 			}	
 		}
 	
@@ -3541,41 +3819,13 @@ HUN_the_empire_category = {
 
 		complete_effect = {
 
-			LBV = {
-				every_core_state = {
-					limit = {
-						OR = {
-							is_controlled_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								controls_state = PREV
-							}
-						}
-						NOT = {
-							is_core_of = ROOT
-						}
-						NOT = {
-							is_owned_and_controlled_by = LBV
-						}
-						NOT = {
-							state = 163
-						}
-					}
-					transfer_state_to = LBV
-				}
-			}
+			
 
-			LBV = {
-				drop_cosmetic_tag = yes	
-			}
+			
 
 			IF = {
 				limit = {
-					LBV = {
-						NOT = {
-							is_subject_of = ROOT
-						}
-					}
+					
 				}
 				puppet = LBV 
 			}
@@ -3611,7 +3861,7 @@ HUN_the_empire_category = {
 		}
 
 		visible = {
-			has_completed_focus = wuw_HUN_renovato_imperii
+			always = no
 		}
 
 		available = {
@@ -3681,7 +3931,7 @@ political_actions = {
 		
 			original_tag = HUN
 			
-			has_completed_focus = wuw_HUN_elect_a_fascist_king
+			always = no
 
 			NOT = { has_country_flag = HUN_integrated_mecklenburg_flag }
 
@@ -3695,7 +3945,7 @@ political_actions = {
 
 		available = {
 			
-			has_completed_focus = wuw_HUN_elect_a_fascist_king
+			always = no
 			
 			controls_state = 61
 		}
@@ -3763,7 +4013,7 @@ political_actions = {
 		
 			original_tag = HUN
 			
-			has_completed_focus = wuw_HUN_elect_a_democratic_king
+			always = no
 
 			NOT = { has_country_flag = HUN_carl_wilhelm_took_absolute_control }
 
@@ -3771,7 +4021,7 @@ political_actions = {
 
 		available = {
 			
-			has_completed_focus = wuw_HUN_elect_a_democratic_king
+			always = no
 
 			is_subject = no
 			
@@ -3849,7 +4099,7 @@ political_actions = {
 		
 			original_tag = HUN
 			
-			has_completed_focus = wuw_HUN_elect_a_democratic_king
+			always = no
 
 			has_country_flag = HUN_carl_wilhelm_took_absolute_control
 
@@ -3863,7 +4113,7 @@ political_actions = {
 
 		available = {
 			
-			has_completed_focus = wuw_HUN_elect_a_democratic_king
+			always = no
 
 			is_subject = no
 			
@@ -3977,7 +4227,7 @@ HUN_balkan_pact_category = {
 		}
 
 		visible = {
-			has_completed_focus = wuw_HUN_the_balkan_pact
+			always = no
 		}
 
 		available = {
@@ -4047,7 +4297,7 @@ HUN_balkan_pact_category = {
 		
 			original_tag = HUN
 			
-			has_completed_focus = wuw_HUN_the_balkan_pact
+			always = no
 
 			NOT = { has_country_flag = HUN_asked_to_annex_ROM }
 
@@ -4055,7 +4305,7 @@ HUN_balkan_pact_category = {
 
 		available = {
 			
-			has_completed_focus = wuw_HUN_the_balkan_pact
+			always = no
 
 			is_subject = no
 			
@@ -4279,8 +4529,8 @@ HUN_fascist_movements_category = {
 		available = {
 			NOT = { has_government = fascism }
 			OR = {
-				has_completed_focus = wuw_HUN_establishing_a_new_dynasty
-				has_completed_focus = wuw_HUN_elect_a_democratic_king
+				always = no
+				always = no
 			}
 			NOT = { 
 				has_global_flag = arrow_cross_insurgency_happened
@@ -4291,8 +4541,8 @@ HUN_fascist_movements_category = {
 			tag = HUN
 			NOT = { has_government = fascism }
 			OR = {
-				has_completed_focus = wuw_HUN_establishing_a_new_dynasty
-				has_completed_focus = wuw_HUN_elect_a_democratic_king
+				always = no
+				always = no
 			}
 			NOT = { 
 				OR = {
@@ -4342,7 +4592,7 @@ HUN_fascist_movements_category = {
 
 			NOT = { has_government = fascism }
 
-			has_completed_focus = wuw_HUN_elect_a_democratic_king 
+			always = no 
 			
 			NOT = { 
 				has_global_flag = arrow_cross_insurgency_happened
@@ -4358,7 +4608,7 @@ HUN_fascist_movements_category = {
 
 			NOT = { has_government = fascism }
 			
-			has_completed_focus = wuw_HUN_elect_a_democratic_king
+			always = no
 			
 			NOT = { 
 				OR = {
@@ -4396,10 +4646,7 @@ HUN_fascist_movements_category = {
 					}
 				}
 				GER = {
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = dissolved_the_volksbund_modifier
-					}	
+					
 				}
 			}
 
@@ -4441,8 +4688,8 @@ HUN_fascist_movements_category = {
 		available = {
 			NOT = { has_government = fascism }
 			OR = {
-				has_completed_focus = wuw_HUN_establishing_a_new_dynasty
-				has_completed_focus = wuw_HUN_elect_a_democratic_king
+				always = no
+				always = no
 			}
 			NOT = { 
 				has_global_flag = arrow_cross_insurgency_happened
@@ -4453,8 +4700,8 @@ HUN_fascist_movements_category = {
 			tag = HUN
 			NOT = { has_government = fascism }
 			OR = {
-				has_completed_focus = wuw_HUN_establishing_a_new_dynasty
-				has_completed_focus = wuw_HUN_elect_a_democratic_king
+				always = no
+				always = no
 			}
 			NOT = { 
 				OR = {
@@ -4518,8 +4765,8 @@ HUN_fascist_movements_category = {
 		available = {
 			NOT = { has_government = fascism }
 			OR = {
-				has_completed_focus = wuw_HUN_establishing_a_new_dynasty
-				has_completed_focus = wuw_HUN_elect_a_democratic_king
+				always = no
+				always = no
 			}
 			NOT = { 
 				has_global_flag = arrow_cross_insurgency_happened
@@ -4533,8 +4780,8 @@ HUN_fascist_movements_category = {
 			tag = HUN
 			NOT = { has_government = fascism }
 			OR = {
-				has_completed_focus = wuw_HUN_establishing_a_new_dynasty
-				has_completed_focus = wuw_HUN_elect_a_democratic_king
+				always = no
+				always = no
 			}
 			NOT = { 
 				OR = {
@@ -4601,8 +4848,8 @@ political_actions = {
 			has_government = communism
 
 			OR = {
-				has_completed_focus = wuw_HUN_join_the_comintern
-				has_completed_focus = wuw_HUN_restore_the_socialist_federative_republic
+				always = no
+				always = no
 			}
 
 		}
@@ -4838,7 +5085,7 @@ HUN_the_danubian_federation_category = {
 			original_tag = HUN
 		}
 		visible = {
-			has_completed_focus = wuw_HUN_a_danubian_federation
+			always = no
 		}
 		available = {
 			is_subject = no
@@ -4897,7 +5144,7 @@ HUN_balkan_union_category = {
 		}
 
 		visible = {
-			has_completed_focus = HUN_balkan_ambitions
+			always = no
 			
 			NOT = { has_global_flag = balkan_union_formed_flag }
 		}

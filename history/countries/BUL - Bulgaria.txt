@@ -3,7 +3,7 @@
 #TROOPS
 oob = "BUL_1936" #VANILLA & DLC
 if = {
-	limit = { always = no }
+	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "BUL_1936_air_bba"
 	else = {
 		set_air_oob = "BUL_1936_air_legacy"
@@ -170,22 +170,10 @@ if = { #DLC
 	971 = { set_state_flag = BUL_historical_bulgarian_claim_flag }
 
 	#International Relations
-	add_opinion_modifier = { 
-		target = GRE
-		modifier = BFTB_incongruous_neighbors
-	}
-	add_opinion_modifier = { 
-		target = ROM
-		modifier = BFTB_incongruous_neighbors
-	}
-	add_opinion_modifier = { 
-		target = TUR
-		modifier = BFTB_incongruous_neighbors
-	}
-	add_opinion_modifier = { 
-		target = YUG
-		modifier = BFTB_incongruous_neighbors
-	}
+	
+	
+	
+	
 
 	#DLC POLIICS
 	set_popularities = { #DLC
@@ -335,8 +323,8 @@ set_technology = { #VANILLA & DLC
 	basic_train = 1
 	tech_mountaineers = 1
 	marines  = 1
-	rangers_tech = 1
-	paratroopers = 1 
+	paratroopers = 1
+	rangers_tech = 1 
 }
 if = {
 	limit = {
@@ -422,10 +410,7 @@ if = {
 		clr_country_flag = BUL_freedom_of_press_flag
 		#Simulate German influence events and good relations with Bulgaria 				Approach Germany + Events
 		set_country_flag = BUL_german_aircraft_donation_flag
-		add_opinion_modifier = { 
-			target = GER
-			modifier = BUL_donated_aircraft
-		}
+		
 
 		else = { #VANILLA
 			#generic focuses

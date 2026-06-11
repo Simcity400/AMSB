@@ -1958,7 +1958,7 @@ news_event = {
 		}
 		GER = {
 			has_completed_focus = GER_reassert_eastern_claims
-			NOT = { has_completed_focus = GER_befriend_poland }
+			NOT = { always = no }
 		}
 	}
 	
@@ -3486,10 +3486,7 @@ news_event = {
 			1021 = {
 				is_owned_by = ENG
 			}
-			MAL = {
-				is_subject_of = ENG
-				owns_state = 1021
-			}
+			
 		}
 		JAP = { has_war_with = ENG }
 		NOT = { has_global_flag = fall_of_singapore }
@@ -3830,7 +3827,6 @@ news_event = {
 		327 = {
 			OR = {
 				is_controlled_by = JAP
-				is_controlled_by = PSR	#Japanese puppet state
 			}
 		}
 		327 = { is_owned_by = PHI }
@@ -12181,7 +12177,7 @@ news_event = {
 				NOT = { country_exists = SLO }
 				AND = {
 					country_exists = SLO
-					SLO = { is_subject = yes }
+					
 				}
 			}
 		}
@@ -12190,7 +12186,7 @@ news_event = {
 		text = news.309.desc.b
 		trigger = { 
 			country_exists = SLO
-			SLO = { is_subject = no }
+			
 		}
 	}
 	picture = GFX_news_event_hungary_refused
@@ -12213,7 +12209,7 @@ news_event = {
 				NOT = { country_exists = SLO }
 				AND = {
 					country_exists = SLO
-					SLO = { is_subject = yes }
+					
 				}
 			}
 		}
@@ -12223,7 +12219,7 @@ news_event = {
 		trigger = { 
 			AND = {
 				TAG = SLO
-				SLO = { is_subject = no }
+				
 			}
 		}
 	}
@@ -12235,7 +12231,7 @@ news_event = {
 				TAG = CZE
 				AND = {
 					TAG = SLO
-					SLO = { is_subject = yes }
+					
 				}
 			}
 		}
@@ -12253,7 +12249,7 @@ news_event = {
 				NOT = { country_exists = SLO }
 				AND = {
 					country_exists = SLO
-					SLO = { is_subject = yes }
+					
 				}
 			}
 		}
@@ -12262,7 +12258,7 @@ news_event = {
 		text = news.310.desc.b
 		trigger = { 
 			country_exists = SLO
-			SLO = { is_subject = no }
+			
 		}
 	}
 	picture = GFX_news_event_generic_sign_treaty1
@@ -12305,7 +12301,7 @@ news_event = {
 				NOT = { country_exists = SLO }
 				AND = {
 					country_exists = SLO
-					SLO = { is_subject = yes }
+					
 				}
 			}
 		}
@@ -12314,7 +12310,7 @@ news_event = {
 		text = news.311.desc.b
 		trigger = { 
 			country_exists = SLO
-			SLO = { is_subject = no }
+			
 		}
 	}
 	picture = GFX_news_event_hungarian_soldiers
@@ -13311,7 +13307,7 @@ news_event = { #Panay Incident - initial incident
 		name = news.334.c
 		trigger = { TAG = ENG }
 		ENG = {
-			add_opinion_modifier = { target = JAP modifier = panay_inc2_opinion_modifier }
+			
 		}
 	}
 }

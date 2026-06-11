@@ -10,7 +10,7 @@ MTG_naval_treaties = {
 			}
 		}
 	
-		cost = 50
+		cost = 150
 		fire_only_once = yes
 		ai_will_do = {
 			base = 0
@@ -21,6 +21,12 @@ MTG_naval_treaties = {
 			OR = {
 				has_government = democratic
 				has_government = neutrality
+			}
+			NOT = {
+				AND = {
+					original_tag = JAP
+					has_government = neutrality
+				}
 			}
 		}
 	
@@ -129,6 +135,103 @@ MTG_naval_treaties = {
 				has_government = fascism
 				has_government = communism
 			}
+		}
+	
+		complete_effect = {
+			remove_naval_treaty_effect = yes
+			every_other_country = {
+				limit = {
+					has_naval_treaty_trigger = yes
+				}
+				country_event = { id = MTG_naval_treaty.7 days = 2 }
+			}
+			if = {
+				limit = {
+					has_global_flag = {
+						flag = MTG_naval_treaty_signatories
+						value < 3
+					}
+				}
+				random_other_country = {
+					limit = {
+						has_naval_treaty_trigger = yes
+					}
+					remove_naval_treaty_effect = yes
+				}
+				clr_global_flag = MTG_naval_treaty_signatories
+				hidden_effect = { news_event = mtg_news.60 }
+			}
+			if = {
+				limit = {
+					has_global_flag = MTG_naval_treaty_signatories
+				}
+				modify_global_flag = {
+					flag = MTG_naval_treaty_signatories
+					value = -1
+				}
+			}
+			if = {
+				limit = {
+					not = {
+						any_other_country = {
+							OR = {
+								has_idea = MTG_naval_treaty_cheating_reduced
+								has_idea = MTG_naval_treaty_adherent_reduced
+							}
+						}
+					}
+				}
+				every_other_country = {
+					limit = {
+						OR = {
+							has_idea = MTG_naval_treaty_cheating
+							has_idea = MTG_naval_treaty_adherent
+						}
+					}
+					activate_mission = MTG_escalator_clause_invocation_mission
+					custom_effect_tooltip = MTG_escalator_clause_tt
+				}
+			}
+		}
+	}
+
+	MTG_abandon_treaty_japanese = {
+
+		icon = generic
+			
+	
+		available = {
+			OR = {
+				threat > 0.2
+				has_global_flag = MTG_second_london_conference
+			}
+		}
+	
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = {
+			base = 1
+			modifier = {
+				tag = JAP
+				add = 100
+			}
+			modifier = {
+				tag = JAP
+				is_historical_focus_on = yes
+				add = 300
+			}
+			modifier = {
+				tag = JAP
+				is_historical_focus_on = yes
+				date > 1937.03.01
+				factor = 10
+			}
+		}
+	
+		visible = {
+			has_naval_treaty_trigger = yes
+			original_tag = JAP
+			has_government = neutrality
 		}
 	
 		complete_effect = {
@@ -403,7 +506,123 @@ MTG_naval_treaties = {
 			}
 		}
 	}
+	MTG_send_treaty_warning_to_FROM = {
 
+		icon = generic_naval
+			
+	
+		available = {
+			
+		}
+
+		target_root_trigger = {
+			has_naval_treaty_trigger = yes
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					AND = {
+						has_war = no
+						not = { has_country_flag = MTG_naval_treaty_abandoned }
+						NOT = { has_country_flag = MTG_refused_naval_treaty }
+						has_naval_treaty_trigger = no
+						if = {
+							limit = { ENG = { has_naval_treaty_trigger = yes } }
+							naval_strength_comparison = {
+								other = ENG
+								ratio > 1
+								sub_unit_def_weights = {
+									carrier = 0.5
+									battleship = 1
+									battle_cruiser = 0.8
+									heavy_cruiser = 0.5
+								}
+							}
+						}
+						else_if = {
+							limit = { USA = { has_naval_treaty_trigger = yes } }
+							naval_strength_comparison = {
+								other = USA
+								ratio > 1
+								sub_unit_def_weights = {
+									carrier = 0.5
+									battleship = 1
+									battle_cruiser = 0.8
+									heavy_cruiser = 0.5
+								}
+							}
+						}
+						else = {
+							has_navy_size = {
+								type = capital_ship
+								size > 50
+							}
+						}
+					}
+					AND = {
+						has_naval_treaty_trigger = yes
+						if = {
+							limit = { ENG = { has_naval_treaty_trigger = yes } }
+							naval_strength_comparison = {
+								other = ENG
+								ratio > 1.1
+								sub_unit_def_weights = {
+									carrier = 0.5
+									battleship = 1
+									battle_cruiser = 0.8
+									heavy_cruiser = 0.5
+								}
+							}
+						}
+						else_if = {
+							limit = { USA = { has_naval_treaty_trigger = yes } }
+							naval_strength_comparison = {
+								other = USA
+								ratio > 1.1
+								sub_unit_def_weights = {
+									carrier = 0.5
+									battleship = 1
+									battle_cruiser = 0.8
+									heavy_cruiser = 0.5
+								}
+							}
+						}
+						else = {
+							has_navy_size = {
+								type = capital_ship
+								size > 50
+							}
+						}
+					}
+				}
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				NOT = {
+					OR = {
+						TAG = ENG
+						TAG = USA
+					}
+				}
+				factor = 0
+			}
+		}
+	
+		visible = {
+			has_naval_treaty_trigger = yes
+		}
+	
+		complete_effect = {
+			FROM = {
+				country_event = { id = MTG_naval_treaty.4 }
+			}
+		}
+	}
 	MTG_treaty_reduction_mission = {
 
 		icon = generic_naval	

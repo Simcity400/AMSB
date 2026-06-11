@@ -99,7 +99,7 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ organizer infantry_leader  panzer_leader }
+			traits={ organizer panzer_leader }
 			skill=4
 			attack_skill=4
 			defense_skill=3
@@ -136,7 +136,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ hill_fighter infantry_leader cavalry_leader }
+			traits={ panzer_leader }
 			skill=4
 			attack_skill=4
 			defense_skill=3
@@ -461,7 +461,7 @@ characters={
 				original_tag = CAN
 			}
 			traits = {
-				air_air_superiority_3
+				air_air_superiority_2
 			}
 			cost = 100
 			ai_will_do = {
@@ -685,7 +685,7 @@ characters={
 					limit = {
 						has_dlc = "Together for Victory"
 					}
-					has_completed_focus = CAN_swastika_clubs 
+					always = no 
 				}
 				if = {
 					limit = {
@@ -730,7 +730,7 @@ characters={
 					}
 					OR = {
 						has_completed_focus = CAN_strengthen_the_commonwealth_ties 
-						has_completed_focus = CAN_permanent_joint_defense_board 
+						always = no 
 					}
 				}
 				if = {
@@ -774,7 +774,7 @@ characters={
 					limit = {
 						has_dlc = "Together for Victory"
 					}
-					has_completed_focus = CAN_burn_the_royal_portraits 
+					always = no 
 				}
 				if = {
 					limit = {
@@ -935,6 +935,7 @@ characters={
 				has_dlc = "Together for Victory"
 			}
 			available = {
+				has_completed_focus = CAN_crown_corporations 
 			}
 			traits = {
 				captain_of_industry 

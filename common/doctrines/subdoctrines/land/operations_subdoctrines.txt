@@ -12,12 +12,18 @@ mission_type_tactics = {
         base = 1
         modifier = {
             factor = 50
-            original_tag = GER
+            OR = {
+                original_tag = GER
+                original_tag = FIN
+            }
         }
 
         modifier = {
             factor = 0.5
             is_major = no 
+            NOT = {
+                original_tag = FIN 
+            } 
         }
 
     }
@@ -37,7 +43,7 @@ mission_type_tactics = {
         low_level_delegation ={
         #1
             category_all_infantry = {
-                default_morale = 0.2
+                default_morale = 0.1
             }
         }
         flexible_command = {
@@ -46,9 +52,8 @@ mission_type_tactics = {
         }
         maneouver_drills = {
         #3
-            category_all_infantry= {
-                default_morale = 0.2
-            }
+            land_reinforce_rate = 0.02
+
             category_all_armor = {
                 maximum_speed = 0.1
             }
@@ -66,10 +71,10 @@ mission_type_tactics = {
         #5
         
             category_all_infantry = {
-                default_morale = 0.4
+                default_morale = 0.2
             }
             category_tanks = {
-                default_morale = 0.4
+                default_morale = 0.1
             }
 
         }
@@ -99,7 +104,7 @@ last_stand = {
     rewards = {
         werwolf_groups = {
         #1
-            resistance_damage_to_garrison_on_our_occupied_states = 0.25
+            out_of_supply_factor = -0.20
         }
 
         pocket_consolidation = {
@@ -151,7 +156,7 @@ infiltration_tactics = {
     }
 
     # EFFECTS
-    enable_tactic = tactic_infantry_assault
+    enable_tactic = tactic_infantry_charge
     max_planning = 0.05 
 
     ai_will_do = { }
@@ -636,20 +641,21 @@ guerilla_war = {
                     movement = 0.1
                 } 
             }
-            pocket_penalty = -0.2
+            pocket_penalty = -0.1
+
 
         }
         galvanize_support = {
         #2
             army_intel_to_others = -10.0
             army_intel_factor = 0.05
+            war_support_factor = 0.1
+            political_power_factor = 0.1
             mobilization_speed = 0.15
 
         }
         scorched_earth = {
         #3
-           resistance_damage_to_garrison_on_our_occupied_states = 0.1
-           resistance_target_on_our_occupied_states = 0.1
            category_army = {
                 defense = 0.1
             }
@@ -675,8 +681,8 @@ guerilla_war = {
         }
         defense_of_gained_power = {
         #5
-            defensive_war_stability_factor = 0.1
-            offensive_war_stability_factor = 0.1    
+            stability_factor = 0.1
+            party_popularity_stability_factor = 0.05
             category_army = {
                 defense = 0.1
             }

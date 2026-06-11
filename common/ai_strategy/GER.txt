@@ -607,7 +607,7 @@ GER_soviet_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_alliance_with_the_ussr
+		always = no
 		country_exists = SOV
 	}
 	abort = {
@@ -631,7 +631,7 @@ GER_italy_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_form_rome_berlin_axis
+		always = no
 		country_exists = ITA
 	}
 	abort = {
@@ -723,7 +723,7 @@ GER_japan_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_befriend_japan
+		always = no
 		country_exists = JAP
 	}
 	abort = {
@@ -747,7 +747,7 @@ GER_china_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_befriend_china
+		always = no
 		country_exists = CHI
 	}
 	abort = {
@@ -772,7 +772,7 @@ GER_spain_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_alliance_with_spain
+		always = no
 		country_exists = SPR
 		SPR = { has_government = fascism } # TODO Find way to detect dynamic revolter tag
 	}
@@ -798,13 +798,13 @@ GER_spain_ally_la_resistance = {
 		has_dlc = "La Resistance"
 	}
 	enable = {
-		has_completed_focus = GER_alliance_with_spain
+		always = no
 		country_exists = SPA
 	}
 	abort = {
 		OR = {
 			NOT = { country_exists = SPA }
-			SPA = { has_completed_focus = SPA_join_the_allies }
+			SPA = { always = no }
 		}
 	}
 
@@ -825,7 +825,7 @@ GER_denmark_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_utilize_the_nordliche_gesellschaft
+		always = no
 		country_exists = DEN
 	}
 	abort = {
@@ -849,7 +849,7 @@ GER_sweden_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_utilize_the_nordliche_gesellschaft
+		always = no
 		country_exists = SWE
 	}
 	abort = {
@@ -873,7 +873,7 @@ GER_dutch_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_influence_the_benelux
+		always = no
 		country_exists = HOL
 	}
 	abort = {
@@ -897,7 +897,7 @@ GER_norway_ally = {
 		original_tag = GER
 	}
 	enable = {
-		has_completed_focus = GER_utilize_the_nordliche_gesellschaft
+		always = no
 		country_exists = NOR
 	}
 	abort = {
@@ -1303,7 +1303,7 @@ GER_naval_role_ratios_maximum_kaiser = {
 		has_dlc = "Man the Guns"
 	}
 	enable = {
-		has_completed_focus = GER_rebuild_the_high_seas_fleet
+		always = no
 	}
 	abort_when_not_enabled = yes
 
@@ -1779,6 +1779,12 @@ AXIS_dont_mess_with_volunteers = {
 		id = CHI
 		value = -500 #sorry buds
 	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = MAN
+		value = -500
+	}
 }
 
 GER_industry_we_are_the_baddies = {
@@ -2143,7 +2149,7 @@ GER_spain_scw_support_la_resistance = {
 	abort = {
 		OR = {
 			NOT = { country_exists = SPA }
-			SPA = { has_completed_focus = SPA_join_the_allies }
+			SPA = { always = no }
 		}
 	}
 
@@ -2208,27 +2214,12 @@ GER_my_precisioussss = {
 	}
 	ai_strategy = {
 		type = send_lend_lease_desire
+		id = MAN
+		value = -999
+	}
+	ai_strategy = {
+		type = send_lend_lease_desire
 		id = CHI
-		value = -999
-	}
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = YUN
-		value = -999
-	}
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = SHX
-		value = -999
-	}
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = XSM
-		value = -999
-	}
-	ai_strategy = {
-		type = send_lend_lease_desire
-		id = SIK
 		value = -999
 	}
 }
@@ -2382,7 +2373,7 @@ GER_no_no_definitely_not_planning_to_invade_norway = {
 	abort = {
 		OR = {
 			has_completed_focus = GER_operation_weserubung  # already at war so no need to prepare anymore
-			has_completed_focus = GER_utilize_the_nordliche_gesellschaft  # decided to befriend them instead
+			always = no  # decided to befriend them instead
 			date > 1940.9.1  # just for safety, if things really go south
 		}
 	}
@@ -2661,22 +2652,7 @@ GER_vichy_has_served_its_purpose = {
 
 	enable = {
 		country_exists = VIC
-		VIC = {
-			OR = {
-				has_country_flag = case_anton # Germany has activated the decision
-
-				count_triggers = { # Conditions for decision GER_case_anton
-					amount = 3 # lost control of ca half french north africa
-					458 = { CONTROLLER = { has_war_with = ROOT } }
-					459 = { CONTROLLER = { has_war_with = ROOT } }
-					460 = { CONTROLLER = { has_war_with = ROOT } }
-					461 = { CONTROLLER = { has_war_with = ROOT } }
-					462 = { CONTROLLER = { has_war_with = ROOT } }
-					513 = { CONTROLLER = { has_war_with = ROOT } }
-					665 = { CONTROLLER = { has_war_with = ROOT } }
-				}
-			}
-		}
+		
 	}
 	abort = { always = no }
 
@@ -3858,7 +3834,7 @@ GER_dont_DOW_benelux = { #Don't try to bypass Around the Maginot!
 	abort = {
 		OR = {
 			has_completed_focus = GER_around_maginot
-			has_completed_focus = GER_oppose_hitler_ww
+			always = no
 			has_war_with = HOL
 			has_war_with = BEL
 			has_war_with = LUX

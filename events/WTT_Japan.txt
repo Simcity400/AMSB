@@ -202,16 +202,10 @@ country_event = {
 			limit = {
 				original_tag = CHI
 			}
-			add_opinion_modifier = {
-				target = FROM
-				modifier = trautmann_agreement_opm
-			}
+			
 
 			FROM = {
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = trautmann_agreement_opm
-				}	
+				
 			}
 		}
 		ELSE_IF = {
@@ -268,12 +262,7 @@ country_event = {
 					original_tag = SOV
 				}
 				hidden_effect = {
-					PRC = {
-						country_event = { 
-							id = SEA_PRC_misc_events.12
-							days = 2
-						}
-					}
+					
 				}
 			}
 		}
@@ -326,15 +315,9 @@ country_event = {
 						original_tag = CHI
 					}
 				}
-				add_opinion_modifier = {
-					target = FROM
-					modifier = trautmann_agreement_opm
-				}
+				
 				FROM = {
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = trautmann_agreement_opm
-					}	
+					
 				}
 			}
 			ELSE_IF = {
@@ -940,16 +923,6 @@ country_event = {
 			country_event = { id = wtt_japan.110 hours = 6 }
 		}
 	}
-
-	option = {
-		name = wtt_japan.109.b #refuse
-		ai_chance = {
-			base = 0
-		}
-
-		event_target:JAP_initiator = { country_event = { id = wtt_japan.112 hours = 6 } }
-		event_target:ITA_fascism = { country_event = { id = wtt_japan.112 hours = 6 } }
-	}
 }
 
  # Event for Italy to accept Tripartite Pact
@@ -1002,23 +975,6 @@ country_event = {
 		}
 		event_target:JAP_initiator = { country_event = { id = wtt_japan.111 hours = 6 } }
 		event_target:GER_fascism = { country_event = { id = wtt_japan.113 hours = 6 } }
-	}
-
-	option = {
-		name = wtt_japan.109.b ##refuse
-		ai_chance = {
-			base = 10
-			modifier = {
-				factor = 0
-				OR = {
-					ITA_is_historical_ai = yes
-					ITA_is_alt_fascist_balbo_ai = yes
-				}
-			}
-		}
-		
-		event_target:GER_fascism = { country_event = { id = wtt_japan.112 hours = 6 } }
-		event_target:JAP_initiator = { country_event = { id = wtt_japan.112 hours = 6 } }
 	}
 }
 
@@ -1140,7 +1096,7 @@ country_event = {
 			set_autonomy = { target = MAN autonomy_state = autonomy_free }
 			if = {
 				limit = {
-					MEN = { is_subject_of = ROOT }
+					
 				}
 				MAN = { puppet = MEN }
 			}
@@ -1930,20 +1886,6 @@ country_event = {
 				white_peace = ROOT
 			}
 		}
-		if = {
-			limit = {
-				RNG = {
-					exists = yes
-					is_ally_with = JAP
-				}
-			}
-			event_target:WTT_current_china_leader = {
-				annex_country = {
-					target = RNG 
-					transfer_troops = no
-				}	
-			}
-		}
 		else = {
 			every_other_country = {
 				limit = {
@@ -1992,54 +1934,6 @@ country_event = {
 			}
 			set_truce = {
 				target = CHI
-				days = 730
-			}
-			set_truce = {
-				target = XSM
-				days = 730
-			}
-			set_truce = {
-				target = SHX
-				days = 730
-			}
-			set_truce = {
-				target = GXC
-				days = 730
-			}
-			set_truce = {
-				target = YUN
-				days = 730
-			}
-			set_truce = {
-				target = SIK
-				days = 730
-			}
-			set_truce = {
-				target = XIC
-				days = 730
-			}
-			set_truce = {
-				target = SND
-				days = 730
-			}
-			set_truce = {
-				target = GDC
-				days = 730
-			}
-			set_truce = {
-				target = SIC
-				days = 730
-			}
-			set_truce = {
-				target = KHM
-				days = 730
-			}
-			set_truce = {
-				target = NXM
-				days = 730
-			}
-			set_truce = {
-				target = GSM
 				days = 730
 			}
 		}
@@ -2146,7 +2040,7 @@ country_event = {
 							is_owned_by = JAP
 							AND = {
 								is_owned_by = MEN
-								MEN = { is_subject_of = JAP }
+								
 							}
 						}
 						NOT = {
@@ -2292,7 +2186,7 @@ country_event = {
 						is_owned_by = JAP
 						AND = {
 							is_owned_by = MEN
-							MEN = { is_subject_of = JAP }
+							
 						}
 					}
 				}
