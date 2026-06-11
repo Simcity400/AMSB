@@ -9,6 +9,11 @@ on_actions = {
 					peace_training
 				}
 				create_intelligence_agency = yes
+				add_daily_mastery = {
+					amount = 1000
+					days = 8	# bridges until the first on_weekly drip fires
+					name = Mastery
+				}
 			}
 			every_country = {
 				every_army_leader = {
@@ -232,10 +237,10 @@ on_actions = {
 
 	on_weekly = {
 		effect = {
-			if = { 
-				limit = { has_idea = peace_training }
+			if = {
+				limit = { is_playable_country = yes }
 				add_daily_mastery = {
-					amount = 2
+					amount = 1000
 					days = 7
 					name = Mastery
 				}

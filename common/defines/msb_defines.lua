@@ -300,6 +300,8 @@ NDefines.NProduction.POWERED_FACTORY_SPEED_MIL = 4	--Powered factory speed multi
 
 -- Mastery
 NDefines.NDoctrines.MASTERY_BANK_MAX = 500.0 	-- Vanilla value 200
+NDefines.NDoctrines.MAX_MONTHLY_MASTERY_GAIN = 100000.0	-- Vanilla 40: monthly cap lifted so doctrine tracks complete near-instantly
+NDefines.NDoctrines.MIN_MASTERY_GAIN_PER_DAY = 1000.0	-- Vanilla 0: any track with nonzero gain is floored to 1000/day (10 rewards/day at the default 100 cost)
 
 
 -- Make coal/energy a non-factor (restored from old AMSB): coal converts to energy at 100x vanilla rate, factory energy costs near zero
