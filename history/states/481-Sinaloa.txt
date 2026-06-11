@@ -11,6 +11,15 @@ state={
 	state_category = rural
 	
 	history={
+		# Restored from vanilla: bases + infrastructure (factories stay offsite via boost rules)
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			8057 = {
+				naval_base = 3
+			}
+		}
+		1941.1.1 = { remove_core_of = AST } # Barb: unchanged by Scraping rework
 		# STB Asia mode: MEX merged into AST
 		1936.1.1.13 = { owner = AST add_core_of = AST }
 		1941.1.1 = {
@@ -21,7 +30,6 @@ state={
 		
 		add_core_of = MEX
 		# Scraping the Barrel
-		1936.1.1.14 = { owner = WST add_core_of = WST remove_core_of = AST }
 		victory_points = {
 			7921 10
 		}

@@ -195,6 +195,19 @@
 					logistics_skill = 3
 				}
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+					has_idea = AST_indian_holdings_1
+				}
+				custom_effect_tooltip = MSB_union_manpower_RAJ_tt
+				swap_ideas = {
+					remove_idea = AST_indian_holdings_1
+					add_idea = AST_indian_holdings_2
+				}
+			}
 		}
 	}
 
@@ -1607,8 +1620,10 @@
 		
 			if = {
 				limit = {
-					has_country_flag = stb_asia_bookmark
-					NOT = { country_exists = MEX }
+					OR = {
+						has_country_flag = stb_asia_bookmark
+						has_country_flag = no_asia_scrap_bookmark
+					}
 				}
 				custom_effect_tooltip = MSB_union_dev_MEX_tt
 				add_offsite_building = { type = dockyard level = 1 }
@@ -1696,8 +1711,10 @@
 		
 			if = {
 				limit = {
-					has_country_flag = stb_asia_bookmark
-					NOT = { country_exists = MEX }
+					OR = {
+						has_country_flag = stb_asia_bookmark
+						has_country_flag = no_asia_scrap_bookmark
+					}
 				}
 				custom_effect_tooltip = MSB_union_dev_MEX_tt
 				add_offsite_building = { type = dockyard level = 1 }
@@ -2231,8 +2248,10 @@
 		
 			if = {
 				limit = {
-					has_country_flag = stb_asia_bookmark
-					NOT = { country_exists = MEX }
+					OR = {
+						has_country_flag = stb_asia_bookmark
+						has_country_flag = no_asia_scrap_bookmark
+					}
 				}
 				custom_effect_tooltip = MSB_union_dev_MEX_tt
 				add_offsite_building = { type = industrial_complex level = 3 }
@@ -2312,8 +2331,10 @@
 		
 			if = {
 				limit = {
-					has_country_flag = stb_asia_bookmark
-					NOT = { country_exists = MEX }
+					OR = {
+						has_country_flag = stb_asia_bookmark
+						has_country_flag = no_asia_scrap_bookmark
+					}
 				}
 				custom_effect_tooltip = MSB_union_dev_MEX_tt
 				add_offsite_building = { type = arms_factory level = 2 }
@@ -2393,8 +2414,10 @@
 		
 			if = {
 				limit = {
-					has_country_flag = stb_asia_bookmark
-					NOT = { country_exists = MEX }
+					OR = {
+						has_country_flag = stb_asia_bookmark
+						has_country_flag = no_asia_scrap_bookmark
+					}
 				}
 				custom_effect_tooltip = MSB_union_dev_MEX_tt
 				add_offsite_building = { type = arms_factory level = 2 }
@@ -2504,8 +2527,10 @@
 		
 			if = {
 				limit = {
-					has_country_flag = stb_asia_bookmark
-					NOT = { country_exists = MEX }
+					OR = {
+						has_country_flag = stb_asia_bookmark
+						has_country_flag = no_asia_scrap_bookmark
+					}
 				}
 				custom_effect_tooltip = MSB_union_dev_MEX_tt
 				add_offsite_building = { type = industrial_complex level = 3 }
@@ -2894,6 +2919,31 @@
 
 		completion_reward = {
 			add_ideas = AST_citizen_military_forces
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+					has_idea = AST_indian_holdings_2
+				}
+				custom_effect_tooltip = MSB_union_manpower_RAJ_tt
+				swap_ideas = {
+					remove_idea = AST_indian_holdings_2
+					add_idea = AST_indian_holdings_3
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+					has_idea = AST_indian_holdings_1
+				}
+				custom_effect_tooltip = MSB_union_manpower_RAJ_tt
+				swap_ideas = {
+					remove_idea = AST_indian_holdings_1
+					add_idea = AST_indian_holdings_3
+				}
+			}
 		}
 	}
 
@@ -3254,8 +3304,10 @@
 		
 			if = {
 				limit = {
-					has_country_flag = stb_asia_bookmark
-					NOT = { country_exists = MEX }
+					OR = {
+						has_country_flag = stb_asia_bookmark
+						has_country_flag = no_asia_scrap_bookmark
+					}
 				}
 				custom_effect_tooltip = MSB_union_dev_MEX_tt
 				277 = {

@@ -69,7 +69,14 @@ on_actions = {
 				# STB Asia mode (reworked No-Asia): merged minors' armies and
 				# assets transfer to their union partner at game start
 				if = {
-					limit = { GER = { has_country_flag = stb_asia_bookmark } }
+					limit = {
+						GER = {
+							OR = {
+								has_country_flag = stb_asia_bookmark
+								has_country_flag = no_asia_scrap_bookmark
+							}
+						}
+					}
 					if = {
 						limit = {
 							SAF = { exists = yes }
@@ -86,10 +93,12 @@ on_actions = {
 					}
 					if = {
 						limit = {
+							GER = { has_country_flag = stb_asia_bookmark } # India is removed, not merged, in Scraping
 							AST = { exists = yes }
 							NOT = { country_exists = RAJ }
 						}
 						AST = {
+							add_ideas = AST_indian_holdings_1
 							add_equipment_to_stockpile = { type = convoy_1 amount = 20 }
 							if = {
 								limit = { has_dlc = "Graveyard of Empires" }
@@ -128,9 +137,27 @@ on_actions = {
 							NOT = { country_exists = FIN }
 						}
 						SPR = {
-							add_ideas = extra_cp
+							if = {
+								limit = { has_country_flag = stb_asia_bookmark }
+								add_ideas = extra_cp
+								else = {
+									# Scraping: Spain holds Finland AND Bulgaria from the start
+									add_ideas = extra_cp_double
+								}
+							}
 							add_equipment_to_stockpile = { type = convoy_1 amount = 5 }
 							load_oob = "FIN_1936_union"
+						}
+					}
+					if = {
+						limit = {
+							GER = { has_country_flag = no_asia_scrap_bookmark }
+							SPR = { exists = yes }
+							NOT = { country_exists = BUL }
+						}
+						SPR = {
+							add_equipment_to_stockpile = { type = convoy_1 amount = 100 }
+							load_oob = "BUL_1936"
 						}
 					}
 				}
