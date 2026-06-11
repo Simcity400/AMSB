@@ -5,10 +5,11 @@ scripted_gui = {
 		window_name = "pause_block_window"
 		parent_window_name = time_control_window
 		visible = {
-			OR ={ 
-				AND = { WST = { check_variable = { pause_blocker_variable = 2 } } NOT = { has_country_flag = host } }
-				AND = { WST = { check_variable = { pause_blocker_variable = 3 } } NOT = { has_country_flag = host } NOT = { is_major = yes } } #Majors Only: majors and the host keep pause control
-				AND = { check_variable = { pause_blocker_variable = 4 } NOT = { has_country_flag = host } }
+			NOT = { has_country_flag = host } # common to every branch below; checked first so this per-frame block short-circuits before any WST scope-switch
+			OR = {
+				WST = { check_variable = { pause_blocker_variable = 2 } }
+				AND = { NOT = { is_major = yes } WST = { check_variable = { pause_blocker_variable = 3 } } } #Majors Only: majors and the host keep pause control
+				check_variable = { pause_blocker_variable = 4 }
 			}
 		}
 	}

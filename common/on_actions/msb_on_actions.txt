@@ -244,7 +244,10 @@ on_actions = {
 	}
 
 	########################################### Auto Dec ###########################################
-	on_monthly = {
+	# Every block below uses explicit scopes (GER/JAP/HOL/every_country), so the body is
+	# scope-independent: hung on the always-extant wasteland tag to run once per month
+	# instead of repeating for every country (global on_monthly). Same tick, same outcome.
+	on_monthly_WST = {
 		effect = {
 			if = {
 				limit = {

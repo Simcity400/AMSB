@@ -90,14 +90,16 @@ on_actions = {
 			}
 		}
     }
-	on_daily = {
+	# Map-wide sweep with no scope-dependent logic: hung on the always-extant wasteland tag
+	# so it runs once per day instead of repeating for every country (global on_daily).
+	on_daily_WST = {
 		effect = {
 			if = {
 				limit = {
 					has_game_rule = {
 						rule = killable_fin
 						option = off
-					} 
+					}
 				}
 				every_country = {
 					every_owned_state = {
