@@ -302,3 +302,8 @@ NDefines.NProduction.POWERED_FACTORY_SPEED_MIL = 4	--Powered factory speed multi
 -- Mastery
 NDefines.NDoctrines.MASTERY_BANK_MAX = 500.0 	-- Vanilla value 200
 
+
+-- Make coal/energy a non-factor (restored from old AMSB): coal converts to energy at 100x vanilla rate, factory energy costs near zero
+NDefines.NProduction.RESOURCE_TO_ENERGY_COEFFICIENT = 900.0		-- vanilla 9.0: how much energy per coal
+NDefines.NProduction.ENERGY_SCALING_COST_BY_FACTORY_COUNT = 0.0001	-- scales energy cost by total factory count
+NDefines.NProduction.BASE_ENERGY_COST = 0.001				-- energy consumed per factory
