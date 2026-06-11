@@ -51,6 +51,19 @@ on_actions = {
 						navy_experience = 999
 						air_experience = 999
 					}
+
+					# State history parser rejects building levels > 15
+					# ("Malformed token"); these states' 1941 blocks are
+					# clamped to 15 and topped up to intended levels here
+					219 = { # Moscow
+						set_building_level = { type = arms_factory level = 20 instant_build = yes }
+					}
+					43 = { # Hungary (ROM in barb)
+						set_building_level = { type = arms_factory level = 20 instant_build = yes }
+					}
+					46 = { # Muntenia
+						set_building_level = { type = arms_factory level = 16 instant_build = yes }
+					}
 				}
 
 				# Consolidation mode (reworked No-Asia): merged minors' armies and
@@ -66,8 +79,8 @@ on_actions = {
 							add_equipment_to_stockpile = { type = convoy_1 amount = 125 }
 							if = {
 								limit = { has_dlc = "No Step Back" }
-								load_oob = "CAN_1936_nsb"
-								else = { load_oob = "CAN_1936" }
+								load_oob = "CAN_1936_nsb_union"
+								else = { load_oob = "CAN_1936_union" }
 							}
 						}
 					}
@@ -104,7 +117,7 @@ on_actions = {
 							add_equipment_to_stockpile = { type = convoy_1 amount = 50 }
 							if = {
 								limit = { has_dlc = "Gotterdammerung" }
-								load_oob = "HUN_wuw_1936"
+								load_oob = "HUN_wuw_1936_union"
 								else = { load_oob = "HUN_1936" }
 							}
 						}
@@ -117,7 +130,7 @@ on_actions = {
 						SPR = {
 							add_ideas = extra_cp
 							add_equipment_to_stockpile = { type = convoy_1 amount = 5 }
-							load_oob = "FIN_1936"
+							load_oob = "FIN_1936_union"
 						}
 					}
 				}
