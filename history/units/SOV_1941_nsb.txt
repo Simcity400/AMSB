@@ -56,7 +56,7 @@ if = {
 	}
 division_template = {
 	priority = 2
-	name = "Soviet Meduim Meta tank"
+	name = "Soviet Meduim Meta Tank"
 	regiments = {
 		mechanized = { x = 0 y = 0 }
 		mechanized = { x = 0 y = 1 }
@@ -67,7 +67,6 @@ division_template = {
 		mechanized = { x = 1 y = 1 }
 		mechanized = { x = 1 y = 2 }
 		mechanized = { x = 1 y = 3 }
-		mechanized = { x = 1 y = 4 }
 		
 		medium_armor = { x = 2 y = 0 }
 		medium_armor = { x = 2 y = 1 }
@@ -75,13 +74,15 @@ division_template = {
 		medium_armor = { x = 2 y = 3 }
 		medium_armor = { x = 2 y = 4 }
 		
-		medium_tank_destroyer_brigade = { x = 3 y = 0 }
-		medium_tank_destroyer_brigade = { x = 3 y = 1 }
+		medium_armor = { x = 3 y = 0 }
+		medium_armor = { x = 3 y = 1 }
 		medium_tank_destroyer_brigade = { x = 3 y = 2 }
 		medium_tank_destroyer_brigade = { x = 3 y = 3 }
 		medium_tank_destroyer_brigade = { x = 3 y = 4 }
 
-		heavy_sp_anti_air_brigade = { x = 4 y = 0 }
+		mot_anti_air_brigade = {x = 4 y = 0}
+		mot_anti_air_brigade = {x = 4 y = 1}
+		mot_anti_air_brigade = {x = 4 y = 2}
 	}
 	support = {
 		field_hospital = { x = 0 y = 0 }
@@ -102,7 +103,7 @@ if = {
 	}
 division_template = {
 	priority = 2
-	name = "Soviet Meduim Meta tank"
+	name = "Soviet Medium Meta Tank"
 	regiments = {
 		mechanized = { x = 0 y = 0 }
 		mechanized = { x = 0 y = 1 }
@@ -135,7 +136,7 @@ division_template = {
 		armored_maintenance ={ x = 0 y = 2 }
 		logistics_company = { x = 0 y = 3 }
 		armored_engineer = { x = 0 y = 4  }
-		signal_company = { x = 0 y = 5 }
+		medium_flame_tank = { x = 0 y = 5 }
 		}
 	}
 }
@@ -564,33 +565,11 @@ units = {
 		antitank2 = 1
 		antitank3 = 1
 		antitank4 = 1
+		antitank5 = 1
 		sp_armored_advanced_flamethrower_tech = 1
 		railway_gun = 1
 
 		#Doctrine
-		 
-		delay = 1
-        
-        armored_spearhead = 1
-        schwerpunk = 1
-        blitzkrieg = 1
-        kampfgruppe = 1
-        firebrigades = 1
-        backhand_blow = 1
-        modern_blitzkrieg = 1
-
-		
-		infrastructure_destruction = 1
-		home_defence = 1
-		naval_strike_tactics = 1
-		dogfighting_experience = 1
-		multialtitude_flying = 1
-		logistical_bombing = 1
-		day_bombing = 1
-		air_offense = 1
-		flying_fortress = 1
-		mass_destruction = 1
-		offensive_formations = 1
 
 	}
 	if = {
@@ -700,6 +679,11 @@ units = {
 	}
 	complete_special_project = {
 		project = sp:sp_land_military_engineering_vehicles
+		scientist = GER_konrad_zuse
+		state = 219
+	}
+	complete_special_project = {
+		project = sp:sp_land_super_heavy_howitzer
 		scientist = GER_konrad_zuse
 		state = 219
 	}
@@ -859,7 +843,7 @@ units = {
 			design_team = mio:SOV_kirov_organization
 			parent_version = 0
 			modules = {
-				main_armament_slot = tank_high_velocity_cannon_3
+				main_armament_slot = tank_heavy_cannon_3
 				turret_type_slot = tank_medium_fixed_superstructure_turret
 				suspension_type_slot = tank_bogie_suspension
 				armor_type_slot = tank_riveted_armor
@@ -867,7 +851,7 @@ units = {
 				special_type_slot_1 = empty
 				special_type_slot_2 = squeezebore_adaptor
 				special_type_slot_3 = secondary_turret_small_cannon
-				special_type_slot_4 = secondary_turret_small_cannon
+				special_type_slot_4 = wet_ammo_storage
 				special_type_slot_5 = easy_maintenance
 			}
 			upgrades = {
@@ -904,8 +888,8 @@ units = {
 					special_type_slot_5 = easy_maintenance
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 17
-					tank_nsb_armor_upgrade = 17
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
 				}
 			icon = "GFX_SOV_advanced_heavy_tank_medium"
 		}
@@ -927,18 +911,18 @@ units = {
 				modules = {
 					main_armament_slot = tank_medium_cannon_3
 					turret_type_slot = tank_medium_three_man_tank_turret
-					suspension_type_slot = tank_torsion_bar_suspension
+					suspension_type_slot = tank_interleaved_suspension
 					armor_type_slot = tank_riveted_armor
 					engine_type_slot = tank_gasoline_engine
 					special_type_slot_1 = tank_radio_3
 					special_type_slot_2 = squeezebore_adaptor
 					special_type_slot_3 = secondary_turret_small_cannon
-					special_type_slot_4 = secondary_turret_small_cannon
+					special_type_slot_4 = wet_ammo_storage
 					special_type_slot_5 = easy_maintenance
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 14
-					tank_nsb_armor_upgrade = 14
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
 				}
 			icon = "GFX_SOV_advanced_medium_tank_medium"
 		}
@@ -958,20 +942,20 @@ units = {
 			design_team = mio:SOV_morozov_design_bureau_organization
 				parent_version = 0
 				modules = {
-					main_armament_slot = tank_high_velocity_cannon
+					main_armament_slot = advanced_flamethrower
 					turret_type_slot = tank_light_three_man_tank_turret
-					suspension_type_slot = tank_wheeled_suspension
-					armor_type_slot = tank_welded_armor
+					suspension_type_slot = tank_interleaved_suspension
+					armor_type_slot = tank_riveted_armor
 					engine_type_slot = tank_petrol_electric_engine
 					special_type_slot_1 = tank_radio_3
-					special_type_slot_2 = auto_loader
+					special_type_slot_2 = extra_ammo_storage
 					special_type_slot_3 = smoke_launchers
 					special_type_slot_4 = wet_ammo_storage
 					special_type_slot_5 = easy_maintenance
 				}
 				upgrades = {
-					tank_nsb_engine_upgrade = 17
-					tank_nsb_armor_upgrade = 17
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
 				}
 			icon = "GFX_SOV_advanced_light_tank_medium"
 		}
@@ -993,7 +977,7 @@ units = {
 				modules = {
 					main_armament_slot = advanced_flamethrower
 					turret_type_slot = tank_medium_three_man_tank_turret
-					suspension_type_slot = tank_bogie_suspension
+					suspension_type_slot = tank_interleaved_suspension
 					armor_type_slot = tank_riveted_armor
 					engine_type_slot = tank_petrol_electric_engine
 					special_type_slot_1 = tank_radio_3
@@ -1001,46 +985,15 @@ units = {
 					special_type_slot_3 = smoke_launchers
 					special_type_slot_4 = wet_ammo_storage
 					special_type_slot_5 = easy_maintenance
-				}
+					}
 				upgrades = {
-					tank_nsb_engine_upgrade = 17
-					tank_nsb_armor_upgrade = 14
+					tank_nsb_engine_upgrade = 0
+					tank_nsb_armor_upgrade = 0
 				}
 			icon = "GFX_SOV_improved_medium_tank_medium"
 		}
 	}
 
-	add_equipment_production = {
-		equipment = {
-			type = infantry_equipment_2
-			creator = SOV
-		}
-		requested_factories = 45
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_tula_arms_plant_organization
-	}
-
-	add_equipment_production = {
-		equipment = {
-			type = armored_support_vehicle_1
-			creator = SOV
-			version_name = "Armored Support Vehicle B"
-		}
-		requested_factories = 10
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
-	}
-	add_equipment_production = {
-			equipment = {
-			type = train_equipment_1
-			creator = "SOV" 
-			}
-			requested_factories = 2
-			progress = 1
-			efficiency = 100
-	}
 if = {
 		limit = {
 				has_game_rule = { 
@@ -1048,17 +1001,6 @@ if = {
 				option = on
 				}
 			}
-	add_equipment_production = {
-		equipment = {
-			type = light_tank_equipment_3
-			creator = SOV
-			version_name = "T-60"
-		}
-		requested_factories = 6
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
-		}
 	}
 
 	if = {
@@ -1068,17 +1010,6 @@ if = {
 				option = on
 				}
 			}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_equipment_3
-			creator = SOV
-			version_name = "T-44-85"
-		}
-		requested_factories = 115
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
-		}
 	}
 	if = {
 		limit = {
@@ -1087,17 +1018,6 @@ if = {
 				option = on
 				}
 			}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_destroyer_equipment_3
-			creator = SOV
-			version_name = "SU-100-2"
-		}
-		requested_factories = 20
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
-		}
 	}
 	if = {
 		limit = {
@@ -1106,16 +1026,15 @@ if = {
 				option = on
 				}
 			}
-	add_equipment_production = {
-		equipment = {
-			type = heavy_tank_aa_equipment_2
-			creator = SOV
-			version_name = "ZSU-37-3"
-		}
-		requested_factories = 22
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
+	}
+	if = {
+		limit = {
+			NOT = { 
+				has_game_rule = { 
+				rule = larp_barb
+				option = on
+				}
+			}
 		}
 	}
 	if = {
@@ -1127,16 +1046,15 @@ if = {
 				}
 			}
 		}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_chassis_2
-			creator = SOV
-			version_name = "T34-85"
-		}
-		requested_factories = 67
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
+	}
+	if = {
+		limit = {
+			NOT = { 
+				has_game_rule = { 
+				rule = larp_barb
+				option = on
+				}
+			}
 		}
 	}
 	if = {
@@ -1148,17 +1066,6 @@ if = {
 				}
 			}
 		}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_destroyer_chassis_2
-			creator = SOV
-			version_name = "SU-85"
-		}
-		requested_factories = 67
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
-		}
 	}
 	if = {
 		limit = {
@@ -1168,60 +1075,6 @@ if = {
 				option = on
 				}
 			}
-		}
-
-	add_equipment_production = {
-		equipment = {
-			type = heavy_tank_aa_chassis_2
-			creator = SOV
-			version_name = "ZSU-37-2"
-		}
-		requested_factories = 23
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
-		}
-	}
-	if = {
-		limit = {
-			NOT = { 
-				has_game_rule = { 
-				rule = larp_barb
-				option = on
-				}
-			}
-		}
-	add_equipment_production = {
-		equipment = {
-			type = light_tank_chassis_3
-			creator = SOV
-			version_name = "T-60"
-		}
-		requested_factories = 5
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
-		}
-	}
-	if = {
-		limit = {
-			NOT = { 
-				has_game_rule = { 
-				rule = larp_barb
-				option = on
-				}
-			}
-		}
-	add_equipment_production = {
-		equipment = {
-			type = medium_tank_flame_chassis_2
-			creator = SOV
-			version_name = "Medium Flame Tank II"
-		}
-		requested_factories = 4
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
 		}
 	}
 		
@@ -1232,59 +1085,8 @@ if = {
 				option = on
 				}
 			}
-	add_equipment_production = {
-		equipment = {
-			type = heavy_tank_equipment_2
-			creator = SOV
-			version_name = "KV-1-2"
-		}
-		requested_factories = 10
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_mytishchy_machine_building_plant_organization
-		}
 	}
-	add_equipment_production = {
-		equipment = {
-			type = mechanized_equipment_1
-			creator = SOV
-			version_name = "BTR M1941 B"
-		}
-		requested_factories = 22
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_gaz_organization
-	}
-	add_equipment_production = {
-		equipment = {
-			type = support_equipment_1
-			creator = "SOV" 
-		}
-		requested_factories = 15
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_tula_arms_plant_organization_support
-	}
-	add_equipment_production = {
-		equipment = {
-				type = motorized_equipment_1
-				creator = "SOV" 
-			}
-		requested_factories = 5
-		progress = 1
-		efficiency = 100
-		industrial_manufacturer = mio:SOV_gaz_organization
-	}
-	add_equipment_production = {
-			equipment = {
-				type = anti_air_equipment_3
-				creator = "SOV" 
-			}
-		requested_factories = 14
-		progress = 1
-		efficiency = 50
-		industrial_manufacturer = mio:SOV_grabin_design_bureau_organization
-	}	
+	
 	#### STOCKPILES FOR JAN 41 ####
 	add_equipment_to_stockpile = { 
 		type = mechanized_equipment_1

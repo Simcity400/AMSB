@@ -248,7 +248,12 @@ set_popularities = {
 	unlock_national_focus = ROM_army_maneuvers
 	unlock_national_focus = ROM_encourage_trade_with_germany
 	unlock_national_focus = ROM_trade_treaty_with_germany
+	unlock_national_focus = ROM_expand_fuel_stockpiles
 
+	add_timed_idea = {
+		idea = add_production_efficiency_41
+		days = 5
+	}
 	add_ideas = {
 		## national spirit
 		ROM_german_influence
@@ -257,10 +262,9 @@ set_popularities = {
 		ROM_grand_army
 
 		## economy
-		closed_economy
+		ROM_oil_lend_lease
 		tot_economic_mobilisation
 		all_adults_serve
-		ROM_ROMLOC
 		ROM_nicolae_malaxa
 		tradeback_is_cancer
 		## high command
@@ -274,10 +278,6 @@ set_popularities = {
 		ROM_gheorghe_potopeanu
 	}
 
-	add_timed_idea = {
-		idea = tradeback_is_cancer
-		days = 60
-	}
 	remove_ideas = {
 		ROM_iron_guard
 		ROM_romanian_officers

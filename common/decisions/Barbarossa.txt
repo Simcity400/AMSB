@@ -1,4 +1,40 @@
-	barbarossa_category = { 
+	barbarossa_category = {
+
+		countdown_to_barb = {
+			activation = {
+				AND = {
+						has_start_date > 1940.1.1
+				  	}
+				}
+
+		allowed = {
+			#has_country_flag = barbstart
+		}
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		visible = {
+			always = yes
+		}
+
+		cancel_trigger = {
+			always = no
+		}
+
+		days_mission_timeout = 202
+		is_good = no
+		fire_only_once = yes
+		timeout_effect = {
+			GER = {
+					declare_war_on = {
+						target = SOV
+						type = annex_everything
+					}
+				}
+
+			}
+		}
 
 		winter_of_1941_tick = {
 		

@@ -10,6 +10,7 @@ NDefines.NProduction.MIN_LAND_EQUIPMENT_CONVERSION_RESOURCE_COST_FACTOR = 0		-- 
 NDefines.NDiplomacy.LICENSE_ACCEPTANCE_TECH_DIFFERENCE = 200 		-- Acceptance modifier for each year of technology difference.
 NDefines.NDiplomacy.LICENSE_ACCEPTANCE_TECH_DIFFERENCE_BASE = 1000    -- Acceptance base for tech difference
 NDefines.NDiplomacy.LICENSE_ACCEPTANCE_OPINION_FACTOR = 0
+NDefines.NIntel.ARMY_INTEL_COMBAT_BONUS_MAX_BONUS = 0.0			--Remove intel advantage
 
 --AI no lend lease
 NDefines.NAI.LENDLEASE_FRACTION_OF_PRODUCTION = 0
