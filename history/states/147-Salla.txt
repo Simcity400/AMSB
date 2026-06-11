@@ -5,7 +5,9 @@ state = {
 	
 	state_category = enclave
 	
-	history = {	
+	history = {
+		# Consolidated mode: FIN merged into SPR
+		1936.1.1.13 = { owner = SPR add_core_of = SPR }	
 		1941.1.1 = {
 			owner = WST
 			add_core_of = WST
@@ -23,7 +25,7 @@ state = {
 		}
 		
 		# Scraping the Barrel
-		1936.1.1.14 = { owner = GER add_core_of = GER }
+		1936.1.1.14 = { owner = GER add_core_of = GER remove_core_of = SPR }
 	}
 
 	provinces = {

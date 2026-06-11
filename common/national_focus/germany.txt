@@ -2687,22 +2687,47 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			HUN = {
-				random_core_state = { 
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 3
-							include_locked = yes }
-					}
-					add_extra_state_shared_building_slots = 4
-					add_building_construction = {
-						type = arms_factory
-						level = 4
-						instant_build = yes
+			if = {
+				limit = { country_exists = HUN }
+				HUN = {
+					random_core_state = {
+						limit = {
+							free_building_slots = {
+								building = arms_factory
+								size > 3
+								include_locked = yes }
+						}
+						add_extra_state_shared_building_slots = 4
+						add_building_construction = {
+							type = arms_factory
+							level = 4
+							instant_build = yes
+						}
 					}
 				}
-
+			}
+			else = {
+				# Hungary merged into Romania (Consolidation/Scraping): its tranche goes to the union
+				if = {
+					limit = { ROM = { owns_state = 43 } }
+					ROM = {
+						random_owned_controlled_state = {
+							limit = {
+								is_core_of = HUN
+								free_building_slots = {
+									building = arms_factory
+									size > 3
+									include_locked = yes }
+							}
+							add_extra_state_shared_building_slots = 4
+							add_building_construction = {
+								type = arms_factory
+								level = 4
+								instant_build = yes
+							}
+						}
+					}
+				}
 			}
 			ROM = {
 				random_core_state = { 

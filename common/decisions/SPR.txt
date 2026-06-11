@@ -18232,3 +18232,50 @@ SPR_recovering_from_civil_war = {
 	}
 
 }
+
+political_actions = {
+
+	# Consolidation mode: Spain may absorb an AI-controlled Bulgaria to cover the Balkan front
+	SPR_annex_bulgaria = {
+
+		icon = generic_political_discourse
+
+		allowed = { original_tag = SPR }
+
+		visible = {
+			has_country_flag = stb_asia_bookmark
+			country_exists = BUL
+			BUL = { is_ai = yes }
+		}
+
+		available = {
+			country_exists = BUL
+			BUL = { is_ai = yes }
+		}
+
+		fire_only_once = yes
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = { is_owned_by = BUL }
+				add_core_of = SPR
+			}
+			annex_country = { target = BUL transfer_troops = yes }
+			if = {
+				limit = { has_idea = extra_cp }
+				swap_ideas = {
+					remove_idea = extra_cp
+					add_idea = extra_cp_double
+				}
+			}
+			else = {
+				add_ideas = extra_cp_double
+			}
+		}
+	}
+}

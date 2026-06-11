@@ -19,14 +19,14 @@ msb.6.t: ""
 msb.6.a: "Fair winds and following seas"
 msb.6.desc: "\n\n - Massively punished deathstacking. Fleet size positioning penalties start in at above 25 ships.\n - Increased supremacy from “Patrol” and “Convoy Raid” to encourage active navies.\n - Increased the power of light ships and reduced power of heavy ships. Expensive ships are less IC efficient, but win through concentration of force due to positioning changes.\n\nFor more Info check out the "Grape Naval Fix" steam description"
 
-# Bookmark No-Asia Event
-msb.2.t: "No-Asia World Tension Compensation"
-msb.2.desc: "Because there is no Japan and no China in No-Asia, extra aritifical World Tension is needed so that the Allies can consistenly stay on 'Partial Mobilization' until the beginning of WW2."
+# Pacific-removed modes (Scraping the Barrel / Barbarossa) compensation events
+msb.2.t: "World Tension Compensation"
+msb.2.desc: "Because there is no Japan and no China in this game mode, extra artificial World Tension is needed so that the Allies can consistently stay on 'Partial Mobilization' until the beginning of WW2."
 msb.2.a: "Okay, Thank you for the 40 extra World Tension"
-msb.4.t: "No-Asia 1941 USA Support"
+msb.4.t: "1941 USA Support"
 msb.4.d: "The east coast of the USA is going to be annexed to the UK with cores."
 msb.4.a: "Okay, Thank you for the IC."
-msb.5.t: "No-Asia 1941 USA Support"
+msb.5.t: "1941 USA Support"
 msb.5.desc: "The east coast of the USA has been annexed to the UK."
 msb.5.a: "Thanks for the Info"
 
@@ -42,6 +42,8 @@ uk_hf3_usa:0 "Advanced Heavy Fighter"
 game_check:0 "Game Rule Check"
 axis_fuel:0 "Axis Fuel Extraction"
 extra_cp:0 "Extra Commmand Power"
+extra_cp_double:0 "Extra Command Power (Triple Union)"
+extra_cp_double_desc:0 "Spain commands the fronts of three nations: its own, Finland's, and Bulgaria's. Command power flows accordingly."
 autonomy_gov_exile:0 "Allied Government in Exile"
 fall_of_france:0 "Fall of France"
 hmm_chi:0 "Japanese Victory over China"
@@ -176,9 +178,16 @@ SPR_war_join_tt:0 "§Y[ROOT.GetNameWithFlag]§! §Rwill join all wars against th
 
 # Bookmarks
  SCRAPING_NAME:0 "Scraping the Barrel"
- SCRAPING_SCRAP_DESC:0 "This game mode takes 'No-Asia' and throws out more minor nations, so that there are 9 playable countries in total. Perfect game mode for when you are lacking players in general. The UK in this game mode starts with 5 research slots to compensate the loss of US research. Additionally the UK gets the east coast of the USA annexed in 1941."
- NO_ASIA_NAME:0 "No-Asia"
- NO_ASIA_DESC:0 "The entire Pacific Theater is removed from the game. Every nation that usually joins the War after 1941+ is not present here. The UK in this game mode starts with 5 research slots to compensate the loss of US research. Additionally the UK gets the east coast of the USA annexed in 1941."
+ SCRAPING_SCRAP_DESC:0 "The entire Pacific Theater is removed from the game and the remaining minor nations are merged together, so that there are 9 playable countries in total. Perfect game mode for when you are lacking players in general. The UK in this game mode starts with 5 research slots to compensate the loss of US research. Additionally the UK gets the east coast of the USA annexed in 1941."
+ STB_ASIA_NAME:0 "STB Asia"
+ STB_ASIA_DESC:0 "The whole world including the Pacific Theater is in play, but the minors are merged into unions so that 13 playable countries cover every front. South Africa leads a union with Canada, Australia leads a union with India and Mexico, Romania absorbs Hungary, and Spain holds Finland and may integrate an AI-controlled Bulgaria by decision. Merged nations' armies transfer at game start, and each union earns its absorbed partners' focus-tree factories and resources through its own industrial focuses."
+ SPR_annex_bulgaria:0 "Integrate Bulgaria"
+ SPR_annex_bulgaria_desc:0 "Nobody has taken up the Bulgarian cause this game. We shall administer their lands and armies ourselves so the Balkan front does not go unmanned."
+ MSB_union_dev_CAN_tt:0 "§YUnion Development:§! the Canadian half of the union develops alongside us:"
+ MSB_union_dev_RAJ_tt:0 "§YUnion Development:§! the Indian half of the union develops alongside us:"
+ MSB_union_dev_MEX_tt:0 "§YUnion Development:§! the Mexican holdings of the union develop alongside us:"
+ MSB_union_dev_HUN_tt:0 "§YUnion Development:§! the Hungarian half of the union develops alongside us:"
+ MSB_union_dev_FIN_tt:0 "§YUnion Development:§! our Finnish holdings develop alongside us:"
 
 # LL Decision
 E_ll:"Air Decision Lend Lease"

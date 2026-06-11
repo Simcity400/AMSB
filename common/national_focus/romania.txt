@@ -805,6 +805,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			}	
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = HUN }
+				}
+				custom_effect_tooltip = MSB_union_dev_HUN_tt
+				add_offsite_building = { type = arms_factory level = 5 }
+			}
 		}
 	}
 
@@ -1348,6 +1357,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = HUN }
+				}
+				custom_effect_tooltip = MSB_union_dev_HUN_tt
+				add_offsite_building = { type = dockyard level = 6 }
+			}
 		}
 	}
 
@@ -1532,6 +1550,19 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_ideas = free_trade
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = HUN }
+				}
+				custom_effect_tooltip = MSB_union_dev_HUN_tt
+				add_offsite_building = { type = industrial_complex level = 5 }
+				every_state = {
+					limit = { is_core_of = HUN }
+					add_extra_state_shared_building_slots = 2
+				}
+			}
 		}
 	}
 
@@ -1732,6 +1763,17 @@ focus_tree = {
 				add_resource = {
 					type = oil
 					amount = 16
+				}
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = HUN }
+				}
+				custom_effect_tooltip = MSB_union_dev_HUN_tt
+				43 = {
+					add_resource = { type = oil amount = 15 }
 				}
 			}
 		}
@@ -2011,6 +2053,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = HUN }
+				}
+				custom_effect_tooltip = MSB_union_dev_HUN_tt
+				add_offsite_building = { type = arms_factory level = 5 }
+			}
 		}
 	}
 	
@@ -2029,6 +2080,18 @@ focus_tree = {
 				add_resource = {
 					type = steel
 					amount = 24
+				}
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = HUN }
+				}
+				custom_effect_tooltip = MSB_union_dev_HUN_tt
+				43 = {
+					add_resource = { type = steel amount = 22 }
+					add_resource = { type = aluminium amount = 30 }
 				}
 			}
 		}
@@ -2264,6 +2327,19 @@ focus_tree = {
 				uses = 1
 				category = construction_tech
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = HUN }
+				}
+				custom_effect_tooltip = MSB_union_dev_HUN_tt
+				add_offsite_building = { type = industrial_complex level = 5 }
+				every_state = {
+					limit = { is_core_of = HUN }
+					add_extra_state_shared_building_slots = 2
+				}
+			}
 		}
 	}
 
@@ -2294,6 +2370,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			}					
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = HUN }
+				}
+				custom_effect_tooltip = MSB_union_dev_HUN_tt
+				add_offsite_building = { type = arms_factory level = 4 }
+			}
 		}
 	}
 

@@ -1595,6 +1595,24 @@
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = Cockatoo_doe
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+				}
+				custom_effect_tooltip = MSB_union_dev_RAJ_tt
+				add_offsite_building = { type = dockyard level = 5 }
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = MEX }
+				}
+				custom_effect_tooltip = MSB_union_dev_MEX_tt
+				add_offsite_building = { type = dockyard level = 1 }
+			}
 		}
 	}
 	
@@ -1666,6 +1684,24 @@
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = evans_deakin_co
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+				}
+				custom_effect_tooltip = MSB_union_dev_RAJ_tt
+				add_offsite_building = { type = dockyard level = 5 }
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = MEX }
+				}
+				custom_effect_tooltip = MSB_union_dev_MEX_tt
+				add_offsite_building = { type = dockyard level = 1 }
+			}
 		}
 	}
 	
@@ -2136,6 +2172,71 @@
 				}
 				set_state_flag = AST_south_australian_housing_trust_IC
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+				}
+				custom_effect_tooltip = MSB_union_dev_RAJ_tt
+				add_offsite_building = { type = industrial_complex level = 8 }
+				every_state = {
+					# all Raj territory incl. princely states (many lack RAJ cores in vanilla)
+					limit = {
+						OR = {
+							state = 321
+							state = 323
+							state = 324
+							state = 423
+							state = 424
+							state = 425
+							state = 426
+							state = 427
+							state = 428
+							state = 429
+							state = 430
+							state = 431
+							state = 432
+							state = 433
+							state = 434
+							state = 435
+							state = 436
+							state = 437
+							state = 438
+							state = 439
+							state = 440
+							state = 441
+							state = 442
+							state = 443
+							state = 444
+							state = 445
+							state = 787
+							state = 982
+							state = 983
+							state = 984
+							state = 985
+							state = 986
+							state = 987
+							state = 988
+							state = 989
+							state = 990
+							state = 991
+							state = 992
+							state = 1012
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = MEX }
+				}
+				custom_effect_tooltip = MSB_union_dev_MEX_tt
+				add_offsite_building = { type = industrial_complex level = 3 }
+			}
 		}
 	}
 
@@ -2199,6 +2300,24 @@
 				}
 				set_state_flag = AST_department_of_supply_and_development_AF
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+				}
+				custom_effect_tooltip = MSB_union_dev_RAJ_tt
+				add_offsite_building = { type = arms_factory level = 6 }
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = MEX }
+				}
+				custom_effect_tooltip = MSB_union_dev_MEX_tt
+				add_offsite_building = { type = arms_factory level = 2 }
+			}
 		}
 	}
 
@@ -2261,6 +2380,24 @@
 					instant_build = yes
 				}
 				set_state_flag = AST_expand_lithgow_small_arms_factory_AF
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+				}
+				custom_effect_tooltip = MSB_union_dev_RAJ_tt
+				add_offsite_building = { type = arms_factory level = 6 }
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = MEX }
+				}
+				custom_effect_tooltip = MSB_union_dev_MEX_tt
+				add_offsite_building = { type = arms_factory level = 2 }
 			}
 		}
 	}
@@ -2354,6 +2491,28 @@
 					instant_build = yes
 				}
 				set_state_flag = AST_allied_works_council_IC2
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+				}
+				custom_effect_tooltip = MSB_union_dev_RAJ_tt
+				add_offsite_building = { type = industrial_complex level = 7 }
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = MEX }
+				}
+				custom_effect_tooltip = MSB_union_dev_MEX_tt
+				add_offsite_building = { type = industrial_complex level = 3 }
+				every_state = {
+					limit = { is_core_of = MEX }
+					add_extra_state_shared_building_slots = 1
+				}
 			}
 		}
 	}
@@ -3075,6 +3234,34 @@
 					amount = 12
 				}
 				set_state_flag = AST_rationing_and_recycling_oil
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = RAJ }
+				}
+				custom_effect_tooltip = MSB_union_dev_RAJ_tt
+				439 = {
+					add_resource = { type = steel amount = 60 }
+					add_resource = { type = oil amount = 30 }
+					add_resource = { type = tungsten amount = 15 }
+					add_resource = { type = aluminium amount = 12 }
+					add_resource = { type = chromium amount = 10 }
+					add_resource = { type = rubber amount = 10 }
+				}
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = MEX }
+				}
+				custom_effect_tooltip = MSB_union_dev_MEX_tt
+				277 = {
+					add_resource = { type = oil amount = 8 }
+					add_resource = { type = steel amount = 8 }
+				}
 			}
 		}
 	}

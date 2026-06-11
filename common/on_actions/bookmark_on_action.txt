@@ -53,6 +53,75 @@ on_actions = {
 					}
 				}
 
+				# Consolidation mode (reworked No-Asia): merged minors' armies and
+				# assets transfer to their union partner at game start
+				if = {
+					limit = { GER = { has_country_flag = stb_asia_bookmark } }
+					if = {
+						limit = {
+							SAF = { exists = yes }
+							NOT = { country_exists = CAN }
+						}
+						SAF = {
+							add_equipment_to_stockpile = { type = convoy_1 amount = 125 }
+							if = {
+								limit = { has_dlc = "No Step Back" }
+								load_oob = "CAN_1936_nsb"
+								else = { load_oob = "CAN_1936" }
+							}
+						}
+					}
+					if = {
+						limit = {
+							AST = { exists = yes }
+							NOT = { country_exists = RAJ }
+						}
+						AST = {
+							add_equipment_to_stockpile = { type = convoy_1 amount = 20 }
+							if = {
+								limit = { has_dlc = "Graveyard of Empires" }
+								load_oob = "RAJ_1936_GOE"
+								else = { load_oob = "RAJ_1936" }
+							}
+						}
+					}
+					if = {
+						limit = {
+							AST = { exists = yes }
+							NOT = { country_exists = MEX }
+						}
+						AST = {
+							add_equipment_to_stockpile = { type = convoy_1 amount = 45 }
+							load_oob = "MEX_1936"
+						}
+					}
+					if = {
+						limit = {
+							ROM = { exists = yes }
+							NOT = { country_exists = HUN }
+						}
+						ROM = {
+							add_equipment_to_stockpile = { type = convoy_1 amount = 50 }
+							if = {
+								limit = { has_dlc = "Gotterdammerung" }
+								load_oob = "HUN_wuw_1936"
+								else = { load_oob = "HUN_1936" }
+							}
+						}
+					}
+					if = {
+						limit = {
+							SPR = { exists = yes }
+							NOT = { country_exists = FIN }
+						}
+						SPR = {
+							add_ideas = extra_cp
+							add_equipment_to_stockpile = { type = convoy_1 amount = 5 }
+							load_oob = "FIN_1936"
+						}
+					}
+				}
+
 				if = {
 					limit = {
 						NOT = { country_exists = USA }

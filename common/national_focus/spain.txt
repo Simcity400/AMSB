@@ -1299,6 +1299,18 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = FIN }
+					owns_state = 111
+					NOT = { has_country_flag = MSB_fin_dev_mil }
+				}
+				custom_effect_tooltip = MSB_union_dev_FIN_tt
+				add_offsite_building = { type = arms_factory level = 14 }
+				hidden_effect = { set_country_flag = MSB_fin_dev_mil }
+			}
 		}
 	}
 	focus = {
@@ -1965,6 +1977,26 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = FIN }
+					owns_state = 111
+					NOT = { has_country_flag = MSB_fin_dev_civ }
+				}
+				custom_effect_tooltip = MSB_union_dev_FIN_tt
+				add_offsite_building = { type = industrial_complex level = 12 }
+				every_state = {
+					limit = { is_core_of = FIN }
+					add_extra_state_shared_building_slots = 3
+				}
+				111 = {
+					add_resource = { type = steel amount = 30 }
+					add_resource = { type = chromium amount = 18 }
+				}
+				hidden_effect = { set_country_flag = MSB_fin_dev_civ }
 			}
 		}
 	}
@@ -2944,6 +2976,18 @@ focus_tree = {
 					instant_build = yes
 				}
 				set_state_flag = SPA_invest_in_naval_infrastructure_3DY
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = FIN }
+					owns_state = 111
+					NOT = { has_country_flag = MSB_fin_dev_doc }
+				}
+				custom_effect_tooltip = MSB_union_dev_FIN_tt
+				add_offsite_building = { type = dockyard level = 8 }
+				hidden_effect = { set_country_flag = MSB_fin_dev_doc }
 			}
 		}
 	}
@@ -4137,6 +4181,26 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = FIN }
+					owns_state = 111
+					NOT = { has_country_flag = MSB_fin_dev_civ }
+				}
+				custom_effect_tooltip = MSB_union_dev_FIN_tt
+				add_offsite_building = { type = industrial_complex level = 12 }
+				every_state = {
+					limit = { is_core_of = FIN }
+					add_extra_state_shared_building_slots = 3
+				}
+				111 = {
+					add_resource = { type = steel amount = 30 }
+					add_resource = { type = chromium amount = 18 }
+				}
+				hidden_effect = { set_country_flag = MSB_fin_dev_civ }
+			}
 		}
 	}
 
@@ -4297,6 +4361,18 @@ focus_tree = {
 					instant_build = yes
 				}
 				set_state_flag = SPR_revive_the_republican_navy_1DY
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = FIN }
+					owns_state = 111
+					NOT = { has_country_flag = MSB_fin_dev_doc }
+				}
+				custom_effect_tooltip = MSB_union_dev_FIN_tt
+				add_offsite_building = { type = dockyard level = 8 }
+				hidden_effect = { set_country_flag = MSB_fin_dev_doc }
 			}
 		}
 	}
@@ -4520,6 +4596,18 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = FIN }
+					owns_state = 111
+					NOT = { has_country_flag = MSB_fin_dev_mil }
+				}
+				custom_effect_tooltip = MSB_union_dev_FIN_tt
+				add_offsite_building = { type = arms_factory level = 14 }
+				hidden_effect = { set_country_flag = MSB_fin_dev_mil }
 			}
 		}
 	}

@@ -2764,16 +2764,32 @@ focus_tree = {
 		cost = 2
 
 		available = {
-			any_country = {
-				original_tag = CAN
-				is_in_faction_with = ROOT
+			OR = {
+				any_country = {
+					original_tag = CAN
+					is_in_faction_with = ROOT
+				}
+				AND = {
+					NOT = { country_exists = CAN }
+					any_country = {
+						original_tag = SAF
+						is_in_faction_with = ROOT
+					}
+				}
 			}
 		}
 		bypass = {
-			CAN = { 
-				OR = {
-					exists = no
-					is_in_faction = no
+			OR = {
+				AND = {
+					CAN = { exists = yes }
+					CAN = { is_in_faction = no }
+				}
+				AND = {
+					CAN = { exists = no }
+					OR = {
+						SAF = { exists = no }
+						SAF = { is_in_faction = no }
+					}
 				}
 			}
 		}
@@ -2782,7 +2798,17 @@ focus_tree = {
 
 
 		completion_reward = {
-			CAN = {
+			random_country = {
+				limit = {
+					OR = {
+						original_tag = CAN
+						AND = {
+							NOT = { country_exists = CAN }
+							original_tag = SAF
+						}
+					}
+					is_in_faction_with = ROOT
+				}
 				add_opinion_modifier = { target = ENG modifier = ENG_imperial_trade }
 				add_timed_idea = {	idea = GBR_british_mobilisation_support	days = 365	}
 				random_owned_controlled_state = {
@@ -2834,16 +2860,32 @@ focus_tree = {
 		cost = 2
 
 		available = {
-			any_country = {
-				original_tag = SAF
-				is_in_faction_with = ROOT
+			OR = {
+				any_country = {
+					original_tag = SAF
+					is_in_faction_with = ROOT
+				}
+				AND = {
+					NOT = { country_exists = SAF }
+					any_country = {
+						original_tag = CAN
+						is_in_faction_with = ROOT
+					}
+				}
 			}
 		}
 		bypass = {
-			SAF = { 
-				OR = {
-					exists = no
-					is_in_faction = no
+			OR = {
+				AND = {
+					SAF = { exists = yes }
+					SAF = { is_in_faction = no }
+				}
+				AND = {
+					SAF = { exists = no }
+					OR = {
+						CAN = { exists = no }
+						CAN = { is_in_faction = no }
+					}
 				}
 			}
 		}
@@ -2851,7 +2893,17 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			SAF = {
+			random_country = {
+				limit = {
+					OR = {
+						original_tag = SAF
+						AND = {
+							NOT = { country_exists = SAF }
+							original_tag = CAN
+						}
+					}
+					is_in_faction_with = ROOT
+				}
 				add_opinion_modifier = { target = ENG modifier = ENG_imperial_trade }
 				add_timed_idea = {	idea = GBR_british_mobilisation_support	days = 365	}
 				random_owned_controlled_state = {
@@ -2901,9 +2953,18 @@ focus_tree = {
 		y = 3
 
 		available = {
-			any_country = {
-				original_tag = RAJ
-				is_in_faction_with = ROOT
+			OR = {
+				any_country = {
+					original_tag = RAJ
+					is_in_faction_with = ROOT
+				}
+				AND = {
+					NOT = { country_exists = RAJ }
+					any_country = {
+						original_tag = AST
+						is_in_faction_with = ROOT
+					}
+				}
 			}
 		} 
 		
@@ -2912,10 +2973,17 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		bypass = {
-			RAJ = { 
-				OR = {
-					exists = no
-					is_in_faction = no
+			OR = {
+				AND = {
+					RAJ = { exists = yes }
+					RAJ = { is_in_faction = no }
+				}
+				AND = {
+					RAJ = { exists = no }
+					OR = {
+						AST = { exists = no }
+						AST = { is_in_faction = no }
+					}
 				}
 			}
 		}
@@ -2923,7 +2991,17 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			RAJ = {
+			random_country = {
+				limit = {
+					OR = {
+						original_tag = RAJ
+						AND = {
+							NOT = { country_exists = RAJ }
+							original_tag = AST
+						}
+					}
+					is_in_faction_with = ROOT
+				}
 				add_opinion_modifier = { target = ENG modifier = ENG_imperial_trade }
 				add_timed_idea = {	idea = GBR_british_mobilisation_support	days = 365	}
 				random_owned_controlled_state = {
@@ -2976,17 +3054,33 @@ focus_tree = {
 		cost = 2
 
 		available = {
-			any_country = {
-				original_tag = AST
-				is_in_faction_with = ROOT
+			OR = {
+				any_country = {
+					original_tag = AST
+					is_in_faction_with = ROOT
+				}
+				AND = {
+					NOT = { country_exists = AST }
+					any_country = {
+						original_tag = RAJ
+						is_in_faction_with = ROOT
+					}
+				}
 			}
 		}
 
 		bypass = {
-			AST = { 
-				OR = {
-					exists = no
-					is_in_faction = no
+			OR = {
+				AND = {
+					AST = { exists = yes }
+					AST = { is_in_faction = no }
+				}
+				AND = {
+					AST = { exists = no }
+					OR = {
+						RAJ = { exists = no }
+						RAJ = { is_in_faction = no }
+					}
 				}
 			}
 		}
@@ -2994,7 +3088,17 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			AST = {
+			random_country = {
+				limit = {
+					OR = {
+						original_tag = AST
+						AND = {
+							NOT = { country_exists = AST }
+							original_tag = RAJ
+						}
+					}
+					is_in_faction_with = ROOT
+				}
 				add_opinion_modifier = { target = ENG modifier = ENG_imperial_trade }
 				add_timed_idea = {	idea = GBR_british_mobilisation_support	days = 365	}
 				random_owned_controlled_state = {

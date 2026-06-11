@@ -288,6 +288,15 @@ focus_tree = {
 				}
 				set_state_flag = SAF_expand_manufacturing_industry_IC
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = CAN }
+				}
+				custom_effect_tooltip = MSB_union_dev_CAN_tt
+				add_offsite_building = { type = arms_factory level = 5 }
+			}
 		}
 	}
 	
@@ -324,6 +333,19 @@ focus_tree = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
+				}
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = CAN }
+				}
+				custom_effect_tooltip = MSB_union_dev_CAN_tt
+				add_offsite_building = { type = industrial_complex level = 5 }
+				every_state = {
+					limit = { is_core_of = CAN }
+					add_extra_state_shared_building_slots = 1
 				}
 			}
 		}
@@ -467,6 +489,22 @@ focus_tree = {
 					amount = 16
 				}
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = CAN }
+				}
+				custom_effect_tooltip = MSB_union_dev_CAN_tt
+				470 = {
+					add_resource = { type = oil amount = 50 }
+					add_resource = { type = coal amount = 8 }
+				}
+				682 = {
+					add_resource = { type = steel amount = 20 }
+					add_resource = { type = chromium amount = 10 }
+				}
+			}
 		}
 	}
 	
@@ -595,6 +633,19 @@ focus_tree = {
 					instant_build = yes
 				}
 				set_state_flag = SAF_transvaal_urbanization_IC
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = CAN }
+				}
+				custom_effect_tooltip = MSB_union_dev_CAN_tt
+				add_offsite_building = { type = industrial_complex level = 5 }
+				every_state = {
+					limit = { is_core_of = CAN }
+					add_extra_state_shared_building_slots = 1
+				}
 			}
 		}
 	}
@@ -875,6 +926,15 @@ focus_tree = {
 				}
 				set_state_flag = SAF_magazine_hill_AF
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = CAN }
+				}
+				custom_effect_tooltip = MSB_union_dev_CAN_tt
+				add_offsite_building = { type = arms_factory level = 5 }
+			}
 		}
 	}
 	
@@ -996,6 +1056,15 @@ focus_tree = {
 					instant_build = yes
 				}
 				set_state_flag = SAF_lenz_bomb_factory_AF
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = CAN }
+				}
+				custom_effect_tooltip = MSB_union_dev_CAN_tt
+				add_offsite_building = { type = arms_factory level = 4 }
 			}
 		}
 	}
@@ -2613,6 +2682,15 @@ focus_tree = {
 				uses = 2
 				category = naval_doctrine
 			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = CAN }
+				}
+				custom_effect_tooltip = MSB_union_dev_CAN_tt
+				add_offsite_building = { type = dockyard level = 4 }
+			}
 		}
 	}
 
@@ -2750,6 +2828,15 @@ focus_tree = {
 					}
 					set_state_flag = SAF_expand_the_simons_town_base_NB
 				}
+			}
+		
+			if = {
+				limit = {
+					has_country_flag = stb_asia_bookmark
+					NOT = { country_exists = CAN }
+				}
+				custom_effect_tooltip = MSB_union_dev_CAN_tt
+				add_offsite_building = { type = dockyard level = 3 }
 			}
 		}
 	}

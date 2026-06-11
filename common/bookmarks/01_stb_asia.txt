@@ -1,7 +1,7 @@
 bookmarks = {
 	bookmark = {
-		name = "NO_ASIA_NAME"
-		desc = "NO_ASIA_DESC"
+		name = "STB_ASIA_NAME"
+		desc = "STB_ASIA_DESC"
 		date = 1936.1.1.13
 		picture = "GFX_select_date_no_asia"
 		default_country = "GER"
@@ -62,6 +62,20 @@ bookmarks = {
 				tizard_mission_focus
 				ENG_steady_as_she_goes
 				ENG_let_that_lion_roar
+			}
+		}
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				home_of_the_free
+				great_depression
+				undisturbed_isolation
+			}
+			focuses = {
+				USA_war_plan_black
+				USA_continue_the_new_deal
+				USA_two_ocean_navy_act
 			}
 		}
 
@@ -125,6 +139,38 @@ bookmarks = {
 				ITA_mare_nostrum_bba
 			}		
 		}
+		JAP = {
+			history = "JAP_GATHERING_STORM_DESC"
+			available = {  NOT = { has_dlc = "No Compromise, No Surrender" } }
+			ideology = neutrality
+			override_leader_portrait = JAP_emperor_hirohito
+			ideas = {
+				JAP_1936_fake_state_shintoism_idea
+				JAP_1936_fake_industrial_idea
+				JAP_militarism
+			}
+			focuses = {
+				JAP_sea_purge_the_kodoha_faction
+				JAP_resource_security
+				JAP_nanshin_ron
+			}
+		}
+		JAP = {
+			history = "JAP_GATHERING_STORM_DESC"
+			available = {  has_dlc = "No Compromise, No Surrender" }
+			ideology = neutrality
+			override_leader_portrait = JAP_emperor_hirohito
+			ideas = {
+				JAP_1936_fake_state_shintoism_idea
+				JAP_1936_fake_industrial_idea
+				JAP_militarism
+			}
+			focuses = {
+				JAP_sea_purge_the_kodoha_faction
+				JAP_resource_security
+				JAP_nanshin_ron
+			}
+		}
 		"SOV"={
 			history = "SOV_GATHERING_STORM_DESC"
 			ideology = communism
@@ -162,20 +208,6 @@ bookmarks = {
 
 
 		# minors from DLC ####
-		"CAN"={
-			minor = yes
-			history = "CAN_GATHERING_STORM_DESC"
-			ideology = democratic
-			ideas = {
-				CAN_great_depression_1
-				CAN_conscription_crisis
-			}
-			focuses = {
-				CAN_war_fueled_economy
-				CAN_send_in_the_zombies
-				CAN_forced_quebec_conscription
-			}
-		}
 		"AST"={
 			minor = yes
 			history = "AST_GATHERING_STORM_DESC"
@@ -203,39 +235,18 @@ bookmarks = {
 				SAF_operation_overlord
 			}
 		}
-		"RAJ"={
+		"PHI"={
 			minor = yes
-			history = "RAJ_GATHERING_STORM_DESC"
-			ideology = neutrality
+			history = "PHI_GATHERING_STORM_DESC"
+			ideology = democratic
 			ideas = {
-				RAJ_agrarian_society
-				RAJ_princely_states
+				PHI_ideological_rebels
+				PHI_unstable_state
 			}
-			focuses = {
-				RAJ_provincial_elections
-				RAJ_indian_gurkhas
-				RAJ_the_smiling_buddha
-			}
+			# focuses removed: PHI_fascist_defense / PHI_follow_the_american_way / PHI_american_imports
+			# belonged to a custom philippines focus tree that is not in the mod (broken refs rendered on the menu screen)
 		}
-	
-
-		HUN = {
-			minor = yes
-			history = "HUN_GATHERING_STORM_DESC"
-			ideology = neutrality
-			available = {  NOT = { has_dlc = "Gotterdammerung" } }
-			ideas = {
-				HUN_treaty_of_triannon
-				HUN_gombos_trade_treaty
-			}
-			focuses = {
-				HUN_proclaim_the_restoration_of_austria_hungary
-				HUN_secret_rearmament
-				HUN_renounce_the_treaty_of_trianon
-			}
-		}
-
-		"ROM"={
+"ROM"={
 			minor = yes
 			history = "ROM_GATHERING_STORM_DESC"
 			ideology = neutrality
@@ -287,55 +298,10 @@ bookmarks = {
 			}
 		}
 
-		FIN = {
-			minor = yes
-			history = FIN_GATHERING_STORM_DESC
-			ideology = neutrality
-			available = {  NOT = { has_dlc = "Arms Against Tyranny" } }
-			ideas = {
-				FIN_sisu_2
-			}
-			focuses = {
-				FIN_winter_warfare
-				FIN_greater_finland
-				FIN_oy_alkoholiliike
-			}
-		}
-		FIN = {
-			minor = yes
-			history = FIN_GATHERING_STORM_DESC
-			ideology = neutrality
-			available = { has_dlc = "Arms Against Tyranny" } 
-			ideas = {
-				FIN_sisu_2
-			}
-			focuses = {
-				FIN_dreams_of_expansionism
-				FIN_winter_warfare
-				FIN_greater_finland
-			}
-		}
-		
-		HUN = {
-			minor = yes
-			history = "HUN_GATHERING_STORM_DESC"
-			ideology = neutrality
-			available = { has_dlc = "Gotterdammerung" }
-			ideas = {
-				HUN_treaty_of_triannon_wuw
-				HUN_gombos_trade_treaty
-				HUN_hungarian_national_defense_association
-			}
-			focuses = {
-				wuw_HUN_proclaim_greater_hungary
-				wuw_HUN_strengthen_horthys_reign
-				wuw_HUN_invite_german_investors
-			}
-		}
-	
+
 		effect = {
 			every_country = {
-                set_country_flag = no_asia_bookmark
+                set_country_flag = stb_asia_bookmark
             }
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }
