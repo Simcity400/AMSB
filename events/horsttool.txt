@@ -759,3 +759,153 @@ news_event = {
         name = "Welcome back"
     }
 }
+
+# Annex confirmation (fired to the host; vars target/taker were set by annex_country_click)
+country_event = {
+    id = hosttool.63
+    title = "Annex Confirmation"
+    desc = hosttool.63.desc
+    picture = GFX_report_event_001
+    is_triggered_only = yes
+
+    option = {
+        name = "Yes, annex them"
+        var:ROOT.target = {
+            var:ROOT.taker = {
+                annex_country = { target = PREV transfer_troops = yes }
+                every_state = {
+                    limit = {
+                        is_owned_by = var:ROOT.taker
+                        is_core_of = var:ROOT.target
+                    }
+                    add_compliance = 80
+                }
+            }
+        }
+        set_global_variable = { ht_diplo_a = ROOT.target }
+        set_global_variable = { ht_diplo_b = ROOT.taker }
+        every_country = { limit = { is_ai = no } news_event = { id = hosttool.64 } }
+        for_each_scope_loop = {
+            array = marked_states
+            clear_variable = mark_status
+        }
+        clear_array = marked_states
+        clear_variable = target
+        clear_variable = taker
+        clear_variable = first_marked_state
+    }
+
+    option = {
+        name = "No, cancel"
+        clear_variable = target
+        clear_variable = taker
+    }
+}
+
+news_event = {
+    id = hosttool.64
+    title = "Host Tool - Country Annexed"
+    desc = "[?global.ht_diplo_a.GetName] has been annexed into [?global.ht_diplo_b.GetName] by the host tool."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "So it goes"
+    }
+}
+
+news_event = {
+    id = hosttool.65
+    title = "Host Tool - White Peace"
+    desc = "The host has white peaced [?global.ht_diplo_a.GetName] with [?global.ht_diplo_b.GetName]."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "Peace in our time"
+    }
+}
+
+news_event = {
+    id = hosttool.66
+    title = "Host Tool - Truce Set"
+    desc = "The host has set a 6 month truce between [?global.ht_diplo_a.GetName] and [?global.ht_diplo_b.GetName]."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "Cool off"
+    }
+}
+
+news_event = {
+    id = hosttool.67
+    title = "Host Tool - Truce Cleared"
+    desc = "The host has cleared the truce between [?global.ht_diplo_a.GetName] and [?global.ht_diplo_b.GetName]."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "Gloves off"
+    }
+}
+
+news_event = {
+    id = hosttool.68
+    title = "Host Tool - Joined Faction"
+    desc = "The host has added [?global.ht_diplo_b.GetName] to [?global.ht_diplo_a.GetName]'s faction."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "Welcome aboard"
+    }
+}
+
+news_event = {
+    id = hosttool.70
+    title = "Host Tool - Kicked from Faction"
+    desc = "The host has removed [?global.ht_diplo_b.GetName] from [?global.ht_diplo_a.GetName]'s faction."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "Out you go"
+    }
+}
+
+news_event = {
+    id = hosttool.71
+    title = "Host Tool - War Goals Removed"
+    desc = "The host has removed all war goals of [?global.ht_diplo_a.GetName] against [?global.ht_diplo_b.GetName]."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "Stand down"
+    }
+}
+
+news_event = {
+    id = hosttool.72
+    title = "Host Tool - Autonomy Changed"
+    desc = "The host has changed the autonomy level of [?global.ht_diplo_a.GetName]."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "New management terms"
+    }
+}
+
+news_event = {
+    id = hosttool.73
+    title = "Host Tool - Focus Tree Modified"
+    desc = "The host has modified the focus tree of [?global.ht_diplo_a.GetName] (completed or uncompleted a focus)."
+    picture = GFX_news_event_001
+    major = yes
+    is_triggered_only = yes
+    option = {
+        name = "History rewritten"
+    }
+}

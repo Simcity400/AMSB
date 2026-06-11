@@ -526,30 +526,8 @@ st_country_powers = {
 			var:ROOT.marked_states^0 = { owner = { set_variable = { ROOT.target = this } } }
 			if = { limit = { check_variable = { ROOT.target = ROOT.taker } } }
 			else = {
-				var:ROOT.target = {
-					pow_before_annex = yes
-					var:ROOT.taker = {
-						annex_country = { target = PREV transfer_troops = yes }
-						every_state = { 
-							limit = { 
-								is_owned_by = var:ROOT.taker 
-								is_core_of = var:ROOT.target
-							}
-							add_compliance = 80
-						}
-					}
-				}
-			}
-			
-			ROOT = {
-				for_each_scope_loop = {
-					array = marked_states
-					clear_variable = mark_status
-				}
-				clear_array = marked_states
-				clear_variable = target
-				clear_variable = taker
-				clear_variable = first_marked_state
+				# Confirmation event names both sides; the annex itself runs in the event's Yes option
+				ROOT = { country_event = { id = hosttool.63 } }
 			}
 		}
 		puppet_country_click = {
@@ -600,6 +578,201 @@ st_country_powers = {
 				}
 		}
 		
+		# --- Host admin row: targeted diplomacy (uses Target/Receiver pickers) ---
+		wp_targeted_click = {
+			if = {
+				limit = {
+					NOT = { check_variable = { ROOT.target_country = 0 } }
+					NOT = { check_variable = { ROOT.receiver_country = 0 } }
+					NOT = { check_variable = { ROOT.target_country = ROOT.receiver_country } }
+					var:ROOT.target_country = { has_war_with = var:ROOT.receiver_country }
+				}
+				set_global_variable = { ht_diplo_a = ROOT.target_country }
+				set_global_variable = { ht_diplo_b = ROOT.receiver_country }
+				var:ROOT.target_country = { white_peace = var:ROOT.receiver_country }
+				every_country = { limit = { is_ai = no } news_event = { id = hosttool.65 } }
+				clear_variable = ROOT.target_country
+				clear_variable = ROOT.receiver_country
+			}
+		}
+
+		truce_set_click = {
+			if = {
+				limit = {
+					NOT = { check_variable = { ROOT.target_country = 0 } }
+					NOT = { check_variable = { ROOT.receiver_country = 0 } }
+					NOT = { check_variable = { ROOT.target_country = ROOT.receiver_country } }
+				}
+				set_global_variable = { ht_diplo_a = ROOT.target_country }
+				set_global_variable = { ht_diplo_b = ROOT.receiver_country }
+				var:ROOT.target_country = { set_truce = { target = var:ROOT.receiver_country months = 6 } }
+				var:ROOT.receiver_country = { set_truce = { target = var:ROOT.target_country months = 6 } }
+				every_country = { limit = { is_ai = no } news_event = { id = hosttool.66 } }
+				clear_variable = ROOT.target_country
+				clear_variable = ROOT.receiver_country
+			}
+		}
+
+		truce_clear_click = {
+			if = {
+				limit = {
+					NOT = { check_variable = { ROOT.target_country = 0 } }
+					NOT = { check_variable = { ROOT.receiver_country = 0 } }
+					NOT = { check_variable = { ROOT.target_country = ROOT.receiver_country } }
+				}
+				set_global_variable = { ht_diplo_a = ROOT.target_country }
+				set_global_variable = { ht_diplo_b = ROOT.receiver_country }
+				var:ROOT.target_country = { set_truce = { target = var:ROOT.receiver_country months = 0 } }
+				var:ROOT.receiver_country = { set_truce = { target = var:ROOT.target_country months = 0 } }
+				every_country = { limit = { is_ai = no } news_event = { id = hosttool.67 } }
+				clear_variable = ROOT.target_country
+				clear_variable = ROOT.receiver_country
+			}
+		}
+
+		faction_add_click = {
+			if = {
+				limit = {
+					NOT = { check_variable = { ROOT.target_country = 0 } }
+					NOT = { check_variable = { ROOT.receiver_country = 0 } }
+					NOT = { check_variable = { ROOT.target_country = ROOT.receiver_country } }
+					var:ROOT.target_country = { is_faction_leader = yes }
+				}
+				set_global_variable = { ht_diplo_a = ROOT.target_country }
+				set_global_variable = { ht_diplo_b = ROOT.receiver_country }
+				var:ROOT.target_country = { add_to_faction = var:ROOT.receiver_country }
+				every_country = { limit = { is_ai = no } news_event = { id = hosttool.68 } }
+				clear_variable = ROOT.target_country
+				clear_variable = ROOT.receiver_country
+			}
+		}
+
+		faction_kick_click = {
+			if = {
+				limit = {
+					NOT = { check_variable = { ROOT.target_country = 0 } }
+					NOT = { check_variable = { ROOT.receiver_country = 0 } }
+					NOT = { check_variable = { ROOT.target_country = ROOT.receiver_country } }
+					var:ROOT.target_country = { is_faction_leader = yes }
+					var:ROOT.receiver_country = { is_in_faction_with = var:ROOT.target_country }
+				}
+				set_global_variable = { ht_diplo_a = ROOT.target_country }
+				set_global_variable = { ht_diplo_b = ROOT.receiver_country }
+				var:ROOT.target_country = { remove_from_faction = var:ROOT.receiver_country }
+				every_country = { limit = { is_ai = no } news_event = { id = hosttool.70 } }
+				clear_variable = ROOT.target_country
+				clear_variable = ROOT.receiver_country
+			}
+		}
+
+		wargoal_clear_click = {
+			if = {
+				limit = {
+					NOT = { check_variable = { ROOT.target_country = 0 } }
+					NOT = { check_variable = { ROOT.receiver_country = 0 } }
+					NOT = { check_variable = { ROOT.target_country = ROOT.receiver_country } }
+				}
+				set_global_variable = { ht_diplo_a = ROOT.target_country }
+				set_global_variable = { ht_diplo_b = ROOT.receiver_country }
+				var:ROOT.target_country = {
+					remove_wargoal = { type = annex_everything target = var:ROOT.receiver_country }
+					remove_wargoal = { type = take_state target = var:ROOT.receiver_country }
+					remove_wargoal = { type = take_state_focus target = var:ROOT.receiver_country }
+					remove_wargoal = { type = take_core_state target = var:ROOT.receiver_country }
+					remove_wargoal = { type = take_claimed_state target = var:ROOT.receiver_country }
+					remove_wargoal = { type = puppet_wargoal_focus target = var:ROOT.receiver_country }
+					remove_wargoal = { type = topple_government target = var:ROOT.receiver_country }
+					remove_wargoal = { type = liberate_wargoal target = var:ROOT.receiver_country }
+					remove_wargoal = { type = independence_wargoal target = var:ROOT.receiver_country }
+					remove_wargoal = { type = civil_war target = var:ROOT.receiver_country }
+				}
+				every_country = { limit = { is_ai = no } news_event = { id = hosttool.71 } }
+				clear_variable = ROOT.target_country
+				clear_variable = ROOT.receiver_country
+			}
+		}
+
+		# --- Autonomy level buttons: act on the selected state's owner (must already be a subject) ---
+		auto_dominion_click = {
+			owner = {
+				if = {
+					limit = { is_subject = yes }
+					set_global_variable = { ht_diplo_a = this }
+					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_dominion } }
+					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+				}
+			}
+		}
+
+		auto_colony_click = {
+			owner = {
+				if = {
+					limit = { is_subject = yes }
+					set_global_variable = { ht_diplo_a = this }
+					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_colony } }
+					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+				}
+			}
+		}
+
+		auto_intpup_click = {
+			owner = {
+				if = {
+					limit = { is_subject = yes }
+					set_global_variable = { ht_diplo_a = this }
+					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet } }
+					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+				}
+			}
+		}
+
+		# --- State builder: acts on the selected state (default scope) ---
+		bld_inf_add_click = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		bld_inf_rem_click = { remove_building = { type = infrastructure level = 1 } }
+		bld_mil_add_click = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+		bld_mil_rem_click = { remove_building = { type = arms_factory level = 1 } }
+		bld_civ_add_click = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		bld_civ_rem_click = { remove_building = { type = industrial_complex level = 1 } }
+		bld_doc_add_click = { add_building_construction = { type = dockyard level = 1 instant_build = yes } }
+		bld_doc_rem_click = { remove_building = { type = dockyard level = 1 } }
+		bld_air_add_click = { add_building_construction = { type = air_base level = 1 instant_build = yes } }
+		bld_air_rem_click = { remove_building = { type = air_base level = 1 } }
+		bld_aa_add_click = { add_building_construction = { type = anti_air_building level = 1 instant_build = yes } }
+		bld_aa_rem_click = { remove_building = { type = anti_air_building level = 1 } }
+		bld_rad_add_click = { add_building_construction = { type = radar_station level = 1 instant_build = yes } }
+		bld_rad_rem_click = { remove_building = { type = radar_station level = 1 } }
+		bld_syn_add_click = { add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes } }
+		bld_syn_rem_click = { remove_building = { type = synthetic_refinery level = 1 } }
+
+		# --- Focus picker mode toggles: target = selected state's owner; picks happen in the decision panel ---
+		focus_mode_unc_click = {
+			owner = { ROOT = { set_variable = { ht_focus_target = PREV } } }
+			ROOT = {
+				if = {
+					limit = { has_country_flag = ht_focus_unc }
+					clr_country_flag = ht_focus_unc
+				}
+				else = {
+					set_country_flag = ht_focus_unc
+					clr_country_flag = ht_focus_com
+				}
+			}
+		}
+
+		focus_mode_com_click = {
+			owner = { ROOT = { set_variable = { ht_focus_target = PREV } } }
+			ROOT = {
+				if = {
+					limit = { has_country_flag = ht_focus_com }
+					clr_country_flag = ht_focus_com
+				}
+				else = {
+					set_country_flag = ht_focus_com
+					clr_country_flag = ht_focus_unc
+				}
+			}
+		}
+
 		toogle_mark_click = {
 			if = {
 				limit = { check_variable = { mark_status = 0 } }
@@ -949,6 +1122,38 @@ st_country_powers = {
 		# Stability triggers
 		st_sub_5_click_enabled = { owner = { has_stability > 0.00 } }
 		st_add_5_click_enabled = { owner = { has_stability < 0.99 } }
+
+		# Host admin row triggers
+		wp_targeted_click_enabled = {
+			NOT = { check_variable = { ROOT.target_country = 0 } }
+			NOT = { check_variable = { ROOT.receiver_country = 0 } }
+			var:ROOT.target_country = { has_war_with = var:ROOT.receiver_country }
+		}
+		truce_set_click_enabled = {
+			NOT = { check_variable = { ROOT.target_country = 0 } }
+			NOT = { check_variable = { ROOT.receiver_country = 0 } }
+		}
+		truce_clear_click_enabled = {
+			NOT = { check_variable = { ROOT.target_country = 0 } }
+			NOT = { check_variable = { ROOT.receiver_country = 0 } }
+		}
+		faction_add_click_enabled = {
+			NOT = { check_variable = { ROOT.target_country = 0 } }
+			NOT = { check_variable = { ROOT.receiver_country = 0 } }
+			var:ROOT.target_country = { is_faction_leader = yes }
+		}
+		faction_kick_click_enabled = {
+			NOT = { check_variable = { ROOT.target_country = 0 } }
+			NOT = { check_variable = { ROOT.receiver_country = 0 } }
+			var:ROOT.target_country = { is_faction_leader = yes }
+		}
+		wargoal_clear_click_enabled = {
+			NOT = { check_variable = { ROOT.target_country = 0 } }
+			NOT = { check_variable = { ROOT.receiver_country = 0 } }
+		}
+		auto_dominion_click_enabled = { owner = { is_subject = yes } }
+		auto_colony_click_enabled = { owner = { is_subject = yes } }
+		auto_intpup_click_enabled = { owner = { is_subject = yes } }
 	}   
     }
 }

@@ -1227,13 +1227,68 @@ guiTypes = {
 		}
 
 		buttonType = {
-			name = "toogle_mark" 
+			name = "toogle_mark"
 			position = {x=203 y=35}
 			spriteType = "GFX_button_123x34"
 			frame = 0
 			pdx_tooltip = "ST_STATE_MARK_FOR_TRANSFER"
 		}
-		
+
+		# ---- State builder rows: +/- one level of a building in the selected state ----
+		instantTextboxType = { name = "bld_inf_label" position = {x=10 y=465} font = "hoi_18mbs" text = "Infra" maxWidth = 70 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "bld_inf_add" position = {x=84 y=462} spriteType = "GFX_checkbox_small_green" scale = 1.1 pdx_tooltip = "HT_BLD_ADD_TT" }
+		buttonType = { name = "bld_inf_rem" position = {x=108 y=462} spriteType = "GFX_checkbox_small_red" scale = 1.1 pdx_tooltip = "HT_BLD_REM_TT" }
+		instantTextboxType = { name = "bld_mil_label" position = {x=140 y=465} font = "hoi_18mbs" text = "Mil Fac" maxWidth = 70 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "bld_mil_add" position = {x=214 y=462} spriteType = "GFX_checkbox_small_green" scale = 1.1 pdx_tooltip = "HT_BLD_ADD_TT" }
+		buttonType = { name = "bld_mil_rem" position = {x=238 y=462} spriteType = "GFX_checkbox_small_red" scale = 1.1 pdx_tooltip = "HT_BLD_REM_TT" }
+		instantTextboxType = { name = "bld_civ_label" position = {x=270 y=465} font = "hoi_18mbs" text = "Civ Fac" maxWidth = 70 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "bld_civ_add" position = {x=344 y=462} spriteType = "GFX_checkbox_small_green" scale = 1.1 pdx_tooltip = "HT_BLD_ADD_TT" }
+		buttonType = { name = "bld_civ_rem" position = {x=368 y=462} spriteType = "GFX_checkbox_small_red" scale = 1.1 pdx_tooltip = "HT_BLD_REM_TT" }
+		instantTextboxType = { name = "bld_doc_label" position = {x=400 y=465} font = "hoi_18mbs" text = "Dock" maxWidth = 70 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "bld_doc_add" position = {x=474 y=462} spriteType = "GFX_checkbox_small_green" scale = 1.1 pdx_tooltip = "HT_BLD_ADD_TT" }
+		buttonType = { name = "bld_doc_rem" position = {x=498 y=462} spriteType = "GFX_checkbox_small_red" scale = 1.1 pdx_tooltip = "HT_BLD_REM_TT" }
+
+		instantTextboxType = { name = "bld_air_label" position = {x=10 y=491} font = "hoi_18mbs" text = "Airbase" maxWidth = 70 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "bld_air_add" position = {x=84 y=488} spriteType = "GFX_checkbox_small_green" scale = 1.1 pdx_tooltip = "HT_BLD_ADD_TT" }
+		buttonType = { name = "bld_air_rem" position = {x=108 y=488} spriteType = "GFX_checkbox_small_red" scale = 1.1 pdx_tooltip = "HT_BLD_REM_TT" }
+		instantTextboxType = { name = "bld_aa_label" position = {x=140 y=491} font = "hoi_18mbs" text = "Anti-Air" maxWidth = 70 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "bld_aa_add" position = {x=214 y=488} spriteType = "GFX_checkbox_small_green" scale = 1.1 pdx_tooltip = "HT_BLD_ADD_TT" }
+		buttonType = { name = "bld_aa_rem" position = {x=238 y=488} spriteType = "GFX_checkbox_small_red" scale = 1.1 pdx_tooltip = "HT_BLD_REM_TT" }
+		instantTextboxType = { name = "bld_rad_label" position = {x=270 y=491} font = "hoi_18mbs" text = "Radar" maxWidth = 70 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "bld_rad_add" position = {x=344 y=488} spriteType = "GFX_checkbox_small_green" scale = 1.1 pdx_tooltip = "HT_BLD_ADD_TT" }
+		buttonType = { name = "bld_rad_rem" position = {x=368 y=488} spriteType = "GFX_checkbox_small_red" scale = 1.1 pdx_tooltip = "HT_BLD_REM_TT" }
+		instantTextboxType = { name = "bld_syn_label" position = {x=400 y=491} font = "hoi_18mbs" text = "Synth" maxWidth = 70 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "bld_syn_add" position = {x=474 y=488} spriteType = "GFX_checkbox_small_green" scale = 1.1 pdx_tooltip = "HT_BLD_ADD_TT" }
+		buttonType = { name = "bld_syn_rem" position = {x=498 y=488} spriteType = "GFX_checkbox_small_red" scale = 1.1 pdx_tooltip = "HT_BLD_REM_TT" }
+
+		# ---- Targeted diplomacy row (Target/Receiver pickers) ----
+		buttonType = { name = "wp_targeted" position = {x=10 y=514} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_WP_TT" pdx_tooltip_delayed = "HT_WP_TT_DELAYED" }
+		instantTextboxType = { name = "wp_targeted_text" position = {x=16 y=518} font = "hoi_18mbs" text = "White Peace" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "truce_set" position = {x=140 y=514} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_TRUCE_TT" pdx_tooltip_delayed = "HT_TRUCE_TT_DELAYED" }
+		instantTextboxType = { name = "truce_set_text" position = {x=146 y=518} font = "hoi_18mbs" text = "Truce 6mo" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "truce_clear" position = {x=270 y=514} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_TRUCE_CLR_TT" pdx_tooltip_delayed = "HT_TRUCE_CLR_TT_DELAYED" }
+		instantTextboxType = { name = "truce_clear_text" position = {x=276 y=518} font = "hoi_18mbs" text = "Clear Truce" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "wargoal_clear" position = {x=400 y=514} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_WG_TT" pdx_tooltip_delayed = "HT_WG_TT_DELAYED" }
+		instantTextboxType = { name = "wargoal_clear_text" position = {x=406 y=518} font = "hoi_18mbs" text = "Del Wargoals" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+
+		# ---- Faction + autonomy row ----
+		buttonType = { name = "faction_add" position = {x=10 y=540} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_FADD_TT" pdx_tooltip_delayed = "HT_FADD_TT_DELAYED" }
+		instantTextboxType = { name = "faction_add_text" position = {x=16 y=544} font = "hoi_18mbs" text = "Join Faction" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "faction_kick" position = {x=140 y=540} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_FKICK_TT" pdx_tooltip_delayed = "HT_FKICK_TT_DELAYED" }
+		instantTextboxType = { name = "faction_kick_text" position = {x=146 y=544} font = "hoi_18mbs" text = "Kick Faction" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "auto_dominion" position = {x=270 y=540} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_DOM_TT" pdx_tooltip_delayed = "HT_AUTO_TT_DELAYED" }
+		instantTextboxType = { name = "auto_dominion_text" position = {x=276 y=544} font = "hoi_18mbs" text = "> Dominion" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "auto_colony" position = {x=400 y=540} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_COL_TT" pdx_tooltip_delayed = "HT_AUTO_TT_DELAYED" }
+		instantTextboxType = { name = "auto_colony_text" position = {x=406 y=544} font = "hoi_18mbs" text = "> Colony" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+
+		# ---- Autonomy + focus picker row ----
+		buttonType = { name = "auto_intpup" position = {x=10 y=566} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_INT_TT" pdx_tooltip_delayed = "HT_AUTO_TT_DELAYED" }
+		instantTextboxType = { name = "auto_intpup_text" position = {x=16 y=570} font = "hoi_18mbs" text = "> Integrated" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "focus_mode_unc" position = {x=140 y=566} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_FUNC_TT" pdx_tooltip_delayed = "HT_FOCUS_TT_DELAYED" }
+		instantTextboxType = { name = "focus_mode_unc_text" position = {x=146 y=570} font = "hoi_18mbs" text = "Focus: Undo" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "focus_mode_com" position = {x=270 y=566} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_FCOM_TT" pdx_tooltip_delayed = "HT_FOCUS_TT_DELAYED" }
+		instantTextboxType = { name = "focus_mode_com_text" position = {x=276 y=570} font = "hoi_18mbs" text = "Focus: Add" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+
 ####################################################################
 		containerWindowType = {
 		name = "st_state_manager_powers_container"
