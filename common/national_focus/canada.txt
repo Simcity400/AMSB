@@ -2241,7 +2241,7 @@ focus_tree = {
 	focus = {
 		id = CAN_1st_canadian_parachute_battalion
 		icon = GFX_CAN_paratroopers 
-		prerequisite = { focus = CAN_the_plan focus = CAN_a_motorized_army }
+		prerequisite = { focus = CAN_a_motorized_army }
 		x = 2
 		y = 4
 		relative_position_id = CAN_army_modernization 
@@ -2619,10 +2619,9 @@ focus_tree = {
 	focus = {
 		id = CAN_the_plan
 		icon = GFX_CAN_plane
-		prerequisite = { focus = CAN_shadow_factories }
-		x = -2
-		y = 2
-		relative_position_id = CAN_strengthen_the_commonwealth_ties
+		# AMSB: standalone focus, as in the pre-refork tree - no prerequisites, detached from the commonwealth branch
+		x = 31
+		y = 0
 
 		cost = 10
 
@@ -2707,7 +2706,6 @@ focus_tree = {
 	focus = {
 		id = CAN_supply_the_empire
 		icon = GFX_CAN_supply
-		prerequisite = { focus = CAN_the_plan}
 		prerequisite = { focus = CAN_camp_x }
 		x = -1
 		y = 3
