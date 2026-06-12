@@ -289,6 +289,62 @@ operations = {
 		}
 
 
+		annex_indonesia = {
+			# icon = generic_operation
+			allowed = {
+				tag = USA
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			available = {
+				INS = {
+					is_ai = yes
+				}
+			}
+			visible = {
+				INS = {
+					is_ai = yes
+				}
+			}
+			targets = {
+				INS
+			}
+			complete_effect = {
+				# INS is a lobotomised colony with no focus tree, so there is no
+				# buildup to replicate - the USA takes the East Indies as they are
+				INS = {
+					transfer_units_fraction = {
+						target = USA
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				USA = {
+					annex_country = {
+						target = INS
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = INS
+						is_controlled_by = USA
+					}
+					add_compliance = 100
+				}
+			}
+		}
+
+
 		annex_manchukuo = {
 			# icon = generic_operation
 			allowed = {

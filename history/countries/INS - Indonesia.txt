@@ -401,7 +401,7 @@ if = {
 }
 
 # Stats
-set_research_slots = 2
+set_research_slots = 0 # AMSB: lobotomised background nation (optimization, same as TUR/WST)
 set_convoys = 25
 set_war_support = 0.2
 set_stability = 0.55
@@ -411,6 +411,9 @@ add_ideas = {
 	civilian_economy
 	limited_conscription
 	free_trade
+	# AMSB: full AI passivity package (same as TUR/WST) - auto-cancels if a player takes INS
+	ai_idea
+	blm_ai
 }
 
 if = {
