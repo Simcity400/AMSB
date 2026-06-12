@@ -307,6 +307,7 @@ set_variable = { GER_military_air_strategic_bomber_bombing_factor = 0 }
 set_variable = { GER_military_air_range_factor = 0 }
 set_variable = { GER_military_air_fuel_consumption_factor = 0 }
 add_dynamic_modifier = { modifier = GER_airforce_modifier }
+ITA = { add_dynamic_modifier = { modifier = GER_airforce_modifier scope = PREV } } # AMSB: Italy shares the German air spirit (reads GER variables) - granted here because the germany.73 event chain never fires in this tree
 
 #CROSSING THE ATLANTIC
 set_variable = { number_of_states_getting_dockyards = 0 }
