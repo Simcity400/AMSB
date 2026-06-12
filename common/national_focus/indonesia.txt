@@ -6815,4 +6815,390 @@ focus_tree = {
 		}
 	}
 
+	# AMSB: hidden stubs of the trimmed revolution branch - never visible, never selectable
+	focus = {
+		id = INS_infiltrate_the_army
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_focus_generic_infiltration
+
+		available = { }
+		prerequisite = { focus = INS_underground_revolution }
+		mutually_exclusive = { }
+
+		x = 2
+		y = 1
+		relative_position_id = INS_underground_revolution
+
+		cost = 5
+
+		ai_will_do = {
+			base = 0.5
+			modifier = {
+				add = 5
+				NOT = {
+					has_completed_focus = INS_the_declaration_of_independence
+				}
+				has_war_support < 0.25
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 50
+		}
+	}
+	focus = {
+		id = INS_instigate_chaos_medan
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_focus_INS_instigate_chaos_medan
+
+		available = {
+			is_subject_of = HOL
+		}
+		prerequisite = { focus = INS_instigate_chaos_sulawesi }
+		mutually_exclusive = {  }
+
+		x = 0
+		y = 1
+		relative_position_id = INS_instigate_chaos_sulawesi
+
+		cost = 5
+
+		search_filters = {  }
+		completion_reward = {
+			add_war_support = 0.075
+			1049 = { #Medan and Riouw
+				custom_effect_tooltip = INS_instigate_chaos_medan_tt
+			}
+		}
+	}
+	focus = {
+		id = INS_instigate_chaos_sulawesi
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_focus_INS_instigate_chaos_sulawesi
+
+		available = {
+			is_subject_of = HOL
+		}
+		prerequisite = { focus = INS_underground_revolution }
+		mutually_exclusive = {  }
+
+		x = -2
+		y = 1
+		relative_position_id = INS_underground_revolution
+
+		cost = 10
+
+		search_filters = {  }
+		completion_reward = {
+
+			add_war_support = 0.075
+
+			custom_effect_tooltip = INS_instigate_chaos_sulawesi_tt
+			custom_effect_tooltip = newline_tt
+		}
+	}
+	focus = {
+		id = INS_prepare_raiding_bases
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_focus_PRC_raid_weapon_depots
+
+		available = { }
+		prerequisite = { focus = INS_underground_revolution }
+		mutually_exclusive = { }
+
+		x = -3
+		y = 3
+		relative_position_id = INS_underground_revolution
+
+		cost = 5
+
+		search_filters = { }
+		completion_reward = {
+
+			add_war_support = 0.05
+			every_owned_state = {
+				limit = {
+					is_in_array = {
+						array = INS.owned_states_at_game_start
+						value = THIS
+					}
+				}
+				construct_building_in_random_province = {
+					bunker = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = INS_privately_owned_military_industry
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_focus_RAJ_a_private_military
+
+		available = {
+			has_country_flag = INS_has_revolutionary_hq
+		}
+		prerequisite = { focus = INS_infiltrate_the_army }
+		mutually_exclusive = { }
+
+		x = 1
+		y = 2
+		relative_position_id = INS_underground_revolution
+
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					INS_only_militia_states_if_possible_and_needed = yes
+					impassable = no
+				}
+				prioritize = { 1058 335 1051 }
+
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = INS_sleeper_informant_network
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_goal_generic_dangerous_deal
+
+		available = { }
+		prerequisite = { focus = INS_infiltrate_the_army }
+
+		x = 0
+		y = 2
+		relative_position_id = INS_infiltrate_the_army
+
+		cost = 10
+
+		search_filters = { }
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = INS_revolution_has_started }
+					has_intelligence_agency = no
+				}
+				custom_effect_tooltip = INS_sleeper_informant_network_tt
+				effect_tooltip = {
+					create_intelligence_agency = yes
+					upgrade_intelligence_agency = upgrade_army_department
+				}
+				set_country_flag = INS_sleeper_informant_network
+			}
+			else_if = {
+				limit = {
+					NOT = { has_country_flag = INS_revolution_has_started }
+					has_intelligence_agency = yes
+					NOT = { has_done_agency_upgrade = upgrade_army_department }
+				}
+				upgrade_intelligence_agency = upgrade_army_department
+			}
+			else = {
+				add_political_power = 100
+			}
+		}
+	}
+	focus = {
+		id = INS_tkr_steal_general
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_focus_RAJ_headhunt_army_personell
+
+		available = {
+			is_subject_of = HOL
+		}
+		prerequisite = { focus = INS_infiltrate_the_army }
+
+		x = 1
+		y = 1
+		relative_position_id = INS_infiltrate_the_army
+
+		cost = 10
+
+		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
+		completion_reward = {
+
+			add_war_support = 0.05
+
+			if = {
+				limit = {
+					has_character = INS_tjalling_bakker
+				}
+				INS_tjalling_bakker = {
+					remove_trait = {
+						trait = INS_loyalty_to_netherlands
+					}
+				}
+			}
+			else = {
+				random_army_leader = {
+					limit = {
+						has_trait = INS_loyalty_to_netherlands
+					}
+					remove_trait = {
+						trait = INS_loyalty_to_netherlands
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_character = INS_gustav_adolf_ilgen
+				}
+				INS_gustav_adolf_ilgen = {
+					remove_trait = {
+						trait = INS_loyalty_to_netherlands
+					}
+				}
+			}
+			else = {
+				random_army_leader = {
+					limit = {
+						has_trait = INS_loyalty_to_netherlands
+					}
+					remove_trait = {
+						trait = INS_loyalty_to_netherlands
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = INS_tkr_supply
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_focus_generic_military_academy
+
+		available = { }
+		prerequisite = { focus = INS_infiltrate_the_army }
+
+		x = 3
+		y = 1
+		relative_position_id = INS_infiltrate_the_army
+
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+
+			add_war_support = 0.05
+			army_experience = 50
+			add_tech_bonus = {
+				bonus = 0.4
+				name = INS_tkr_supply
+				uses = 1
+				category = infantry_tech
+			}
+			add_tech_bonus = {
+				name = INS_tkr_supply
+				bonus = 0.4
+				uses = 1
+				category = support_tech
+			}
+		}
+	}
+	focus = {
+		id = INS_underground_revolution
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_focus_generic_limited_social_mobilization
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = INS_soetardjo_petition_debate_done_tt
+				OR = {
+					has_completed_focus = INS_underground_revolution
+					has_completed_focus = INS_the_jewel_in_the_crown
+				}
+			}
+		}
+
+        allow_branch = {
+        	if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+	            NOT = {
+					has_completed_focus = INS_the_jewel_in_the_crown
+				}
+			}
+        }
+
+		mutually_exclusive = { focus = INS_the_jewel_in_the_crown }
+
+		x = 0
+		y = 0
+
+		offset = {
+			x = -74
+			y = 0
+			trigger = {
+				has_completed_focus = INS_underground_revolution
+			}
+		}
+
+		cost = 0
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			unlock_decision_category_tooltip = INS_revolution_planning_cat
+			unlock_decision_tooltip = INS_revolution_planning_hq
+
+			HOL = {
+				country_event = {
+					id = INS_revolution_events.8
+					hours = 2
+				}
+			}
+
+            hidden_effect = {
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = obsolete_focus_branches_visibility
+                            option = HIDE
+                        }
+                    }
+                    mark_focus_tree_layout_dirty = yes
+                }
+            }
+
+		}
+	}
+	focus = {
+		id = INS_volksraad_rumors
+		allow_branch = { always = no } # AMSB: branch trimmed at the 1.19 port; focus kept hidden so vanilla references (netherlands offsets, abdacom, INS triggers/events) still resolve
+		icon = GFX_goal_generic_national_unity
+
+		available = { }
+		prerequisite = { focus = INS_underground_revolution }
+		mutually_exclusive = { }
+
+		x = -4
+		y = 1
+		relative_position_id = INS_underground_revolution
+
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = INS_i_j_k_hendrowahyono
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = INS_oto_iskandar_di_nata
+		}
+	}
 }
