@@ -24,7 +24,6 @@ ideas = {
 			modifier = {
 				custom_modifier_tooltip = mastery_peace_training_tt
 				experience_gain_army = 0.3
-				training_time_army_factor = -0.89
 				air_training_xp_gain_factor = 10
 				experience_gain_navy_unit_factor = 10
 				air_accidents_factor = -2
@@ -164,6 +163,16 @@ ideas = {
 			modifier = {
 				enemy_operative_detection_chance = -200
 				enemy_operative_capture_chance_factor = -2
+			}
+		}
+		fast_training = {
+			# AMSB: the peacetime -89% division training time, split out of peace_training so it stays active all game
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				training_time_army_factor = -0.89
 			}
 		}
 		dd_torp_nerf = {
