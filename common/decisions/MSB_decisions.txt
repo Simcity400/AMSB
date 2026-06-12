@@ -218,15 +218,77 @@ operations = {
 				}
 				every_state = {
 					limit = {
-						is_core_of = BUL 
+						is_core_of = BUL
 						is_controlled_by = ITA
 					}
 					add_compliance = 100
 				}
 			}
 		}
-	
-	
+
+		annex_siam = {
+			# icon = generic_operation
+			allowed = {
+				tag = JAP
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			available = {
+				NOT = { has_country_flag = stb_asia_bookmark } # STB Asia: Siam is merged into Japan at start
+				SIA = {
+					is_ai = yes
+				}
+			}
+			visible = {
+				NOT = { has_country_flag = stb_asia_bookmark }
+				SIA = {
+					is_ai = yes
+				}
+			}
+			targets = {
+				SIA
+			}
+			complete_effect = {
+				# AI Siam gets its economic buildup before joining the Empire, so the
+				# region carries the factories/resources a human Siam would have built
+				SIA = {
+					complete_national_focus = SIA_direct_funds_from_the_military_towards_development
+					complete_national_focus = SIA_industrialization_drive
+					complete_national_focus = SIA_siamese_development_cooperative
+					complete_national_focus = SIA_a_fledgling_tobacco_industry
+					complete_national_focus = SIA_domestic_arms_industry
+					transfer_units_fraction = {
+						target = JAP
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				JAP = {
+					annex_country = {
+						target = SIA
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = SIA
+						is_controlled_by = JAP
+					}
+					add_compliance = 100
+				}
+			}
+		}
+
+
 		annex_manchukuo = {
 			# icon = generic_operation
 			allowed = {

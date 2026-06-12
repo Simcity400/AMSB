@@ -3,7 +3,11 @@ state = {
 	name = "STATE_669"
 	manpower = 314300
 
-	state_category = pastoral
+	state_category = rural
+
+	resources = {
+		oil = 1
+	}
 
 	history = {
 		1936.1.1.14 = { owner = WST add_core_of = WST } # Scraping: East Indies removed
@@ -13,10 +17,15 @@ state = {
 			}
 
 		owner = INS
-		add_core_of = INS
+		set_resistance = 0
+		set_compliance = 5
 
 		victory_points = {
-			12371 1 # Hollandia
+			12371 2 # Hollandia
+		}
+
+		victory_points = {
+			4468 1 # Sorong
 		}
 
 		buildings = {
@@ -32,7 +41,7 @@ state = {
 	}
 
 	provinces = {
-		1546 1602 1617 1629 4468 4509 4524 4552 4593 7269 7487 7512 7529 7542 7570 7585 7627 8235 8250 10369 10396 10436 10505 10990 12315 12371 12386 12457 
+		1546 4468 4509 4524 4552 7269 7487 7512 7529 7542 7570 7585 10369 10396 10436 10990 12315 12371 12386 
 	}
 
 	local_supplies = 1.0 

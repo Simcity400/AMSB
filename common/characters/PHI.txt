@@ -652,9 +652,29 @@ characters={
 			allowed  = {
 				has_dlc = "No Compromise, No Surrender"
 				has_dlc = "La Resistance"
+				if = {
+					limit = {
+						has_dlc = "Thunder at Our Gates"
+					}
+					NOT = {
+						INS = {
+							has_completed_focus = INS_the_declaration_of_independence
+						}
+					}
+				}
 			}
 			available = {
 				has_completed_focus = PHI_return_of_the_exiles
+				if = {
+					limit = {
+						has_dlc = "Thunder at Our Gates"
+					}
+					NOT = {
+						INS = {
+							has_completed_focus = INS_the_declaration_of_independence
+						}
+					}
+				}
 			}
 			idea_token = PHI_tan_malaka
 			traits  = {

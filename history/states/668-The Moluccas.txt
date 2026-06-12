@@ -4,18 +4,27 @@ state={
 	name="STATE_668"
 	manpower = 579100
 	
-	state_category = pastoral
+	state_category = small_island
 
-	history={
+	history = {
+
 		1936.1.1.14 = { owner = WST add_core_of = WST } # Scraping: East Indies removed
 		1941.1.1 = {
 			owner = WST
 			add_core_of = WST
 			}
 		owner = INS
-		add_core_of = INS
+		add_core_of = TNE
+
+		set_resistance = 0
+		set_compliance = 55
+
+		victory_points = {
+			7413 1 # Ternate   
+		}
+
 		buildings = {
-			infrastructure = 2
+
 			1574 = {
 				naval_base = 1
 			}
@@ -25,7 +34,9 @@ state={
 			7413 = {
 				naval_base = 1
 			}
+
 		}
+
 	}
 
 	provinces={

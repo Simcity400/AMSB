@@ -2,10 +2,12 @@ state = {
 	id = 285
 	name = "STATE_285"
 	state_category = large_city
-	manpower = 2563100
+	manpower = 2650000 #PreTaog 2563100
 
 	resources = {
-		coal = 16 #initial distribution
+		coal = 12 #16 > 12
+		tungsten = 2 #starting amount divided better in TAOG
+		steel = 16 #added 16 steel in TAOG
 	}
 
 	history = {
@@ -39,9 +41,14 @@ state = {
 				coastal_bunker = 1
 			}
 
-			# Cataract Dam
-			4864 = { dam = 1 }
+		}
 
+		1939.1.1 = {
+			buildings = {
+				infrastructure = 4 #Added 1 from 1936
+				arms_factory = 4 #Added 2 from 1936
+				industrial_complex = 6 #Added 2 from 1936
+			}
 		}
 
 		victory_points = {

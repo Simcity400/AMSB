@@ -5171,6 +5171,113 @@ focus_tree = {
 		}
 	}
 
+	
+
+		bypass = {
+
+		}
+
+		will_lead_to_war_with = FRA
+		will_lead_to_war_with = VIN
+		will_lead_to_war_with = CAM
+		will_lead_to_war_with = LAO
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ANNEXATION }
+
+		completion_reward = {
+				
+			IF = {
+				limit = {
+					FRA = {
+						OR = {
+							controls_state = 670
+							670 = { CONTROLLER = { is_subject_of = FRA } }
+							controls_state = 286
+							286 = { CONTROLLER = { is_subject_of = FRA } }
+							controls_state = 1017
+							1017 = { CONTROLLER = { is_subject_of = FRA } }
+							controls_state = 741
+							741 = { CONTROLLER = { is_subject_of = FRA } }
+						}
+					}
+				}
+				FRA = { 
+					country_event = { 
+						id = france.1 
+						hours = 12
+						random_hours = 24
+					} 
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			ELSE_IF = {
+				limit = {
+					
+				}
+				
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
+			IF = {
+				limit = {
+					any_state = {
+						OR = {
+							state = 670
+							state = 286
+							state = 1017
+							state = 741
+							state = 728
+						}
+						OWNER = {
+							NOT = {
+								original_tag = FRA
+								is_subject_of = FRA
+								is_subject_of = VIC
+							}
+							OR = {
+								original_tag = SIA
+								original_tag = BRM
+							}
+						}
+					}
+				}
+				every_other_country = {
+					limit = {
+						OR = {
+							owns_state = 670
+							owns_state = 286
+							owns_state = 1017
+							owns_state = 741
+							owns_state = 728
+						}
+						NOT = {
+							original_tag = FRA
+							is_subject_of = FRA
+							is_subject_of = VIC
+						}
+						OR = {
+							original_tag = SIA
+							original_tag = BRM
+
+						}
+					}
+					
+					ROOT = {
+						create_wargoal = {
+							type = puppet_wargoal_focus
+							target = PREV
+							expire = 0
+						}	
+					}
+				}
+			} 
+			
+		}
+
 	focus = {
 		id = JAP_sea_pressure_siam
 		icon = GFX_focus_generic_befriend_siam
@@ -9831,8 +9938,23 @@ focus_tree = {
 					name = JAP_sea_mountaineers
 					cost_reduction = 0.25
 					uses = 2
-					category = cat_mountaineers_doctrine
+					category = special_forces_doctrine
 				}
+				custom_effect_tooltip = mountaineer_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = JAP_sea_mountaineers
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_1
+					}
+					add_mastery_bonus = {
+						name = JAP_sea_mountaineers
+						bonus = 0.1
+						days = 240
+						sub_doctrine = mountaineers_2
+					}
+				}				
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
@@ -9902,8 +10024,23 @@ focus_tree = {
 					name = JAP_jungle_adaptation
 					cost_reduction = 0.25
 					uses = 2
-					category = cat_rangers_doctrine
+					category = special_forces_doctrine
 				}
+				custom_effect_tooltip = ranger_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = JAP_jungle_adaptation
+						bonus = 0.1
+						days = 240
+						sub_doctrine = rangers_1
+					}
+					add_mastery_bonus = {
+						name = JAP_jungle_adaptation
+						bonus = 0.1
+						days = 240
+						sub_doctrine = rangers_2
+					}
+				}				
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
@@ -11710,9 +11847,24 @@ focus_tree = {
 				add_potential_special_forces_tree = yes
 				add_doctrine_cost_reduction = {
 					name = JAP_expand_the_snlf
-					cost_reduction = 0.5
+					cost_reduction = 0.25
 					uses = 1
-					category = cat_marines_doctrine
+					category = special_forces_doctrine
+				}
+				custom_effect_tooltip = marine_subdoctrines_default_add_mastery_bonus_effect_tooltip
+				hidden_effect = {
+					add_mastery_bonus = {
+						name = JAP_expand_the_snlf
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_1
+					}
+					add_mastery_bonus = {
+						name = JAP_expand_the_snlf
+						bonus = 0.1
+						days = 240
+						sub_doctrine = marines_2
+					}
 				}
 			}
 			
@@ -12344,6 +12496,10 @@ focus_tree = {
 			
 			JAP_add_or_modify_army_and_naval_air_services = yes
 			add_to_variable = { JAP_airforce_sortie_efficiency = 0.1 tooltip = sortie_efficiency_tt }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = JAP_form_the_kido_butai_tt
 
 		}
 

@@ -160,6 +160,17 @@ on_actions = {
 							load_oob = "BUL_1936"
 						}
 					}
+					if = {
+						limit = {
+							GER = { has_country_flag = stb_asia_bookmark } # Scraping sends Siam to WST instead
+							JAP = { exists = yes }
+							NOT = { country_exists = SIA }
+						}
+						JAP = {
+							add_equipment_to_stockpile = { type = convoy_1 amount = 15 }
+							load_oob = "SIA_1936"
+						}
+					}
 				}
 
 				if = {

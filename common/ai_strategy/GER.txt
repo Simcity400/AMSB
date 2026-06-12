@@ -217,7 +217,7 @@ GER_halt_light_armor_production_in_transitioning = {
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = light_tank_chassis
-		value = -100
+		value = -80
 	}
 
 	ai_strategy = {
@@ -1560,7 +1560,12 @@ GER_worry_about_barbarossa_before_africa = {
 	ai_strategy = {
 		type = area_priority
 		id = suez
-		value = -30
+		value = -200
+	}
+	ai_strategy = {
+		type = front_unit_request
+		area = suez
+		value = -100
 	}
 
 	ai_strategy = {
@@ -2590,14 +2595,11 @@ GER_stock_up_on_trains_before_barbarossa = {
 	enable = {
 		is_historical_focus_on = yes
 		date > 1940.7.1
-		date < 1943.1.1
+		date < 1941.7.1
 		has_war = yes
 		# always = no
 	}
-	abort = {
-		has_war_with = SOV # Barbarossa has started, let wartime prioritization do its thing
-		date > 1943.1.1
-	}
+	abort_when_not_enabled = yes
 
 	#ai_strategy = {
 	#	type = min_wanted_supply_trains  # Causes large spike, not optimal
@@ -2608,6 +2610,26 @@ GER_stock_up_on_trains_before_barbarossa = {
 		type = equipment_production_min_factories
 		id = train
 		value = 4  # Boost train production before Barbarossa
+	}
+}
+
+GER_more_trains_after_barbarossa = {
+	allowed = {
+		original_tag = GER
+	}
+
+	enable = {
+		is_historical_focus_on = yes
+		date > 1941.7.1
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = train
+		value = 1  # Slightly build more trains after barbarossa started
 	}
 }
 
@@ -3608,6 +3630,53 @@ GER_bba_air_prod_2 = {
 	}
 }
 
+GER_gotta_have_enough_medium_tanks = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1938.8.1
+		has_tech = basic_medium_tank_chassis
+		stockpile_ratio = {
+			archetype = medium_tank_chassis
+			ratio < 1.3
+		}
+	}
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = motorized_equipment
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_chassis
+		value = 3  # Germany need medium tanks to crush the enemies!
+	}
+}
+
+GER_gotta_have_enough_light_tanks = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		date > 1938.1.1
+		stockpile_ratio = {
+			archetype = light_tank_chassis
+			ratio < 1.3
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = light_tank_chassis
+		value = 3  # Germany need light tanks to support their bigger brother tanks
+	}
+}
+
 GER_dont_act_on_danzig_if_things_went_south = {
 	allowed = {
 		original_tag = GER
@@ -3867,14 +3936,19 @@ GER_build_an_air_facility_in_penemunde = {
 	enable = {
 		62 = { is_owned_and_controlled_by = GER }
 		air_facility < 1 # one is enough
-		date > 1940.6.1 # Was 1937.2.1 Moving it to later in order to let them focus on building their indurty
+		NOT = {
+			any_controlled_state = {
+				air_facility > 0
+			}
+		}
+		date > 1940.6.1 # Was 1937.2.1 Moving it to later in order to let them focus on building their industry
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = build_building
 		id = air_facility
 		target = 9388
-		value = 1
+		value = 50
 	}
 }
 
@@ -3885,13 +3959,18 @@ GER_build_an_air_facility_anywhere = {
 	enable = {
 		62 = { NOT = { is_owned_and_controlled_by = GER } }
 		air_facility < 1 # one is enough
+		NOT = {
+			any_controlled_state = {
+				air_facility > 0
+			}
+		}
 		date > 1940.6.1 # Was 1937.2.1
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
 		type = build_building
 		id = air_facility
-		value = 1
+		value = 50
 	}
 }
 
@@ -3926,3 +4005,352 @@ GER_tanks_in_greece = { #Gotta rush GRE so we're ready for SOV
 		value = 30
 	}
 }
+
+#Yo-ho-ho and a bottle of rum! We set sail for the North Sea aaaargh!
+GER_raid_the_north_sea = {
+	allowed = { original_tag = GER }
+	enable = {
+		OR = {
+			has_war_with = NOR
+			has_war_with = SOV
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 45 #Norwegian Sea
+		value = 100
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 174 #Norwegian coast
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 173 #Eastern North Sea
+		value = 250
+	}
+}
+
+#Yo-ho-ho and a bottle of rum! We set sail for the North Atlantic aaaargh!
+GER_raid_the_atlantic = {
+	allowed = { original_tag = GER }
+	enable = {
+		OR = {
+			has_war_with = ENG
+			has_war_with = USA
+			has_war_with = CAN
+		}
+		#Gotta control the Western coast of France
+		any_controlled_state = {
+			OR = {
+				state = 14
+				state = 30
+				state = 23
+				state = 19
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 42 #Bay of Biscay
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 47 #Iberian Coast
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 49 #North Atlantic Ridge
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 44 #Denmark Strait
+		value = 250
+	}
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 56 #Mid Atlantic
+		value = 100
+	}
+}
+
+#Pfot starts
+GER_take_advantage_of_sokolov_raid = {
+	allowed = {
+		original_tag = GER
+	}
+
+	enable = {
+		exists = yes
+		has_war_with = CZE
+		has_war_with_major = no
+		surrender_progress < 0.02 #I'm still in okay shape
+		OR = {
+			has_idea = CZE_sokolov_raid_pfot_limited_success_ns
+			has_idea = CZE_sokolov_raid_pfot_success_ns
+			has_idea = CZE_sokolov_raid_pfot_critical_success_ns
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+    	type = front_control
+		state = 69
+    	state_trigger = {
+        	is_controlled_by = CZE
+    	}
+    	ratio = 0.25
+    	ordertype = front
+    	execution_type = rush
+		execute_order = yes
+	}
+
+	ai_strategy = {
+		type = force_concentration_target_weight
+		state = 69
+
+		value = 25 # +25%
+	}
+}
+
+GER_sokol_raids_store_some_equipment = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = CZE
+		date > 1938.1.1
+		date < 1939.9.9
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = transport_plane_equipment
+		value = 1
+	}
+
+	ai_strategy = {
+		type = save_equipment
+		id = transport_plane_equipment
+		value = 25 #Need to save more for that than Bel raid and try nudge to fill the 20 unit gap it has at this time
+	}
+}
+
+GER_why_would_i_ally_you_i_want_to_annex_you = { #Pfot, making sure czech's don't undermine germany by joining the axis just by turning fascist
+	allowed = {
+		original_tag = GER
+	}
+
+	enable = {
+		has_government = fascism
+		is_faction_leader = yes
+		is_neighbor_of = CZE
+		NOT = {
+			has_completed_focus = GER_befriend_czechoslovakia
+		}
+		CZE = { #I owe you an apology, I wasn't familiar with your game
+			exists = yes
+			NOT = {
+				OR = {
+					#DoD focuses
+					has_completed_focus = CZE_german_puppet
+					has_completed_focus = CZE_german_minor_ally
+					has_completed_focus = CZE_german_ally
+					#Pfot focuses
+					has_completed_focus = CZE_work_with_germany
+					has_completed_focus = CZE_complete_capitulation
+					
+				}
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = CZE
+		value = -75
+	}
+	ai_strategy = {
+		type = befriend
+		id = CZE
+		value = -75
+	}
+}
+
+GER_wait_on_attacking_CZE_if_im_about_to_get_dogpiled = { #Makes Germany think twice before charging into a strong little entente early game
+	allowed = {
+		original_tag = GER
+	}
+
+	enable = { #Czech + Poland + France or Soviets + other tag near Germany in Czech's faction counts as a dogpile
+		has_war = no
+		country_exists = CZE
+		has_war_with_wargoal_against = {
+    		target = CZE
+		}
+		date < 1939.9.1 #Enough time stalling, we got to start WW2
+		OR = {
+			country_exists = FRA
+			country_exists = SOV
+		}
+		country_exists = POL
+		CZE = {
+			controls_state = 9 
+			has_army_manpower = { size > 299999 }
+			OR = { #Needs to be atleast one of these guys or else it really isn't a dogpile
+				is_in_faction_with = FRA
+				AND = {
+					is_in_faction_with = SOV
+					SOV = {
+						OR = {
+							is_neighbor_of = GER
+							is_neighbor_of = POL
+						}
+					}
+				}
+			}
+		}
+		POL = { #Always need to be in a faction with Poland or the else the Germany AI has a pretty good chance to fight off the dogpile and doesn't need to delay.
+			has_army_manpower = { size > 394999 }
+			#is_neighbor_of = GER
+			is_in_faction_with = CZE
+			NOT = {
+				has_war_with = SOV
+			}
+		}
+		any_other_country = {
+			is_in_faction_with = CZE
+			OR = {
+				is_neighbor_of = CZE
+				is_neighbor_of = GER
+			}
+			OR = {
+				original_tag = ITA
+				original_tag = YUG
+				original_tag = AUS
+				original_tag = ROM
+				original_tag = HUN
+				original_tag = SWI
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = CZE
+		value = -2000
+	}
+}
+
+GER_im_getting_stalled_out_in_war_with_CZE_try_to_break_out_in_the_south_and_go_for_brono = { 
+	allowed = {
+		original_tag = GER
+	}
+
+	enable = {
+		exists = yes
+		has_war_with_major = no #we have bigger problems now
+		controls_state = 4
+		controls_state = 152
+		has_war_with = CZE
+		surrender_progress < 0.03 #I'm still in okay shape
+		CZE = { #CZE is in goodish shape
+			surrender_progress < 0.25
+		}
+		casualties_inflicted_by = { #I'm stalled and taking loses
+    		opponent = CZE
+    		thousands > 19
+		}
+		casualties_inflicted_by = { #alright, stop charging into them
+    		opponent = CZE
+    		thousands < 349
+		}
+		date < 1940.1.1 #Stop messing around
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+     	type = front_control
+	 	state = 972
+	 	state = 70
+     	state_trigger = {
+         	is_controlled_by = CZE
+     	}
+     	ratio = 0.80
+     	ordertype = front
+     	execution_type = rush
+	 	execute_order = yes
+	}
+
+	ai_strategy = { #We want to cut aross to the Brno and Bratislava supply hubs and work from there
+		type = force_concentration_target_weight
+		state = 972 #South Sudetenland
+		state = 75 # Moravia
+		#state = 70 #Western Slovakia
+
+		value = 80 # +80% Need alot to break forts
+	}
+}
+
+GER_dont_send_air_to_middle_east = {
+	allowed = { original_tag = GER }
+	enable = {
+		is_historical_focus_on = yes
+		date > 1941.3.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 28 # Middle East
+		value = -30000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 232 # Levant
+		value = -30000
+	}
+	ai_strategy = {
+		type = strategic_air_importance
+		id = 116 # Iran
+		value = -30000
+	}
+}
+
+GER_build_tank_destroyers = {
+	allowed = { original_tag = GER }
+	enable = {
+		has_tech = basic_medium_tank_chassis
+		date > 1939.9.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = medium_tank_destroyer_chassis
+		value = 1
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories_archetype
+		id = modern_tank_destroyer_chassis
+		value = 1
+	}
+}
+#Pfot ends
