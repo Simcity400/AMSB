@@ -204,7 +204,7 @@ NDefines.NMilitary.UNIT_EXP_LEVELS = { 0.02,	0.04,	0.06,	0.08,	0.1,	0.14,	0.18,	
 NDefines.NMilitary.EXPERIENCE_COMBAT_FACTOR = 0.02
 NDefines.NMilitary.ARMY_EXP_BASE_LEVEL = 5
 NDefines.NAir.AIR_WING_XP_LEVELS = { 20, 40, 60, 80, 100, 140, 180, 220, 260, 300, 380, 460, 640, 620, 700, 740, 780, 820, 860, 900 }
-NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 6
+NDefines.NMilitary.MAX_DIVISION_SUPPORT_HEIGHT = 6 -- AMSB: kept at 6; the 1.19 designer glitch was the old 6_sc.gfx slot reskin (64x53 art in a 128x32 layout), removed instead
 
 -- FUWG/TFB style converts
 NDefines.NMilitary.BATALION_CHANGED_EXPERIENCE_DROP = 0 
