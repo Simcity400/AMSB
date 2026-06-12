@@ -170,18 +170,3 @@ DIPLOMACY_PEACE_PROPOSAL_ENABLE_TRIGGER = {
 is_vichy_france = {
 	original_tag = EFR
 }
-
-# AMSB: minors cannot produce aircraft - only the six air powers can (FRA deliberately excluded)
-msb_is_air_major = {
-	custom_trigger_tooltip = {
-		tooltip = msb_is_air_major_tt
-		OR = {
-			original_tag = GER
-			original_tag = ITA
-			original_tag = JAP
-			original_tag = SOV
-			original_tag = USA
-			original_tag = ENG
-		}
-	}
-}
