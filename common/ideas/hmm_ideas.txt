@@ -166,6 +166,19 @@ ideas = {
 				enemy_operative_capture_chance_factor = -2
 			}
 		}
+		dd_torp_nerf = {
+			# -25% torpedo attack on light hulls only - cruiser-mounted ship_torpedo modules keep full stats
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				ship_hull_light = {
+					torpedo_attack = -0.25
+					instant = yes
+				}
+			}
+		}
 		ai_tradelaw ={
 			removal_cost = -1
 			picture = generic_goods_red_bonus
