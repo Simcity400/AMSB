@@ -10,12 +10,24 @@ state = {
 	state_category = town
 
 	history = {
-		# Restored from vanilla: bases + infrastructure for playable Pacific (factories stay offsite via boost rules)
+		# AMSB 2026-06-13: full vanilla buildings restored - only never-owned WST wasteland stays bare (user request)
 		buildings = {
-			infrastructure = 3
+			infrastructure = 3 # was: 5
+			arms_factory = 1
+			industrial_complex = 1
+			synthetic_refinery = 1
+
 			3900 = {
 				naval_base = 2
+				
+				landmark_great_wall_section = {
+				    level = 1
+				    allowed = {
+				        has_dlc = "No Compromise, No Surrender"
+				    }
+				}
 			}
+
 		}
 		1941.1.1 = {
 			owner = WST

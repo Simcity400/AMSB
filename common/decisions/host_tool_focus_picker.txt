@@ -838,42 +838,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_advanced_pilot_training = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_advanced_pilot_training } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_advanced_pilot_training }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_advanced_pilot_training uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_advanced_pilot_training
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_aerial_defense = {
 		icon = generic_research
 		cost = 0
@@ -917,42 +881,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_aerial_defense
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_aerodrome_of_democracy = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_aerodrome_of_democracy } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_aerodrome_of_democracy }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_aerodrome_of_democracy uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_aerodrome_of_democracy
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -2895,42 +2823,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_commonwealth_aircraft_corporation_taog = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_commonwealth_aircraft_corporation_taog } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_commonwealth_aircraft_corporation_taog }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_commonwealth_aircraft_corporation_taog uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_commonwealth_aircraft_corporation_taog
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_conscription_at_last = {
 		icon = generic_research
 		cost = 0
@@ -3286,42 +3178,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_death_from_down_under_taog = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_death_from_down_under_taog } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_death_from_down_under_taog }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_death_from_down_under_taog uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_death_from_down_under_taog
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_defence_citizen_military_forces_act = {
 		icon = generic_research
 		cost = 0
@@ -3487,42 +3343,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_department_of_aboriginal_affairs
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_department_of_aircraft_production = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_department_of_aircraft_production } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_department_of_aircraft_production }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_department_of_aircraft_production uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_department_of_aircraft_production
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -4100,42 +3920,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_empire_air_training_scheme
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_empire_air_training_scheme_taog = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_empire_air_training_scheme_taog } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_empire_air_training_scheme_taog }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_empire_air_training_scheme_taog uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_empire_air_training_scheme_taog
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -5103,42 +4887,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_government_aircraft_factories = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_government_aircraft_factories } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_government_aircraft_factories }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_government_aircraft_factories uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_government_aircraft_factories
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_hand_in_glove = {
 		icon = generic_research
 		cost = 0
@@ -5182,42 +4930,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_hand_in_glove
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_hear_the_thunder = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_hear_the_thunder } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_hear_the_thunder }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_hear_the_thunder uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_hear_the_thunder
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -5376,42 +5088,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_immediate_rights
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_improved_ground_crews = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_improved_ground_crews } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_improved_ground_crews }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_improved_ground_crews uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_improved_ground_crews
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -6767,42 +6443,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_no1_flying_training_school = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_no1_flying_training_school } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_no1_flying_training_school }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_no1_flying_training_school uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_no1_flying_training_school
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_northern_advancement = {
 		icon = generic_research
 		cost = 0
@@ -7738,42 +7378,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_reestablish_central_flying_school = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_reestablish_central_flying_school } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_reestablish_central_flying_school }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_reestablish_central_flying_school uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_reestablish_central_flying_school
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_refuse_british_wars = {
 		icon = generic_research
 		cost = 0
@@ -8139,42 +7743,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_reverse_wage_cuts
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_ride_the_lightning = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_ride_the_lightning } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_ride_the_lightning }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_ride_the_lightning uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_ride_the_lightning
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -9283,42 +8851,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_the_gathering_storm = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_the_gathering_storm } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_the_gathering_storm }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_the_gathering_storm uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_the_gathering_storm
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_the_guild_for_the_war_effort = {
 		icon = generic_research
 		cost = 0
@@ -10220,42 +9752,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_vichy_out_of_africa
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_volunteer_air_corps = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_volunteer_air_corps } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_volunteer_air_corps }
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_volunteer_air_corps uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_volunteer_air_corps
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}

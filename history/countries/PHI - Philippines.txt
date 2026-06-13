@@ -7,23 +7,23 @@ IF = {
 	set_technology = {
 		rangers_tech = 1
 	}
-	set_oob = "PHI_1936_ncns"
+	# AMSB 2026-06-13: tag never exists (day-one annex moved to state history) - no unit spawns: set_oob = "PHI_1936_ncns"
 	ELSE_IF = {
 		limit = {
 			NOT = {
 				has_dlc = "No Compromise, No Surrender"
 			}
 		}
-		set_oob = "PHI_1936"
+		# AMSB 2026-06-13: tag never exists (day-one annex moved to state history) - no unit spawns: set_oob = "PHI_1936"
 	}
 }
 
 
 if = {
 	limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "PHI_1936_air_bba"
+		# AMSB 2026-06-13: tag never exists (day-one annex moved to state history) - no unit spawns: set_air_oob = "PHI_1936_air_bba"
 	else = {
-		set_air_oob = "PHI_1936_air_legacy"
+		# AMSB 2026-06-13: tag never exists (day-one annex moved to state history) - no unit spawns: set_air_oob = "PHI_1936_air_legacy"
 		set_technology = {
 			early_fighter = 1
 			early_bomber = 1
@@ -417,13 +417,13 @@ IF = {
 		project = sp:sp_air_radar
 	}
 
-	oob = "PHI_1939"
+	# AMSB 2026-06-13: tag never exists (day-one annex moved to state history) - no unit spawns: oob = "PHI_1939"
 
 	if = {
 		limit = { has_dlc = "By Blood Alone" }
 			set_air_oob = "PHI_1936_air_bba" #no difference between 36 and 39 airforces
 		else = {
-			set_air_oob = "PHI_1936_air_legacy"
+			# AMSB 2026-06-13: tag never exists (day-one annex moved to state history) - no unit spawns: set_air_oob = "PHI_1936_air_legacy"
 		}
 	}
 	if = {
@@ -443,9 +443,9 @@ IF = {
 					rear_1_custom_slot = empty
 				}
 			}
-			set_naval_oob = "PHI_1939_naval_mtg"
+			# AMSB 2026-06-13: tag never exists (day-one annex moved to state history) - no unit spawns: set_naval_oob = "PHI_1939_naval_mtg"
 		else = {
-			set_naval_oob = "PHI_1939_naval_legacy"
+			# AMSB 2026-06-13: tag never exists (day-one annex moved to state history) - no unit spawns: set_naval_oob = "PHI_1939_naval_legacy"
 		}
 	}
 

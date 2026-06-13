@@ -153,13 +153,13 @@ on_actions = {
 					days = 912
 				}
 			}
+			# AMSB 2026-06-13: day-one annexes (ETH/PHI/MAN/BRM/NZL) converted to state-history
+			# ownership so the lobby map matches the loaded game (user request - no startup annexing).
+			# The dead tag's 1936 LAND oob is loaded directly instead (annex used to transfer troops);
+			# air/naval oobs skipped - per-country equipment variants, same approach as the STB merges.
 			ITA = {
 				ITA_end_the_italo_ethiopian_war = yes
-				annex_country = {
-                    target = ETH
-                    transfer_troops = no
-                }
-                complete_national_focus = ITA_solid_progress 
+                complete_national_focus = ITA_solid_progress
 				complete_national_focus = ITA_ethiopian_war_logistics_bba
 				country_event = {
 					id = DOD_yugoslavia.20
@@ -167,8 +167,12 @@ on_actions = {
 				}
 			}
 
-			USA = { 
-				annex_country = { target = PHI }
+			USA = {
+				if = {
+					limit = { has_dlc = "No Compromise, No Surrender" }
+					load_oob = "PHI_1936_ncns"
+					else = { load_oob = "PHI_1936" }
+				}
 				every_state = {
 					limit = {
 						is_core_of = PHI
@@ -177,8 +181,8 @@ on_actions = {
 				}
 			}
 
-			JAP = { 
-				annex_country = { target = MAN }
+			JAP = {
+				load_oob = "MAN_1936"
 				every_state = {
 					limit = {
 						is_core_of = MAN
@@ -187,8 +191,7 @@ on_actions = {
 				}
 			}
 
-			RAJ = { 
-				annex_country = { target = BRM }
+			RAJ = {
 				every_state = {
 					limit = {
 						is_core_of = BRM
@@ -198,7 +201,7 @@ on_actions = {
 			}
 
 			AST = {
-				annex_country = { target = NZL }
+				load_oob = "NZL_1936"
 			}
 
 			# AMSB: INS stays on the map as an independent passive nation;

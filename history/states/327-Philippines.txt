@@ -12,19 +12,23 @@ state = {
 
 	history = {
 		buildings = {
-			10265 = {
-				naval_base = 4
-			}
-					infrastructure = 3
-			dockyard = 1
+
+			infrastructure = 3 #was: 5
+			industrial_complex = 3
+			dockyard = 1 #was: 0
 			air_base = 6
+
+			10265 = {
+				naval_base = 5
+			}
+
 		}
 		1941.1.1 = {
 			owner = WST
 			add_core_of = WST
 			}
 
-		owner = PHI
+		owner = USA # AMSB 2026-06-13: was PHI - day-one annex converted to history ownership (lobby map = loaded game)
 		add_core_of = PHI
 		# Scraping the Barrel
 		1936.1.1.14 = { owner = WST add_core_of = WST }

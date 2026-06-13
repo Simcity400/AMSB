@@ -46,12 +46,11 @@ hmm_capitulations_on_actions = {
 		}
 
 		ENG = { # HOL STATES GO TO UK POST CAP
-			transfer_state = 672
-			transfer_state = 334
-			transfer_state = 335
-			transfer_state = 667
-			transfer_state = 673
-			transfer_state = 668
+			# AMSB 2026-06-13: removed the Indonesian state transfers (672/334/335/667/673/668).
+			# They date from the pre-1.19 tree where the East Indies were HOL-owned states; since
+			# the port they belong to independent INS, and transfer_state ignores ownership - this
+			# was ripping Indonesia from INS to ENG on Dutch capitulation (user-reported bug).
+			# ENG keeps only genuinely Dutch territory: Suriname + the HOL home states via annex.
 			transfer_state = 309
 
 			annex_country = {

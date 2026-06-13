@@ -39,24 +39,6 @@ focus_tree = {
 	
 	#Focus Path shortcuts	
 	shortcut = {
-		name = GER_oppose_hitler_shortcut
-		target = GER_oppose_hitler_ww 
-		scroll_wheel_factor = 0.485
-		trigger = {
-			has_dlc = "Gotterdammerung"
-		}
-	}
-
-	shortcut = {
-		name = GER_oppose_hitler_shortcut
-		target = GER_oppose_hitler
-		scroll_wheel_factor = 0.55
-		trigger = {
-			NOT = { has_dlc = "Gotterdammerung" }
-		}
-	}
-
-	shortcut = {
 		name = GER_historical_path_shortcut
 		target = GER_remilitarize_the_rhineland
 		scroll_wheel_factor = 0.469 #Optional parameter, if left unset will use existing zoomlevel. Warning: there's no good way for this to respect client resolution.
@@ -5097,7 +5079,7 @@ focus_tree = {
 				bonus = 0.2
 				days = 180
 				track = strike_aircraft
-				grand_doctrine = new_battlefield_support
+				grand_doctrine = new_operational_integrity # AMSB: was new_battlefield_support - doctrine removed by the rework, nonexistent grand doctrine CTDs the reward tooltip
 			}
 			add_doctrine_cost_reduction = {
 				name = GER_dive_bombers
@@ -5376,7 +5358,7 @@ focus_tree = {
 				name = GER_uralbomber_program
 				bonus = 0.2
 				days = 180
-				grand_doctrine = new_strategic_destruction
+				grand_doctrine = new_operational_integrity # AMSB: was new_strategic_destruction - doctrine removed by the rework, nonexistent grand doctrine CTDs the reward tooltip
 				track = heavy_aircraft
 			}
 			add_doctrine_cost_reduction = {

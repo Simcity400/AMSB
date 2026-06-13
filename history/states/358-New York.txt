@@ -8,13 +8,21 @@ state={
 	state_category = megalopolis
 
 	history={
-		# Restored from vanilla: bases + infrastructure for playable Pacific (factories stay offsite via boost rules)
+		# AMSB 2026-06-13: full vanilla buildings restored - only never-owned WST wasteland stays bare (user request)
 		buildings = {
-			infrastructure = 4
+			infrastructure = 4 #was: 8
+			arms_factory = 2
+			industrial_complex = 7
 			dockyard = 3
 			air_base = 10
 			3878 = {
 				naval_base = 6
+                landmark_statue_of_liberty = {
+                    level = 1
+                    allowed = {
+                        has_dlc = "Gotterdammerung"
+                    }
+                }
 			}
 		}
 		1941.1.1 = {

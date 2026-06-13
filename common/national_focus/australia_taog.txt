@@ -6492,7 +6492,7 @@ focus = {
 #		
 #		
 #		relative_position_id = 
-		x = 92
+		x = 74
 		y = 0
 	
 		cost = 10
@@ -6905,7 +6905,7 @@ focus = {
 		icon = GFX_focus_AST_australian_military_forces
 		#
 
-		x = 104
+		x = 86
 		y = 0
 	
 		cost = 5
@@ -7084,7 +7084,45 @@ focus = {
 					instant_build = yes
 				}	
 			}
-		}
+					# AMSB 2026-06-13: +4 mil + 4 slots relocated here from the removed TAOG air branch
+			# (was Commonwealth Aircraft Corporation +2 and Government Aircraft Factories +2)
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					is_core_of = AST
+					is_fully_controlled_by = AST
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					impassable = no
+					is_core_of = AST
+					is_fully_controlled_by = AST
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -7989,640 +8027,8 @@ focus = {
 	#### Common: Air Force ###
 	##########################
 
-	focus = {
-		id = AST_no1_flying_training_school
-		icon = GFX_focus_AST_no1_flying_training_school
-
-		#
-
-		x = 117
-		y = 0
-	
-		cost = 5
-
-		offset = {
-			x = -49
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = AST_australia_first
-			}
-		}
-
-		offset = {
-			x = -25
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = AST_war_is_coming
-			}
-		}
-
-		offset = {
-			x = -58
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = AST_against_war_and_fascism
-			}
-		}
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			add_dynamic_modifier = { modifier = AST_royal_australian_air_force_spirit } 
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			air_experience = 25
-			add_war_support = 0.025
-		}
-
-		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_WAR_SUPPORT }
-	}
-
 	#joint_focus
-	focus = {
-		id = AST_empire_air_training_scheme_taog
-		icon = GFX_goal_generic_build_airforce
-
-		prerequisite = { focus = AST_no1_flying_training_school }
-		#
-		relative_position_id = AST_no1_flying_training_school
-		x = 0
-		y = 1
-	
-		cost = 10
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			add_ideas = CAN_the_plan
-		}
-
-		search_filters = {  }
-	}
-
-	focus = {
-		id = AST_ride_the_lightning
-		icon = GFX_goal_generic_air_fighter
-
-		prerequisite = { focus = AST_empire_air_training_scheme_taog }
-		#
-		relative_position_id = AST_empire_air_training_scheme_taog
-		x = -3
-		y = 1
-	
-		cost = 10
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			if = {
-				limit = {
-					NOT = { has_dlc = "By Blood Alone" }
-				}
-				air_experience = 25
-				add_tech_bonus = {
-					name = AST_ride_the_lightning
-					bonus = 0.5
-					uses = 2
-					category = light_air
-				}
-			}
-			else_if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				air_experience = 25
-				add_tech_bonus = {
-					name = AST_ride_the_lightning
-					bonus = 0.50
-					uses = 2
-					category = light_air
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_mastery = {
-				amount = 100
-				folder = air
-				track = fighter_aircraft
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_mastery = {
-				amount = 100
-				folder = air
-				track = strike_aircraft
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP }
-	}
-
-	focus = {
-		id = AST_improved_ground_crews
-		icon = GFX_focus_generic_air_bases
-
-		prerequisite = { focus = AST_empire_air_training_scheme_taog }
-		#
-		relative_position_id = AST_empire_air_training_scheme_taog
-		x = -1
-		y = 1
-	
-		cost = 5
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			custom_effect_tooltip = AST_royal_australian_air_force_spirit_tt
-			add_to_variable = { AST_royal_australian_air_force_spirit_production_speed_air_base_factor = 0.20 tooltip = production_speed_air_base_factor_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_accidents_factor = -0.10 tooltip = air_accidents_factor_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_mission_efficiency = 0.05 tooltip = air_mission_efficiency_tt }
-		}
-
-		search_filters = { }
-	}
-
-	focus = {
-		id = AST_advanced_pilot_training
-		icon = GFX_focus_PRC_pilot_training
-
-		prerequisite = { focus = AST_empire_air_training_scheme_taog }
-		#
-		relative_position_id = AST_empire_air_training_scheme_taog
-		x = 1
-		y = 1
-	
-		cost = 5
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			custom_effect_tooltip = AST_royal_australian_air_force_spirit_tt
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_mission_efficiency = 0.10 tooltip = air_mission_efficiency_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_experience_gain_air_factor = 0.10 tooltip = experience_gain_air_factor_tt }
-		}
-
-		search_filters = { FOCUS_FILTER_AIR_XP }
-	}
-
-	focus = {
-		id = AST_commonwealth_aircraft_corporation_taog
-		icon = GFX_focus_AST_commonwealth_aircraft_corporation_taog
-
-		prerequisite = { focus = AST_empire_air_training_scheme_taog }
-		#
-		relative_position_id = AST_empire_air_training_scheme_taog
-		x = 3
-		y = 1
-	
-		cost = 10
-
-		available = {
-		    if = {
-		        limit = { has_dlc = "By Blood Alone" }    
-	            OR = {
-	                has_tech = basic_small_airframe
-	                has_tech = basic_medium_airframe
-	                has_tech = basic_large_airframe
-	            }
-		    }
-		    else = {
-	            OR = {
-	                has_tech = CAS1
-	                has_tech = fighter1
-	                has_tech = naval_bomber1
-	                has_tech = heavy_fighter1
-	                has_tech = tactical_bomber1
-	                has_tech = strategic_bomber1
-	            }     
-		    }
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			IF = {
-				limit = { has_dlc = "Arms Against Tyranny"}
-
-				mio:AST_commonwealth_aircraft_corporation_organization = {
-					add_mio_size = 1
-					add_mio_funds_gain_factor = 0.1
-					add_mio_research_bonus = 0.05
-				}
-			}
-
-			ELSE = {
-				custom_effect_tooltip = available_designer
-				show_ideas_tooltip = AST_commonwealth_aircraft_corporation_organization 
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					is_core_of = AST
-					is_fully_controlled_by = AST
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}	
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = AST_the_gathering_storm
-		icon = GFX_focus_generic_long_range_aircraft
-
-		prerequisite = { focus = AST_ride_the_lightning }
-		#
-		relative_position_id = AST_ride_the_lightning
-		x = 0
-		y = 1
-	
-		cost = 5
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			if = {
-				limit = {
-					NOT = { has_dlc = "By Blood Alone" }
-				}
-				add_tech_bonus = {
-					name = AST_the_gathering_storm
-					bonus = 0.5
-					uses = 2
-					category = medium_air
-				}
-			}
-			else_if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				add_tech_bonus = {
-					name = AST_the_gathering_storm
-					bonus = 0.50
-					uses = 2
-					category = medium_air
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_mastery = {
-				amount = 100
-				folder = air
-				track = medium_aircraft
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = AST_volunteer_air_corps
-		icon = GFX_focus_generic_air_defense
-
-		prerequisite = { focus = AST_improved_ground_crews }
-		#
-		relative_position_id = AST_improved_ground_crews
-		x = 0
-		y = 1
-	
-		cost = 5
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			custom_effect_tooltip = AST_royal_australian_air_force_spirit_tt
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_interception_detect_factor = 0.10 tooltip = air_interception_detect_factor_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_airforce_intel_factor = 0.10 tooltip = airforce_intel_factor_tt }
-		}
-
-		search_filters = { }
-	}
-
-	focus = {
-		id = AST_reestablish_central_flying_school
-		icon = GFX_focus_generic_military_academy
-
-		prerequisite = { focus = AST_advanced_pilot_training }
-		#
-		relative_position_id = AST_advanced_pilot_training
-		x = 0
-		y = 1
-	
-		cost = 5
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			custom_effect_tooltip = AST_royal_australian_air_force_spirit_tt
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_ace_generation_chance_factor = 0.10 tooltip = air_ace_generation_chance_factor_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_ace_effectiveness_factor = 0.25 tooltip = ace_effectiveness_factor_tt }
-		}
-
-		search_filters = {  }
-	}
-
-	focus = {
-		id = AST_government_aircraft_factories
-		icon = GFX_goal_generic_air_production
-
-		prerequisite = { focus = AST_commonwealth_aircraft_corporation_taog }
-		#
-		relative_position_id = AST_commonwealth_aircraft_corporation_taog
-		x = 0
-		y = 1
-	
-		cost = 10
-
-		available = {
-		    if = {
-		        limit = { has_dlc = "By Blood Alone" }    
-	            OR = {
-	                has_tech = improved_small_airframe
-	                has_tech = improved_medium_airframe
-	                has_tech = improved_large_airframe
-	            }
-		    }
-		    else = {
-	            OR = {
-	                has_tech = CAS2
-	                has_tech = fighter2
-	                has_tech = naval_bomber2
-	                has_tech = heavy_fighter2
-	                has_tech = tactical_bomber2
-	                has_tech = strategic_bomber2
-	            }     
-		    }
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			IF = {
-				limit = { has_dlc = "Arms Against Tyranny"}
-
-				mio:AST_government_aircraft_factories_organization = {
-					add_mio_size = 1
-					add_mio_funds_gain_factor = 0.1
-					add_mio_research_bonus = 0.05
-				}
-			}
-
-			ELSE = {
-				custom_effect_tooltip = available_designer
-				show_ideas_tooltip = AST_government_aircraft_factories_organization
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			random_owned_controlled_state = {
-				limit = {
-					impassable = no
-					is_core_of = AST
-					is_fully_controlled_by = AST
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}	
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = AST_hear_the_thunder
-		icon = GFX_goal_generic_air_bomber
-
-		prerequisite = { focus = AST_the_gathering_storm }
-		#
-		relative_position_id = AST_the_gathering_storm
-		x = 0
-		y = 1
-	
-		cost = 5
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			if = {
-				limit = {
-					NOT = { has_dlc = "By Blood Alone" }
-				}
-				add_tech_bonus = {
-					name = AST_hear_the_thunder
-					bonus = 0.5
-					uses = 2
-					category = heavy_air
-				}
-			}
-			else_if = {
-				limit = {
-					has_dlc = "By Blood Alone"
-				}
-				add_tech_bonus = {
-					name = AST_hear_the_thunder
-					bonus = 0.50
-					uses = 2
-					category = heavy_air
-				}
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_mastery = {
-				amount = 100
-				folder = air
-				track = heavy_aircraft
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
 	#joint_focus
-	focus = {
-		id = AST_aerodrome_of_democracy
-		icon = GFX_focus_generic_multi_role_aircraft
-
-		prerequisite = { focus = AST_volunteer_air_corps }
-		prerequisite = { focus = AST_reestablish_central_flying_school }
-		#
-		relative_position_id = AST_volunteer_air_corps
-		x = 1
-		y = 1
-	
-		cost = 10
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			custom_effect_tooltip = AST_royal_australian_air_force_spirit_tt
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_attack_factor = 0.10 tooltip = air_attack_factor_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_defence_factor = 0.10 tooltip = air_defence_factor_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_close_air_support_org_damage_factor = 0.10 tooltip = air_close_air_support_org_damage_factor_tt }
-		}
-
-		search_filters = {  }
-	}
-
-	focus = {
-		id = AST_department_of_aircraft_production
-		icon = GFX_focus_PRC_establish_domestic_aircraft_production
-
-		prerequisite = { focus = AST_government_aircraft_factories }
-		#
-		relative_position_id = AST_government_aircraft_factories
-		x = 0
-		y = 1
-	
-		cost = 10
-
-		available = {
-
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			add_ideas = AUS_domestic_air_production_small
-		}
-
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = AST_death_from_down_under_taog
-		icon = GFX_focus_AST_death_from_down_under_taog
-
-		prerequisite = { focus = AST_hear_the_thunder }
-		prerequisite = { focus = AST_aerodrome_of_democracy }
-		prerequisite = { focus = AST_department_of_aircraft_production }
-		
-		#
-		relative_position_id = AST_aerodrome_of_democracy
-		x = 0
-		y = 1
-	
-		cost = 10
-
-		available = {
-		}
-
-		bypass = {
-		}
-
-		available_if_capitulated = no
-	
-		completion_reward = {
-			custom_effect_tooltip = AST_royal_australian_air_force_spirit_tt
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_cas_efficiency = 0.15 tooltip = air_cas_efficiency_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_mission_efficiency = 0.15 tooltip = air_mission_efficiency_tt }
-			add_to_variable = { AST_royal_australian_air_force_spirit_air_superiority_efficiency = 0.15 tooltip = air_superiority_efficiency_tt }
-		}
-
-		search_filters = {  }
-	}
-
 	######################
 	#### Common: Naval ###
 	######################
@@ -8633,7 +8039,7 @@ focus = {
 
 		#
 
-		x = 125
+		x = 98
 		y = 0
 
 		cost = 5
