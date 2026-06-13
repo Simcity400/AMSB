@@ -290,6 +290,11 @@ NDefines.NNavy.LIGHT_GUN_ATTACK_TO_SHORE_BOMBARDMENT = 0.05 -- light gun attack 
 -- Reduced Nav shootdown in naval battles
 NDefines.NNavy.ANTI_AIR_TARGETTING_TO_CHANCE = 0.025
 
+-- Reduced CAS/TAC shootdown by ground (division) AA - 80% below vanilla 0.005.
+-- Kill-side only: divisions still get full AA bomb-damage reduction, they just
+-- down far fewer planes. (Targeting-chance left at vanilla so AA protection is unchanged.)
+NDefines.NMilitary.ANTI_AIR_ATTACK_TO_AMOUNT = 0.001
+
 -- CHANGES TO HELP STR LOSS IN COMBAT --
 NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.050   -- old vanilla 0.050, -- vanilla 0.060,  -- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
 NDefines.NCountry.REINFORCEMENT_MANPOWER_DELIVERY_SPEED = 15.0 -- vanilla 10 Modifier for army manpower reinforcement delivery speed (travel time)
