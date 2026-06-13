@@ -18243,7 +18243,10 @@ political_actions = {
 		allowed = { original_tag = SPR }
 
 		visible = {
-			has_country_flag = stb_asia_bookmark
+			OR = {
+				has_country_flag = stb_asia_bookmark
+				has_country_flag = no_asia_scrap_bookmark
+			}
 			country_exists = BUL
 			BUL = { is_ai = yes }
 		}
@@ -18273,9 +18276,48 @@ political_actions = {
 					add_idea = extra_cp_double
 				}
 			}
-			else = {
+			else_if = {
+				limit = { NOT = { has_idea = extra_cp_double } }
 				add_ideas = extra_cp_double
 			}
 		}
 	}
+	# STB Asia / Scraping mode: Spain may annex an AI-controlled Finland once fully mobilised (Total Mobilization)
+	SPR_annex_finland = {
+
+		icon = generic_political_discourse
+
+		allowed = { original_tag = SPR }
+
+		visible = {
+			OR = {
+				has_country_flag = stb_asia_bookmark
+				has_country_flag = no_asia_scrap_bookmark
+			}
+			country_exists = FIN
+			FIN = { is_ai = yes }
+		}
+
+		available = {
+			country_exists = FIN
+			FIN = { is_ai = yes }
+			has_idea = tot_economic_mobilisation
+		}
+
+		fire_only_once = yes
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = { is_owned_by = FIN }
+				add_core_of = SPR
+			}
+			annex_country = { target = FIN transfer_troops = yes }
+		}
+	}
+
 }

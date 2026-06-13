@@ -66,7 +66,7 @@ on_actions = {
 					}
 					SPR = { has_offensive_war = yes }
 				}
-				SPR = { add_ideas = SPR_offensive }
+				# SPR = { add_ideas = SPR_offensive } # REMOVED: SPR_offensive idea is undefined (only advisor SPR_offensive_military_council exists) - was logging "Invalid idea" ~257x/game and applying nothing.
 			}
 			if = {
 				limit = {

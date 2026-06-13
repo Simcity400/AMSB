@@ -134,19 +134,18 @@ on_actions = {
 					if = {
 						limit = {
 							SPR = { exists = yes }
-							NOT = { country_exists = FIN }
 						}
 						SPR = {
 							if = {
 								limit = { has_country_flag = stb_asia_bookmark }
 								add_ideas = extra_cp
 								else = {
-									# Scraping: Spain holds Finland AND Bulgaria from the start
+									# Scraping: Spain is the consolidated power
 									add_ideas = extra_cp_double
 								}
 							}
 							add_equipment_to_stockpile = { type = convoy_1 amount = 5 }
-							load_oob = "FIN_1936_union"
+							# Finland is now an independent AI; its land army transfers to Spain via the SPR_annex_finland decision
 						}
 					}
 					if = {
