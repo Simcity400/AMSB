@@ -14,10 +14,10 @@ host_tool_focus_category = {
 					var:global.ht_focus_state = {
 						OWNER = {
 							OR = {
+								has_focus_tree = australia_taog_focus
 								has_focus_tree = british_focus
 								has_focus_tree = french_focus
 								has_focus_tree = usa_focus
-								has_focus_tree = australia_taog_focus
 							}
 							NOT = { has_completed_focus = ABDA_abdacom }
 							AND = {
@@ -265,7 +265,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -315,7 +314,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -365,7 +363,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -426,21 +423,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -459,56 +441,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_a_domestic_supply_chain
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_a_growing_womens_guild = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_a_growing_womens_guild } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_a_growing_womens_guild }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_a_growing_womens_guild uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_a_growing_womens_guild
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -540,7 +472,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -590,7 +521,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -609,56 +539,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_a_rational_request
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_absorb_the_uap = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_absorb_the_uap } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_absorb_the_uap }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_absorb_the_uap uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_absorb_the_uap
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -726,7 +606,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -812,7 +691,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -862,7 +740,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -984,7 +861,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -1034,7 +910,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -1120,7 +995,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -1290,156 +1164,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_at_the_gates = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_at_the_gates } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_at_the_gates }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_at_the_gates uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_at_the_gates
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_australia_first = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_australia_first } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_australia_first }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_australia_first uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_australia_first
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_australia_first_party_focus = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_australia_first_party_focus } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_australia_first_party_focus }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_australia_first_party_focus uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_australia_first_party_focus
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_australian_arms_production = {
 		icon = generic_research
 		cost = 0
@@ -1536,7 +1260,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -1555,56 +1278,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_australian_command
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_australian_culture_investments = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_australian_culture_investments } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_australian_culture_investments }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_australian_culture_investments uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_australian_culture_investments
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -1708,7 +1381,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -1770,106 +1442,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_autarky = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_autarky } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_autarky }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_autarky uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_autarky
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_big_business_pact = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_big_business_pact } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_big_business_pact }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_big_business_pact uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_big_business_pact
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_bound_once_more = {
 		icon = generic_research
 		cost = 0
@@ -1901,7 +1473,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -1962,21 +1533,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -2026,7 +1582,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -2045,56 +1600,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_bring_on_the_giant
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_britain_supplying_ships = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_britain_supplying_ships } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_britain_supplying_ships }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_britain_supplying_ships uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_britain_supplying_ships
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -2126,7 +1631,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -2145,56 +1649,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_british_pacific_fleet
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_british_pact = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_british_pact } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_british_pact }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_british_pact uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_british_pact
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -2226,7 +1680,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -2287,21 +1740,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -2423,7 +1861,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -2586,56 +2023,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_civil_construction_corps
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_claim_french_indochina = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_claim_french_indochina } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_claim_french_indochina }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_claim_french_indochina uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_claim_french_indochina
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -2847,7 +2234,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -2908,21 +2294,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -3013,56 +2384,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_cruising_for_a_bruising
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_crush_the_gates = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_crush_the_gates } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_crush_the_gates }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_crush_the_gates uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_crush_the_gates
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -3214,56 +2535,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_defying_american_interference = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_defying_american_interference } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_defying_american_interference }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_defying_american_interference uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_defying_american_interference
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_demand_resources = {
 		icon = generic_research
 		cost = 0
@@ -3288,7 +2559,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -3374,7 +2644,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -3507,21 +2776,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -3655,56 +2909,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_dividing_the_pacific = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_dividing_the_pacific } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_dividing_the_pacific }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_dividing_the_pacific uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_dividing_the_pacific
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_domestic_industry = {
 		icon = generic_research
 		cost = 0
@@ -3729,7 +2933,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -3791,56 +2994,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_done_meddling = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_done_meddling } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_done_meddling }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_done_meddling uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_done_meddling
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_eastern_focus = {
 		icon = generic_research
 		cost = 0
@@ -3865,7 +3018,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -3951,7 +3103,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -3970,56 +3121,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_ending_overseas_conscription
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_energy_independence = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_energy_independence } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_energy_independence }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_energy_independence uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_energy_independence
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -4051,7 +3152,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -4149,56 +3249,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_eureka_stockade_monument_rally = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_eureka_stockade_monument_rally } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_eureka_stockade_monument_rally }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_eureka_stockade_monument_rally uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_eureka_stockade_monument_rally
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_expand_lithgow_small_arms_factory = {
 		icon = generic_research
 		cost = 0
@@ -4264,56 +3314,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_expand_northern_presence
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_expand_the_fort = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_expand_the_fort } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_expand_the_fort }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_expand_the_fort uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_expand_the_fort
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -4428,21 +3428,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -4503,21 +3488,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -4615,56 +3585,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_for_the_southern_cross = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_for_the_southern_cross } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_for_the_southern_cross }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_for_the_southern_cross uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_for_the_southern_cross
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_foreign_competition = {
 		icon = generic_research
 		cost = 0
@@ -4700,21 +3620,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -4847,21 +3752,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -4880,56 +3770,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_goods_standard
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_hand_in_glove = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_hand_in_glove } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_hand_in_glove }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_hand_in_glove uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_hand_in_glove
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -5033,7 +3873,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -5095,56 +3934,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_in_from_the_cold = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_in_from_the_cold } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_in_from_the_cold }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_in_from_the_cold uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_in_from_the_cold
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_income_tax_assessment_act = {
 		icon = generic_research
 		cost = 0
@@ -5180,21 +3969,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -5255,21 +4029,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -5355,7 +4114,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -5374,56 +4132,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_inevitably_independent
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_integrate_the_fort = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_integrate_the_fort } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_integrate_the_fort }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_integrate_the_fort uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_integrate_the_fort
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -5563,7 +4271,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -5696,21 +4403,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -5771,21 +4463,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -5907,7 +4584,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -6070,106 +4746,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_national_security_act
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_nauru_pact = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_nauru_pact } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_nauru_pact }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_nauru_pact uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_nauru_pact
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_naurus_return_to_german_hands = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_naurus_return_to_german_hands } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_naurus_return_to_german_hands }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_naurus_return_to_german_hands uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_naurus_return_to_german_hands
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -6417,7 +4993,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -6436,56 +5011,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_no_foreign_battlefields
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_northern_advancement = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_northern_advancement } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_northern_advancement }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_northern_advancement uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_northern_advancement
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -6553,7 +5078,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -6651,56 +5175,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_pankhurst_walsh = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_pankhurst_walsh } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_pankhurst_walsh }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_pankhurst_walsh uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_pankhurst_walsh
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_permanant_military_forces = {
 		icon = generic_research
 		cost = 0
@@ -6761,7 +5235,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -6930,21 +5403,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -7005,21 +5463,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -7069,7 +5512,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -7167,56 +5609,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_realize_the_value_of_british_citizenship = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_realize_the_value_of_british_citizenship } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_realize_the_value_of_british_citizenship }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_realize_the_value_of_british_citizenship uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_realize_the_value_of_british_citizenship
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_reclaim_the_lost_territory = {
 		icon = generic_research
 		cost = 0
@@ -7241,7 +5633,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -7302,21 +5693,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -7378,56 +5754,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_refuse_british_wars = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_refuse_british_wars } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_refuse_british_wars }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_refuse_british_wars uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_refuse_british_wars
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_reinforcements = {
 		icon = generic_research
 		cost = 0
@@ -7452,7 +5778,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -7550,56 +5875,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_resist_western_intruders = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_resist_western_intruders } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_resist_western_intruders }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_resist_western_intruders uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_resist_western_intruders
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_reverse_industry_tariffs = {
 		icon = generic_research
 		cost = 0
@@ -7635,21 +5910,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -7710,21 +5970,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -7743,56 +5988,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_reverse_wage_cuts
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_rile_up_veterans = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_rile_up_veterans } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_rile_up_veterans }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_rile_up_veterans uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_rile_up_veterans
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -7932,7 +6127,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -8162,7 +6356,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -8212,7 +6405,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -8262,7 +6454,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -8281,56 +6472,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_solidarity_by_the_empire
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_soothing_australian_fears = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_soothing_australian_fears } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_soothing_australian_fears }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_soothing_australian_fears uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_soothing_australian_fears
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -8481,21 +6622,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -8550,56 +6676,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_standard_gauge_railway
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_stephensen = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_stephensen } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_stephensen }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_stephensen uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_stephensen
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -8775,7 +6851,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -8794,106 +6869,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_taking_the_helm
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_the_bolsheviks_counterforce = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_the_bolsheviks_counterforce } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_the_bolsheviks_counterforce }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_the_bolsheviks_counterforce uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_the_bolsheviks_counterforce
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_the_guild_for_the_war_effort = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_the_guild_for_the_war_effort } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_the_guild_for_the_war_effort }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_the_guild_for_the_war_effort uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_the_guild_for_the_war_effort
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -8936,21 +6911,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -8969,56 +6929,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_the_manpower_directorate
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_the_pacific_garrison = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_the_pacific_garrison } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_the_pacific_garrison }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_the_pacific_garrison uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_the_pacific_garrison
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -9050,7 +6960,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9100,7 +7009,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9161,21 +7069,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9261,7 +7154,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9280,156 +7172,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_the_ultimate_overseas_duty
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_the_winner_takes_it_all = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_the_winner_takes_it_all } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_the_winner_takes_it_all }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_the_winner_takes_it_all uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_the_winner_takes_it_all
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_through_the_gates = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_through_the_gates } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_through_the_gates }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_through_the_gates uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_through_the_gates
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_toe_the_line = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_toe_the_line } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_toe_the_line }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_toe_the_line uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_toe_the_line
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -9473,56 +7215,6 @@ if = {
 			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
 		}
 	}
-	ht_fp_AST_undeniably_ours = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_undeniably_ours } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_undeniably_ours }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_undeniably_ours uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_undeniably_ours
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
 	ht_fp_AST_under_the_rule_of_canberra = {
 		icon = generic_research
 		cost = 0
@@ -9547,7 +7239,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9597,7 +7288,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9647,7 +7337,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9702,56 +7391,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_uranium_mining
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_vichy_out_of_africa = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_vichy_out_of_africa } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_vichy_out_of_africa }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_vichy_out_of_africa uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_vichy_out_of_africa
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -9891,7 +7530,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9941,7 +7579,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -9960,56 +7597,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_walls_and_whispers
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_walls_like_uluru = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_walls_like_uluru } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_walls_like_uluru }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_walls_like_uluru uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_walls_like_uluru
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -10077,7 +7664,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -10127,7 +7713,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -10146,56 +7731,6 @@ if = {
 					}
 					else = {
 						complete_national_focus = AST_we_endured
-					}
-					set_variable = { global.ht_diplo_a = THIS }
-				}
-			}
-			every_country = { limit = { is_ai = no } news_event = { id = hosttool.73 } }
-		}
-	}
-	ht_fp_AST_well = {
-		icon = generic_research
-		cost = 0
-		visible = {
-			OR = {
-				AND = {
-					has_country_flag = ht_focus_unc
-					var:global.ht_focus_state = { OWNER = { has_completed_focus = AST_well } }
-				}
-				AND = {
-					has_country_flag = ht_focus_com
-					var:global.ht_focus_state = {
-						OWNER = {
-							has_focus_tree = australia_taog_focus
-							NOT = { has_completed_focus = AST_well }
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-						}
-					}
-				}
-			}
-		}
-		complete_effect = {
-			var:global.ht_focus_state = {
-				owner = {
-					if = {
-						limit = { ROOT = { has_country_flag = ht_focus_unc } }
-						uncomplete_national_focus = { focus = AST_well uncomplete_children = yes refund_political_power = yes }
-					}
-					else = {
-						complete_national_focus = AST_well
 					}
 					set_variable = { global.ht_diplo_a = THIS }
 				}
@@ -10274,21 +7809,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_war_is_coming }
-					NOT = { has_completed_focus = AST_against_war_and_fascism }
-				}
-			}
-							}
-							AND = {
-if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -10410,7 +7930,6 @@ if = {
 					}
 				}
 				AND = {
-					NOT = { has_completed_focus = AST_australia_first }
 					NOT = { has_completed_focus = AST_against_war_and_fascism }
 				}
 			}
@@ -118522,7 +116041,7 @@ IF = {
 				}
 				NOT = { always = no }
 				NOT = { always = no }
-				NOT = { has_completed_focus = wuw_HUN_strengthen_horthys_reign }
+				NOT = { has_completed_focus = wuw_HUN_undermine_the_admiral }
 			}
 							}
 							AND = {
@@ -118535,7 +116054,7 @@ IF = {
 				}
 				NOT = { always = no }
 				NOT = { always = no }
-				NOT = { has_completed_focus = wuw_HUN_undermine_the_admiral }
+				NOT = { has_completed_focus = wuw_HUN_strengthen_horthys_reign }
 			}
 							}
 						}

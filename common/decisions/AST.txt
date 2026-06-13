@@ -1231,10 +1231,6 @@ AST_cabinet_trust_cat = {
 				is_historical_focus_on = yes
 				factor = 0
 			}
-			modifier = {
-				has_completed_focus = AST_australia_first
-				factor = 0
-			}
 		}
 	}
 
@@ -1301,10 +1297,6 @@ AST_cabinet_trust_cat = {
 			}
 			modifier = {
 				is_historical_focus_on = yes
-				factor = 2
-			}
-			modifier = {
-				has_completed_focus = AST_australia_first
 				factor = 2
 			}
 		}
@@ -1374,10 +1366,6 @@ AST_cabinet_trust_cat = {
 				is_historical_focus_on = yes
 				factor = 0
 			}
-			modifier = {
-				has_completed_focus = AST_australia_first
-				factor = 0
-			}
 		}
 	}
 
@@ -1388,7 +1376,6 @@ AST_cabinet_trust_cat = {
 		visible = {
 			OR = {
 				has_completed_focus = AST_war_is_coming
-				has_completed_focus = AST_australia_first
 			}
 		}
 
@@ -1428,10 +1415,6 @@ AST_cabinet_trust_cat = {
 				is_historical_focus_on = yes
 				factor = 0
 			}
-			modifier = {
-				has_completed_focus = AST_australia_first
-				factor = 1.25
-			}
 		}
 	}
 
@@ -1442,7 +1425,6 @@ AST_cabinet_trust_cat = {
 		visible = {
 			OR = {
 				has_completed_focus = AST_war_is_coming
-				has_completed_focus = AST_australia_first
 			}
 		}
 
@@ -1462,7 +1444,7 @@ AST_cabinet_trust_cat = {
 			
 			IF = {
 				limit = {
-					has_completed_focus = AST_australia_first
+					always = no
 				}
 
 				IF = {
@@ -1540,10 +1522,6 @@ AST_cabinet_trust_cat = {
 				}
 				factor = 0.5
 			}
-			modifier = {
-				has_completed_focus = AST_australia_first
-				factor = 2
-			}
 		}
 	}
 
@@ -1554,7 +1532,6 @@ AST_cabinet_trust_cat = {
 		visible = {
 			OR = {
 				has_completed_focus = AST_war_is_coming
-				has_completed_focus = AST_australia_first
 			}
 		}
 
@@ -1593,10 +1570,6 @@ AST_cabinet_trust_cat = {
 			modifier = {
 				is_historical_focus_on = yes
 				factor = 0
-			}
-			modifier = {
-				has_completed_focus = AST_australia_first
-				factor = 1.25
 			}
 		}
 	}
@@ -1705,7 +1678,7 @@ AST_cabinet_trust_cat = {
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = AST_australia_first
+						always = no
 					}
 				}
 				OR = {
@@ -1744,7 +1717,7 @@ AST_cabinet_trust_cat = {
 
 			ELSE_IF = {
 				limit = {
-					has_completed_focus = AST_australia_first
+					always = no
 				}
 				country_event = { id = AST_canberra_air_disaster_events.3 hours = 1 }
 				custom_effect_tooltip = AST_castle_crumbling_mission_event_tt
@@ -1778,7 +1751,7 @@ AST_cabinet_trust_cat = {
 			ELSE_IF = {
 				limit = { 
 					NOT = {
-						has_completed_focus = AST_australia_first
+						always = no
 						has_government = communism
 					}
 				}
@@ -1823,7 +1796,7 @@ AST_cabinet_trust_cat = {
 			IF = {
 				limit = {
 				 	NOT = {
-				 		has_completed_focus = AST_australia_first
+				 		always = no
 				 	}
 				}
 				country_event = { id = AST_canberra_air_disaster_events.2 hours = 1 }
@@ -2203,676 +2176,6 @@ AST_resource_acquisition_cat = {
 
 }
 
-AST_australia_first_movement_cat = {
-
-	AST_summons_to_australian_hall = {
-		icon = GFX_decision_eng_blackshirt_march
-
-		visible = {
-			NOT = {
-				has_completed_focus = AST_australia_first_party_focus
-			}
-		}
-
-		cost = 50
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = AST_sufficient_funds_tt		
-				NOT = {
-					has_country_flag = AST_insufficient_funds
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 20
-		}
-
-		fire_only_once = no
-
-		days_remove = 90
-
-		modifier = {
-			fascism_drift = 0.03
-			stability_weekly = -0.005
-		}
-
-		complete_effect = {
-			set_country_flag = {
-			    flag = AST_insufficient_funds
-			    days = 100
-			    value = 1
-			}
-			IF = {
-				limit = {
-					has_completed_focus = AST_refuse_british_wars
-				}
-				add_autonomy_ratio = {
-					value = 0.05
-					localization = AST_australia_first_movement_cat
-				}
-			}
-			custom_effect_tooltip = AST_lose_sufficient_funds_tt_100
-			hidden_effect = {
-				set_country_flag = {
-				    flag = AST_afm_summons
-				    days = 90
-				    value = 1
-				}
-			}
-		}
-	}
-
-	AST_summons_to_australian_hall_upgrade = {
-		icon = GFX_decision_eng_blackshirt_march
-
-		visible = {
-			has_completed_focus = AST_australia_first_party_focus
-			NOT = {
-				has_country_flag = AST_afm_summons
-			}
-		}
-
-		cost = 35
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = AST_sufficient_funds_tt		
-				NOT = {
-					has_country_flag = AST_insufficient_funds
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 20
-		}
-
-		fire_only_once = no
-
-		days_remove = 90
-
-		modifier = {
-			fascism_drift = 0.05
-		}
-
-		complete_effect = {
-			set_country_flag = {
-			    flag = AST_insufficient_funds
-			    days = 50
-			    value = 1
-			}
-			IF = {
-				limit = {
-					has_completed_focus = AST_refuse_british_wars
-				}
-				add_autonomy_ratio = {
-					value = 0.05
-					localization = AST_australia_first_movement_cat
-				}
-			}
-			custom_effect_tooltip = AST_lose_sufficient_funds_tt_50
-		}
-	}
-
- 	AST_print_the_publicist = {
-		icon = GFX_decision_eng_propagande_campaigns
-
-		visible = {
-			NOT = {
-				has_completed_focus = AST_australia_first_party_focus
-			}
-		}
-
-		cost = 50
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = AST_sufficient_funds_tt		
-				NOT = {
-					has_country_flag = AST_insufficient_funds
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 20
-		}
-
-		fire_only_once = no
-
-		days_remove = 90
-
-		modifier = {
-			fascism_drift = 0.02  
-		}
-
-		complete_effect = {
-			set_country_flag = {
-			    flag = AST_insufficient_funds
-			    days = 100
-			    value = 1
-			}
-			IF = {
-				limit = {
-					has_completed_focus = AST_refuse_british_wars
-				}
-				add_autonomy_ratio = {
-					value = 0.05
-					localization = AST_australia_first_movement_cat
-				}
-			}
-			custom_effect_tooltip = AST_lose_sufficient_funds_tt_100
-			hidden_effect = {
-				set_country_flag = {
-				    flag = AST_afm_print
-				    days = 90
-				    value = 1
-				}
-			}
-		}
-	}
-
-	AST_print_the_publicist_upgrade = {
-		icon = GFX_decision_eng_propagande_campaigns
-
-		visible = {
-			has_completed_focus = AST_australia_first_party_focus
-			NOT = {
-				has_country_flag = AST_afm_print
-			}
-		}
-
-		cost = 35
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = AST_sufficient_funds_tt		
-				NOT = {
-					has_country_flag = AST_insufficient_funds
-				}
-			}
-		}
-
-		ai_will_do = {
-			base = 20
-		}
-
-		fire_only_once = no
-
-		days_remove = 90
-
-		modifier = {
-			fascism_drift = 0.03  
-		}
-
-		complete_effect = {
-			set_country_flag = {
-			    flag = AST_insufficient_funds
-			    days = 50
-			    value = 1
-			}
-			IF = {
-				limit = {
-					has_completed_focus = AST_refuse_british_wars
-				}
-				add_autonomy_ratio = {
-					value = 0.05
-					localization = AST_australia_first_movement_cat
-				}
-			}
-			custom_effect_tooltip = AST_lose_sufficient_funds_tt_50
-		}
-	}
-
-	AST_call_on_fascists = {
-		icon = GFX_decision_generic_fundraising
-
-		visible = {
-		}
-
-		cost = 20
-
-		available = {
-			has_country_flag = AST_insufficient_funds 
-		}
-
-		ai_will_do = {
-			base = 20
-		}
-
-		fire_only_once = no
-
-		complete_effect = {
-			custom_effect_tooltip = AST_sufficient_funds_tt_2
-			clr_country_flag = AST_insufficient_funds
-		}
-	}
-
-	AST_a_convenient_disaster = {
-		icon = GFX_decision_generic_air
-
-		visible = {
-		}
-
-		cost = 20
-
-		available = {
-			has_completed_focus = AST_australia_first_party_focus
-			fascism > 0.3
-		}
-
-		ai_will_do = {
-			base = 30
-		}
-
-		fire_only_once = yes
-
-		complete_effect = {
-			country_event = { id = AST_canberra_air_disaster_events.1 days = 1 }
-			custom_effect_tooltip = AST_a_convenient_disaster_tt 
-		}
-	}
-
-}
-
-AST_big_business_pact_cat = {
-
-	AST_naval_expansion = { 
-		icon = GFX_decision_generic_naval
-
-		visible = {
-			has_completed_focus = AST_resist_western_intruders
-		}
-
-		cost = 50
-
-		available = {
-			NOT = {
-				has_country_flag = AST_big_business_request_ongoing_flag
-			}
-		}
-
-		fire_only_once = yes
-
-		days_remove = 180
-
-		modifier = {
-			industrial_capacity_dockyard = 0.5
-		}
-
-		complete_effect = {
-			set_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		remove_effect = {
-			clr_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		ai_will_do = {
-			factor = 5
-		}
-	}
-
-	AST_factory_conversions = {
-		icon = GFX_decision_ger_military_buildup
-
-		visible = {
-			has_completed_focus = AST_big_business_pact
-		}
-
-		cost = 50
-
-		available = {
-			NOT = {
-				has_country_flag = AST_big_business_request_ongoing_flag
-			}
-		}
-
-		fire_only_once = no
-
-		days_remove = 180
-
-		modifier = {
-			conversion_cost_civ_to_mil_factor = -0.3
-		}
-
-		complete_effect = {
-			set_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		remove_effect = {
-			clr_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		ai_will_do = {
-			factor = 4
-		}
-	}
-
-	AST_land_development = {
-		icon = GFX_decision_generic_construction
-
-		visible = {
-			has_completed_focus = AST_big_business_pact
-		}
-
-		cost = 50
-
-		available = {
-			NOT = {
-				has_country_flag = AST_big_business_request_ongoing_flag
-			}
-		}
-
-		fire_only_once = no
-
-		days_remove = 180
-
-		modifier = {
-			production_speed_infrastructure_factor = 0.3
-		}
-
-		complete_effect = {
-			random_core_state = {
-				limit = {
-					is_fully_controlled_by = ROOT
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			set_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		remove_effect = {
-			clr_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		ai_will_do = {
-			factor = 4
-		}
-	}
-
-	AST_electrical_grid_expansions = {
-		icon = GFX_decision_generic_electricity
-
-		visible = {
-			has_completed_focus = AST_big_business_pact
-		}
-
-		cost = 50
-
-		available = {
-			NOT = {
-				has_country_flag = AST_big_business_request_ongoing_flag
-			}
-		}
-
-		fire_only_once = no
-
-		days_remove = 180
-
-		modifier = {
-			production_speed_rail_way_factor = 0.3
-			production_speed_energy_infrastructure_factor = 0.3
-			production_speed_industrial_infrastructure_factor = 0.3
-		}
-
-		complete_effect = {
-			set_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		remove_effect = {
-			clr_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		ai_will_do = {
-			factor = 4
-		}
-	}
-	
-	AST_factory_investments = {
-		icon = GFX_decision_generic_factory
-
-		visible = {
-			has_completed_focus = AST_big_business_pact
-		}
-
-		cost = 50
-
-		available = {
-			NOT = {
-				has_country_flag = AST_big_business_request_ongoing_flag
-			}
-		}
-
-		fire_only_once = no
-
-		days_remove = 180
-
-		modifier = {
-			production_speed_industrial_complex_factor = 0.3
-			production_speed_arms_factory_factor = 0.3
-		}
-
-		complete_effect = {
-			set_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		remove_effect = {
-			clr_country_flag = AST_big_business_request_ongoing_flag
-		}
-
-		ai_will_do = {
-			factor = 4
-		}
-	}
-}
-
-AST_vichy_out_of_africa_cat = {
-
-	AST_demand_madagascar = {
-		icon = GFX_decision_generic_orginization_of_african_unity
-
-		cost = 50
-
-		fire_only_once = yes
-
-		available = {
-			NOT = {
-				has_country_flag = AST_vichy_req_ongoing_flag
-			}
-
-			country_exists = VIC
-
-			VIC = {
-				controls_state = 543
-				controls_state = 706
-				controls_state = 708
-			}
-		}
-
-		complete_effect = {
-			VIC = { country_event = { id = AST_diplomatic_events.56 days = 1 } }
-
-			543 = { 
-				set_state_flag = AST_vichy_req
-			}
-			706 = { 
-				set_state_flag = AST_vichy_req
-			}
-			708 = { 
-				set_state_flag = AST_vichy_req
-			}
-
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				VIC = {
-					every_controlled_state = {
-						limit = {	
-							OR = { 
-								state = 543
-								state = 706
-								state = 708
-							}
-						}
-						transfer_state_to = AST
-					}
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-		}
-
-		ai_will_do = {
-			factor = 5
-		}
-	}
-
-	AST_demand_central_africa = {
-		icon = GFX_decision_generic_orginization_of_african_unity
-
-		cost = 50
-
-		fire_only_once = yes
-
-		available = {
-			NOT = {
-				has_country_flag = AST_vichy_req_ongoing_flag
-			}
-
-			country_exists = VIC
-
-			VIC = {
-				controls_state = 539
-				controls_state = 660
-				controls_state = 772
-				controls_state = 773
-				controls_state = 774
-			}
-		}
-
-		complete_effect = {
-			VIC = { country_event = { id = AST_diplomatic_events.56 days = 1 } }
-
-			539 = { 
-				set_state_flag = AST_vichy_req
-			}
-			660 = { 
-				set_state_flag = AST_vichy_req
-			}
-			772 = { 
-				set_state_flag = AST_vichy_req
-			}
-			773 = { 
-				set_state_flag = AST_vichy_req
-			}
-			774 = { 
-				set_state_flag = AST_vichy_req
-			}
-
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				VIC = {
-					every_controlled_state = {
-						limit = {	
-							OR = { 
-								state = 539
-								state = 660
-								state = 772
-								state = 773
-								state = 774
-							}
-						}
-						transfer_state_to = AST
-					}
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-		}
-
-		ai_will_do = {
-			factor = 5
-		}
-	}
-
-	AST_demand_southwestern_territories = {
-		icon = GFX_decision_generic_orginization_of_african_unity
-
-		cost = 50
-
-		fire_only_once = yes
-
-		available = {
-			NOT = {
-				has_country_flag = AST_vichy_req_ongoing_flag
-			}
-
-			country_exists = VIC
-
-			VIC = { 
-				controls_state = 272
-				controls_state = 776
-				controls_state = 777
-				controls_state = 778
-				controls_state = 779
-				controls_state = 780
-			}
-		}
-
-		complete_effect = {
-			VIC = { country_event = { id = AST_diplomatic_events.56 days = 1 } }
-
-			272 = { 
-				set_state_flag = AST_vichy_req
-			}
-			776 = { 
-				set_state_flag = AST_vichy_req
-			}
-			777 = { 
-				set_state_flag = AST_vichy_req
-			}
-			778 = { 
-				set_state_flag = AST_vichy_req
-			}
-			779 = { 
-				set_state_flag = AST_vichy_req
-			}
-			780 = { 
-				set_state_flag = AST_vichy_req
-			}
-
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				VIC = {
-					every_controlled_state = {
-						limit = {	
-							OR = { 
-								state = 272
-								state = 776
-								state = 777
-								state = 778
-								state = 779
-								state = 780
-							}
-						}
-						transfer_state_to = AST
-					}
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-		}
-
-		ai_will_do = {
-			factor = 5
-		}
-	}		
-
-}
 
 prospect_for_resources = { 
 
