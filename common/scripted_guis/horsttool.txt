@@ -555,8 +555,12 @@ st_country_powers = {
 				}
 				set_variable = { global.ht_diplo_a = global.ht_tr_a }
 				set_variable = { global.ht_diplo_b = global.ht_tr_b }
-				var:global.ht_tr_a = { set_truce = { target = var:global.ht_tr_b days = 0 } }
-				var:global.ht_tr_b = { set_truce = { target = var:global.ht_tr_a days = 0 } }
+				var:global.ht_tr_a = {
+					var:global.ht_tr_b = {
+						PREV = { set_truce = { target = THIS days = 0 } }
+						set_truce = { target = PREV days = 0 }
+					}
+				}
 				every_country = { limit = { is_ai = no } news_event = { id = hosttool.67 } }
 			}
 		}
