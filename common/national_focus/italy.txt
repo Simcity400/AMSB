@@ -4146,11 +4146,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_air_ace_generation_chance_factor = 0.05 }
-			add_to_variable = { ITA_ra_air_night_penalty = -0.1 }
-			add_to_variable = { ITA_ra_air_weather_penalty = -0.1 }
-			add_to_variable = { ITA_ra_air_training_xp_gain_factor = 0.05 }
-			custom_effect_tooltip = ITA_expand_rome_flying_school_ra_tt
 
 			air_experience = 25
 
@@ -4290,10 +4285,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_air_mission_efficiency = 0.05 }
-			add_to_variable = { ITA_ra_air_mission_xp_gain_factor = 0.05 }
-			add_to_variable = { ITA_ra_air_doctrine_cost_factor = -0.1 }
-			custom_effect_tooltip = ITA_superaereo_ra_tt
 
 			air_experience = 50
 			#if = {
@@ -4303,8 +4294,6 @@ focus_tree = {
 			#	custom_effect_tooltip = "TODO_Manu: Cost reduction for Airforce spirits. Code support"
 			#}
 
-			#Update NS icon
-			ITA_improve_regia_aeronautica_dm_effect = yes
 		}
 	}
 
@@ -4335,10 +4324,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_AIR_XP}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_air_night_penalty = -0.05 }
-			add_to_variable = { ITA_ra_air_weather_penalty = -0.05 }
-			add_to_variable = { ITA_ra_air_accidents_factor = -0.1 }
-			custom_effect_tooltip = ITA_officers_of_the_service_role_ra_tt
 
 			air_experience = 25
 
@@ -4376,7 +4361,6 @@ focus_tree = {
 		completion_reward = {
 			# More expensive to edit templates, more cheap to produce aircraft
 			add_to_variable = { ITA_military_industry_air_equipment_upgrade_xp_cost = 0.25 }
-			custom_effect_tooltip = ITA_standardization_ra_tt
 
 			hidden_effect = {
 				add_ideas = ITA_hidden_standardization_ns
@@ -4411,8 +4395,6 @@ focus_tree = {
 				}
 			}
 
-			#Update NS icon
-			ITA_improve_regia_aeronautica_dm_effect = yes
 		}
 	}
 
@@ -4433,7 +4415,6 @@ focus_tree = {
 		completion_reward = {
 			# More expensive to edit templates, more cheap to produce aircraft
 			add_to_variable = { ITA_military_industry_air_equipment_upgrade_xp_cost = -0.025 }
-			custom_effect_tooltip = ITA_specialization_ra_tt
 
 			hidden_effect = {
 				add_ideas = ITA_hidden_specialization_ns
@@ -4468,8 +4449,6 @@ focus_tree = {
 				}
 			}
 
-			#Update NS icon
-			ITA_improve_regia_aeronautica_dm_effect = yes
 		}
 	}
 
@@ -4489,10 +4468,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_strategic_bomb_visibility = -0.05 }
-			add_to_variable = { ITA_ra_air_strategic_bomber_bombing_factor = 0.05 }
-			add_to_variable = { ITA_ra_air_range_factor = 0.05 }
-			custom_effect_tooltip = ITA_long_range_aircraft_ra_tt
 
 			random_core_state = {
 				limit = {
@@ -4621,8 +4596,6 @@ focus_tree = {
 			add_to_variable = { ITA_military_industry_air_equipment_upgrade_xp_cost = -0.25 }
 			custom_effect_tooltip = ITA_multirole_aircraft_military_industry_tt
 
-			add_to_variable = { ITA_ra_air_mission_xp_gain_factor = 0.1 }
-			custom_effect_tooltip = ITA_multirole_aircraft_ra_tt
 
 			random_core_state = {
 				limit = {
@@ -4664,10 +4637,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIR_XP}
 
 		completion_reward = {
-			add_to_variable = { ITA_ra_air_superiority_bonus_in_combat = 0.05 }
-			add_to_variable = { ITA_ra_air_superiority_efficiency = 0.05 }
-			add_to_variable = { ITA_ra_air_intercept_efficiency = 0.05 }
-			custom_effect_tooltip = ITA_supremacy_in_the_skies_ra_tt
 
 			air_experience = 50
 
@@ -8891,9 +8860,6 @@ focus_tree = {
 			add_to_variable = { ITA_re_army_attack_factor = 0.05 }
 			custom_effect_tooltip = ITA_by_blood_alone_re_tt
 
-			#REGIA AERONAUTICA
-			add_to_variable = { ITA_ra_air_superiority_bonus_in_combat = 0.05 }
-			custom_effect_tooltip = ITA_by_blood_alone_ra_tt
 
 			#REGIA MARINA
 			add_to_variable = { ITA_rm_naval_morale_factor = 0.05 }
