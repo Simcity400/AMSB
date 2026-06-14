@@ -1276,6 +1276,12 @@ st_country_powers = {
 		pause_blocker_all_text_visible = { has_variable = pause_dropdown_open }
 		pause_blocker_host_visible = { has_variable = pause_dropdown_open }
 		pause_blocker_host_text_visible = { has_variable = pause_dropdown_open }
+		# Active-mode indicators: show the green check on whichever admin mode flag is currently set on the host (ROOT)
+		focus_mode_com_active_visible = { ROOT = { has_country_flag = ht_focus_com } }
+		focus_mode_unc_active_visible = { ROOT = { has_country_flag = ht_focus_unc } }
+		law_mode_active_visible = { ROOT = { has_country_flag = ht_law_mode } }
+		spirit_add_mode_active_visible = { ROOT = { has_country_flag = ht_spirit_add } }
+		spirit_remove_mode_active_visible = { ROOT = { has_country_flag = ht_spirit_remove } }
 	}   
     }
 }

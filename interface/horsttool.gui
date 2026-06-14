@@ -103,6 +103,12 @@ guiTypes = {
 			instantTextboxType = { name = "spirit_add_mode_text" position = {x=146 y=64} font = "hoi_18mbs" text = "Spirit: Add" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
 			buttonType = { name = "spirit_remove_mode" position = {x=270 y=60} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_SPIRIT_REM_TT" pdx_tooltip_delayed = "HT_SPIRIT_TT_DELAYED" }
 			instantTextboxType = { name = "spirit_remove_mode_text" position = {x=276 y=64} font = "hoi_18mbs" text = "Spirit: Rem" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+			# --- active-mode indicators: green check appears on the currently-selected admin mode button ---
+			iconType = { name = "focus_mode_com_active"     position = {x=372 y=9}  spriteType = "GFX_checkbox_small_green" scale = 0.85 alwaystransparent = yes }
+			iconType = { name = "focus_mode_unc_active"     position = {x=502 y=9}  spriteType = "GFX_checkbox_small_green" scale = 0.85 alwaystransparent = yes }
+			iconType = { name = "law_mode_active"           position = {x=112 y=61} spriteType = "GFX_checkbox_small_green" scale = 0.85 alwaystransparent = yes }
+			iconType = { name = "spirit_add_mode_active"    position = {x=242 y=61} spriteType = "GFX_checkbox_small_green" scale = 0.85 alwaystransparent = yes }
+			iconType = { name = "spirit_remove_mode_active" position = {x=372 y=61} spriteType = "GFX_checkbox_small_green" scale = 0.85 alwaystransparent = yes }
 		}
 
 		# ---- State builder (toggled by building_drop_menu; per-element visibility triggers) ----
