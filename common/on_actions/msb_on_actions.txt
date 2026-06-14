@@ -9,7 +9,8 @@ on_actions = {
 					peace_training
 					fast_training
 				}
-				create_intelligence_agency = yes
+				# DISABLED (2026-06-14): unconditional intelligence-agency creation for every playable country was CONFIRMED via in-game bisect to be the source of the late-1936 exit-to-menu / hotjoin crashes and mass-disconnects (mass agency/operative objects -> dangling refs -> teardown double-free). Left off intentionally. Re-enabling needs a proper fix (guard creation + clean up agencies on annex), not a plain uncomment.
+				# create_intelligence_agency = yes
 				add_daily_mastery = {
 					amount = 1000
 					days = 8	# bridges until the first on_weekly drip fires

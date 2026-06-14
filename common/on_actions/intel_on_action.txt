@@ -1,5 +1,6 @@
 on_actions = {
-	on_startup = {
+	# DISABLED (2026-06-14): the operation-token startup loop is part of the intel/agency system confirmed to cause the late-1936 exit/hotjoin crashes and mass-disconnects (see msb_on_actions.txt). Renamed so on_startup does not fire; left off intentionally with the agency creation. Re-enable together with a proper agency fix.
+	on_startup_DISABLED_TEST = {
 		effect = {
 			every_country = {
 				limit = {
