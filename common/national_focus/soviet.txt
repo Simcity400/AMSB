@@ -8715,7 +8715,7 @@ focus = {
 			}
 			
 			add_equipment_to_stockpile = {
-				version_name = "I-15-2"
+				variant_name = "I-15-2"
 				type = small_plane_airframe_0
 				amount = 10000
 				producer = SOV
@@ -9951,7 +9951,7 @@ focus = {
 					every_state = {
 						limit = {	
 							AND = {
-								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = VIC is_controlled_by = YUG is_controlled_by = JAP is_controlled_by = MAN is_controlled_by = SIA} }
+								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = EFR is_controlled_by = YUG is_controlled_by = JAP is_controlled_by = MAN is_controlled_by = SIA} }
 								is_controlled_by = SOV
 								NOT = {	state = 262 }
 								NOT = {	state = 825 }
@@ -9979,7 +9979,7 @@ focus = {
 					every_state = {
 						limit = {	
 							AND = {
-								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = VIC is_controlled_by = YUG} }
+								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = EFR is_controlled_by = YUG} }
 								is_controlled_by = SOV
 								NOT = {	state = 262 }
 								NOT = {	state = 825 }
@@ -10007,16 +10007,6 @@ focus = {
 			}
 			custom_effect_tooltip = "§Y Spawn in divisions in every frontline state"
 
-			if = {
-				limit = { has_country_flag = RG_armored_division_medium }
-				SOV_increase_RG_cap_medium = yes
-			} else_if = {
-				limit = { has_country_flag = RG_armored_division_light }
-				SOV_increase_RG_cap_light = yes
-			} else_if = {
-				limit = { has_country_flag = RG_armored_division_heavy }
-				SOV_increase_RG_cap_heavy = yes
-			}
 		}
 	}
 
@@ -10045,7 +10035,6 @@ focus = {
 
 		completion_reward = {
 			hidden_effect = {
-				SOV_check_equipment_stockpile = yes
 				USA = {
 					country_event = {  id = soviet.3100 }
 				}
@@ -10086,7 +10075,7 @@ focus = {
 					every_state = {
 						limit = {	
 							AND = {
-								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = VIC is_controlled_by = YUG is_controlled_by = JAP is_controlled_by = MAN is_controlled_by = SIA} }
+								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = EFR is_controlled_by = YUG is_controlled_by = JAP is_controlled_by = MAN is_controlled_by = SIA} }
 								is_controlled_by = SOV
 								NOT = {	state = 262 }
 								NOT = {	state = 825 }
@@ -10110,7 +10099,7 @@ focus = {
 					every_state = {
 						limit = {	
 							AND = {
-								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = VIC is_controlled_by = YUG} }
+								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = EFR is_controlled_by = YUG} }
 								is_controlled_by = SOV
 								NOT = {	state = 262 }
 								NOT = {	state = 825 }

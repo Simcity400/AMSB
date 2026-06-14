@@ -3785,4 +3785,54 @@ focus_tree = {
 		allow_branch = { always = no }
 		available = { always = no }
 	}
+	# AMSB 2026-06-14: removed Australia (australia_taog) focus ids still referenced by has_completed_focus
+	# in active TAOG content (abdacom_shared_branch, taog_associated_dominion_puppet, ideas/australia,
+	# events/TAOG_Australia, 16_taog_on_actions). Vanilla australia_taog.txt defines them but is shadowed
+	# by the mod's same-name file, which removed them -> undefined in the effective load set -> null-focus
+	# CTD risk. Stubs make the references resolve (always false). Verified: not defined by any mod file.
+	focus = {
+		id = AST_australia_first
+		icon = GFX_goal_unknown
+		x = 418
+		y = 0
+		cost = 10
+		allow_branch = { always = no }
+		available = { always = no }
+	}
+	focus = {
+		id = AST_british_pact
+		icon = GFX_goal_unknown
+		x = 419
+		y = 0
+		cost = 10
+		allow_branch = { always = no }
+		available = { always = no }
+	}
+	focus = {
+		id = AST_britain_supplying_ships
+		icon = GFX_goal_unknown
+		x = 420
+		y = 0
+		cost = 10
+		allow_branch = { always = no }
+		available = { always = no }
+	}
+	focus = {
+		id = AST_done_meddling
+		icon = GFX_goal_unknown
+		x = 421
+		y = 0
+		cost = 10
+		allow_branch = { always = no }
+		available = { always = no }
+	}
+	focus = {
+		id = AST_stephensen
+		icon = GFX_goal_unknown
+		x = 422
+		y = 0
+		cost = 10
+		allow_branch = { always = no }
+		available = { always = no }
+	}
 }

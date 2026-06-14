@@ -1,2 +1,32 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# --- HOI4 binary assets: NEVER let git touch these (line-ending/diff mangling) ---
+# The map bitmaps are the most important: corruption here = broken province map / CTD.
+*.bmp   binary
+*.dds   binary
+*.tga   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.psd   binary
+
+# Audio / video / fonts / packed assets
+*.ogg   binary
+*.wav   binary
+*.bk2   binary
+*.bik   binary
+*.ttf   binary
+*.otf   binary
+*.zip   binary
+*.7z    binary
+*.dll   binary
+*.exe   binary
+
+# Mesh / model assets
+*.mesh  binary
+*.anim  binary
+*.xac   binary
+*.xsm   binary

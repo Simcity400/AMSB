@@ -36,8 +36,8 @@ NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 30                           -- Up fr
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROLLED = 0
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROL_DIFF = 0
 NDefines.NGame.GAME_SPEED_SECONDS = { 1, 0.20, 0.11, 0.07, 0 } -- Speed Defines (pre-refork AMSB values)
-NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 720
-NDefines.NGame.LAG_DAYS_FOR_PAUSE = 30
+NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 999		-- HMM-style: never auto-slow the session for a lagging client/player
+NDefines.NGame.LAG_DAYS_FOR_PAUSE = 999				-- HMM-style: never auto-pause the session for a lagging client/player (host pauses/rehosts manually)
 NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 14 							    -- WAS 48 | drastically cuts down on save file sizes after WW2 starts and well into barbarossa
 NDefines.NGame.MESSAGE_TIMEOUT_DAYS = 14					     	    -- WAS 60 | less messages lying around at the top of your screen
 

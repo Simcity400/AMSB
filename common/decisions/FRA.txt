@@ -284,16 +284,16 @@ FRA_vichy_france = {
 	}
 	FRA_demand_unification_with_vichy = {
 		available = {
-			country_exists = VIC
+			country_exists = EFR
 			
 			controls_state = 16 #Paris
 		}
 
 		visible = {
 			NOT = {
-				tag = VIC
+				tag = EFR
 			}
-			country_exists = VIC
+			country_exists = EFR
 		}
 		ai_will_do = {
 			factor = 200
@@ -303,7 +303,7 @@ FRA_vichy_france = {
 		complete_effect = {
 			random_other_country = {
 				limit = {
-					tag = VIC
+					tag = EFR
 				}
 				country_event = lar_france_vichy_reunification.1
 			}
@@ -311,7 +311,7 @@ FRA_vichy_france = {
 	}
 	FRA_failsafe_join_axis = {
 		available = {
-			tag = VIC
+			always = no	# AMSB: Vichy (EFR) stays inert (sits, then annexed). This AI failsafe joined Vichy to the Axis; dead under removed VIC, must NOT activate under EFR.
 			NOT = {
 				has_war_with = GER
 				is_in_faction_with = GER
