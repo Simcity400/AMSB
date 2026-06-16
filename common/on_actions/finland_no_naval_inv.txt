@@ -32,6 +32,48 @@ on_actions = {
 			}
 		}
 	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = killable_fin
+						option = off
+					}
+					FROM.FROM = {
+						OR = {
+							state = 145
+							state = 148
+							state = 149
+							state = 150
+							state = 722
+							state = 926
+							state = 927
+							state = 928
+							state = 929
+							state = 930
+						}
+					}
+				}
+				FROM.FROM = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = killable_fin
+						option = off
+					}
+					FROM.FROM = {
+						OR = {
+							state = 146
+							state = 147
+						}
+					}
+				}
+				FROM.FROM = { AMSB_finland_no_naval_inv_soviet_border_state_effect = yes }
+			}
+		}
+	}
 	on_daily_FIN = {
 		effect = {
 			if = {
@@ -101,51 +143,19 @@ on_actions = {
 						option = off
 					}
 				}
-				every_country = {
-					every_owned_state = {
-						limit = { 
-							OR = {
-								is_core_of = FIN
-								has_state_flag = finnish_demilitarized_zone
-							}
-							NOT = {
-								OR = {
-									state = 146
-									state = 147
-									state = 111
-								}
-								OWNER = { tag = SOV }
-							}
-						}
-						set_state_flag = finnish_demilitarized_zone
-						if = {
-							limit = {
-								OWNER = {
-									OR = {
-										tag = ROM
-										tag = HUN
-										tag = SPR
-										tag = BUL
-										# Add other tags here if needed
-									}
-								}
-							}
-							set_demilitarized_zone = yes
-						}
-					}
-				}
-				
-				every_state = {
-					limit = {
-						OR = {
-							state = 146
-							state = 147
-						}
-						OWNER = { tag = SOV }
-					}
-					clr_state_flag = finnish_demilitarized_zone
-					set_demilitarized_zone = no
-				}
+				145 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				148 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				149 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				150 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				722 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				926 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				927 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				928 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				929 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+				930 = { AMSB_finland_no_naval_inv_protected_state_effect = yes }
+
+				146 = { AMSB_finland_no_naval_inv_soviet_border_state_effect = yes }
+				147 = { AMSB_finland_no_naval_inv_soviet_border_state_effect = yes }
 			}
 		}
     }

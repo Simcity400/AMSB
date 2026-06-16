@@ -38,6 +38,42 @@ on_actions = {
 			}
 		}
 	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					SPR = {
+						has_completed_focus = SPA_unite_iberia
+					}
+					FROM.FROM = {
+						OR = {
+							state = 165
+							state = 166
+							state = 167
+							state = 168
+							state = 169
+							state = 170
+							state = 172
+							state = 173
+							state = 174
+							state = 175
+							state = 176
+							state = 177
+							state = 178
+							state = 788
+							state = 789
+							state = 790
+							state = 791
+							state = 792
+							state = 793
+							state = 794
+						}
+					}
+				}
+				FROM.FROM = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+			}
+		}
+	}
 	on_daily_SPR = {
 		effect = {
 			if = {
@@ -110,39 +146,26 @@ on_actions = {
 						has_completed_focus = SPA_unite_iberia
 					}
 				}
-				every_country = {
-					every_owned_state = {
-						limit = { 
-							OR = {
-								is_core_of = SPR
-								has_state_flag = spain_demilitarized_zone
-							}
-							NOT = {
-								OR = {
-									#state = 174
-									#state = 791
-									state = 171
-									state = 41
-								}
-							}	
-						}
-						set_state_flag = spain_demilitarized_zone
-						if = {
-							limit = {
-								OWNER = {
-									OR = {
-										tag = ROM
-										tag = HUN
-										tag = SPR
-										tag = BUL
-										# Add other tags here if needed
-									}
-								}
-							}
-							set_demilitarized_zone = yes
-						}
-					}
-				}
+				165 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				166 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				167 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				168 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				169 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				170 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				172 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				173 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				174 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				175 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				176 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				177 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				178 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				788 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				789 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				790 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				791 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				792 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				793 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
+				794 = { AMSB_spain_no_naval_inv_protected_state_effect = yes }
 			}
 		}
     }

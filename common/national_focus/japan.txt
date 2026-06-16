@@ -3702,19 +3702,16 @@ focus_tree = {
 					608 = {
 						NOT = {
 							is_controlled_by = CHI
-							is_controlled_by = PRC
 						}
 					}
 					597 = {
 						NOT = {
 							is_controlled_by = CHI
-							is_controlled_by = PRC
 						}
 					}
 					614 = {
 						NOT = {
 							is_controlled_by = CHI
-							is_controlled_by = PRC
 						}
 					}
 				}
@@ -3854,12 +3851,6 @@ focus_tree = {
 				id = CHI
 				value = 100
 			}
-			add_ai_strategy = {
-				type = antagonize
-				id = PRC
-				value = 100
-			}
-
 			hidden_effect = {
 				set_global_flag = JAP_triggered_war_with_china_manually_flag
 				# CHI_kwantung_army_impatience_dummy mirror removed: the dummy mission lived in
@@ -7113,7 +7104,6 @@ focus_tree = {
 			OR = {
 				has_subject = MAN
 				has_subject = KOR
-				has_subject = MEN
 				524 = {
 					state_is_fully_controlled_by_ROOT_or_subject = yes
 				}
@@ -7139,17 +7129,15 @@ focus_tree = {
 					OR = {
 						has_subject = MAN
 						has_subject = KOR
-						has_subject = MEN
 					}
 				}
 				random_subject_country = {
 					limit = {
-						OR = {
-							original_tag = MAN
-							original_tag = KOR
-							original_tag = MEN
-						}
+					OR = {
+						original_tag = MAN
+						original_tag = KOR
 					}
+				}
 					random_core_state = {
 						limit = {
 							is_fully_controlled_by = PREV

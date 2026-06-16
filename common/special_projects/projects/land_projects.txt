@@ -1279,7 +1279,6 @@ sp_land_super_heavy_railway_gun = {
 	}
 
 	generic_prototype_rewards = {
-		sp_land_generic_reward_always
 	}
 }
 
@@ -1858,7 +1857,7 @@ sp_land_large_caliber_kinetic_energy_sabot = {
 		base = 1
 		modifier = {
 			factor = 0 
-			FROM = { is_major = no } # Not worried about forts 
+			always = no # Disabled because special project AI scope is not a country scope.
 		}
 		# modifier = { #Forts are a pressing issue
 		# 	factor = 2
@@ -1878,7 +1877,7 @@ sp_land_large_caliber_kinetic_energy_sabot = {
 		# }
 		modifier = { #Forts are a very pressing issue for me
 			factor = 100
-			FROM = { original_tag = GER }
+			always = no
 			any_country = {
 				OR = {
 					original_tag = CZE

@@ -1,5 +1,5 @@
 on_actions = {
-	
+
 	on_startup = {
 		effect = {
 			CHI = {
@@ -17,7 +17,7 @@ on_actions = {
 						}
 					}
 
-					add_to_array = { CHI.core_and_claimed_states = THIS }	
+					add_to_array = { CHI.core_and_claimed_states = THIS }
 				}
 			}
 		}
@@ -37,7 +37,7 @@ on_actions = {
 				}
 			}
 		}
-	
+
 
 		effect = {
 			every_country = {
@@ -50,7 +50,7 @@ on_actions = {
 						original_tag = JAP
 						original_tag = HOL
 						original_tag = POR
-						original_tag = USA 
+						original_tag = USA
 					}
 				}
 
@@ -58,20 +58,20 @@ on_actions = {
 			}
 		}
 
- 
+
 		# Soviet North Sakhalin - Resource Concessions to Japan
-		effect = { 
+		effect = {
 			SOV = {
-				give_resource_rights = { 
-					receiver = JAP 
-					state = 655 
+				give_resource_rights = {
+					receiver = JAP
+					state = 655
 				}
 			}
 		}
 
 		#JAPAN - Launch event that notifies about Kodoha coup and advisor protection if 1936 start date, as well as the 1936 election
 		effect = {
-			
+
 			IF = {
 				limit = {
 					date < "1936.2.2"
@@ -81,15 +81,15 @@ on_actions = {
 					country_event = {
 						id = SEA_japan_popup_events.10
 						days = 2
-					}	
+					}
 					# The 1936 General Election
 					country_event = {
 						id = SEA_japan_popup_events.14
 						days = 42
-					}	
+					}
 				}
 			}
-			
+
 		}
 
 		# Adding in the Great Wall province effect
@@ -214,7 +214,7 @@ on_actions = {
 					add_province_modifier = {
 						static_modifiers = { the_great_wall }
 						province = {
-							id = 4140 
+							id = 4140
 							id = 1134
 							id = 9843
 						}
@@ -296,7 +296,7 @@ on_actions = {
 		}
 
 		effect = {
-			
+
 		}
 
 		effect = {
@@ -327,13 +327,13 @@ on_actions = {
 					if = {
 						limit = {
 							has_completed_focus = CHI_the_hump_sea
-							NOT = { 
-								has_idea = CHI_the_hump_sea_hidden 
+							NOT = {
+								has_idea = CHI_the_hump_sea_hidden
 								any_enemy_country = {
 									controls_state = 601
 									controls_state = 434
 									controls_state = 747
-								}		
+								}
 							}
 
 						}
@@ -344,23 +344,23 @@ on_actions = {
 					if = {
 						limit = {
 							has_completed_focus = CHI_the_hanoi_route
-							NOT = { 
-								has_idea = CHI_the_hanoi_route_hidden 
+							NOT = {
+								has_idea = CHI_the_hanoi_route_hidden
 								any_enemy_country = {
 									controls_state = 325
 									controls_state = 671
 								}
 							}
 						}
-						
-						add_ideas = CHI_the_hanoi_route_hidden	
+
+						add_ideas = CHI_the_hanoi_route_hidden
 					}
 
 					if = {
 						limit = {
 							has_completed_focus = CHI_the_burma_road
-							NOT = { 
-								has_idea = CHI_the_burma_road_hidden 
+							NOT = {
+								has_idea = CHI_the_burma_road_hidden
 								any_enemy_country = {
 									controls_state = 995
 									controls_state = 640
@@ -370,7 +370,7 @@ on_actions = {
 									controls_state = 432
 									controls_state = 288
 									controls_state = 997
-									controls_state = 996	
+									controls_state = 996
 								}
 							}
 						}
@@ -390,14 +390,14 @@ on_actions = {
 				ROOT = {
 					if = {
 						limit = {
-							NOT = { 
+							NOT = {
 								any_enemy_country = {
 									controls_state = 617
 									controls_state = 759
 									controls_state = 755
 									controls_state = 754
 									controls_state = 283
-								}		
+								}
 							}
 
 						}
@@ -420,7 +420,7 @@ on_actions = {
 
 						set_variable = { CHI_soviet_support_army_armor_attack_factor = CHI_soviet_support_army_armor_attack_factor_default }
 						set_variable = { CHI_soviet_support_army_armor_speed_factor = CHI_soviet_support_army_armor_speed_factor_default }
-						
+
 
 					}
 					else = {
@@ -449,7 +449,7 @@ on_actions = {
 					}
 
 					FROM.FROM = {
-						has_state_flag = can_renew_sonno_joi_flag	
+						has_state_flag = can_renew_sonno_joi_flag
 					}
 				}
 
@@ -461,11 +461,11 @@ on_actions = {
 					}
 				}
 
-				# It can only be renewed once per capital state, you will need to keep invading and sowballing to keep it 
+				# It can only be renewed once per capital state, you will need to keep invading and sowballing to keep it
 				FROM.FROM = {
-					clr_state_flag = can_renew_sonno_joi_flag	
+					clr_state_flag = can_renew_sonno_joi_flag
 				}
-				
+
 			}
 
 		}
@@ -580,7 +580,7 @@ on_actions = {
 			}
 		}
 
-		# Changing out the presidential palace building for  
+		# Changing out the presidential palace building for
 		effect = {
 			# New owner is CHI
 			IF = {
@@ -724,7 +724,7 @@ on_actions = {
 				ROOT = {
 					JAP_one_more_member_increase_peasants_education_strength = yes
 				}
-				
+
 			}
 		}
 
@@ -782,7 +782,7 @@ on_actions = {
 	}
 
 	#FROM is faction leader on join faction requests. THIS DOES NOT FIRE ON ADD_TO_FACTION EFFECT! USE ON_OFFER_JOIN_FACTION!
-	on_join_faction = { 
+	on_join_faction = {
 
 		effect = {
 			IF = {
@@ -795,7 +795,7 @@ on_actions = {
 				FROM = {
 					JAP_one_more_member_increase_peasants_education_strength = yes
 				}
-				
+
 			}
 		}
 
@@ -866,13 +866,13 @@ on_actions = {
 					JAP_one_more_member_increase_peasants_education_strength = yes
 				}
 			}
-				
+
 
 			if = {
 				limit = {
-					FROM = { 
+					FROM = {
 						original_tag = CHI
-						has_completed_focus = CHI_appoint_sympathetic_judges 
+						has_completed_focus = CHI_appoint_sympathetic_judges
 					}
 
 					ROOT = {
@@ -888,9 +888,9 @@ on_actions = {
 
 			if = {
 				limit = {
-					FROM = { 
+					FROM = {
 						original_tag = CHI
-						has_completed_focus = CHI_take_control_of_the_executive_yuan 
+						has_completed_focus = CHI_take_control_of_the_executive_yuan
 					}
 
 					ROOT = {
@@ -904,7 +904,7 @@ on_actions = {
 						NOT = { tag = ROOT }
 					}
 
-					add_autonomy_ratio = { 
+					add_autonomy_ratio = {
 						value = var:CHI.executive_yuan_autonomy_ratio
 						localization = CHI_take_control_of_the_executive_yuan
 					}
@@ -913,13 +913,13 @@ on_actions = {
 			}
 		}
 
-		effect = { #Adding 
+		effect = { #Adding
 			if = {
 				limit = {
 					has_dlc = "No Compromise, No Surrender"
 					ROOT = {
 						is_chinese_warlord = yes
-						
+
 					}
 
 					FROM = {
@@ -953,7 +953,7 @@ on_actions = {
 						set_autonomy = {
 							target=ROOT
 							autonomy_state = autonomy_sea_warlord_subject
-							freedom_level = 0.6 # 0-1 
+							freedom_level = 0.6 # 0-1
 							end_wars  = no # default yes. will not cancel non civil wars if set to no
 							end_civil_wars = no # default yes. will not cancel civil wars if set to no
 						}
@@ -1020,7 +1020,7 @@ on_actions = {
 
 	}
 
-	# FROM is the faction Leader, ROOT is the country leaving the faction 
+	# FROM is the faction Leader, ROOT is the country leaving the faction
 	on_leave_faction = {
 
 
@@ -1135,12 +1135,12 @@ on_actions = {
 			# To tie Philippine ideoloy with Japan's ideology
 			IF = {
 				limit = {
-					original_tag = JAP 
+					original_tag = JAP
 				}
 				PHI = {
 					if = {
 						limit = {
-							has_dynamic_modifier = { modifier = PHI_japan_aligned_ideology } 
+							has_dynamic_modifier = { modifier = PHI_japan_aligned_ideology }
 						}
 						PHI_check_japanese_ideology_and_adapt = yes
 					}
@@ -1163,7 +1163,7 @@ on_actions = {
 						original_tag = JAP
 					}
 				}
-				
+
 				#NAVY MODIFIERS
 				IF = {
 					limit = {
@@ -1351,7 +1351,7 @@ on_actions = {
 				limit = {
 					OR = {
 						AND = {
-							ROOT = { 
+							ROOT = {
 								original_tag = CHI
 							}
 							is_in_array = {
@@ -1397,14 +1397,14 @@ on_actions = {
 		}
 
 		#Add First Strike Principle, Kantai Kessen and Strike South for JAPAN
-		effect = { 
+		effect = {
 			if = {
 				limit = {
-					ROOT = { 
+					ROOT = {
 						original_tag = JAP
 						has_completed_focus = JAP_the_imperial_defense_plan
 						NOT = {
-							always = no 
+							always = no
 						}
 						OR = { #If japan has one of these Ideas, there's no need to check for any other criteria
 							NOT = {
@@ -1454,14 +1454,14 @@ on_actions = {
 					}
 					set_variable = { JAP.JAP_first_strike_principle_target_1 = FROM }
 					#The variable is cleared when the idea is removed within the idea
-					set_country_flag = { 
+					set_country_flag = {
 						flag = JAP_first_strike_principle_remaining_days_1
 						days = 89
 					}
 					ROOT = {
 						add_timed_idea = {
-						 	idea = JAP_first_strike_principle_1
-						 	days = 90
+							idea = JAP_first_strike_principle_1
+							days = 90
 						 }
 					}
 				}
@@ -1473,14 +1473,14 @@ on_actions = {
 					}
 					set_variable = { JAP.JAP_first_strike_principle_target_2 = FROM }
 					#The variable is cleared when the idea is removed within the idea
-					set_country_flag = { 
+					set_country_flag = {
 						flag = JAP_first_strike_principle_remaining_days_2
 						days = 89
 					}
 					ROOT = {
 						add_timed_idea = {
-						 	idea = JAP_first_strike_principle_2
-						 	days = 90
+							idea = JAP_first_strike_principle_2
+							days = 90
 						 }
 					}
 				}
@@ -1492,25 +1492,25 @@ on_actions = {
 					}
 					set_variable = { JAP.JAP_first_strike_principle_target_3 = FROM }
 					#The variable is cleared when the idea is removed within the idea
-					set_country_flag = { 
+					set_country_flag = {
 						flag = JAP_first_strike_principle_remaining_days_3
 						days = 89
 					}
 					ROOT = {
 						add_timed_idea = {
-						 	idea = JAP_first_strike_principle_3
-						 	days = 90
+							idea = JAP_first_strike_principle_3
+							days = 90
 						 }
 					}
 				}
 			}
 			if = {
 				limit = {
-					ROOT = { 
+					ROOT = {
 						original_tag = JAP
 						has_completed_focus = JAP_the_imperial_defense_plan
 						NOT = {
-							always = no 
+							always = no
 						}
 						OR = { #If japan has one of these Ideas, there's no need to check for any other criteria
 							NOT = {
@@ -1547,14 +1547,14 @@ on_actions = {
 					}
 					set_variable = { JAP.JAP_kantai_kessen_target_1 = FROM }
 					#The variable is cleared when the idea is removed within the idea
-					set_country_flag = { 
+					set_country_flag = {
 						flag = JAP_kantai_kessen_remaining_days_1
 						days = 179
 					}
 					ROOT = {
 						add_timed_idea = {
-						 	idea = JAP_kantai_kessen_1
-						 	days = 180
+							idea = JAP_kantai_kessen_1
+							days = 180
 						 }
 					}
 				}
@@ -1566,14 +1566,14 @@ on_actions = {
 					}
 					set_variable = { JAP.JAP_kantai_kessen_target_2 = FROM }
 					#The variable is cleared when the idea is removed within the idea
-					set_country_flag = { 
+					set_country_flag = {
 						flag = JAP_kantai_kessen_remaining_days_2
 						days = 179
 					}
 					ROOT = {
 						add_timed_idea = {
-						 	idea = JAP_kantai_kessen_2
-						 	days = 180
+							idea = JAP_kantai_kessen_2
+							days = 180
 						 }
 					}
 				}
@@ -1585,21 +1585,21 @@ on_actions = {
 					}
 					set_variable = { JAP.JAP_kantai_kessen_target_3 = FROM }
 					#The variable is cleared when the idea is removed within the idea
-					set_country_flag = { 
+					set_country_flag = {
 						flag = JAP_kantai_kessen_remaining_days_3
 						days = 179
 					}
 					ROOT = {
 						add_timed_idea = {
-						 	idea = JAP_kantai_kessen_3
-						 	days = 180
+							idea = JAP_kantai_kessen_3
+							days = 180
 						 }
 					}
 				}
 			}
 			if = {
 				limit = {
-					ROOT = { 
+					ROOT = {
 						original_tag = JAP
 						has_completed_focus = JAP_prepare_the_southern_front
 						NOT = {
@@ -1622,31 +1622,31 @@ on_actions = {
 				ROOT = {
 					set_country_flag = JAP_strike_south_idea_triggered_flag
 					add_timed_idea = {
-					 	idea = JAP_strike_south_idea
-					 	days = 180
+						idea = JAP_strike_south_idea
+						days = 180
 					 }
 				}
 			}
 		}
 
 		effect = {
-			if = { #Give Communist China some penalties for not fighting against the invaders! 
+			if = { #Give Communist China some penalties for not fighting against the invaders!
 				limit = {
 					has_dlc = "No Compromise, No Surrender"
-					
-					
+
+
 					FROM = { #China, but not PRC, is attacked by an occupier
 						is_literally_china_not_prc = yes
 					}
 					ROOT = {
 						is_literally_china = no
 					}
-					
+
 				}
 				ROOT = {
 					set_country_flag = PRC_invading_china_flag
 				}
-				
+
 			}
 
 			#Flip the Communist Infiltrated States to PRC
@@ -1662,8 +1662,8 @@ on_actions = {
 									is_core_of = PRC
 									has_dynamic_modifier = {
 										modifier = PRC_infiltrated_state_3
-										scope = PRC 
-									}		
+										scope = PRC
+									}
 								}
 							}
 						}
@@ -1676,8 +1676,8 @@ on_actions = {
 									is_core_of = PRC
 									has_dynamic_modifier = {
 										modifier = PRC_infiltrated_state_3
-										scope = PRC 
-									}	
+										scope = PRC
+									}
 								}
 							}
 						}
@@ -1701,13 +1701,13 @@ on_actions = {
 						priority = 1
 					}
 				}
-				
+
 
 				#ACHIEVEMENT CHECKS
 				if = {
 					limit = {
 						is_ironman = yes #This only applies if you can get achievements
-						
+
 					}
 					FROM = {
 						every_controlled_state = {
@@ -1715,8 +1715,8 @@ on_actions = {
 								is_core_of = PRC
 								has_dynamic_modifier = {
 									modifier = PRC_infiltrated_state_3
-									scope = PRC 
-								}	
+									scope = PRC
+								}
 							}
 
 							add_to_temp_array = {
@@ -1725,9 +1725,9 @@ on_actions = {
 							}
 						}
 					}
-					
+
 				}
-				
+
 				if = {
 					limit = {
 						FROM = {
@@ -1738,8 +1738,8 @@ on_actions = {
 								is_core_of = PRC
 								has_dynamic_modifier = {
 									modifier = PRC_infiltrated_state_3
-									scope = PRC 
-								}	
+									scope = PRC
+								}
 							}
 						}
 					}
@@ -1750,8 +1750,8 @@ on_actions = {
 									is_core_of = PRC
 									has_dynamic_modifier = {
 										modifier = PRC_infiltrated_state_3
-										scope = PRC 
-									}	
+										scope = PRC
+									}
 								}
 							}
 							every_allied_country = {
@@ -1774,8 +1774,8 @@ on_actions = {
 								is_core_of = PRC
 								has_dynamic_modifier = {
 									modifier = PRC_infiltrated_state_3
-									scope = PRC 
-								}	
+									scope = PRC
+								}
 							}
 							transfer_state_to = ROOT
 							create_unit = {
@@ -1789,19 +1789,19 @@ on_actions = {
 				else_if = {
 					limit = {
 						ROOT = {
-							NOT = {	
+							NOT = {
 								original_tag = PRC
 							}
 							any_controlled_state = {
 								is_core_of = PRC
 								has_dynamic_modifier = {
 									modifier = PRC_infiltrated_state_3
-									scope = PRC 
-								}	
+									scope = PRC
+								}
 							}
 						}
 					}
-					FROM = { 
+					FROM = {
 						division_template = {
 							name = "Mínbīng" # Represents militia units
 							division_names_group = PRC_MIL_02
@@ -1825,8 +1825,8 @@ on_actions = {
 									is_core_of = PRC
 									has_dynamic_modifier = {
 										modifier = PRC_infiltrated_state_3
-										scope = PRC 
-									}	
+										scope = PRC
+									}
 								}
 							}
 							every_allied_country = {
@@ -1842,20 +1842,20 @@ on_actions = {
 							}
 						}
 					}
-					#log = "PRC defends!" 
+					#log = "PRC defends!"
 					ROOT = {
 						every_controlled_state = {
 							limit = {
 								is_core_of = PRC
 								has_dynamic_modifier = {
 									modifier = PRC_infiltrated_state_3
-									scope = PRC 
-								}	
+									scope = PRC
+								}
 							}
 							transfer_state_to = FROM
 							create_unit = {
 								division = "division_template = \"Mínbīng\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
-								owner = ROOT
+								owner = FROM
 								count = 2
 							}
 						}
@@ -1865,7 +1865,7 @@ on_actions = {
 			IF = { ## When war against CHI and PRC breaks out - some generals flip to PRC
 				limit = {
 					has_dlc = "No Compromise, No Surrender"
-					OR = { 
+					OR = {
 						AND = {
 							ROOT = {
 								original_tag = PRC
@@ -1885,27 +1885,27 @@ on_actions = {
 					}
 				}
 
-				## array here of all not PRC, then check if has characters 
+				## array here of all not PRC, then check if has characters
 				every_country = {
 					limit = {
-					 	is_literally_china = yes
-					 	NOT = { tag = PRC }
-					 	NOT = {
-					 		is_subject_of = PRC
-					 		is_in_faction_with = PRC
-					 	}
-					 	any_character = {
+						is_literally_china = yes
+						NOT = { tag = PRC }
+						NOT = {
+							is_subject_of = PRC
+							is_in_faction_with = PRC
+						}
+						any_character = {
 							has_character_flag = can_flip_to_prc
 						}
 					}
 					 country_event = {
-						id = SEA_PRC_political_events.19 
+						id = SEA_PRC_political_events.19
 						hours = 2
 						random_hours = 3
 					}
 				}
 
-				
+
 			}
 			if = {				#Return McArthur for US civil war, which he can lead the CSA in
 				limit = {
@@ -1959,6 +1959,7 @@ on_actions = {
 					}
 					if = {
 						limit = {
+							has_dlc = "No Compromise, No Surrender"
 							has_character = USA_dwight_d_eisenhower
 						}
 						USA = {
@@ -2010,7 +2011,7 @@ on_actions = {
 				if = {
 					limit = {
 						NOT = { has_global_flag = PRC_timed_window_for_war }
-						
+
 					}
 
 					set_global_flag = {
@@ -2026,7 +2027,7 @@ on_actions = {
 							flag = PRC_timed_window_for_war
 							days < 91
 						}
-						
+
 					}
 					set_global_flag = achievement_PRC_battle_royale
 				}
@@ -2039,7 +2040,7 @@ on_actions = {
 			if = { #The Imperial Factions are making demands
 				limit = { #there needs to be a strong enough faction for them to start demanding stuff
 					JAP_any_faction_is_tier_3_at_least = yes
-					JAP_imperial_influence_demands_ready = yes # Cooldown is done 
+					JAP_imperial_influence_demands_ready = yes # Cooldown is done
 					check_variable = { JAP_num_of_faction_demands < 2 } #Don't have more than 2 Demands on going at the same time
 				}
 				if = { #We need to keep track of how many Mils and Dockyards Japan has, so the Zaibatsu can demand more Civs
@@ -2062,7 +2063,7 @@ on_actions = {
 							factor = 0
 							JAP_army_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_country_flag = JAP_army_faction_demands_factories
@@ -2073,15 +2074,15 @@ on_actions = {
 							factor = 1.5
 							JAP_army_faction_is_tier_4 = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							num_of_military_factories < num_of_naval_factories
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							has_war = yes
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_army_faction_demands_factories
@@ -2092,14 +2093,14 @@ on_actions = {
 							factor = 0
 							JAP_army_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							amount_taken_ideas = {
 								amount > 0
 								slots = { army_chief }
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							has_country_flag = JAP_army_faction_demands_chief_of_army
 						}
@@ -2107,11 +2108,11 @@ on_actions = {
 							factor = 1.5
 							JAP_army_faction_is_tier_4 = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							has_war = yes
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_army_faction_demands_chief_of_army
@@ -2122,7 +2123,7 @@ on_actions = {
 							factor = 0
 							JAP_army_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_country_flag = JAP_military_demands_conscription_law_change
@@ -2173,7 +2174,7 @@ on_actions = {
 							factor = 0
 							JAP_army_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							has_army_manpower = {
 								size > 2000000
@@ -2183,21 +2184,21 @@ on_actions = {
 							factor = 1.5
 							JAP_army_faction_is_tier_4 = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_army_manpower = {
 								size < 750000
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							has_war_with_major = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
-							has_country_flag = JAP_army_faction_demands_more_fielded_men 
+							has_country_flag = JAP_army_faction_demands_more_fielded_men
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_army_faction_demands_more_fielded_men
@@ -2208,7 +2209,7 @@ on_actions = {
 							factor = 0
 							JAP_army_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_country_flag = JAP_army_faction_demands_trucks
@@ -2227,7 +2228,7 @@ on_actions = {
 								motorized_equipment < 100
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							has_war = yes
 						}
@@ -2242,11 +2243,11 @@ on_actions = {
 							factor = 0
 							JAP_army_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							NOT = { has_completed_focus = JAP_rethink_armor_doctrine }
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_country_flag = JAP_army_faction_demands_tanks
@@ -2285,15 +2286,15 @@ on_actions = {
 								}
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.75
 							has_war_with = SOV
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war_with = USA
 						}
@@ -2308,11 +2309,11 @@ on_actions = {
 							factor = 0
 							JAP_army_faction_is_tier_3_at_least = no
 						}
-						modifier = { # Army is less likely to ask this if you haven't specced into arty stuff yet 
+						modifier = { # Army is less likely to ask this if you haven't specced into arty stuff yet
 							factor = 0.5
 							NOT = { has_completed_focus = JAP_adopt_new_assault_doctrine }
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_country_flag = JAP_army_faction_demands_artillery
@@ -2331,7 +2332,7 @@ on_actions = {
 								artillery_equipment < 100
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							has_war = yes
 						}
@@ -2348,7 +2349,7 @@ on_actions = {
 							factor = 0
 							JAP_naval_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_country_flag = JAP_army_faction_demands_dockyards
@@ -2359,19 +2360,19 @@ on_actions = {
 							factor = 1.5
 							JAP_naval_faction_is_tier_4 = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							num_of_naval_factories < num_of_military_factories
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							has_war_with = USA
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_army_faction_demands_dockyards
@@ -2382,7 +2383,7 @@ on_actions = {
 							factor = 0
 							JAP_naval_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							amount_taken_ideas = {
 								amount > 0
@@ -2393,15 +2394,15 @@ on_actions = {
 							factor = 1.5
 							JAP_naval_faction_is_tier_4 = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							has_war = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
-							has_country_flag = JAP_naval_faction_demands_chief_of_navy_flag 
+							has_country_flag = JAP_naval_faction_demands_chief_of_navy_flag
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_naval_faction_demands_chief_of_navy_flag
@@ -2412,7 +2413,7 @@ on_actions = {
 							factor = 0
 							JAP_naval_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_country_flag = JAP_military_demands_conscription_law_change
@@ -2481,15 +2482,15 @@ on_actions = {
 								size < 10
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war_with_major = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war_with = USA
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							date > 1941.1.1
 						}
@@ -2512,7 +2513,7 @@ on_actions = {
 								has_country_flag = JAP_naval_faction_demands_battleships
 								AND = {
 									has_navy_size = {
-										unit = carrier 
+										unit = carrier
 										size > 8
 									}
 									has_navy_size = {
@@ -2525,7 +2526,7 @@ on_actions = {
 						modifier = {
 							factor = 1.5
 							has_navy_size = {
-								unit = carrier 
+								unit = carrier
 								size < 8
 							}
 							has_navy_size = {
@@ -2533,15 +2534,15 @@ on_actions = {
 								size < 12
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war_with_major = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war_with = USA
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							date > 1941.1.1
 						}
@@ -2576,15 +2577,15 @@ on_actions = {
 								size < 15
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war_with_major = yes
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							has_war_with = USA
 						}
-						modifier = { 
+						modifier = {
 							factor = 1.5
 							date > 1941.1.1
 						}
@@ -2601,7 +2602,7 @@ on_actions = {
 							factor = 0
 							JAP_zaibatsu_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_war = yes
@@ -2613,11 +2614,11 @@ on_actions = {
 							factor = 1.5
 							has_idea = JAP_zaibatsu_faction_tier_4
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							num_of_civilian_factories < JAP_combined_military_factories_and_dockyards
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_zaibatsu_faction_demands_factories
@@ -2628,7 +2629,7 @@ on_actions = {
 							factor = 0
 							JAP_zaibatsu_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								JAP_yosuke_matsuoka = {
@@ -2652,7 +2653,7 @@ on_actions = {
 							factor = 1.5
 							has_idea = JAP_zaibatsu_faction_tier_4
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							date > 1940.1.1
 							amount_taken_ideas = {
@@ -2660,11 +2661,11 @@ on_actions = {
 								slots = { political_advisor }
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
-							has_country_flag = JAP_zaibatsu_faction_demands_industrial_advisor_flag 
+							has_country_flag = JAP_zaibatsu_faction_demands_industrial_advisor_flag
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_zaibatsu_faction_demands_industrial_advisor_flag
@@ -2675,7 +2676,7 @@ on_actions = {
 							factor = 0
 							JAP_zaibatsu_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_idea = civilian_economy
@@ -2693,9 +2694,9 @@ on_actions = {
 								has_idea = export_focus
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
-							has_country_flag = JAP_zaibatsu_faction_demands_trade_law_change 
+							has_country_flag = JAP_zaibatsu_faction_demands_trade_law_change
 						}
 
 						JAP_faction_demand_activation_effects = yes
@@ -2708,7 +2709,7 @@ on_actions = {
 							factor = 0
 							JAP_zaibatsu_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_country_flag = JAP_zaibatsu_faction_demands_industrial_company
@@ -2722,7 +2723,7 @@ on_actions = {
 							factor = 1.5
 							has_idea = JAP_zaibatsu_faction_tier_4
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							date > 1938.1.1
 							amount_taken_ideas = {
@@ -2730,7 +2731,7 @@ on_actions = {
 								slots = { industrial_concern }
 							}
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_zaibatsu_faction_demands_industrial_company
@@ -2743,7 +2744,7 @@ on_actions = {
 							factor = 0
 							JAP_government_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							amount_taken_ideas = {
 								amount > 2
@@ -2754,7 +2755,7 @@ on_actions = {
 							factor = 1.5
 							has_idea = JAP_government_faction_tier_4
 						}
-						modifier = { 
+						modifier = {
 							factor = 2
 							date > 1941.1.1
 							amount_taken_ideas = {
@@ -2762,11 +2763,11 @@ on_actions = {
 								slots = { political_advisor }
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							has_country_flag = JAP_civic_faction_demands_civilian_advisor_appointment
 						}
-						
+
 						JAP_faction_demand_activation_effects = yes
 
 						set_country_flag = JAP_civic_faction_demands_civilian_advisor_appointment
@@ -2777,7 +2778,7 @@ on_actions = {
 							factor = 0
 							JAP_government_faction_is_tier_3_at_least = no
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
 							OR = {
 								has_idea = free_trade
@@ -2795,9 +2796,9 @@ on_actions = {
 								has_idea = export_focus
 							}
 						}
-						modifier = { 
+						modifier = {
 							factor = 0
-							has_country_flag = JAP_civic_faction_demands_trade_law_change_flag 
+							has_country_flag = JAP_civic_faction_demands_trade_law_change_flag
 						}
 
 						JAP_faction_demand_activation_effects = yes
@@ -2889,11 +2890,268 @@ on_actions = {
 						set_country_flag = JAP_government_faction_demands_more_influence
 						country_event = { id = SEA_imperial_influence_events.460 days = 5 random_days = 10 }
 					}
-				}
+
+					1 = { # No eligible faction demand this month.
+						modifier = {
+							factor = 0
+							NOT = {
+								AND = {
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_army_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_army_faction_demands_factories
+																		num_of_military_factories > num_of_naval_factories
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_army_faction_is_tier_3_at_least = no
+										amount_taken_ideas = {
+																		amount > 0
+																		slots = { army_chief }
+																	}
+										has_country_flag = JAP_army_faction_demands_chief_of_army
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_army_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_military_demands_conscription_law_change
+																		has_manpower > 249999
+																		has_idea = scraping_the_barrel
+																		has_war = no
+																		AND = {
+																			has_idea = all_adults_serve
+																			surrender_progress > 0.15
+																		}
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_army_faction_is_tier_3_at_least = no
+										has_army_manpower = {
+																		size > 2000000
+																	}
+										has_country_flag = JAP_army_faction_demands_more_fielded_men
+									}
+									OR = {
+										#Army can't make any demands if they don't have enough Influence
+										JAP_army_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_army_faction_demands_trucks
+																		has_equipment = {
+																			motorized_equipment > 149
+																		}
+																	}
+									}
+									OR = {
+										#Army can't make any demands if they don't have enough Influence
+										JAP_army_faction_is_tier_3_at_least = no
+										NOT = { has_completed_focus = JAP_rethink_armor_doctrine }
+										OR = {
+																		has_country_flag = JAP_army_faction_demands_tanks
+																		AND = {
+																			NOT = { has_tech = basic_medium_tank_chassis }
+																			has_equipment = {
+																				light_tank_chassis > 949
+																			}
+																		}
+																		AND = {
+																			has_tech = basic_medium_tank_chassis
+																			has_equipment = {
+																				medium_tank_chassis > 249
+																			}
+																		}
+																	}
+									}
+									OR = {
+										#Army can't make any demands if they don't have enough Influence
+										JAP_army_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_army_faction_demands_artillery
+																		has_equipment = {
+																			artillery_equipment > 199
+																		}
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_naval_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_army_faction_demands_dockyards
+																		num_of_naval_factories > num_of_military_factories
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_naval_faction_is_tier_3_at_least = no
+										amount_taken_ideas = {
+																		amount > 0
+																		slots = { navy_chief }
+																	}
+										has_country_flag = JAP_naval_faction_demands_chief_of_navy_flag
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_naval_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_military_demands_conscription_law_change
+																		has_manpower > 249999
+																		has_idea = scraping_the_barrel
+																		has_war = no
+																		AND = {
+																			has_idea = all_adults_serve
+																			surrender_progress > 0.15
+																		}
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_naval_faction_is_tier_3_at_least = no
+										OR = {
+																		NOT = {	has_completed_focus = JAP_focus_on_aircraft_carriers }
+																		has_country_flag = JAP_naval_faction_demands_carriers
+																		has_navy_size = {
+																			unit = carrier
+																			size > 17
+																		}
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_naval_faction_is_tier_3_at_least = no
+										OR = {
+																		NOT = {	has_completed_focus = JAP_balanced_naval_approach }
+																		has_country_flag = JAP_naval_faction_demands_carriers
+																		has_country_flag = JAP_naval_faction_demands_battleships
+																		AND = {
+																			has_navy_size = {
+																				unit = carrier
+																				size > 8
+																			}
+																			has_navy_size = {
+																				archetype = ship_hull_heavy
+																				size > 12
+																			}
+																		}
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_naval_faction_is_tier_3_at_least = no
+										OR = {
+																		NOT = {	has_completed_focus = JAP_sea_battleship_initiative }
+																		has_country_flag = JAP_naval_faction_demands_carriers
+																		has_country_flag = JAP_naval_faction_demands_battleships
+																		has_navy_size = {
+																			archetype = ship_hull_heavy
+																			size > 24
+																		}
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_zaibatsu_faction_is_tier_3_at_least = no
+										OR = {
+																		has_war = yes
+																		has_country_flag = JAP_zaibatsu_faction_demands_factories
+																		num_of_civilian_factories > JAP_combined_military_factories_and_dockyards
+																	}
+									}
+									OR = {
+										#Zaibatsus can't make any demands if they don't have enough Influence
+										JAP_zaibatsu_faction_is_tier_3_at_least = no
+										OR = {
+																		JAP_yosuke_matsuoka = {
+																			is_political_advisor = yes
+																		}
+																		JAP_koyata_iwasaki = {
+																			is_political_advisor = yes
+																		}
+																		JAP_chikuhei_nakajima = {
+																			is_political_advisor = yes
+																		}
+																		JAP_yoshisuke_aikawa = {
+																			is_political_advisor = yes
+																		}
+																		JAP_kenjiro_matsumoto = {
+																			is_political_advisor = yes
+																		}
+																	}
+										has_country_flag = JAP_zaibatsu_faction_demands_industrial_advisor_flag
+									}
+									OR = {
+										#Zaibatsus can't make any demands if they don't have enough Influence
+										JAP_zaibatsu_faction_is_tier_3_at_least = no
+										OR = {
+																		has_idea = civilian_economy
+																		has_war = yes
+																	}
+										has_country_flag = JAP_zaibatsu_faction_demands_trade_law_change
+									}
+									OR = {
+										#Zaibatsus can't make any demands if they don't have enough Influence
+										JAP_zaibatsu_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_zaibatsu_faction_demands_industrial_company
+																		has_idea = sumitomo
+																		has_idea = mitsubishi_civilian
+																		has_idea = mitsui_bank
+																		has_idea = yasuda_zaibatsu
+																	}
+									}
+									OR = {
+										#Navy can't make any demands if they don't have enough Influence
+										JAP_government_faction_is_tier_3_at_least = no
+										amount_taken_ideas = {
+																		amount > 2
+																		slots = { political_advisor }
+																	}
+										has_country_flag = JAP_civic_faction_demands_civilian_advisor_appointment
+									}
+									OR = {
+										#Government can't make any demands if they don't have enough Influence
+										JAP_government_faction_is_tier_3_at_least = no
+										OR = {
+																		has_idea = free_trade
+																		has_war = yes
+																	}
+										has_country_flag = JAP_civic_faction_demands_trade_law_change_flag
+									}
+									OR = {
+										#Government can't make any demands if they don't have enough Influence
+										JAP_government_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_government_faction_demands_more_influence
+																		JAP_army_faction_is_tier_3_at_least = no
+																	}
+									}
+									OR = {
+										#Government can't make any demands if they don't have enough Influence
+										JAP_government_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_government_faction_demands_more_influence
+																		JAP_naval_faction_is_tier_3_at_least = no
+																	}
+									}
+									OR = {
+										#Government can't make any demands if they don't have enough Influence
+										JAP_government_faction_is_tier_3_at_least = no
+										OR = {
+																		has_country_flag = JAP_government_faction_demands_more_influence
+																		JAP_zaibatsu_faction_is_tier_3_at_least = no
+																	}
+									}
+								}
+							}
+						}
+					}
+}
 			}
 		}
 	}
-	
+
 	on_monthly_CHI = {
 		effect = {
 			CHI_is_corruption_in_government_on_balance_good = yes
@@ -2933,10 +3191,10 @@ on_actions = {
 						}
 						remove_from_array = {
 							array = ROOT.warlord_subjects
-							value = THIS 
+							value = THIS
 						}
 					}
-					
+
 				}
 				if = {
 					limit = {
@@ -2952,8 +3210,8 @@ on_actions = {
 					set_variable = { t_warlord_subjects_pp_gain = warlord_subjects_pp_gain_base }
 					multiply_variable = { t_warlord_subjects_pp_gain = warlord_subjects^num }
 					divide_variable = { t_warlord_subjects_pp_gain = 30 }
-					
-					add_to_variable = { 
+
+					add_to_variable = {
 						CHI_corruption_pp_gain = t_warlord_subjects_pp_gain
 					}
 				}
@@ -3040,7 +3298,7 @@ on_actions = {
 				limit = {
 					has_completed_focus = CHI_continue_the_ding_xian_experiment
 					any_core_state = {
-						NOT = { 
+						NOT = {
 							has_dynamic_modifier = { modifier = CHI_electrification_and_mass_education_modifier }
 						}
 					}
@@ -3083,7 +3341,7 @@ on_actions = {
 				}
 				ELSE = {
 					add_to_variable = { CHI_electrification_cooldown = 1 }
-				}	
+				}
 			}
 		}
 
@@ -3094,7 +3352,7 @@ on_actions = {
 	on_civil_war_end = {
 
 		effect = {
-			# Give Japan a celebratory event when the democratic side wins the civil war 
+			# Give Japan a celebratory event when the democratic side wins the civil war
 			IF = {
 				limit = {
 					original_tag = JAP
@@ -3102,13 +3360,13 @@ on_actions = {
 					always = no
 					FROM = {
 						original_tag = JAP
-						has_government = fascism 
+						has_government = fascism
 					}
 				}
 				country_event = {
 					id = SEA_japan_popup_events.24
 					hours = 1
-				}	
+				}
 			}
 		}
 
@@ -3175,6 +3433,7 @@ on_actions = {
 				}
 				if = {
 					limit = {
+						has_dlc = "No Compromise, No Surrender"
 						has_character = USA_dwight_d_eisenhower
 						NOT = {
 							has_completed_focus = PHI_police_chief_eisenhower
@@ -3208,12 +3467,12 @@ on_actions = {
 							}
 						}
 					}
-					
+
 					NOT = { has_global_flag = hbc_has_been_dissolved }
 				}
 				CHI = {
 					country_event = {
-						id = SEA_warlords.69 
+						id = SEA_warlords.69
 						hours = 6
 					}
 				}
@@ -3267,7 +3526,7 @@ on_actions = {
 			}
 		}
 
-		# Three way civil war - demo Japan is defeated and should be annexed into com JAP 
+		# Three way civil war - demo Japan is defeated and should be annexed into com JAP
 		effect = {
 
 			IF = {
@@ -3284,8 +3543,8 @@ on_actions = {
 				JAP = {
 					annex_country = {
 						target = ROOT
-						transfer_troops = no 
-					}	
+						transfer_troops = no
+					}
 				}
 			}
 		}
@@ -3302,8 +3561,8 @@ on_actions = {
 				CHI = {
 					country_event = {
 						id = SEA_china.24
-						hours = 8 	
-						random_hours = 8 
+						hours = 8
+						random_hours = 8
 					}
 				}
 			}
@@ -3390,7 +3649,7 @@ on_actions = {
 				}
 			}
 		}
-		effect = {	#JAP: lose US puppet cosmetic tag if no longer a US puppet 
+		effect = {	#JAP: lose US puppet cosmetic tag if no longer a US puppet
 			IF = {
 				limit = {
 					original_tag = JAP
@@ -3428,6 +3687,7 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					has_dlc = "No Compromise, No Surrender"
 					original_tag = PHI
 					has_government = democratic
 					date < 1942.01.01
@@ -3443,6 +3703,7 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					has_dlc = "No Compromise, No Surrender"
 					original_tag = PHI
 					has_government = democratic
 					date > 1943.1.1
@@ -3460,6 +3721,7 @@ on_actions = {
 		effect = {		#feel free to remove this same block in exile_government_reinstated if the two always coincide
 			if = {
 				limit = {
+					has_dlc = "No Compromise, No Surrender"
 					original_tag = PHI
 					has_government = democratic
 					date > 1943.1.1
@@ -3485,7 +3747,7 @@ on_actions = {
 		}
 	}
 
-	# ROOT is the winner, FROM is the loser 
+	# ROOT is the winner, FROM is the loser
 	on_peaceconference_ended = {
 
         effect = {
@@ -3502,20 +3764,20 @@ on_actions = {
         effect = {
             FROM = {
                 IF = {
-                	limit = {
-                		original_tag = RAJ 
-                		has_cosmetic_tag = RAJ_UK
-                		OR = {
-                			is_subject = no
-                			any_country = {
-                				has_subject = PREV
-                				NOT = {
-                					original_tag = ENG 
-                				}
-                			}
-                		}
-                	}
-                	drop_cosmetic_tag = yes
+	limit = {
+		original_tag = RAJ
+		has_cosmetic_tag = RAJ_UK
+		OR = {
+			is_subject = no
+			any_country = {
+				has_subject = PREV
+				NOT = {
+					original_tag = ENG
+				}
+			}
+		}
+	}
+	drop_cosmetic_tag = yes
                 }
             }
         }
@@ -3533,50 +3795,50 @@ on_actions = {
 
         effect = {
             FROM = {
-                IF = {    # This prevents Japan from having a non-allowed eco modifier after being puppeted etc 
+                IF = {    # This prevents Japan from having a non-allowed eco modifier after being puppeted etc
                     limit = {
                         has_idea = national_defense_state
                     }
                     swap_ideas = {
-                    	remove_idea = national_defense_state
-                    	add_idea = partial_economic_mobilisation
-                    }	
+	remove_idea = national_defense_state
+	add_idea = partial_economic_mobilisation
+                    }
                 }
             }
         }
 
 
-        # Merging of accidental leftover Japan into American Japanese puppet government if there is one, if Japan surrendered through the focus  
+        # Merging of accidental leftover Japan into American Japanese puppet government if there is one, if Japan surrendered through the focus
         effect = {
-        	IF = {
-        		limit = {
-        			# USA is a winner and has the JAP as their puppet 
-        			ROOT = {
-        				original_tag = USA
-        			}
-        			# One of the losers if a Japan that should be made a part of the other one 
-        			FROM = {
-        				original_tag = JAP  
-        				is_subject = no
-        				OR = {
-        					has_government = neutrality
-        					has_government = fascism
-        				}
-         			}
-         			has_global_flag = JAP_surrendered_through_their_focus_flag
-        		}
-        		ROOT = {
-        			random_subject_country = {
-        				limit = {
-        					original_tag = JAP 
-        				}
-    					annex_country = {
-    						target = FROM
-    						transfer_troops = yes
-    					}	
-        			}
-        		}
-        	}
+	IF = {
+		limit = {
+			# USA is a winner and has the JAP as their puppet
+			ROOT = {
+				original_tag = USA
+			}
+			# One of the losers if a Japan that should be made a part of the other one
+			FROM = {
+				original_tag = JAP
+				is_subject = no
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+			}
+			has_global_flag = JAP_surrendered_through_their_focus_flag
+		}
+		ROOT = {
+			random_subject_country = {
+				limit = {
+					original_tag = JAP
+				}
+					annex_country = {
+						target = FROM
+						transfer_troops = yes
+					}
+			}
+		}
+	}
         }
 
     }

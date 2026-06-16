@@ -1,5 +1,5 @@
 #Category only allowed for all china
-#Category visible when PRC_coalition_government focus is completed for PRC
+#Category visible when coalition government focus is completed
 #Category visible when CHI_join_the_republican_government focus is completed for warlord
 
 #Variables and flags and targets to know about
@@ -7744,6 +7744,9 @@ CHI_political_power_struggle = {
 
 	WTT_seek_support_from_warlord = {
 		icon = generic_civil_support
+		allowed = {
+			always = no
+		}
 		visible = {
 			FROM = { NOT = { has_country_flag = wtt_political_struggle } }
 			FROM = { NOT = { has_war_with = ROOT } }
@@ -7782,7 +7785,7 @@ CHI_political_power_struggle = {
 			has_country_flag = wtt_political_struggle
 		}
 
-		targets = { GXC YUN SHX XSM SIK GDC XIC SND KHM NXM GSM SIC HBC }
+		targets = { }
 		targets_dynamic = yes
 
 		target_trigger = {
@@ -7846,7 +7849,6 @@ CHI_political_power_struggle = {
 			clear_variable = same_ruling_party_steps
 			clear_variable = opinion_of_us_steps
 
-			FROM = { country_event = { id = wtt_political_warlord_support.10 } }
 		}
 	}
 
@@ -7905,7 +7907,6 @@ CHI_political_power_struggle = {
 				clear_variable = PP_amount_for_support_@ROOT
 				set_country_flag = warlord_supports_@ROOT
 				clr_country_flag = wtt_negotiating_support_with@ROOT
-				country_event = { id = wtt_political_warlord_support.21 }
 			}
 			WTT_political_struggle_recalculate_support = yes
 		}
@@ -7974,7 +7975,6 @@ CHI_political_power_struggle = {
 			FROM = {
 				set_country_flag = warlord_supports_@ROOT
 				clr_country_flag = wtt_negotiating_support_with@ROOT
-				country_event = { id = wtt_political_warlord_support.22 }
 			}
 			WTT_political_struggle_recalculate_support = yes
 		}
@@ -8043,7 +8043,6 @@ CHI_political_power_struggle = {
 			FROM = {
 				set_country_flag = warlord_supports_@ROOT
 				clr_country_flag = wtt_negotiating_support_with@ROOT
-				country_event = { id = wtt_political_warlord_support.23 }
 			}
 			WTT_political_struggle_recalculate_support = yes
 		}

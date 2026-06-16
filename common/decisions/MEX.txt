@@ -428,18 +428,6 @@ MEX_category_military_issues = {
 		fire_only_once = yes
 
 		complete_effect = {
-			if = {
-				limit = {
-					304 = {
-						is_owned_by = "PAN"
-						is_controlled_by = ROOT
-					}
-					ROOT = {
-						has_war_with = "PAN"
-					}
-				}
-				annex_country = { target = "PAN" }
-			}
 			add_named_threat = {
 				threat = 5
 				name = threat_mexico_attacks_panama_canal
@@ -806,8 +794,6 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 		
 		remove_effect = {
-			annex_country = { target = GUA }
-
 			add_state_core = 313
 
 			hidden_effect = {
@@ -853,8 +839,6 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 		
 		remove_effect = {
-			annex_country = { target = HON }
-
 			add_state_core = 312
 
 			hidden_effect = {
@@ -900,8 +884,6 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 		
 		remove_effect = {
-			annex_country = { target = ELS }
-
 			add_state_core = 314
 
 			hidden_effect = {
@@ -947,8 +929,6 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 		
 		remove_effect = {
-			annex_country = { target = NIC }
-
 			add_state_core = 317
 
 			hidden_effect = {
@@ -994,8 +974,6 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 		
 		remove_effect = {
-			annex_country = { target = COS }
-			
 			add_state_core = 316
 
 			hidden_effect = {
@@ -1041,8 +1019,6 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 
 		remove_effect = {
-			annex_country = { target = "PAN" }
-			
 			add_state_core = 304
 
 			hidden_effect = {
@@ -1125,8 +1101,6 @@ MEX_category_territorial_integration = {
 		cancel_if_not_visible = yes
 
 		remove_effect = {
-			annex_country = { target = BLZ }
-			
 			add_state_core = 311
 
 			311 = {

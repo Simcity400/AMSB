@@ -763,15 +763,14 @@ on_actions = {
 					} 
 					# If its in the same faction as that country landed in, alert them
 					every_country = {
-						if = { 
-							limit = { 
-								THIS = { is_in_faction_with = PREV.PREV.CONTROLLER }
-							}
-							set_country_flag = ui_show_invasion_warning
-							set_variable = { ui_invaded_state = PREV }
-							set_variable = { ui_invaded_country = PREV.CONTROLLER }
-							set_variable = { ui_invader_country = ROOT }
+						limit = {
+							is_in_faction_with = PREV.CONTROLLER
+							NOT = { has_country_flag = notif_disable_inv_warning }
 						}
+						set_country_flag = ui_show_invasion_warning
+						set_variable = { ui_invaded_state = PREV }
+						set_variable = { ui_invaded_country = PREV.CONTROLLER }
+						set_variable = { ui_invader_country = ROOT }
 					}
 
 				}
@@ -808,15 +807,14 @@ on_actions = {
 					} 
 					# If its in the same faction as that country landed in, alert them
 					every_country = {
-						if = { 
-							limit = { 
-								THIS = { is_in_faction_with = PREV.PREV.CONTROLLER } 
-							}
-							set_country_flag = ui_show_paradrop_warning
-							set_variable = { ui_invaded_state = PREV }
-							set_variable = { ui_invaded_country = PREV.CONTROLLER }
-							set_variable = { ui_invader_country = ROOT }
+						limit = {
+							is_in_faction_with = PREV.CONTROLLER
+							NOT = { has_country_flag = notif_disable_para_warning }
 						}
+						set_country_flag = ui_show_paradrop_warning
+						set_variable = { ui_invaded_state = PREV }
+						set_variable = { ui_invaded_country = PREV.CONTROLLER }
+						set_variable = { ui_invader_country = ROOT }
 					}
 				}
 			}

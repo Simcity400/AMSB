@@ -341,7 +341,7 @@
 				all_state = {
 					OR = {
 						NOT = { is_core_of = CHI }
-						NOT = { is_core_of = PRC }
+						always = yes
 						OR = {
 							is_controlled_by = ROOT
 							CONTROLLER = { is_in_faction_with = ROOT }
@@ -1819,7 +1819,6 @@
 		available = {
 			is_subject_of = JAP
 			NOT = { has_war_with = JAP }
-			NOT = { has_war_with = MEN }
 			
 		}
 
@@ -1836,7 +1835,6 @@
 
 		completion_reward = {
 			
-			annex_country = { target = MEN transfer_troops = yes }
 		}
 	}
 
@@ -3157,16 +3155,6 @@
 				add_idea = MAN_rival_government
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			IF = {
-				limit = {
-					
-				}
-				
-				annex_country = {
-					target = MEN
-					transfer_troops = yes
-				}	
-			}
 			hidden_effect = {
 				614 = { add_core_of = ROOT }
 				608 = { add_core_of = ROOT }
@@ -3513,16 +3501,6 @@
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			IF = {
-				limit = {
-					
-				}
-				
-				annex_country = {
-					target = MEN
-					transfer_troops = yes
-				}	
-			}
 			set_politics = {
 				ruling_party = communism
 			}
@@ -3628,13 +3606,6 @@
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_research_slot = 1
-			IF = {
-				limit = {
-					is_in_faction_with = PRC
-				}
-				add_to_tech_sharing_group = MAN_PRC_technology_sharing_group
-				
-			}
 		}
 	}
 

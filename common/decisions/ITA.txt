@@ -4339,13 +4339,6 @@ ITA_colonial_management_dec_cat = {
 				# Jubaland
 				
 
-				set_autonomy = {
-				    target = AOI
-				    autonomy_state = autonomy_puppet
-				    end_wars = no
-				    end_civil_wars = no
-				}
-
 				
 			}
 		}
@@ -4531,21 +4524,10 @@ ITA_colonial_management_dec_cat = {
 			has_completed_focus = ITA_ministry_of_italian_africa
 			original_tag = ITA # Italy
 			has_global_flag = italian_east_africa_flag
+			always = no
 		}
 
 		complete_effect = {
-
-			ITA = {
-				add_manpower = -10000
-			}
-
-			
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = AOI
-				}
-				add_resistance = -5
-			}
 
 			hidden_effect = {
 
@@ -4597,21 +4579,6 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		complete_effect = {
-
-			ITA = {
-				send_equipment = {
-				    equipment = infantry_equipment
-				    amount = 2000
-				    target = AOI
-				}
-			}
-
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = AOI
-				}
-				add_resistance = -5
-			}
 
 			hidden_effect = {
 
@@ -5460,11 +5427,6 @@ ITA_diplomacy_balkan_decision_category = {
 				
 			}
 			set_country_flag = ITA_aimones_coronation
-			hidden_effect = {
-				ITA_prince_aimone = {
-					set_nationality = CRO
-				}
-			}
 		}
 	}
 
@@ -5509,17 +5471,6 @@ ITA_diplomacy_balkan_decision_category = {
 
 		remove_effect = {
 			IF = {
-				limit = { has_dlc = "Together for Victory" }
-				ITA = {
-					set_autonomy = {
-					    target = CRO
-					    autonomy_state = autonomy_reichskommissariat
-					    end_wars = no
-					    end_civil_wars = no
-					}
-				}
-			}
-			IF = {
 				limit = { ITA = { has_government = fascism } }
 				
 			}
@@ -5527,14 +5478,6 @@ ITA_diplomacy_balkan_decision_category = {
 				limit = { ITA = { has_government = neutrality } }
 				
 			}
-			
-			109 = {
-				create_unit = {
-				    division = "name = \"Tomislav's Royal Guards\" division_template = \"Tomislav's Royal Guards\" start_experience_factor = 0.5 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
-				    owner = CRO
-				}
-			}
-
 			set_country_flag = ITA_aimones_absolute_reign
 		}
 	}

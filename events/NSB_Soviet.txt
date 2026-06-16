@@ -33,7 +33,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.01.t
 	desc = NSB_soviet_paranoia_system_events.01.desc
 	picture = GFX_report_event_stalin_01
-	
+
 	is_triggered_only = yes
 
 	fire_only_once = yes
@@ -50,7 +50,7 @@ country_event = {
 
 	option = { #GOOD TO KNOW, THANKS
 		name = NSB_soviet_paranoia_system_events.01.a
-		
+
 		custom_effect_tooltip = SOV_paranoia_system_intro_tt
 		unlock_decision_category_tooltip = SOV_paranoia_system
 
@@ -74,7 +74,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.11.t
 	desc = NSB_soviet_paranoia_system_events.11.desc
 	picture = GFX_report_event_soviet_purge_trial
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -141,7 +141,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -166,7 +166,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.12.t
 	desc = NSB_soviet_paranoia_system_events.12.desc
 	picture = GFX_report_event_SOV_purge_administration
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -208,7 +208,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 
 		}
@@ -309,7 +309,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -329,22 +329,22 @@ country_event = {
 	id = NSB_soviet_paranoia_system_events.19
 	title = NSB_soviet_paranoia_system_events.19.t
 	desc = {
-		text = NSB_soviet_paranoia_system_events.19.desc_1 #first Moscow trial 
+		text = NSB_soviet_paranoia_system_events.19.desc_1 #first Moscow trial
 		trigger = {
 			has_country_flag = SOV_purge_event_unavoidable_flag
 			check_variable = { SOV_moscow_trial_index < 2 }
 		}
 	}
 	desc = {
-		text = NSB_soviet_paranoia_system_events.19.desc_2 #second Moscow trial 
+		text = NSB_soviet_paranoia_system_events.19.desc_2 #second Moscow trial
 		trigger = {
 			has_country_flag = SOV_purge_event_unavoidable_flag
-			check_variable = { SOV_moscow_trial_index > 1 } 
-			check_variable = { SOV_moscow_trial_index < 3 } 
+			check_variable = { SOV_moscow_trial_index > 1 }
+			check_variable = { SOV_moscow_trial_index < 3 }
 		}
 	}
 	desc = {
-		text = NSB_soviet_paranoia_system_events.19.desc_3 #last Moscow trial 
+		text = NSB_soviet_paranoia_system_events.19.desc_3 #last Moscow trial
 		trigger = {
 			has_country_flag = SOV_purge_event_unavoidable_flag
 			check_variable = { SOV_moscow_trial_index > 2 }
@@ -356,7 +356,7 @@ country_event = {
 	}
 
 	picture = GFX_report_event_SOV_purge_administration
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -378,7 +378,7 @@ country_event = {
 					has_character_flag = SOV_targeted_for_purge_flag
 				}
 				SOV_purge_character_effect = yes
-				
+
 			}
 		}
 
@@ -427,7 +427,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -459,7 +459,7 @@ unit_leader_event = {
 	title = NSB_soviet_paranoia_system_events.21.t
 	desc = NSB_soviet_paranoia_system_events.21.desc
 	picture = GFX_report_event_soviet_purge_officers_02
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -510,8 +510,8 @@ unit_leader_event = {
 			}
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
 		}
-		# Increase opposition Army Support 
-		SOV_increase_opposition_army_support_small = yes 
+		# Increase opposition Army Support
+		SOV_increase_opposition_army_support_small = yes
 		clear_variable = SOV_purged_character_for_loc
 	}
 
@@ -525,7 +525,7 @@ unit_leader_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -554,7 +554,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.22.t
 	desc = NSB_soviet_paranoia_system_events.22.desc
 	picture = GFX_report_event_SOV_purge_administration
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -584,8 +584,8 @@ country_event = {
 			}
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
 		}
-		# Increase opposition Army Support 
-		SOV_increase_opposition_army_support_small = yes 
+		# Increase opposition Army Support
+		SOV_increase_opposition_army_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -598,7 +598,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -619,7 +619,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.23.t
 	desc = NSB_soviet_paranoia_system_events.23.desc
 	picture = GFX_report_event_soviet_soldiers_tank
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -653,8 +653,8 @@ country_event = {
 			}
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
 		}
-		# Increase opposition Army Support 
-		SOV_increase_opposition_army_support_small = yes 
+		# Increase opposition Army Support
+		SOV_increase_opposition_army_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -667,7 +667,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -688,7 +688,7 @@ unit_leader_event = {
 	title = NSB_soviet_paranoia_system_events.24.t
 	desc = NSB_soviet_paranoia_system_events.24.desc
 	picture = GFX_report_event_soviet_purge_officers_02
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -726,7 +726,7 @@ unit_leader_event = {
 
 		#RANDOM GENERALS COWED
 		SOV_paranoia_daunt_generals_minor_effect = yes
-		
+
 		#PARANOIA decreases based on general's level
 		set_variable = { SOV_unit_leader_level = SOV_accused_unit_leader_level } #Set the appropriate var used in the scripted effect
 		SOV_paranoia_decrease_based_on_unit_leader_level_effect = yes
@@ -752,11 +752,11 @@ unit_leader_event = {
 			}
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
 		}
-		# Increase opposition Army Support 
-		SOV_increase_opposition_army_support_small = yes 
+		# Increase opposition Army Support
+		SOV_increase_opposition_army_support_small = yes
 	}
 
-	option = { #PURGE ACCUSER 
+	option = { #PURGE ACCUSER
 		name = NSB_soviet_paranoia_system_events.24.b
 		ai_chance = {
 			base = 5
@@ -810,8 +810,8 @@ unit_leader_event = {
 			}
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
 		}
-		# Increase opposition Army Support 
-		SOV_increase_opposition_army_support_small = yes 
+		# Increase opposition Army Support
+		SOV_increase_opposition_army_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -824,7 +824,7 @@ unit_leader_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -878,7 +878,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.28.t
 	desc = NSB_soviet_paranoia_system_events.28.desc
 	picture = GFX_report_event_SOV_purge_young_officers
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -925,7 +925,7 @@ country_event = {
 		hidden_effect = {
 			SOV_paranoia_update_portraits_ui = yes
 		}
-		
+
 		#PARANOIA decreases
 		SOV_paranoia_medium_decrease_effect = yes
 
@@ -945,8 +945,8 @@ country_event = {
 		#Clear flags forbidding the "avoid purge" option from showing up
 		SOV_clear_unavoidable_purge_flags_effect = yes
 
-		# Increase opposition Army Support 
-		SOV_increase_opposition_army_support_small = yes 
+		# Increase opposition Army Support
+		SOV_increase_opposition_army_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -959,7 +959,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -981,7 +981,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.29.t
 	desc = NSB_soviet_paranoia_system_events.29.desc
 	picture = GFX_report_event_soviet_purge_officers_01
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1003,7 +1003,7 @@ country_event = {
 					has_army_ledger = yes
 					has_character_flag = SOV_targeted_for_purge_flag
 				}
-				SOV_purge_character_effect = yes	
+				SOV_purge_character_effect = yes
 				#log = "Hey I am [THIS.GetName] I am in the Event!"
 			}
 
@@ -1016,7 +1016,7 @@ country_event = {
 					}
 					has_character_flag = SOV_targeted_for_purge_flag
 				}
-				SOV_purge_character_effect = yes	
+				SOV_purge_character_effect = yes
 				#log = "Hey I am [THIS.GetName] I am in the Event!"
 			}
 		}
@@ -1055,8 +1055,8 @@ country_event = {
 		#Clear flags forbidding the "avoid purge" option from showing up
 		SOV_clear_unavoidable_purge_flags_effect = yes
 
-		# Increase opposition Army Support 
-		SOV_increase_opposition_army_support_small = yes  
+		# Increase opposition Army Support
+		SOV_increase_opposition_army_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -1069,7 +1069,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1098,7 +1098,7 @@ unit_leader_event = {
 	title = NSB_soviet_paranoia_system_events.31.t
 	desc = NSB_soviet_paranoia_system_events.31.desc
 	picture = GFX_report_event_soviet_purge_trial
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1149,9 +1149,9 @@ unit_leader_event = {
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
 		}
 
-		# Increase opposition Navy Support 
+		# Increase opposition Navy Support
 		SOV_increase_opposition_navy_support_small = yes
-		clear_variable = SOV_purged_character_for_loc 
+		clear_variable = SOV_purged_character_for_loc
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -1164,7 +1164,7 @@ unit_leader_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1192,7 +1192,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.22.t
 	desc = NSB_soviet_paranoia_system_events.22.desc
 	picture = GFX_report_event_SOV_purge_administration
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1224,8 +1224,8 @@ country_event = {
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
 		}
 
-		# Increase opposition Navy Support 
-		SOV_increase_opposition_navy_support_small = yes  	
+		# Increase opposition Navy Support
+		SOV_increase_opposition_navy_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -1238,7 +1238,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1262,7 +1262,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.23.t
 	desc = NSB_soviet_paranoia_system_events.33.desc
 	picture = GFX_report_event_SOV_purge_navy
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1297,8 +1297,8 @@ country_event = {
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
 		}
 
-		# Increase opposition Navy Support 
-		SOV_increase_opposition_navy_support_small = yes  
+		# Increase opposition Navy Support
+		SOV_increase_opposition_navy_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -1311,7 +1311,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1335,7 +1335,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.38.t
 	desc = NSB_soviet_paranoia_system_events.38.desc
 	picture = GFX_report_event_SOV_purge_young_officers
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1400,10 +1400,10 @@ country_event = {
 		}
 
 		#Clear flags forbidding the "avoid purge" option from showing up
-		SOV_clear_unavoidable_purge_flags_effect = yes	
+		SOV_clear_unavoidable_purge_flags_effect = yes
 
-		# Increase opposition Navy Support 
-		SOV_increase_opposition_navy_support_small = yes  
+		# Increase opposition Navy Support
+		SOV_increase_opposition_navy_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -1416,7 +1416,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1438,7 +1438,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.39.t
 	desc = NSB_soviet_paranoia_system_events.39.desc
 	picture = GFX_report_event_SOV_purge_navy
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1460,7 +1460,7 @@ country_event = {
 					has_navy_ledger = yes
 					has_character_flag = SOV_targeted_for_purge_flag
 				}
-				SOV_purge_character_effect = yes	
+				SOV_purge_character_effect = yes
 			}
 
 			#Purge any Admirals # This is a duplicate as a workaround for tooltip purposes
@@ -1468,7 +1468,7 @@ country_event = {
 				limit = {
 					has_character_flag = SOV_targeted_for_purge_flag
 				}
-				SOV_purge_character_effect = yes	
+				SOV_purge_character_effect = yes
 			}
 		}
 
@@ -1506,8 +1506,8 @@ country_event = {
 		#Clear flags forbidding the "avoid purge" option from showing up
 		SOV_clear_unavoidable_purge_flags_effect = yes
 
-		# Increase opposition Navy Support 
-		SOV_increase_opposition_navy_support_small = yes  
+		# Increase opposition Navy Support
+		SOV_increase_opposition_navy_support_small = yes
 	}
 
 	option = { #NO WAIT! Let's Think about it
@@ -1520,7 +1520,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1550,7 +1550,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.22.t
 	desc = NSB_soviet_paranoia_system_events.22.desc
 	picture = GFX_report_event_SOV_purge_administration
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1593,7 +1593,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1614,7 +1614,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.23.t
 	desc = NSB_soviet_paranoia_system_events.42.desc
 	picture = GFX_report_event_SOV_purge_aircraft_2
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1647,7 +1647,7 @@ country_event = {
 				has_political_power < SOV_purge_event_pp_to_avoid_regular
 			}
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_regular_tt
-		}	
+		}
 	}
 
 	option = {
@@ -1660,7 +1660,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1681,7 +1681,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.48.t
 	desc = NSB_soviet_paranoia_system_events.48.desc
 	picture = GFX_report_event_SOV_purge_aircraft_1
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1701,7 +1701,7 @@ country_event = {
 				check_variable = {
 					var = SOV_random_bureau_to_dissolve
 					value = 0.75
-					compare = greater_than_or_equals 
+					compare = greater_than_or_equals
 				}
 				NOT = { has_country_flag = SOV_mig_design_bureau_dissolved_flag }
 			}
@@ -1720,7 +1720,7 @@ country_event = {
 				check_variable = {
 					var = SOV_random_bureau_to_dissolve
 					value = 0.5
-					compare = greater_than_or_equals 
+					compare = greater_than_or_equals
 				}
 				NOT = { has_country_flag = SOV_ilyushin_design_bureau_dissolved_flag }
 			}
@@ -1739,7 +1739,7 @@ country_event = {
 				check_variable = {
 					var = SOV_random_bureau_to_dissolve
 					value = 0.25
-					compare = greater_than_or_equals 
+					compare = greater_than_or_equals
 				}
 				NOT = { has_country_flag = SOV_tupolev_design_bureau_dissolved_flag }
 			}
@@ -1843,7 +1843,7 @@ country_event = {
 			}
 			custom_effect_tooltip = SOV_purge_event_not_enough_pp_to_avoid_great_tt
 		}
-		
+
 		#Clear flags forbidding the "avoid purge" option from showing up
 		SOV_clear_unavoidable_purge_flags_effect = yes
 	}
@@ -1858,7 +1858,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1880,7 +1880,7 @@ country_event = {
 	title = NSB_soviet_paranoia_system_events.49.t
 	desc = NSB_soviet_paranoia_system_events.49.desc
 	picture = GFX_report_event_soviet_purge_trial
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -1890,7 +1890,7 @@ country_event = {
 					NOT = { has_country_flag = SOV_purged_airforce_chiefs_flag }
 				}
 				set_country_flag = SOV_purged_airforce_chiefs_flag
-			}		
+			}
 			SOV_paranoia_increase_purge_counter_great = yes
 		}
 	}
@@ -1944,7 +1944,7 @@ country_event = {
 			}
 			modifier = { #Don't risk starting CW too early
 				factor = 0
-				SOV_is_opposition = yes 
+				SOV_is_opposition = yes
 			}
 		}
 
@@ -1964,13 +1964,13 @@ country_event = {
 
 
 
-########  ########   #######  ########     ###     ######      ###    ##    ## ########     ###    
-##     ## ##     ## ##     ## ##     ##   ## ##   ##    ##    ## ##   ###   ## ##     ##   ## ##   
-##     ## ##     ## ##     ## ##     ##  ##   ##  ##         ##   ##  ####  ## ##     ##  ##   ##  
-########  ########  ##     ## ########  ##     ## ##   #### ##     ## ## ## ## ##     ## ##     ## 
-##        ##   ##   ##     ## ##        ######### ##    ##  ######### ##  #### ##     ## ######### 
-##        ##    ##  ##     ## ##        ##     ## ##    ##  ##     ## ##   ### ##     ## ##     ## 
-##        ##     ##  #######  ##        ##     ##  ######   ##     ## ##    ## ########  ##     ## 
+########  ########   #######  ########     ###     ######      ###    ##    ## ########     ###
+##     ## ##     ## ##     ## ##     ##   ## ##   ##    ##    ## ##   ###   ## ##     ##   ## ##
+##     ## ##     ## ##     ## ##     ##  ##   ##  ##         ##   ##  ####  ## ##     ##  ##   ##
+########  ########  ##     ## ########  ##     ## ##   #### ##     ## ## ## ## ##     ## ##     ##
+##        ##   ##   ##     ## ##        ######### ##    ##  ######### ##  #### ##     ## #########
+##        ##    ##  ##     ## ##        ##     ## ##    ##  ##     ## ##   ### ##     ## ##     ##
+##        ##     ##  #######  ##        ##     ##  ######   ##     ## ##    ## ########  ##     ##
 
 
 #Propaganda Dispatcher - Left Slot - Used to update Campaign GFX when it's old.
@@ -1978,7 +1978,7 @@ country_event = {
 	id = NSB_soviet_propaganda_capmaign_events.101
 	title = NSB_soviet_propaganda_capmaign_events.101.t
 	desc = NSB_soviet_propaganda_capmaign_events.101.desc
-	
+
 	is_triggered_only = yes
 
 	trigger = {
@@ -1998,7 +1998,7 @@ country_event = {
 	id = NSB_soviet_propaganda_capmaign_events.102
 	title = NSB_soviet_propaganda_capmaign_events.102.t
 	desc = NSB_soviet_propaganda_capmaign_events.102.desc
-	
+
 	is_triggered_only = yes
 
 	trigger = {
@@ -2018,7 +2018,7 @@ country_event = {
 	id = NSB_soviet_propaganda_capmaign_events.103
 	title = NSB_soviet_propaganda_capmaign_events.103.t
 	desc = NSB_soviet_propaganda_capmaign_events.103.desc
-	
+
 	is_triggered_only = yes
 
 	trigger = {
@@ -2039,7 +2039,7 @@ country_event = {
 	title = NSB_soviet_propaganda_capmaign_events.1.t
 	desc = NSB_soviet_propaganda_capmaign_events.1.desc
 	picture = GFX_report_event_SOV_young_builders_of_communism
-	
+
 	is_triggered_only = yes
 
 	option = { #OK
@@ -2058,7 +2058,7 @@ country_event = {
 	title = NSB_soviet_propaganda_capmaign_events.2.t
 	desc = NSB_soviet_propaganda_capmaign_events.2.desc
 	picture = GFX_report_event_SOV_young_builders_of_communism
-	
+
 	is_triggered_only = yes
 
 	fire_only_once = yes
@@ -2129,13 +2129,13 @@ country_event = {
 }
 
 
-########  #######  ########  ######## ####  ######   ##    ##    ########   #######  ##       #### ######## ####  ######   ######  
-##       ##     ## ##     ## ##        ##  ##    ##  ###   ##    ##     ## ##     ## ##        ##     ##     ##  ##    ## ##    ## 
-##       ##     ## ##     ## ##        ##  ##        ####  ##    ##     ## ##     ## ##        ##     ##     ##  ##       ##       
-######   ##     ## ########  ######    ##  ##   #### ## ## ##    ########  ##     ## ##        ##     ##     ##  ##        ######  
-##       ##     ## ##   ##   ##        ##  ##    ##  ##  ####    ##        ##     ## ##        ##     ##     ##  ##             ## 
-##       ##     ## ##    ##  ##        ##  ##    ##  ##   ###    ##        ##     ## ##        ##     ##     ##  ##    ## ##    ## 
-##        #######  ##     ## ######## ####  ######   ##    ##    ##         #######  ######## ####    ##    ####  ######   ######  
+########  #######  ########  ######## ####  ######   ##    ##    ########   #######  ##       #### ######## ####  ######   ######
+##       ##     ## ##     ## ##        ##  ##    ##  ###   ##    ##     ## ##     ## ##        ##     ##     ##  ##    ## ##    ##
+##       ##     ## ##     ## ##        ##  ##        ####  ##    ##     ## ##     ## ##        ##     ##     ##  ##       ##
+######   ##     ## ########  ######    ##  ##   #### ## ## ##    ########  ##     ## ##        ##     ##     ##  ##        ######
+##       ##     ## ##   ##   ##        ##  ##    ##  ##  ####    ##        ##     ## ##        ##     ##     ##  ##             ##
+##       ##     ## ##    ##  ##        ##  ##    ##  ##   ###    ##        ##     ## ##        ##     ##     ##  ##    ## ##    ##
+##        #######  ##     ## ######## ####  ######   ##    ##    ##         #######  ######## ####    ##    ####  ######   ######
 
 # SOV is pressuring our government - Event for Targeted country ### (ITA uses this too)
 country_event = {
@@ -2193,25 +2193,25 @@ country_event = {
 
 		trigger = {
 			NOT = { is_in_faction_with = FROM }
-			
+
 			#Lone Wolf Finland can't join any factions
 			FIN_is_lone_wolf_finland = no
 		}
 
 		FROM = { add_to_faction = ROOT }
-		
+
 		hidden_effect = {
 			FROM = { country_event = { id = NSB_soviet_foreign_politics_events.151 hours = 1 } }
 
 			# AI more friendly
-			add_ai_strategy = { 
-				type = befriend 
+			add_ai_strategy = {
+				type = befriend
 				id = FROM
 				value = 100
 			}
 			FROM = {
-				add_ai_strategy = { 
-					type = befriend 
+				add_ai_strategy = {
+					type = befriend
 					id = ROOT
 					value = 100
 				}
@@ -2219,7 +2219,7 @@ country_event = {
 
 			add_ai_strategy = {
 				type = alliance
-				id = FROM		
+				id = FROM
 				value = 200
 			}
 		}
@@ -2260,7 +2260,7 @@ country_event = {
 			}
 			modifier = { #Appropriate PC for Foreign Affairs
 				factor = 2
-				OR = {	
+				OR = {
 					FROM = {
 						original_tag = SOV
 						has_idea = SOV_vyacheslav_molotov
@@ -2283,25 +2283,25 @@ country_event = {
 
 		#Lone Wolf Finland can't join any factions - Tooltip for player
 		if = {
-			limit = {	
+			limit = {
 				FIN_is_lone_wolf_finland = yes
 			}
 			custom_effect_tooltip = FIN_the_lone_wolf_no_faction_tt
 		}
 
 		set_politics = { ruling_party = FROM }
-		
+
 		hidden_effect = {
 			FROM = { country_event = { id = NSB_soviet_foreign_politics_events.158 hours = 1 } }
 			# AI more friendly
-			add_ai_strategy = { 
-				type = befriend 
+			add_ai_strategy = {
+				type = befriend
 				id = FROM
 				value = 20
 			}
 			FROM = {
-				add_ai_strategy = { 
-					type = befriend 
+				add_ai_strategy = {
+					type = befriend
 					id = ROOT
 					value = 20
 				}
@@ -2332,7 +2332,7 @@ country_event = {
 
 		#Lone Wolf Finland can't join any factions - Tooltip for player
 		if = {
-			limit = {	
+			limit = {
 				FIN_is_lone_wolf_finland = yes
 			}
 			custom_effect_tooltip = FIN_the_lone_wolf_no_faction_tt
@@ -2342,7 +2342,7 @@ country_event = {
 			ideology = FROM
 			popularity = 0.05
 		}
-		
+
 		hidden_effect = {
 			FROM = { country_event = { id = NSB_soviet_foreign_politics_events.152 hours = 1 } }
 		}
@@ -2412,12 +2412,12 @@ country_event = {
 				}
 				add_ai_strategy = {
 					type = befriend
-					id = SOV			
+					id = SOV
 					value = 10
 				}
 				add_ai_strategy = {
 					type = alliance
-					id = SOV			
+					id = SOV
 					value = 10
 				}
 			}
@@ -2429,12 +2429,12 @@ country_event = {
 				}
 				add_ai_strategy = {
 					type = befriend
-					id = ITA			
+					id = ITA
 					value = 10
 				}
 				add_ai_strategy = {
 					type = alliance
-					id = ITA			
+					id = ITA
 					value = 10
 				}
 			}
@@ -2444,7 +2444,7 @@ country_event = {
 			ideology = FROM
 			popularity = 0.1
 		}
-		
+
 	}
 
 	option = { #Prevent it!
@@ -2468,7 +2468,7 @@ country_event = {
 			ideology = ROOT
 			popularity = 0.1
 		}
-		
+
 	}
 }
 
@@ -2481,10 +2481,10 @@ country_event = {
 	picture = GFX_report_event_china_ledo_road
 
 	is_triggered_only = yes
-			
+
 	option = { #Ok
 		name = NSB_soviet_foreign_politics_events.10.a
-	
+
 		ai_chance = { base = 1 }
 
 		#CAPITAL
@@ -2538,7 +2538,7 @@ country_event = {
 					level = 1
 					instant_build = yes
 				}
-			}		
+			}
 		}
 
 		#ADDITIONAL RANDOM STATE
@@ -2576,7 +2576,7 @@ country_event = {
 						level = 1
 						instant_build = yes
 					}
-				}		
+				}
 			}
 		}
 	}
@@ -2587,7 +2587,7 @@ country_event = {
 		ai_chance = { base = 0 }
 
 		FROM = {
-			
+
 		}
 		FROM = { country_event = { id = NSB_soviet_foreign_politics_events.13 hours = 8 random_hours = 4 } }
 	}
@@ -2601,10 +2601,10 @@ country_event = {
 	picture = GFX_report_event_SOV_mongolia_cavalry
 
 	is_triggered_only = yes
-			
+
 	option = { #Ok
 		name = NSB_soviet_foreign_politics_events.11.a
-	
+
 		ai_chance = { base = 1 }
 
 		add_timed_idea = { idea = SOV_war_measures_allies days = 1095 }
@@ -2612,11 +2612,11 @@ country_event = {
 
 	option = { #Refuse
 		name = NSB_soviet_foreign_politics_events.11.b
-		
+
 		ai_chance = { base = 0 }
-		
+
 		FROM = {
-			
+
 		}
 		FROM = { country_event = { id = NSB_soviet_foreign_politics_events.13 hours = 8 random_hours = 4 } }
 	}
@@ -2630,22 +2630,22 @@ country_event = {
 	picture = GFX_report_event_SOV_mongolia_fortify_border
 
 	is_triggered_only = yes
-			
+
 	option = { #Ok
 		name = NSB_soviet_foreign_politics_events.12.a
 
 		ai_chance = { base = 1 }
-	
+
 		SOV_fortify_mongolian_border_effect = yes
 	}
 
 	option = { #Refuse
 		name = NSB_soviet_foreign_politics_events.12.b
-		
+
 		ai_chance = { base = 0 }
-		
+
 		FROM = {
-			
+
 		}
 		FROM = { country_event = { id = NSB_soviet_foreign_politics_events.13 hours = 8 random_hours = 4 } }
 	}
@@ -2659,12 +2659,12 @@ country_event = {
 	picture = GFX_report_event_stalin_meeting
 
 	is_triggered_only = yes
-			
+
 	option = { #Refuse
 		name = NSB_soviet_foreign_politics_events.13.a
-				
+
 		effect_tooltip = {
-			
+
 		}
 	}
 }
@@ -2677,10 +2677,10 @@ country_event = {
 	picture = GFX_report_event_spr_spanish_civil_war
 
 	is_triggered_only = yes
-			
+
 	option = { #Ok
 		name = NSB_soviet_foreign_politics_events.20.a
-		
+
 		add_timed_idea = {idea = SOV_soviet_advisors_spr days = 1095 }
 		effect_tooltip = {
 			FROM = {
@@ -2701,13 +2701,13 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			
+
 		}
 	}
-			
+
 	option = { #Accept
 		name = NSB_soviet_foreign_politics_events.30.a
-		
+
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -2775,24 +2775,24 @@ country_event = {
 					}
 					transfer_state = 650 #ATTU ISLAND
 				}
-				
+
 			}
 			hidden_effect = {
 				country_event = NSB_soviet_foreign_politics_events.31
 			}
-		}	
+		}
 	}
 
 	option = { #Refuse
 		name = NSB_soviet_foreign_politics_events.30.b
-		
+
 		ai_chance = {
 			base = 10
 		}
 
 		FROM = {
 			effect_tooltip = {
-				
+
 				create_wargoal = {
 					type = puppet_wargoal_focus
 					target = ROOT
@@ -2816,13 +2816,13 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			
+
 		}
 	}
 
 	option = { #Ok
 		name = NSB_soviet_foreign_politics_events.31.a
-		
+
 		if = {
 			limit = {
 				FROM = { controls_state = 463 }
@@ -2835,10 +2835,10 @@ country_event = {
 			}
 			transfer_state = 650 #ATTU ISLAND
 		}
-		
+
 		effect_tooltip = {
 			FROM = {
-				
+
 			}
 		}
 	}
@@ -2855,7 +2855,7 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			
+
 		}
 	}
 
@@ -2904,7 +2904,7 @@ country_event = {
 				is_in_faction_with = FROM
 			}
 		}
-		
+
 		create_wargoal = {
 			type = puppet_wargoal_focus
 			target = FROM
@@ -2928,7 +2928,7 @@ country_event = {
 	picture = "[GetCountryBecomesPuppetGFX]"
 
 	is_triggered_only = yes
-			
+
 	option = { #Cool
 		name = NSB_soviet_foreign_politics_events.150.a
 		effect_tooltip = {
@@ -2947,13 +2947,13 @@ country_event = {
 	picture = "[GetCountryBecomesPuppetGFX]"
 
 	is_triggered_only = yes
-			
+
 	option = { #Okay
 		name = NSB_soviet_foreign_politics_events.151.a
 		effect_tooltip = {
 			add_to_faction = FROM
 			FROM = {
-				
+
 			}
 		}
 	}
@@ -2973,7 +2973,7 @@ country_event = {
 		effect_tooltip = {
 			FROM = {
 				set_politics = { ruling_party = ROOT }
-				
+
 			}
 		}
 	}
@@ -2987,7 +2987,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
-			
+
 	option = { #Okay - Default generic option
 		name = NSB_soviet_foreign_politics_events.152.a
 
@@ -3027,19 +3027,19 @@ country_event = {
 					type = puppet_wargoal_focus
 					target = FROM
 				}
-			} 
+			}
 		}
 
 		effect_tooltip = {
 			FROM = {
-				
+
 			}
 		}
 	}
 
 	option = { #Respect
 		name = NSB_soviet_foreign_politics_events.152.b
-		
+
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -3074,7 +3074,7 @@ country_event = {
 		}
 
 		set_global_flag = SOV_soviet_invasion_of_iran_flag
-		
+
 		activate_mission = SOV_preparations_for_operation_countenance
 		custom_effect_tooltip = SOV_preparations_for_operation_countenance_tt
 
@@ -3184,7 +3184,7 @@ country_event = {
 	picture = GFX_report_event_stalin_meeting
 
 	is_triggered_only = yes
-			
+
 	option = { #Agree
 		name = NSB_soviet_foreign_politics_events.153.a
 
@@ -3230,7 +3230,7 @@ country_event = {
 				}
 			}
 		}
-		
+
 		set_global_flag = SOV_agreed_anglo_soviet_invasion_of_iran_flag
 
 		effect_tooltip = {
@@ -3278,11 +3278,11 @@ country_event = {
 	picture = GFX_report_event_british_inspect_troops
 
 	is_triggered_only = yes
-			
+
 	option = { #Good
 		name = NSB_soviet_foreign_politics_events.154.a
 
-		activate_mission = SOV_preparations_for_operation_countenance		
+		activate_mission = SOV_preparations_for_operation_countenance
 		ENG = { activate_mission = SOV_preparations_for_operation_countenance }
 		custom_effect_tooltip = SOV_preparations_for_operation_countenance_tt
 
@@ -3312,7 +3312,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty2
 
 	is_triggered_only = yes
-	
+
 	option = { #Ok
 		name = NSB_soviet_foreign_politics_events.155.a
 
@@ -3389,7 +3389,7 @@ country_event = {
 	picture = "[GetUltimatumGFX]"
 
 	is_triggered_only = yes
-		
+
 	option = { # Become a puppet
 		name = NSB_soviet_foreign_politics_events.200.a
 
@@ -3484,7 +3484,7 @@ country_event = {
 		trigger = {
 			OR = {
 				has_government = FROM
-				FROM = {	
+				FROM = {
 					original_tag = ITA
 				}
 			}
@@ -3512,7 +3512,7 @@ country_event = {
 
 			IF = {
 				limit = { FROM = { original_tag = ITA } }
-				
+
 				FROM = { is_faction_leader = yes }
 			}
 		}
@@ -3524,7 +3524,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			
+
 		}
 	}
 
@@ -3573,7 +3573,7 @@ country_event = {
 						type = puppet_wargoal_focus
 						target = ROOT
 					}
-				} 
+				}
 			}
 			hidden_effect = {
 				country_event = { id = NSB_soviet_foreign_politics_events.152 hours = 1 }
@@ -3581,7 +3581,7 @@ country_event = {
 		}
 
 		hidden_effect = {
-			
+
 		}
 	}
 }
@@ -3594,7 +3594,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Become a puppet
 		name = NSB_soviet_foreign_politics_events.210.a
 
@@ -3700,7 +3700,7 @@ country_event = {
 		}
 
 		hidden_effect = {
-			
+
 		}
 
 		custom_effect_tooltip = germany.126.warning
@@ -3715,14 +3715,14 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Okay
 		name = NSB_soviet_foreign_politics_events.211.a
 
 		effect_tooltip = {
 			add_ideas = SOV_ambassador_karim_khakimov
-			
-		}	
+
+		}
 	}
 }
 
@@ -3734,10 +3734,10 @@ country_event = {
 	picture = "[GetInfantryEquipmentGFX]"
 
 	is_triggered_only = yes
-			
+
 	option = { # Nice
 		name = NSB_soviet_foreign_politics_events.10.a
-		
+
 		if = { #Spanish POUM -> Not actually transfering them, just creating spoawning them
 			limit = {
 				tag = SPC
@@ -3761,7 +3761,7 @@ country_event = {
 					producer = FROM
 				}
 			}
-		}		
+		}
 	}
 }
 
@@ -3773,14 +3773,14 @@ country_event = {
 	picture = GFX_report_event_SOV_tank_column
 
 	is_triggered_only = yes
-			
+
 	option = { # Nice
 		name = NSB_soviet_foreign_politics_events.251.a
 
 		add_timed_idea = {
 			idea = SOV_preparations_for_soviet_japanese_war_china
 			days = 365
-		}		
+		}
 	}
 }
 
@@ -3792,14 +3792,14 @@ country_event = {
 	picture = GFX_report_event_soviet_soldiers_tank
 
 	is_triggered_only = yes
-			
+
 	option = { # Nice
 		name = NSB_soviet_foreign_politics_events.252.a
 
 		add_timed_idea = {
 			idea = SOV_soviet_japanese_reckoning_china
 			days = 180
-		}		
+		}
 	}
 }
 
@@ -3811,7 +3811,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept
 		name = NSB_soviet_foreign_politics_events.260.a
 
@@ -3898,7 +3898,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept
 		name = NSB_soviet_foreign_politics_events.260.a
 
@@ -3999,7 +3999,7 @@ country_event = {
 	picture = GFX_report_event_soviet_japanese_pact
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.264.a
 
@@ -4034,7 +4034,7 @@ country_event = {
 	picture = GFX_report_event_japanese_reply
 
 	is_triggered_only = yes
-			
+
 	option = { # Bad for them
 		name = NSB_soviet_foreign_politics_events.265.a
 
@@ -4055,7 +4055,7 @@ country_event = {
 	picture = GFX_report_event_soviet_japanese_pact
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept
 		name = soviet.23.a
 
@@ -4085,7 +4085,7 @@ country_event = {
 			relation = non_aggression_pact
 			active = yes
 		}
-		
+
 		hidden_effect = {
 			FROM = { country_event = { id = NSB_soviet_foreign_politics_events.266 hours = 4 } }
 			set_global_flag = SOV_soviet_japanese_reconciliation_flag
@@ -4127,7 +4127,7 @@ country_event = {
 	picture = GFX_report_event_soviet_japanese_pact
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.266.a
 
@@ -4153,7 +4153,7 @@ country_event = {
 	picture = GFX_report_event_japanese_reply
 
 	is_triggered_only = yes
-			
+
 	option = { # Bad for them
 		name = NSB_soviet_foreign_politics_events.267.a
 
@@ -4168,7 +4168,7 @@ country_event = {
 	picture = GFX_report_event_soviet_japanese_pact
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept
 		name = NSB_soviet_foreign_politics_events.263.a
 
@@ -4197,7 +4197,7 @@ country_event = {
 
 		effect_tooltip = {
 			#Diplo stuff
-			
+
 			FROM = { }
 			if = {
 				limit = {
@@ -4301,16 +4301,16 @@ country_event = {
 	picture = GFX_report_event_soviet_japanese_pact
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.268.a
 
 		463 = { add_claim_by = SOV } #Alaska
 		650 = { add_claim_by = SOV } #Atu Island
-		
+
 		FROM = {
 			#Diplo stuff
-			
+
 			diplomatic_relation = {
 				country = SOV
 				relation = non_aggression_pact
@@ -4372,7 +4372,7 @@ country_event = {
 	picture = GFX_report_event_japanese_reply
 
 	is_triggered_only = yes
-			
+
 	option = { # Bad for them
 		name = NSB_soviet_foreign_politics_events.269.a
 
@@ -4381,7 +4381,7 @@ country_event = {
 
 ####### SINKIANG ########
 
-# SOV-SINKIANG - Initiate relations (Railwway SOV-SIK - Gobi Gambit) - Event for SIK
+# SOV-SINKIANG - Initiate relations (Railwway SOV-removed Sinkiang - Gobi Gambit) - Event for removed Sinkiang
 country_event = {
 	id = NSB_soviet_foreign_politics_events.270
 	title = NSB_soviet_foreign_politics_events.270.t
@@ -4389,7 +4389,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # OK
 		name = NSB_soviet_foreign_politics_events.270.a
 
@@ -4404,9 +4404,9 @@ country_event = {
 				SOV = { has_idea = SOV_vyacheslav_molotov }
 			}
 		}
-		
+
 		FROM = {
-			
+
 
 			# Tashkent - Frunze - Alma-Ata - Urumqi
 			build_railway = {
@@ -4457,10 +4457,10 @@ country_event = {
 				NOT = { is_subject_of = SOV }
 			}
 		}
-	
+
 		effect_tooltip = {
 			FROM = {
-				
+
 			}
 		}
 
@@ -4477,7 +4477,7 @@ country_event = {
 	picture = GFX_report_event_generic_train
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.271.a
 
@@ -4501,7 +4501,7 @@ country_event = {
 			}
 			custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sov
 
-			
+
 		}
 	}
 }
@@ -4514,7 +4514,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
-			
+
 	option = { # Respect
 		name = NSB_soviet_foreign_politics_events.272.a
 
@@ -4552,8 +4552,8 @@ country_event = {
 				instant_build = yes
 			}
 		}
-		
-		
+
+
 	}
 
 	option = { # Unacceptable
@@ -4576,20 +4576,15 @@ country_event = {
 				instant_build = yes
 			}
 		}
-	
-		
 
-		create_wargoal = {
-			type = take_state_focus
-			target = SIK
-			expire = 0
-			generator = { 618 617 287 619 759 760 }
-		}
+
+
+
 		add_named_threat = { threat = 2 name = SOV_claim_on_sinkiang_threat }
 	}
 }
 
-# SOV-SINKIANG - Mineral Prospection (Railwway Urumqui-Kashgar) - Event for SIK
+# SOV-SINKIANG - Mineral Prospection (Railwway Urumqui-Kashgar) - Event for removed Sinkiang
 country_event = {
 	id = NSB_soviet_foreign_politics_events.273
 	title = NSB_soviet_foreign_politics_events.273.t
@@ -4597,7 +4592,7 @@ country_event = {
 	picture = GFX_report_event_china_ledo_road
 
 	is_triggered_only = yes
-			
+
 	option = { # OK
 		name = NSB_soviet_foreign_politics_events.273.a
 
@@ -4612,9 +4607,9 @@ country_event = {
 				SOV = { has_idea = SOV_vyacheslav_molotov }
 			}
 		}
-		
+
 		FROM = {
-			
+
 
 			add_to_variable = { SOV_fyp_consumer_goods_factor = -0.02 }
 			custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sik
@@ -4637,7 +4632,7 @@ country_event = {
 						add_building_construction = {
 							type = infrastructure
 							level = 1
-							instant_build = yes						
+							instant_build = yes
 						}
 					}
 				}
@@ -4650,7 +4645,7 @@ country_event = {
 						add_building_construction = {
 							type = infrastructure
 							level = 1
-							instant_build = yes						
+							instant_build = yes
 						}
 					}
 				}
@@ -4704,10 +4699,10 @@ country_event = {
 				NOT = { is_subject_of = SOV }
 			}
 		}
-	
+
 		effect_tooltip = {
 			FROM = {
-				
+
 			}
 		}
 
@@ -4727,7 +4722,7 @@ country_event = {
 	picture = GFX_report_event_china_ledo_road
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.274.a
 
@@ -4736,7 +4731,7 @@ country_event = {
 		}
 
 		effect_tooltip = {
-			
+
 
 			custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sov
 
@@ -4757,7 +4752,7 @@ country_event = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
-						instant_build = yes						
+						instant_build = yes
 					}
 				}
 			}
@@ -4770,7 +4765,7 @@ country_event = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
-						instant_build = yes						
+						instant_build = yes
 					}
 				}
 			}
@@ -4800,7 +4795,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
-			
+
 	option = { # Respect
 		name = NSB_soviet_foreign_politics_events.275.a
 
@@ -4825,7 +4820,7 @@ country_event = {
 			}
 		}
 
-		
+
 	}
 
 	option = { # Unacceptable
@@ -4838,20 +4833,15 @@ country_event = {
 		ai_chance = {
 			base = 1
 		}
-	
-		
 
-		create_wargoal = {
-			type = take_state_focus
-			target = SIK
-			expire = 0
-			generator = { 618 617 287 619 759 760 }
-		}
+
+
+
 		add_named_threat = { threat = 2 name = SOV_claim_on_sinkiang_threat }
 	}
 }
 
-# SOV-SINKIANG - Oil Prospection (Railwway Urumqui-Altay) - Event for SIK
+# SOV-SINKIANG - Oil Prospection (Railwway Urumqui-Altay) - Event for removed Sinkiang
 country_event = {
 	id = NSB_soviet_foreign_politics_events.276
 	title = NSB_soviet_foreign_politics_events.276.t
@@ -4859,7 +4849,7 @@ country_event = {
 	picture = GFX_report_event_china_ledo_road
 
 	is_triggered_only = yes
-			
+
 	option = { # OK
 		name = NSB_soviet_foreign_politics_events.276.a
 
@@ -4874,9 +4864,9 @@ country_event = {
 				SOV = { has_idea = SOV_vyacheslav_molotov }
 			}
 		}
-		
+
 		FROM = {
-			
+
 
 			add_to_variable = { SOV_fyp_consumer_goods_factor = -0.02 }
 			custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sik
@@ -4971,10 +4961,10 @@ country_event = {
 				NOT = { is_subject_of = SOV }
 			}
 		}
-	
+
 		effect_tooltip = {
 			FROM = {
-				
+
 			}
 		}
 
@@ -4994,7 +4984,7 @@ country_event = {
 	picture = GFX_report_event_china_ledo_road
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.277.a
 
@@ -5003,7 +4993,7 @@ country_event = {
 		}
 
 		effect_tooltip = {
-			
+
 
 			custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sov
 
@@ -5059,12 +5049,12 @@ country_event = {
 				}
 			}
 
-			
+
 		}
 	}
 }
 
-# SOV-SINKIANG - Military Aid (Mil in Urumqui + Infra, Air Base and Forts in Kunlun Shan + Forts in Dabancheng) - Event for SIK
+# SOV-SINKIANG - Military Aid (Mil in Urumqui + Infra, Air Base and Forts in Kunlun Shan + Forts in Dabancheng) - Event for removed Sinkiang
 country_event = {
 	id = NSB_soviet_foreign_politics_events.278
 	title = NSB_soviet_foreign_politics_events.278.t
@@ -5072,7 +5062,7 @@ country_event = {
 	picture = GFX_report_event_SOV_purge_aircraft_2
 
 	is_triggered_only = yes
-			
+
 	option = { # OK
 		name = NSB_soviet_foreign_politics_events.278.a
 
@@ -5087,9 +5077,9 @@ country_event = {
 				SOV = { has_idea = SOV_vyacheslav_molotov }
 			}
 		}
-		
+
 		FROM = {
-			
+
 
 			add_to_variable = { SOV_fyp_consumer_goods_factor = -0.02 }
 			custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sik
@@ -5109,7 +5099,7 @@ country_event = {
 
 			effect_tooltip = {
 				custom_effect_tooltip = SOV_sinkiang_when_project_finishes_tt
-				
+
 				617 = { #URUMQI - Mil
 					if = {
 						limit = {
@@ -5230,10 +5220,10 @@ country_event = {
 				NOT = { is_subject_of = SOV }
 			}
 		}
-	
+
 		effect_tooltip = {
 			FROM = {
-				
+
 			}
 		}
 
@@ -5253,7 +5243,7 @@ country_event = {
 	picture = GFX_report_event_SOV_purge_aircraft_2
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.279.a
 
@@ -5262,20 +5252,12 @@ country_event = {
 		}
 
 		effect_tooltip = {
-			
+
 
 			custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sov
 
-			send_equipment = {
-				type = small_plane_airframe
-				amount = 40
-				target = SIK
-			}
-			send_equipment = {
-				type = infantry_equipment
-				amount = 500
-				target = SIK
-			}
+
+
 
 			custom_effect_tooltip = SOV_sinkiang_when_project_finishes_tt
 			617 = { #URUMQI - Mil
@@ -5340,7 +5322,7 @@ country_event = {
 			}
 			if = {  #DABANCHENG - Forts
 				limit = {
-					
+
 				}
 				760 = {
 					add_building_construction = {
@@ -5354,12 +5336,12 @@ country_event = {
 					}
 				}
 			}
-			
+
 		}
 	}
 }
 
-# SOV-SINKIANG - Support Expansion (in XSM) (Infra and Forts in various XSM states + Air Base in Gansu + Oil in Jiuquan) - Event for SIK
+# SOV-SINKIANG - Support Expansion (in removed Ma clique) (Infra and Forts in various removed Ma clique states + Air Base in Gansu + Oil in Jiuquan) - Event for removed Sinkiang
 country_event = {
 	id = NSB_soviet_foreign_politics_events.280
 	title = NSB_soviet_foreign_politics_events.280.t
@@ -5367,7 +5349,7 @@ country_event = {
 	picture = GFX_report_event_generic_truck
 
 	is_triggered_only = yes
-			
+
 	option = { # OK
 		name = NSB_soviet_foreign_politics_events.280.a
 
@@ -5382,9 +5364,9 @@ country_event = {
 				SOV = { has_idea = SOV_vyacheslav_molotov }
 			}
 		}
-		
+
 		FROM = {
-			
+
 
 			SOV = {
 				send_equipment = {
@@ -5399,7 +5381,7 @@ country_event = {
 
 			effect_tooltip = {
 				custom_effect_tooltip = SOV_sinkiang_when_project_finishes_tt
-				
+
 				755 = { #HAIXI - Infra
 					if = {
 						limit = {
@@ -5428,7 +5410,7 @@ country_event = {
 						amount = 12
 					}
 				}
-				604 = { #QINGHAI (Golmud) - Infra 
+				604 = { #QINGHAI (Golmud) - Infra
 					if = {
 						limit = {
 							infrastructure < 5
@@ -5544,10 +5526,10 @@ country_event = {
 				NOT = { is_subject_of = SOV }
 			}
 		}
-	
+
 		effect_tooltip = {
 			FROM = {
-				
+
 			}
 		}
 
@@ -5566,7 +5548,7 @@ country_event = {
 	picture = GFX_report_event_generic_truck
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.281.a
 
@@ -5575,18 +5557,14 @@ country_event = {
 		}
 
 		effect_tooltip = {
-			
 
-			send_equipment = {
-				type = motorized_equipment
-				amount = 300
-				target = SIK
-			}
+
+
 
 			custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sov
 
 			custom_effect_tooltip = SOV_sinkiang_when_project_finishes_tt
-			
+
 			755 = { #HAIXI - Infra
 				if = {
 					limit = {
@@ -5615,7 +5593,7 @@ country_event = {
 					amount = 12
 				}
 			}
-			604 = { #QINGHAI (Golmud) - Infra 
+			604 = { #QINGHAI (Golmud) - Infra
 				if = {
 					limit = {
 						infrastructure < 5
@@ -5699,7 +5677,7 @@ country_event = {
 	}
 }
 
-# SOV-SINKIANG - Formalize the Soviet Republic of Sinkiang (aka puppet Sinkiang)- Event for SIK
+# SOV-SINKIANG - Formalize the Soviet Republic of Sinkiang (aka puppet Sinkiang)- Event for removed Sinkiang
 country_event = {
 	id = NSB_soviet_foreign_politics_events.282
 	title = NSB_soviet_foreign_politics_events.282.t
@@ -5707,7 +5685,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept
 		name = NSB_soviet_foreign_politics_events.282.a
 
@@ -5719,7 +5697,7 @@ country_event = {
 		SOV = {
 			puppet = ROOT
 
-			
+
 		}
 
 		FROM = {
@@ -5736,7 +5714,7 @@ country_event = {
 
 		effect_tooltip = {
 			SOV = {
-				
+
 				country_event = { id = NSB_soviet_foreign_politics_events.284 hours = 1 }
 			}
 			custom_effect_tooltip = germany.126.warning
@@ -5752,15 +5730,15 @@ country_event = {
 	picture = GFX_report_event_stalin_propaganda
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_foreign_politics_events.283.a
 
 		effect_tooltip = {
 			puppet = FROM
-			
+
 			FROM = { add_political_power = 75 }
-		}		
+		}
 	}
 }
 
@@ -5772,7 +5750,7 @@ country_event = {
 	picture = GFX_report_event_stalin_meeting
 
 	is_triggered_only = yes
-			
+
 	option = { # Respect
 		name = NSB_soviet_foreign_politics_events.284.a
 
@@ -5784,7 +5762,7 @@ country_event = {
 			}
 		}
 
-		
+
 	}
 
 	option = { # Unacceptable
@@ -5797,8 +5775,8 @@ country_event = {
 		ai_chance = {
 			base = 0
 		}
-	
-		
+
+
 
 		remove_from_faction = FROM
 		create_wargoal = {
@@ -5811,263 +5789,12 @@ country_event = {
 	}
 }
 
-# SOV-SINKIANG - Soviet Union is losing and we might need new friends - Event for SIK (triggered via MTTH)
+# SOV-SINKIANG - Soviet Union is losing and we might need new friends - Event for removed Sinkiang (triggered via MTTH)
 country_event = {
 	id = NSB_soviet_foreign_politics_events.285
-	title = NSB_soviet_foreign_politics_events.285.t
-	desc = NSB_soviet_foreign_politics_events.285.desc
-	picture = GFX_report_event_soviet_tanks_snow
-
-	fire_only_once = yes
-
-	trigger = {
-		original_tag = SIK
-		OR = {
-			is_in_faction_with = SOV
-			is_subject_of = SOV
-		}
-		SOV = {
-			always = no
-			surrender_progress > 0.5
-		}
-		OR = {
-			AND = {
-				country_exists = PRC
-				
-				NOT = { has_war_with = PRC }
-			}
-			AND = {
-				country_exists = CHI
-				CHI = { is_subject = no }
-				NOT = { has_war_with = CHI }
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 180
-		modifier = {
-			factor = 2
-			has_full_control_of_state = 604 #GOLMUD (XSM)
-		}
-		modifier = {
-			factor = 2
-			has_full_control_of_state = 622 #YAN'AN (PRC)
-		}
-		modifier = {
-			factor = 2
-			has_full_control_of_state = 615 #TAIYUAN (SHX)
-		}
-		modifier = {
-			factor = 2
-			has_full_control_of_state = 613 # NANJING (CHI)
-		}
-		modifier = {
-			factor = 2
-			has_full_control_of_state = 325 # KUNMING (YUN)
-		}
-		modifier = {
-			factor = 2
-			has_full_control_of_state = 594 #NANNING (GXC)
-		}
-		modifier = {
-			factor = 2
-			has_full_control_of_state = 611 #ZHANGBEI (MEN)
-		}
-		modifier = {
-			factor = 2
-			has_full_control_of_state = 328 #HSINKING (MAN)
-		}
-	}
-			
-	option = { # Stay with the Soviets
-		name = NSB_soviet_foreign_politics_events.285.a
-
-		ai_chance = {
-			base = 2
-			modifier = {
-				factor = 2
-				has_war = yes
-			}
-			modifier = {
-				factor = 2
-				has_opinion = {
-					target = FROM
-					value > 50
-				}
-			}
-			modifier = {
-				factor = 0.5
-				is_subject = no
-			}
-		}
-
-		if = {
-			limit = {
-				is_subject_of = SOV
-			}
-			effect_tooltip = {
-				add_autonomy_score = {
-					value = 500
-					localization = NSB_soviet_foreign_politics_events.286.t
-				}
-			}
-			hidden_effect = {
-				SOV = { country_event = { id = NSB_soviet_foreign_politics_events.286 hours = 1 } }
-			}
-		}
-	}
-
-	option = { # Time to flee!
-		name = NSB_soviet_foreign_politics_events.285.b
-
-		trigger = {
-			is_subject = no
-		}
-
-		ai_chance = {
-			base = 2
-		}
-
-		hidden_effect = {
-			SOV = {
-				add_ai_strategy = {
-					type = befriend
-					id = SIK			
-					value = -200
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = SIK		
-					value = -200
-				}
-				if = {
-					limit = {
-						has_war = no
-					}
-					add_ai_strategy = {
-						type = antagonize
-						id = SIK		
-						value = 100
-					}
-				}
-				else = {
-					add_ai_strategy = {
-						type = antagonize
-						id = SIK		
-						value = 25
-					}
-				}
-			}
-			add_ai_strategy = {
-				type = befriend
-				id = SOV			
-				value = -100
-			}
-			add_ai_strategy = {
-				type = alliance
-				id = SOV			
-				value = -100
-			}
-			if = {
-				limit = {
-					CHI = { is_faction_leader = yes }
-					NOT = { has_war_with = CHI }	
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = CHI		
-					value = 100
-				}
-			}
-			if = {
-				limit = {
-					
-					NOT = { has_war_with = PRC }	
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = PRC		
-					value = 100
-				}
-			}
-		}
-
-		#Break all previous agreements with the Comintern
-		every_other_country = {
-			limit = {
-				is_in_faction_with = ROOT
-			}
-			if = {
-				limit = {
-					has_guaranteed = ROOT
-				}
-				diplomatic_relation = {
-					country = ROOT
-					relation = guarantee
-					active = no
-				}
-			}
-			if = {
-				limit = {
-					is_guaranteed_by = ROOT
-				}
-				ROOT = {
-					diplomatic_relation = {
-						country = PREV
-						relation = guarantee
-						active = no
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_non_aggression_pact_with = ROOT
-				}
-				diplomatic_relation = {
-					country = ROOT
-					relation = non_aggression_pact
-					active = no
-				}
-			}
-			if = {
-				limit = {
-					has_military_access_to = ROOT
-				}
-				diplomatic_relation = {
-					country = ROOT
-					relation = military_access
-					active = no
-				}
-			}
-			if = {
-				limit = {
-					gives_military_access_to = ROOT
-				}
-				ROOT = {
-					diplomatic_relation = {
-						country = PREV
-						relation = military_access
-						active = no
-					}
-				}
-			}
-		}
-
-		leave_faction = yes
-
-		remove_resource_rights = 618
-	
-		SOV = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = betrayed_alliance
-			}
-		}
-
-		SOV = { country_event = { id = NSB_soviet_foreign_politics_events.287 hours = 1 } }
-		custom_effect_tooltip = germany.126.warning
-	}
+	is_triggered_only = yes
+	trigger = { always = no }
+	option = { name = OK }
 }
 
 # SOV-SINKIANG - Sinkiang loses autonomy - Event for SOV
@@ -6078,7 +5805,7 @@ country_event = {
 	picture = GFX_report_event_soviet_tanks_snow
 
 	is_triggered_only = yes
-			
+
 	option = { # Nothing to do
 		name = NSB_soviet_foreign_politics_events.286.a
 
@@ -6123,7 +5850,7 @@ country_event = {
 	picture = GFX_report_event_chinese_army_training
 
 	is_triggered_only = yes
-			
+
 	option = { # Don't care
 		name = NSB_soviet_foreign_politics_events.287.a
 
@@ -6138,7 +5865,7 @@ country_event = {
 		effect_tooltip = {
 			FROM = { leave_faction = yes }
 			remove_resource_rights = 618
-		
+
 			add_opinion_modifier = {
 				target = FROM
 				modifier = betrayed_alliance
@@ -6168,11 +5895,11 @@ country_event = {
 				has_country_flag = SOV_sinkiang_support_expansion_flag
 			}
 		}
-		
+
 		effect_tooltip = {
 			FROM = { leave_faction = yes }
 			remove_resource_rights = 618
-		
+
 			add_opinion_modifier = {
 				target = FROM
 				modifier = betrayed_alliance
@@ -6189,13 +5916,13 @@ country_event = {
 }
 
 
- ######   #######  ##     ##          ######   ######## ########     ######## ########     ###    ########  ########       ###     ######   ########  ######## ######## ##     ## ######## ##    ## ######## 
-##    ## ##     ## ##     ##         ##    ##  ##       ##     ##       ##    ##     ##   ## ##   ##     ## ##            ## ##   ##    ##  ##     ## ##       ##       ###   ### ##       ###   ##    ##    
-##       ##     ## ##     ##         ##        ##       ##     ##       ##    ##     ##  ##   ##  ##     ## ##           ##   ##  ##        ##     ## ##       ##       #### #### ##       ####  ##    ##    
- ######  ##     ## ##     ## ####### ##   #### ######   ########        ##    ########  ##     ## ##     ## ######      ##     ## ##   #### ########  ######   ######   ## ### ## ######   ## ## ##    ##    
-      ## ##     ##  ##   ##          ##    ##  ##       ##   ##         ##    ##   ##   ######### ##     ## ##          ######### ##    ##  ##   ##   ##       ##       ##     ## ##       ##  ####    ##    
-##    ## ##     ##   ## ##           ##    ##  ##       ##    ##        ##    ##    ##  ##     ## ##     ## ##          ##     ## ##    ##  ##    ##  ##       ##       ##     ## ##       ##   ###    ##    
- ######   #######     ###             ######   ######## ##     ##       ##    ##     ## ##     ## ########  ########    ##     ##  ######   ##     ## ######## ######## ##     ## ######## ##    ##    ##    
+ ######   #######  ##     ##          ######   ######## ########     ######## ########     ###    ########  ########       ###     ######   ########  ######## ######## ##     ## ######## ##    ## ########
+##    ## ##     ## ##     ##         ##    ##  ##       ##     ##       ##    ##     ##   ## ##   ##     ## ##            ## ##   ##    ##  ##     ## ##       ##       ###   ### ##       ###   ##    ##
+##       ##     ## ##     ##         ##        ##       ##     ##       ##    ##     ##  ##   ##  ##     ## ##           ##   ##  ##        ##     ## ##       ##       #### #### ##       ####  ##    ##
+ ######  ##     ## ##     ## ####### ##   #### ######   ########        ##    ########  ##     ## ##     ## ######      ##     ## ##   #### ########  ######   ######   ## ### ## ######   ## ## ##    ##
+      ## ##     ##  ##   ##          ##    ##  ##       ##   ##         ##    ##   ##   ######### ##     ## ##          ######### ##    ##  ##   ##   ##       ##       ##     ## ##       ##  ####    ##
+##    ## ##     ##   ## ##           ##    ##  ##       ##    ##        ##    ##    ##  ##     ## ##     ## ##          ##     ## ##    ##  ##    ##  ##       ##       ##     ## ##       ##   ###    ##
+ ######   #######     ###             ######   ######## ##     ##       ##    ##     ## ##     ## ########  ########    ##     ##  ######   ##     ## ######## ######## ##     ## ######## ##    ##    ##
 
 
 # Soviet-German Trade Agreement - Event for GER
@@ -6206,7 +5933,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept -> This will also make GER more likely to take Molotov-Ribbentrop pact and less to take Anti-Soviet Pact
 		name = NSB_soviet_soviet_german_trade_agreement.1.a
 
@@ -6243,7 +5970,7 @@ country_event = {
 			}
 		}
 
-		add_timed_idea = { idea = SOV_soviet_german_trade_agreement days = 800 } #Technically 1 year but really 18 months for Soviet payment 
+		add_timed_idea = { idea = SOV_soviet_german_trade_agreement days = 800 } #Technically 1 year but really 18 months for Soviet payment
 
 		#Effects to Soviets
 		effect_tooltip = {
@@ -6311,7 +6038,7 @@ country_event = {
 							}
 						}
 					}
-					
+
 					# CA: Lützow -> Petropavlovsk
 					add_equipment_production = {
 						equipment = {
@@ -6383,14 +6110,14 @@ country_event = {
 			}
 		}
 
-		
+
 		FROM = {
-			
+
 		}
 		hidden_effect = {
-			
+
 			FROM = {
-				
+
 			}
 		}
 		FROM = { country_event = { id = NSB_soviet_soviet_german_trade_agreement.2 hours = 1 } }
@@ -6405,7 +6132,7 @@ country_event = {
 
 		FROM = {
 			country_event = { id = NSB_soviet_soviet_german_trade_agreement.3 hours = 1 }
-			
+
 		}
 	}
 }
@@ -6418,7 +6145,7 @@ country_event = {
 	picture = GFX_report_event_molotov_ribentrop_handshake
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_soviet_german_trade_agreement.2.a
 
@@ -6485,7 +6212,7 @@ country_event = {
 					}
 				}
 			}
-			
+
 			# CA: Lützow -> Petropavlovsk
 			add_equipment_production = {
 				equipment = {
@@ -6506,7 +6233,7 @@ country_event = {
 				category = ship_modules_tech
 				category = bb_tech
 				category = dd_tech
-			}			
+			}
 		}
 		else = { #No MTG
 			if = {
@@ -6579,7 +6306,7 @@ country_event = {
 					turret_type_slot = tank_heavy_three_man_tank_turret
 					suspension_type_slot = tank_torsion_bar_suspension
 					armor_type_slot = tank_welded_armor
-					engine_type_slot = tank_diesel_engine		
+					engine_type_slot = tank_diesel_engine
 				}
 				upgrades = {
 					tank_nsb_engine_upgrade = 10
@@ -6603,7 +6330,7 @@ country_event = {
 					building = industrial_complex
 					size > 1
 					include_locked = yes
-				}	
+				}
 			}
 			prioritize = { 217 202 195 }
 			add_extra_state_shared_building_slots = 2
@@ -6611,20 +6338,20 @@ country_event = {
 				type = industrial_complex
 				level = 2
 				instant_build = yes
-			}	
-		}	
+			}
+		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		#Effects to Germans
 		effect_tooltip = {
 			FROM = {
-				add_timed_idea = { idea = SOV_soviet_german_trade_agreement days = 800 } 
+				add_timed_idea = { idea = SOV_soviet_german_trade_agreement days = 800 }
 			}
 
-			
+
 			FROM = {
-				
+
 			}
 		}
 		hidden_effect = { news_event = { id = nsb_news.103 days = 1 } }
@@ -6639,24 +6366,24 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Damn
 		name = NSB_soviet_soviet_german_trade_agreement.3.a
 
 		effect_tooltip = {
-			
+
 		}
 	}
 }
 
 
- ######   #######  ##       ##       ########  ######  ######## #### ##     ## ########     ######  ########  ######  ##     ## ########  #### ######## ##    ## 
-##    ## ##     ## ##       ##       ##       ##    ##    ##     ##  ##     ## ##          ##    ## ##       ##    ## ##     ## ##     ##  ##     ##     ##  ##  
-##       ##     ## ##       ##       ##       ##          ##     ##  ##     ## ##          ##       ##       ##       ##     ## ##     ##  ##     ##      ####   
-##       ##     ## ##       ##       ######   ##          ##     ##  ##     ## ######       ######  ######   ##       ##     ## ########   ##     ##       ##    
-##       ##     ## ##       ##       ##       ##          ##     ##   ##   ##  ##                ## ##       ##       ##     ## ##   ##    ##     ##       ##    
-##    ## ##     ## ##       ##       ##       ##    ##    ##     ##    ## ##   ##          ##    ## ##       ##    ## ##     ## ##    ##   ##     ##       ##    
- ######   #######  ######## ######## ########  ######     ##    ####    ###    ########     ######  ########  ######   #######  ##     ## ####    ##       ##    
+ ######   #######  ##       ##       ########  ######  ######## #### ##     ## ########     ######  ########  ######  ##     ## ########  #### ######## ##    ##
+##    ## ##     ## ##       ##       ##       ##    ##    ##     ##  ##     ## ##          ##    ## ##       ##    ## ##     ## ##     ##  ##     ##     ##  ##
+##       ##     ## ##       ##       ##       ##          ##     ##  ##     ## ##          ##       ##       ##       ##     ## ##     ##  ##     ##      ####
+##       ##     ## ##       ##       ######   ##          ##     ##  ##     ## ######       ######  ######   ##       ##     ## ########   ##     ##       ##
+##       ##     ## ##       ##       ##       ##          ##     ##   ##   ##  ##                ## ##       ##       ##     ## ##   ##    ##     ##       ##
+##    ## ##     ## ##       ##       ##       ##    ##    ##     ##    ## ##   ##          ##    ## ##       ##    ## ##     ## ##    ##   ##     ##       ##
+ ######   #######  ######## ######## ########  ######     ##    ####    ###    ########     ######  ########  ######   #######  ##     ## ####    ##       ##
 
 
 # Policies of Collective Security - SOV offers Mutual Assitance - Event for FRA
@@ -6667,7 +6394,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept
 		name = NSB_soviet_policies_of_collective_security.1.a
 
@@ -6723,14 +6450,14 @@ country_event = {
 			SOV_clear_hostile_diplomacy_in_both_countries = yes #Clears wargoals and claims
 
 			#SOV -> FRA
-			FROM = {		
+			FROM = {
 				diplomatic_relation = {
 					country = ROOT
 					relation = non_aggression_pact
 					active = yes
 				}
 				give_guarantee = ROOT
-				
+
 			}
 
 			#FRA -> SOV
@@ -6740,7 +6467,7 @@ country_event = {
 				active = yes
 			}
 			give_guarantee = FROM
-			
+
 		}
 
 		FROM = { country_event = { id = NSB_soviet_policies_of_collective_security.2 hours = 8 random_hours = 4 } }
@@ -6770,7 +6497,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 4
-				has_guaranteed = POL 
+				has_guaranteed = POL
 			}
 			modifier = {
 				factor = 0
@@ -6801,14 +6528,14 @@ country_event = {
 			SOV_clear_hostile_diplomacy_in_both_countries = yes #Clears wargoals and claims
 
 			#SOV -> FRA
-			FROM = {		
+			FROM = {
 				diplomatic_relation = {
 					country = ROOT
 					relation = non_aggression_pact
 					active = yes
 				}
 				give_guarantee = ROOT
-				
+
 			}
 
 			#FRA -> SOV
@@ -6818,7 +6545,7 @@ country_event = {
 				active = yes
 			}
 			give_guarantee = FROM
-			
+
 
 			custom_effect_tooltip = NSB_soviet_policies_of_collective_security_condition_effects_tt
 		}
@@ -6840,7 +6567,7 @@ country_event = {
 		}
 		effect_tooltip = {
 			FROM = {
-				
+
 			}
 		}
 
@@ -6856,7 +6583,7 @@ country_event = {
 	picture = GFX_report_event_worried_french
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_policies_of_collective_security.2.a
 
@@ -6875,11 +6602,11 @@ country_event = {
 	picture = GFX_report_event_worried_french
 
 	is_triggered_only = yes
-			
+
 	option = { # OK
 		name = NSB_soviet_policies_of_collective_security.3.a
 
-		
+
 	}
 }
 
@@ -6891,7 +6618,7 @@ country_event = {
 	picture = GFX_report_event_worried_french
 
 	is_triggered_only = yes
-			
+
 	option = { # Consent
 		name = NSB_soviet_policies_of_collective_security.4.a
 
@@ -6961,7 +6688,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Avanti without Poland
 		name = NSB_soviet_policies_of_collective_security.5.a
 
@@ -7013,7 +6740,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				has_guaranteed = POL 
+				has_guaranteed = POL
 			}
 			modifier = {
 				factor = 0
@@ -7036,7 +6763,7 @@ country_event = {
 	picture = GFX_report_event_SOV_litvinov_beck
 
 	is_triggered_only = yes
-			
+
 	option = { # Good, let's ask POL
 		name = NSB_soviet_policies_of_collective_security.6.a
 
@@ -7069,7 +6796,7 @@ country_event = {
 	picture = GFX_report_event_SOV_litvinov_beck
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept
 		name = NSB_soviet_policies_of_collective_security.7.a
 
@@ -7152,7 +6879,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty2
 
 	is_triggered_only = yes
-			
+
 	option = { # Who needs them anyway?
 		name = NSB_soviet_policies_of_collective_security.8.a
 
@@ -7167,7 +6894,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
-			
+
 	option = { # Shame on them
 		name = NSB_soviet_policies_of_collective_security.9.a
 
@@ -7186,7 +6913,7 @@ country_event = {
 	picture = GFX_report_event_polish_army
 
 	is_triggered_only = yes
-			
+
 	option = { # Who needs them anyway?
 		name = NSB_soviet_policies_of_collective_security.10.a
 
@@ -7206,7 +6933,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
-			
+
 	option = { # Who needs them anyway?
 		name = NSB_soviet_policies_of_collective_security.11.a
 
@@ -7225,7 +6952,7 @@ country_event = {
 	picture = GFX_report_event_SOV_litvinov_beck
 
 	is_triggered_only = yes
-			
+
 	option = { # COOL
 		name = NSB_soviet_policies_of_collective_security.12.a
 
@@ -7243,7 +6970,7 @@ country_event = {
 	picture = GFX_report_event_SOV_litvinov_beck
 
 	is_triggered_only = yes
-			
+
 	option = {
 		name = NSB_soviet_policies_of_collective_security.13.a
 
@@ -7269,7 +6996,7 @@ country_event = {
 	picture = GFX_report_event_SOV_national_academy_of_sciences
 
 	is_triggered_only = yes
-			
+
 	option = { # Accept
 		name = NSB_soviet_academy_of_sciences.1.a
 
@@ -7286,7 +7013,7 @@ country_event = {
 	picture = GFX_report_event_SOV_demands
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_atomic_bomb_project.1.a
 
@@ -7316,7 +7043,7 @@ country_event = {
 	picture = GFX_report_event_SOV_atomic_program_caught
 
 	is_triggered_only = yes
-			
+
 	option = { # Bad, but okay
 		name = NSB_soviet_atomic_bomb_project.2.a
 
@@ -7328,10 +7055,10 @@ country_event = {
 					limit = {
 						original_tag = USA
 					}
-					
+
 				}
 				else = {
-					
+
 				}
 			}
 		}
@@ -7346,7 +7073,7 @@ country_event = {
 	picture = GFX_report_event_SOV_atomic_program_caught
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_atomic_bomb_project.3.a
 
@@ -7356,10 +7083,10 @@ country_event = {
 			limit = {
 				original_tag = USA
 			}
-			
+
 		}
 		else = {
-			
+
 		}
 
 		effect_tooltip = {
@@ -7381,14 +7108,14 @@ country_event = {
 	title = NSB_soviet_five_year_plan.01.t
 	desc = NSB_soviet_five_year_plan.01.desc
 	picture = GFX_report_event_stalin_01
-	
+
 	is_triggered_only = yes
 
 	fire_only_once = yes
 
 	option = { #VAYA POR DIOS
 		name = NSB_soviet_five_year_plan.01.a
-		
+
 		custom_effect_tooltip = NSB_soviet_five_year_plan_tt
 	}
 }
@@ -7399,13 +7126,13 @@ country_event = {
 ######## MISC ########
 ######################
 
-### Kuznetsov becomes an Operative -> Fired when SOV loses control over a Ukrainian state 
+### Kuznetsov becomes an Operative -> Fired when SOV loses control over a Ukrainian state
 country_event = {
 	id = NSB_soviet_great_patriotic_war.01
 	title = NSB_soviet_great_patriotic_war.01.t
 	desc = NSB_soviet_great_patriotic_war.01.desc
 	picture = GFX_report_event_SOV_tank_column
-	
+
 	is_triggered_only = yes
 
 	fire_only_once = yes
@@ -7438,7 +7165,7 @@ country_event = {
 	picture = GFX_report_event_generic_factory
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_comecon.1.a
 
@@ -7460,7 +7187,7 @@ country_event = {
 	picture = GFX_report_event_soviet_tanks
 
 	is_triggered_only = yes
-			
+
 	option = { # Good
 		name = NSB_soviet_comecon.2.a
 
@@ -7484,7 +7211,7 @@ unit_leader_event = {
 	id = NSB_soviet_spanish_civil_war.1
 	title = NSB_soviet_spanish_civil_war.1.t
 	desc = NSB_soviet_spanish_civil_war.1.desc
-	
+
 	is_triggered_only = yes
 	hidden = no
 
@@ -7502,12 +7229,12 @@ country_event = {
 	title = NSB_soviet_spanish_civil_war.2.t
 	desc = NSB_soviet_spanish_civil_war.2.desc
 	picture = GFX_report_event_spr_poum_militia
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = NSB_soviet_spanish_civil_war.2.a
-		
+
 		if = {
 			limit = {
 				NOT = { has_template = "International Marxist Brigades" }
@@ -7526,7 +7253,7 @@ country_event = {
 			}
 		}
 		capital_scope = {
-			create_unit = { 
+			create_unit = {
 				division = "name = \"International Marxist Brigade\" division_template = \"International Marxist Brigades\" start_experience_factor = 0.1 start_equipment_factor = 1.0" owner = ROOT count = 6
 			}
 		}
@@ -7539,12 +7266,12 @@ country_event = {
 	title = NSB_soviet_spanish_civil_war.3.t
 	desc = NSB_soviet_spanish_civil_war.3.desc
 	picture = GFX_report_event_spr_the_maquis
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = NSB_soviet_spanish_civil_war.3.a
-		
+
 		add_timed_idea = {
 			idea = SOV_soviet_commandos_poum
 			days = 180
@@ -7576,7 +7303,7 @@ country_event = {
 			}
 		}
 		capital_scope = {
-			create_unit = { 
+			create_unit = {
 				division = "name = \"Soviet Special Brigade\" division_template = \"Soviet Special Brigades\" start_experience_factor = 0.7 start_equipment_factor = 1.0" owner = ROOT count = 2
 			}
 		}
@@ -7589,12 +7316,12 @@ country_event = {
 	title = NSB_soviet_spanish_civil_war.4.t
 	desc = NSB_soviet_spanish_civil_war.4.desc
 	picture = GFX_report_event_spr_anarchists
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = NSB_soviet_spanish_civil_war.4.a
-		
+
 		add_timed_idea = {
 			idea = SOV_popular_speeches_poum
 			days = 180
@@ -7618,7 +7345,7 @@ country_event = {
 			}
 		}
 		capital_scope = {
-			create_unit = { 
+			create_unit = {
 				division = "name = \"International Marxist Brigade\" division_template = \"International Marxist Brigades\" start_experience_factor = 0.1 start_equipment_factor = 1.0" owner = ROOT count = 2
 			}
 		}
@@ -7631,12 +7358,12 @@ country_event = {
 	title = NSB_soviet_spanish_civil_war.5.t
 	desc = NSB_soviet_spanish_civil_war.5.desc
 	picture = GFX_report_event_spr_republican_soldiers
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = NSB_soviet_spanish_civil_war.5.a
-		
+
 		add_timed_idea = {
 			idea = SOV_agents_in_the_stalinist_command_poum
 			days = 365
@@ -7682,7 +7409,7 @@ country_event = {
 		trigger = {
 			NOT = { has_global_flag = SOV_soviet_civil_war }
 		}
-		
+
 		custom_effect_tooltip = SOV_poum_aid_in_case_of_civil_War_tt
 	}
 
@@ -7738,7 +7465,7 @@ country_event = {
 			add_ideas = new_economic_policy
 		}
 	}
-			
+
 	option = { # Good
 		name = NSB_soviet_planned_economy.1.a
 
@@ -7759,11 +7486,11 @@ country_event = {
 
 ############################################################################################
 
-### #  # ###      ##  ##  #   # ### ### ###      ##  ### #   # ### #       #   #  ##  ###  
- #  #  # #       #   #  # #   #  #  #    #      #  #  #  #   #  #  #       #   # #  # #  # 
- #  #### ##       #  #  #  # #   #  ##   #      #     #   # #   #  #       # # # #### ###  
- #  #  # #         # #  #  # #   #  #    #      #  #  #   # #   #  #       # # # #  # #  # 
- #  #  # ###     ##   ##    #   ### ###  #       ##  ###   #   ### ###      # #  #  # #  # 
+### #  # ###      ##  ##  #   # ### ### ###      ##  ### #   # ### #       #   #  ##  ###
+ #  #  # #       #   #  # #   #  #  #    #      #  #  #  #   #  #  #       #   # #  # #  #
+ #  #### ##       #  #  #  # #   #  ##   #      #     #   # #   #  #       # # # #### ###
+ #  #  # #         # #  #  # #   #  #    #      #  #  #   # #   #  #       # # # #  # #  #
+ #  #  # ###     ##   ##    #   ### ###  #       ##  ###   #   ### ###      # #  #  # #  #
 
 ############################################################################################
 
@@ -7786,7 +7513,7 @@ country_event = {
 	# Civil war starts
 	option = {
 		name = NSB_soviet_communist_civil_war.001.a
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
@@ -7797,20 +7524,20 @@ country_event = {
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
-		# DEPOSE STALIN 
-		SOV_promote_to_country_leader_trotsky = yes	
+		# DEPOSE STALIN
+		SOV_promote_to_country_leader_trotsky = yes
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_left_opposition_civil_war_start = yes 
+			# LEFT Opposition Specific Stuff
+			SOV_left_opposition_civil_war_start = yes
 
 			# Return Trotsky from Mexico
 			if = {
@@ -7818,7 +7545,7 @@ country_event = {
 					has_global_flag = AAT_trotsky_in_mexico
 				}
 				set_global_flag = flag_trotsky_returning_to_ussr_from_mexico
-				MEX = { country_event = { id = mexico.22 hours = 1} }	
+				MEX = { country_event = { id = mexico.22 hours = 1} }
 			}
 			else_if = {
 				limit = {
@@ -7833,7 +7560,7 @@ country_event = {
 	}
 	option = {
 		name = NSB_soviet_communist_civil_war.001.b
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
@@ -7842,61 +7569,61 @@ country_event = {
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
-		# DEPOSE STALIN 
+		# DEPOSE STALIN
 		SOV_promote_to_country_leader_smirnov = yes
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_left_opposition_civil_war_start = yes 	
+			# LEFT Opposition Specific Stuff
+			SOV_left_opposition_civil_war_start = yes
 		}
 	}
 
 	option = {
 		name = NSB_soviet_communist_civil_war.001.c
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
 			AND = {
 				NOT = { has_character = SOV_lev_trotsky }
-				OR = { 
+				OR = {
 					NOT = { has_character = SOV_ivan_smirnov }
 					NOT = { always = no }
 				}
-				OR = { 
+				OR = {
 					NOT = { has_character = SOV_grigory_zinovyev }
 					NOT = { always = no }
 				}
-				OR = { 
+				OR = {
 					NOT = { has_character = SOV_lev_kamenev }
 					NOT = { always = no }
 				}
 			}
 		}
-		
+
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
-		# DEPOSE STALIN 
+		# DEPOSE STALIN
 		IF = {
-			limit = { 
+			limit = {
 				any_unit_leader = { has_trait = trait_SOV_trotskyist }
 			}
 			ROOT = {
 				random_unit_leader = {
-					limit = { 
+					limit = {
 						has_trait = trait_SOV_trotskyist
 					}
 					add_country_leader_role = {
@@ -7905,16 +7632,16 @@ country_event = {
 							traits = { }
 							expire = "1965.1.1.1"
 						}
-						promote_leader = yes 
+						promote_leader = yes
 					}
-					
+
 				}
 			}
 		}
 		ELSE = {
 			ROOT = {
 				random_unit_leader = {
-					limit = { 
+					limit = {
 						NOT = { has_trait = trait_SOV_stalinist }
 					}
 					add_country_leader_role = {
@@ -7923,7 +7650,7 @@ country_event = {
 							traits = { }
 							expire = "1965.1.1.1"
 						}
-						promote_leader = yes 
+						promote_leader = yes
 					}
 				}
 			}
@@ -7947,22 +7674,22 @@ country_event = {
 				}
 			}
 		}
-		
-		
+
+
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_left_opposition_civil_war_start = yes  
+			# LEFT Opposition Specific Stuff
+			SOV_left_opposition_civil_war_start = yes
 		}
-				
+
 	}
 	# Zinovyev
 	option = {
 		name = NSB_soviet_communist_civil_war.001.d
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
@@ -7971,26 +7698,26 @@ country_event = {
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
-		# DEPOSE STALIN 
-		SOV_promote_to_country_leader_zinovyev = yes 	
+		# DEPOSE STALIN
+		SOV_promote_to_country_leader_zinovyev = yes
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_left_opposition_civil_war_start = yes 	
+			# LEFT Opposition Specific Stuff
+			SOV_left_opposition_civil_war_start = yes
 		}
 	}
 	# Kamenev
 	option = {
 		name = NSB_soviet_communist_civil_war.001.e
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
@@ -7999,27 +7726,27 @@ country_event = {
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
-		# DEPOSE STALIN 
-		SOV_promote_to_country_leader_kamenev = yes 
+		# DEPOSE STALIN
+		SOV_promote_to_country_leader_kamenev = yes
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_left_opposition_civil_war_start = yes 	
+			# LEFT Opposition Specific Stuff
+			SOV_left_opposition_civil_war_start = yes
 		}
 	}
 
 
 
 
-	
+
 
 }
 
@@ -8041,7 +7768,7 @@ country_event = {
 		}
 		# Set New Country Leader
 		SOV_promote_to_country_leader_bukharin = yes
-		
+
 		retire_character = SOV_lavrenty_beriya
 		hidden_effect = { every_other_country = { news_event = { id = nsb_news.12 hours = 8 } } }
 		set_division_template_lock = {
@@ -8070,11 +7797,11 @@ country_event = {
 			AND = {
 				NOT = { has_character = SOV_nikolay_bukharin }
 				NOT = { has_character = SOV_aleksey_rykov }
-				OR = { 
+				OR = {
 					NOT = { has_character = SOV_grigory_zinovyev }
 					NOT = { always = no }
 				}
-				OR = { 
+				OR = {
 					NOT = { has_character = SOV_lev_kamenev }
 					NOT = { always = no }
 				}
@@ -8082,12 +7809,12 @@ country_event = {
 		}
 		# Set New Country Leader
 		IF = {
-			limit = { 
+			limit = {
 				any_unit_leader = { has_trait = trait_SOV_bukharinist }
 			}
 			ROOT = {
 				random_unit_leader = {
-					limit = { 
+					limit = {
 						has_trait = trait_SOV_bukharinist
 					}
 					add_country_leader_role = {
@@ -8096,16 +7823,16 @@ country_event = {
 							traits = { }
 							expire = "1965.1.1.1"
 						}
-						promote_leader = yes 
+						promote_leader = yes
 					}
-					
+
 				}
 			}
 		}
 		ELSE = {
 			ROOT = {
 				random_unit_leader = {
-					limit = { 
+					limit = {
 						NOT = { has_trait = trait_SOV_stalinist }
 					}
 					add_country_leader_role = {
@@ -8114,7 +7841,7 @@ country_event = {
 							traits = { }
 							expire = "1965.1.1.1"
 						}
-						promote_leader = yes 
+						promote_leader = yes
 					}
 				}
 			}
@@ -8184,7 +7911,7 @@ country_event = {
 	title = NSB_soviet_communist_civil_war.003.t
 	desc = NSB_soviet_communist_civil_war.003.desc
 	picture = GFX_report_event_generic_battle
-	
+
 	is_triggered_only = yes
 	trigger = { NOT = { has_global_flag = SOV_soviet_civil_war } }
 
@@ -8197,7 +7924,7 @@ country_event = {
 	# Civil war starts
 	option = {
 		name = NSB_soviet_communist_civil_war.003.a
-		ai_chance = { 
+		ai_chance = {
 			base = 20
 		}
 		trigger = {
@@ -8205,26 +7932,26 @@ country_event = {
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
-		
+		SOV_set_up_civil_war_capital = yes
+
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
-		
-		# DEPOSE STALIN 
-		# Set New Country Leader 
+		SOV_set_up_civil_war_army_fractions = yes
+
+		# DEPOSE STALIN
+		# Set New Country Leader
 		SOV_promote_to_country_leader_bukharin = yes
-		
+
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# RIGHT Opposition Specific Stuff 
-			SOV_right_opposition_civil_war_start = yes 
+			# RIGHT Opposition Specific Stuff
+			SOV_right_opposition_civil_war_start = yes
 		}
 	}
 	option = {
 		name = NSB_soviet_communist_civil_war.003.b
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
@@ -8232,58 +7959,58 @@ country_event = {
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
 		# DEPOSE STALIN
 		SOV_promote_to_country_leader_rykov = yes
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_right_opposition_civil_war_start = yes 	
+			# LEFT Opposition Specific Stuff
+			SOV_right_opposition_civil_war_start = yes
 		}
 	}
 
 	option = {
 		name = NSB_soviet_communist_civil_war.003.c
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
 			AND = {
 				NOT = { has_character = SOV_nikolay_bukharin }
 				NOT = { has_character = SOV_aleksey_rykov }
-				OR = { 
+				OR = {
 					NOT = { has_character = SOV_grigory_zinovyev }
 					NOT = { always = no }
 				}
-				OR = { 
+				OR = {
 					NOT = { has_character = SOV_lev_kamenev }
 					NOT = { always = no }
 				}
 			}
 		}
-		
+
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
 		# DEPOSE STALIN
 		IF = {
-			limit = { 
+			limit = {
 				any_unit_leader = { has_trait = trait_SOV_bukharinist }
 			}
 			ROOT = {
 				random_unit_leader = {
-					limit = { 
+					limit = {
 						has_trait = trait_SOV_bukharinist
 					}
 					add_country_leader_role = {
@@ -8292,16 +8019,16 @@ country_event = {
 							traits = { }
 							expire = "1965.1.1.1"
 						}
-						promote_leader = yes 
+						promote_leader = yes
 					}
-					
+
 				}
 			}
 		}
 		ELSE = {
 			ROOT = {
 				random_unit_leader = {
-					limit = { 
+					limit = {
 						NOT = { has_trait = trait_SOV_stalinist }
 					}
 					add_country_leader_role = {
@@ -8310,7 +8037,7 @@ country_event = {
 							traits = { }
 							expire = "1965.1.1.1"
 						}
-						promote_leader = yes 
+						promote_leader = yes
 					}
 				}
 			}
@@ -8334,23 +8061,23 @@ country_event = {
 				}
 			}
 		}
-		
-		
-		
+
+
+
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_right_opposition_civil_war_start = yes  
+			# LEFT Opposition Specific Stuff
+			SOV_right_opposition_civil_war_start = yes
 		}
-				
+
 	}
 	# Zinovyev
 	option = {
 		name = NSB_soviet_communist_civil_war.003.d
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
@@ -8359,26 +8086,26 @@ country_event = {
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
 		# DEPOSE STALIN
-		SOV_promote_to_country_leader_zinovyev = yes 	
+		SOV_promote_to_country_leader_zinovyev = yes
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_right_opposition_civil_war_start = yes 	
+			# LEFT Opposition Specific Stuff
+			SOV_right_opposition_civil_war_start = yes
 		}
 	}
 	# Kamenev
 	option = {
 		name = NSB_soviet_communist_civil_war.003.e
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
@@ -8387,20 +8114,20 @@ country_event = {
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 
 		# Determine Army size
-		SOV_set_up_civil_war_army_fractions = yes 
+		SOV_set_up_civil_war_army_fractions = yes
 
-		# DEPOSE STALIN 
-		SOV_promote_to_country_leader_kamenev = yes 
+		# DEPOSE STALIN
+		SOV_promote_to_country_leader_kamenev = yes
 
 		hidden_effect = {
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
+			SOV_start_civil_war = yes
 
-			# LEFT Opposition Specific Stuff 
-			SOV_right_opposition_civil_war_start = yes 	
+			# LEFT Opposition Specific Stuff
+			SOV_right_opposition_civil_war_start = yes
 		}
 	}
 
@@ -8412,7 +8139,7 @@ country_event = {
 	title = NSB_soviet_communist_civil_war.004.t
 	desc = NSB_soviet_communist_civil_war.004.desc
 	picture = GFX_report_event_generic_rally2
-	
+
 	is_triggered_only = yes
 	immediate = {
 		set_temp_variable = { temp_support = party_popularity@communism }
@@ -8421,7 +8148,7 @@ country_event = {
 		multiply_variable = { volunteer_mp = temp_support }
 		round_variable = volunteer_mp
 		set_variable = { volunteer_mp_org = volunteer_mp }
-		
+
 		multiply_variable = { volunteer_mp_org = -50 }
 		multiply_variable = { volunteer_mp = -10 }
 	}
@@ -8468,7 +8195,7 @@ country_event = {
 			ideology = communism
 			popularity = -0.05
 		}
-		
+
 	}
 
 	# anyone - Oh
@@ -8518,21 +8245,21 @@ country_event = {
 				infantry = { x = 1 y = 0 }
 				infantry = { x = 1 y = 1 }
 			}
-		    is_locked = yes 
+		    is_locked = yes
 		}
 		IF = {
 			limit = {
 				var:SOV.SOV_civil_war_start_state = { is_controlled_by = SOV }
 			}
 			var:SOV.SOV_civil_war_start_state = {
-				create_unit = { 
+				create_unit = {
 					division = "name = \"International Brigade\" division_template = \"International Brigades\" start_experience_factor = 0.1 start_equipment_factor = 1.0" owner = ROOT count = var:SOV.SOV_international_brigades_mp
 				}
 			}
 		}
 		ELSE = {
 			random_owned_controlled_state = {
-				create_unit = { 
+				create_unit = {
 					division = "name = \"International Brigade\" division_template = \"International Brigades\" start_experience_factor = 0.1 start_equipment_factor = 1.0" owner = ROOT count = var:SOV.SOV_international_brigades_mp
 				}
 			}
@@ -8546,7 +8273,7 @@ country_event = {
 	title = NSB_soviet_communist_civil_war.006.t
 	desc = NSB_soviet_communist_civil_war.006.desc
 	picture = GFX_report_event_worker_protests
-	
+
 	is_triggered_only = yes
 	trigger = { SOV_soviet_civil_war_not_started = yes }
 	# Allow Uprisings
@@ -8555,12 +8282,12 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		SOV_opposition_support_low_increase_effect = yes 
+		SOV_opposition_support_low_increase_effect = yes
 		var:SOV_uprising_state = { SOV_set_civil_war_state = yes }
-		
+
 		random_list = {
 			25 = {
-				SOV_paranoia_medium_increase_effect = yes 
+				SOV_paranoia_medium_increase_effect = yes
 				IF = {
 					limit = {
 						var:SOV_uprising_state = { dockyard  > 0 }
@@ -8581,21 +8308,21 @@ country_event = {
 				}
 			}
 			25 = {
-				SOV_paranoia_low_increase_effect = yes 
-				add_stability = -0.05	
+				SOV_paranoia_low_increase_effect = yes
+				add_stability = -0.05
 			}
 			25 = {
-				SOV_paranoia_low_increase_effect = yes 
+				SOV_paranoia_low_increase_effect = yes
 				add_popularity = {
 					ideology = democratic
 					popularity = 0.02
 				}
 			}
 			25 = {
-				SOV_paranoia_very_low_increase_effect = yes 
-			}	
+				SOV_paranoia_very_low_increase_effect = yes
+			}
 		}
-		# trigger new uprising soemwhere else 
+		# trigger new uprising soemwhere else
 		hidden_effect = {
 			country_event = {
 				id = NSB_soviet_communist_civil_war.007
@@ -8613,16 +8340,16 @@ country_event = {
 			modifier = {
 				factor = 0 # The AI shouldn't do this unless it is a bad spot
 				OR = {
-					has_political_power > 0 
-					check_variable = { SOV_paranoia < 65 } 
+					has_political_power > 0
+					check_variable = { SOV_paranoia < 65 }
 				}
-			} 
+			}
 		}
-		SOV_opposition_support_low_decrease_effect = yes 
-		SOV_paranoia_low_decrease_effect = yes 
+		SOV_opposition_support_low_decrease_effect = yes
+		SOV_paranoia_low_decrease_effect = yes
 		add_political_power = -75
 		add_popularity = {
-			ideology = communism 
+			ideology = communism
 			popularity = -0.05
 		}
 	}
@@ -8641,7 +8368,7 @@ country_event = {
 		name = NSB_soviet_communist_civil_war.007.a
 		random_owned_state = {
 			limit = {
-				SOV_is_unaligned_state = yes 
+				SOV_is_unaligned_state = yes
 				NOT = { region = 133}
 				NOT = { region = 132}
 				OR = {
@@ -8658,7 +8385,7 @@ country_event = {
 	}
 }
 
-# Stalin Surivives 
+# Stalin Surivives
 news_event = {
 	id = NSB_soviet_communist_civil_war.008
 	title = NSB_soviet_communist_civil_war.008.t
@@ -8668,7 +8395,7 @@ news_event = {
 
 	option = {
 		name = NSB_soviet_communist_civil_war.008.a
-		
+
 	}
 }
 
@@ -8679,7 +8406,7 @@ news_event = {
 	desc = NSB_soviet_communist_civil_war.009.desc
 	picture = GFX_news_event_generic_funeral
 	is_triggered_only = yes
-	major = no 
+	major = no
 
 	option = {
 		name = NSB_soviet_communist_civil_war.009.a
@@ -8696,14 +8423,14 @@ country_event = {
 	title = NSB_soviet_communist_civil_war.010.t
 	desc = NSB_soviet_communist_civil_war.010.desc
 	picture = GFX_report_event_soviet_japanese_pact
-	
+
 	is_triggered_only = yes
 
 	option = {
 		name = NSB_soviet_communist_civil_war.010.a
-		var:SOS.SOV_general_to_desert = { 
+		var:SOS.SOV_general_to_desert = {
 			remove_unit_leader_trait = trait_SOV_cowed_by_stalin_army
-			set_nationality = ROOT 
+			set_nationality = ROOT
 		}
 
 		SOS = {
@@ -8717,7 +8444,7 @@ country_event = {
 				navy_ratio = 0
 				air_ratio = 0
 				keep_unit_leaders_trigger = {
-					always = yes 
+					always = yes
 				}
 			}
 
@@ -8731,7 +8458,7 @@ country_event = {
 	title = NSB_soviet_permanent_revolution.1.t
 	desc = NSB_soviet_permanent_revolution.1.desc
 	picture = GFX_report_event_soviet_purge_speech
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -8770,7 +8497,7 @@ country_event = {
 	title = NSB_soviet_for_the_common_good.1.t
 	desc = NSB_soviet_for_the_common_good.1.desc
 	picture = GFX_report_event_SOV_demands
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -8846,25 +8573,25 @@ country_event = {
 	# Civil war starts
 	option = {
 		name = NSB_Soviet_fascist_civil_war.001.a
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 
 		# SET UP NEW CAPITAL - This is where the player will launch the uprising from
-		SOV_set_up_civil_war_capital = yes 
+		SOV_set_up_civil_war_capital = yes
 		hidden_effect = {
 
 			# Determine Army size
-			SOV_set_up_civil_war_army_fractions = yes 
+			SOV_set_up_civil_war_army_fractions = yes
 
 			# DEPOSE STALIN
-			SOV_promote_to_country_leader_provisional = yes 
+			SOV_promote_to_country_leader_provisional = yes
 
 			#START CIVIL WAR
-			SOV_start_civil_war = yes 
-			
+			SOV_start_civil_war = yes
+
 			# Exiles stuff set up
-			SOV_exiles_civil_war_start = yes 
+			SOV_exiles_civil_war_start = yes
 
 		}
 	}
@@ -8879,16 +8606,16 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		
+
 	}
 
 	option = {
 		name = NSB_Soviet_fascist_civil_war.002.a
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
-		SOV_the_eyes_fear_units = yes 
-		
+		SOV_the_eyes_fear_units = yes
+
 	}
 }
 
@@ -8898,10 +8625,10 @@ unit_leader_event = {
 	desc = NSB_Soviet_fascist_civil_war.003.desc
 	# picture = GFX_report_event_SOV_mongolia_cavalry
 	is_triggered_only = yes
-	hidden = no 
+	hidden = no
 
 	immediate = {
-		
+
 	}
 
 	option = {
@@ -8916,15 +8643,15 @@ country_event = {
 	desc = NSB_Soviet_fascist_civil_war.004.desc
 	picture = GFX_report_event_SOV_mongolia_cavalry
 	is_triggered_only = yes
-	hidden = yes  
+	hidden = yes
 
 	immediate = {
-		
+
 	}
 
 	option = {
 		name = NSB_Soviet_fascist_civil_war.004.a
-		SOV_grigory_semyonov = { 
+		SOV_grigory_semyonov = {
 			unit_leader_event = {
 				id = NSB_Soviet_fascist_civil_war.003
 				hours = 0
@@ -8935,11 +8662,11 @@ country_event = {
 
 ###############################################################################################################
 
- ##  ### #   # ### #       #   #  ##  ###       ##   ##  #   # #   #  ##  #  #     ### #   # ### #  # ###  ## 
-#  #  #  #   #  #  #       #   # #  # #  #     #  # #  # ## ## ## ## #  # ## #     #   #   # #   ## #  #  #   
-#     #   # #   #  #       # # # #### ###      #    #  # # # # # # # #  # # ##     ##   # #  ##  # ##  #   #  
-#  #  #   # #   #  #       # # # #  # #  #     #  # #  # #   # #   # #  # #  #     #    # #  #   #  #  #    # 
- ##  ###   #   ### ###      # #  #  # #  #      ##   ##  #   # #   #  ##  #  #     ###   #   ### #  #  #  ##  
+ ##  ### #   # ### #       #   #  ##  ###       ##   ##  #   # #   #  ##  #  #     ### #   # ### #  # ###  ##
+#  #  #  #   #  #  #       #   # #  # #  #     #  # #  # ## ## ## ## #  # ## #     #   #   # #   ## #  #  #
+#     #   # #   #  #       # # # #### ###      #    #  # # # # # # # #  # # ##     ##   # #  ##  # ##  #   #
+#  #  #   # #   #  #       # # # #  # #  #     #  # #  # #   # #   # #  # #  #     #    # #  #   #  #  #    #
+ ##  ###   #   ### ###      # #  #  # #  #      ##   ##  #   # #   #  ##  #  #     ###   #   ### #  #  #  ##
 
 ##############################################################################################################
 
@@ -8948,26 +8675,26 @@ country_event = {
 	id = NSB_soviet_civil_war_common.001
 	title = NSB_soviet_civil_war_common.001.t
 	desc = {
-		text = NSB_soviet_civil_war_common.001.desc_left 
+		text = NSB_soviet_civil_war_common.001.desc_left
 		trigger = { SOV_is_left_opposition = yes }
 	}
 	desc = {
-		text = NSB_soviet_civil_war_common.001.desc_right_concessions 
-		trigger = { 
-			SOV_is_right_opposition = yes 
+		text = NSB_soviet_civil_war_common.001.desc_right_concessions
+		trigger = {
+			SOV_is_right_opposition = yes
 			OR = {
 				has_country_flag = SOV_CSW_transfer_vladivostok_flag
-				has_country_flag = SOV_CSW_transfer_sakhalin_flag 
-				has_country_flag = SOV_CSW_baku_oil_flag 
-				has_country_flag = SOV_CSW_ukraine_germany_flag 
-				has_country_flag = SOV_CSW_belarus_uk_flag  
+				has_country_flag = SOV_CSW_transfer_sakhalin_flag
+				has_country_flag = SOV_CSW_baku_oil_flag
+				has_country_flag = SOV_CSW_ukraine_germany_flag
+				has_country_flag = SOV_CSW_belarus_uk_flag
 			}
 		}
 	}
 	desc = {
-		text = NSB_soviet_civil_war_common.001.desc_right_no_concessions 
-		trigger = { 
-			SOV_is_right_opposition = yes 
+		text = NSB_soviet_civil_war_common.001.desc_right_no_concessions
+		trigger = {
+			SOV_is_right_opposition = yes
 			NOT = { has_country_flag = SOV_CSW_transfer_vladivostok_flag }
 			NOT = { has_country_flag = SOV_CSW_transfer_sakhalin_flag }
 			NOT = { has_country_flag = SOV_CSW_baku_oil_flag }
@@ -8977,22 +8704,22 @@ country_event = {
 	}
 	desc = {
 		text = NSB_soviet_civil_war_common.001.desc_exiles
-		trigger = { 
-			SOV_is_exiles = yes 
+		trigger = {
+			SOV_is_exiles = yes
 		}
 	}
 	picture = GFX_report_event_generic_ruins
 
 	is_triggered_only = yes
 
-	
+
 	option = {
 		name = NSB_soviet_civil_war_common.001.a
 
-		# Vladivostok 
+		# Vladivostok
 		IF = {
 			limit = {
-				has_country_flag = SOV_CSW_transfer_vladivostok_flag 
+				has_country_flag = SOV_CSW_transfer_vladivostok_flag
 				owns_state = 408
 			}
 			JAP = {
@@ -9008,10 +8735,10 @@ country_event = {
 			set_nationality = JAP
 		}
 
-		# North Sakhalin 
+		# North Sakhalin
 		IF = {
 			limit = {
-				has_country_flag = SOV_CSW_transfer_sakhalin_flag 
+				has_country_flag = SOV_CSW_transfer_sakhalin_flag
 				owns_state = 655
 			}
 			JAP = {
@@ -9022,7 +8749,7 @@ country_event = {
 		# Baku Oil
 		IF = {
 			limit = {
-				has_country_flag = SOV_CSW_baku_oil_flag 
+				has_country_flag = SOV_CSW_baku_oil_flag
 				owns_state = 229
 			}
 			give_resource_rights = { receiver = GER state = 229 }
@@ -9037,32 +8764,32 @@ country_event = {
 			remove_unit_leader_trait = trait_SOV_foreign_military_advisor
 		}
 
-		# Ukrainian oil for Germany 
+		# Ukrainian oil for Germany
 		IF = {
 			limit = {
-				has_country_flag = SOV_CSW_ukraine_germany_flag 
-				
+				has_country_flag = SOV_CSW_ukraine_germany_flag
+
 			}
-			
+
 		}
 
 		# Independence for Belarus
-		
+
 		IF = {
 			limit = {
-				has_country_flag = SOV_CSW_belarus_uk_flag 
+				has_country_flag = SOV_CSW_belarus_uk_flag
 			}
 			release = BLR
 		}
 
 
-		# Set capital 
+		# Set capital
 		country_event = {
 			id = NSB_soviet_civil_war_common.002
 			days = 7
 			random_days = 5
 		}
-		# De-stalinization 
+		# De-stalinization
 		country_event = {
 			id = NSB_soviet_civil_war_common.010
 			days = 21
@@ -9079,7 +8806,7 @@ country_event = {
 	id = NSB_soviet_civil_war_common.002
 	title = NSB_soviet_civil_war_common.002.t
 	desc = NSB_soviet_civil_war_common.002.desc
-	picture = GFX_report_event_generic_ruins 
+	picture = GFX_report_event_generic_ruins
 
 	is_triggered_only = yes
 
@@ -9090,7 +8817,7 @@ country_event = {
 			base = 10
 			modifier = {
 				factor = 1.5
-				SOV_is_right_opposition = yes 
+				SOV_is_right_opposition = yes
 			}
 			modifier = {
 				factor = 2
@@ -9098,8 +8825,8 @@ country_event = {
 			}
 		}
 		trigger = {
-			219 = { 
-				is_owned_by = ROOT 
+			219 = {
+				is_owned_by = ROOT
 				is_controlled_by = ROOT
 			}
 		}
@@ -9117,8 +8844,8 @@ country_event = {
 			}
 		}
 		trigger = {
-			195 = { 
-				is_owned_by = ROOT 
+			195 = {
+				is_owned_by = ROOT
 				is_controlled_by = ROOT
 			}
 			NOT = { SOV_is_exiles = yes }
@@ -9136,8 +8863,8 @@ country_event = {
 			}
 		}
 		trigger = {
-			195 = { 
-				is_owned_by = ROOT 
+			195 = {
+				is_owned_by = ROOT
 				is_controlled_by = ROOT
 			}
 			NOT = { SOV_is_exiles = yes }
@@ -9167,8 +8894,8 @@ country_event = {
 			base = 2
 		}
 		trigger = {
-			408 = { 
-				is_owned_by = ROOT 
+			408 = {
+				is_owned_by = ROOT
 				is_controlled_by = ROOT
 			}
 			SOV_is_exiles = yes
@@ -9182,8 +8909,8 @@ country_event = {
 			base = 10
 		}
 		trigger = {
-			195 = { 
-				is_owned_by = ROOT 
+			195 = {
+				is_owned_by = ROOT
 				is_controlled_by = ROOT
 			}
 			SOV_is_exiles = yes
@@ -9209,27 +8936,27 @@ country_event = {
 	# Here we go
 	option = {
 		name = NSB_soviet_civil_war_common.003.a
-		IF = { 
+		IF = {
 			limit = {
-				SOV_is_left_opposition = yes 
+				SOV_is_left_opposition = yes
 			}
 			country_event = {
 				id = NSB_soviet_communist_civil_war.001
 				hours = 1
 			}
 		}
-		ELSE_IF = { 
+		ELSE_IF = {
 			limit = {
-				SOV_is_right_opposition = yes 
+				SOV_is_right_opposition = yes
 			}
 			country_event = {
 				id = NSB_soviet_communist_civil_war.003
 				hours = 1
 			}
 		}
-		ELSE_IF = { 
+		ELSE_IF = {
 			limit = {
-				SOV_is_exiles = yes 
+				SOV_is_exiles = yes
 			}
 			country_event = {
 				id = NSB_Soviet_fascist_civil_war.001
@@ -9243,7 +8970,7 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.004
 	title = NSB_soviet_civil_war_common.004.t
-	desc = NSB_soviet_civil_war_common.004.desc  
+	desc = NSB_soviet_civil_war_common.004.desc
 	# # Hidden event, no need for picture
 	is_triggered_only = yes
 	hidden = yes
@@ -9252,8 +8979,8 @@ country_event = {
 	}
 	option = {
 		name = NSB_soviet_civil_war_common.004.a
-		IF = { 
-			limit = { 
+		IF = {
+			limit = {
 				NOT = { has_global_flag = SOV_soviet_civil_war_over } # Sanity check, in order not to activate more missions once the war has started
 			}
 			random_list = {
@@ -9294,7 +9021,7 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.005
 	title = NSB_soviet_civil_war_common.005.t
-	desc = NSB_soviet_civil_war_common.005.desc 
+	desc = NSB_soviet_civil_war_common.005.desc
 	# picture =  # Hidden event, no need for picture
 	is_triggered_only = yes
 	hidden = yes
@@ -9351,17 +9078,17 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		
+
 	}
 
 	option = {
 		name = NSB_soviet_civil_war_common.006.a
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		custom_effect_tooltip = SOV_popular_uprising_units_tt
 		hidden_effect = { SOV_popular_uprising_units = yes }
-		
+
 	}
 }
 
@@ -9386,17 +9113,17 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		
+
 	}
 	# Volgograd
 	option = {
 		name = NSB_soviet_civil_war_common.010.a
-		
-		ai_chance = { 
+
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
-			always = yes 
+			always = yes
 		}
 		# Stalingrad
 		set_province_name = {
@@ -9404,7 +9131,7 @@ country_event = {
 			name = SOV_Volgograd
 		}
 		hidden_effect = { 217 = { set_state_name = SOV_Volgograd } }
-		# Stalino / Donetsk / Yuzovka / Trotsk 
+		# Stalino / Donetsk / Yuzovka / Trotsk
 		set_province_name = {
 			id = 6474
 			name = SOV_Donetsk
@@ -9429,7 +9156,7 @@ country_event = {
 		IF = {
 			limit = {
 				195 = { is_capital = no }
-				SOV_is_exiles = yes 
+				SOV_is_exiles = yes
 			}
 			set_province_name = {
 				id = 3151
@@ -9440,7 +9167,7 @@ country_event = {
 		# Engels / Pokrovsk / Kosakenstadt + Marksshtadt / Yekaterinograd / Baronsk
 		IF = {
 			limit = {
-				SOV_is_exiles = yes 
+				SOV_is_exiles = yes
 			}
 			set_province_name = {
 				id = 11523
@@ -9509,7 +9236,7 @@ country_event = {
 			}
 		}
 
-		# Sverdlovsk / Yekaterinburg /  
+		# Sverdlovsk / Yekaterinburg /
 		IF = {
 			limit = { SOV_is_exiles = yes }
 			set_province_name = {
@@ -9573,12 +9300,12 @@ country_event = {
 	# Tsaritsyn
 	option = {
 		name = NSB_soviet_civil_war_common.010.b
-		
-		ai_chance = { 
+
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
-			SOV_is_exiles = yes 
+			SOV_is_exiles = yes
 		}
 		# Stalingrad
 		set_province_name = {
@@ -9586,7 +9313,7 @@ country_event = {
 			name = SOV_Tsaritsyn
 		}
 		hidden_effect = { 217 = { set_state_name = SOV_Tsaritsyn } }
-		# Stalino / Donetsk / Yuzovka / Trotsk 
+		# Stalino / Donetsk / Yuzovka / Trotsk
 		set_province_name = {
 			id = 6474
 			name = SOV_Yuzovka
@@ -9610,7 +9337,7 @@ country_event = {
 		IF = {
 			limit = {
 				195 = { is_capital = no }
-				SOV_is_exiles = yes 
+				SOV_is_exiles = yes
 			}
 			set_province_name = {
 				id = 3151
@@ -9621,7 +9348,7 @@ country_event = {
 		# Engels / Pokrovsk / Kosakenstadt + Marksshtadt / Yekaterinograd / Baronsk
 		IF = {
 			limit = {
-				SOV_is_exiles = yes 
+				SOV_is_exiles = yes
 			}
 			set_province_name = {
 				id = 11523
@@ -9697,7 +9424,7 @@ country_event = {
 			}
 		}
 
-		# Sverdlovsk / Yekaterinburg /  
+		# Sverdlovsk / Yekaterinburg /
 		IF = {
 			limit = { SOV_is_exiles = yes }
 			set_province_name = {
@@ -9756,28 +9483,28 @@ country_event = {
 			}
 			hidden_effect = { 250 = { set_state_name = SOV_Simbirsk } }
 		}
-	
-		
+
+
 	}
 	# Trotskygrad
 	option = {
 		name = NSB_soviet_civil_war_common.010.c
-		
-		ai_chance = { 
+
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
 			SOV_is_left_opposition = yes
 		}
-		
+
 		# Stalingrad
 		set_province_name = {
 			id = 3529
 			name = SOV_Trotskygrad
 		}
 		hidden_effect = { 217 = { set_state_name = SOV_Trotskygrad } }
-		
-		# Stalino / Donetsk / Yuzovka / Trotsk 
+
+		# Stalino / Donetsk / Yuzovka / Trotsk
 		set_province_name = {
 			id = 6474
 			name = SOV_Trotsk
@@ -9821,13 +9548,13 @@ country_event = {
 			name = SOV_Nizhny_Novgorod
 		}
 		hidden_effect = { 252 = { set_state_name = SOV_Nizhny_Novgorod } }
-		
+
 	}
 	# Bukharino - Only if Right opposition, but Bukharin has been killed
 	option = {
 		name = NSB_soviet_civil_war_common.010.d
-		
-		ai_chance = { 
+
+		ai_chance = {
 			base = 10
 		}
 		trigger = {
@@ -9840,7 +9567,7 @@ country_event = {
 			name = SOV_Bukharino
 		}
 		hidden_effect = { 217 = { set_state_name = SOV_Bukharino } }
-		# Stalino / Donetsk / Yuzovka / Trotsk 
+		# Stalino / Donetsk / Yuzovka / Trotsk
 		set_province_name = {
 			id = 6474
 			name = SOV_Donetsk
@@ -9866,7 +9593,7 @@ country_event = {
 			id = 6124
 			name = SOV_Vyatka
 		}
-		hidden_effect = { 400 = { set_state_name = SOV_Vyatka } }		
+		hidden_effect = { 400 = { set_state_name = SOV_Vyatka } }
 
 		# Gorky / Nizhny Novgorod
 		set_province_name = {
@@ -9883,13 +9610,13 @@ country_event = {
 	id = NSB_soviet_civil_war_common.100
 	title = NSB_soviet_civil_war_common.100.t
 	desc = {
-		text = NSB_soviet_civil_war_common.100.desc  
+		text = NSB_soviet_civil_war_common.100.desc
 		trigger = {
 			SOV = { SOV_is_exiles = no }
 		}
 	}
 	desc = {
-		text = NSB_soviet_civil_war_common.100_exiles.desc  
+		text = NSB_soviet_civil_war_common.100_exiles.desc
 		trigger = {
 			SOV = { SOV_is_exiles = yes }
 		}
@@ -9897,12 +9624,12 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			random_army_leader = {
-				set_variable = { SOV.SOV_japanese_general = THIS } 
+				set_variable = { SOV.SOV_japanese_general = THIS }
 			}
 		}
 	}
 
-	picture = "[GetJapaneseNegotiationsPicture]" 
+	picture = "[GetJapaneseNegotiationsPicture]"
 
 	is_triggered_only = yes
 
@@ -9913,7 +9640,7 @@ country_event = {
 			base = 2 # Japan should be pretty eager to say yes to this deal
 			modifier = {
 				factor = 5 # Military wants this!
-				JAP = { 
+				JAP = {
 					has_government = fascism
 				}
 			}
@@ -9939,7 +9666,7 @@ country_event = {
 		FROM = {
 			country_event = {
 				id = NSB_soviet_civil_war_common.101
-				hours = 8 
+				hours = 8
 				random_hours = 12
 			}
 		}
@@ -9954,8 +9681,8 @@ country_event = {
 		ai_chance = {
 			base = 1
 			modifier = {
-				factor = 0 # A fascist / militarist Japan, not already at war won't say no. 
-				JAP = { 
+				factor = 0 # A fascist / militarist Japan, not already at war won't say no.
+				JAP = {
 					has_war = no
 					NOT = { has_government = democratic }
 					NOT = { has_government = communism }
@@ -9963,14 +9690,14 @@ country_event = {
 			}
 			modifier = {
 				factor = 1.5 # A non-fascist / militarist Japan, at war will be slightly more inclined not to commit manpower elsewhere
-				JAP = { 
-					has_war = yes 
+				JAP = {
+					has_war = yes
 					NOT = { has_government = democratic }
 					NOT = { has_government = communism }
 				}
 			}
 		}
-		
+
 		FROM = {
 			country_event = {
 				id = NSB_soviet_civil_war_common.102
@@ -9987,7 +9714,7 @@ country_event = {
 	id = NSB_soviet_civil_war_common.101
 	title = NSB_soviet_civil_war_common.101.t
 	desc = {
-		text = NSB_soviet_civil_war_common.101.desc  
+		text = NSB_soviet_civil_war_common.101.desc
 		trigger = {
 			NOT = { SOV_is_exiles = yes }
 		}
@@ -9998,7 +9725,7 @@ country_event = {
 			SOV_is_exiles = yes
 		}
 	}
-	picture = "[GetJapaneseNegotiationsPicture]" 
+	picture = "[GetJapaneseNegotiationsPicture]"
 
 	is_triggered_only = yes
 
@@ -10010,7 +9737,7 @@ country_event = {
 		IF = {
 			limit = {
 				has_global_flag = SOV_soviet_civil_war
-				
+
 			}
 			hidden_effect = { SOV_set_up_japanese_troops = yes }
 		}
@@ -10021,14 +9748,14 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.102
 	title = NSB_soviet_civil_war_common.102.t
-	desc = NSB_soviet_civil_war_common.102.desc 
-	picture = "[GetJapaneseNegotiationsPicture]" 
+	desc = NSB_soviet_civil_war_common.102.desc
+	picture = "[GetJapaneseNegotiationsPicture]"
 
 	is_triggered_only = yes
 
 	# Japan refuses
 	option = {
-		name = NSB_soviet_civil_war_common.102.a	
+		name = NSB_soviet_civil_war_common.102.a
 	}
 }
 
@@ -10039,15 +9766,15 @@ country_event = {
 	title = NSB_soviet_civil_war_common.103.t
 	desc = {
 		text = NSB_soviet_civil_war_common.103.desc_exiles
-		trigger = { SOV_is_exiles = yes } 
+		trigger = { SOV_is_exiles = yes }
 	}
 	desc = {
-		text = NSB_soviet_civil_war_common.103.desc  
+		text = NSB_soviet_civil_war_common.103.desc
 		trigger = {
 			NOT = { SOV_is_exiles = yes }
 		}
 	}
-	picture = "[GetJapaneseNegotiationsPicture]" 
+	picture = "[GetJapaneseNegotiationsPicture]"
 	immediate = {
 		# Count Rifles!
 		set_variable = { SOV.SOV_japanese_rifles = JAP.num_equipment@infantry_equipment }
@@ -10080,7 +9807,7 @@ country_event = {
 			base = 2 # Japan should be pretty eager to say yes to this deal
 			modifier = {
 				factor = 5 # Military wants this!
-				JAP = { 
+				JAP = {
 					has_government = fascism
 				}
 			}
@@ -10104,10 +9831,10 @@ country_event = {
 				infantry_equipment   > 400
 			}
 		}
-		
+
 		IF = {
-			limit = { 
-				SOV_soviet_civil_war_not_started = yes 
+			limit = {
+				SOV_soviet_civil_war_not_started = yes
 			}
 			set_temp_variable = { temp_rifles = SOV.SOV_japanese_rifles }
 			multiply_temp_variable = {temp_rifles = -1 }
@@ -10165,7 +9892,7 @@ country_event = {
 			base = 1 # Japan should be pretty eager to say yes to this deal
 			modifier = {
 				factor = 2 # Military wants this!
-				JAP = { 
+				JAP = {
 					has_government = fascism
 				}
 			}
@@ -10176,9 +9903,9 @@ country_event = {
 			}
 		}
 		IF = {
-			limit = { 
+			limit = {
 				OR = {
-					SOV_soviet_civil_war_not_started = yes 
+					SOV_soviet_civil_war_not_started = yes
 					# TODO Add relevant trigger for Fascist Civil war or simply remove this if using same...
 				}
 			}
@@ -10198,13 +9925,13 @@ country_event = {
 				amount = 200
 				target = SOV
 			}
-			
+
 		}
 		FROM = {
 			set_country_flag = SOV_CSW_transfer_sakhalin_flag
 			country_event = {
 				id = NSB_soviet_civil_war_common.104
-				hours = 8 
+				hours = 8
 				random_hours = 12
 			}
 		}
@@ -10217,23 +9944,23 @@ country_event = {
 			base = 1 # Japan should be pretty eager to say yes to this deal
 			modifier = {
 				factor = 3 # Military wants this!
-				JAP = { 
+				JAP = {
 					has_government = fascism
 				}
 			}
 		}
 		trigger = {
-			NOT = { 
+			NOT = {
 				has_equipment = {
 					infantry_equipment > 400
 				}
 			}
 		}
-		ROOT = { 
-			add_timed_idea = { 
-				idea = SOV_arms_purchases_idea 
-				days = 365 
-			} 
+		ROOT = {
+			add_timed_idea = {
+				idea = SOV_arms_purchases_idea
+				days = 365
+			}
 		}
 		set_variable = { SOV.SOV_japanese_rifles = 2500 }
 		set_variable = { SOV.SOV_japanese_guns = 200 }
@@ -10242,7 +9969,7 @@ country_event = {
 			set_country_flag = SOV_CSW_transfer_sakhalin_flag
 			country_event = {
 				id = NSB_soviet_civil_war_common.104
-				hours = 8 
+				hours = 8
 				random_hours = 12
 			}
 		}
@@ -10251,7 +9978,7 @@ country_event = {
 			IF = {
 				limit = {
 					OR = {
-						has_global_flag = SOV_soviet_civil_war 
+						has_global_flag = SOV_soviet_civil_war
 					}
 				}
 				FROM = {
@@ -10280,8 +10007,8 @@ country_event = {
 		ai_chance = {
 			base = 1
 			modifier = {
-				factor = 0 # A fascist / militarist Japan, not already at war won't say no. 
-				JAP = { 
+				factor = 0 # A fascist / militarist Japan, not already at war won't say no.
+				JAP = {
 					has_war = no
 					NOT = { has_government = democratic }
 					NOT = { has_government = communism }
@@ -10289,8 +10016,8 @@ country_event = {
 			}
 			modifier = {
 				factor = 1.25 # A non-fascist / militarist Japan, at war will be slightly more inclined not to commit equipment elsewhere
-				JAP = { 
-					has_war = yes 
+				JAP = {
+					has_war = yes
 					NOT = { has_government = democratic }
 					NOT = { has_government = communism }
 				}
@@ -10300,7 +10027,7 @@ country_event = {
 			country_event = {
 				id = NSB_soviet_civil_war_common.105
 				days = 2
-				random_hours = 12 
+				random_hours = 12
 			}
 		}
 	}
@@ -10310,8 +10037,8 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.104
 	title = NSB_soviet_civil_war_common.104.t
-	desc = NSB_soviet_civil_war_common.104.desc 
-	picture = "[GetJapaneseNegotiationsPicture]" 
+	desc = NSB_soviet_civil_war_common.104.desc
+	picture = "[GetJapaneseNegotiationsPicture]"
 
 	is_triggered_only = yes
 
@@ -10325,14 +10052,14 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.105
 	title = NSB_soviet_civil_war_common.105.t
-	desc = NSB_soviet_civil_war_common.105.desc 
-	picture = "[GetJapaneseNegotiationsPicture]"  
+	desc = NSB_soviet_civil_war_common.105.desc
+	picture = "[GetJapaneseNegotiationsPicture]"
 
 	is_triggered_only = yes
 
 	# Japan refuses
 	option = {
-		name = NSB_soviet_civil_war_common.105.a	
+		name = NSB_soviet_civil_war_common.105.a
 	}
 }
 
@@ -10341,34 +10068,34 @@ country_event = {
 	id = NSB_soviet_civil_war_common.106
 	title = NSB_soviet_civil_war_common.106.t
 	desc = {
-		text = NSB_soviet_civil_war_common.106.desc_right_opp_before 
-		trigger = { 
-			SOV_soviet_civil_war_not_started = yes 
+		text = NSB_soviet_civil_war_common.106.desc_right_opp_before
+		trigger = {
+			SOV_soviet_civil_war_not_started = yes
 			NOT = { SOV_is_exiles = yes }
 		}
 	}
 	desc = {
-		text = NSB_soviet_civil_war_common.106.desc_right_opp_civil_war 
-		trigger = { 
-			has_global_flag = SOV_soviet_civil_war 
+		text = NSB_soviet_civil_war_common.106.desc_right_opp_civil_war
+		trigger = {
+			has_global_flag = SOV_soviet_civil_war
 			NOT = { SOV_is_exiles = yes }
 		}
 	}
 	desc = {
-		text = NSB_soviet_civil_war_common.106.desc_exiles_before 
-		trigger = { 
-			SOV_soviet_civil_war_not_started = yes 
+		text = NSB_soviet_civil_war_common.106.desc_exiles_before
+		trigger = {
+			SOV_soviet_civil_war_not_started = yes
 			SOV_is_exiles = yes
 		}
 	}
 	desc = {
-		text = NSB_soviet_civil_war_common.106.desc_exiles_civil_war 
-		trigger = { 
-			has_global_flag = SOV_soviet_civil_war 
-			SOV_is_exiles = yes 
+		text = NSB_soviet_civil_war_common.106.desc_exiles_civil_war
+		trigger = {
+			has_global_flag = SOV_soviet_civil_war
+			SOV_is_exiles = yes
 		}
 	}
-	
+
 	picture =  GFX_report_event_generic_read_write
 
 	is_triggered_only = yes
@@ -10380,7 +10107,7 @@ country_event = {
 			base = 4 # It's most likely worth it
 			modifier = {
 				factor = 1.5 # fascists are extra keen to get hands on more oil
-				GER = { 
+				GER = {
 					has_government = fascism
 				}
 			}
@@ -10413,8 +10140,8 @@ country_event = {
 				hours = 1
 			}
 			IF = {
-				limit = { 
-					SOV_soviet_civil_war_not_started = no 
+				limit = {
+					SOV_soviet_civil_war_not_started = no
 				}
 				IF = {
 					limit = {
@@ -10424,12 +10151,12 @@ country_event = {
 					}
 					SOV = { add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = 100 producer = GER } }
 				}
-				ELSE = { 
+				ELSE = {
 					SOV = { add_equipment_to_stockpile = { type = light_tank_chassis_2 amount = 100 producer = GER variant_name = "Panzer II Ausf. a" } }
 				}
 				SOV = { add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 200 producer = GER } }
 			}
-		}	
+		}
 	}
 	# Yes plz - and let's send som "advisors"
 	option = {
@@ -10438,7 +10165,7 @@ country_event = {
 			base = 4 # It's most likely worth it
 			modifier = {
 				factor = 0.5 # Probably not as easy to motivate if democratic
-				GER = { 
+				GER = {
 					has_government = democratic
 				}
 			}
@@ -10449,7 +10176,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				GER = { 
+				GER = {
 					has_war = yes
 				}
 			}
@@ -10468,7 +10195,7 @@ country_event = {
 			country_event = {
 				id = NSB_soviet_civil_war_common.107
 				hours = 6
-			}	
+			}
 		}
 	}
 	# Refuse
@@ -10478,8 +10205,8 @@ country_event = {
 			base = 1
 			modifier = {
 				factor = 5
-				GER = { 
-					has_war = yes 
+				GER = {
+					has_war = yes
 				}
 			}
 		}
@@ -10487,8 +10214,8 @@ country_event = {
 			country_event = {
 				id = NSB_soviet_civil_war_common.108
 				hours = 6
-			}	
-		}	
+			}
+		}
 	}
 }
 
@@ -10497,23 +10224,23 @@ country_event = {
 	id = NSB_soviet_civil_war_common.107
 	title = NSB_soviet_civil_war_common.107.t
 	desc = {
-		text = NSB_soviet_civil_war_common.107.desc_advisors 
+		text = NSB_soviet_civil_war_common.107.desc_advisors
 		trigger = { has_country_flag = SOV_CSW_german_advisors_flag }
 	}
 	desc = {
-		text = NSB_soviet_civil_war_common.107.desc_normal 
+		text = NSB_soviet_civil_war_common.107.desc_normal
 		trigger = { NOT = { has_country_flag = SOV_CSW_german_advisors_flag } }
 	}
-	picture = GFX_report_event_generic_sign_treaty1  
+	picture = GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.107.a	
+		name = NSB_soviet_civil_war_common.107.a
 		IF = {
-			limit = { 
-				has_country_flag = SOV_soviet_civil_war 
-				has_country_flag = SOV_CSW_german_advisors_flag 
+			limit = {
+				has_country_flag = SOV_soviet_civil_war
+				has_country_flag = SOV_CSW_german_advisors_flag
 			}
 			GER = {
 				country_event = {
@@ -10523,7 +10250,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 }
 
 # Baku Oil fields no thanks
@@ -10536,16 +10263,16 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.108.a	
+		name = NSB_soviet_civil_war_common.108.a
 	}
-	
+
 }
 
 # Sending "advisors"
 country_event = {
 	id = NSB_soviet_civil_war_common.109
 	title = NSB_soviet_civil_war_common.109.t
-	desc = NSB_soviet_civil_war_common.109.desc 
+	desc = NSB_soviet_civil_war_common.109.desc
 	picture = GFX_report_event_german_inspect_troops
 	is_triggered_only = yes
 	immediate = {
@@ -10556,8 +10283,8 @@ country_event = {
 				set_variable = { ROOT.SOV_foreign_military_advisor_1 = THIS }
 			}
 			random_army_leader = {
-				limit = { 
-					# is_high_command = no 
+				limit = {
+					# is_high_command = no
 					NOT = { has_trait = trait_SOV_foreign_military_advisor }
 				}
 				add_unit_leader_trait = trait_SOV_foreign_military_advisor
@@ -10566,7 +10293,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = NSB_soviet_civil_war_common.109.a	
+		name = NSB_soviet_civil_war_common.109.a
 		#var:ROOT.SOV_foreign_military_advisor_1 = { set_nationality = SOV }
 		#var:ROOT.SOV_foreign_military_advisor_2 = { set_nationality = SOV }
 		every_army_leader = {
@@ -10582,7 +10309,7 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.110
 	title = NSB_soviet_civil_war_common.110.t
-	desc = NSB_soviet_civil_war_common.110.desc 
+	desc = NSB_soviet_civil_war_common.110.desc
 	picture =  GFX_report_event_generic_read_write
 
 	is_triggered_only = yes
@@ -10619,23 +10346,23 @@ country_event = {
 				id = NSB_soviet_civil_war_common.111
 				hours = 6
 			}
-		}	
+		}
 	}
 	# Not interested
 	option = {
-		name = NSB_soviet_civil_war_common.110.b	
+		name = NSB_soviet_civil_war_common.110.b
 		ai_chance = {
 			base = 1
 			modifier = {
 				factor = 2 # Not as interested if already involved in a war
-				ROOT = { 
-					has_war = yes 
+				ROOT = {
+					has_war = yes
 				}
 			}
 			modifier = {
 				factor = 2 # Even less interested if already involved in a war and democratic
-				ROOT = { 
-					has_war = yes 
+				ROOT = {
+					has_war = yes
 					has_government = democratic
 				}
 			}
@@ -10660,13 +10387,13 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.111
 	title = NSB_soviet_civil_war_common.111.t
-	desc = NSB_soviet_civil_war_common.111.desc 
+	desc = NSB_soviet_civil_war_common.111.desc
 	picture =  GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.111.a	
+		name = NSB_soviet_civil_war_common.111.a
 	}
 }
 
@@ -10674,13 +10401,13 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.112
 	title = NSB_soviet_civil_war_common.112.t
-	desc = NSB_soviet_civil_war_common.112.desc 
+	desc = NSB_soviet_civil_war_common.112.desc
 	picture =  GFX_report_event_german_reichstag_gathering
 
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.112.a	
+		name = NSB_soviet_civil_war_common.112.a
 	}
 }
 
@@ -10690,16 +10417,16 @@ country_event = {
 	title = NSB_soviet_civil_war_common.113.t
 	desc = {
 		text = NSB_soviet_civil_war_common.113.desc_before
-		trigger = { SOV_soviet_civil_war_not_started = yes } 
+		trigger = { SOV_soviet_civil_war_not_started = yes }
 	}
 	desc = {
 		text = NSB_soviet_civil_war_common.113.desc_started
-		trigger = { 
+		trigger = {
 			OR = {
 				has_global_flag = SOV_soviet_civil_war
 				has_global_flag = SOV_soviet_civil_war_over
 			}
-		} 
+		}
 	}
 
 	picture =  GFX_report_event_gre_rural_rebels
@@ -10708,9 +10435,9 @@ country_event = {
 
 	# Ukraine attacks Stalin now
 	option = {
-		name = NSB_soviet_civil_war_common.113.a	
+		name = NSB_soviet_civil_war_common.113.a
 		trigger = {
-			has_global_flag = SOV_soviet_civil_war  
+			has_global_flag = SOV_soviet_civil_war
 		}
 		country_event = {
 			id = NSB_soviet_civil_war_common.114
@@ -10719,17 +10446,17 @@ country_event = {
 	}
 	# Ukrainians are ready to strike when war breaks out
 	option = {
-		name = NSB_soviet_civil_war_common.113.b	
+		name = NSB_soviet_civil_war_common.113.b
 		trigger = {
-			SOV_soviet_civil_war_not_started = yes 
+			SOV_soviet_civil_war_not_started = yes
 		}
 		set_country_flag = SOV_CSW_ukraine_germany_ready_flag
 	}
 	# Civil war over, the Ukrainians will launch the rebellion anyhow
 	option = {
-		name = NSB_soviet_civil_war_common.114.b	
+		name = NSB_soviet_civil_war_common.114.b
 		trigger = {
-			has_global_flag = SOV_soviet_civil_war_over 
+			has_global_flag = SOV_soviet_civil_war_over
 		}
 		country_event = {
 			id = NSB_soviet_civil_war_common.114
@@ -10738,11 +10465,11 @@ country_event = {
 	}
 }
 
-# ukrainian insurrection starts 
+# ukrainian insurrection starts
 country_event = {
 	id = NSB_soviet_civil_war_common.114
 	title = NSB_soviet_civil_war_common.114.t
-	desc = NSB_soviet_civil_war_common.114.desc 
+	desc = NSB_soviet_civil_war_common.114.desc
 	picture =  GFX_report_event_generic_rally2
 
 	is_triggered_only = yes
@@ -10754,32 +10481,32 @@ country_event = {
 				}
 				every_owned_state = {
 					limit = { is_core_of = UKR }
-					
+
 				}
 			}
 		}
-		
+
 	}
 
 	option = {
-		name = NSB_soviet_civil_war_common.114.a	
+		name = NSB_soviet_civil_war_common.114.a
 		trigger = {
-			has_global_flag = SOV_soviet_civil_war_over 
+			has_global_flag = SOV_soviet_civil_war_over
 		}
-		
+
 		declare_war_on = {
 			target = UKR
 			type = annex_everything
-		} 
-	}
-	option = {
-		name = NSB_soviet_civil_war_common.114.b	
-		trigger = {
-			has_global_flag = SOV_soviet_civil_war_over 
 		}
 	}
 	option = {
-		name = NSB_soviet_civil_war_common.114.c	
+		name = NSB_soviet_civil_war_common.114.b
+		trigger = {
+			has_global_flag = SOV_soviet_civil_war_over
+		}
+	}
+	option = {
+		name = NSB_soviet_civil_war_common.114.c
 		trigger = {
 			NOT = { has_global_flag = SOV_soviet_civil_war_over }
 		}
@@ -10787,7 +10514,7 @@ country_event = {
 			declare_war_on = {
 				target = UKR
 				type = annex_everything
-			} 
+			}
 		}
 	}
 }
@@ -10838,17 +10565,17 @@ country_event = {
 				id = NSB_soviet_civil_war_common.116
 				hours = 1
 			}
-		}	
+		}
 	}
 	# Not interested
 	option = {
-		name = NSB_soviet_civil_war_common.115.b	
+		name = NSB_soviet_civil_war_common.115.b
 		ai_chance = {
 			base = 1
 			modifier = {
 				factor = 5 # Not as interested if already involved in a war
-				ROOT = { 
-					has_war = yes 
+				ROOT = {
+					has_war = yes
 				}
 			}
 			modifier = {
@@ -10872,13 +10599,13 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.116
 	title = NSB_soviet_civil_war_common.116.t
-	desc = NSB_soviet_civil_war_common.116.desc 
+	desc = NSB_soviet_civil_war_common.116.desc
 	picture =  GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.116.a	
+		name = NSB_soviet_civil_war_common.116.a
 	}
 }
 
@@ -10886,13 +10613,13 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.117
 	title = NSB_soviet_civil_war_common.117.t
-	desc = NSB_soviet_civil_war_common.117.desc 
+	desc = NSB_soviet_civil_war_common.117.desc
 	picture =  GFX_report_event_generic_parliament
 
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.117.a	
+		name = NSB_soviet_civil_war_common.117.a
 	}
 }
 
@@ -10902,13 +10629,13 @@ country_event = {
 	title = NSB_soviet_civil_war_common.118.t
 	desc = NSB_soviet_civil_war_common.118.desc
 	picture = GFX_report_event_generic_sign_treaty2
-	
+
 	is_triggered_only = yes
 
 	# Give them a lot
 	option = {
 		name = NSB_soviet_civil_war_common.118.a
-		ai_chance = { 
+		ai_chance = {
 			base = 40
 			modifier = { #Appropriate PC for Foreign Affairs
 				factor = 1.5
@@ -10931,8 +10658,8 @@ country_event = {
 			}
 		}
 		IF = {
-			limit = { 
-				SOV_soviet_civil_war_not_started = yes 
+			limit = {
+				SOV_soviet_civil_war_not_started = yes
 			}
 			add_to_array = {
 				array = SOV.many_weapons_array
@@ -10964,7 +10691,7 @@ country_event = {
 	# Give them some
 	option = {
 		name = NSB_soviet_civil_war_common.118.b
-		ai_chance = { 
+		ai_chance = {
 			base = 20
 		}
 		trigger = {
@@ -10973,8 +10700,8 @@ country_event = {
 			}
 		}
 		IF = {
-			limit = { 
-				SOV_soviet_civil_war_not_started = yes 
+			limit = {
+				SOV_soviet_civil_war_not_started = yes
 			}
 			add_to_array = {
 				array = SOV.some_weapons_array
@@ -11005,7 +10732,7 @@ country_event = {
 	# we can buy some
 	option = {
 		name = NSB_soviet_civil_war_common.118.c
-		ai_chance = { 
+		ai_chance = {
 			base = 20
 		}
 		trigger = {
@@ -11015,14 +10742,14 @@ country_event = {
 		}
 		ROOT = { add_timed_idea = { idea = SOV_arms_purchases_idea days = 365 } }
 		IF = {
-			limit = { 
-				SOV_soviet_civil_war_not_started = yes 
+			limit = {
+				SOV_soviet_civil_war_not_started = yes
 			}
 			add_to_array = {
 				array = SOV.some_weapons_array
 				value = ROOT
 			}
-			
+
 		}
 		ELSE = {
 			# If war is raging, just send the stuff
@@ -11034,7 +10761,7 @@ country_event = {
 						producer = ROOT
 					}
 				}
-			}	
+			}
 		}
 		FROM = {
 			country_event = {
@@ -11045,12 +10772,12 @@ country_event = {
 		}
 		set_country_flag = SOV_supporting_trotsky_flag
 	}
-	
+
 
 	# Don't give them any
 	option = {
 		name = NSB_soviet_civil_war_common.118.d
-		ai_chance = { 
+		ai_chance = {
 			base = 10
 		}
 		FROM = {
@@ -11067,17 +10794,17 @@ country_event = {
 country_event = {
 	id = NSB_soviet_civil_war_common.119
 	title = NSB_soviet_civil_war_common.119.t
-	desc = NSB_soviet_civil_war_common.119.desc 
+	desc = NSB_soviet_civil_war_common.119.desc
 	picture =  GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.119.a	
+		name = NSB_soviet_civil_war_common.119.a
 	}
 }
 
-# No weapons 
+# No weapons
 country_event = {
 	id = NSB_soviet_civil_war_common.120
 	title = NSB_soviet_civil_war_common.120.t
@@ -11087,7 +10814,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.120.a	
+		name = NSB_soviet_civil_war_common.120.a
 	}
 }
 
@@ -11096,14 +10823,14 @@ country_event = {
 	id = NSB_soviet_civil_war_common.121
 	title = NSB_soviet_civil_war_common.121.t
 	desc = NSB_soviet_civil_war_common.121.desc
-	picture =  "[GetJapaneseNegotiationsPicture]" 
+	picture =  "[GetJapaneseNegotiationsPicture]"
 
 	is_triggered_only = yes
 
 	# hai
 	option = {
 		name = NSB_soviet_civil_war_common.121.a
-		ai_chance = { 
+		ai_chance = {
 			base = 50
 			modifier = {
 				factor = 10
@@ -11120,12 +10847,12 @@ country_event = {
 				days = 1
 				random_days = 2
 			}
-		}	
+		}
 	}
 	# iie
 	option = {
-		name = NSB_soviet_civil_war_common.121.b	
-		ai_chance = { 
+		name = NSB_soviet_civil_war_common.121.b
+		ai_chance = {
 			base = 10
 			modifier = {
 				factor = 2
@@ -11138,7 +10865,7 @@ country_event = {
 				days = 1
 				random_days = 2
 			}
-		}	
+		}
 	}
 }
 # They are coming to help us!
@@ -11158,9 +10885,9 @@ country_event = {
 		set_variable = { SOV_fascist_support_before_puppet = party_popularity_100@fascism }
 		set_variable = { SOV_neutrality_support_before_puppet = party_popularity_100@neutrality }
 		JAP = {
-			add_to_war = { 
-			    targeted_alliance = ROOT 
-				enemy = SOS 
+			add_to_war = {
+			    targeted_alliance = ROOT
+				enemy = SOS
 				hostility_reason = asked_to_join
 			}
 		}
@@ -11173,13 +10900,13 @@ country_event = {
 				set_autonomy = {
 					target = ROOT
 					autonomous_state = autonomy_integrated_puppet
-					end_wars  = no 
+					end_wars  = no
 					end_civil_wars = no
 				}
 			}
 		}
 		ELSE_IF = {
-			limit = { 
+			limit = {
 				NOT = {
 					has_dlc = "Waking the Tiger"
 					has_dlc = "Together for Victory"
@@ -11189,20 +10916,20 @@ country_event = {
 				set_autonomy = {
 					target = ROOT
 					autonomous_state = autonomy_puppet
-					end_wars  = no 
+					end_wars  = no
 					end_civil_wars = no
 				}
 			}
 		}
 		ELSE_IF = {
-			limit = { 
+			limit = {
 				has_dlc = "Waking the Tiger"
 			}
 			FROM = {
 				set_autonomy = {
 					target = ROOT
 					autonomous_state = autonomy_wtt_imperial_protectorate
-					end_wars  = no 
+					end_wars  = no
 					end_civil_wars = no
 				}
 			}
@@ -11214,7 +10941,7 @@ country_event = {
 					ruling_party = neutrality
 				}
 			}
-			# Reset popluarities to what they were before puppeting 
+			# Reset popluarities to what they were before puppeting
 			set_popularities = {
 				communism = SOV.SOV_communist_support_before_puppet
 				democratic = SOV.SOV_democratic_support_before_puppet
@@ -11225,7 +10952,7 @@ country_event = {
 			clear_variable = SOV.SOV_democratic_support_before_puppet
 			clear_variable = SOV.SOV_fascist_support_before_puppet
 			clear_variable = SOV.SOV_neutrality_support_before_puppet
-		}	
+		}
 	}
 }
 # Japan abandones us!
@@ -11238,7 +10965,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.123.a	
+		name = NSB_soviet_civil_war_common.123.a
 	}
 }
 
@@ -11252,7 +10979,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_civil_war_common.124.a	
+		name = NSB_soviet_civil_war_common.124.a
 	}
 }
 
@@ -11271,20 +10998,20 @@ country_event = {
 
 	option = {
 		name = NSB_soviet_civil_war_common.125.a
-		custom_effect_tooltip = SOS_army_desertions_tt	
+		custom_effect_tooltip = SOS_army_desertions_tt
 		hidden_effect = {
 			every_state = {
 				limit = {
 					OR = {
-						is_owned_by = SOV 
+						is_owned_by = SOV
 						is_owned_by = SOS
 					}
 				}
 				damage_units = {
-					state = THIS 
-					limit = { tag = SOS } 
+					state = THIS
+					limit = { tag = SOS }
 					damage = 0.1
-					ratio = yes  
+					ratio = yes
 					army = yes
 				}
 			}
@@ -11300,7 +11027,7 @@ country_event = {
 					navy_ratio = 0
 					air_ratio = 0
 					keep_unit_leaders_trigger = {
-						always = yes 
+						always = yes
 					}
 				}
 
@@ -11323,9 +11050,9 @@ country_event = {
 	}
 
 	option = {
-		name = NSB_soviet_civil_war_common.126.a	
-		
-		SOV = { 
+		name = NSB_soviet_civil_war_common.126.a
+
+		SOV = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 200
@@ -11335,7 +11062,7 @@ country_event = {
 				type = support_equipment
 				amount = 50
 				producer = SOS
-			}	
+			}
 		}
 		SOS = {
 			add_equipment_to_stockpile = {
@@ -11347,7 +11074,7 @@ country_event = {
 				type = support_equipment
 				amount = -50
 				producer = SOS
-			}	
+			}
 
 		}
 		SOV = { clr_country_flag = SOV_stockpiles_flag }
@@ -11367,7 +11094,7 @@ country_event = {
 	}
 
 	option = {
-		name = NSB_soviet_civil_war_common.127.a	
+		name = NSB_soviet_civil_war_common.127.a
 		custom_effect_tooltip = SOS_navy_desertions_tt
 		hidden_effect = {
 			SOS = {
@@ -11381,7 +11108,7 @@ country_event = {
 					navy_ratio = 0.1
 					air_ratio = 0
 					keep_unit_leaders_trigger = {
-						always = yes 
+						always = yes
 					}
 				}
 
@@ -11406,7 +11133,7 @@ country_event = {
 	option = {
 		name = NSB_soviet_civil_war_common.128.a
 		custom_effect_tooltip = SOS_civilian_unrest_tt
-		hidden_effect = { 	
+		hidden_effect = {
 			SOS = {
 				every_owned_state = {
 					limit = {
@@ -11424,7 +11151,7 @@ country_event = {
 						industrial_complex > 1
 					}
 					damage_building = {
-						type = industrial_complex 
+						type = industrial_complex
 						damage = 2
 					}
 				}
@@ -11451,28 +11178,28 @@ unit_leader_event = {
 }
 
 
-#  #  ##  ### ###  ##  #  #  ##  #   ###  ## ###     #  # ###  ###  ###  ## ### #  #  ##   ## 
-## # #  #  #   #  #  # ## # #  # #    #  #    #      #  # #  # #  #  #  #    #  ## # #    #   
-# ## ####  #   #  #  # # ## #### #    #   #   #      #  # ###  ###   #   #   #  # ## # ##  #  
-#  # #  #  #   #  #  # #  # #  # #    #    #  #      #  # #    #  #  #    #  #  #  # #  #   # 
-#  # #  #  #  ###  ##  #  # #  # ### ### ##   #       ##  #    #  # ### ##  ### #  #  ##  ##  
+#  #  ##  ### ###  ##  #  #  ##  #   ###  ## ###     #  # ###  ###  ###  ## ### #  #  ##   ##
+## # #  #  #   #  #  # ## # #  # #    #  #    #      #  # #  # #  #  #  #    #  ## # #    #
+# ## ####  #   #  #  # # ## #### #    #   #   #      #  # ###  ###   #   #   #  # ## # ##  #
+#  # #  #  #   #  #  # #  # #  # #    #    #  #      #  # #    #  #  #    #  #  #  # #  #   #
+#  # #  #  #  ###  ##  #  # #  # ### ### ##   #       ##  #    #  # ### ##  ### #  #  ##  ##
 
 
-# Dispatcher event for uprisings 
+# Dispatcher event for uprisings
 country_event = {
 	id = NSB_soviet_nationalist.000
 	title = NSB_soviet_nationalist.000.t
 	desc = NSB_soviet_nationalist.000.desc
 	picture =  GFX_report_event_SOV_purge_navy
-	hidden = yes 
+	hidden = yes
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_nationalist.000.a	
+		name = NSB_soviet_nationalist.000.a
 		IF = {
 			limit = { has_global_flag =  SOV_soviet_civil_war } # No point in kicking off if war has ended already
 			random_list = {
-				35 = { } # Nothing happens 
+				35 = { } # Nothing happens
 				# the "Western" Front
 				6 = { # Ukrainian uprising
 					modifier = {
@@ -11485,9 +11212,9 @@ country_event = {
 					}
 					modifier = {
 						factor = 0
-						OR = { 
+						OR = {
 							has_country_flag = ukr_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = UKR }
@@ -11503,7 +11230,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = blr_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = BLR }
@@ -11526,7 +11253,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = CRI_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = CRI }
@@ -11549,7 +11276,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = KAR_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = KAR }
@@ -11582,11 +11309,11 @@ country_event = {
 							value = 1
 						}
 
-						
+
 					}
-					
+
 				}
-				# The Caucasus 
+				# The Caucasus
 				3 = { # Georgian uprising
 					modifier = {
 						add = SOV_civil_war_months
@@ -11600,7 +11327,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = geo_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = GEO }
@@ -11616,7 +11343,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = arm_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = ARM }
@@ -11632,7 +11359,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = azr_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = AZR }
@@ -11648,7 +11375,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = KAL_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = KAL }
@@ -11671,7 +11398,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = DAG_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = DAG }
@@ -11694,7 +11421,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = CIN_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = CIN }
@@ -11717,7 +11444,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = ABK_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = ABK }
@@ -11742,7 +11469,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = KOM_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = KOM }
@@ -11765,7 +11492,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = NEN_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = NEN }
@@ -11790,7 +11517,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = khi_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = KHI }
@@ -11813,7 +11540,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = buk_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = BUK }
@@ -11836,36 +11563,14 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = kaz_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = KAZ }
 					set_country_flag = kaz_uprising_flag
 					SOV = { country_event = NSB_soviet_nationalist.001 }
 				}
-				1 = { # UZB uprising
-					modifier = {
-						add = SOV_civil_war_months
-						always = yes
-					}
-					modifier = {
-						factor = 0
-						any_state = {
-							is_core_of = UZB
-							is_controlled_by = SOV
-						}
-					}
-					modifier = {
-						factor = 0
-						OR = {
-							has_country_flag = uzb_uprising_flag
-							
-						}
-					}
-					set_variable = { SOV_nationalist_country = UZB }
-					set_country_flag = uzb_uprising_flag
-					SOV = { country_event = NSB_soviet_nationalist.001 }
-				}
+
 				1 = { # KKP uprising
 					modifier = {
 						add = SOV_civil_war_months
@@ -11882,82 +11587,16 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = kkp_uprising_flag
-							
+
 						}
 					}
 					set_variable = { SOV_nationalist_country = KKP }
 					set_country_flag = kkp_uprising_flag
 					SOV = { country_event = NSB_soviet_nationalist.001 }
 				}
-				1 = { # TMS uprising
-					modifier = {
-						add = SOV_civil_war_months
-						always = yes
-					}
-					modifier = {
-						factor = 0.25
-						any_state = {
-							is_core_of = TMS
-							is_controlled_by = SOV
-						}
-					}
-					modifier = {
-						factor = 0
-						OR = {
-							has_country_flag = tms_uprising_flag
-							
-						}
-					}
-					set_variable = { SOV_nationalist_country = TMS }
-					set_country_flag = tms_uprising_flag
-					SOV = { country_event = NSB_soviet_nationalist.001 }
-				}
-				1 = { # KYR uprising
-					modifier = {
-						add = SOV_civil_war_months
-						always = yes
-					}
-					modifier = {
-						factor = 0.25
-						any_state = {
-							is_core_of = KYR
-							is_controlled_by = SOV
-						}
-					}
-					modifier = {
-						factor = 0
-						OR = {
-							has_country_flag = KYR_uprising_flag
-							
-						}
-					}
-					set_variable = { SOV_nationalist_country = KYR }
-					set_country_flag = KYR_uprising_flag
-					SOV = { country_event = NSB_soviet_nationalist.001 }
-				}
-				1 = { # TAJ uprising
-					modifier = {
-						add = SOV_civil_war_months
-						always = yes
-					}
-					modifier = {
-						factor = 0.25
-						any_state = {
-							is_core_of = TAJ
-							is_controlled_by = SOV
-						}
-					}
-					modifier = {
-						factor = 0
-						OR = {
-							has_country_flag = TAJ_uprising_flag
-							
-						}
-					}
-					set_variable = { SOV_nationalist_country = TAJ }
-					set_country_flag = TAJ_uprising_flag
-					SOV = { country_event = NSB_soviet_nationalist.001 }
-				}
+
+
+
 
 			}
 		}
@@ -11985,10 +11624,10 @@ country_event = {
 			# Capture any Stalinist soldiers in our territory
 			every_state = {
 				limit = { is_owned_by = var:SOV.SOV_nationalist_country}
-				SOS = { 
-					delete_unit = { 
-						state = PREV 
-						disband = no 
+				SOS = {
+					delete_unit = {
+						state = PREV
+						disband = no
 					}
 				}
 			}
@@ -12005,20 +11644,20 @@ country_event = {
 						infantry = { x = 1 y = 0 }
 						infantry = { x = 1 y = 1 }
 					}
-					is_locked = yes 
+					is_locked = yes
 				}
 				every_owned_state = {
 					limit = { is_core_of = var:SOV.SOV_nationalist_country }
-					create_unit = { 
+					create_unit = {
 						division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" owner = var:SOV.SOV_nationalist_country count = 2
 					}
 				}
 				random_owned_state = {
-					limit = { 
-						is_core_of = var:SOV.SOV_nationalist_country 
+					limit = {
+						is_core_of = var:SOV.SOV_nationalist_country
 						is_capital = yes
 					}
-					create_unit = { 
+					create_unit = {
 						division = "name = \"Resistance Fighters\" division_template = \"Resistance Fighters\" start_experience_factor = 0.05 start_equipment_factor = 0.95" owner = var:SOV.SOV_nationalist_country count = 2
 					}
 				}
@@ -12026,35 +11665,29 @@ country_event = {
 
 			}
 			var:SOV.SOV_nationalist_country = {
-				set_politics = { 
+				set_politics = {
 					ruling_party = democratic
-					elections_allowed = yes 
+					elections_allowed = yes
 				}
 				add_popularity = {
-					ideology = democratic 
+					ideology = democratic
 					popularity = 0.4
 				}
 				add_popularity = {
-					ideology = fascism  
+					ideology = fascism
 					popularity = 0.2
 				}
 				add_popularity = {
-					ideology = neutrality 
+					ideology = neutrality
 					popularity = 0.2
 				}
 				set_country_flag = SOV_breakaway_country_flag
-				set_country_flag = SOV_unrecognized_country_flag 
+				set_country_flag = SOV_unrecognized_country_flag
 				set_rule = { can_join_factions = no }
 			}
-			# Renaming of cities where apropriate 
+			# Renaming of cities where apropriate
+
 			IF = {
-				limit = { var:SOV.SOV_nationalist_country = { tag = KYR }}
-				set_province_name = {
-					id = 12583
-					name = SOV_Bishkek
-				}
-			}
-			ELSE_IF = {
 				limit = { var:SOV.SOV_nationalist_country = { tag = MEL }}
 				set_province_name = {
 					id = 9402
@@ -12065,7 +11698,7 @@ country_event = {
 	}
 
 	option = {
-		name = NSB_soviet_nationalist.001.a	
+		name = NSB_soviet_nationalist.001.a
 		ai_chance = {
 			base = 5 # The AI needs all the help it can get
 		}
@@ -12080,7 +11713,7 @@ country_event = {
 				}
 			}
 			var:SOV.SOV_nationalist_country = {
-				add_named_threat = { 
+				add_named_threat = {
 					threat = -1
 					name = indepence_war_threat
 				}
@@ -12094,7 +11727,7 @@ country_event = {
 		}
 		else = {
 			var:SOV.SOV_nationalist_country = {
-				add_named_threat = { 
+				add_named_threat = {
 					threat = -1
 					name = indepence_war_threat
 				}
@@ -12114,7 +11747,7 @@ country_event = {
 	}
 
 	option = {
-		name = NSB_soviet_nationalist.001.b	
+		name = NSB_soviet_nationalist.001.b
 		ai_chance = {
 			base = 1
 		}
@@ -12140,7 +11773,7 @@ country_event = {
 		}
 
 		var:SOV.SOV_nationalist_country = {
-			add_named_threat = { 
+			add_named_threat = {
 				threat = -1.5
 				name = indepence_war_threat
 			}
@@ -12193,7 +11826,7 @@ country_event = {
 	is_triggered_only = yes
 	# Nah
 	option = {
-		name = NSB_soviet_nationalist.002.a	
+		name = NSB_soviet_nationalist.002.a
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -12212,11 +11845,11 @@ country_event = {
 				random_days = 3
 			}
 		}
-		
+
 	}
 	# We have to accept, I suppose
 	option = {
-		name = NSB_soviet_nationalist.002.b	
+		name = NSB_soviet_nationalist.002.b
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -12231,7 +11864,7 @@ country_event = {
 				random_days = 3
 			}
 		}
-	
+
 	}
 }
 
@@ -12244,9 +11877,9 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = NSB_soviet_nationalist.003.a	
+		name = NSB_soviet_nationalist.003.a
 		ai_chance = {
-			base = 1 
+			base = 1
 		}
 		ROOT = { puppet = FROM }
 	}
@@ -12261,19 +11894,19 @@ country_event = {
 	is_triggered_only = yes
 	# War it is
 	option = {
-		name = NSB_soviet_nationalist.004.a	
+		name = NSB_soviet_nationalist.004.a
 		ai_chance = {
-			base = 3 
+			base = 3
 		}
 		declare_war_on = {
 			target = FROM
 			type = puppet_wargoal_focus
 		}
-		
+
 	}
 	# Ah well, it was a nice try
 	option = {
-		name = NSB_soviet_nationalist.004.b	
+		name = NSB_soviet_nationalist.004.b
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -12293,11 +11926,11 @@ country_event = {
 }
 
 
-###  ##   ##  ##  ###  ## ###    ###  ##  ##  ###  ###  ## ### 
-#   #  # #   #  #  #  #    #      #  #   #  # #  #  #  #    #  
-##  ####  #  #     #   #   #      #   #  #### ###   #   #   #  
-#   #  #   # #  #  #    #  #      #    # #  # #  #  #    #  #  
-#   #  # ##   ##  ### ##   #      #  ##  #  # #  # ### ##   #  
+###  ##   ##  ##  ###  ## ###    ###  ##  ##  ###  ###  ## ###
+#   #  # #   #  #  #  #    #      #  #   #  # #  #  #  #    #
+##  ####  #  #     #   #   #      #   #  #### ###   #   #   #
+#   #  #   # #  #  #    #  #      #    # #  # #  #  #    #  #
+#   #  # ##   ##  ### ##   #      #  ##  #  # #  # ### ##   #
 
 
 # Events for minor Slavic powers: "Join or die"
@@ -12639,7 +12272,7 @@ country_event = {
 
 	trigger = {
 		original_tag = JAP
-		NOT = { 
+		NOT = {
 			SOV = {
 				always = no
 			}
@@ -12697,7 +12330,7 @@ country_event = {
 
 	trigger = {
 		original_tag = USA
-		NOT = { 
+		NOT = {
 			SOV = {
 				always = no
 			}
@@ -12755,7 +12388,7 @@ country_event = {
 	# And there was much rejoicing!
 	option = {
 		name = NSB_soviet_fascist_tsarist.15.a
-		
+
 		news_event = { id = nsb_news.404 hours = 12 }
 	}
 }
@@ -12858,7 +12491,7 @@ country_event = {
 	# Unfortunate
 	option = {
 		name = NSB_soviet_fascist_tsarist.18.a
-		
+
 	}
 }
 
@@ -12918,7 +12551,7 @@ country_event = {
 	# Unfortunate
 	option = {
 		name = NSB_soviet_fascist_tsarist.21.a
-		
+
 	}
 }
 
@@ -12978,7 +12611,7 @@ country_event = {
 	# Unfortunate
 	option = {
 		name = NSB_soviet_fascist_tsarist.24.a
-		
+
 	}
 }
 
@@ -13038,7 +12671,7 @@ country_event = {
 	# Unfortunate
 	option = {
 		name = NSB_soviet_fascist_tsarist.27.a
-		
+
 	}
 }
 
@@ -13054,7 +12687,7 @@ country_event = {
 	# Unfortunate
 	option = {
 		name = NSB_soviet_fascist_tsarist.28.a
-		
+
 	}
 }
 
@@ -13132,20 +12765,20 @@ country_event = {
 	picture = GFX_report_event_soviet_soldiers
 
 	fire_only_once = yes
-	
+
 	trigger = {
 		original_tag = GER
 		has_war_with = SOV
 		SOV = {
 			has_government = communism
 			OR = {
-				has_country_leader = { 
-					character = SOV_iosif_stalin 
-					ruling_only = yes 
+				has_country_leader = {
+					character = SOV_iosif_stalin
+					ruling_only = yes
 				}
-				has_country_leader = { 
-					character = SOV_lev_trotsky 
-					ruling_only = yes 
+				has_country_leader = {
+					character = SOV_lev_trotsky
+					ruling_only = yes
 				}
 			}
 			surrender_progress > 0.25
