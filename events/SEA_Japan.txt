@@ -1742,14 +1742,7 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		add_timed_idea = {
-			idea = SHX_suiyuan_campaign_idea
-			days = 70
-		}	
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		add_equipment_to_stockpile = { 
+		add_equipment_to_stockpile = {
 			type = infantry_equipment_0
 			amount = 500
 			producer = ROOT
@@ -11198,6 +11191,13 @@ country_event = {
 
 	trigger = {
 
+		OR = {
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = USA
+			original_tag = HOL
+		}
+
 		JAP = {
 			exists = yes
 			has_capitulated = no
@@ -11256,13 +11256,6 @@ country_event = {
 					}
 				}
 			}
-		}
-
-		OR = {
-			original_tag = ENG
-			original_tag = FRA
-			original_tag = USA
-			original_tag = HOL
 		}
 
 		OR = {

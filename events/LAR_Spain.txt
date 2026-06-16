@@ -10173,6 +10173,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		always = no
 		any_country = {
 			original_tag = SPR
 			OR = {
@@ -10183,7 +10184,6 @@ country_event = {
 			    tag = ROOT
 			    count > 0
 			}
-			always = no
 		}
 		OR = {
 			has_country_flag = SPR_relocated_gold_reserves_selection_flag_sov
