@@ -5664,51 +5664,10 @@ ITA_diplomacy_balkan_decision_category = {
 		cost = 50
 
 		complete_effect = {
-			
-			IF = {
-				limit = {
-					has_dlc = "Together for Victory"
-				}
-				ITA = {
-					set_autonomy = {
-					    target = MNT
-					    autonomy_state = autonomy_reichskommissariat
-					    end_wars = no
-					    end_civil_wars = no
-					}
-				}
-			}
-			IF = {
-				limit = {
-					NOT = {
-						has_dlc = "Together for Victory"
-					}
-				}
-				ITA = {
-					puppet = MNT
-				}
-			}
-			
-			105 = {
-				create_unit = {
-				    division = "name = \"First Montenegrin Chetnik Brigade\" division_template = \"Montenegrin Chetniks\" start_experience_factor = 0.5 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
-				    owner = MNT
-				}
-
-				create_unit = {
-				    division = "name = \"Second Montenegrin Chetnik Brigade\" division_template = \"Montenegrin Chetniks\" start_experience_factor = 0.5 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
-				    owner = MNT
-				}
-
-				create_unit = {
-				    division = "name = \"Third Montenegrin Chetnik Brigade\" division_template = \"Montenegrin Chetniks\" start_experience_factor = 0.5 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
-				    owner = MNT
-				}
-			}
 
 			hidden_effect = {
 				set_country_flag = ITA_established_montenegro
-				
+
 			}
 		}
 	}

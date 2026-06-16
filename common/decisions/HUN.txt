@@ -2390,95 +2390,12 @@ HUN_territorial_revision_category = {
 
 		complete_effect = {
 
-			ROOT = {
-				HUN_vasyl_vyshyvanyi = { set_nationality = UKR }
-			}
-
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = wuw_HUN_the_kingdom_of_ukraine_tt
-			hidden_effect = {
-				every_state = {
-					limit = {
-						OR = {
-							is_controlled_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								controls_state = PREV
-							}
-						}
-						NOT = {
-							is_core_of = ROOT
-						}
-						OR = {
-							state = 93
-							state = 199
-							state = 201
-							state = 198
-							state = 834
-							state = 192
-							state = 766
-							state = 202
-							state = 193
-							state = 225
-							state = 259
-							state = 203
-							state = 197
-							state = 226
-							state = 196
-							state = 200
-							state = 221
-							state = 227
-							state = 228
-							state = 137
-							state = 218
-							state = 234
-						}
-					}
-					transfer_state_to = UKR
-				}
-
-				every_state = {
-					limit = {
-						NOT = {
-							is_core_of = UKR
-						}
-						OR = {
-							state = 93
-							state = 199
-							state = 201
-							state = 198
-							state = 834
-							state = 192
-							state = 766
-							state = 202
-							state = 193
-							state = 225
-							state = 259
-							state = 203
-							state = 197
-							state = 226
-							state = 196
-							state = 200
-							state = 221
-							state = 227
-							state = 228
-							state = 137
-							state = 218
-							state = 234
-						}
-					}
-					add_core_of = UKR
-				}
-
-				
-				
-				puppet = UKR 
-
-			}
 
 			hidden_effect = {
-				set_country_flag = HUN_created_ukrainian_habsburg_monarchy 
+				set_country_flag = HUN_created_ukrainian_habsburg_monarchy
 			}
 		}
 	
@@ -3686,31 +3603,7 @@ HUN_the_empire_category = {
 
 		complete_effect = {
 
-			every_state = {
-				limit = {
-					OR  = {
-						state = 104
-						state = 804
-					}
-					NOT = {
-						is_core_of = CRO
-					}
-				}
-				add_core_of = CRO
-			}
-
-			
-
 			custom_effect_tooltip = HUN_croatia_slavonia_tt
-
-			
-
-			IF = {
-				limit = {
-					
-				}
-				puppet = CRO 
-			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -3819,19 +3712,8 @@ HUN_the_empire_category = {
 
 		complete_effect = {
 
-			
-
-			
-
-			IF = {
-				limit = {
-					
-				}
-				puppet = LBV 
-			}
-
 			hidden_effect = {
-				set_country_flag = HUN_created_lombardo_venetian_habsburg_monarchy 
+				set_country_flag = HUN_created_lombardo_venetian_habsburg_monarchy
 			}
 
 		}

@@ -7146,7 +7146,7 @@ country_event = {
 			traits = { operative_commando operative_infiltrator }
 			bypass_recruitment = no
 			available_to_spy_master = yes
-			nationalities = { SOV GER UKR }
+			nationalities = { SOV GER }
 		}
 	}
 }
@@ -8772,16 +8772,6 @@ country_event = {
 			}
 
 		}
-
-		# Independence for Belarus
-
-		IF = {
-			limit = {
-				has_country_flag = SOV_CSW_belarus_uk_flag
-			}
-			release = BLR
-		}
-
 
 		# Set capital
 		country_event = {
@@ -10493,11 +10483,6 @@ country_event = {
 		trigger = {
 			has_global_flag = SOV_soviet_civil_war_over
 		}
-
-		declare_war_on = {
-			target = UKR
-			type = annex_everything
-		}
 	}
 	option = {
 		name = NSB_soviet_civil_war_common.114.b
@@ -10509,12 +10494,6 @@ country_event = {
 		name = NSB_soviet_civil_war_common.114.c
 		trigger = {
 			NOT = { has_global_flag = SOV_soviet_civil_war_over }
-		}
-		SOS = {
-			declare_war_on = {
-				target = UKR
-				type = annex_everything
-			}
 		}
 	}
 }

@@ -1591,7 +1591,6 @@ country_event = {
 					
 				}
 				621 = {
-					transfer_state_to = MEN
 				}
 				
 				custom_effect_tooltip = generic_skip_one_line_tt
@@ -1607,10 +1606,8 @@ country_event = {
 					
 				}
 				621 = {
-					transfer_state_to = MEN
 				}
 				746 = {
-					transfer_state_to = MEN
 				}
 				
 				add_political_power = 100
@@ -1655,7 +1652,6 @@ country_event = {
 					
 				}
 				621 = {
-					transfer_state_to = MEN
 				}
 				
 				custom_effect_tooltip = generic_skip_one_line_tt
@@ -1671,10 +1667,8 @@ country_event = {
 					
 				}
 				621 = {
-					transfer_state_to = MEN
 				}
 				746 = {
-					transfer_state_to = MEN
 				}
 				
 				add_political_power = 100
@@ -2221,18 +2215,11 @@ country_event = {
 
 		
 
-		effect_tooltip = {
-			declare_war_on = {
-				target = PRC
-				type = annex_everything
-			}	
-		}
-
 		FROM = {
 			country_event = {
 				id = SEA_japan_foreign_policy.43
 				hours = 1
-			}		
+			}
 		}
 		effect_tooltip = {
 			FROM = {
@@ -2289,15 +2276,6 @@ country_event = {
 		add_named_threat = { threat = 3 name = SEA_japan_foreign_policy.42.t }
 
 		set_country_flag = JAP_CHI_pact_is_active_flag
-
-		
-
-		CHI = {
-			declare_war_on = {
-				target = PRC
-				type = annex_everything
-			}	
-		}
 
 		IF = {
 			limit = {
@@ -3153,7 +3131,6 @@ country_event = {
 					state = 524 # Taiwan
 				}
 			}
-			add_contested_owner = RNG
 			set_state_controller_to = ROOT
 			add_claim_by = ROOT
 		}

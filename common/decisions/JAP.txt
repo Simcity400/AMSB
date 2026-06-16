@@ -5976,18 +5976,6 @@ JAP_kwantung_army_decisions = {
 
 		remove_effect = {
 
-			IF = {
-				limit = {
-					has_subject = RNG
-				}
-				FROM = {
-					every_core_state = {
-						add_claim_by = RNG
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-			}
-
 			create_wargoal = {
 				type = annex_everything
 				target = FROM
@@ -8936,10 +8924,6 @@ JAP_the_propaganda_department_decisions = {
 
 				
 			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				puppet = TIB
-				
-			}
 
 			hidden_effect = {
 				set_country_flag = JAP_militarized_the_tibet_impr_party_flag
@@ -10554,9 +10538,6 @@ JAP_the_co_prosperity_sphere_decisions = {
 						}
 					}
 					#FROM = {
-						set_state_controller_to = RNG
-						add_contested_owner = RNG
-						add_claim_by = RNG
 					#}
 				}
 
@@ -10682,7 +10663,6 @@ JAP_the_co_prosperity_sphere_decisions = {
 						limit = {
 							is_core_of = PREV
 						}
-						add_core_of = RNG
 					}
 				}
 			}
@@ -11013,76 +10993,8 @@ JAP_the_co_prosperity_sphere_decisions = {
 					}	
 				}
 			}
-			ELSE = {
-				random_state = {
-					limit = {
-						is_core_of = PHI
-						is_controlled_by = ROOT
-					}
-					transfer_state_to = PSR
-					add_core_of = PSR
-				}
-				PHI = {
-					every_core_state = {
-						add_claim_by = PSR
-					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = PHI
-						is_controlled_by = ROOT
-					}
-					set_state_controller_to = PSR
-				}
-
-				custom_effect_tooltip =  generic_skip_one_line_tt
-
-				set_autonomy = {
-					target = PSR
-					autonomous_state = autonomy_wtt_imperial_protectorate
-					end_wars = no
-					end_civil_wars = no
-				}
-
-				IF = {
-					limit = {
-						PHI = {
-							NOT = {
-								has_country_leader = {
-									ruling_only = yes
-									character = PHI_jose_laurel
-								}	
-							}
-						}
-					}
-				    PHI = {  
-			            PHI_jose_laurel = {
-			                set_nationality = PSR
-			                # Transfers to breakaway
-			            }
-		        	}
-				}
-				ELSE = {
-				    PHI = {  
-			            PHI_artemio_ricarte = {
-			                set_nationality = PSR
-			                # Transfers to breakaway
-			            }
-		        	}
-				}
-
-				
-
-				#PHI = {
-				#	country_event = {
-				#		id = SEA_japan_foreign_policy.69
-				#		hours = 1
-				#	}	
-				#}
-			}
-
 			hidden_effect = {
-				set_country_flag = JAP_created_second_philippine_republic_flag 
+				set_country_flag = JAP_created_second_philippine_republic_flag
 			}
 		}
 	
@@ -11162,55 +11074,8 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 			hidden_effect = {
 
-				# Vietnamese+ States
-				every_state = {
-					limit = {
-						OR = {
-							state = 671
-							state = 1017
-							state = 670
-							state = 1069 
-						}
-					}
-					transfer_state_to = VIN
-					add_core_of = VIN
-				}
-
-				# Cambodian States
-				every_state = {
-					limit = {
-						OR = {
-							state = 741
-							state = 286
-							state = 1066 
-							state = 1067 
-							state = 1068 
-						}
-					}
-					transfer_state_to = CAM
-					add_core_of = CAM
-				}
-
-				set_autonomy = {
-					target = VIN
-					autonomous_state = autonomy_wtt_imperial_protectorate
-					end_wars = no
-					end_civil_wars = no
-				}
-
-				set_autonomy = {
-					target = CAM
-					autonomous_state = autonomy_wtt_imperial_protectorate
-					end_wars = no
-					end_civil_wars = no
-				}
-
-				
-
-				
-
 				set_country_flag = JAP_went_with_initial_sea_land_disposition_plan_flag
-				
+
 			}
 		}
 
@@ -11278,29 +11143,6 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 			hidden_effect = {
 
-				# Vietnamese States
-				every_state = {
-					limit = {
-						OR = {
-							state = 671
-							state = 1017
-							state = 286
-							state = 1066
-						}
-					}
-					transfer_state_to = VIN
-					add_core_of = VIN
-				}
-
-				set_autonomy = {
-					target = VIN
-					autonomous_state = autonomy_wtt_imperial_protectorate
-					end_wars = no
-					end_civil_wars = no
-				}
-
-				
-
 				IF = {
 					limit = {
 						NOT = {
@@ -11309,7 +11151,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 					}
 					set_country_flag = JAP_disposed_of_initial_indochina_land_disposal_plan_flag
 				}
-				
+
 			}
 		}
 
@@ -11363,25 +11205,6 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 			hidden_effect = {
 
-				# Cambodian States
-				741 = {
-					transfer_state_to = CAM
-					add_core_of = CAM
-				}
-				1067 = {
-					transfer_state_to = CAM
-					add_core_of = CAM
-				}
-
-				set_autonomy = {
-					target = CAM
-					autonomous_state = autonomy_wtt_imperial_protectorate
-					end_wars = no
-					end_civil_wars = no
-				}
-
-				
-
 				IF = {
 					limit = {
 						NOT = {
@@ -11390,7 +11213,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 					}
 					set_country_flag = JAP_disposed_of_initial_indochina_land_disposal_plan_flag
 				}
-				
+
 			}
 		}
 
@@ -11456,29 +11279,6 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 			hidden_effect = {
 
-				# Laotian States
-				670 = {
-					transfer_state_to = LAO
-					add_core_of = LAO
-				}
-				1068 = {
-					transfer_state_to = LAO
-					add_core_of = LAO
-				}
-				1069 = {
-					transfer_state_to = LAO
-					add_core_of = LAO
-				}
-
-				set_autonomy = {
-					target = LAO
-					autonomous_state = autonomy_wtt_imperial_protectorate
-					end_wars = no
-					end_civil_wars = no
-				}
-
-				
-
 				IF = {
 					limit = {
 						NOT = {
@@ -11487,7 +11287,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 					}
 					set_country_flag = JAP_disposed_of_initial_indochina_land_disposal_plan_flag
 				}
-				
+
 			}
 		}
 
@@ -11540,21 +11340,6 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 			hidden_effect = {
 
-				# Sri Lankan States
-				422 = {
-					transfer_state_to = SRL
-					add_core_of = SRL
-				}
-
-				set_autonomy = {
-					target = SRL
-					autonomous_state = autonomy_wtt_imperial_protectorate
-					end_wars = no
-					end_civil_wars = no
-				}
-
-				
-				
 			}
 		}
 

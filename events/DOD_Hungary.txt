@@ -3516,17 +3516,6 @@ country_event = {
 				generator = { 664 }
 			}
 		}
-		if = {
-			limit = { 
-				
-			}
-
-			create_wargoal = {
-				type = take_state_focus
-				target = SLO
-				generator = { 664 }
-			}
-		}
 	}
 }
 
@@ -4262,16 +4251,9 @@ country_event = {
 			}
 			HUN = { transfer_state = 664 }
 		}
-		every_state = {
-			limit = {
-				is_owned_by = SLO
-			}
-			add_core_of = SLO
-		}
 		hidden_effect = {
 			
 		}
-		puppet = SLO
 		if = {
 			limit = {
 				country_exists = CZE
@@ -4505,7 +4487,6 @@ country_event = {
 
 	option = {# good
 		name = DOD_hungary.108.a
-		puppet = SLO
 	}
 
 	
@@ -4522,10 +4503,6 @@ country_event = {
 
 	option = {# war!
 		name = DOD_hungary.109.a
-		create_wargoal = {
-				type = puppet_wargoal_focus
-				target = SLO
-		}
 		hidden_effect = {
 			news_event = { id = news.311 days = 1 }
 		}

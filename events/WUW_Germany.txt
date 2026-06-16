@@ -4731,10 +4731,8 @@ country_event = { #Germany demands integration
 					annex_country = {
 						target = ROOT
 						transfer_troops = yes
-					} 
+					}
 				}
-
-				release_puppet = SLO 
 			}
 		}
 
@@ -7288,10 +7286,6 @@ country_event = {
 							original_tag = GER
 						}
 					}
-					create_wargoal = {
-						type = take_claimed_state
-						target = COG
-					}
 				}	
 			}
 			IF = {
@@ -7360,10 +7354,6 @@ country_event = {
 			limit = {
 				
 			}
-			create_wargoal = {
-				type = take_claimed_state
-				target = COG
-			}	
 		}
 		ELSE_IF = {
 			limit = {
@@ -7586,10 +7576,6 @@ country_event = {
 			limit = {
 				
 			}
-			create_wargoal = {
-				type = take_claimed_state
-				target = COG
-			}	
 		}
 		IF = {
 			limit = {
@@ -7688,10 +7674,6 @@ country_event = {
 			limit = {
 				
 			}
-			create_wargoal = {
-				type = take_claimed_state
-				target = COG
-			}	
 		}
 
 	}
@@ -7813,13 +7795,6 @@ country_event = {
 					
 				}
 				ROOT = {
-					set_autonomy = {
-						target = COG
-						autonomy_state = autonomy_free
-						freedom_level = 1
-						end_wars  = no
-						end_civil_wars = no
-					}
 				}
 			}
 			IF = {
@@ -7849,10 +7824,6 @@ country_event = {
 			base = 75
 		}
 
-		create_wargoal = {
-			type = puppet_wargoal_focus
-			target = COG
-		}	
 		
 	}
 
@@ -8754,10 +8725,6 @@ country_event = {
 					}
 				}
 				BEL = {
-					set_nationality = {
-					    target_country = RKB
-					    character = BEL_leon_degrelle
-					}
 				}
 			}
 		}
@@ -8823,10 +8790,6 @@ country_event = {
 					}
 				}
 				AUS = {
-					set_nationality = {
-					    target_country = RKN
-					    character = AUS_arthur_seyss-inquart
-					}
 				}
 			}
 			ELSE_IF = {
@@ -8836,10 +8799,6 @@ country_event = {
 					}
 				}
 				AUS = {
-					set_nationality = {
-					    target_country = RKN
-					    character = AUS_edmund_glaise_horstenau
-					}
 				}
 			}
 
@@ -8852,10 +8811,6 @@ country_event = {
 					}
 				}
 				HOL = {
-					set_nationality = {
-					    target_country = RKN
-					    character = HOL_anton_mussert
-					}
 				}
 			}
 		}
@@ -8945,10 +8900,6 @@ country_event = {
 					}
 				}
 				NOR = {
-					set_nationality = {
-					    target_country = RKG
-					    character = NOR_vidkun_quisling
-					}
 				}
 			}
 			IF = {
@@ -8963,10 +8914,6 @@ country_event = {
 					}
 				}
 				NOR = {
-					set_nationality = {
-					    target_country = RKG
-					    character = NOR_josef_terboven
-					}
 				}
 			}
 		}
@@ -9205,10 +9152,6 @@ country_event = {
 					}
 				}
 				ROOT = {
-					set_nationality = {
-					    target_country = RKT
-					    character = GER_friedrich_schulz
-					}
 				}
 			}
 			IF = {
@@ -9220,10 +9163,6 @@ country_event = {
 					}
 				}
 				ROOT = {
-					set_nationality = {
-					    target_country = RKT
-					    character = GER_hasso_von_manteuffel
-					}
 				}
 			}
 		}
@@ -9324,10 +9263,6 @@ country_event = {
 					}
 				}
 				SOV = {
-					set_nationality = {
-					    target_country = RKM
-					    character = SOV_konstantin_rodzayevsky
-					}
 				}
 			}
 		}
@@ -9412,7 +9347,6 @@ country_event = {
 		}		
 		
 		829 = {
-			transfer_state_to = RKM
 			add_compliance = 45	
 		}
 
@@ -9428,7 +9362,6 @@ country_event = {
 		}		
 		
 		829 = {
-			transfer_state_to = RKT
 			add_compliance = 45	
 		}
 
@@ -9456,18 +9389,10 @@ country_event = {
 					}
 				}
 				POL = {
-					set_nationality = {
-					    target_country = RKL
-					    character = POL_rudinger_von_der_goltz
-					}
 				}
 			}
 			ELSE = {
 				ROOT = {
-					set_nationality = {
-					    target_country = RKL
-					    character = GER_friedrich_paulus
-					}
 				}
 			}
 		}
@@ -9486,7 +9411,6 @@ country_event = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		251 = {
-			transfer_state_to = RKL
 			add_compliance = 30
 		}
 
@@ -9507,7 +9431,6 @@ country_event = {
 						}
 					}
 				}
-				transfer_state_to = RKL
 				add_compliance = 25
 			}
 			every_state = {	
@@ -9526,19 +9449,12 @@ country_event = {
 						}
 					}
 				}
-				add_contested_owner = RKL
-				set_state_controller_to = RKL
-				add_claim_by = RKL
 				add_compliance = 25
 			}
 
 			
 		}
 
-		set_autonomy = { 
-			target = RKL 
-			autonomy_state = autonomy_integrated_puppet 
-		}
 
 		IF = {
 			limit = {
@@ -9582,7 +9498,6 @@ country_event = {
 						}
 					}
 				}
-				transfer_state_to = RKM
 			}
 			every_state = {	
 				limit = {
@@ -9597,9 +9512,6 @@ country_event = {
 						}
 					}
 				}
-				add_contested_owner = RKM
-				set_state_controller_to = RKM
-				add_claim_by = RKM
 			}
 
 			
@@ -9644,7 +9556,6 @@ country_event = {
 						}
 					}
 				}
-				transfer_state_to = RKT
 			}
 			every_state = {	
 				limit = {
@@ -9659,9 +9570,6 @@ country_event = {
 						}
 					}
 				}
-				add_contested_owner = RKT
-				set_state_controller_to = RKT
-				add_claim_by = RKT
 			}
 
 			
@@ -9775,7 +9683,6 @@ country_event = {
 						}
 					}
 				}
-				transfer_state_to = RKM
 			}
 			every_state = {	
 				limit = {
@@ -9800,9 +9707,6 @@ country_event = {
 						}
 					}
 				}
-				add_contested_owner = RKM
-				set_state_controller_to = RKM
-				add_claim_by = RKM
 			}
 		}
 
@@ -9827,10 +9731,6 @@ country_event = {
 					}
 				}
 				POL = {
-					set_nationality = {
-					    target_country = GEN
-					    character = POL_boleslaw_piasecki
-					}
 				}
 			}
 		}
@@ -9900,10 +9800,6 @@ country_event = {
 					}
 				}
 				CZE = {
-					set_nationality = {
-					    target_country = RKH
-					    character = CZE_jaroslav_krejchi
-					}
 				}
 			}
 
@@ -9912,10 +9808,6 @@ country_event = {
 					has_completed_focus = GER_reorganize_the_wehrmacht
 				}
 				GER = {
-					set_nationality = {
-					    target_country = RKH
-					    character = GER_konstantin_von_neurath
-					}
 				}
 			}
 			ELSE_IF = {
@@ -9923,10 +9815,6 @@ country_event = {
 					always = no
 				}
 				GER = {
-					set_nationality = {
-					    target_country = RKH
-					    character = GER_johannes_blaskowitz
-					}
 				}
 			}
 		}
@@ -10022,10 +9910,6 @@ country_event = {
 					limit = {
 						has_character = SPA_emilio_mola
 					}
-					set_nationality = {
-					    target_country = RKI
-					    character = SPA_emilio_mola
-					}
 				}
 			}
 		}
@@ -10110,18 +9994,10 @@ country_event = {
 					}
 				}
 				HUN = {
-					set_nationality = {
-					    target_country = RKC
-					    character = HUN_franz_friedrich
-					}
 				}
 			}
 			ELSE = {
 				GER = {
-					set_nationality = {
-					    target_country = RKC
-					    character = GER_georghans_reinhardt
-					}
 				}
 			}
 		}
@@ -10204,10 +10080,6 @@ country_event = {
 					}
 				}
 				ENG = {
-					set_nationality = {
-					    target_country = RGB
-					    character = ENG_oswald_mosley
-					}
 				}
 			}
 
@@ -10220,10 +10092,6 @@ country_event = {
 			}
 			ELSE = {
 				GER = {
-					set_nationality = {
-					    target_country = RGB
-					    character = GER_otto_strasser
-					}
 				}
 			}
 		}
@@ -10362,7 +10230,6 @@ country_event = {
 						}
 					}
 				}
-				transfer_state_to = RKC
 			}
 			every_state = {	
 				limit = {
@@ -10384,9 +10251,6 @@ country_event = {
 						}
 					}
 				}
-				add_contested_owner = RKC
-				set_state_controller_to = RKC
-				add_claim_by = RKC
 			}
 		}
 
@@ -10418,7 +10282,6 @@ country_event = {
 						}
 					}
 				}
-				transfer_state_to = RKH
 			}
 			every_state = {	
 				limit = {
@@ -10440,9 +10303,6 @@ country_event = {
 						}
 					}
 				}
-				add_contested_owner = RKH
-				set_state_controller_to = RKH
-				add_claim_by = RKH
 			}
 		}
 
@@ -10584,10 +10444,6 @@ country_event = {
 		hidden_effect = {
 
 			ROOT = {
-				set_nationality = {
-				    target_country = RKV
-				    character = GER_adolf_friedrich_von_mecklenburg
-				}
 			}
 
 			IF = {
@@ -10602,10 +10458,6 @@ country_event = {
 					}
 				}
 				BRA = {
-					set_nationality = {
-					    target_country = RKV
-					    character = BRA_plinio_salgado
-					}
 				}
 			}
 
@@ -10685,10 +10537,6 @@ country_event = {
 			}
 			ELSE = {
 				GER = {
-					set_nationality = {
-					    target_country = RAN
-					    character = GER_rolf_carls
-					}
 				}
 			}
 
@@ -10775,10 +10623,6 @@ country_event = {
 			}
 			ELSE = {
 				GER = {
-					set_nationality = {
-					    target_country = RCO
-					    character = GER_gunther_lutjens
-					}
 				}
 			}
 
@@ -10794,10 +10638,6 @@ country_event = {
 					}
 				}
 				MEX = {
-					set_nationality = {
-					    target_country = RCO
-					    character = MEX_salvador_abascal
-					}
 				}
 			}
 
@@ -10895,18 +10735,10 @@ country_event = {
 					}
 				}
 				HUN = {
-					set_nationality = {
-					    target_country = RUS
-					    character = HUN_franz_anton_bach
-					}
 				}
 			}
 			ELSE = {
 				GER = {
-					set_nationality = {
-					    target_country = RUS
-					    character = GER_alfred_jodl
-					}
 				}
 			}
 
@@ -10922,10 +10754,6 @@ country_event = {
 					}
 				}
 				USA = {
-					set_nationality = {
-					    target_country = RUS
-					    character = USA_william_dudley_pelley
-					}
 				}
 			}
 
@@ -11086,7 +10914,6 @@ country_event = {
 						}
 					}
 				}
-				transfer_state_to = RUS
 			}
 			every_state = {	
 				limit = {
@@ -11108,9 +10935,6 @@ country_event = {
 						}
 					}
 				}
-				add_contested_owner = RUS
-				set_state_controller_to = RUS
-				add_claim_by = RUS
 			}
 		}
 
@@ -11139,7 +10963,6 @@ country_event = {
 						}
 					}
 				}
-				transfer_state_to = RCO
 			}
 			every_state = {	
 				limit = {
@@ -11161,9 +10984,6 @@ country_event = {
 						}
 					}
 				}
-				add_contested_owner = RCO
-				set_state_controller_to = RCO
-				add_claim_by = RCO
 			}
 		}
 
@@ -11194,18 +11014,10 @@ country_event = {
 					}
 				}
 				SWI = {
-					set_nationality = {
-					    target_country = RAR
-					    character = SWI_robert_tobler
-					}
 				}
 			}
 			ELSE = {
 				GER = {
-					set_nationality = {
-					    target_country = RAR
-					    character = GER_walter_model
-					}
 				}
 			}
 
@@ -11296,10 +11108,6 @@ country_event = {
 			}
 			ELSE = {
 				GER = {
-					set_nationality = {
-					    target_country = RHD
-					    character = GER_alfred_saalwachter
-					}
 				}
 			}
 
@@ -11315,10 +11123,6 @@ country_event = {
 					}
 				}
 				RAJ = {
-					set_nationality = {
-					    target_country = RHD
-					    character = RAJ_v_d_savarkar
-					}
 				}
 			}
 
@@ -11402,10 +11206,6 @@ country_event = {
 		hidden_effect = {
 			
 			GER = {
-				set_nationality = {
-				    target_country = ROA
-				    character = GER_franz_ritter_von_epp
-				}
 			}
 
 			IF = {
@@ -11420,10 +11220,6 @@ country_event = {
 					}
 				}
 				CHI = {
-					set_nationality = {
-					    target_country = ROA
-					    character = CHI_wang_jingwei
-					}
 				}
 			}
 
@@ -11510,18 +11306,10 @@ country_event = {
 					}
 				}
 				POL = {
-					set_nationality = {
-					    target_country = RAA
-					    character = POL_pavel_bermondt_avalov
-					}
 				}
 			}
 			ELSE = {
 				ROOT = {
-					set_nationality = {
-					    target_country = RAA
-					    character = GER_werner_von_fritsch
-					}
 				}
 			}
 
@@ -11537,10 +11325,6 @@ country_event = {
 					}
 				}
 				AST = {
-					set_nationality = {
-					    target_country = RAA
-					    character = AST_eric_campbell
-					}
 				}
 			}
 
@@ -11858,7 +11642,6 @@ country_event = {
 					}
 				}
 				66 = {
-					transfer_state_to = SIL
 				}
 			}
 			IF = {
@@ -11869,7 +11652,6 @@ country_event = {
 					}
 				}
 				67 = {
-					transfer_state_to = SIL
 				}
 			}
 			IF = {
@@ -11880,7 +11662,6 @@ country_event = {
 					}
 				}
 				762 = {
-					transfer_state_to = SIL
 				}
 			}
 			IF = {
@@ -11891,8 +11672,6 @@ country_event = {
 					}
 				}
 				74 = {
-					transfer_state_to = SIL
-					add_core_of = SIL
 				}
 			}
 		}
@@ -11920,14 +11699,6 @@ country_event = {
 				}
 				is_owned_and_controlled_by = SIL
 			}
-			create_unit = {
-			    division = "name = \"1. Polska Organizacja Wojskowa Górnego Śląska\" division_template = \"Polska Organizacja Wojskowa Górnego Śląska\" start_experience_factor = 0.5 start_equipment_factor = 0.9"
-			    owner = SIL 
-			}
-			create_unit = {
-			    division = "name = \"2. Polska Organizacja Wojskowa Górnego Śląska\" division_template = \"Polska Organizacja Wojskowa Górnego Śląska\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
-			    owner = SIL 
-			}
 		}
 
 		random_state = {
@@ -11940,10 +11711,6 @@ country_event = {
 				}
 				is_owned_and_controlled_by = SIL
 			}
-			create_unit = {
-			    division = "name = \"3. Polska Organizacja Wojskowa Górnego Śląska\" division_template = \"Polska Organizacja Wojskowa Górnego Śląska\" start_experience_factor = 0.5 start_equipment_factor = 0.7"
-			    owner = SIL 
-			}
 		}
 
 		random_state = {
@@ -11955,14 +11722,6 @@ country_event = {
 					state = 74
 				}
 				is_owned_and_controlled_by = SIL
-			}
-			create_unit = {
-			    division = "name = \"1. Ferajn Gůrnoślůnzokůw Rebels\" division_template = \"Ferajn Gůrnoślůnzokůw Rebels\" start_experience_factor = 0.5 start_equipment_factor = 0.4"
-			    owner = SIL 
-			}
-			create_unit = {
-			    division = "name = \"2. Ferajn Gůrnoślůnzokůw Rebels\" division_template = \"Ferajn Gůrnoślůnzokůw Rebels\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
-			    owner = SIL 
 			}
 		}
 
@@ -11972,10 +11731,6 @@ country_event = {
 			limit = {
 				original_tag = GER
 			}
-			declare_war_on = {
-				target = SIL
-				type = take_core_state
-			}	
 		}
 		
 	}

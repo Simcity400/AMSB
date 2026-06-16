@@ -3933,8 +3933,7 @@ country_event = {
 			limit = { country_exists = CZE }
 			annex_country = { target = CZE }
 		}
-		add_to_faction = SLO
-		
+
 		if = {
 			limit = {
 				72 = {
@@ -6173,10 +6172,6 @@ country_event = {
 		GER = { country_event = { id = germany.81 days = 1 } }
 		effect_tooltip = {
 			if = {
-				limit = {  }
-				annex_country = { target = SLO }
-			}
-			if = {
 				limit = { GER = { owns_state = 70 } }
 				transfer_state = 70
 			}
@@ -6252,10 +6247,6 @@ country_event = {
 
 	option = {
 		name = germany.81.a
-		if = {
-			limit = {  }
-			POL = { annex_country = { target = SLO } }
-		}
 		if = {
 			limit = { owns_state = 70 }
 			POL = { transfer_state = 70 }
@@ -7001,13 +6992,6 @@ country_event = {
 				}
 			}
 		}
-		else = {
-			create_wargoal = {
-				type = take_state_focus
-				target = SLV
-				generator = { 102 853 }
-			}
-		}
 
 		# Claiming German Slovenia
 		102 = {
@@ -7120,8 +7104,7 @@ country_event = {
 		effect_tooltip = {
 			add_political_power = -25
 			add_named_threat = { threat = 3 name = GER_fate_of_yugoslavia }
-			
-			puppet = CRO
+
 			annex_country = { target = YUG transfer_troops = no }
 			custom_effect_tooltip = yugoslavia_mefo_bills_tt
 			add_to_variable = { var = GER_mefo_bill_counter value = -10 }
@@ -7137,8 +7120,6 @@ country_event = {
 		effect_tooltip = {
 			add_named_threat = { threat = 2 name = GER_fate_of_yugoslavia }
 
-			
-			puppet = CRO
 			puppet = YUG
 			hidden_effect = {
 				set_global_flag = GER_fate_of_yugoslavia_puppet_CRO_YUG
@@ -8295,21 +8276,9 @@ country_event = {
 		ai_chance = {
 			base = 0
 		}
-		hidden_effect = {
-			create_wargoal = {
-				type = liberate_wargoal
-				target = DDR
-			}
-		}
 		event_target:yalta_origin = {
 			country_event = {
 				id = germany.120
-			}
-			hidden_effect = {
-				create_wargoal = {
-					type = liberate_wargoal
-					target = WGR
-				}
 			}
 		}
 	}
@@ -9410,7 +9379,6 @@ country_event = {
 				}
 				ROOT = { add_to_faction = PREV }
 			}
-			set_cosmetic_tag = WGR
 			every_other_country = {
 				limit = {
 					any_subject_country = {
@@ -9578,10 +9546,6 @@ country_event = {
 					target = PREV
 					autonomy_state = autonomy_free
 				}
-			}
-			IF = {
-				limit = { has_government = communism }
-				set_cosmetic_tag = DDR
 			}
 		}
 		

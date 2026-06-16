@@ -454,7 +454,6 @@ country_event = {
 					has_unit_leader_flag = retired
 				}
 				retire = no
-				set_nationality = CSA
 			}
 		}
 	}
@@ -497,9 +496,6 @@ country_event = {
 		name = mtg_usa_civil_war_fascists.22.a #can't even deal with this right now
 		ai_chance = {
 			factor = 1
-		}
-		USA = {
-			give_guarantee = USB
 		}
 		
 	}
@@ -553,12 +549,10 @@ country_event = {
 
 	option = {
 		name = mtg_usa_civil_war_fascists.23.a 
-		annex_country = { target = USB } #all your peripherals are belong to us
 		every_owned_state = {
 			limit = {
 				is_core_of = USB
 			}
-			remove_core_of = USB
 			USA = {
 				add_state_core = PREV
 				USA_congress_add_state = yes
@@ -620,14 +614,6 @@ state_event = {
 			
 		}
 		event_target:CSA_liberated_state = {
-			create_unit = {
-				division = "name = \"1. Local Volunteers\" division_template = \"Local Volunteers\" start_experience_factor = 0" 
-				owner = CSA
-			}
-			create_unit = {
-				division = "name = \"2. Local Volunteers\" division_template = \"Local Volunteers\" start_experience_factor = 0" 
-				owner = CSA
-			}
 		}
 	}
 	option = {
