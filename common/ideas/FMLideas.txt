@@ -294,7 +294,7 @@ ideas = {
 				exiled_government_weekly_manpower = 100
 				legitimacy_gain_factor = 0.05
 				legitimacy_daily = 0.25
-				training_time_army_factor = -0.6
+				# training_time_army_factor = -0.6 removed (AMSB fix): stacked with global fast_training (-0.89) past -100% -> negative training time -> exile France could not train
 				}
 		}
 
@@ -609,7 +609,7 @@ ideas = {
 
 			modifier = {
 				special_forces_cap = 0.05
-				special_forces_training_time_factor = -0.15
+				#AMSB_trainfix special_forces_training_time_factor = -0.15
 			}
 
 			picture = eng_special_air_service
@@ -793,7 +793,7 @@ ideas = {
 				compliance_growth_on_our_occupied_states = -0.10
 				weekly_manpower = 100
 				conscription_factor = 0.05
-				training_time_factor = -0.1
+				#AMSB_trainfix training_time_factor = -0.1
 			}
 		}
 
