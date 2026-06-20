@@ -770,21 +770,16 @@ country_event = {
 
     option = {
         name = "Yes, annex them"
-        var:ROOT.target = {
-            var:ROOT.taker = {
-                annex_country = { target = PREV transfer_troops = yes }
-                every_state = {
-                    limit = {
-                        is_owned_by = var:ROOT.taker
-                        is_core_of = var:ROOT.target
-                    }
-                    add_compliance = 80
-                }
-            }
+        # AMSB: host-tool annex. The old code added compliance to the victim's core states
+        # AFTER annex_country, which dereferenced var:ROOT.target once it was already freed
+        # (use-after-free CTD when annexing a dynamic/released country). Compliance on annex
+        # was removed per design, which also eliminates the post-annex deref entirely.
+        var:ROOT.taker = {
+            annex_country = { target = var:ROOT.target transfer_troops = yes }
         }
         set_variable = { global.ht_diplo_a = ROOT.target }
         set_variable = { global.ht_diplo_b = ROOT.taker }
-        every_country = { limit = { is_ai = no } news_event = { id = hosttool.64 } }
+        news_event = { id = hosttool.64 }
         for_each_scope_loop = {
             array = marked_states
             clear_variable = mark_status

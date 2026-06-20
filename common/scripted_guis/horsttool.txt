@@ -80,7 +80,7 @@ st_country_powers = {
 					set_variable = { global.switch_from = global.ht_from_c }
 					set_variable = { global.switch_to = global.ht_to_c }
 					var:global.ht_to_c = { change_tag_from = var:global.ht_from_c }
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.22 } }
+					ROOT = { news_event = { id = hosttool.22 } }
 				}
 			}
 			clear_variable = global.ht_to_c
@@ -107,7 +107,7 @@ st_country_powers = {
 							type = annex_everything
 						}
 					}
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.21 } }
+					ROOT = { news_event = { id = hosttool.21 } }
 				}
 			}
 		}
@@ -519,7 +519,7 @@ st_country_powers = {
 					set_variable = { global.ht_diplo_a = global.ht_wp_a }
 					set_variable = { global.ht_diplo_b = global.ht_wp_b }
 					var:global.ht_wp_a = { white_peace = var:global.ht_wp_b }
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.65 } }
+					ROOT = { news_event = { id = hosttool.65 } }
 				}
 			}
 			else = {
@@ -531,7 +531,7 @@ st_country_powers = {
 							limit = { has_war_with = PREV }
 							white_peace = PREV
 						}
-						every_country = { limit = { is_ai = no } news_event = { id = hosttool.74 } }
+						ROOT = { news_event = { id = hosttool.74 } }
 					}
 				}
 			}
@@ -565,7 +565,7 @@ st_country_powers = {
 						set_truce = { target = PREV days = 0 }
 					}
 				}
-				every_country = { limit = { is_ai = no } news_event = { id = hosttool.67 } }
+				ROOT = { news_event = { id = hosttool.67 } }
 			}
 			clear_variable = global.ht_tr_a
 			clear_variable = global.ht_tr_b
@@ -602,7 +602,7 @@ st_country_powers = {
 							add_to_faction = var:global.ht_join_c
 						}
 					}
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.68 } }
+					ROOT = { news_event = { id = hosttool.68 } }
 				}
 			}
 			clear_variable = global.ht_join_c
@@ -629,7 +629,7 @@ st_country_powers = {
 					set_variable = { global.ht_diplo_a = THIS }
 					remove_from_faction = var:global.ht_kick_c
 				}
-				every_country = { limit = { is_ai = no } news_event = { id = hosttool.70 } }
+				ROOT = { news_event = { id = hosttool.70 } }
 			}
 			clear_variable = global.ht_kick_c
 		}
@@ -655,7 +655,7 @@ st_country_powers = {
 				set_variable = { global.ht_diplo_a = global.ht_wg_a }
 				set_variable = { global.ht_diplo_b = global.ht_wg_b }
 				ht_clear_wargoals_both = yes
-				every_country = { limit = { is_ai = no } news_event = { id = hosttool.71 } }
+				ROOT = { news_event = { id = hosttool.71 } }
 			}
 			clear_variable = global.ht_wg_a
 			clear_variable = global.ht_wg_b
@@ -669,19 +669,19 @@ st_country_powers = {
 					limit = { has_autonomy_state = autonomy_integrated_puppet }
 					set_variable = { global.ht_diplo_a = THIS }
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_puppet } }
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+					ROOT = { news_event = { id = hosttool.72 } }
 				}
 				else_if = {
 					limit = { has_autonomy_state = autonomy_puppet }
 					set_variable = { global.ht_diplo_a = THIS }
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_colony } }
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+					ROOT = { news_event = { id = hosttool.72 } }
 				}
 				else_if = {
 					limit = { has_autonomy_state = autonomy_colony }
 					set_variable = { global.ht_diplo_a = THIS }
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_dominion } }
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+					ROOT = { news_event = { id = hosttool.72 } }
 				}
 			}
 		}
@@ -692,19 +692,19 @@ st_country_powers = {
 					limit = { has_autonomy_state = autonomy_dominion }
 					set_variable = { global.ht_diplo_a = THIS }
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_colony } }
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+					ROOT = { news_event = { id = hosttool.72 } }
 				}
 				else_if = {
 					limit = { has_autonomy_state = autonomy_colony }
 					set_variable = { global.ht_diplo_a = THIS }
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_puppet } }
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+					ROOT = { news_event = { id = hosttool.72 } }
 				}
 				else_if = {
 					limit = { has_autonomy_state = autonomy_puppet }
 					set_variable = { global.ht_diplo_a = THIS }
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet } }
-					every_country = { limit = { is_ai = no } news_event = { id = hosttool.72 } }
+					ROOT = { news_event = { id = hosttool.72 } }
 				}
 			}
 		}
