@@ -1,0 +1,189 @@
+# =============================================================================
+# WAR OF GAZALA - desert-war attrition mechanic (restored & fixed 2026-06-21)
+# =============================================================================
+# When the North African war opens (Italy at war with the UK or France) the
+# whole African theatre takes a heavy combat penalty for BOTH sides, simulating
+# the supply-starved desert seesaw. The penalty then ramps linearly back to 0
+# over ~6 months and removes itself.
+#
+# Modifier definitions: common/dynamic_modifiers/gazala_dynamic_modifiers.txt
+#
+# WHY on_monthly_WST (and not a plain on_monthly):
+#   on_monthly fires once PER COUNTRY. The original ran the decay there, so the
+#   +step was applied ~60x/month and the debuff resolved in days, not months -
+#   and that per-country rapid-stepping is what let the value skip past 0.
+#   on_monthly_WST fires once (only for the always-present wasteland tag), so the
+#   decay is a true once-a-month tick. Root scope is WST; everything below uses
+#   global vars / explicit ITA scope / every_state, so root is irrelevant.
+#
+# THE OLD BUG ("ticked positive instead of stopping at 0"):
+#   cleanup was gated on an EXACT-equality check (var = 0). HOI4 stores script
+#   variables in fixed-point, so repeated +step accumulation steps OVER 0 without
+#   ever landing on it -> cleanup never fired -> the value stuck at a small
+#   positive (a permanent +attack BUFF). Fixed with a >= 0 clamp (see below).
+#
+# ORDER NOTE: the DECAY block is intentionally placed BEFORE the ACTIVATION
+# block. Both run in the same monthly tick, so if activation ran first the var
+# would be set to -0.5 and immediately decayed in the same tick. Decay-first
+# means the activation month is skipped by decay (flag not yet set), so the
+# first month reads the full -50% / -25%.
+
+on_actions = {
+
+	on_monthly_WST = {
+		effect = {
+
+			# ---------------------------------------------------------------
+			# DECAY (monthly). Ramp both penalties toward 0, then tear the whole
+			# mechanic down. -0.5 / 0.083 ~= 6 months; -0.25 / 0.042 ~= 6 months,
+			# so both reach 0 together.
+			# ---------------------------------------------------------------
+			if = {
+				limit = { has_global_flag = war_of_gazala_active }
+
+				add_to_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0.083 }
+				add_to_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0.042 }
+
+				# Fixed-point safety: never let speed overshoot into a positive buff.
+				if = {
+					limit = { check_variable = { global.war_of_gazala_modifier_speed_factor_var > 0 } }
+					set_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0 }
+				}
+
+				# THE FIX: >= 0 (not = 0) catches any fixed-point overshoot, so the
+				# attack penalty can never get stranded as a positive buff. Once it
+				# recovers, remove the entire mechanic.
+				if = {
+					limit = { check_variable = { global.war_of_gazala_modifier_attack_factor_var >= 0 } }
+
+					# Clamp to exactly 0 first so the modifiers read 0 (no buff blip)
+					# during the frame they are removed.
+					set_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0 }
+					set_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0 }
+
+					every_state = {
+						limit = { has_state_flag = war_in_africa }
+						# Mirror the scoped adds exactly so no per-tag instance (or
+						# its icon) is left behind.
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ITA }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = GER }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = HUN }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = BUL }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ROM }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = FIN }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = SPR }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ENG }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = FRA }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = SAF }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = CAN }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = RAJ }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = AST }
+						remove_dynamic_modifier = { modifier = war_of_gazala_modifier scope = MEX }
+						remove_dynamic_modifier = { modifier = war_of_gazala_speed_modifier }
+						clr_state_flag = war_in_africa
+					}
+
+					clr_global_flag = war_of_gazala_active
+					clr_variable = global.war_of_gazala_modifier_attack_factor_var
+					clr_variable = global.war_of_gazala_modifier_speed_factor_var
+				}
+			}
+
+			# ---------------------------------------------------------------
+			# ACTIVATION (one-shot). Fires the first month Italy is at war with
+			# the UK or France = the desert war has begun. war_of_gazala_fired is
+			# permanent so it can never re-trigger; works in every game mode,
+			# including 1941 saves where the war already exists at load.
+			# ---------------------------------------------------------------
+			if = {
+				limit = {
+					NOT = { has_global_flag = war_of_gazala_fired }
+					ITA = {
+						OR = {
+							has_war_with = ENG
+							has_war_with = FRA
+						}
+					}
+				}
+				set_global_flag = war_of_gazala_fired
+				set_global_flag = war_of_gazala_active
+
+				# Start at -50% attack / -25% speed (set BEFORE adding modifiers
+				# so the first frame already reads the right value).
+				set_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = -0.5 }
+				set_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = -0.25 }
+
+				every_state = {
+					limit = {
+						OR = {
+							# --- Italian Libya ---
+							state = 448 # Tripoli
+							state = 449 # Libyan Coast
+							state = 450 # Benghasi
+							state = 451 # Derna
+							state = 661 # Tripolitania
+							state = 662 # Sirte
+							state = 663 # Cyrenaica
+							# --- British Egypt ---
+							state = 446 # Cairo
+							state = 447 # Alexandria
+							state = 456 # Luxor
+							state = 457 # Aswan
+							state = 552 # Western Egypt (the Western Desert battlefield)
+							state = 907 # Cairo (region)
+							# --- French Tunisia ---
+							state = 458 # Tunisia
+							state = 665 # Gabes
+							# --- French Algeria ---
+							state = 459 # Western Algeria
+							state = 460 # Eastern Algeria
+							state = 513 # Southern Algeria
+							# --- Anglo-Egyptian Sudan (East African approaches) ---
+							state = 549 # Sudan
+							state = 551 # Khartoum
+							state = 883 # Kassala
+							# --- Italian East Africa + Somalilands ---
+							state = 550 # Eritrea
+							state = 559 # Italian Somaliland
+							state = 268 # French Somaliland
+							state = 269 # British Somaliland
+							state = 271 # Ethiopia
+							state = 835 # Haraghe
+							state = 836 # Bale
+							state = 837 # Sidamo
+							state = 838 # Illubabor
+							state = 839 # Welega
+							state = 840 # Gojjam
+							state = 841 # Begemder
+							state = 842 # Tigray
+							state = 843 # Wello
+							state = 908 # Afar
+							state = 903 # Garissa (Kenya border)
+						}
+					}
+					set_state_flag = war_in_africa
+
+					# Attack penalty - one instance per belligerent so BOTH the
+					# Axis AND the Allies suffer it in the theatre.
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ITA } # Axis
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = GER }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = HUN }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = BUL }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ROM }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = FIN }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = SPR }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = ENG } # Allies
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = FRA }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = SAF }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = CAN }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = RAJ }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = AST }
+					add_dynamic_modifier = { modifier = war_of_gazala_modifier scope = MEX }
+
+					# Speed penalty - state-wide (slows everyone in the desert).
+					add_dynamic_modifier = { modifier = war_of_gazala_speed_modifier }
+				}
+			}
+		}
+	}
+}
