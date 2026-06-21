@@ -104,8 +104,13 @@ on_actions = {
 				}
 			}
 			SPR = {
-				add_ideas = {
-					no_faction
+				# AMSB: only add the no-faction block while the Spanish Civil War is unresolved.
+				# Lifted when scw_over is set (see on_monthly_WST below) so Spain can join the Axis post-SCW.
+				if = {
+					limit = { NOT = { has_global_flag = scw_over } }
+					add_ideas = {
+						no_faction
+					}
 				}
 			}
 			every_country = {
@@ -253,6 +258,18 @@ on_actions = {
 	# instead of repeating for every country (global on_monthly). Same tick, same outcome.
 	on_monthly_WST = {
 		effect = {
+			# AMSB: once the Spanish Civil War is over (scw_over), let Nationalist Spain
+			# join factions (Axis) manually or by invitation. Covers every SCW-end path.
+			SPR = {
+				if = {
+					limit = {
+						has_global_flag = scw_over
+						has_idea = no_faction
+					}
+					remove_ideas = no_faction
+					set_rule = { can_join_factions = yes }
+				}
+			}
 			if = {
 				limit = {
 					AND = {
