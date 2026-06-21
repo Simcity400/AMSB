@@ -774,6 +774,14 @@ country_event = {
         # AFTER annex_country, which dereferenced var:ROOT.target once it was already freed
         # (use-after-free CTD when annexing a dynamic/released country). Compliance on annex
         # was removed per design, which also eliminates the post-annex deref entirely.
+        # AMSB: annexing a dynamic (civil-war breakaway) country frees its country object. The old
+        # hosttool.64 desc [?global.ht_diplo_a.GetName] then dereferenced that freed object through a
+        # SCRIPTED VARIABLE (a raw, engine-untracked value) = use-after-free CTD on clients where the
+        # slot was unmapped ("many but not all crash"). Capture both sides as ENGINE-MANAGED event
+        # targets BEFORE the annex (vanilla's safe pattern for annexed-country names); the engine
+        # invalidates these when the object is destroyed, so GetName on them is crash-safe.
+        var:ROOT.target = { save_global_event_target_as = ht_annexed_country }
+        var:ROOT.taker = { save_global_event_target_as = ht_annexer_country }
         var:ROOT.taker = {
             annex_country = { target = var:ROOT.target transfer_troops = yes }
         }
@@ -800,7 +808,7 @@ country_event = {
 news_event = {
     id = hosttool.64
     title = "Host Tool - Country Annexed"
-    desc = "[?global.ht_diplo_a.GetName] has been annexed into [?global.ht_diplo_b.GetName] by the host tool."
+    desc = "[?event_target:ht_annexed_country.GetName] has been annexed into [?event_target:ht_annexer_country.GetName] by the host tool."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes

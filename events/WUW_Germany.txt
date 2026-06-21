@@ -4549,6 +4549,14 @@ country_event = { #Germany integrates us
 	option = { #we had a good run
 		name = wuw_GER_diplomacy.81.a
 
+		# AMSB: mark ROOT's controlled core states BEFORE annex; the hidden_effect below ran
+		# FROM={ every_controlled_state is_core_of=ROOT } AFTER FROM annexed ROOT = use-after-free CTD.
+		ROOT = {
+			every_controlled_state = {
+				limit = { is_core_of = ROOT }
+				set_state_flag = wuw_ger_annex_mark
+			}
+		}
 		FROM = {
 			annex_country = {
 				target = ROOT
@@ -4570,10 +4578,11 @@ country_event = { #Germany integrates us
 			FROM = {
 				every_controlled_state = {
 					limit = {
-						is_core_of = ROOT
+						has_state_flag = wuw_ger_annex_mark
 					}
 					add_compliance = 50
 					add_extra_state_shared_building_slots = 1
+					clr_state_flag = wuw_ger_annex_mark
 				}
 			}
 		}
@@ -16104,6 +16113,13 @@ country_event = {
 	option = { # A great day for the [ROOT.GetAdjective] nation!
 		name = wuw_GER_realpolitik.37.a  
 		
+		# AMSB: mark FROM's core states BEFORE annex; the old FROM={ every_core_state } ran
+		# AFTER annex_country freed the FROM country object = use-after-free CTD.
+		FROM = {
+			every_core_state = {
+				set_state_flag = wuw_ger_annex_mark
+			}
+		}
 		annex_country = {
 			target = FROM
 			transfer_troops = yes
@@ -16111,10 +16127,10 @@ country_event = {
 
 		custom_effect_tooltip =  generic_skip_one_line_tt
 		
-		FROM = {
-			every_core_state = {		
-				add_core_of = ROOT
-			}
+		every_state = {
+			limit = { has_state_flag = wuw_ger_annex_mark }
+			add_core_of = ROOT
+			clr_state_flag = wuw_ger_annex_mark
 		}
 
 		GER_anschluss_modify_mefo_bills_or_economy_of_conquest = yes
@@ -18095,16 +18111,23 @@ country_event = { #FROM accepts tighter federation
 	option = { #great!
 		name = wuw_GER_realpolitik.61.a
 
+		# AMSB: mark FROM's controlled core states BEFORE annex; the old post-annex
+		# every_controlled_state{ is_core_of=FROM } dereferenced the freed FROM = use-after-free CTD.
+		FROM = {
+			every_controlled_state = {
+				limit = { is_core_of = FROM }
+				set_state_flag = wuw_ger_annex_mark
+			}
+		}
 		annex_country = {
 			target = FROM
 			transfer_troops = yes
-		}	
+		}
 		every_controlled_state = {
-			limit = {
-				is_core_of = FROM
-			}
+			limit = { has_state_flag = wuw_ger_annex_mark }
 			add_compliance = 50
 			add_extra_state_shared_building_slots = 1
+			clr_state_flag = wuw_ger_annex_mark
 		}
 	}
 }

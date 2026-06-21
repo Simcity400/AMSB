@@ -3526,29 +3526,6 @@ on_actions = {
 			}
 		}
 
-		# Three way civil war - demo Japan is defeated and should be annexed into com JAP
-		effect = {
-
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = JAP
-						has_government = democratic
-						has_country_flag = JAP_is_demo_in_three_way_cw_country_flag
-					}
-					FROM = {
-						original_tag = JAP
-					}
-				}
-				JAP = {
-					annex_country = {
-						target = ROOT
-						transfer_troops = no
-					}
-				}
-			}
-		}
-
 		# Remove nine-power treaty signatory
 		effect = {
 			IF = {
@@ -3612,6 +3589,29 @@ on_actions = {
 					}
 				}
 				set_global_flag = achievement_JAP_capitulated_fascist_germany
+			}
+		}
+
+		# Three way civil war - demo Japan is defeated and should be annexed into com JAP
+		effect = {
+
+			IF = {
+				limit = {
+					ROOT = {
+						original_tag = JAP
+						has_government = democratic
+						has_country_flag = JAP_is_demo_in_three_way_cw_country_flag
+					}
+					FROM = {
+						original_tag = JAP
+					}
+				}
+				JAP = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = no
+					}
+				}
 			}
 		}
 

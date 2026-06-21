@@ -2636,16 +2636,24 @@ country_event = { #FROM accepts tighter federation
 	option = { #great!
 		name = SEA_japan_foreign_policy.51.a
 
+		# AMSB: mark FROM's controlled core states BEFORE annex. annex_country frees the FROM
+		# country object, so the old post-annex every_controlled_state{ is_core_of=FROM } was a
+		# use-after-free CTD. We flag the states first, then apply compliance to the flagged set.
+		FROM = {
+			every_controlled_state = {
+				limit = { is_core_of = FROM }
+				set_state_flag = sea_jap_annex_mark
+			}
+		}
 		annex_country = {
 			target = FROM
 			transfer_troops = yes
-		}	
+		}
 		every_controlled_state = {
-			limit = {
-				is_core_of = FROM
-			}
+			limit = { has_state_flag = sea_jap_annex_mark }
 			add_compliance = 25
 			add_extra_state_shared_building_slots = 1
+			clr_state_flag = sea_jap_annex_mark
 		}
 	}
 }
@@ -4019,16 +4027,20 @@ country_event = {
 	option = { 
 		name = SEA_japan_foreign_policy.64.a
 		
+		# AMSB: mark FROM's core states BEFORE annex. The old post-annex every_state{ is_core_of=FROM }
+		# dereferenced the freed FROM country object = use-after-free CTD.
+		every_state = {
+			limit = { is_core_of = FROM }
+			set_state_flag = sea_jap_annex_mark
+		}
 		annex_country = {
 			target = FROM
 			transfer_troops = yes
-		}	
-			
+		}
 		every_state = {
-			limit = {
-				is_core_of = FROM
-			}
+			limit = { has_state_flag = sea_jap_annex_mark }
 			add_core_of = ROOT
+			clr_state_flag = sea_jap_annex_mark
 		}
 
 	}
@@ -5623,16 +5635,24 @@ country_event = { #FROM accepts tighter federation
 	option = { #great!
 		name = SEA_japan_foreign_policy.77.a
 
+		# AMSB: mark FROM's controlled core states BEFORE annex. annex_country frees the FROM
+		# country object, so the old post-annex every_controlled_state{ is_core_of=FROM } was a
+		# use-after-free CTD. We flag the states first, then apply compliance to the flagged set.
+		FROM = {
+			every_controlled_state = {
+				limit = { is_core_of = FROM }
+				set_state_flag = sea_jap_annex_mark
+			}
+		}
 		annex_country = {
 			target = FROM
 			transfer_troops = yes
-		}	
+		}
 		every_controlled_state = {
-			limit = {
-				is_core_of = FROM
-			}
+			limit = { has_state_flag = sea_jap_annex_mark }
 			add_compliance = 25
 			add_extra_state_shared_building_slots = 1
+			clr_state_flag = sea_jap_annex_mark
 		}
 	}
 }
@@ -5978,16 +5998,24 @@ country_event = {
 	option = { 
 		name = SEA_japan_foreign_policy.88.a
 		
+		# AMSB: mark FROM's controlled core states BEFORE annex. annex_country frees the FROM
+		# country object, so the old post-annex every_controlled_state{ is_core_of=FROM } was a
+		# use-after-free CTD. We flag the states first, then apply compliance to the flagged set.
+		FROM = {
+			every_controlled_state = {
+				limit = { is_core_of = FROM }
+				set_state_flag = sea_jap_annex_mark
+			}
+		}
 		annex_country = {
 			target = FROM
 			transfer_troops = yes
-		}	
+		}
 		every_controlled_state = {
-			limit = {
-				is_core_of = FROM
-			}
+			limit = { has_state_flag = sea_jap_annex_mark }
 			add_compliance = 25
 			add_extra_state_shared_building_slots = 1
+			clr_state_flag = sea_jap_annex_mark
 		}
 		
 	}
@@ -7128,10 +7156,8 @@ country_event = { #FROM accepts tighter federation
 	option = { #great!
 		name = SEA_japan_foreign_policy.110.a
 
-		annex_country = {
-			target = FROM
-			transfer_troops = yes
-		}	
+		# AMSB: mark FROM's relevant core states BEFORE annex. The old FROM={ every_core_state ... }
+		# ran AFTER annex_country freed the FROM country object = use-after-free CTD.
 		FROM = {
 			every_core_state = {
 				limit = {
@@ -7141,8 +7167,17 @@ country_event = { #FROM accepts tighter federation
 						is_on_continent = middle_east 
 					}
 				}
-				add_core_of = ROOT
+				set_state_flag = sea_jap_annex_mark
 			}
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = { has_state_flag = sea_jap_annex_mark }
+			add_core_of = ROOT
+			clr_state_flag = sea_jap_annex_mark
 		}
 
 	}

@@ -966,7 +966,8 @@ country_event = {
 		ai_chance = {
 			base = 30
 		}
-		annex_country = { target = FROM transfer_troops = yes }
+		# AMSB: transfer FROM's monarchy-sympathising leaders BEFORE annex; the old
+		# post-annex FROM={ every_unit_leader } dereferenced the freed FROM = use-after-free CTD.
 		FROM = {
 			every_unit_leader = {
 					limit = {
@@ -975,6 +976,7 @@ country_event = {
 					set_nationality = POL
 				}
 		}
+		annex_country = { target = FROM transfer_troops = yes }
 	}
 }
 
