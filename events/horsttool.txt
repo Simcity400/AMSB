@@ -728,6 +728,7 @@ country_event = {
         name = "Return the player"
         set_temp_variable = { return_to = global.ai_fix_return_country }
         var:return_to = { change_tag_from = AIF }
+        var:return_to = { save_global_event_target_as = ai_fix_country }
         every_country = {
             limit = { is_ai = no }
             news_event = { id = hosttool.62 }
@@ -751,7 +752,7 @@ news_event = {
 news_event = {
     id = hosttool.62
     title = "Host Tool - AI Control Fixed"
-    desc = "Player control of [?global.ai_fix_return_country.GetName] has been restored. The ghost AI is gone."
+    desc = "Player control of [?event_target:ai_fix_country.GetName] has been restored. The ghost AI is gone."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes

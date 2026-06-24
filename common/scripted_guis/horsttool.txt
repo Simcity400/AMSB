@@ -377,12 +377,14 @@ st_country_powers = {
 		st_sub_5_click = {
 			owner = {
 				add_stability = -0.05
+				ROOT = { news_event = { id = hosttool.53 } }
 			}
 		}
 		
 		st_add_5_click = {
 			owner = {
 				add_stability = 0.05
+				ROOT = { news_event = { id = hosttool.52 } }
 			}
 		}
 		# Set buttons apply to ALL marked states if any are marked, otherwise the selected state
@@ -587,6 +589,7 @@ st_country_powers = {
 					limit = {
 						NOT = { check_variable = { global.ht_join_c = global.ht_fac_c } }
 						var:global.ht_fac_c = { is_in_faction = yes }
+						NOT = { var:global.ht_join_c = { is_in_faction_with = var:global.ht_fac_c } }
 					}
 					set_variable = { global.ht_diplo_a = global.ht_fac_c }
 					set_variable = { global.ht_diplo_b = global.ht_join_c }
@@ -958,8 +961,7 @@ st_country_powers = {
 			WST = { 
 				clear_variable = pause_blocker_variable 
 				set_variable = { var = pause_blocker_variable value = 1 } 
-			} 
-			ROOT = { clr_global_flag = blocking_pauses }
+			}
 			clear_variable = pause_dropdown_open
 			news_event = { id = hosttool.20 }
 		}
@@ -968,8 +970,7 @@ st_country_powers = {
 			WST = { 
 				clear_variable = pause_blocker_variable 
 				set_variable = { var = pause_blocker_variable value = 2 } 
-			} 
-			ROOT = { clr_global_flag = blocking_pauses }
+			}
 			clear_variable = pause_dropdown_open
 			news_event = { id = hosttool.20 }
 		}
@@ -979,7 +980,6 @@ st_country_powers = {
 				clear_variable = pause_blocker_variable 
 				set_variable = { var = pause_blocker_variable value = 3 } 
 			}
-			ROOT = { clr_global_flag = blocking_pauses }
 			clear_variable = pause_dropdown_open
 			news_event = { id = hosttool.20 }
 		}
@@ -1126,24 +1126,6 @@ st_country_powers = {
 		cheat32_text_visible = { ROOT = { has_country_flag = cheating } }
 		pause_blocker_option_visible = { }
 		pause_blocker_option_text_visible = { }
-		pause_blocker_all_visible = { 
-			has_variable = pause_dropdown_open
-		}
-		pause_blocker_major_visible = { 
-			has_variable = pause_dropdown_open
-		}
-		pause_blocker_host_visible = {
-			has_variable = pause_dropdown_open
-		}
-		pause_blocker_all_text_visible = { 
-			has_variable = pause_dropdown_open
-		}
-		pause_blocker_major_text_visible = { 
-			has_variable = pause_dropdown_open
-		}
-		pause_blocker_host_text_visible = {
-			has_variable = pause_dropdown_open
-		}
 		pause_blocker_unblock_country_visible = {
 			owner = {
 				NOT = { has_country_flag = host }
@@ -1169,10 +1151,10 @@ st_country_powers = {
 			}
 		}	
 		award_states_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } }
-		annex_country_click_enabled = {	check_variable = { ROOT.marked_states^num > 0 }	}
-		puppet_country_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } }
+		annex_country_click_enabled = {	check_variable = { ROOT.marked_states^num > 0 }	owner = { exists = yes } }
+		puppet_country_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } owner = { exists = yes } }
 		add_cores_click_enabled = { check_variable = { ROOT.marked_states^num > 0 }	}
-		add_cores_to_all_cores_of_selected_nation_click_enabled = { check_variable = { ROOT.marked_states^num > 0 }	}
+		add_cores_to_all_cores_of_selected_nation_click_enabled = { check_variable = { ROOT.marked_states^num > 0 }	owner = { exists = yes } }
 		remove_cores_click_enabled = {check_variable = { ROOT.marked_states^num > 0 }}
 
 		mill_add_click_enabled = {}
