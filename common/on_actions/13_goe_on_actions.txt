@@ -271,7 +271,7 @@ on_actions = {
 					min = 3000 # optional
 					max = 6500 # optional
 				}
-				round_variable = global.RAJ_GOE_william_rhodes_davis_fuelvariable_name
+				round_variable = global.RAJ_GOE_william_rhodes_davis_fuel
 				GER = { #ready for duty, C-80
 
 					add_fuel = var:global.RAJ_GOE_william_rhodes_davis_fuel
@@ -316,70 +316,6 @@ on_actions = {
 		}
 	}
 
-	#on_weekly_RAJ = {
-	#	effect = {
-	#		if = {
-	#			limit = { has_completed_focus = RAJ_provincial_autonomy }
-	#			for_each_scope_loop = {
-	#				array = owned_states_at_game_start
-	#				if = {
-	#					limit = {
-	#						has_resistance = yes
-	#						occupation_law  = demand_princely_donations
-	#					}
-	#					add_to_variable = { RAJ.donations_count = 1 }
-	#				}
-	#
-	#
-	#			}
-#
-	#			if = {
-	#				limit = {
-	#					check_variable = { donations_count > 25 }
-	#				}
-	#				subtract_from_variable = { donations_count = 25 }
-	#				random_list = {
-#
-	#					seed = random
-	#					1 = {
-	#						add_equipment_to_stockpile = {
-	#							type = infantry_equipment_0
-	#							amount = 300
-	#							producer = MYS
-	#						}
-	#					}
-	#					1 = {
-	#						add_equipment_to_stockpile = {
-	#							type = support_equipment_1
-	#							amount = 100
-	#							producer = HYD
-	#						}
-	#					}
-#
-	#					1 = {
-	#						add_equipment_to_stockpile = {
-	#							type = artillery_equipment_1
-	#							amount = 50
-	#							producer = KAS
-	#						}
-	#					}
-#
-	#					1 = {
-	#						add_equipment_to_stockpile = {
-	#							type = motorized_equipment_1
-	#							amount = 50
-	#							producer = RJP
-	#						}
-	#					}
-	#
-	#				}
-	#			}
-	#		}
-#
-#
-#
-	#	}
-	#}
 	#ROOT = attacking side
 	#FROM = defending side
 	#fired when two countries end up at war with each other (on_war is fired when a country goes to war against anyone and is not fired again when it enters war against another country unless it went to peace first)

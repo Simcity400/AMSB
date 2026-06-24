@@ -307,6 +307,7 @@ st_country_powers = {
 
 		award_states_click = {
 			owner = {
+				set_temp_variable = { ROOT.taker = this }
 				for_each_loop = {
 					array = ROOT.marked_states
 					value = state

@@ -785,8 +785,10 @@ country_event = {
         var:ROOT.taker = {
             annex_country = { target = var:ROOT.target transfer_troops = yes }
         }
-        set_variable = { global.ht_diplo_a = ROOT.target }
-        set_variable = { global.ht_diplo_b = ROOT.taker }
+        # AMSB: removed two stale post-annex writes (global.ht_diplo_a/b = ROOT.target/taker).
+        # They stored the just-freed annexed country object into a shared scratch variable and
+        # were never read on the annex path (hosttool.64 uses the engine-managed event targets
+        # saved above), so they were dead writes that re-introduced a dangling-object-var.
         news_event = { id = hosttool.64 }
         for_each_scope_loop = {
             array = marked_states
