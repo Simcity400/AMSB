@@ -1,0 +1,20 @@
+# War of Gazala desert-war debuff toggle (AMSB 2026-06-21).
+# Added in its own file so 00_game_rules.txt (Windows-1252 with color-code bytes)
+# does not have to be touched. Rules merge across all files in common/game_rules/.
+# Consumed in common/on_actions/gazala_on_actions.txt.
+
+war_of_gazala = {
+	name = "War of Gazala (Africa Debuff)"
+	group = "MSB Rules"
+	icon = GFX_decision_border_war
+	default = {
+		name = on
+		text = "On"
+		desc = "When Italy goes to war with Britain or France, the North & East Africa theatre takes a heavy combat penalty for BOTH sides (-50% army attack / -25% speed) that decays back to 0 over ~6 months. (Recommended)"
+	}
+	option = {
+		name = off
+		text = "Off"
+		desc = "No desert-war debuff - fighting in Africa is unaffected."
+	}
+}

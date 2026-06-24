@@ -35,13 +35,14 @@ on_actions = {
 
 			# ---------------------------------------------------------------
 			# DECAY (monthly). Ramp both penalties toward 0, then tear the whole
-			# mechanic down. -0.5 / 0.083 ~= 6 months; -0.25 / 0.042 ~= 6 months,
-			# so both reach 0 together.
+			# mechanic down. Steps chosen so attack (-0.5) and speed (-0.25) both
+			# cross 0 on the 6th decay tick: -0.5 + 6*0.084 = +0.004 and
+			# -0.25 + 6*0.042 = +0.002, so both resolve and are removed together.
 			# ---------------------------------------------------------------
 			if = {
 				limit = { has_global_flag = war_of_gazala_active }
 
-				add_to_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0.083 }
+				add_to_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0.084 }
 				add_to_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0.042 }
 
 				# Fixed-point safety: never let speed overshoot into a positive buff.
@@ -50,11 +51,18 @@ on_actions = {
 					set_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0 }
 				}
 
-				# THE FIX: >= 0 (not = 0) catches any fixed-point overshoot, so the
-				# attack penalty can never get stranded as a positive buff. Once it
-				# recovers, remove the entire mechanic.
+				# THE FIX: test for >= 0 (not exact = 0) so any fixed-point overshoot
+				# still triggers cleanup and the attack penalty can never get stranded
+				# as a positive buff. NB: HOI4 check_variable has no ">=" shorthand
+				# (vanilla uses zero of them), so use the explicit compare form.
 				if = {
-					limit = { check_variable = { global.war_of_gazala_modifier_attack_factor_var >= 0 } }
+					limit = {
+						check_variable = {
+							var = global.war_of_gazala_modifier_attack_factor_var
+							value = 0
+							compare = greater_than_or_equals
+						}
+					}
 
 					# Clamp to exactly 0 first so the modifiers read 0 (no buff blip)
 					# during the frame they are removed.
@@ -84,8 +92,8 @@ on_actions = {
 					}
 
 					clr_global_flag = war_of_gazala_active
-					clr_variable = global.war_of_gazala_modifier_attack_factor_var
-					clr_variable = global.war_of_gazala_modifier_speed_factor_var
+					clear_variable = global.war_of_gazala_modifier_attack_factor_var
+					clear_variable = global.war_of_gazala_modifier_speed_factor_var
 				}
 			}
 
@@ -94,9 +102,12 @@ on_actions = {
 			# the UK or France = the desert war has begun. war_of_gazala_fired is
 			# permanent so it can never re-trigger; works in every game mode,
 			# including 1941 saves where the war already exists at load.
+			# Gated on the war_of_gazala game rule (default On; set Off in the
+			# lobby to disable the whole mechanic - see common/game_rules/).
 			# ---------------------------------------------------------------
 			if = {
 				limit = {
+					has_game_rule = { rule = war_of_gazala option = on }
 					NOT = { has_global_flag = war_of_gazala_fired }
 					ITA = {
 						OR = {
