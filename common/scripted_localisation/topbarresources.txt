@@ -148,13 +148,13 @@ defined_text = { # global
 
 	text = {
 		trigger = {
-			has_active_mission = MOD_countdown_to_axis_victory_mission
+			check_variable = { global.axis_score > 10 } # was has_active_mission = MOD_countdown_to_axis_victory_mission (dynamic-token OOS spam)
 		}
 		localization_key = axis_victory_tt
 	}
 	text = {
 		trigger = {
-			has_active_mission = MOD_countdown_to_allied_victory_mission
+			check_variable = { global.allies_score > 10 } # was has_active_mission = MOD_countdown_to_allied_victory_mission (dynamic-token OOS spam)
 		}
 		localization_key = allied_victory_tt
 	}

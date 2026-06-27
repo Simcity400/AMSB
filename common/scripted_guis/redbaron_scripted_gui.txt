@@ -33,8 +33,12 @@ scripted_gui = {
 			}
 			NOT = { has_country_flag = vps_ticking_disabled } 
 			OR = {
-				has_active_mission = MOD_countdown_to_allied_victory_mission
-				has_active_mission = MOD_countdown_to_axis_victory_mission
+				# Was has_active_mission = MOD_countdown_to_*_victory_mission; that resolved the
+				# mission as a dynamic scoped token every hourly tick -> scopedvariable.cpp OOS-warning
+				# spam (73k lines). The mission is active iff its score var > 10 (see its own
+				# activation/cancel_trigger in decisions/Redbaron.txt), so check the var directly.
+				check_variable = { global.allies_score > 10 }
+				check_variable = { global.axis_score > 10 }
 			}
 		}
 	}

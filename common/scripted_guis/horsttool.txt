@@ -941,11 +941,38 @@ st_country_powers = {
 			if = {
 				limit = { NOT = { has_variable = building_menu_open } }
 				set_variable = { building_menu_open = 1 }
+				clear_variable = politics_menu_open
 			}
 			else = {
 				clear_variable = building_menu_open
 			}
 		}
+
+		# --- Politics: party-popularity steppers + government-type set ---
+		# Operates on the SELECTED state's owner (like the war support / stability steppers).
+		# Shares the State Builder footprint, so opening one closes the other.
+		politics_drop_menu_click = {
+			if = {
+				limit = { NOT = { has_variable = politics_menu_open } }
+				set_variable = { politics_menu_open = 1 }
+				clear_variable = building_menu_open
+			}
+			else = {
+				clear_variable = politics_menu_open
+			}
+		}
+		pol_dem_add_click = { owner = { add_popularity = { ideology = democratic popularity = 0.1 } } }
+		pol_dem_sub_click = { owner = { add_popularity = { ideology = democratic popularity = -0.1 } } }
+		pol_com_add_click = { owner = { add_popularity = { ideology = communism popularity = 0.1 } } }
+		pol_com_sub_click = { owner = { add_popularity = { ideology = communism popularity = -0.1 } } }
+		pol_fas_add_click = { owner = { add_popularity = { ideology = fascism popularity = 0.1 } } }
+		pol_fas_sub_click = { owner = { add_popularity = { ideology = fascism popularity = -0.1 } } }
+		pol_neu_add_click = { owner = { add_popularity = { ideology = neutrality popularity = 0.1 } } }
+		pol_neu_sub_click = { owner = { add_popularity = { ideology = neutrality popularity = -0.1 } } }
+		pol_dem_gov_click = { owner = { set_politics = { ruling_party = democratic elections_allowed = yes } } }
+		pol_com_gov_click = { owner = { set_politics = { ruling_party = communism elections_allowed = no } } }
+		pol_fas_gov_click = { owner = { set_politics = { ruling_party = fascism elections_allowed = no } } }
+		pol_neu_gov_click = { owner = { set_politics = { ruling_party = neutrality elections_allowed = no } } }
 
 		pause_blocker_option_click = {
 			if = {
@@ -1276,6 +1303,42 @@ st_country_powers = {
 		law_mode_active_visible = { ROOT = { has_country_flag = ht_law_mode } }
 		spirit_add_mode_active_visible = { ROOT = { has_country_flag = ht_spirit_add } }
 		spirit_remove_mode_active_visible = { ROOT = { has_country_flag = ht_spirit_remove } }
-	}   
+
+		# Politics steppers / gov set: only valid on an owned state's owner
+		pol_dem_add_click_enabled = { owner = { exists = yes } }
+		pol_dem_sub_click_enabled = { owner = { exists = yes } }
+		pol_com_add_click_enabled = { owner = { exists = yes } }
+		pol_com_sub_click_enabled = { owner = { exists = yes } }
+		pol_fas_add_click_enabled = { owner = { exists = yes } }
+		pol_fas_sub_click_enabled = { owner = { exists = yes } }
+		pol_neu_add_click_enabled = { owner = { exists = yes } }
+		pol_neu_sub_click_enabled = { owner = { exists = yes } }
+		pol_dem_gov_click_enabled = { owner = { exists = yes } }
+		pol_com_gov_click_enabled = { owner = { exists = yes } }
+		pol_fas_gov_click_enabled = { owner = { exists = yes } }
+		pol_neu_gov_click_enabled = { owner = { exists = yes } }
+		# Politics dropdown: per-element visibility (container-level visible not honored by engine)
+		pol_bg_visible = { has_variable = politics_menu_open }
+		pol_dem_label_visible = { has_variable = politics_menu_open }
+		pol_dem_sub_visible = { has_variable = politics_menu_open }
+		pol_dem_add_visible = { has_variable = politics_menu_open }
+		pol_dem_gov_visible = { has_variable = politics_menu_open }
+		pol_dem_gov_text_visible = { has_variable = politics_menu_open }
+		pol_com_label_visible = { has_variable = politics_menu_open }
+		pol_com_sub_visible = { has_variable = politics_menu_open }
+		pol_com_add_visible = { has_variable = politics_menu_open }
+		pol_com_gov_visible = { has_variable = politics_menu_open }
+		pol_com_gov_text_visible = { has_variable = politics_menu_open }
+		pol_fas_label_visible = { has_variable = politics_menu_open }
+		pol_fas_sub_visible = { has_variable = politics_menu_open }
+		pol_fas_add_visible = { has_variable = politics_menu_open }
+		pol_fas_gov_visible = { has_variable = politics_menu_open }
+		pol_fas_gov_text_visible = { has_variable = politics_menu_open }
+		pol_neu_label_visible = { has_variable = politics_menu_open }
+		pol_neu_sub_visible = { has_variable = politics_menu_open }
+		pol_neu_add_visible = { has_variable = politics_menu_open }
+		pol_neu_gov_visible = { has_variable = politics_menu_open }
+		pol_neu_gov_text_visible = { has_variable = politics_menu_open }
+	}
     }
 }

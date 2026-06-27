@@ -103,6 +103,8 @@ guiTypes = {
 			instantTextboxType = { name = "spirit_add_mode_text" position = {x=146 y=64} font = "hoi_18mbs" text = "Spirit: Add" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
 			buttonType = { name = "spirit_remove_mode" position = {x=270 y=60} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_SPIRIT_REM_TT" pdx_tooltip_delayed = "HT_SPIRIT_TT_DELAYED" }
 			instantTextboxType = { name = "spirit_remove_mode_text" position = {x=276 y=64} font = "hoi_18mbs" text = "Spirit: Rem" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
+			buttonType = { name = "politics_drop_menu" position = {x=400 y=60} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_POL_TT" pdx_tooltip_delayed = "HT_POL_TT_DELAYED" }
+			instantTextboxType = { name = "politics_drop_menu_text" position = {x=406 y=64} font = "hoi_18mbs" text = "Politics" maxWidth = 115 maxHeight = 22 format = left alwaystransparent = yes }
 			# --- active-mode indicators: green check appears on the currently-selected admin mode button ---
 			iconType = { name = "focus_mode_com_active"     position = {x=372 y=9}  spriteType = "GFX_checkbox_small_green" scale = 0.85 alwaystransparent = yes }
 			iconType = { name = "focus_mode_unc_active"     position = {x=502 y=9}  spriteType = "GFX_checkbox_small_green" scale = 0.85 alwaystransparent = yes }
@@ -137,6 +139,30 @@ guiTypes = {
 		instantTextboxType = { name = "bld_syn_label" position = {x=400 y=436} font = "hoi_18mbs" text = "Synth" maxWidth = 66 maxHeight = 22 format = left alwaystransparent = yes }
 		buttonType = { name = "bld_syn_add" position = {x=468 y=433} spriteType = "GFX_ht_plus" scale = 1 pdx_tooltip = "HT_BLD_ADD_TT" }
 		buttonType = { name = "bld_syn_rem" position = {x=492 y=433} spriteType = "GFX_ht_minus" scale = 1 pdx_tooltip = "HT_BLD_REM_TT" }
+
+		# ---- Politics panel (toggled by politics_drop_menu; per-element visibility, shares the builder footprint) ----
+		# Row 1: party-popularity steppers (-/+ 10%). Row 2: force the ruling party (government type).
+		iconType = { name = "pol_bg" position = {x=0 y=403} spriteType = "GFX_ht_builder_bg" alwaystransparent = yes }
+		instantTextboxType = { name = "pol_dem_label" position = {x=10 y=412} font = "hoi_18mbs" text = "Demo" maxWidth = 66 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "pol_dem_sub" position = {x=78 y=409} spriteType = "GFX_ht_minus" scale = 1 pdx_tooltip = "HT_POL_SUB_TT" }
+		buttonType = { name = "pol_dem_add" position = {x=102 y=409} spriteType = "GFX_ht_plus" scale = 1 pdx_tooltip = "HT_POL_ADD_TT" }
+		instantTextboxType = { name = "pol_com_label" position = {x=140 y=412} font = "hoi_18mbs" text = "Comm" maxWidth = 66 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "pol_com_sub" position = {x=208 y=409} spriteType = "GFX_ht_minus" scale = 1 pdx_tooltip = "HT_POL_SUB_TT" }
+		buttonType = { name = "pol_com_add" position = {x=232 y=409} spriteType = "GFX_ht_plus" scale = 1 pdx_tooltip = "HT_POL_ADD_TT" }
+		instantTextboxType = { name = "pol_fas_label" position = {x=270 y=412} font = "hoi_18mbs" text = "Fasc" maxWidth = 66 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "pol_fas_sub" position = {x=338 y=409} spriteType = "GFX_ht_minus" scale = 1 pdx_tooltip = "HT_POL_SUB_TT" }
+		buttonType = { name = "pol_fas_add" position = {x=362 y=409} spriteType = "GFX_ht_plus" scale = 1 pdx_tooltip = "HT_POL_ADD_TT" }
+		instantTextboxType = { name = "pol_neu_label" position = {x=400 y=412} font = "hoi_18mbs" text = "Neut" maxWidth = 66 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "pol_neu_sub" position = {x=468 y=409} spriteType = "GFX_ht_minus" scale = 1 pdx_tooltip = "HT_POL_SUB_TT" }
+		buttonType = { name = "pol_neu_add" position = {x=492 y=409} spriteType = "GFX_ht_plus" scale = 1 pdx_tooltip = "HT_POL_ADD_TT" }
+		buttonType = { name = "pol_dem_gov" position = {x=10 y=434} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_POL_GOV_TT" }
+		instantTextboxType = { name = "pol_dem_gov_text" position = {x=16 y=438} font = "hoi_18mbs" text = "Gov: Democratic" maxWidth = 120 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "pol_com_gov" position = {x=140 y=434} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_POL_GOV_TT" }
+		instantTextboxType = { name = "pol_com_gov_text" position = {x=146 y=438} font = "hoi_18mbs" text = "Gov: Communist" maxWidth = 120 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "pol_fas_gov" position = {x=270 y=434} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_POL_GOV_TT" }
+		instantTextboxType = { name = "pol_fas_gov_text" position = {x=276 y=438} font = "hoi_18mbs" text = "Gov: Fascist" maxWidth = 120 maxHeight = 22 format = left alwaystransparent = yes }
+		buttonType = { name = "pol_neu_gov" position = {x=400 y=434} spriteType = "GFX_generic_box_125" pdx_tooltip = "HT_POL_GOV_TT" }
+		instantTextboxType = { name = "pol_neu_gov_text" position = {x=406 y=438} font = "hoi_18mbs" text = "Gov: Non-Aligned" maxWidth = 120 maxHeight = 22 format = left alwaystransparent = yes }
 
 
 		buttonType = {
