@@ -411,7 +411,10 @@
 					not = { is_on_continent = europe }
 				}
 				add_extra_state_shared_building_slots = 2
-				add_compliance = 10
+				if = {
+					limit = { has_resistance = yes }
+					add_compliance = 10
+				}
 			}
 		}
 	}
@@ -2826,7 +2829,10 @@
 						is_on_continent = europe
 					}
 				}
-				add_compliance = 10
+				if = {
+					limit = { has_resistance = yes }
+					add_compliance = 10
+				}
 			}
 		}
 	}

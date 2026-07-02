@@ -800,11 +800,6 @@ JAP_isoroku_yamamoto = {
 		communism = 0
 	}
 
-	set_autonomy = {
-		target = MEN
-		autonomous_state = autonomy_wtt_imperial_protectorate
-	}
-
 	# Kodoha coup has historical outcomes
 	retire_character = JAP_takahashi_korekiyo
 	retire_character = JAP_jotaro_watanabe
@@ -1069,7 +1064,7 @@ IF = {
 			suspension_type_slot = tank_bogie_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
-			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_1 = empty # AMSB: secondary_turret_hmg is illegal in a Special slot on light chassis (engine dropped it anyway; vanilla data bug)
 			special_type_slot_2 = empty
 			special_type_slot_3 = empty
 			special_type_slot_4 = empty
