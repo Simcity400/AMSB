@@ -12,13 +12,18 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 	
 	is_triggered_only = yes
-	
+	timeout_days = 2	# force resolution even if a human Romania never clicks
 	
 	option = { # Accept demands
 		name = romania.1.a
-		SOV = {
-			country_event = { days = 1 id = soviet.4 }
+		if = {	# only the primary owner records the variable + fires the news relay
+			limit = { owns_state = 78 }
+			set_variable = { SOV.former_controller_of_bessarabia = 78.controller }
+			SOV = { country_event = { days = 1 id = romania.150 } }
 		}
+		if = { limit = { 78 = { is_owned_and_controlled_by = ROOT } } 78 = { transfer_state_to = SOV } }
+		if = { limit = { 80 = { is_owned_and_controlled_by = ROOT } } 80 = { transfer_state_to = SOV } }
+		if = { limit = { 766 = { is_owned_and_controlled_by = ROOT } } 766 = { transfer_state_to = SOV } }
 		set_country_flag = bessarabia_ceded
 		if = {
 			limit = {
@@ -28,11 +33,23 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_idea = ROM_preserve_greater_romania2 
+				has_idea = ROM_preserve_greater_romania2
 			}
-			remove_ideas = ROM_preserve_greater_romania2 
+			remove_ideas = ROM_preserve_greater_romania2
 		}
 		add_ideas = ROM_army_tensions
+	}
+}
+
+# Bessarabia ceded - SOV-side hidden relay: fires the news without requiring a Soviet click
+country_event = {
+	id = romania.150
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		country_event = { days = 1 id = news.10 }
+		news_event = { id = news.199 }
 	}
 }
 
