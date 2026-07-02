@@ -198,6 +198,25 @@ AST_ireland_weapon_smuggling_cat = {
 	}
 }
 
+AST_vichy_out_of_africa_cat = {
+	priority = 90
+	icon = GFX_decision_category_power_struggle
+
+	visible_when_empty = no
+
+	allowed = {
+		original_tag = AST
+		has_dlc = "Thunder at Our Gates"
+	}
+
+	visible = {
+		has_country_flag = AST_vichy_pact_flag
+		NOT = {
+			has_completed_focus = AST_done_meddling
+		}
+	}
+}
+
 AST_special_forces_cat = {
 	priority = 80
 	icon = GFX_decision_category_gre_paying_ifc_debt
