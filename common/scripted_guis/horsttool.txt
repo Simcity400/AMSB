@@ -44,6 +44,7 @@ st_country_powers = {
 				owner = {
 					set_temp_variable = { ROOT.marks = this }
 					set_variable = { global.ai_fix_return_country = this }
+					save_global_event_target_as = ht_aifix_country
 					AIF = { change_tag_from = var:marks }
 					country_event = { id = hosttool.60 hours = 2 }
 				}
@@ -77,8 +78,8 @@ st_country_powers = {
 						NOT = { check_variable = { global.ht_from_c = global.ht_to_c } }
 						var:global.ht_from_c = { is_ai = no }
 					}
-					set_variable = { global.switch_from = global.ht_from_c }
-					set_variable = { global.switch_to = global.ht_to_c }
+					var:global.ht_from_c = { save_global_event_target_as = ht_switch_from }
+					var:global.ht_to_c = { save_global_event_target_as = ht_switch_to }
 					var:global.ht_to_c = { change_tag_from = var:global.ht_from_c }
 					ROOT = { news_event = { id = hosttool.22 } }
 				}
@@ -102,14 +103,18 @@ st_country_powers = {
 						NOT = { var:global.war_declarer = { has_war_with = var:global.war_target } }
 					}
 					var:global.war_declarer = {
+						save_global_event_target_as = ht_war_a
 						declare_war_on = {
 							target = var:global.war_target
 							type = annex_everything
 						}
 					}
+					var:global.war_target = { save_global_event_target_as = ht_war_b }
 					ROOT = { news_event = { id = hosttool.21 } }
 				}
 			}
+			clear_variable = global.war_declarer
+			clear_variable = global.war_target
 		}
 		addpp_click = {
 			owner={
@@ -306,33 +311,30 @@ st_country_powers = {
 		fix_production_click = { owner = { news_event = { id = horsttool.3 } add_timed_idea = { idea = fix_production_idea days = 1 } } }
 
 		award_states_click = {
-			owner = {
-				set_temp_variable = { ROOT.taker = this }
-				for_each_loop = {
-					array = ROOT.marked_states
-					value = state
-					transfer_state = state
+			owner = { set_temp_variable = { ROOT.taker = this } }
+			for_each_loop = {
+				array = ROOT.marked_states
+				value = state
+				var:state = {
+					transfer_state_to = var:ROOT.taker
+					add_core_of = var:ROOT.taker
 				}
-				for_each_loop = {
-					array = ROOT.marked_states
-					value = state
-					var:state = {add_core_of = var:taker}
+			}
+			ROOT = {
+				for_each_scope_loop = {
+					array = marked_states
+					clear_variable = mark_status
 				}
-				ROOT = {
-					for_each_scope_loop = {
-						array = marked_states
-						clear_variable = mark_status
-					}
-					clear_array = marked_states
-				}
+				clear_array = marked_states
+				clear_variable = taker
+				clear_variable = first_marked_state
 			}
 		}
 		compliance_negative_click = { 
 			add_to_variable = { ROOT.compl = -10 }
-			# Cap at -100
 			if = {
-				limit = { check_variable = { ROOT.compl < -100 } }
-				set_variable = { ROOT.compl = -100 }
+				limit = { check_variable = { ROOT.compl < 0 } }
+				set_variable = { ROOT.compl = 0 }
 			}
     	}
 		compliance_positive_click = { 
@@ -346,10 +348,9 @@ st_country_powers = {
 		
 		resistance_negative_click = { 
 			add_to_variable = { ROOT.rest = -10 }
-			# Cap at -100
 			if = {
-				limit = { check_variable = { ROOT.rest < -100 } }
-				set_variable = { ROOT.rest = -100 }
+				limit = { check_variable = { ROOT.rest < 0 } }
+				set_variable = { ROOT.rest = 0 }
 			}
     	}
 		resistance_positive_click = { 
@@ -391,16 +392,16 @@ st_country_powers = {
 		compliance_set_one_click = {
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
-				for_each_loop = { array = ROOT.marked_states value = state var:state = { set_compliance = ROOT.compl } }
+				for_each_loop = { array = ROOT.marked_states value = state var:state = { ht_set_compliance_from_root_value = yes } }
 			}
-			else = { set_compliance = ROOT.compl }
+			else = { ht_set_compliance_from_root_value = yes }
 		}
 		resistance_set_one_click = {
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
-				for_each_loop = { array = ROOT.marked_states value = state var:state = { set_resistance = ROOT.rest } }
+				for_each_loop = { array = ROOT.marked_states value = state var:state = { ht_set_resistance_from_root_value = yes } }
 			}
-			else = { set_resistance = ROOT.rest }
+			else = { ht_set_resistance_from_root_value = yes }
 		}
 		add_cheat_click = {
 			set_variable = { ROOT.taker = this}
@@ -444,16 +445,45 @@ st_country_powers = {
 				set_variable = { this.target_country = Root.target_country }
 				set_variable = { this.selected_cheat = Root.selected_cheat }
 				news_event = { id = horsttool.1}
+				clear_variable = this.target_country
 			}
 			clear_variable = ROOT.taker
+			clear_variable = ROOT.target_country
 		}
 		annex_country_click = {
-			owner = { set_variable = { ROOT.taker = this } }
-			var:ROOT.marked_states^0 = { owner = { set_variable = { ROOT.target = this } } }
-			if = { limit = { check_variable = { ROOT.target = ROOT.taker } } }
-			else = {
-				# Confirmation event names both sides; the annex itself runs in the event's Yes option
-				ROOT = { country_event = { id = hosttool.63 } }
+			# AMSB: guarded MP-safe annex. Stale target/taker cleared up front; requires a marked
+			# state; one confirm in flight at a time; never annex a human player's country. Both
+			# sides captured as ENGINE-MANAGED global event targets here (synced click command) so
+			# the confirm desc and the Yes option never deref a raw country-object variable.
+			ROOT = {
+				clear_variable = target
+				clear_variable = taker
+			}
+			if = {
+				limit = {
+					check_variable = { ROOT.marked_states^num > 0 }
+					ROOT = { NOT = { has_country_flag = ht_annex_pending } }
+				}
+				owner = {
+					set_variable = { ROOT.taker = this }
+					save_global_event_target_as = ht_annexer_country
+				}
+				var:ROOT.marked_states^0 = {
+					owner = {
+						set_variable = { ROOT.target = this }
+						save_global_event_target_as = ht_annexed_country
+					}
+				}
+				if = {
+					limit = {
+						NOT = { check_variable = { ROOT.target = ROOT.taker } }
+						var:ROOT.target = { is_ai = yes }	# never annex a human player's country
+					}
+					ROOT = {
+						set_country_flag = ht_annex_pending
+						country_event = { id = hosttool.63 }
+					}
+				}
 			}
 		}
 		puppet_country_click = {
@@ -519,8 +549,8 @@ st_country_powers = {
 						NOT = { check_variable = { global.ht_wp_a = global.ht_wp_b } }
 						var:global.ht_wp_a = { has_war_with = var:global.ht_wp_b }
 					}
-					set_variable = { global.ht_diplo_a = global.ht_wp_a }
-					set_variable = { global.ht_diplo_b = global.ht_wp_b }
+					var:global.ht_wp_a = { save_global_event_target_as = ht_note_a }
+					var:global.ht_wp_b = { save_global_event_target_as = ht_note_b }
 					var:global.ht_wp_a = { white_peace = var:global.ht_wp_b }
 					ROOT = { news_event = { id = hosttool.65 } }
 				}
@@ -529,7 +559,7 @@ st_country_powers = {
 				owner = {
 					if = {
 						limit = { has_war = yes }
-						set_variable = { global.ht_diplo_a = THIS }
+						save_global_event_target_as = ht_note_a
 						every_country = {
 							limit = { has_war_with = PREV }
 							white_peace = PREV
@@ -560,8 +590,8 @@ st_country_powers = {
 					check_variable = { global.ht_tr_b > 0 }
 					NOT = { check_variable = { global.ht_tr_a = global.ht_tr_b } }
 				}
-				set_variable = { global.ht_diplo_a = global.ht_tr_a }
-				set_variable = { global.ht_diplo_b = global.ht_tr_b }
+				var:global.ht_tr_a = { save_global_event_target_as = ht_note_a }
+				var:global.ht_tr_b = { save_global_event_target_as = ht_note_b }
 				var:global.ht_tr_a = {
 					var:global.ht_tr_b = {
 						PREV = { set_truce = { target = THIS days = 0 } }
@@ -591,8 +621,8 @@ st_country_powers = {
 						var:global.ht_fac_c = { is_in_faction = yes }
 						NOT = { var:global.ht_join_c = { is_in_faction_with = var:global.ht_fac_c } }
 					}
-					set_variable = { global.ht_diplo_a = global.ht_fac_c }
-					set_variable = { global.ht_diplo_b = global.ht_join_c }
+					var:global.ht_fac_c = { save_global_event_target_as = ht_note_a }
+					var:global.ht_join_c = { save_global_event_target_as = ht_note_b }
 					if = {
 						limit = { var:global.ht_fac_c = { is_faction_leader = yes } }
 						var:global.ht_fac_c = { add_to_faction = var:global.ht_join_c }
@@ -624,13 +654,13 @@ st_country_powers = {
 						is_faction_leader = no
 					}
 				}
-				set_variable = { global.ht_diplo_b = global.ht_kick_c }
+				var:global.ht_kick_c = { save_global_event_target_as = ht_note_b }
 				every_country = {
 					limit = {
 						is_faction_leader = yes
 						is_in_faction_with = var:global.ht_kick_c
 					}
-					set_variable = { global.ht_diplo_a = THIS }
+					save_global_event_target_as = ht_note_a
 					remove_from_faction = var:global.ht_kick_c
 				}
 				ROOT = { news_event = { id = hosttool.70 } }
@@ -656,8 +686,8 @@ st_country_powers = {
 					check_variable = { global.ht_wg_b > 0 }
 					NOT = { check_variable = { global.ht_wg_a = global.ht_wg_b } }
 				}
-				set_variable = { global.ht_diplo_a = global.ht_wg_a }
-				set_variable = { global.ht_diplo_b = global.ht_wg_b }
+				var:global.ht_wg_a = { save_global_event_target_as = ht_note_a }
+				var:global.ht_wg_b = { save_global_event_target_as = ht_note_b }
 				ht_clear_wargoals_both = yes
 				ROOT = { news_event = { id = hosttool.71 } }
 			}
@@ -671,19 +701,19 @@ st_country_powers = {
 			owner = {
 				if = {
 					limit = { has_autonomy_state = autonomy_integrated_puppet }
-					set_variable = { global.ht_diplo_a = THIS }
+					save_global_event_target_as = ht_note_a
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_puppet } }
 					ROOT = { news_event = { id = hosttool.72 } }
 				}
 				else_if = {
 					limit = { has_autonomy_state = autonomy_puppet }
-					set_variable = { global.ht_diplo_a = THIS }
+					save_global_event_target_as = ht_note_a
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_colony } }
 					ROOT = { news_event = { id = hosttool.72 } }
 				}
 				else_if = {
 					limit = { has_autonomy_state = autonomy_colony }
-					set_variable = { global.ht_diplo_a = THIS }
+					save_global_event_target_as = ht_note_a
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_dominion } }
 					ROOT = { news_event = { id = hosttool.72 } }
 				}
@@ -694,19 +724,19 @@ st_country_powers = {
 			owner = {
 				if = {
 					limit = { has_autonomy_state = autonomy_dominion }
-					set_variable = { global.ht_diplo_a = THIS }
+					save_global_event_target_as = ht_note_a
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_colony } }
 					ROOT = { news_event = { id = hosttool.72 } }
 				}
 				else_if = {
 					limit = { has_autonomy_state = autonomy_colony }
-					set_variable = { global.ht_diplo_a = THIS }
+					save_global_event_target_as = ht_note_a
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_puppet } }
 					ROOT = { news_event = { id = hosttool.72 } }
 				}
 				else_if = {
 					limit = { has_autonomy_state = autonomy_puppet }
-					set_variable = { global.ht_diplo_a = THIS }
+					save_global_event_target_as = ht_note_a
 					OVERLORD = { set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet } }
 					ROOT = { news_event = { id = hosttool.72 } }
 				}
@@ -1078,9 +1108,9 @@ st_country_powers = {
 	triggers = {
 		observer_click_enabled = { owner = { is_ai = no } }
 		observer_visible = {}
-		compliance_negative_click_enabled = { check_variable = { ROOT.compl > -100 } }
+		compliance_negative_click_enabled = { check_variable = { ROOT.compl > 0 } }
 		compliance_positive_click_enabled = { check_variable = { ROOT.compl < 100 }  }
-		resistance_negative_click_enabled = { check_variable = { ROOT.rest > -100 }  }# Can click until -100
+		resistance_negative_click_enabled = { check_variable = { ROOT.rest > 0 }  }
 		resistance_positive_click_enabled = { check_variable = { ROOT.rest < 100 } } # Can click until +100
 		
 

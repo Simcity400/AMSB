@@ -684,6 +684,36 @@ ht_clear_wargoals_both = {
 	}
 }
 
+# State scope; ROOT.compl is the host-tool value selected in the scripted GUI.
+ht_set_compliance_from_root_value = {
+	if = { limit = { check_variable = { ROOT.compl < 5 } } set_compliance = 0 }
+	else_if = { limit = { check_variable = { ROOT.compl < 15 } } set_compliance = 10 }
+	else_if = { limit = { check_variable = { ROOT.compl < 25 } } set_compliance = 20 }
+	else_if = { limit = { check_variable = { ROOT.compl < 35 } } set_compliance = 30 }
+	else_if = { limit = { check_variable = { ROOT.compl < 45 } } set_compliance = 40 }
+	else_if = { limit = { check_variable = { ROOT.compl < 55 } } set_compliance = 50 }
+	else_if = { limit = { check_variable = { ROOT.compl < 65 } } set_compliance = 60 }
+	else_if = { limit = { check_variable = { ROOT.compl < 75 } } set_compliance = 70 }
+	else_if = { limit = { check_variable = { ROOT.compl < 85 } } set_compliance = 80 }
+	else_if = { limit = { check_variable = { ROOT.compl < 95 } } set_compliance = 90 }
+	else = { set_compliance = 100 }
+}
+
+# State scope; ROOT.rest is the host-tool value selected in the scripted GUI.
+ht_set_resistance_from_root_value = {
+	if = { limit = { check_variable = { ROOT.rest < 5 } } set_resistance = 0 }
+	else_if = { limit = { check_variable = { ROOT.rest < 15 } } set_resistance = 10 }
+	else_if = { limit = { check_variable = { ROOT.rest < 25 } } set_resistance = 20 }
+	else_if = { limit = { check_variable = { ROOT.rest < 35 } } set_resistance = 30 }
+	else_if = { limit = { check_variable = { ROOT.rest < 45 } } set_resistance = 40 }
+	else_if = { limit = { check_variable = { ROOT.rest < 55 } } set_resistance = 50 }
+	else_if = { limit = { check_variable = { ROOT.rest < 65 } } set_resistance = 60 }
+	else_if = { limit = { check_variable = { ROOT.rest < 75 } } set_resistance = 70 }
+	else_if = { limit = { check_variable = { ROOT.rest < 85 } } set_resistance = 80 }
+	else_if = { limit = { check_variable = { ROOT.rest < 95 } } set_resistance = 90 }
+	else = { set_resistance = 100 }
+}
+
 #Country scope
 ROOT_inherit_current_scope_wars_effect = {
 	custom_effect_tooltip = ROOT_inherit_current_scope_wars_effect

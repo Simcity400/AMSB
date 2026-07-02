@@ -232,8 +232,8 @@ country_event = {
     
     option = {
         name = "Yes, move the host tool"
-        # Store new host globally BEFORE clearing flags
-        set_variable = { global.new_host_country = temp_new_host }
+        # Capture the new host as an ENGINE-MANAGED event target BEFORE clearing flags
+        var:temp_new_host = { save_global_event_target_as = ht_new_host }
         # Clear host flag from everyone
         every_country = {
             clr_country_flag = host
@@ -269,6 +269,7 @@ news_event = {
         name = "Understood"
         # Clear the global variable after showing the notification
         clear_variable = global.new_host_country
+        clear_global_event_target = ht_new_host
     }
 }
 # Pause blocker events
@@ -288,7 +289,7 @@ news_event = {
 news_event = {
     id = hosttool.21
     title = "War Declared by Host Tool"
-    desc = "[From.GetName] used the host tool to make [?global.war_declarer.GetName] declare war on [?global.war_target.GetName]."
+    desc = "[From.GetName] used the host tool to make [?event_target:ht_war_a.GetName] declare war on [?event_target:ht_war_b.GetName]."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -296,6 +297,8 @@ news_event = {
         name = "War in my war game?Bruh"
         clear_variable = global.war_declarer
         clear_variable = global.war_target
+        clear_global_event_target = ht_war_a
+        clear_global_event_target = ht_war_b
     }
 }
 
@@ -303,7 +306,7 @@ news_event = {
 news_event = {
     id = hosttool.22
     title = "Player Tag Switched"
-    desc = "[From.GetName] used the host tool to move a player from [?global.switch_from.GetName] to [?global.switch_to.GetName]. Musical chairs, but with entire nations!"
+    desc = "[From.GetName] used the host tool to move a player from [?event_target:ht_switch_from.GetName] to [?event_target:ht_switch_to.GetName]. Musical chairs, but with entire nations!"
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -311,6 +314,8 @@ news_event = {
         name = "Hope they like their new home!"
         clear_variable = global.switch_from
         clear_variable = global.switch_to
+        clear_global_event_target = ht_switch_from
+        clear_global_event_target = ht_switch_to
     }
 }
 
@@ -726,21 +731,24 @@ country_event = {
 
     option = {
         name = "Return the player"
-        set_temp_variable = { return_to = global.ai_fix_return_country }
-        var:return_to = { change_tag_from = AIF }
-        var:return_to = { save_global_event_target_as = ai_fix_country }
-        every_country = {
-            limit = { is_ai = no }
-            news_event = { id = hosttool.62 }
+        if = {
+            limit = { event_target:ht_aifix_country = { exists = yes } }
+            event_target:ht_aifix_country = { change_tag_from = AIF }
+            event_target:ht_aifix_country = { save_global_event_target_as = ai_fix_country }
+            every_country = {
+                limit = { is_ai = no }
+                news_event = { id = hosttool.62 }
+            }
         }
         clear_variable = global.ai_fix_return_country
+        clear_global_event_target = ht_aifix_country
     }
 }
 
 news_event = {
     id = hosttool.61
     title = "Host Tool - AI Control Fix"
-    desc = "The host is fixing AI control on [?global.ai_fix_return_country.GetName]. The player has been parked and will be returned automatically after 2 in-game hours - keep the game unpaused for a moment."
+    desc = "The host is fixing AI control on [?event_target:ht_aifix_country.GetName]. The player has been parked and will be returned automatically after 2 in-game hours - keep the game unpaused for a moment."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -771,26 +779,26 @@ country_event = {
 
     option = {
         name = "Yes, annex them"
-        # AMSB: host-tool annex. The old code added compliance to the victim's core states
-        # AFTER annex_country, which dereferenced var:ROOT.target once it was already freed
-        # (use-after-free CTD when annexing a dynamic/released country). Compliance on annex
-        # was removed per design, which also eliminates the post-annex deref entirely.
-        # AMSB: annexing a dynamic (civil-war breakaway) country frees its country object. The old
-        # hosttool.64 desc [?global.ht_diplo_a.GetName] then dereferenced that freed object through a
-        # SCRIPTED VARIABLE (a raw, engine-untracked value) = use-after-free CTD on clients where the
-        # slot was unmapped ("many but not all crash"). Capture both sides as ENGINE-MANAGED event
-        # targets BEFORE the annex (vanilla's safe pattern for annexed-country names); the engine
-        # invalidates these when the object is destroyed, so GetName on them is crash-safe.
-        var:ROOT.target = { save_global_event_target_as = ht_annexed_country }
-        var:ROOT.taker = { save_global_event_target_as = ht_annexer_country }
-        var:ROOT.taker = {
-            annex_country = { target = var:ROOT.target transfer_troops = yes }
+        clr_country_flag = ht_annex_pending
+        # AMSB: both sides were captured as ENGINE-MANAGED global event targets at click time
+        # (annex_country_click). The engine invalidates them if either country dies before this
+        # option runs, so the liveness guard turns a stale confirm into a safe no-op instead of
+        # a use-after-free. Raw object vars (ROOT.target/taker) are never dereferenced here.
+        if = {
+            limit = {
+                event_target:ht_annexed_country = { exists = yes is_ai = yes }
+                event_target:ht_annexer_country = { exists = yes }
+            }
+            event_target:ht_annexer_country = {
+                annex_country = { target = event_target:ht_annexed_country transfer_troops = yes }
+            }
+            news_event = { id = hosttool.64 }
         }
-        # AMSB: removed two stale post-annex writes (global.ht_diplo_a/b = ROOT.target/taker).
-        # They stored the just-freed annexed country object into a shared scratch variable and
-        # were never read on the annex path (hosttool.64 uses the engine-managed event targets
-        # saved above), so they were dead writes that re-introduced a dangling-object-var.
-        news_event = { id = hosttool.64 }
+        else = {
+            # Stale/dead confirm: annex skipped; drop the captured targets too
+            clear_global_event_target = ht_annexed_country
+            clear_global_event_target = ht_annexer_country
+        }
         for_each_scope_loop = {
             array = marked_states
             clear_variable = mark_status
@@ -803,8 +811,11 @@ country_event = {
 
     option = {
         name = "No, cancel"
+        clr_country_flag = ht_annex_pending
         clear_variable = target
         clear_variable = taker
+        clear_global_event_target = ht_annexed_country
+        clear_global_event_target = ht_annexer_country
     }
 }
 
@@ -819,13 +830,15 @@ news_event = {
         name = "So it goes"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_annexed_country
+        clear_global_event_target = ht_annexer_country
     }
 }
 
 news_event = {
     id = hosttool.65
     title = "Host Tool - White Peace"
-    desc = "The host has white peaced [?global.ht_diplo_a.GetName] with [?global.ht_diplo_b.GetName]."
+    desc = "The host has white peaced [?event_target:ht_note_a.GetName] with [?event_target:ht_note_b.GetName]."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -833,13 +846,15 @@ news_event = {
         name = "Peace in our time"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_note_a
+        clear_global_event_target = ht_note_b
     }
 }
 
 news_event = {
     id = hosttool.67
     title = "Host Tool - Truce Cleared"
-    desc = "The host has cleared the truce between [?global.ht_diplo_a.GetName] and [?global.ht_diplo_b.GetName]."
+    desc = "The host has cleared the truce between [?event_target:ht_note_a.GetName] and [?event_target:ht_note_b.GetName]."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -847,13 +862,15 @@ news_event = {
         name = "Gloves off"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_note_a
+        clear_global_event_target = ht_note_b
     }
 }
 
 news_event = {
     id = hosttool.68
     title = "Host Tool - Joined Faction"
-    desc = "The host has added [?global.ht_diplo_b.GetName] to [?global.ht_diplo_a.GetName]'s faction."
+    desc = "The host has added [?event_target:ht_note_b.GetName] to [?event_target:ht_note_a.GetName]'s faction."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -861,13 +878,15 @@ news_event = {
         name = "Welcome aboard"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_note_a
+        clear_global_event_target = ht_note_b
     }
 }
 
 news_event = {
     id = hosttool.70
     title = "Host Tool - Kicked from Faction"
-    desc = "The host has removed [?global.ht_diplo_b.GetName] from [?global.ht_diplo_a.GetName]'s faction."
+    desc = "The host has removed [?event_target:ht_note_b.GetName] from [?event_target:ht_note_a.GetName]'s faction."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -875,13 +894,15 @@ news_event = {
         name = "Out you go"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_note_a
+        clear_global_event_target = ht_note_b
     }
 }
 
 news_event = {
     id = hosttool.71
     title = "Host Tool - War Goals Removed"
-    desc = "The host has removed all war goals between [?global.ht_diplo_a.GetName] and [?global.ht_diplo_b.GetName] (both directions)."
+    desc = "The host has removed all war goals between [?event_target:ht_note_a.GetName] and [?event_target:ht_note_b.GetName] (both directions)."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -889,13 +910,15 @@ news_event = {
         name = "Stand down"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_note_a
+        clear_global_event_target = ht_note_b
     }
 }
 
 news_event = {
     id = hosttool.72
     title = "Host Tool - Autonomy Changed"
-    desc = "The host has changed the autonomy level of [?global.ht_diplo_a.GetName]."
+    desc = "The host has changed the autonomy level of [?event_target:ht_note_a.GetName]."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -903,27 +926,37 @@ news_event = {
         name = "New management terms"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_note_a
     }
 }
 
 news_event = {
     id = hosttool.73
     title = "Host Tool - Focus Tree Modified"
-    desc = "The host has modified the focus tree of [?global.ht_diplo_a.GetName] (completed or uncompleted a focus)."
+    desc = "The host has modified the focus tree of [?event_target:ht_note_a.GetName] (completed or uncompleted a focus)."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
+    immediate = {
+        # Writers (host_tool_focus_picker decisions) still set raw global.ht_diplo_a right
+        # before firing; convert to an engine-managed event target while it is still alive.
+        if = {
+            limit = { has_variable = global.ht_diplo_a }
+            var:global.ht_diplo_a = { save_global_event_target_as = ht_note_a }
+        }
+    }
     option = {
         name = "History rewritten"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_note_a
     }
 }
 
 news_event = {
     id = hosttool.74
     title = "Host Tool - White Peace (All Wars)"
-    desc = "The host has white peaced [?global.ht_diplo_a.GetName] out of all of its wars."
+    desc = "The host has white peaced [?event_target:ht_note_a.GetName] out of all of its wars."
     picture = GFX_news_event_001
     major = yes
     is_triggered_only = yes
@@ -931,5 +964,6 @@ news_event = {
         name = "Peace in our time"
         clear_variable = global.ht_diplo_a
         clear_variable = global.ht_diplo_b
+        clear_global_event_target = ht_note_a
     }
 }
