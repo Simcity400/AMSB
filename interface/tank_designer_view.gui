@@ -496,6 +496,32 @@ guiTypes = {
 			}		
 
 			containerWindowType = {
+				name = "best_match_window"
+				position = { x=382 y=204 }
+				size = { width = 123 height = 34 }
+				clipping = no
+
+				buttonType = {
+					name = "best_match_button"
+					position = { x=-11 y=-3 }
+					font = "hoi_16mbs"
+					quadTextureSprite = "GFX_generic_checkbox"
+					clicksound = click_default
+					pdx_tooltip = "USE_DEFAULT_MODEL_IN_EQUIPMENT_DESIGNER_TOOLTIP"
+				}
+
+				instantTextboxType = {
+					name = "best_match_text"
+					position = { x = 28 y = 6 }
+					font = "hoi_16mbs"
+					text = "USE_DEFAULT_MODEL_IN_EQUIPMENT_DESIGNER"
+					fixedsize = yes
+					format = left
+					alwaystransparent = yes
+				}
+			}
+
+			containerWindowType = {
 				name = "grid_container"
 				position = { x=5 y=235}	
 				size = { width=533 height=176 }
