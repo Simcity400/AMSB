@@ -1,0 +1,35 @@
+# AMSB removes several vanilla country tags. Keep the vanilla operatives, but
+# do not ask create_operative_leader to use nationalities that do not exist.
+BEL_create_jozef_raskin_operative = {
+	create_operative_leader = {
+		name = BEL_jozef_raskin
+		GFX = GFX_portrait_BEL_jozef_raskin
+		gender = male
+		traits = { operative_well_groomed operative_commando }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { BEL }
+	}
+}
+
+ITA_create_francesco_de_martini_operative = {
+	create_operative_leader = {
+		name = "Francesco de Martini"
+		GFX = GFX_portrait_ITA_francesco_de_martini
+		traits = { operative_commando operative_demolition_expert operative_linguist }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { ITA ETH }
+	}
+}
+
+ITA_create_paolo_caccia_dominioni_operative = {
+	create_operative_leader = {
+		name = "Paolo Caccia Dominioni"
+		GFX = GFX_portrait_ITA_paolo_caccia_dominioni
+		traits = { operative_safe_cracker operative_tough operative_escape_artist }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { ITA }
+	}
+}
