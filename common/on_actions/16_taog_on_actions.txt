@@ -1716,8 +1716,22 @@
 		}
 
 		effect = { #Launch Platypus event
-			# AMSB: platypus event chain not carried by this mod - launcher removed
-			
+			IF = {
+				limit = {
+					has_dlc = "Thunder at Our Gates"
+					ROOT = {
+						original_tag = AST
+						has_war = yes
+						OR = {
+							is_subject_of = ENG
+							is_in_faction_with = ENG
+						}
+					}
+					NOT = { has_country_flag = AST_platypus_event_trigger }
+				}
+				country_event = { id = AST_diplomatic_events.81 days = 90 }
+				set_country_flag = AST_platypus_event_trigger
+			}
 		}
 
 		effect = { #Launch War is Coming event
