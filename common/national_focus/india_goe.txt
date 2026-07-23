@@ -22788,8 +22788,15 @@ focus = {
                 name = RAJ_help_from_the_nagas
                 ahead_reduction = 1
                 uses = 1
-                category = recon_tech # optional 
+                category = recon_tech # optional
             }
+            hidden_effect = {
+                set_technology = {
+                    tech_recon_focus_bonus = 1
+                    popup = no
+                }
+            }
+            custom_effect_tooltip = tech_recon_focus_bonus_tt
 
         }
     }
