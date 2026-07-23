@@ -45,8 +45,13 @@ st_country_powers = {
 					set_temp_variable = { ROOT.marks = this }
 					set_variable = { global.ai_fix_return_country = this }
 					save_global_event_target_as = ht_aifix_country
-					AIF = { change_tag_from = var:marks }
-					country_event = { id = hosttool.60 hours = 2 }
+					AIF = {
+						change_tag_from = var:marks
+						# Return event scheduled on AIF (permanent utility tag), NOT on the
+						# glitched country: if that country dies before the event fires the
+						# cleanup must still run or the player is wedged on AIF forever.
+						country_event = { id = hosttool.60 hours = 2 }
+					}
 				}
 				every_country = {
 					limit = { is_ai = no }
@@ -58,6 +63,9 @@ st_country_powers = {
 		change_host_nation_click = {
 			owner = {
 				ROOT = { set_variable = { temp_new_host = PREV } }
+				# Engine-managed capture at CLICK time - the confirm option must never
+				# dereference the raw temp_new_host object var (delayed-object rule).
+				save_global_event_target_as = ht_new_host
 			}
 			ROOT = {
 				country_event = { id = hosttool.1000 }
@@ -1199,12 +1207,21 @@ st_country_powers = {
 				}
 			}
 		}
-		clear_all_markings_click_enabled = { 
+		clear_all_markings_click_enabled = {
 			OR = {
-				check_variable = { ROOT.marked_states^num > 0 } 
+				check_variable = { ROOT.marked_states^num > 0 }
 				check_variable = { ROOT.target_country > 0 }
 				check_variable = { ROOT.selected_cheat > 0 }
 				ROOT = { has_country_flag = cheating }
+				# The effect also clears picker modes and pause blockers - the button
+				# must light up for those too (it advertises a complete reset).
+				ROOT = { has_country_flag = ht_focus_unc }
+				ROOT = { has_country_flag = ht_focus_com }
+				ROOT = { has_country_flag = ht_law_mode }
+				ROOT = { has_country_flag = ht_spirit_add }
+				ROOT = { has_country_flag = ht_spirit_remove }
+				WST = { check_variable = { pause_blocker_variable > 0 } }
+				any_country = { check_variable = { pause_blocker_variable > 0 } }
 			}
 		}	
 		award_states_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } }

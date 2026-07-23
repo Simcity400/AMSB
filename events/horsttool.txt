@@ -232,27 +232,51 @@ country_event = {
     
     option = {
         name = "Yes, move the host tool"
-        # Capture the new host as an ENGINE-MANAGED event target BEFORE clearing flags
-        var:temp_new_host = { save_global_event_target_as = ht_new_host }
-        # Clear host flag from everyone
-        every_country = {
-            clr_country_flag = host
-            clr_country_flag = pause_blocked
-            clr_country_flag = transfer_enabled
+        # ht_new_host was captured as an ENGINE-MANAGED event target at click time
+        # (change_host_nation_click). The engine invalidates it if the country died
+        # while this popup sat open, so a stale confirm is a safe NO-OP - the raw
+        # temp_new_host object var is never dereferenced here, and host flags are
+        # only cleared once the target is proven alive.
+        if = {
+            limit = { event_target:ht_new_host = { exists = yes } }
+            # Full privilege handoff: host flags AND all host-only admin state,
+            # so the former host keeps no working picker/decision categories.
+            every_country = {
+                clr_country_flag = host
+                clr_country_flag = pause_blocked
+                clr_country_flag = transfer_enabled
+                clr_country_flag = ht_focus_unc
+                clr_country_flag = ht_focus_com
+                clr_country_flag = ht_law_mode
+                clr_country_flag = ht_spirit_add
+                clr_country_flag = ht_spirit_remove
+                clr_country_flag = ht_annex_pending
+            }
+            clear_variable = global.ht_focus_state
+            # Old host's marked states must not leak into the new host's session
+            for_each_scope_loop = {
+                array = marked_states
+                clear_variable = mark_status
+            }
+            clear_array = marked_states
+            event_target:ht_new_host = {
+                set_country_flag = host
+                set_country_flag = transfer_enabled
+            }
+            # Send ONE global notification
+            news_event = { id = hosttool.1001 }
         }
-        # Set new host
-        var:temp_new_host = { 
-            set_country_flag = host 
-            set_country_flag = transfer_enabled
+        else = {
+            # Target died before the confirm - keep the current host untouched
+            clear_global_event_target = ht_new_host
         }
-        # Send ONE global notification
-        news_event = { id = hosttool.1001 }
         clear_variable = temp_new_host
     }
-    
+
     option = {
         name = "No, cancel"
         clear_variable = temp_new_host
+        clear_global_event_target = ht_new_host
     }
 }
 
@@ -720,7 +744,9 @@ news_event = {
     }
 }
 
-# Fix AI control: hidden return event, fired to the glitched country 2h after the player was parked on AIF
+# Fix AI control: hidden return event, fired to AIF (a permanent utility tag) 2h after
+# the player was parked there. Scheduling on AIF - not the glitched country - guarantees
+# the cleanup below ALWAYS runs even if the glitched country was annexed meanwhile.
 country_event = {
     id = hosttool.60
     title = "Fix AI Control"
@@ -739,6 +765,11 @@ country_event = {
                 limit = { is_ai = no }
                 news_event = { id = hosttool.62 }
             }
+        }
+        else = {
+            # The glitched country died while the player was parked: move them to the
+            # TAN observer tag instead of leaving them wedged on AIF forever.
+            TAN = { change_tag_from = AIF }
         }
         clear_variable = global.ai_fix_return_country
         clear_global_event_target = ht_aifix_country
