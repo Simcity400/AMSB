@@ -709,15 +709,22 @@ country_event = { # Asking Germany if they want Quisling or not
 		# coup immediately - Norway flips fascist and the loyalists rise in civil war.
 		# (Vanilla routed this through a Norwegian counter-choice event, AAT_norway.13,
 		# with a delay option; both are bypassed by design. Declining = a normal war.)
+		# The civil-war effect MUST run from a NOR-owned event so ROOT = NOR inside
+		# NOR_start_fascist_civil_war - calling it inline here left ROOT = the attacker,
+		# which reflagged GERMANY as fascist Norway and handed it Oslo. Route through
+		# vanilla's hidden NOR-scoped trigger event AAT_norway.199 instead.
 		if = {
 			limit = {
 				NOR = {
-					has_civil_war = no 
+					has_civil_war = no
 				}
-			}	
+			}
 			NOR = {
 				set_country_flag = NOR_switched_to_fasc_hist
-				NOR_start_fascist_civil_war = yes
+				country_event = {
+					id = AAT_norway.199
+					hours = 1
+				}
 			}
 		}
 	}
