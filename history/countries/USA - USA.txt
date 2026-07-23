@@ -429,8 +429,13 @@ add_ideas = {
 
 
 # DIPLOMACY
-# AMSB 2026-06-13: PHI set_autonomy removed - the Philippines are USA-owned from history now
-# (day-one annex converted to state history), the tag never exists
+# AMSB 2026-07-23: PHI restored playable in the main mode - vanilla commonwealth
+# arrangement re-established. In other modes PHI owns no states (tag never exists),
+# so this set_autonomy is a harmless no-op there.
+set_autonomy = {
+	target = PHI
+	autonomous_state =  autonomy_colony
+}
 
 1939.1.1 = {
 	set_politics = {
