@@ -1384,6 +1384,20 @@ on_actions = {
 							hours = 1
 						}
 					}
+					else_if = { # AMSB: vanilla's disabled "Quisling is still around" branch, revived
+						# treeless - Norway has no focus tree in this mod, so nobody can arrest
+						# Quisling and the democratic government stands in for Nygaardsvold.
+						limit = {
+							has_government = democratic
+							is_subject = no
+						}
+						var:NOR_cw_fascist_attacker = {
+							country_event = {
+								id = AAT_norway.14
+								hours = 1
+							}
+						}
+					}
 					#else_if = {  # Democratic but Quisling is still around
 					#	limit = {
 					#		NOR = {	 
@@ -2194,7 +2208,7 @@ on_actions = {
 						original_tag = NOR 
 						NOT = { has_government = fascism }
 						surrender_progress > 0.45
-						has_completed_focus = NOR_continue_nygaardsvold_government 
+						has_government = democratic # AMSB: was a Norway-tree focus check (treeless here)
 						has_country_flag = NOR_delayed_quislings_coup
 						has_civil_war = no 
 					}
