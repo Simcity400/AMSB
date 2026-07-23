@@ -338,6 +338,23 @@ on_actions = {
 			}
 		########################################### Auto Dec ###########################################
 
+			# Italy joins the war: auto-declare on the UK once 1940 begins.
+			# (Pre-refork AMSB behavior, dropped at "A New MSB Start" - restored
+			# 2026-07-23. Fires on the Jan 1 1940 monthly tick; the NOT guard
+			# re-arms it only if Italy somehow leaves the war with the UK.)
+			if = {
+				limit = {
+					date > 1939.12.31
+					NOT = { ITA = { has_war_with = ENG } }
+				}
+				ITA = {
+					declare_war_on = {
+						target = ENG
+						type = annex_everything
+					}
+				}
+			}
+
 			if = {
 				limit = {
 						BEL = {

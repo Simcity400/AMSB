@@ -22,11 +22,14 @@
 #   ever landing on it -> cleanup never fired -> the value stuck at a small
 #   positive (a permanent +attack BUFF). Fixed with a >= 0 clamp (see below).
 #
-# ORDER NOTE: the DECAY block is intentionally placed BEFORE the ACTIVATION
-# block. Both run in the same monthly tick, so if activation ran first the var
-# would be set to -0.5 and immediately decayed in the same tick. Decay-first
-# means the activation month is skipped by decay (flag not yet set), so the
-# first month reads the full -50% / -25%.
+# ACTIVATION runs in on_daily_WST (2026-07-23): it used to sit in the monthly
+# tick, which delayed the modifier by up to a month after Italy's declaration
+# (and a full month on 1941-save loads). Daily costs nothing (one tag, a flag
+# check that short-circuits forever once fired) and starts the penalty at most
+# one day after the war opens. DECAY stays monthly. Because activation can now
+# land mid-month, the first monthly decay tick after activation is SKIPPED
+# (global.war_of_gazala_skip_first_decay) so the theatre always gets a full
+# month at -50% / -25% regardless of tick ordering.
 
 on_actions = {
 
@@ -42,13 +45,21 @@ on_actions = {
 			if = {
 				limit = { has_global_flag = war_of_gazala_active }
 
-				add_to_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0.084 }
-				add_to_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0.042 }
-
-				# Fixed-point safety: never let speed overshoot into a positive buff.
+				# First monthly tick after a mid-month activation: consume the
+				# skip token instead of decaying, so month 1 stays at full force.
 				if = {
-					limit = { check_variable = { global.war_of_gazala_modifier_speed_factor_var > 0 } }
-					set_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0 }
+					limit = { check_variable = { global.war_of_gazala_skip_first_decay > 0 } }
+					clear_variable = global.war_of_gazala_skip_first_decay
+				}
+				else = {
+					add_to_variable = { var = global.war_of_gazala_modifier_attack_factor_var value = 0.084 }
+					add_to_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0.042 }
+
+					# Fixed-point safety: never let speed overshoot into a positive buff.
+					if = {
+						limit = { check_variable = { global.war_of_gazala_modifier_speed_factor_var > 0 } }
+						set_variable = { var = global.war_of_gazala_modifier_speed_factor_var value = 0 }
+					}
 				}
 
 				# Save compatibility: Matruh was missing from the original theatre
@@ -121,9 +132,12 @@ on_actions = {
 					clear_variable = global.war_of_gazala_modifier_speed_factor_var
 				}
 			}
-
+		}
+	}
+	on_daily_WST = {
+		effect = {
 			# ---------------------------------------------------------------
-			# ACTIVATION (one-shot). Fires the first month Italy is at war with
+			# ACTIVATION (one-shot, daily). Fires the first DAY Italy is at war with
 			# the UK or France = the desert war has begun. war_of_gazala_fired is
 			# permanent so it can never re-trigger; works in every game mode,
 			# including 1941 saves where the war already exists at load.
@@ -143,6 +157,8 @@ on_actions = {
 				}
 				set_global_flag = war_of_gazala_fired
 				set_global_flag = war_of_gazala_active
+				# Skip token: the next monthly decay tick is a no-op (see decay block).
+				set_variable = { var = global.war_of_gazala_skip_first_decay value = 1 }
 
 				# Start at -50% attack / -25% speed (set BEFORE adding modifiers
 				# so the first frame already reads the right value).
