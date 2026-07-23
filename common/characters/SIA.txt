@@ -208,7 +208,6 @@ characters={
 				}
 				available = {
 					OR = {
-						has_completed_focus = SIA_seri_thai
 						has_completed_focus = SIA_the_provincial_council_of_state
 					}
 				}
@@ -1156,10 +1155,7 @@ characters={
 				}
 
 				available = {
-					OR ={
-						has_completed_focus = SIA_standing_our_ground
-						has_completed_focus = SIA_seri_thai
-					}
+					always = no # AMSB: Allied branches removed from siam tree
 				}
 				traits = {
 					SIA_resistance_fighter
@@ -1584,8 +1580,6 @@ characters={
 				}
 				available = {
 					OR = {
-						has_completed_focus = SIA_seri_thai
-						has_completed_focus = SIA_standing_our_ground
 						has_completed_focus = SIA_the_provincial_council_of_state
 					}
 				}
@@ -1616,8 +1610,6 @@ characters={
 			legacy_id=0
 			visible = {
 				OR = {
-					has_completed_focus = SIA_seri_thai
-					has_completed_focus = SIA_standing_our_ground
 					has_completed_focus = SIA_the_provincial_council_of_state
 				}
 			}
@@ -2094,7 +2086,7 @@ characters={
 			idea_token = SIA_tiang_sirikhan
 			ledger = army
 			allowed = { original_tag = SIA }
-			available = { has_completed_focus = SIA_seri_thai }
+			available = { always = no }
 			traits = { army_commando_1 }
 			cost = 100
 			ai_will_do = { factor = 1.000 }
@@ -2107,7 +2099,7 @@ characters={
 			planning_skill=1
 			logistics_skill=2
 			legacy_id=-1
-			visible = { has_completed_focus = SIA_seri_thai }
+			visible = { always = no }
 		}
 	}
 }
