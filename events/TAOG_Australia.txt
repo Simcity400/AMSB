@@ -3607,4 +3607,15 @@ country_event = { #Send platypus to ENG PM
 	}
 }
 
-country_event = { id = AST_diplomatic_events.82 days = 45 }
+country_event = { #Platypus has died
+    id = AST_diplomatic_events.82
+	title = AST_diplomatic_events.82.t
+	desc = AST_diplomatic_events.82.desc
+	picture = GFX_report_event_AST_winston_platypus_2
+
+	is_triggered_only = yes
+
+    option = { 
+		name = AST_diplomatic_events.82.a
+	}
+}
