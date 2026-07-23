@@ -1,4 +1,5 @@
-ï»¿division_template = {
+start_equipment_factor = 0.2
+division_template = {
 	name = "Infanteri Division"	# represents first part of enlarged divisions
 	division_names_group = DEN_INF_01
 
@@ -18,7 +19,7 @@
 	}
 }
 division_template = {
-	name = "BinÃ¦r Division"	# represents second part of enlarged divisions
+	name = "Binær Division"	# represents second part of enlarged divisions
 	division_names_group = DEN_INF_01
 
 	regiments = {
@@ -44,16 +45,16 @@ division_template = {
 }
 
 units = {
-	##### Kongelige Danske Overkommando #####
+	##### Kongelige Danske Overkommandoen #####
 	division = { 
-		name =  "1. SjÃ¦llandske Division"
+		name =  "1. Sjællandske Division"
 		location = 6287  # Copenhagen
 		division_template = "Infanteri Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.3
 
 	}
-	division = { # "2. SjÃ¦llandske Division"
+	division = { # "2. Sjællandske Division"
 		division_name = {
 				is_name_ordered = yes
 				name_order = 2
@@ -76,9 +77,9 @@ units = {
 
 	}
 	division = { 
-		name =   "2. Jyske Division"
+		name = "2. Jyske Division"
 		location = 11251  # Sonderborg
-		division_template = "BinÃ¦r Division"
+		division_template = "Binær Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.3
 
@@ -91,7 +92,6 @@ units = {
 		start_equipment_factor = 0.3
 
 	}
-
 }
 
 ### Starting Production ###
@@ -102,18 +102,27 @@ instant_effect = {
 			creator = "DEN"
 		}
 		requested_factories = 1
-		progress = 0.85
+		progress = 0.24
 		efficiency = 100
 		industrial_manufacturer = mio:DEN_DISA_organization
 	}
 	add_equipment_production = {
 		equipment = {
 			type = artillery_equipment_1
+			creator = "DEN" 
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 100
+		industrial_manufacturer = mio:DEN_haerens_tekniske_korps_organization
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
 			creator = "DEN"
 		}
 		requested_factories = 1
-		progress = 0.80
+		progress = 0.28
 		efficiency = 100
-		industrial_manufacturer = mio:DEN_haerens_tekniske_korps_organization
 	}
 }
