@@ -180,13 +180,13 @@ operations = {
 				factor = 0
 			}
 			available = {
-				NOT = { has_country_flag = stb_asia_bookmark } # STB Asia: Bulgaria goes to Spain instead
+				NOT = { country_exists = SPR } # AMSB 2026-07-12: Spain takes Bulgaria; Italy only as fallback if Spain is gone
 				BUL = {
 					is_ai = yes
 				}
 			}
             visible = {
-            	NOT = { has_country_flag = stb_asia_bookmark }
+            	NOT = { country_exists = SPR }
 				BUL = {
 					is_ai = yes
 				}

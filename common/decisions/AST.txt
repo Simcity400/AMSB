@@ -2954,3 +2954,40 @@ AST_special_forces_cat = {
 		}
 	}
 }
+
+# AMSB 2026-07-12: Australia union-annex of an AI-controlled Mexico (mirrors Spain/Finland; user request)
+political_actions = {
+
+	AST_annex_mexico = {
+
+		icon = generic_political_discourse
+
+		allowed = { original_tag = AST }
+
+		visible = {
+			country_exists = MEX
+			MEX = { is_ai = yes }
+		}
+
+		available = {
+			country_exists = MEX
+			MEX = { is_ai = yes }
+			has_idea = tot_economic_mobilisation
+		}
+
+		fire_only_once = yes
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = { is_owned_by = MEX }
+				add_core_of = AST
+			}
+			annex_country = { target = MEX transfer_troops = yes }
+		}
+	}
+}
