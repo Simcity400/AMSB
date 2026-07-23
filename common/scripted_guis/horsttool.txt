@@ -338,7 +338,32 @@ st_country_powers = {
 				clear_variable = first_marked_state
 			}
 		}
-		compliance_negative_click = { 
+		# Transfer OCCUPATION only: marked states' controller becomes the owner of the
+		# selected state; ownership is untouched (for "Germany occupies it but doesn't
+		# own it, hand the occupation to England" cases where Transfer States is wrong).
+		transfer_occupation_click = {
+			owner = { set_temp_variable = { ROOT.taker = this } }
+			for_each_loop = {
+				array = ROOT.marked_states
+				value = state
+				var:state = {
+					if = {
+						limit = { NOT = { is_controlled_by = var:ROOT.taker } }
+						var:ROOT.taker = { set_state_controller = PREV }
+					}
+				}
+			}
+			ROOT = {
+				for_each_scope_loop = {
+					array = marked_states
+					clear_variable = mark_status
+				}
+				clear_array = marked_states
+				clear_variable = taker
+				clear_variable = first_marked_state
+			}
+		}
+		compliance_negative_click = {
 			add_to_variable = { ROOT.compl = -10 }
 			if = {
 				limit = { check_variable = { ROOT.compl < 0 } }
@@ -1225,6 +1250,7 @@ st_country_powers = {
 			}
 		}	
 		award_states_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } }
+		transfer_occupation_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } owner = { exists = yes } }
 		annex_country_click_enabled = {	check_variable = { ROOT.marked_states^num > 0 }	owner = { exists = yes } }
 		puppet_country_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } owner = { exists = yes } }
 		add_cores_click_enabled = { check_variable = { ROOT.marked_states^num > 0 }	}

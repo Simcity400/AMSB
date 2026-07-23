@@ -519,8 +519,17 @@ guiTypes = {
 			pdx_tooltip_delayed = "ADD_COAL_DELAYED"
 		}
 		buttonType = {
-			name = "award_states" 
-			position = {x=218 y=210}	
+			name = "transfer_occupation"
+			position = {x=392 y=210}
+			spriteType = "GFX_global_diplorequest_icons"
+            frame = 9
+			pdx_tooltip = "TRANSFER_OCCUPATION"
+			pdx_tooltip_delayed = "TRANSFER_OCCUPATION_DELAYED"
+			scale = 1
+		}
+		buttonType = {
+			name = "award_states"
+			position = {x=174 y=210}
 			spriteType = "GFX_global_diplorequest_icons"
             frame = 13
 			pdx_tooltip = "TRANSFER_STATES"
@@ -529,7 +538,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "annex_country" 
-			position = {x=261 y=210}	
+			position = {x=218 y=210}	
 			spriteType = "GFX_global_diplorequest_icons"
             frame = 2
 			pdx_tooltip = "ANNEX_COUNTRY"
@@ -538,7 +547,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "add_cores" 
-			position = {x=305 y=210}	
+			position = {x=261 y=210}	
 			spriteType = "GFX_global_diplorequest_icons"
             frame = 12
 			pdx_tooltip = "ADD_CORES"
@@ -547,7 +556,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "remove_cores" 
-			position = {x=349 y=210}	
+			position = {x=305 y=210}	
 			spriteType = "GFX_global_diplorequest_icons"
             frame = 7
 			pdx_tooltip = "REMOVE_CORES"
@@ -556,7 +565,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "add_cores_to_all_cores_of_selected_nation" 
-			position = {x=392 y=210}	
+			position = {x=349 y=210}	
 			spriteType = "GFX_global_diplorequest_icons"
             frame = 12
 			pdx_tooltip = "ADD_CORES_TO_ALL_CORES_SELECTED_NATION"
@@ -645,7 +654,7 @@ guiTypes = {
 			position = {x=292 y=143}
 			Orientation = "Centre" 
 			font = "hoi_20b"
-			text = "§G[?ROOT.compl]§!"
+			text = "HT_COMPLIANCE_VALUE"
 			maxWidth = 40
 			maxHeight = 23
 			format = centre
@@ -677,7 +686,7 @@ guiTypes = {
 			position = {x=292 y=173}
 			Orientation = "Centre" 
 			font = "hoi_20b"
-			text = "§R[?ROOT.rest]§!"
+			text = "HT_RESISTANCE_VALUE"
 			maxWidth = 40
 			maxHeight = 23
 			format = centre
