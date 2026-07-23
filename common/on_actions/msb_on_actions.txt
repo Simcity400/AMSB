@@ -120,9 +120,12 @@ on_actions = {
 				}
 			}
 			GER = {
-				country_event = {
-					id = DOD_yugoslavia.20
-					days = 912
+				if = {
+					limit = { date < 1936.1.5 } # AMSB 2026-07-12: schedule only at campaign start, not on every save load
+					country_event = {
+						id = DOD_yugoslavia.20
+						days = 912
+					}
 				}
 				if = {
 					limit = {
@@ -135,28 +138,35 @@ on_actions = {
 				}
 			}
 			FRA = {
-				country_event = {
-					id = DOD_yugoslavia.20
-					days = 912
+				if = {
+					limit = { date < 1936.1.5 } # AMSB 2026-07-12: schedule only at campaign start, not on every save load
+					country_event = {
+						id = DOD_yugoslavia.20
+						days = 912
+					}
 				}
 			}
 			##### Turning King Edward's abdication into an on_startup event instead of MTTH to help performance####
 			ENG = {
-				country_event = {
-					id = britain.16
-					days = 20
-				}
-				country_event = {
-					id = mtg_britain.1
-					days = 190
-				}
-				country_event = {
-					id = britain.22
-					days = 513
-				}
-				country_event = {
-					id = DOD_yugoslavia.20
-					days = 912
+				if = {
+					limit = { date < 1936.1.5 } # AMSB 2026-07-12: schedule only at campaign start, not on every save load
+					country_event = {
+						id = britain.16
+						days = 20
+					}
+					country_event = {
+						id = mtg_britain.1
+						days = 190
+					}
+					country_event = {
+						id = britain.22
+						days = 513
+					}
+					country_event = {
+						id = DOD_yugoslavia.20
+						days = 912
+					}
+			
 				}
 			}
 			# AMSB 2026-06-13: day-one annexes (ETH/PHI/MAN/BRM/NZL) converted to state-history
