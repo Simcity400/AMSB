@@ -67262,4 +67262,179 @@ host_tool_spirit_category = {
 			} }
 		}
 	}
+
+	# --- AMSB 2026-07-26: hand-added. The generator only emits entries for ideas that
+	# have a localised name, so these unnamed internal AI-debuff ideas were invisible to
+	# the host tool and could not be stripped off a country. They now have names in
+	# zz_amsb_hmm_idea_names_l_english.yml, so a regenerated picker should keep them.
+	ht_sp_ai_war = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = ai_war } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = ai_war } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = ai_war }
+				else = { add_ideas = ai_war }
+			} }
+		}
+	}
+	ht_sp_ai_annex = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = ai_annex } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = ai_annex } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = ai_annex }
+				else = { add_ideas = ai_annex }
+			} }
+		}
+	}
+	ht_sp_ai_tradelaw = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = ai_tradelaw } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = ai_tradelaw } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = ai_tradelaw }
+				else = { add_ideas = ai_tradelaw }
+			} }
+		}
+	}
+	ht_sp_blm_ai = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = blm_ai } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = blm_ai } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = blm_ai }
+				else = { add_ideas = blm_ai }
+			} }
+		}
+	}
+	ht_sp_ai_idea = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = ai_idea } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = ai_idea } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = ai_idea }
+				else = { add_ideas = ai_idea }
+			} }
+		}
+	}
+	ht_sp_novols = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = novols } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = novols } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = novols }
+				else = { add_ideas = novols }
+			} }
+		}
+	}
+	ht_sp_no_faction = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = no_faction } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = no_faction } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = no_faction }
+				else = { add_ideas = no_faction }
+			} }
+		}
+	}
+	ht_sp_fast_training = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = fast_training } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = fast_training } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = fast_training }
+				else = { add_ideas = fast_training }
+			} }
+		}
+	}
+	ht_sp_Spies_no_capture = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = Spies_no_capture } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = Spies_no_capture } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = Spies_no_capture }
+				else = { add_ideas = Spies_no_capture }
+			} }
+		}
+	}
+	ht_sp_dd_torp_nerf = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			OR = {
+				AND = { has_country_flag = ht_spirit_remove var:global.ht_focus_state = { owner = { has_idea = dd_torp_nerf } } }
+				AND = { has_country_flag = ht_spirit_add var:global.ht_focus_state = { owner = { NOT = { has_idea = dd_torp_nerf } } } }
+			}
+		}
+		complete_effect = {
+			var:global.ht_focus_state = { owner = {
+				if = { limit = { ROOT = { has_country_flag = ht_spirit_remove } } remove_ideas = dd_torp_nerf }
+				else = { add_ideas = dd_torp_nerf }
+			} }
+		}
+	}
 }

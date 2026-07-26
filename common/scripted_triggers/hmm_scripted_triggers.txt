@@ -94,6 +94,12 @@ axis = {
 		tag = EFR
 	}
 }
+# These four lists cripple AI-only minors so they stay passive. Every tag here must be
+# absent from is_playable_country above: a country in one of these lists gets ai_war /
+# ai_annex + ai_tradelaw and country_lock_all_division_template at on_startup, and those
+# ideas have removal_cost = -1 with no is_ai gate - so a HUMAN who picks the country is
+# stuck with -100% factory output, +10000% consumer goods, unchangeable trade laws and
+# locked division templates, permanently, with no way to remove any of it.
 ai_manpower = {
 	OR = {
 		tag = BEL
@@ -104,7 +110,8 @@ ai_manpower = {
 		tag = YUG
 		tag = CHI
 		tag = GRE
-		tag = DEN
+		# DEN removed 2026-07-26: Denmark was made playable on 2026-07-23 but left in this
+		# list, so anyone who picked it started permanently crippled.
 		tag = ALB
 		tag = EFR
 		tag = IRE
@@ -120,7 +127,8 @@ ai_annex = {
 		tag = CZE
 		tag = POR
 		tag = BRM
-		tag = PHI
+		# PHI removed 2026-07-26: same oversight as DEN - made playable 2026-07-23 and left
+		# in this list, so a human Philippines started permanently crippled.
 	}
 }
 ai_rk = {
