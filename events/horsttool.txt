@@ -820,6 +820,8 @@ country_event = {
                 event_target:ht_annexed_country = { exists = yes is_ai = yes }
                 event_target:ht_annexer_country = { exists = yes }
             }
+            # crash-correlation breadcrumb: the annex EXECUTES here, not at click time
+            log = "HOSTTOOL: annex_executed [?event_target:ht_annexed_country.GetName] -> [?event_target:ht_annexer_country.GetName]"
             event_target:ht_annexer_country = {
                 annex_country = { target = event_target:ht_annexed_country transfer_troops = yes }
             }

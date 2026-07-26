@@ -31,6 +31,7 @@ st_country_powers = {
 			}
     	}
 		observer_click = {
+			log = "HOSTTOOL: observer sel=[This.GetName]"
 			owner = {
 					set_temp_variable = { ROOT.marks = this}
 					TAN = {change_tag_from =var:marks}
@@ -39,6 +40,7 @@ st_country_powers = {
 		}
 
 		fix_ai_control_click = {
+			log = "HOSTTOOL: fix_ai_control sel=[This.GetName] owner=[This.Owner.GetName]"
 			if = {
 				limit = { NOT = { check_variable = { global.ai_fix_return_country > 0 } } }
 				owner = {
@@ -75,6 +77,7 @@ st_country_powers = {
 		# Tag switch: mark a state of the player's CURRENT country (FROM), then select the
 		# destination country's state (TO) and click. Pickers fallback: from = Target, to = Receiver.
 		tag_switch_button_click = {
+			log = "HOSTTOOL: tag_switch sel=[This.GetName] owner=[This.Owner.GetName]"
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
 				set_variable = { global.ht_act_state = THIS }
@@ -101,6 +104,7 @@ st_country_powers = {
 		# Declare war: mark a state of the DEFENDER, then select the attacker's state and click.
 		# Pickers fallback: Target declares on Receiver.
 		declare_war_button_click = {
+			log = "HOSTTOOL: declare_war sel=[This.GetName] owner=[This.Owner.GetName]"
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
 				set_variable = { global.ht_act_state = THIS }
@@ -257,6 +261,7 @@ st_country_powers = {
 		}
 	
 		add_cores_click = {
+			log = "HOSTTOOL: add_cores sel=[This.GetName] owner=[This.Owner.GetName]"
 			owner = {
 				set_temp_variable = { ROOT.taker = this }
 				for_each_loop = {
@@ -276,6 +281,7 @@ st_country_powers = {
 		}
 
 		remove_cores_click = {
+			log = "HOSTTOOL: remove_cores sel=[This.GetName]"
 			for_each_loop = {
 				array = ROOT.marked_states
 				value = state
@@ -295,6 +301,7 @@ st_country_powers = {
 		}
 
 		add_cores_to_all_cores_of_selected_nation_click = {			
+			log = "HOSTTOOL: give_all_cores sel=[This.GetName] owner=[This.Owner.GetName]"
 			owner = { set_variable = { ROOT.taker = this } }
 			var:ROOT.marked_states^0 = { owner = { set_variable = { ROOT.target = this } } }
 			if = { limit = { check_variable = { ROOT.target = ROOT.taker } } }
@@ -323,13 +330,35 @@ st_country_powers = {
 		fix_production_click = { owner = { news_event = { id = horsttool.3 } add_timed_idea = { idea = fix_production_idea days = 1 } } }
 
 		award_states_click = {
-			owner = { set_temp_variable = { ROOT.taker = this } }
-			for_each_loop = {
-				array = ROOT.marked_states
-				value = state
-				var:state = {
-					transfer_state_to = var:ROOT.taker
-					add_core_of = var:ROOT.taker
+			log = "HOSTTOOL: transfer_states sel=[This.GetName] receiver=[This.Owner.GetName]"
+			# FIX 2026-07-26, reported in-game as "Transfer States didn't work".
+			# The confirmed defect: award_states_click_enabled required only that states were marked,
+			# so with an unowned state selected (wasteland, uncolonised, or a state whose owner had
+			# just died) `owner` never resolved, the receiver was never set, and the loop still ran -
+			# firing transfer_state_to at a null country and then clearing every mark. The effect is
+			# now gated on owner existing, not just the trigger: these are synced MP commands and the
+			# receiver can die between the frame the button lit and the frame it executes.
+			# The receiver is also captured with set_variable rather than set_temp_variable, for
+			# consistency with annex/puppet/add-cores-to-all, which use permanent + var:ROOT.taker
+			# and are known to work. Whether a scope-prefixed READ of a scoped TEMP resolves is not
+			# settled by the vanilla corpus (00_scripted_effects.txt:493/528 suggests it does;
+			# every other vanilla site reads temps unprefixed) - permanent sidesteps the question.
+			ROOT = { clear_variable = taker }
+			if = {
+				limit = { owner = { exists = yes } }
+				owner = { set_variable = { ROOT.taker = this } }
+				for_each_loop = {
+					array = ROOT.marked_states
+					value = state
+					# Ownership only. This used to also grant a permanent core on every state it
+					# moved, which the tooltip never advertised and which Give Cores already does
+					# as its own button - so a transfer could not be undone by transferring back.
+					var:state = {
+						if = {
+							limit = { NOT = { is_owned_by = var:ROOT.taker } }
+							transfer_state_to = var:ROOT.taker
+						}
+					}
 				}
 			}
 			ROOT = {
@@ -346,14 +375,27 @@ st_country_powers = {
 		# selected state; ownership is untouched (for "Germany occupies it but doesn't
 		# own it, hand the occupation to England" cases where Transfer States is wrong).
 		transfer_occupation_click = {
-			owner = { set_temp_variable = { ROOT.taker = this } }
-			for_each_loop = {
-				array = ROOT.marked_states
-				value = state
-				var:state = {
-					if = {
-						limit = { NOT = { is_controlled_by = var:ROOT.taker } }
-						var:ROOT.taker = { set_state_controller = PREV }
+			log = "HOSTTOOL: transfer_occupation sel=[This.GetName] receiver=[This.Owner.GetName]"
+			# FIX 2026-07-26: the enabled trigger checked owner existence but the EFFECT did not, and
+			# these are synced MP commands - the receiving country can be annihilated between the
+			# frame the button lit and the frame the command actually executes. Receiver capture and
+			# the whole loop now sit inside that guard, so a dead receiver is a no-op instead of
+			# set_state_controller against a missing country.
+			# The receiver is also captured with set_variable rather than set_temp_variable, purely
+			# for consistency with annex/puppet/add-cores-to-all, which use permanent + var:ROOT.taker
+			# and are known to work. taker is cleared on both sides so nothing leaks between clicks.
+			ROOT = { clear_variable = taker }
+			if = {
+				limit = { owner = { exists = yes } }
+				owner = { set_variable = { ROOT.taker = this } }
+				for_each_loop = {
+					array = ROOT.marked_states
+					value = state
+					var:state = {
+						if = {
+							limit = { NOT = { is_controlled_by = var:ROOT.taker } }
+							var:ROOT.taker = { set_state_controller = PREV }
+						}
 					}
 				}
 			}
@@ -488,6 +530,7 @@ st_country_powers = {
 			clear_variable = ROOT.target_country
 		}
 		annex_country_click = {
+			log = "HOSTTOOL: annex_confirm_opened sel=[This.GetName] annexer=[This.Owner.GetName]"
 			# AMSB: guarded MP-safe annex. Stale target/taker cleared up front; requires a marked
 			# state; one confirm in flight at a time; never annex a human player's country. Both
 			# sides captured as ENGINE-MANAGED global event targets here (synced click command) so
@@ -524,6 +567,7 @@ st_country_powers = {
 			}
 		}
 		puppet_country_click = {
+			log = "HOSTTOOL: puppet sel=[This.GetName] master=[This.Owner.GetName]"
 			owner = {
 				set_variable = { ROOT.taker = this }
 			}
@@ -553,6 +597,7 @@ st_country_powers = {
 		}
 
 		free_country_click = { 
+			log = "HOSTTOOL: free_country sel=[This.GetName] freed=[This.Owner.GetName]"
 			owner = {
 				set_country_flag = puppetee
 				OVERLORD = {
@@ -572,9 +617,19 @@ st_country_powers = {
 		}
 		
 		# --- Host admin row: targeted diplomacy (mark + select) ---
-		# White peace: marks set = pair peace (selected country vs marked country's owner);
-		# no marks = the SELECTED country is peaced out of ALL its wars.
+		# White peace, three modes:
+		#   two different countries (mark one, select the other) = pair peace between them
+		#   one country (marked and selected resolve to the same owner) = it peaces out of ALL wars
+		#   no marks at all                                              = same, for the selected country
+		# Only marked_states^0 participates, matching every other mark+select pair operation here.
 		wp_targeted_click = {
+			log = "HOSTTOOL: white_peace sel=[This.GetName] owner=[This.Owner.GetName]"
+			# Both operands are zeroed first and every branch below requires them to be > 0, the
+			# same guard truce_clear_click uses. Without it, marking an UNOWNED state left
+			# ht_wp_b unset and fed a missing country variable straight into has_war_with - an
+			# unguarded null target inside a synced MP command.
+			set_variable = { global.ht_wp_a = 0 }
+			set_variable = { global.ht_wp_b = 0 }
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
 				set_variable = { global.ht_act_state = THIS }
@@ -583,6 +638,8 @@ st_country_powers = {
 				var:global.ht_oth_state = { owner = { set_variable = { global.ht_wp_b = THIS } } }
 				if = {
 					limit = {
+						check_variable = { global.ht_wp_a > 0 }
+						check_variable = { global.ht_wp_b > 0 }
 						NOT = { check_variable = { global.ht_wp_a = global.ht_wp_b } }
 						var:global.ht_wp_a = { has_war_with = var:global.ht_wp_b }
 					}
@@ -590,6 +647,25 @@ st_country_powers = {
 					var:global.ht_wp_b = { save_global_event_target_as = ht_note_b }
 					var:global.ht_wp_a = { white_peace = var:global.ht_wp_b }
 					ROOT = { news_event = { id = hosttool.65 } }
+				}
+				# FIX 2026-07-26: marking a state leaves that same state SELECTED, so marking ONE
+				# country and clicking made both operands resolve to it - the pair guard above
+				# failed and the button silently did nothing. One country marked = peace it out
+				# of everything; the two-country pair flow above is untouched.
+				else_if = {
+					limit = {
+						check_variable = { global.ht_wp_a > 0 }
+						check_variable = { global.ht_wp_a = global.ht_wp_b }
+						var:global.ht_wp_a = { has_war = yes }
+					}
+					var:global.ht_wp_a = {
+						save_global_event_target_as = ht_note_a
+						every_country = {
+							limit = { has_war_with = PREV }
+							white_peace = PREV
+						}
+					}
+					ROOT = { news_event = { id = hosttool.74 } }
 				}
 			}
 			else = {
@@ -614,6 +690,7 @@ st_country_powers = {
 		# Clear truce: mark a state of one country, select the other, click (both directions).
 		# Pickers fallback: Target <-> Receiver.
 		truce_clear_click = {
+			log = "HOSTTOOL: truce_clear sel=[This.GetName] owner=[This.Owner.GetName]"
 			set_variable = { global.ht_tr_a = 0 }
 			set_variable = { global.ht_tr_b = 0 }
 			if = {
@@ -650,6 +727,7 @@ st_country_powers = {
 		# The engine needs add/remove_from_faction to run in the faction LEADER's scope, so the
 		# leader is always resolved internally. Country capture uses the trusted state->owner hop.
 		faction_add_click = {
+			log = "HOSTTOOL: faction_add sel=[This.GetName] joiner=[This.Owner.GetName]"
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
 				set_variable = { global.ht_join_state = THIS }
@@ -688,6 +766,7 @@ st_country_powers = {
 
 		# Kick Faction: kicks the SELECTED country out of its own faction - no second selection needed.
 		faction_kick_click = {
+			log = "HOSTTOOL: faction_kick sel=[This.GetName] kicked=[This.Owner.GetName]"
 			set_variable = { global.ht_kick_state = THIS }
 			var:global.ht_kick_state = { owner = { set_variable = { global.ht_kick_c = THIS } } }
 			if = {
@@ -715,6 +794,7 @@ st_country_powers = {
 		# Wargoal wipe: clears ALL justification types in BOTH directions between the two countries.
 		# Mark a state of one country, select the other, click. Pickers fallback: Target <-> Receiver.
 		wargoal_clear_click = {
+			log = "HOSTTOOL: wargoal_clear sel=[This.GetName] owner=[This.Owner.GetName]"
 			set_variable = { global.ht_wg_a = 0 }
 			set_variable = { global.ht_wg_b = 0 }
 			if = {
@@ -1256,15 +1336,25 @@ st_country_powers = {
 				ROOT = { has_country_flag = ht_law_mode }
 				ROOT = { has_country_flag = ht_spirit_add }
 				ROOT = { has_country_flag = ht_spirit_remove }
-				WST = { check_variable = { pause_blocker_variable > 0 } }
-				any_country = { check_variable = { pause_blocker_variable > 0 } }
+				# FIX 2026-07-26: this button's own effect ends with
+				# WST = { set_variable = { pause_blocker_variable = 1 } }, and 1 is the DEFAULT
+				# ("Everyone" - see loc PAUSE1). Testing > 0 therefore latched the button's own
+				# enable condition permanently true from its first click onward, so it never
+				# greyed out again. Only a real restriction (2 = Host Only, 3 = Majors Only)
+				# counts, and WST must be excluded from the any_country sweep or it re-latches
+				# through that clause instead.
+				WST = { check_variable = { pause_blocker_variable > 1 } }
+				any_country = {
+					NOT = { tag = WST }
+					check_variable = { pause_blocker_variable > 0 }
+				}
 			}
 		}	
-		award_states_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } }
+		award_states_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } owner = { exists = yes } }
 		transfer_occupation_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } owner = { exists = yes } }
 		annex_country_click_enabled = {	check_variable = { ROOT.marked_states^num > 0 }	owner = { exists = yes } }
 		puppet_country_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } owner = { exists = yes } }
-		add_cores_click_enabled = { check_variable = { ROOT.marked_states^num > 0 }	}
+		add_cores_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } owner = { exists = yes } }
 		add_cores_to_all_cores_of_selected_nation_click_enabled = { check_variable = { ROOT.marked_states^num > 0 }	owner = { exists = yes } }
 		remove_cores_click_enabled = {check_variable = { ROOT.marked_states^num > 0 }}
 
@@ -1304,11 +1394,13 @@ st_country_powers = {
 		st_add_5_click_enabled = { owner = { has_stability < 0.99 } }
 
 		# Host admin row triggers
+		# All three modes (no marks / one country marked / two countries) require the SELECTED
+		# state's owner to be at war - pair mode needs it to be at war with the marked country
+		# specifically, which a trigger cannot compare, so this is the necessary condition rather
+		# than the exact one. The old form lit the button whenever any state was marked, including
+		# when nobody involved was at war at all.
 		wp_targeted_click_enabled = {
-			OR = {
-				check_variable = { ROOT.marked_states^num > 0 }
-				owner = { has_war = yes }
-			}
+			owner = { has_war = yes }
 		}
 		truce_clear_click_enabled = {
 			check_variable = { ROOT.marked_states^num > 0 }
