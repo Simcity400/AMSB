@@ -94,6 +94,8 @@ st_country_powers = {
 			}
 			clear_variable = global.ht_to_c
 			clear_variable = global.ht_from_c
+			clear_variable = global.ht_act_state
+			clear_variable = global.ht_oth_state
 		}
 
 		# Declare war: mark a state of the DEFENDER, then select the attacker's state and click.
@@ -123,6 +125,8 @@ st_country_powers = {
 			}
 			clear_variable = global.war_declarer
 			clear_variable = global.war_target
+			clear_variable = global.ht_act_state
+			clear_variable = global.ht_oth_state
 		}
 		addpp_click = {
 			owner={
@@ -603,6 +607,8 @@ st_country_powers = {
 			}
 			clear_variable = global.ht_wp_a
 			clear_variable = global.ht_wp_b
+			clear_variable = global.ht_act_state
+			clear_variable = global.ht_oth_state
 		}
 
 		# Clear truce: mark a state of one country, select the other, click (both directions).
@@ -635,6 +641,8 @@ st_country_powers = {
 			}
 			clear_variable = global.ht_tr_a
 			clear_variable = global.ht_tr_b
+			clear_variable = global.ht_act_state
+			clear_variable = global.ht_oth_state
 		}
 
 		# Join Faction, mark flow: mark a state of ANY member of the destination faction,
@@ -674,6 +682,8 @@ st_country_powers = {
 			}
 			clear_variable = global.ht_join_c
 			clear_variable = global.ht_fac_c
+			clear_variable = global.ht_join_state
+			clear_variable = global.ht_fac_state
 		}
 
 		# Kick Faction: kicks the SELECTED country out of its own faction - no second selection needed.
@@ -699,6 +709,7 @@ st_country_powers = {
 				ROOT = { news_event = { id = hosttool.70 } }
 			}
 			clear_variable = global.ht_kick_c
+			clear_variable = global.ht_kick_state
 		}
 
 		# Wargoal wipe: clears ALL justification types in BOTH directions between the two countries.
