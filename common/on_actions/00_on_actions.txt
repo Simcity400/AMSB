@@ -1619,6 +1619,10 @@ on_actions = {
 	#ROOT is winner #FROM gets annexed - For civil wars on_civil_war_end is also fired
 	on_annex = {
 		effect = {
+			# crash-correlation breadcrumb: every country deletion - host tool, focus, event,
+			# civil war end, peace deal - lands here. game.log stamps wall-clock time, so
+			# players' crash times (Windows event log) can be tested against deletion times.
+			log = "OBJDEL: annex [From.GetName] -> [Root.GetName]"
 			every_country = {
 				limit = {
 					OR = {
