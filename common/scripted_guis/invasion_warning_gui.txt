@@ -13,12 +13,14 @@ scripted_gui = {
 			ok_button_click = {
 				clr_country_flag = ui_show_invasion_warning
 				clear_variable = ui_invaded_country
+				clear_variable = ui_invaded_state
 				clear_variable = ui_invader_country
 			}
 			disable_button_click = {
 				set_country_flag = notif_disable_inv_warning
 				clr_country_flag = ui_show_invasion_warning
 				clear_variable = ui_invaded_country
+				clear_variable = ui_invaded_state
 				clear_variable = ui_invader_country
 			}
 			show_button_click = {
@@ -26,6 +28,7 @@ scripted_gui = {
 				goto_state = event_target:invaded_state
 				clr_country_flag = ui_show_invasion_warning
 				clear_variable = ui_invaded_country
+				clear_variable = ui_invaded_state
 				clear_variable = ui_invader_country
 			}
 		}
@@ -54,18 +57,21 @@ scripted_gui = {
 			ok_button_click = {
 				clr_country_flag = ui_show_paradrop_warning
 				clear_variable = ui_invaded_country
+				clear_variable = ui_invaded_state
 				clear_variable = ui_invader_country
 			}
 			disable_button_click = {
 				set_country_flag = notif_disable_para_warning
 				clr_country_flag = ui_show_paradrop_warning
 				clear_variable = ui_invaded_country
+				clear_variable = ui_invaded_state
 				clear_variable = ui_invader_country
 			}
 			show_button_click = {
 				goto_state = event_target:paradropped_state
 				clr_country_flag = ui_show_paradrop_warning
 				clear_variable = ui_invaded_country
+				clear_variable = ui_invaded_state
 				clear_variable = ui_invader_country
 			}
 		}

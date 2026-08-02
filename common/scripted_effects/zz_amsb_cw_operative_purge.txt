@@ -1,0 +1,29 @@
+# AMSB 2026-08-01: defuses the civil-war operative double-free CTD (0xC0000374, "logless" crash).
+#
+# Root cause (proven by full dump hoi4.exe.174440.dmp + save USA_1936_10_12_05.hoi4):
+# when start_civil_war splits a country, the engine leaves the SAME operative
+# instance in BOTH resulting countries' intelligence agencies. Any full
+# game-state teardown afterwards (hotjoin state reload, save load, quit to menu)
+# walks both agency rosters and frees the shared object twice ->
+# HEAP_FAILURE_BLOCK_NOT_BUSY -> fail-fast 0xC0000374 with no Paradox crash log.
+#
+# Mitigation: kill all operatives of the splitting country immediately BEFORE
+# every start_civil_war, so there is nothing to duplicate. This call is
+# inserted mechanically in front of every start_civil_war site in the mod
+# (and in vanilla files copied into the mod for coverage).
+#
+# hidden_effect: suppresses tooltip text everywhere (incl. effect_tooltip
+# preview sites, where nothing executes anyway).
+# Killer-less country-scope kill form (PREV = { kill_operative = PREV }):
+# avoids feeding on_operative_death a killer country, which would schedule
+# vanilla lar_operative_event notification events (Codex review 2026-08-01).
+amsb_cw_operative_purge = {
+	hidden_effect = {
+		if = {
+			limit = { has_intelligence_agency = yes }
+			every_operative = {
+				PREV = { kill_operative = PREV }
+			}
+		}
+	}
+}

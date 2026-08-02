@@ -253,6 +253,7 @@ country_event = {
                 clr_country_flag = ht_annex_pending
             }
             clear_variable = global.ht_focus_state
+            clear_global_event_target = ht_focus_state
             # Old host's marked states must not leak into the new host's session
             for_each_scope_loop = {
                 array = marked_states

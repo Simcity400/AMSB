@@ -656,31 +656,33 @@ naval_bonus_2y = {
     }
 }
 
-# Host tool: clears every wargoal type in BOTH directions between global.ht_wg_a and global.ht_wg_b
+# Host tool: clears every wargoal type in BOTH directions between event_target:ht_wg_a and event_target:ht_wg_b
 ht_clear_wargoals_both = {
-	var:global.ht_wg_a = {
-		remove_wargoal = { type = annex_everything target = var:global.ht_wg_b }
-		remove_wargoal = { type = take_state target = var:global.ht_wg_b }
-		remove_wargoal = { type = take_state_focus target = var:global.ht_wg_b }
-		remove_wargoal = { type = take_core_state target = var:global.ht_wg_b }
-		remove_wargoal = { type = take_claimed_state target = var:global.ht_wg_b }
-		remove_wargoal = { type = puppet_wargoal_focus target = var:global.ht_wg_b }
-		remove_wargoal = { type = topple_government target = var:global.ht_wg_b }
-		remove_wargoal = { type = liberate_wargoal target = var:global.ht_wg_b }
-		remove_wargoal = { type = independence_wargoal target = var:global.ht_wg_b }
-		remove_wargoal = { type = civil_war target = var:global.ht_wg_b }
-	}
-	var:global.ht_wg_b = {
-		remove_wargoal = { type = annex_everything target = var:global.ht_wg_a }
-		remove_wargoal = { type = take_state target = var:global.ht_wg_a }
-		remove_wargoal = { type = take_state_focus target = var:global.ht_wg_a }
-		remove_wargoal = { type = take_core_state target = var:global.ht_wg_a }
-		remove_wargoal = { type = take_claimed_state target = var:global.ht_wg_a }
-		remove_wargoal = { type = puppet_wargoal_focus target = var:global.ht_wg_a }
-		remove_wargoal = { type = topple_government target = var:global.ht_wg_a }
-		remove_wargoal = { type = liberate_wargoal target = var:global.ht_wg_a }
-		remove_wargoal = { type = independence_wargoal target = var:global.ht_wg_a }
-		remove_wargoal = { type = civil_war target = var:global.ht_wg_a }
+	event_target:ht_wg_a = {
+		event_target:ht_wg_b = {
+			PREV = {
+				remove_wargoal = { type = annex_everything target = PREV }
+				remove_wargoal = { type = take_state target = PREV }
+				remove_wargoal = { type = take_state_focus target = PREV }
+				remove_wargoal = { type = take_core_state target = PREV }
+				remove_wargoal = { type = take_claimed_state target = PREV }
+				remove_wargoal = { type = puppet_wargoal_focus target = PREV }
+				remove_wargoal = { type = topple_government target = PREV }
+				remove_wargoal = { type = liberate_wargoal target = PREV }
+				remove_wargoal = { type = independence_wargoal target = PREV }
+				remove_wargoal = { type = civil_war target = PREV }
+			}
+			remove_wargoal = { type = annex_everything target = PREV }
+			remove_wargoal = { type = take_state target = PREV }
+			remove_wargoal = { type = take_state_focus target = PREV }
+			remove_wargoal = { type = take_core_state target = PREV }
+			remove_wargoal = { type = take_claimed_state target = PREV }
+			remove_wargoal = { type = puppet_wargoal_focus target = PREV }
+			remove_wargoal = { type = topple_government target = PREV }
+			remove_wargoal = { type = liberate_wargoal target = PREV }
+			remove_wargoal = { type = independence_wargoal target = PREV }
+			remove_wargoal = { type = civil_war target = PREV }
+		}
 	}
 }
 

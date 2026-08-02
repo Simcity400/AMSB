@@ -1184,7 +1184,7 @@ operation_coup_government = { ### 7 1/70
 			}
 
 			# create different civil wars depending on ROOT ideology
-			start_civil_war = {
+			amsb_cw_operative_purge = yes start_civil_war = {
 				capital = coup_civil_war_capital
 				size = civil_war_size
 				ideology = var:coup_operation_party@ROOT
@@ -1228,7 +1228,7 @@ operation_coup_government = { ### 7 1/70
 				set_temp_variable = { civil_war_party = PREV.ROOT.current_party_ideology_group }
 			}
 
-			start_civil_war = {
+			amsb_cw_operative_purge = yes start_civil_war = {
 				ideology = var:civil_war_party
 			}
 		}

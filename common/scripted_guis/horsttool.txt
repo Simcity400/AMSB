@@ -64,9 +64,7 @@ st_country_powers = {
 
 		change_host_nation_click = {
 			owner = {
-				ROOT = { set_variable = { temp_new_host = PREV } }
-				# Engine-managed capture at CLICK time - the confirm option must never
-				# dereference the raw temp_new_host object var (delayed-object rule).
+				# Engine-managed capture at CLICK time for the delayed confirmation.
 				save_global_event_target_as = ht_new_host
 			}
 			ROOT = {
@@ -80,18 +78,23 @@ st_country_powers = {
 			log = "HOSTTOOL: tag_switch sel=[This.GetName] owner=[This.Owner.GetName]"
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
-				set_variable = { global.ht_act_state = THIS }
+				owner = { save_global_event_target_as = ht_to_c }
 				set_variable = { global.ht_oth_state = ROOT.marked_states^0 }
-				var:global.ht_act_state = { owner = { set_variable = { global.ht_to_c = THIS } } }
-				var:global.ht_oth_state = { owner = { set_variable = { global.ht_from_c = THIS } } }
+				var:global.ht_oth_state = { owner = { save_global_event_target_as = ht_from_c } }
 				if = {
 					limit = {
-						NOT = { check_variable = { global.ht_from_c = global.ht_to_c } }
-						var:global.ht_from_c = { is_ai = no }
+						event_target:ht_from_c = {
+							exists = yes
+							NOT = { tag = event_target:ht_to_c }
+							is_ai = no
+						}
+						event_target:ht_to_c = { exists = yes }
 					}
-					var:global.ht_from_c = { save_global_event_target_as = ht_switch_from }
-					var:global.ht_to_c = { save_global_event_target_as = ht_switch_to }
-					var:global.ht_to_c = { change_tag_from = var:global.ht_from_c }
+					event_target:ht_from_c = { save_global_event_target_as = ht_switch_from }
+					event_target:ht_to_c = { save_global_event_target_as = ht_switch_to }
+					event_target:ht_from_c = {
+						event_target:ht_to_c = { change_tag_from = PREV }
+					}
 					ROOT = { news_event = { id = hosttool.22 } }
 				}
 			}
@@ -99,6 +102,8 @@ st_country_powers = {
 			clear_variable = global.ht_from_c
 			clear_variable = global.ht_act_state
 			clear_variable = global.ht_oth_state
+			clear_global_event_target = ht_from_c
+			clear_global_event_target = ht_to_c
 		}
 
 		# Declare war: mark a state of the DEFENDER, then select the attacker's state and click.
@@ -107,23 +112,24 @@ st_country_powers = {
 			log = "HOSTTOOL: declare_war sel=[This.GetName] owner=[This.Owner.GetName]"
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
-				set_variable = { global.ht_act_state = THIS }
+				owner = { save_global_event_target_as = ht_war_a }
 				set_variable = { global.ht_oth_state = ROOT.marked_states^0 }
-				var:global.ht_act_state = { owner = { set_variable = { global.war_declarer = THIS } } }
-				var:global.ht_oth_state = { owner = { set_variable = { global.war_target = THIS } } }
+				var:global.ht_oth_state = { owner = { save_global_event_target_as = ht_war_b } }
 				if = {
 					limit = {
-						NOT = { check_variable = { global.war_declarer = global.war_target } }
-						NOT = { var:global.war_declarer = { has_war_with = var:global.war_target } }
+						event_target:ht_war_a = {
+							exists = yes
+							NOT = { tag = event_target:ht_war_b }
+							NOT = { has_war_with = event_target:ht_war_b }
+						}
+						event_target:ht_war_b = { exists = yes }
 					}
-					var:global.war_declarer = {
-						save_global_event_target_as = ht_war_a
+					event_target:ht_war_a = {
 						declare_war_on = {
-							target = var:global.war_target
+							target = event_target:ht_war_b
 							type = annex_everything
 						}
 					}
-					var:global.war_target = { save_global_event_target_as = ht_war_b }
 					ROOT = { news_event = { id = hosttool.21 } }
 				}
 			}
@@ -624,28 +630,25 @@ st_country_powers = {
 		# Only marked_states^0 participates, matching every other mark+select pair operation here.
 		wp_targeted_click = {
 			log = "HOSTTOOL: white_peace sel=[This.GetName] owner=[This.Owner.GetName]"
-			# Both operands are zeroed first and every branch below requires them to be > 0, the
-			# same guard truce_clear_click uses. Without it, marking an UNOWNED state left
-			# ht_wp_b unset and fed a missing country variable straight into has_war_with - an
-			# unguarded null target inside a synced MP command.
-			set_variable = { global.ht_wp_a = 0 }
-			set_variable = { global.ht_wp_b = 0 }
+			# Both countries are captured as engine-managed targets before any comparison.
+			# An unowned marked state leaves ht_wp_b invalid, so the exists guards fail closed.
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
-				set_variable = { global.ht_act_state = THIS }
+				owner = { save_global_event_target_as = ht_wp_a }
 				set_variable = { global.ht_oth_state = ROOT.marked_states^0 }
-				var:global.ht_act_state = { owner = { set_variable = { global.ht_wp_a = THIS } } }
-				var:global.ht_oth_state = { owner = { set_variable = { global.ht_wp_b = THIS } } }
+				var:global.ht_oth_state = { owner = { save_global_event_target_as = ht_wp_b } }
 				if = {
 					limit = {
-						check_variable = { global.ht_wp_a > 0 }
-						check_variable = { global.ht_wp_b > 0 }
-						NOT = { check_variable = { global.ht_wp_a = global.ht_wp_b } }
-						var:global.ht_wp_a = { has_war_with = var:global.ht_wp_b }
+						event_target:ht_wp_a = {
+							exists = yes
+							NOT = { tag = event_target:ht_wp_b }
+							has_war_with = event_target:ht_wp_b
+						}
+						event_target:ht_wp_b = { exists = yes }
 					}
-					var:global.ht_wp_a = { save_global_event_target_as = ht_note_a }
-					var:global.ht_wp_b = { save_global_event_target_as = ht_note_b }
-					var:global.ht_wp_a = { white_peace = var:global.ht_wp_b }
+					event_target:ht_wp_a = { save_global_event_target_as = ht_note_a }
+					event_target:ht_wp_b = { save_global_event_target_as = ht_note_b }
+					event_target:ht_wp_a = { white_peace = event_target:ht_wp_b }
 					ROOT = { news_event = { id = hosttool.65 } }
 				}
 				# FIX 2026-07-26: marking a state leaves that same state SELECTED, so marking ONE
@@ -654,11 +657,14 @@ st_country_powers = {
 				# of everything; the two-country pair flow above is untouched.
 				else_if = {
 					limit = {
-						check_variable = { global.ht_wp_a > 0 }
-						check_variable = { global.ht_wp_a = global.ht_wp_b }
-						var:global.ht_wp_a = { has_war = yes }
+						event_target:ht_wp_a = {
+							exists = yes
+							tag = event_target:ht_wp_b
+							has_war = yes
+						}
+						event_target:ht_wp_b = { exists = yes }
 					}
-					var:global.ht_wp_a = {
+					event_target:ht_wp_a = {
 						save_global_event_target_as = ht_note_a
 						every_country = {
 							limit = { has_war_with = PREV }
@@ -685,31 +691,32 @@ st_country_powers = {
 			clear_variable = global.ht_wp_b
 			clear_variable = global.ht_act_state
 			clear_variable = global.ht_oth_state
+			clear_global_event_target = ht_wp_a
+			clear_global_event_target = ht_wp_b
 		}
 
 		# Clear truce: mark a state of one country, select the other, click (both directions).
 		# Pickers fallback: Target <-> Receiver.
 		truce_clear_click = {
 			log = "HOSTTOOL: truce_clear sel=[This.GetName] owner=[This.Owner.GetName]"
-			set_variable = { global.ht_tr_a = 0 }
-			set_variable = { global.ht_tr_b = 0 }
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
-				set_variable = { global.ht_act_state = THIS }
+				owner = { save_global_event_target_as = ht_tr_a }
 				set_variable = { global.ht_oth_state = ROOT.marked_states^0 }
-				var:global.ht_act_state = { owner = { set_variable = { global.ht_tr_a = THIS } } }
-				var:global.ht_oth_state = { owner = { set_variable = { global.ht_tr_b = THIS } } }
+				var:global.ht_oth_state = { owner = { save_global_event_target_as = ht_tr_b } }
 			}
 			if = {
 				limit = {
-					check_variable = { global.ht_tr_a > 0 }
-					check_variable = { global.ht_tr_b > 0 }
-					NOT = { check_variable = { global.ht_tr_a = global.ht_tr_b } }
+					event_target:ht_tr_a = {
+						exists = yes
+						NOT = { tag = event_target:ht_tr_b }
+					}
+					event_target:ht_tr_b = { exists = yes }
 				}
-				var:global.ht_tr_a = { save_global_event_target_as = ht_note_a }
-				var:global.ht_tr_b = { save_global_event_target_as = ht_note_b }
-				var:global.ht_tr_a = {
-					var:global.ht_tr_b = {
+				event_target:ht_tr_a = { save_global_event_target_as = ht_note_a }
+				event_target:ht_tr_b = { save_global_event_target_as = ht_note_b }
+				event_target:ht_tr_a = {
+					event_target:ht_tr_b = {
 						PREV = { set_truce = { target = THIS days = 0 } }
 						set_truce = { target = PREV days = 0 }
 					}
@@ -720,6 +727,8 @@ st_country_powers = {
 			clear_variable = global.ht_tr_b
 			clear_variable = global.ht_act_state
 			clear_variable = global.ht_oth_state
+			clear_global_event_target = ht_tr_a
+			clear_global_event_target = ht_tr_b
 		}
 
 		# Join Faction, mark flow: mark a state of ANY member of the destination faction,
@@ -730,29 +739,34 @@ st_country_powers = {
 			log = "HOSTTOOL: faction_add sel=[This.GetName] joiner=[This.Owner.GetName]"
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
-				set_variable = { global.ht_join_state = THIS }
+				owner = { save_global_event_target_as = ht_join_c }
 				set_variable = { global.ht_fac_state = ROOT.marked_states^0 }
-				var:global.ht_join_state = { owner = { set_variable = { global.ht_join_c = THIS } } }
-				var:global.ht_fac_state = { owner = { set_variable = { global.ht_fac_c = THIS } } }
+				var:global.ht_fac_state = { owner = { save_global_event_target_as = ht_fac_c } }
 				if = {
 					limit = {
-						NOT = { check_variable = { global.ht_join_c = global.ht_fac_c } }
-						var:global.ht_fac_c = { is_in_faction = yes }
-						NOT = { var:global.ht_join_c = { is_in_faction_with = var:global.ht_fac_c } }
+						event_target:ht_fac_c = {
+							exists = yes
+							is_in_faction = yes
+						}
+						event_target:ht_join_c = {
+							exists = yes
+							NOT = { tag = event_target:ht_fac_c }
+							NOT = { is_in_faction_with = event_target:ht_fac_c }
+						}
 					}
-					var:global.ht_fac_c = { save_global_event_target_as = ht_note_a }
-					var:global.ht_join_c = { save_global_event_target_as = ht_note_b }
+					event_target:ht_fac_c = { save_global_event_target_as = ht_note_a }
+					event_target:ht_join_c = { save_global_event_target_as = ht_note_b }
 					if = {
-						limit = { var:global.ht_fac_c = { is_faction_leader = yes } }
-						var:global.ht_fac_c = { add_to_faction = var:global.ht_join_c }
+						limit = { event_target:ht_fac_c = { is_faction_leader = yes } }
+						event_target:ht_fac_c = { add_to_faction = event_target:ht_join_c }
 					}
 					else = {
 						every_country = {
 							limit = {
 								is_faction_leader = yes
-								is_in_faction_with = var:global.ht_fac_c
+								is_in_faction_with = event_target:ht_fac_c
 							}
-							add_to_faction = var:global.ht_join_c
+							add_to_faction = event_target:ht_join_c
 						}
 					}
 					ROOT = { news_event = { id = hosttool.68 } }
@@ -762,61 +776,67 @@ st_country_powers = {
 			clear_variable = global.ht_fac_c
 			clear_variable = global.ht_join_state
 			clear_variable = global.ht_fac_state
+			clear_global_event_target = ht_join_c
+			clear_global_event_target = ht_fac_c
 		}
 
 		# Kick Faction: kicks the SELECTED country out of its own faction - no second selection needed.
 		faction_kick_click = {
 			log = "HOSTTOOL: faction_kick sel=[This.GetName] kicked=[This.Owner.GetName]"
-			set_variable = { global.ht_kick_state = THIS }
-			var:global.ht_kick_state = { owner = { set_variable = { global.ht_kick_c = THIS } } }
+			owner = { save_global_event_target_as = ht_kick_c }
 			if = {
 				limit = {
-					var:global.ht_kick_c = {
+					event_target:ht_kick_c = {
+						exists = yes
 						is_in_faction = yes
 						is_faction_leader = no
 					}
 				}
-				var:global.ht_kick_c = { save_global_event_target_as = ht_note_b }
+				event_target:ht_kick_c = { save_global_event_target_as = ht_note_b }
 				every_country = {
 					limit = {
 						is_faction_leader = yes
-						is_in_faction_with = var:global.ht_kick_c
+						is_in_faction_with = event_target:ht_kick_c
 					}
 					save_global_event_target_as = ht_note_a
-					remove_from_faction = var:global.ht_kick_c
+					remove_from_faction = event_target:ht_kick_c
 				}
 				ROOT = { news_event = { id = hosttool.70 } }
 			}
 			clear_variable = global.ht_kick_c
 			clear_variable = global.ht_kick_state
+			clear_global_event_target = ht_kick_c
 		}
 
 		# Wargoal wipe: clears ALL justification types in BOTH directions between the two countries.
 		# Mark a state of one country, select the other, click. Pickers fallback: Target <-> Receiver.
 		wargoal_clear_click = {
 			log = "HOSTTOOL: wargoal_clear sel=[This.GetName] owner=[This.Owner.GetName]"
-			set_variable = { global.ht_wg_a = 0 }
-			set_variable = { global.ht_wg_b = 0 }
 			if = {
 				limit = { check_variable = { ROOT.marked_states^num > 0 } }
-				set_variable = { global.ht_act_state = THIS }
+				owner = { save_global_event_target_as = ht_wg_a }
 				set_variable = { global.ht_oth_state = ROOT.marked_states^0 }
-				var:global.ht_act_state = { owner = { set_variable = { global.ht_wg_a = THIS } } }
-				var:global.ht_oth_state = { owner = { set_variable = { global.ht_wg_b = THIS } } }
+				var:global.ht_oth_state = { owner = { save_global_event_target_as = ht_wg_b } }
 			}
 			if = {
 				limit = {
-					check_variable = { global.ht_wg_a > 0 }
-					check_variable = { global.ht_wg_b > 0 }
-					NOT = { check_variable = { global.ht_wg_a = global.ht_wg_b } }
+					event_target:ht_wg_a = {
+						exists = yes
+						NOT = { tag = event_target:ht_wg_b }
+					}
+					event_target:ht_wg_b = { exists = yes }
 				}
-				var:global.ht_wg_a = { save_global_event_target_as = ht_note_a }
-				var:global.ht_wg_b = { save_global_event_target_as = ht_note_b }
+				event_target:ht_wg_a = { save_global_event_target_as = ht_note_a }
+				event_target:ht_wg_b = { save_global_event_target_as = ht_note_b }
 				ht_clear_wargoals_both = yes
 				ROOT = { news_event = { id = hosttool.71 } }
 			}
 			clear_variable = global.ht_wg_a
 			clear_variable = global.ht_wg_b
+			clear_variable = global.ht_act_state
+			clear_variable = global.ht_oth_state
+			clear_global_event_target = ht_wg_a
+			clear_global_event_target = ht_wg_b
 		}
 
 		# --- Autonomy stepper: walks the selected subject one level up/down the standard ladder
@@ -982,13 +1002,12 @@ st_country_powers = {
 		}
 
 		# --- Focus picker mode toggles ---
-		# Store the SELECTED STATE in a global (THIS = the state is unambiguous in this context);
-		# the generated decisions hop state -> OWNER explicitly. Do NOT store "the country" via
-		# owner/ROOT/PREV idioms - scope resolution there is unreliable (stored the host's own
-		# country in live testing, listing the wrong nation's focuses).
+		# Capture the SELECTED STATE as an engine-managed global event target.
+		# The generated decisions guard the target, then hop state -> OWNER explicitly.
 
 			focus_mode_unc_click = {
-				set_variable = { global.ht_focus_state = THIS }
+				save_global_event_target_as = ht_focus_state
+				clear_variable = global.ht_focus_state
 				ROOT = {
 					if = {
 						limit = { has_country_flag = ht_focus_unc }
@@ -1002,10 +1021,15 @@ st_country_powers = {
 						clr_country_flag = ht_spirit_remove
 					}
 				}
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = ht_focus_unc } } }
+					clear_global_event_target = ht_focus_state
+				}
 			}
 
 			focus_mode_com_click = {
-				set_variable = { global.ht_focus_state = THIS }
+				save_global_event_target_as = ht_focus_state
+				clear_variable = global.ht_focus_state
 				ROOT = {
 					if = {
 						limit = { has_country_flag = ht_focus_com }
@@ -1019,10 +1043,15 @@ st_country_powers = {
 						clr_country_flag = ht_spirit_remove
 					}
 				}
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = ht_focus_com } } }
+					clear_global_event_target = ht_focus_state
+				}
 			}
 
 			law_mode_click = {
-				set_variable = { global.ht_focus_state = THIS }
+				save_global_event_target_as = ht_focus_state
+				clear_variable = global.ht_focus_state
 				ROOT = {
 					if = {
 						limit = { has_country_flag = ht_law_mode }
@@ -1036,10 +1065,15 @@ st_country_powers = {
 						clr_country_flag = ht_spirit_remove
 					}
 				}
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = ht_law_mode } } }
+					clear_global_event_target = ht_focus_state
+				}
 			}
 
 			spirit_add_mode_click = {
-				set_variable = { global.ht_focus_state = THIS }
+				save_global_event_target_as = ht_focus_state
+				clear_variable = global.ht_focus_state
 				ROOT = {
 					if = {
 						limit = { has_country_flag = ht_spirit_add }
@@ -1053,10 +1087,15 @@ st_country_powers = {
 						clr_country_flag = ht_spirit_remove
 					}
 				}
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = ht_spirit_add } } }
+					clear_global_event_target = ht_focus_state
+				}
 			}
 
 			spirit_remove_mode_click = {
-				set_variable = { global.ht_focus_state = THIS }
+				save_global_event_target_as = ht_focus_state
+				clear_variable = global.ht_focus_state
 				ROOT = {
 					if = {
 						limit = { has_country_flag = ht_spirit_remove }
@@ -1069,6 +1108,10 @@ st_country_powers = {
 						clr_country_flag = ht_law_mode
 						clr_country_flag = ht_spirit_add
 					}
+				}
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = ht_spirit_remove } } }
+					clear_global_event_target = ht_focus_state
 				}
 			}
 
