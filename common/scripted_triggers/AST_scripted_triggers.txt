@@ -4,72 +4,11 @@ AST_taog = { # Trigger to check if playing as Australia while having TAOG
 	has_dlc = "Thunder at Our Gates"
 }
 
-AST_historical_ai = {
-	OR = {
-		AND = {
-			is_historical_focus_on = yes
-			has_game_rule = {
-				rule = AST_AI_BEHAVIOR_TAOG
-				option = DEFAULT
-			}
-		}
-		has_country_flag = AST_AI_RANDOM_TAOG_HISTORICAL
-		has_game_rule = {
-			rule = AST_AI_BEHAVIOR_TAOG
-			option = HISTORICAL
-		}
-	}
-}
 
-AST_adela_fascist_ai = {
-	OR = {
-		has_country_flag = AST_ADELA_FASCIST_TAOG_AI
-		has_game_rule = {
-			rule = AST_AI_BEHAVIOR_TAOG
-			option = ADELA
-		}
-	}
-}
 
-AST_peter_fascist_ai = {
-	OR = {
-		has_country_flag = AST_PETER_FASCIST_TAOG_AI
-		has_game_rule = {
-			rule = AST_AI_BEHAVIOR_TAOG
-			option = PETER
-		}
-	}
-}
 
-AST_random_democratic_ai = {
-	OR = {
-		has_country_flag = AST_RANDOM_DEMOCRATIC_TAOG_AI
-		has_game_rule = {
-			rule = AST_AI_BEHAVIOR_TAOG
-			option = DEMOCRATIC_TAOG
-		}
-	}
-}
 
-AST_anti_commonwealth_communist_ai = {
-	OR = {
-		has_country_flag = AST_ANTI_COMMONWEALTH_COMMUNIST_TAOG_AI
-		has_game_rule = {
-			rule = AST_AI_BEHAVIOR_TAOG
-			option = ANTICOMMONWEALTHCOMMUNIST
-		}
-	}
-}
 
-AST_comintern_communist_ai = {
-	OR = {
-		has_country_flag = AST_COMINTERN_COMMUNIST_TAOG_AI
-		has_game_rule = {
-			rule = AST_AI_BEHAVIOR_TAOG
-			option = COMINTERNCOMMUNIST
-		}
-	}
-}
 
 AST_conscription_level_limited_conscription = {
 	if = {

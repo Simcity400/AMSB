@@ -4179,45 +4179,6 @@ on_actions = {
 				}
 			}
 
-			AST = {
-				IF = {
-					limit = {
-						OR = {
-							AND = {
-								is_historical_focus_on = no
-								has_game_rule = {
-									rule = AST_AI_BEHAVIOR
-									option = DEFAULT
-								}
-							}
-							has_game_rule = {
-								rule = AST_AI_BEHAVIOR
-								option = RANDOM
-							}
-						}
-					}
-					random_list = {
-						30 = {
-							AST = { set_country_flag = AST_AI_RANDOM_TAOG_HISTORICAL }
-						}
-						15 = {
-							AST = { set_country_flag = AST_ADELA_FASCIST_TAOG_AI }
-						}
-						15 = {
-							AST = { set_country_flag = AST_PETER_FASCIST_TAOG_AI }
-						}
-						20 = {
-							AST = { set_country_flag = AST_RANDOM_DEMOCRATIC_TAOG_AI }
-						}
-						15 = {
-							AST = { set_country_flag = AST_ANTI_COMMONWEALTH_COMMUNIST_TAOG_AI }
-						}
-						15 = {
-							AST = { set_country_flag = AST_COMINTERN_COMMUNIST_TAOG_AI }
-						}
-					}
-				}
-			}
 
 			INS = {
 				IF = {
