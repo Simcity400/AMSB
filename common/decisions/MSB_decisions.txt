@@ -516,6 +516,8 @@ Technologies = {
 			}
 			complete_effect = {
 				SWE = {
+					# license creation silently fails unless the licenser owns the tech
+					set_technology = { amphibious_mechanized_infantry = 1 }
 					create_production_license = {
 						target = ROOT
 							equipment = {
