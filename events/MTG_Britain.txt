@@ -3792,6 +3792,10 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty3
 
 	trigger = {
+		NOT = { has_country_flag = ENG_cannot_leave_faction }
+		NOT = { has_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
+		NOT = { has_country_flag = britain_enforced_our_loyalty }
+		NOT = { has_country_flag = ENG_already_left_faction_flag }
 		OR = {
 			tag = CAN
 			tag = SAF
@@ -3808,12 +3812,8 @@ country_event = {
 			ENG = { has_government = communism }
 		}
 		ENG = { has_civil_war = no }
-		NOT = { has_country_flag = ENG_cannot_leave_faction }
 		NOT = { ENG = { has_country_flag = ENG_switched_to_fascism_communism_dominions_timer_flag } }
 		has_dlc = "Man the Guns"
-		NOT = { has_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
-		NOT = { has_country_flag = britain_enforced_our_loyalty }
-		NOT = { has_country_flag = ENG_already_left_faction_flag }
 	}
 	
 	fire_only_once = no

@@ -583,6 +583,7 @@ country_event = { # Event for Chiang get's killed
 	desc = SEA_china.13.desc
 	picture = GFX_report_event_generic_rally
 	trigger = {
+		has_global_flag = chiang_needs_to_die
 		OR = {
 			has_completed_focus = CHI_prepare_for_a_change_in_leadership
 			has_completed_focus = CHI_strengthening_our_resolve
@@ -591,7 +592,6 @@ country_event = { # Event for Chiang get's killed
 				has_global_flag = early_united_front 	
 			}
 		}
-		has_global_flag = chiang_needs_to_die
 	}
 	mean_time_to_happen = {
 		days = 2

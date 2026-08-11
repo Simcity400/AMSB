@@ -9152,8 +9152,9 @@ country_event = { #Event for Germany, Hitler wants Austria
 	desc = AUS_political_events.102.desc
 	picture = GFX_report_event_journalists_speech
 	trigger = {
-		has_dlc = "Gotterdammerung"
 		original_tag = GER
+		date > 1937.11.5
+		has_dlc = "Gotterdammerung"
 		GER = {
 			has_government = fascism
 			has_country_leader = {
@@ -9168,7 +9169,6 @@ country_event = { #Event for Germany, Hitler wants Austria
 			NOT = { has_war_with = GER }
 			has_country_flag = AUS_antischluss_active_flag
 		}
-		date > 1937.11.5
 	}
 
 	fire_only_once = yes
@@ -9214,8 +9214,9 @@ country_event = { #Event for Austria, Hitler wants Austria, Now.
 	desc = AUS_political_events.103.desc
 	picture = GFX_report_event_journalists_speech
 	trigger = {
-		has_dlc = "Gotterdammerung"
 		original_tag = AUS
+		date > 1937.11.5
+		has_dlc = "Gotterdammerung"
 		GER = {
 			has_government = fascism
 			has_country_leader = {
@@ -9230,7 +9231,6 @@ country_event = { #Event for Austria, Hitler wants Austria, Now.
 			NOT = { has_war_with = GER }
 			has_country_flag = AUS_antischluss_active_flag
 		}
-		date > 1937.11.5
 	}
 
 	fire_only_once = yes
@@ -10520,8 +10520,8 @@ news_event = { #Godwin von Brumowski crash trigger (HIDDEN)
 	fire_only_once = yes
 
 	trigger = {
-		has_dlc = "Gotterdammerung"
 		date > 1936.4.15
+		has_dlc = "Gotterdammerung"
 		country_exists = AUS
 		OR = {
 			NOT = { has_global_flag = AUS_brumowski_crashed_flag }

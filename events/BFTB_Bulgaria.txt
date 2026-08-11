@@ -1093,11 +1093,11 @@ country_event = {
 	picture = GFX_report_event_generic_rally2 
 
 	trigger = {
-		has_dlc = "Battle for the Bosporus"
 		original_tag = BUL
-		date > 1938.1.1
 		NOT = {	has_country_flag = BUL_bzns_destroyed_flag }
 		NOT = { has_country_flag = BUL_bzns_integrated_flag }
+		date > 1938.1.1
+		has_dlc = "Battle for the Bosporus"
 		OR = {
 			check_variable = { BUL_bzns_popularity = 30 compare = less_than_or_equals }
 			check_variable = { BUL_bzns_popularity = 70 compare = greater_than_or_equals }
@@ -9049,10 +9049,10 @@ country_event = {
 	}
 
 	trigger = {
-		has_dlc = "Battle for the Bosporus"
 		original_tag = BUL
-		has_country_leader = { character = BUL_hristo_lukov ruling_only = no }
 		date > 1943.02.10
+		has_dlc = "Battle for the Bosporus"
+		has_country_leader = { character = BUL_hristo_lukov ruling_only = no }
 	}
 
 	fire_only_once = yes

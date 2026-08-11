@@ -7619,13 +7619,13 @@ country_event = {
 
 	trigger = {
 
-		has_dlc = "No Compromise, No Surrender"
-
 		original_tag = JAP
 		
 		date > 1938.6.10
 
 		date < 1938.8.10
+
+		has_dlc = "No Compromise, No Surrender"
 
 		has_civil_war = no
 
@@ -10038,6 +10038,25 @@ country_event = {
 			original_tag = HOL
 		}
 
+		NOT = {
+			has_country_flag = country_has_gotten_warrying_reports_of_japanese_expansion_flag
+			is_embargoing = JAP
+		}
+
+		JAP = {
+			NOT = {
+				has_government = ROOT
+			}
+		}
+		
+		NOT = {
+			has_war_with = JAP
+		}
+
+		has_civil_war = no
+
+		is_subject = no
+
 		JAP = {
 			exists = yes
 			has_capitulated = no
@@ -10114,25 +10133,6 @@ country_event = {
 				}
 			}
 		}
-
-		NOT = {
-			has_country_flag = country_has_gotten_warrying_reports_of_japanese_expansion_flag
-			is_embargoing = JAP
-		}
-
-		JAP = {
-			NOT = {
-				has_government = ROOT
-			}
-		}
-		
-		NOT = {
-			has_war_with = JAP
-		}
-
-		has_civil_war = no
-
-		is_subject = no
 
 	}
 
@@ -12608,6 +12608,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_rangoon }
 		995 = { 
 			controller = {
 				OR = {
@@ -12626,7 +12627,6 @@ news_event = {
 			}
 		}
 		JAP = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_rangoon }
 	}
 	
 	immediate = {

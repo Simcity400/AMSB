@@ -4323,11 +4323,11 @@ country_event = {
 	picture = GFX_report_event_FIN_kallio_president
 
 	trigger = {
+		date > 1940.08.27
 		has_country_leader = {
 			ruling_only = yes
 			character = FIN_kyosti_kallio
 		}
-		date > 1940.08.27
 	}
 
 	mean_time_to_happen = {
@@ -6016,6 +6016,9 @@ country_event = {
 
 	trigger = {
 
+		
+		has_global_flag = FIN_simo_hayha_has_appeared_flag
+
 		has_variable = FIN_white_death_target_country
 
 		FIN = {
@@ -6027,9 +6030,6 @@ country_event = {
 		has_offensive_war_with = FIN
 		
 		is_subject = no
-
-		
-		has_global_flag = FIN_simo_hayha_has_appeared_flag
 		
 	}
 
@@ -6123,6 +6123,9 @@ country_event = {
 
 	trigger = {
 
+		
+		has_global_flag = FIN_simo_hayha_will_be_wounded_flag
+
 		has_variable = FIN_white_death_target_country
 
 		FIN = {
@@ -6134,9 +6137,6 @@ country_event = {
 		has_offensive_war_with = FIN
 		
 		is_subject = no
-
-		
-		has_global_flag = FIN_simo_hayha_will_be_wounded_flag
 		
 	}
 
@@ -6230,6 +6230,9 @@ country_event = {
 
 	trigger = {
 
+		
+		has_global_flag = FIN_simo_hayha_will_be_killed_flag
+
 		has_variable = FIN_white_death_target_country
 
 		FIN = {
@@ -6241,9 +6244,6 @@ country_event = {
 		has_offensive_war_with = FIN
 		
 		is_subject = no
-
-		
-		has_global_flag = FIN_simo_hayha_will_be_killed_flag
 		
 	}
 

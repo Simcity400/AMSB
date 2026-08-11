@@ -1161,9 +1161,9 @@ country_event = {
 	picture = GFX_report_event_journalists_speech
 	
 	trigger = {
+		NOT = { has_country_flag = democracy_opposition_formed }
 		has_idea_with_trait = democratic_reformer
 		NOT = { has_government = democratic }
-		NOT = { has_country_flag = democracy_opposition_formed }
 		is_puppet = no
 		NOT = { democratic > 0.59 }
 		NOT = {
@@ -1252,9 +1252,9 @@ country_event = {
 	picture = GFX_report_event_election_vote
 	
 	trigger = {
+		has_country_flag = democracy_opposition_formed
 		has_idea_with_trait = democratic_reformer
 		NOT = { has_government = democratic }
-		has_country_flag = democracy_opposition_formed
 		NOT = { has_idea = democratic_opposition_voicing_protests }
 		NOT = {
 			AND = {
@@ -2218,9 +2218,9 @@ country_event = {
 	picture = GFX_report_event_journalists_speech
 
 	trigger = {
+		NOT = { has_country_flag = ENG_communist_civil_war }
 		is_subject = no
 		has_civil_war = yes
-		NOT = { has_country_flag = ENG_communist_civil_war }
 		NOT = {
 			AND = {
 				has_dlc = "La Resistance"
@@ -2360,8 +2360,8 @@ country_event = {
 	picture = GFX_report_event_journalists_speech
 
 	trigger = {
-		is_subject = no
 		has_country_flag = yes_to_unification_flag
+		is_subject = no
 		any_other_country = {
 			NOT = { tag = ROOT }
 			original_tag = ROOT

@@ -1786,6 +1786,8 @@ news_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		has_global_flag = fall_of_france
+		NOT = { has_global_flag = hindenburg_survives }
 		country_exists = ENG
 		country_exists = GER
 		country_exists = SOV
@@ -1796,8 +1798,6 @@ news_event = {
 			has_country_leader = { ruling_only = yes character = GER_adolf_hitler }
 			NOT = { has_completed_focus = GER_rally_the_industrialists }  # WW (GOT) content - inner circle - If Hess has being improved, this event is prevented.
 		}
-		has_global_flag = fall_of_france
-		NOT = { has_global_flag = hindenburg_survives }
 		ENG = { # No Sea Lion
 			controls_state = 127
 			controls_state = 123
@@ -1848,6 +1848,8 @@ news_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		has_global_flag = fall_of_france
+		has_global_flag = hindenburg_survives
 		country_exists = ENG
 		country_exists = GER
 		country_exists = SOV
@@ -1857,8 +1859,6 @@ news_event = {
 			has_government = fascism
 			NOT = { has_completed_focus = GER_rally_the_industrialists }  # WW (GOT) content - inner circle - If Hess has being improved, this event is prevented.
 		}
-		has_global_flag = fall_of_france
-		has_global_flag = hindenburg_survives
 		ENG = { # No Sea Lion
 			controls_state = 127
 			controls_state = 123
@@ -2660,10 +2660,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_warsaw_ger }
 		10 = { is_controlled_by = GER }
 		10 = { is_owned_by = POL }
 		GER = { has_war_with = POL }
-		NOT = { has_global_flag = fall_of_warsaw_ger }
 	}
 	
 	immediate = {
@@ -2703,10 +2703,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_paris_ger }
 		16 = { is_controlled_by = GER }
 		16 = { is_owned_by = FRA }
 		FRA = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_paris_ger }
 	}
 	
 	immediate = {
@@ -2746,10 +2746,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_london_ger }
 		126 = { is_controlled_by = GER }
 		126 = { is_owned_by = ENG }
 		GER = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_london_ger }
 	}
 	
 	immediate = {
@@ -2820,10 +2820,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_budapest_sov }
 		43 = { is_controlled_by = SOV }
 		43 = { is_owned_by = HUN }
 		SOV = { has_war_with = HUN }
-		NOT = { has_global_flag = fall_of_budapest_sov }
 	}
 	
 	immediate = {
@@ -2863,10 +2863,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_leningrad }
 		195 = { is_controlled_by = GER }
 		195 = { is_owned_by = SOV }
 		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_leningrad }
 	}
 	
 	immediate = {
@@ -2906,11 +2906,11 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_kiev }
 		202 = { is_controlled_by = GER }
 		202 = { is_owned_by = SOV }
 		SOV = { has_government = communism }
 		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_kiev }
 	}
 	
 	immediate = {
@@ -2958,10 +2958,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_stalingrad }
 		217 = { is_controlled_by = GER }
 		217 = { is_owned_by = SOV }
 		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_stalingrad }
 	}
 	
 	immediate = {
@@ -3001,10 +3001,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_moscow }
 		219 = { is_controlled_by = GER }
 		219 = { is_owned_by = SOV }
 		SOV = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_moscow }
 	}
 	
 	immediate = {
@@ -3044,10 +3044,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_sevastopol }
 		137 = { is_controlled_by = GER }
 		137 = { is_owned_by = SOV }
 		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_sevastopol }
 	}
 	
 	immediate = {
@@ -3087,10 +3087,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_baku }
 		229 = { is_controlled_by = GER }
 		229 = { is_owned_by = SOV }
 		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_baku }
 	}
 	
 	immediate = {
@@ -3130,6 +3130,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_cairo }
 		907 = { is_controlled_by = GER }
 		OR = {
 			AND = {
@@ -3137,7 +3138,6 @@ news_event = {
 				GER = { has_war_with = ENG }
 			}
 		}
-		NOT = { has_global_flag = fall_of_cairo }
 	}
 	
 	immediate = {
@@ -3177,10 +3177,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_washington }
 		361 = { is_controlled_by = GER }
 		361 = { is_owned_by = USA }
 		GER = { has_war_with = USA }
-		NOT = { has_global_flag = fall_of_washington }
 	}
 	
 	immediate = {
@@ -3220,10 +3220,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_new_york }
 		358 = { is_controlled_by = GER }
 		358 = { is_owned_by = USA }
 		GER = { has_war_with = USA }
-		NOT = { has_global_flag = fall_of_new_york }
 	}
 	
 	immediate = {
@@ -3263,10 +3263,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_gibraltar_ger }
 		118 = { is_controlled_by = GER }
 		118 = { is_owned_by = ENG }
 		GER = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_gibraltar_ger }
 	}
 	
 	immediate = {
@@ -3306,6 +3306,7 @@ news_event = {
 	major = yes
 	
 	trigger = { 
+		NOT = { has_global_flag = fall_of_cairo_ita }
 		907 = { is_controlled_by = ITA }
 		OR = {
 			AND = {
@@ -3313,7 +3314,6 @@ news_event = {
 				ITA = { has_war_with = ENG }
 			}
 		}
-		NOT = { has_global_flag = fall_of_cairo_ita }
 	}
 	
 	immediate = {
@@ -3353,10 +3353,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_paris_ita }
 		16 = { is_controlled_by = ITA }
 		16 = { is_owned_by = FRA }
 		ITA = { has_war_with = FRA }
-		NOT = { has_global_flag = fall_of_paris_ita }
 	}
 	
 	immediate = {
@@ -3396,10 +3396,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_london_ita }
 		126 = { is_controlled_by = ITA }
 		126 = { is_owned_by = ENG }
 		ITA = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_london_ita }
 	}
 	
 	immediate = {
@@ -3439,10 +3439,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_gibraltar_ita }
 		118 = { is_controlled_by = ITA }
 		118 = { is_owned_by = ENG }
 		ITA = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_gibraltar_ita }
 	}
 	
 	immediate = {
@@ -3482,6 +3482,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_singapore }
 		1021 = { 
 			controller = {
 				OR = {
@@ -3497,7 +3498,6 @@ news_event = {
 			
 		}
 		JAP = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_singapore }
 	}
 	
 	immediate = {
@@ -3555,10 +3555,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_pearl_harbor }
 		629 = { is_controlled_by = JAP }
 		629 = { is_owned_by = USA }
 		JAP = { has_war_with = USA }
-		NOT = { has_global_flag = fall_of_pearl_harbor }
 	}
 	
 	immediate = {
@@ -3598,10 +3598,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_sydney }
 		285 = { is_controlled_by = JAP }
 		285 = { is_owned_by = AST }
 		JAP = { has_war_with = AST }
-		NOT = { has_global_flag = fall_of_sydney }
 	}
 	
 	immediate = {
@@ -3641,10 +3641,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_los_angeles }
 		378 = { is_controlled_by = JAP }
 		378 = { is_owned_by = USA }
 		JAP = { has_war_with = USA }
-		NOT = { has_global_flag = fall_of_los_angeles }
 	}
 	
 	immediate = {
@@ -3684,10 +3684,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_nanjing }
 		1035 = { is_controlled_by = JAP }
 		1035 = { is_owned_by = CHI }
 		JAP = { has_war_with = CHI }
-		NOT = { has_global_flag = fall_of_nanjing }
 	}
 	
 	immediate = {
@@ -3727,10 +3727,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_vladivostok }
 		408 = { is_controlled_by = JAP }
 		408 = { is_owned_by = SOV }
 		JAP = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_vladivostok }
 	}
 	
 	immediate = {
@@ -3770,6 +3770,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_hong_kong }
 		326 = { 
 			controller = {
 				OR = {
@@ -3780,7 +3781,6 @@ news_event = {
 		}
 		326 = { is_owned_by = ENG }
 		JAP = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_hong_kong }
 	}
 	
 	immediate = {
@@ -3832,6 +3832,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_manila }
 		327 = {
 			OR = {
 				is_controlled_by = JAP
@@ -3839,7 +3840,6 @@ news_event = {
 		}
 		327 = { is_owned_by = PHI }
 		JAP = { has_war_with = PHI }
-		NOT = { has_global_flag = fall_of_manila }
 	}
 	
 	immediate = {
@@ -3904,6 +3904,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_calcutta }
 		431 = { is_controlled_by = JAP }
 		OR = {
 			431 = {
@@ -3915,7 +3916,6 @@ news_event = {
 			}
 		}
 		JAP = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_calcutta }
 	}
 	
 	immediate = {
@@ -3961,6 +3961,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_new_delhi }
 		439 = { 
 			controller = {
 				OR = {
@@ -3979,7 +3980,6 @@ news_event = {
 			}
 		}
 		JAP = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_new_delhi }
 	}
 	
 	immediate = {
@@ -4037,10 +4037,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_panama }
 		685 = { is_controlled_by = JAP }
 		685 = { is_owned_by = USA }
 		JAP = { has_war_with = USA }
-		NOT = { has_global_flag = fall_of_panama }
 	}
 	
 	immediate = {
@@ -4080,10 +4080,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_berlin_usa }
 		64 = { is_controlled_by = USA }
 		64 = { is_owned_by = GER }
 		USA = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_berlin_usa }
 	}
 	
 	immediate = {
@@ -4123,10 +4123,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_berlin_eng }
 		64 = { is_controlled_by = ENG }
 		64 = { is_owned_by = GER }
 		ENG = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_berlin_eng }
 	}
 	
 	immediate = {
@@ -4166,10 +4166,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_berlin_fra }
 		64 = { is_controlled_by = FRA }
 		64 = { is_owned_by = GER }
 		FRA = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_berlin_fra }
 	}
 	
 	immediate = {
@@ -4209,10 +4209,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_berlin_pol }
 		64 = { is_controlled_by = POL }
 		64 = { is_owned_by = GER }
 		POL = { has_war_with = GER }
-		NOT = { has_global_flag = fall_of_berlin_pol }
 	}
 	
 	immediate = {
@@ -4252,6 +4252,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_rome_allies }
 		OR = {
 			2 = { is_controlled_by = ENG }
 			2 = { is_controlled_by = USA }
@@ -4264,7 +4265,6 @@ news_event = {
 			2 = { is_owned_by = ITA }
 			2 = { is_owned_by = GER }
 		}
-		NOT = { has_global_flag = fall_of_rome_allies }
 	}
 	
 	immediate = {
@@ -4324,10 +4324,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_rome_fra }
 		2 = { is_controlled_by = FRA }
 		2 = { is_owned_by = ITA }
 		FRA = { has_war_with = ITA }
-		NOT = { has_global_flag = fall_of_rome_fra }
 	}
 	
 	immediate = {
@@ -4422,10 +4422,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_tokyo_usa }
 		282 = { is_controlled_by = USA }
 		282 = { is_owned_by = JAP }
 		USA = { has_war_with = JAP }
-		NOT = { has_global_flag = fall_of_tokyo_usa }
 	}
 	
 	immediate = {
@@ -4465,6 +4465,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_moscow_allies }
 		OR = {
 			219 = { is_controlled_by = ENG }
 			219 = { is_controlled_by = USA }
@@ -4475,7 +4476,6 @@ news_event = {
 			219 = { is_controlled_by = FRA }
 		}
 		219 = { is_owned_by = SOV }
-		NOT = { has_global_flag = fall_of_moscow_allies }
 	}
 	
 	immediate = {
@@ -4566,10 +4566,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_warsaw_sov }
 		10 = { is_controlled_by = SOV }
 		10 = { is_owned_by = POL }
 		SOV = { has_war_with = POL }
-		NOT = { has_global_flag = fall_of_warsaw_sov }
 	}
 	
 	immediate = {
@@ -4646,10 +4646,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_berlin_sov }
 		64 = { is_controlled_by = SOV }
 		64 = { is_owned_by = GER }
 		GER = { has_war_with = SOV }
-		NOT = { has_global_flag = fall_of_berlin_sov }
 	}
 	
 	immediate = {
@@ -4690,10 +4690,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_rome_sov }
 		2 = { is_controlled_by = SOV }
 		2 = { is_owned_by = ITA }
 		SOV = { has_war_with = ITA }
-		NOT = { has_global_flag = fall_of_rome_sov }
 	}
 	
 	immediate = {
@@ -4733,10 +4733,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_paris_sov }
 		16 = { is_controlled_by = SOV }
 		16 = { is_owned_by = FRA }
 		SOV = { has_war_with = FRA }
-		NOT = { has_global_flag = fall_of_paris_sov }
 	}
 	
 	immediate = {
@@ -4776,10 +4776,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		16 = { is_controlled_by = SOV }
-		16 = { is_owned_by = GER }
 		NOT = { has_global_flag = liberation_of_paris_sov }
 		has_global_flag = fall_of_france
+		16 = { is_controlled_by = SOV }
+		16 = { is_owned_by = GER }
 	}
 	
 	immediate = {
@@ -4819,10 +4819,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_london_sov }
 		126 = { is_controlled_by = SOV }
 		126 = { is_owned_by = ENG }
 		SOV = { has_war_with = ENG }
-		NOT = { has_global_flag = fall_of_london_sov }
 	}
 	
 	immediate = {
@@ -4862,10 +4862,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		126 = { is_controlled_by = SOV }
-		126 = { is_owned_by = GER }
 		NOT = { has_global_flag = liberation_of_london_sov }
 		has_global_flag = fall_of_london_ger
+		126 = { is_controlled_by = SOV }
+		126 = { is_owned_by = GER }
 	}
 	
 	immediate = {
@@ -4905,10 +4905,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_tokyo_sov }
 		282 = { is_controlled_by = SOV }
 		282 = { is_owned_by = JAP }
 		SOV = { has_war_with = JAP }
-		NOT = { has_global_flag = fall_of_tokyo_sov }
 	}
 	
 	immediate = {
@@ -4948,10 +4948,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_leningrad_fin }
 		195 = { is_controlled_by = FIN }
 		195 = { is_owned_by = SOV }
 		SOV = { has_war_with = FIN }
-		NOT = { has_global_flag = fall_of_leningrad_fin }
 	}
 	
 	immediate = {
@@ -4991,10 +4991,10 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = fall_of_tokyo_chi }
 		282 = { is_controlled_by = CHI }
 		282 = { is_owned_by = JAP }
 		JAP = { has_war_with = CHI }
-		NOT = { has_global_flag = fall_of_tokyo_chi }
 	}
 	
 	immediate = {
@@ -5034,11 +5034,7 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		any_other_country = {
-			original_tag = SPR
-			controls_state = 118
-			has_war_with = ENG
-		}
+		NOT = { has_global_flag = fall_of_gibraltar_spa }
 		118 = { is_owned_by = ENG }
 		NOT = {
 			AND = {
@@ -5046,7 +5042,11 @@ news_event = {
 				NOT = { has_global_flag = scw_over }
 			}
 		}
-		NOT = { has_global_flag = fall_of_gibraltar_spa }
+		any_other_country = {
+			original_tag = SPR
+			controls_state = 118
+			has_war_with = ENG
+		}
 	}
 	
 	immediate = {
@@ -5196,11 +5196,11 @@ news_event = {
 	major = yes
 
 	trigger = {
+		NOT = { has_global_flag = MR_pact_broken_event_flag }
 		SOV = {
 			has_defensive_war_with = GER
 			has_opinion_modifier = MR_pact
 		}
-		NOT = { has_global_flag = MR_pact_broken_event_flag }
 	}
 
 	mean_time_to_happen = {
@@ -5277,11 +5277,11 @@ news_event = {
 	major = yes
 
 	trigger = {
+		NOT = { has_global_flag = MR_pact_broken_event_flag }
 		GER = {
 			has_defensive_war_with = SOV
 			has_opinion_modifier = MR_pact
 		}
-		NOT = { has_global_flag = MR_pact_broken_event_flag }
 	}
 
 	mean_time_to_happen = {
@@ -13389,9 +13389,9 @@ news_event = {
 	major = yes
 	
 	trigger = {
+		NOT = { has_global_flag = remember_the_alamo }
 		375 = { is_fully_controlled_by = MEX }
 		MEX = { has_war_with = USA }
-		NOT = { has_global_flag = remember_the_alamo }
 	}
 	
 	immediate = {

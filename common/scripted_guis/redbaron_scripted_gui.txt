@@ -27,11 +27,11 @@ scripted_gui = {
 		window_name = "topbar_vp_ticking"
 		#visible = { always = yes }
 		visible = { 
+			NOT = { has_country_flag = vps_ticking_disabled } 
 			has_game_rule = {
 				rule = vp_system
 				option = ENABLED
 			}
-			NOT = { has_country_flag = vps_ticking_disabled } 
 			OR = {
 				# Was has_active_mission = MOD_countdown_to_*_victory_mission; that resolved the
 				# mission as a dynamic scoped token every hourly tick -> scopedvariable.cpp OOS-warning

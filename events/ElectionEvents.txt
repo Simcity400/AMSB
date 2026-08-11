@@ -456,6 +456,7 @@ country_event = {
 	}
 
 	trigger = {
+		has_country_flag = coalition_with_fascists
 		NOT = { 
 			AND = { 
 				tag = USA 
@@ -475,7 +476,6 @@ country_event = {
 		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
-		has_country_flag = coalition_with_fascists
 		any_other_country = {
 			has_government = fascism
 			is_faction_leader = yes
@@ -540,6 +540,7 @@ country_event = {
 	}
 
 	trigger = {
+		has_country_flag = coalition_with_communists
 		NOT = { 
 			AND = { 
 				tag = USA 
@@ -559,7 +560,6 @@ country_event = {
 		AST_taog = no #Australia has custom election events
 		OR = { NOT = { original_tag = SPR } NOT = { date < 1937.1.1 } }
 		has_government = democratic
-		has_country_flag = coalition_with_communists
 		any_other_country = {
 			has_government = communism
 			is_faction_leader = yes

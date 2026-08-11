@@ -10171,7 +10171,14 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		NOT = { has_country_flag = SPR_relocate_the_gold_reserves_timer_flag }
 		always = no
+		OR = {
+			has_country_flag = SPR_relocated_gold_reserves_selection_flag_sov
+			has_country_flag = SPR_relocated_gold_reserves_selection_flag1
+			has_country_flag = SPR_relocated_gold_reserves_selection_flag2
+			has_country_flag = SPR_relocated_gold_reserves_selection_flag3
+		}
 		any_country = {
 			original_tag = SPR
 			OR = {
@@ -10183,13 +10190,6 @@ country_event = {
 			    count > 0
 			}
 		}
-		OR = {
-			has_country_flag = SPR_relocated_gold_reserves_selection_flag_sov
-			has_country_flag = SPR_relocated_gold_reserves_selection_flag1
-			has_country_flag = SPR_relocated_gold_reserves_selection_flag2
-			has_country_flag = SPR_relocated_gold_reserves_selection_flag3
-		}
-		NOT = { has_country_flag = SPR_relocate_the_gold_reserves_timer_flag }
 	}
 
 	mean_time_to_happen = {

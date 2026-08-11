@@ -16,23 +16,15 @@ country_event = {
 	hidden = yes
 
 	trigger = {
+		NOT = { 
+			has_country_flag = crisis_in_progress
+		}
 		has_war = yes
 		has_civil_war = no
 		is_government_in_exile = no # strikes etc shouldn't affect you if you are not there... 
 		OR = {
 			has_stability < 0.5
 			has_war_support < 0.5
-		}
-		NOT = {
-			AND = {
-				is_major = yes
-				all_enemy_country = {
-					is_major = no
-				}
-			}
-		}
-		NOT = { 
-			has_country_flag = crisis_in_progress
 		}
 		NOT = { # Don't fire stability events if the country is not mobilising at all
 			OR = {
@@ -49,6 +41,14 @@ country_event = {
 		NOT = {
 			original_tag = SWE
 			has_idea = SWE_hungershield
+		}
+		NOT = {
+			AND = {
+				is_major = yes
+				all_enemy_country = {
+					is_major = no
+				}
+			}
 		}
 	}
 
