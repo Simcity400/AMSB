@@ -176,35 +176,18 @@ PRC_low_popular_support_level_up = {
 	# level 5 not relevant. Cannot go above.
 	if = {
 		limit = { has_idea = PRC_low_popular_support_4 }
-		swap_ideas = {
-			remove_idea = PRC_low_popular_support_4
-			add_idea = PRC_low_popular_support_5
-		}
 	}
 	if = {
 		limit = { has_idea = PRC_low_popular_support_3 }
-		swap_ideas = {
-			remove_idea = PRC_low_popular_support_3
-			add_idea = PRC_low_popular_support_4
-		}
 	}
 	if = {
 		limit = { has_idea = PRC_low_popular_support_2 }
-		swap_ideas = {
-			remove_idea = PRC_low_popular_support_2
-			add_idea = PRC_low_popular_support_3
-		}
 	}
 	if = {
 		limit = { has_idea = PRC_low_popular_support_1 }
-		swap_ideas = {
-			remove_idea = PRC_low_popular_support_1
-			add_idea = PRC_low_popular_support_2
-		}		
 	}
 	if = {
 		limit = { NOT = { has_idea = PRC_low_popular_support_1 } }
-		add_ideas = PRC_low_popular_support_1
 	}
 }
 
@@ -214,40 +197,20 @@ PRC_low_popular_support_level_down = {
 		limit = { has_idea = PRC_low_popular_support_1 }
 		#Makes the tooltip clearer if player looks at the effect early in the game
 		effect_tooltip = {
-			swap_ideas = {
-				remove_idea = PRC_low_popular_support_2
-				add_idea = PRC_low_popular_support_1
-			}
 		}
-		hidden_effect = { remove_ideas = PRC_low_popular_support_1 }
+		hidden_effect = { }
 	}
 	if = {
 		limit = { has_idea = PRC_low_popular_support_2 }
-		swap_ideas = {
-			remove_idea = PRC_low_popular_support_2
-			add_idea = PRC_low_popular_support_1
-		}
 	}
 	if = {
 		limit = { has_idea = PRC_low_popular_support_3 }
-		swap_ideas = {
-			remove_idea = PRC_low_popular_support_3
-			add_idea = PRC_low_popular_support_2
-		}
 	}
 	if = {
 		limit = { has_idea = PRC_low_popular_support_4 }
-		swap_ideas = {
-			remove_idea = PRC_low_popular_support_4
-			add_idea = PRC_low_popular_support_3
-		}
 	}
 	if = {
 		limit = { has_idea = PRC_low_popular_support_5 }
-		swap_ideas = {
-			remove_idea = PRC_low_popular_support_5
-			add_idea = PRC_low_popular_support_4
-		}
 	}
 }
 PRC_transfer_negative_spirits = {
@@ -273,7 +236,6 @@ PRC_transfer_negative_spirits = {
 				has_idea = PRC_low_popular_support_5
 			}
 		}
-		add_ideas = PRC_low_popular_support_5
 	}
 	else_if = {
 		limit = {
@@ -281,7 +243,6 @@ PRC_transfer_negative_spirits = {
 				has_idea = PRC_low_popular_support_4
 			}
 		}
-		add_ideas = PRC_low_popular_support_4
 	}
 	else_if = {
 		limit = {
@@ -289,7 +250,6 @@ PRC_transfer_negative_spirits = {
 				has_idea = PRC_low_popular_support_3
 			}
 		}
-		add_ideas = PRC_low_popular_support_3
 	}
 	else_if = {
 		limit = {
@@ -297,7 +257,6 @@ PRC_transfer_negative_spirits = {
 				has_idea = PRC_low_popular_support_2
 			}
 		}
-		add_ideas = PRC_low_popular_support_2
 	}
 	else_if = {
 		limit = {
@@ -305,7 +264,6 @@ PRC_transfer_negative_spirits = {
 				has_idea = PRC_low_popular_support_1
 			}
 		}
-		add_ideas = PRC_low_popular_support_1
 	}
 	if = {
 		limit = {
@@ -542,99 +500,14 @@ PRC_USA_lend_lease_strategy = {
 }
 
 PRC_add_the_internal_enemy_idea = {
-	add_ideas = PRC_the_internal_enemy_idea #Fake idea with only tooltip
 	hidden_effect = { #Actual ideas with actual tooltips
-		add_ideas = PRC_the_internal_enemy_CHI
-		add_ideas = PRC_the_internal_enemy_GXC
-		add_ideas = PRC_the_internal_enemy_YUN
-		add_ideas = PRC_the_internal_enemy_SHX
-		add_ideas = PRC_the_internal_enemy_XSM
-		add_ideas = PRC_the_internal_enemy_SIK
-		add_ideas = PRC_the_internal_enemy_GDC
-		add_ideas = PRC_the_internal_enemy_SND
-		add_ideas = PRC_the_internal_enemy_SIC
-		add_ideas = PRC_the_internal_enemy_NXM
-		add_ideas = PRC_the_internal_enemy_GSM
-		add_ideas = PRC_the_internal_enemy_XIC
-		add_ideas = PRC_the_internal_enemy_KHM
-		add_ideas = PRC_the_internal_enemy_KUM
-		add_ideas = PRC_the_internal_enemy_RNG
-		add_ideas = PRC_the_internal_enemy_HBC
 	}
 }
 
 PRC_add_the_internal_enemy_idea_upgrade = {
 	custom_effect_tooltip = PRC_add_the_internal_enemy_idea_upgrade_tt
 	hidden_effect = { #Actual ideas with actual tooltips
-		swap_ideas = { #Fake idea with only tooltip
-			remove_idea = PRC_the_internal_enemy_idea
-			add_idea = PRC_the_internal_enemy_upgraded_idea
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_CHI
-			add_idea = PRC_the_internal_enemy_CHI_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_GXC
-			add_idea = PRC_the_internal_enemy_GXC_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_YUN
-			add_idea = PRC_the_internal_enemy_YUN_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_SHX
-			add_idea = PRC_the_internal_enemy_SHX_upgraded
-		}
 		
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_XSM
-			add_idea = PRC_the_internal_enemy_XSM_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_SIK
-			add_idea = PRC_the_internal_enemy_SIK_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_GDC
-			add_idea = PRC_the_internal_enemy_GDC_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_SND
-			add_idea = PRC_the_internal_enemy_SND_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_SIC
-			add_idea = PRC_the_internal_enemy_SIC_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_NXM
-			add_idea =PRC_the_internal_enemy_NXM_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_GSM
-			add_idea = PRC_the_internal_enemy_GSM_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_XIC
-			add_idea = PRC_the_internal_enemy_XIC_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_KHM
-			add_idea = PRC_the_internal_enemy_KHM_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_KUM
-			add_idea = PRC_the_internal_enemy_KUM_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_RNG
-			add_idea = PRC_the_internal_enemy_RNG_upgraded
-		}
-		swap_ideas = {
-			remove_idea = PRC_the_internal_enemy_HBC
-			add_idea = PRC_the_internal_enemy_HBC_upgraded
-		}
 	}
 }
 

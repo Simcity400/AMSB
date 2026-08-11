@@ -53,7 +53,6 @@ unit_leader_event = { # THIS IS ACTUALLY THE FIRST MISSIOLINI!
 			}
 		
 			# Increase War escalation and trigger loc for GUI
-			ETH = { set_country_flag = italian_major_offensive_against_ethiopia_flag }
 			# ETH_escalate_the_war_effect = yes 
 			custom_effect_tooltip = ITA_war_escalation_inc_tt
 			add_to_variable = { ETH.ETH_war_escalation_level = 1 }
@@ -85,20 +84,8 @@ unit_leader_event = { # THIS IS ACTUALLY THE FIRST MISSIOLINI!
 			idea = ITA_offensive_in_ethiopia
 			days = 180
 		}
-		ETH =  {
-			add_timed_idea = {
-				idea = ETH_italian_offensive_idea
-				days = 180
-			}
-		}
 
 		# Other effects for ETH
-		ETH = {
-			country_event = {
-				id = BBA_italo_ethiopian_war_events.02
-				hours = 1
-			}
-		}		
 	}
 
 	# We need to be more cautious .... 
@@ -131,45 +118,11 @@ unit_leader_event = { # THIS IS ACTUALLY THE FIRST MISSIOLINI!
 		}
 
 		# Other effects for ETH
-		ETH = {
-			country_event = {
-				id = BBA_italo_ethiopian_war_events.02
-				hours = 1
-			}
-		}
 	
 	}
 }
 
 # Event for ETH - ITA starts major offensive
-country_event = {
-	id = BBA_italo_ethiopian_war_events.02
-	title = BBA_italo_ethiopian_war_events.02.t
-	desc = BBA_italo_ethiopian_war_events.02.desc
-	picture = GFX_report_event_gre_italian_troops
-	
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	immediate = {
-		
-	}
-
-	trigger = {
-		has_war_with = ETH
-	}
-
-	# Oh bleep
-	option = { 
-		name = BBA_italo_ethiopian_war_events.02.a
-		ai_chance = {
-			base = 10
-		}
-	
-	}
-	
-}
 
 
 # Event for ETH - ITA starts slow buildup
@@ -361,12 +314,6 @@ country_event = {
 		}
 		custom_effect_tooltip = suez_blocked_sanctions_tt
 		ITA = { set_country_flag = SUEZ_SANCTIONS_FLAG }
-		ETH = {
-			country_event = {
-				id = BBA_italo_ethiopian_war_events.13
-				hours = 4
-			}
-		}
 	}
 
 	# no we won't
@@ -403,62 +350,13 @@ country_event = {
 			popularity = 0.05
 		}
 		leave_the_league_of_nations = yes 
-		ETH = {
-			country_event = {
-				id = BBA_italo_ethiopian_war_events.12
-				hours = 4
-			}
-		}
 	}
 	
 }
 
 # UK refuses to close the Suez
-country_event = {
-	id = BBA_italo_ethiopian_war_events.12
-	title = BBA_italo_ethiopian_war_events.12.t
-	desc = BBA_italo_ethiopian_war_events.12.desc
-	picture = GFX_report_event_merchant_ship_01
-	
-	is_triggered_only = yes
-	fire_only_once = yes 
-
-	immediate = {
-		
-	}
-	# great idea
-	option = { 
-		name = BBA_italo_ethiopian_war_events.12.a
-		trigger = {
-			
-		}
-		ai_chance = {
-			base = 10
-
-		}
-	}
-	
-}
 
 # UK agrees to close the Suez
-country_event = {
-	id = BBA_italo_ethiopian_war_events.13
-	title = BBA_italo_ethiopian_war_events.13.t
-	desc = BBA_italo_ethiopian_war_events.13.desc
-	picture = GFX_report_event_merchant_ship_01
-	
-	is_triggered_only = yes
-	fire_only_once = yes 
-
-	immediate = {
-		
-	}
-	# great idea
-	option = { 
-		name = BBA_italo_ethiopian_war_events.13.a
-	}
-	
-}
 
 # Request Volunteers Event for LoN member countries 
 country_event = {
@@ -572,13 +470,6 @@ country_event = {
 			IF = {
 				limit = { 
 					ROOT = { is_major = yes } 
-				}
-				ETH = {
-					country_event = {
-						id = BBA_italo_ethiopian_war_events.16
-						hours = 4
-						random_hours = 4
-					}
 				}
 			}
 		}
@@ -750,26 +641,6 @@ country_event = {
 }
 
 # ETH - confirmation that expeditionary forces are forming
-country_event = {
-	id = BBA_italo_ethiopian_war_events.16
-	title = BBA_italo_ethiopian_war_events.16.t
-	desc = BBA_italo_ethiopian_war_events.16.desc
-	
-	picture = GFX_report_event_generic_army
-	fire_only_once = yes 
-	is_triggered_only = yes
-	trigger = {
-		has_war_with = ITA 
-	}
-
-	immediate = {
-
-	}
-	# Are they coming to help
-	option = { 
-		name = BBA_italo_ethiopian_war_events.16.a
-	}
-}
 
 
 
@@ -1275,7 +1146,6 @@ country_event = {
 			FROM = {
 				every_owned_state = {
 					limit = { has_state_flag = peace_treaty_flag }
-					ETH = { transfer_state = PREV }
 					clr_state_flag = peace_treaty_flag
 				}
 			}
@@ -1619,24 +1489,12 @@ country_event = {
 				}
 				set_variable = {ITA.ITA_capture_state = THIS }
 			}
-			ETH = {
-				news_event = {
-					id = bba_news.7
-					hours = 1
-				}
-			}
 		}
 	}
 	option = { 
 		name = BBA_italo_ethiopian_war_events.400.a
 		ai_chance = {
 			base = 10
-		}
-		AFA = {
-			country_event = {
-				id = BBA_italo_ethiopian_war_events.401
-				days = 2
-			}
 		}
 	}
 	option = { 
@@ -1786,9 +1644,6 @@ country_event = {
 		ai_chance = { 
 			base = 10
 		}
-		ETH = { 
-			country_event = { id = BBA_italo_ethiopian_war_events.501 hours = 2 random_hours = 1 }
-		}
 		effect_tooltip = {
 			custom_effect_tooltip = ITA_peace_with_ethiopia_tt
 			ITA_forced_italo_ethiopian_peace_deal = yes
@@ -1806,9 +1661,6 @@ country_event = {
 		}
 		ai_chance = { 
 			base = 10
-		}
-		ETH = { 
-			country_event = { id = BBA_italo_ethiopian_war_events.501 hours = 2 random_hours = 1 }
 		}
 		effect_tooltip = {
 			custom_effect_tooltip = ITA_peace_with_ethiopia_tt
@@ -1976,18 +1828,3 @@ country_event = {
 }
 
 #Event for Ethiopia after Italy finishes Topple Amhara Rule
-country_event = {  
-	id = BBA_italo_ethiopian_war_events.510
-	title = BBA_italo_ethiopian_war_events.510.t 
-	desc = BBA_italo_ethiopian_war_events.510.desc
-	picture = GFX_report_event_fascist_speech 
-	
-	is_triggered_only = yes
-
-	fire_only_once = yes
- 
-	option = { #Lying, thieving villians!
-		name = BBA_italo_ethiopian_war_events.510.a 
-		add_legitimacy = -10
-	}
-}

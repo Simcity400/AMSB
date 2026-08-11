@@ -189,7 +189,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			unlock_decision_tooltip = SWE_urbanization_decision
 			#custom_effect_tooltip = SWE_urbanization_tt
 		}
 	}
@@ -1025,10 +1024,6 @@ focus_tree = {
 				add_ideas = SWE_radiotjanst_democratic
 			}
 
-			unlock_decision_tooltip = pervert_radiotjanst_fascism
-			unlock_decision_tooltip = pervert_radiotjanst_communism
-			unlock_decision_tooltip = pervert_radiotjanst_unaligned
-			unlock_decision_tooltip = restore_radiotjanst_to_democratic
 		}
 	}
 
@@ -3441,7 +3436,6 @@ focus_tree = {
 		search_filters = {  FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
 
 		completion_reward = {
-			unlock_decision_tooltip = SWE_trade_ball_bearings
 			custom_effect_tooltip = SWE_ball_bearing_trade_tt
 		}
 	}
@@ -3892,11 +3886,6 @@ focus_tree = {
 			SWE_calc_communist_folkhemmet = yes
 			custom_effect_tooltip = SWE_socialist_reforms_tt
 
-			unlock_decision_tooltip = {
-			  	decision = SWE_socialists_reforms_decision_efficiency_gain
-			  	show_effect_tooltip = yes # default is no
-			  	show_modifiers = yes # default is no
-			}
 		}
 	}
 
@@ -4564,7 +4553,6 @@ focus_tree = {
 				}
 			}
 
-			unlock_decision_tooltip = SWE_pull_the_trigger_den
 			
 		}
 	}
@@ -4656,7 +4644,6 @@ focus_tree = {
 						NOT = { has_completed_focus = NOR_a_resurgent_labor_movement }
 					}
 				}
-				unlock_decision_tooltip = SWE_pull_the_trigger_nor
 			}
 		}
 	}
@@ -4956,7 +4943,6 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = SWE_train_the_sheltered_tt
-			unlock_decision_tooltip = SWE_train_the_sheltered_decision  
 		}
 	}
 
@@ -5263,11 +5249,6 @@ focus_tree = {
 		search_filters = {  }
 
 		completion_reward = {
-			unlock_decision_tooltip = {
-				decision = SWE_gateway_to_peace_decision
-				show_effect_tooltip = yes # default is no
-				show_modifiers = yes # default is no
-			}			
 			#declare_war_on = {
 			#	target = SOV
 			#	type = liberate_wargoal
@@ -6447,21 +6428,12 @@ focus_tree = {
 		search_filters = {  }
 
 		completion_reward = {
-			unlock_decision_tooltip = {
-			 	decision = SWE_swap_herman_eriksson
-			 	show_effect_tooltip = yes # default is no
-			 	show_modifiers = no # default is no
-			}
 			custom_effect_tooltip = SWE_rationing_tt
 			effect_tooltip = {
-				unlock_decision_tooltip = SWE_gengas
 				set_variable = { SWE_rationing_fuel_gain = 0.3 tooltip = base_fuel_gain_factor_tt }
 
-				unlock_decision_tooltip = SWE_food_stamps
 				set_variable = { SWE_rationing_war_stability_factor = 0.05 tooltip = war_stability_factor_tt }
-				unlock_decision_tooltip = SWE_air_raid_shelters
 				set_variable = { SWE_rationing_bombing_war_support = 0.0003 tooltip = weekly_bombing_war_support_tt }
-				unlock_decision_tooltip = SWE_seize_civilian_tires
 				141 = {
 					add_resource = {
 						type = rubber
@@ -7215,8 +7187,6 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = SWE_hemvarnet_tt
-			unlock_decision_tooltip = SWE_set_up_home_guard_forces
-			unlock_decision_tooltip = SWE_activate_home_guard
 			division_template = {
 				name = "Hemvärn"
 				is_locked = yes
@@ -7690,7 +7660,6 @@ focus_tree = {
 		search_filters = {  }
 
 		completion_reward = {
-			unlock_decision_tooltip = SWE_rangers_sabotage
 			custom_effect_tooltip = SWE_jagartrupper_tt
 			every_army_leader = {
 				random_select_amount = 4
@@ -9133,25 +9102,21 @@ focus_tree = {
 				limit = {
 					has_country_flag = SWE_aristocratic_support
 				}
-				activate_mission = SWE_implement_aristocracy_reforms_countdown
 			}
 			IF = {
 				limit = {
 					has_country_flag = SWE_appeal_to_industrialists_flag
 				}
-				activate_mission = SWE_implement_industrialist_reforms_countdown
 			}
 			IF = {
 				limit = {
 					has_country_flag = SWE_appeal_to_military_flag
 				}
-				activate_mission = SWE_implement_military_reforms_countdown
 			}
 			IF = {
 				limit = {
 					has_country_flag = SWE_appeal_to_rural_flag
 				}
-				activate_mission = SWE_implement_rural_reforms_countdown
 			}
 			if = {
 				limit = {
@@ -10003,10 +9968,6 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = SWE_greater_nordic_reich_tt
-			unlock_decision_tooltip = SWE_integrate_fin
-			unlock_decision_tooltip = SWE_integrate_nor
-			unlock_decision_tooltip = SWE_integrate_den
-			unlock_decision_tooltip = SWE_integrate_ice
 			set_cosmetic_tag = SWE_greater_nordic_reich_tag
 		}
 	}

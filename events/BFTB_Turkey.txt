@@ -2231,9 +2231,6 @@ country_event = {
 				}
 			}
 			hidden_effect = {
-				JOR = {
-					drop_cosmetic_tag = yes
-				}
 			}
 		}
 		IF = {
@@ -2273,9 +2270,6 @@ country_event = {
 				}
 			}
 			hidden_effect = {
-				PAL = {
-					drop_cosmetic_tag = yes
-				}
 			}
 		}
 		IF = {
@@ -3029,7 +3023,6 @@ country_event = {
 		}
 		hidden_effect = {
 			TUR = { country_event = { id = bftb_turkey.68 hours = 1 } } 
-			IRQ = { set_country_flag = TUR_iraqi_government_flag }
 			ENG = { remove_resource_rights = 676 }
 			random_other_country = { 
            		limit = { 
@@ -3281,7 +3274,6 @@ country_event = {
 			relation = guarantee
 			active = yes
 		}
-		IRQ = { country_event = { id = bftb_turkey.74 } }
 	}
 }
 
@@ -3318,7 +3310,6 @@ country_event = {
 		trigger = {
 			ENG = { has_government = fascism }
 		}
-		IRQ = { country_event = { id = generic.5 } }
 	}
 	option = {
 		name = bftb_turkey.75.b #we must not let the oil fall into the hands of fascists!
@@ -3355,36 +3346,13 @@ country_event = {
 				has_completed_focus = ENG_alliance_with_germany
 			}
 		}
-		IRQ = { country_event = { id = bftb_turkey.77 } }
 	}
 	option = {
 		name = bftb_turkey.75.e #as is the right of all self-determinant nations
-		IRQ = { country_event = { id = bftb_turkey.76 } }
 	}
 }
 
 #Support the Golden Square - The British Do Not Interfere
-country_event = {
-	id = bftb_turkey.76
-	title = bftb_turkey.76.t
-	desc = bftb_turkey.76.desc
-	picture = GFX_report_event_tur_political_rally 
-
-	is_triggered_only = yes
-	
-	option = {
-		name = bftb_turkey.76.a 
-		add_stability = 0.15
-		add_political_power = 120
-		ENG = {
-			diplomatic_relation = {
-				country = IRQ
-				relation = non_aggression_pact
-				active = yes
-			}
-		}
-	}
-}
 
 #Support the Golden Square - The British Have Aligned with the Germans
 country_event = {
@@ -4405,33 +4373,17 @@ country_event = {
 	option = {
 		name = bftb_turkey.104.a #we shall merge the Eyalets of Damascus and Allepo!
 		release_puppet = SYR
-		SYR = {
-			drop_cosmetic_tag = yes
-		}
 		if = {
 			limit = { controls_state = 677 }
-			SYR = {
-				transfer_state = 677
-			}
 		}
 		if ={
 			limit = { controls_state = 554 }
-			SYR = {
-				transfer_state = 554
-			}
 		}
 		if ={
 			limit = { controls_state = 553 }
-			SYR = {
-				transfer_state = 553
-				add_state_core = 553
-			}
 		}
 		if ={
 			limit = { controls_state = 680 }
-			SYR = {
-				transfer_state = 680
-			}
 		}
 		if = {
 			limit = {
@@ -6107,7 +6059,6 @@ country_event = {
 				limit = {
 					IRQ = { has_country_flag = TUR_saadabad_pact_member }
 				}
-				IRQ = { country_event = { id = generic.5 } }
 			}
 			if = {
 				limit = {
@@ -6119,13 +6070,11 @@ country_event = {
 				limit = {
 					AFG = { has_country_flag = TUR_saadabad_pact_member }
 				}
-				AFG = { country_event = { id = generic.5 } }
 			}
 			if = {
 				limit = {
 					SYR = { has_country_flag = TUR_saadabad_pact_member }
 				}
-				SYR = { country_event = { id = generic.5 } }
 			}
 		}
 	}

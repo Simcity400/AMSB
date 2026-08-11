@@ -717,15 +717,6 @@ on_actions = {
 	on_puppet = {
 
 		effect = { # Fixing a weird issue with control of Greenland
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = GRN
-					}
-				}
-				101 = {
-				}
-			}
 		}
 
 		effect = {
@@ -877,15 +868,6 @@ on_actions = {
 	on_liberate = { # ROOT is the nation being liberated, FROM is the leader of the liberators.
 
 		effect = { # Fixing a weird issue with control of Greenland
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = GRN
-					}
-				}
-				101 = {
-				}
-			}
 		}
 		effect = {
 			# European States Array
@@ -940,15 +922,6 @@ on_actions = {
 		}
 
 		effect = { # Fixing a weird issue with control of Greenland
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = GRN
-					}
-				}
-				101 = {
-				}
-			}
 		}
 
 		effect = { # Adding the correct stuff for puppets for the AH joint focus tree
@@ -1079,23 +1052,6 @@ on_actions = {
 		}
 
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = TRA
-					}
-
-					AUS = {
-						OR = {
-							has_completed_focus = AUS_demand_romanian_lands
-							has_completed_focus = AUS_subjugate_lands_of_old
-						}
-					}
-				}
-
-				
-				
-			}
 		}
 
 	}
@@ -1117,36 +1073,9 @@ on_actions = {
 		}
 
 		effect = { # Fixing a weird issue with control of Greenland
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = GRN
-					}
-				}
-				101 = {
-				}
-			}
 		}
 
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = TRA
-					}
-
-					AUS = {
-						OR = {
-							has_completed_focus = AUS_demand_romanian_lands
-							has_completed_focus = AUS_subjugate_lands_of_old
-						}
-						
-					}
-				}
-
-				
-				
-			}
 		}
 	}
 
@@ -1372,38 +1301,9 @@ on_actions = {
 	on_capitulation = { # ROOT is capitulated country, FROM is winner
 
 		effect = { #recall the volunteers for ITA from ETH as war can go on and troops are needed
-			IF = { 
-				limit = {
-					original_tag = ETH
-					FROM = { tag = ITA }
-					ITA = {
-						has_volunteers_amount_from = {
-							tag = AUS
-							count > 0
-						}
-					}
-				}
-				AUS = {
-					recall_volunteers_from = ITA 
-				}
-			}
 		}
 
 		effect = { #Set the new flag and fire event when HAI capitulates to AUS
-			IF = {
-				limit = {
-					original_tag = HAI
-					FROM = { tag = AUS }
-				}
-				AUS = {
-					set_cosmetic_tag = AUS_true_liechtenstein 
-
-					country_event = {
-						id = AUS_political_events.95
-						days = 10
-					}
-				}
-			}
 		}
 
 		effect = {
@@ -1965,31 +1865,10 @@ on_actions = {
 
 		# Sends Raoul van Overstraeten back to Belgium
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = COG
-						has_character = BEL_raoul_van_overstraeten
-					}
-				}
-				ROOT = {
-					country_event = {
-						id = ww_congo.4
-						hours = 2
-					}	
-				}
-			}
 		}
 
 		# If the Belgian Congo is freed, they are no longer Belgian
 		effect = {
-			IF = {
-				limit = {
-					original_tag = COG
-					has_cosmetic_tag = COG_belgian_congo
-				}
-				
-			}
 		}
 
 		effect = { #If a Reichskommissariat is freed, make Alfred Rosenberg suck a bit

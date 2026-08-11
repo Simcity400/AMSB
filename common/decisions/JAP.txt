@@ -1074,108 +1074,6 @@ foreign_politics = {
 		}
 	}
 
-	JAP_sue_for_peace_MAN = {
-
-		allowed = {
-			original_tag = JAP
-		}
-
-		priority = 15
-
-		available = {
-			FROM = { 
-				surrender_progress < 0.2 # if they are losing, lets not allow it
-			}
-			custom_trigger_tooltip = {
-				tooltip = JAP_sue_for_peace_TT
-				# South Korea
-				525 = {
-					is_controlled_by_ROOT_or_ally = no
-				}
-				1029 = {
-					is_controlled_by_ROOT_or_ally = no
-				}
-				1031 = {
-					is_controlled_by_ROOT_or_ally = no
-				}
-				1030 = {
-					is_controlled_by_ROOT_or_ally = no
-				}
-				# North Korea
-				527 = {
-					is_controlled_by_ROOT_or_ally = no
-				}
-				1028 = {
-					is_controlled_by_ROOT_or_ally = no
-				}
-				NOT = {
-					any_of = {
-						array = CHI.core_states
-						var:v = {
-							NOT = {
-								state = 524
-							}
-							controller = {
-								OR = {
-									tag = JAP
-									AND = {
-										is_subject_of = JAP
-										tag = MEN
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-
-		target_trigger = {
-			#Target is FROM
-			FROM = {
-				tag = MAN
-				has_war_with = ROOT
-			}
-		}
-
-		visible = {
-			FROM = { 
-				exists = yes 
-				is_subject = no
-			}
-			is_subject = no
-			has_war_with = FROM
-		}
-
-		cost = 0
-
-		fire_only_once = yes
-
-		ai_will_do = {
-		
-			base = 500
-
-			modifier = {
-				factor = 0
-				casualties_inflicted_by = {
-					opponent = MAN
-					thousands < 10
-				}
-			}
-
-			modifier = {
-				factor = 0
-				has_country_flag = JAP_dont_surrender_instantly_lock 
-			}
-		}
-
-		complete_effect = {
-			MAN = {
-				country_event = { id = wtt_japan.129 days = 1 }
-			}
-		}
-	}
 
 	# Sueing for peace from being nuked, only available for a non-hist Japan 
 	JAP_sue_for_peace_nuke = {
@@ -4051,12 +3949,6 @@ operations = {
 		timeout_effect = {
 			add_political_power = -25 
 			add_war_support = -0.05 #Shameful Display
-			MON = {
-				country_event = {
-					id = SEA_border_incidents_events.8
-					days = 1
-				}	
-			}
 			hidden_effect = {
 				set_global_flag = failed_to_assault_in_time_flag
 			}
@@ -4315,22 +4207,8 @@ operations = {
 			remove_targeted_decision = { target = MON decision = JAP_escalate_incident_to_border_conflict_MON }
 			add_political_power = -50
 			add_war_support = -0.05 #Shameful Display
-			MON = {
-				country_event = {
-					id = SEA_border_incidents_events.8
-					days = 1
-				}	
-			}
 			hidden_effect = {
 				MON = { remove_targeted_decision = { target = ROOT decision = JAP_border_conflict_escalation_warning_MON } }
-				MON = {
-					761 = {
-						clr_state_flag = border_incident_active
-					}
-					819 = {
-						clr_state_flag = border_incident_active
-					}
-				}
 			}
 		}
 	}
@@ -9313,29 +9191,7 @@ JAP_the_propaganda_department_decisions = {
 
 		complete_effect = { 
 
-			MON = {
-				country_event = {
-					id = SEA_japan_foreign_policy.53
-					hours = 12
-					random_hours = 24
-				}	
-			}	
 			effect_tooltip = {
-				MON = {
-					add_stability = -0.05
-					
-					add_popularity = {
-						ideology = fascism
-						popularity = 0.05
-					}	
-
-					add_popularity = {
-						ideology = neutrality
-						popularity = 0.05
-					}	
-
-					add_manpower = -300
-				}
 			}
 
 			hidden_effect = {
@@ -9404,24 +9260,7 @@ JAP_the_propaganda_department_decisions = {
 
 		complete_effect = { 
 
-			MON = {
-				country_event = {
-					id = SEA_japan_foreign_policy.54
-					hours = 12
-					random_hours = 24
-				}	
-			}	
 			effect_tooltip = {
-				MON = {
-					add_stability = -0.05
-					
-					add_popularity = {
-						ideology = MON
-						popularity = -0.1
-					}	
-
-					add_political_power = -50
-				}
 			}
 
 			hidden_effect = {
@@ -9490,20 +9329,7 @@ JAP_the_propaganda_department_decisions = {
 
 		complete_effect = { 
 
-			MON = {
-				country_event = {
-					id = SEA_japan_foreign_policy.23
-					hours = 12
-					random_hours = 24
-				}	
-			}	
 			effect_tooltip = {
-				MON = {
-					add_timed_idea = {
-						idea = JAP_japanese_influence_growing_mongolia
-						days = 176
-					}		
-				}
 			}
 
 		}
@@ -9579,13 +9405,6 @@ JAP_the_propaganda_department_decisions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			MON = {
-				country_event = {
-					id = SEA_japan_foreign_policy.55
-					hours = 12
-					random_hours = 24
-				}	
-			}
 
 			set_country_flag = JAP_sent_jodbajab_to_mongolia
 
@@ -9661,13 +9480,6 @@ JAP_the_propaganda_department_decisions = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			MON = {
-				country_event = {
-					id = SEA_japan_foreign_policy.56
-					hours = 12
-					random_hours = 24
-				}	
-			}	
 
 			set_country_flag = JAP_sent_jonjurjab_to_mongolia
 
@@ -9734,33 +9546,9 @@ JAP_the_propaganda_department_decisions = {
 
 		complete_effect = { 
 
-			MON = {
-				country_event = {
-					id = SEA_japan_foreign_policy.57
-					days = 2
-					random_days = 2
-				}	
-			}	
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
 				puppet = MON
-				MON = {
-					set_politics = {
-						ruling_party = fascism
-						elections_allowed = no
-					}	
-					add_popularity = {
-						ideology = neutrality
-						popularity = 0.05
-					}	
-					add_popularity = {
-						ideology = fascism
-						popularity = 0.2
-					}	
-					add_manpower = 3000
-					army_experience = 50
-					add_political_power = 100
-				}
 			}
 
 			hidden_effect = {
@@ -10036,147 +9824,6 @@ JAP_the_propaganda_department_decisions = {
 JAP_the_co_prosperity_sphere_decisions = {
 	
 	# Hand Mongol States over to the [MEN.GetAdjective] Administration
-	JAP_hand_mongol_states_to_mengkukuo_decision  = {
-
-		priority = 5
-
-		icon = GFX_decision_SWI_support_humanitarian_efforts
-
-		target_root_trigger = { original_tag = JAP }
-
-		target_trigger = {
-			#Target is FROM
-			FROM = {
-				tag = MEN
-				is_subject_of = ROOT
-			}
-		}
-
-		ai_will_do = {
-			base = 100
-		}
-	
-		allowed = {  
-			original_tag = JAP 
-		}
-
-		visible = { 
-			always = no
-			OR = {
-				has_government = neutrality
-				has_government = fascism
-			}
-			any_controlled_state = {
-				OR = {
-					state = 818
-					state = 817
-					state = 330
-					state = 820
-					state = 819
-					state = 564
-					state = 329
-					state = 654
-					state = 760
-					state = 756
-					state = 621
-					state = 746
-					state = 612
-					state = 611
-					state = 761
-					state = 563
-					state = 566
-					state = 616
-				}
-			}
-		}
-	
-		available = {
-			any_controlled_state = {
-				OR = {
-					state = 818
-					state = 817
-					state = 330
-					state = 820
-					state = 819
-					state = 564
-					state = 329
-					state = 654
-					state = 760
-					state = 756
-					state = 621
-					state = 746
-					state = 612
-					state = 611
-					state = 761
-					state = 563
-					state = 566
-					state = 616
-				}
-			}
-			always = no # To Show people why they have it
-		}
-
-		#days_remove = 70
-
-		days_re_enable = 70
-
-		cost = 15
-
-		cancel_trigger = {
-		}
-
-        cancel_effect = {
-        }
-
-		modifier = {
-		}
-
-		complete_effect = { 
-
-			FROM = {
-				country_event = {
-					id = SEA_japan_foreign_policy.28
-					hours = 5
-				}	
-			}	
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				every_controlled_state = {
-					limit = {
-						OR = {
-							state = 818
-							state = 817
-							state = 330
-							state = 820
-							state = 819
-							state = 564
-							state = 329
-							state = 654
-							state = 760
-							state = 756
-							state = 621
-							state = 746
-							state = 612
-							state = 611
-							state = 761
-							state = 563
-							state = 566
-							state = 616
-						}
-					}
-					transfer_state_to = FROM
-				}
-			}
-
-		}
-
-		fire_only_once = no
-
-		remove_effect = {
-
-		}
-
-	}
 
 	# Offer Economic Integration to §Y[FROM.GetName]§!
 	JAP_GEACPS_economic_integration_decision = {
@@ -10740,48 +10387,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 						exists = no
 					}
 				}
-				BRM = {
-					every_core_state = {
-						limit = {
-							is_controlled_by_ROOT_or_subject = yes
-						}
-						transfer_state_to = BRM
-					}
-				}
 				set_autonomy = {
 					target = BRM
 					autonomous_state = autonomy_wtt_imperial_protectorate
 					end_wars = no
 					end_civil_wars = no
 				}
-				BRM = {
-					country_event = {
-						id = SEA_japan_foreign_policy.59
-						hours = 2
-					}	
-				}
 			}
 			ELSE = {
 				hidden_effect = {
-					BRM = {
-						every_core_state = {
-							limit = {
-								controller = {
-									OR = {
-										original_tag = ROOT
-										is_subject_of = ROOT
-									}
-								}
-							}
-							set_state_flag = is_state_that_should_go_to_japanese_burma_flag 
-						}
-					}
-				}
-				BRM = {
-					country_event = {
-						id = SEA_japan_foreign_policy.60
-						hours = 1
-					}	
 				}
 			}
 
@@ -11570,25 +11184,8 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		complete_effect = { 
 
-			KOR = {
-				country_event = {
-					id = SEA_japan_popup_events.35
-					hours = 6
-				}	
-			}
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
-				KOR = {
-					set_politics = {
-						ruling_party = fascism
-						elections_allowed = no
-					}	
-					add_popularity = {
-						ideology = fascism
-						popularity = 0.3
-					}	
-					add_political_power = 100
-				}
 			}
 
 		}

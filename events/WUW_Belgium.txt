@@ -943,9 +943,6 @@ country_event = {
 			country_event = { days = 1 id = ww_BEL_event_diplomatic.10 }
 		}
 
-		COG = {
-			country_event = { days = 1 id = ww_BEL_event_diplomatic.9 }
-		}
 
 		event_option_tooltip = ww_BEL_event_diplomatic.9.a
 	}
@@ -1050,22 +1047,6 @@ country_event = {
 }
 
 # To Congo : Belgium just handed land over to France
-country_event = {
-	id = ww_BEL_event_diplomatic.9
-	title = ww_BEL_event_diplomatic.9.t
-	desc = ww_BEL_event_diplomatic.9.desc
-	picture = GFX_report_event_generic_sign_treaty1
-	
-	is_triggered_only = yes
-	
-	option = { # Gah, fine.
-		name = ww_BEL_event_diplomatic.9.a
-
-		538 = {	transfer_state_to = FROM }
-
-		718 = {	transfer_state_to = FROM }
-	}
-}
 
 # To Belgium : France accepted! We got the land.
 country_event = {

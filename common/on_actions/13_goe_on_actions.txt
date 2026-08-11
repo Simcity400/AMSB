@@ -321,87 +321,6 @@ on_actions = {
 	#fired when two countries end up at war with each other (on_war is fired when a country goes to war against anyone and is not fired again when it enters war against another country unless it went to peace first)
 	on_war_relation_added = {
 		effect = {
-			if = {
-				limit = {
-					OR = {
-						FROM = {
-							original_tag = RAJ
-							has_completed_focus = RAJ_jugantar
-						}
-
-						ROOT = {
-							original_tag = RAJ
-							has_completed_focus = RAJ_jugantar
-						}
-					}
-
-					OR = {
-						FROM = { original_tag = PAK }
-						ROOT = { original_tag = PAK }
-					}
-				}
-
-				RAJ = {
-					division_template = {
-						name = "Jugantar Militia"
-						is_locked = no
-						regiments = {
-							irregular_infantry = { x = 0 y = 0 }
-							irregular_infantry = { x = 0 y = 1 }
-							irregular_infantry = { x = 0 y = 2 }
-							irregular_infantry = { x = 0 y = 3 }
-							irregular_infantry = { x = 1 y = 0 }
-							irregular_infantry = { x = 1 y = 1 }
-
-						}
-						support = {
-
-						}
-					}
-					if = {
-						limit = {
-							controls_state = 435
-						}
-						435 = {
-							create_unit = {
-								division = "name = \"Jugantar Militia\" division_template = \"Jugantar Militia\" start_experience_factor = 0.05 start_equipment_factor = 1 start_manpower_factor = 1"
-								owner = RAJ
-								allow_spawning_on_enemy_provs = yes
-								count = 3
-							}
-						}
-					}
-
-					if = {
-						limit = {
-							controls_state = 426
-						}
-						426 = {
-							create_unit = {
-								division = "name = \"Jugantar Militia\" division_template = \"Jugantar Militia\" start_experience_factor = 0.05 start_equipment_factor = 1 start_manpower_factor = 1"
-								owner = RAJ
-								allow_spawning_on_enemy_provs = yes
-								count = 3
-							}
-						}
-					}
-
-					if = {
-						limit = {
-							controls_state = 432
-						}
-						432 = {
-							create_unit = {
-								division = "name = \"Jugantar Militia\" division_template = \"Jugantar Militia\" start_experience_factor = 0.05 start_equipment_factor = 1 start_manpower_factor = 1"
-								owner = RAJ
-								allow_spawning_on_enemy_provs = yes
-								count = 3
-							}
-						}
-					}
-
-				}
-			}
 		}
 		effect = {
 			if = {
@@ -569,25 +488,6 @@ on_actions = {
 							allow_spawning_on_enemy_provs = yes
 							count = 3
 
-						}
-						if = {
-							limit = {
-								owner = { #These are bigger and needs more divisions
-									OR = {
-										tag = HYD
-										tag = RJP
-										tag = MYS
-									}
-								}
-							}
-
-							create_unit = {
-								division = "name = \"Princely Security Forces\" division_template = \"Princely Security Forces\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-								owner = PREV
-								allow_spawning_on_enemy_provs = yes
-								count = 3
-
-							}
 						}
 					 }
 

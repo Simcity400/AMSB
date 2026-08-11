@@ -321,7 +321,6 @@ country_event = { #Ethiopa is cool with us smuggling in some guns
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		ETH = { country_event = { id = MUN_czech_bop.5 days = 2 } }
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -419,55 +418,6 @@ country_event = { #Ethiopa is cool with us smuggling in some guns
 	}
 }
 
-country_event = {
-	id = MUN_czech_bop.5
-	title = MUN_czech_bop.5.t
-	desc = MUN_czech_bop.5.d
-	picture = GFX_report_event_generic_rifles
-
-	is_triggered_only = yes
-
-	option = { #Zbrojovka smuggles guns in
-		name = MUN_czech_bop.5.a
-		ai_chance = {
-			factor = 1
-		}
-		if = {
-			limit = {
-				has_dlc = "Arms Against Tyranny"
-			}	
-			custom_effect_tooltip = invites_mio_tt
-			show_mio_tooltip = CZE_zbrojovka_brno_organization
-			mio:CZE_zbrojovka_brno_organization = {
-				complete_mio_trait = {
-    				trait = CZE_mio_trait_gun_smuggling_difficulties
-    				show_modifiers = yes
-				}
-			}
-		}
-		ELSE = {
-			army_experience = 3
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = CZE_zbrojovka_brno
-		}
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		custom_effect_tooltip = MUN_czech_bop_5_tt
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		set_country_flag = CZE_zbrojovka_brno_is_smuggling_guns_in
-
-		add_equipment_to_stockpile = {
-    		type = infantry_equipment
-   			amount = 100
-			producer = CZE 
-		}
-	}
-}
 
 #########################
 ## Sudeten Event Chain ##
@@ -619,11 +569,6 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			set_country_flag = CZE_i_caused_the_crisis_TAG
-			SDL = {
-				set_politics = {
-					ruling_party = ROOT
-				}
-			}
 		}
 	}
 	
@@ -4090,16 +4035,6 @@ country_event = {
 						has_country_flag = CZE_hlinka_guard_forms_due_to_the_fall_of_the_republic
 						has_war = no
 					}
-					SLO = {
-						set_popularities = {
-							democratic = 5
-							fascism = 90
-							communism = 5
-						}
-						set_politics = { #Yeah man the elections we just had we're very legit, why do you ask?
-							ruling_party = fascism
-						}
-					}
 				}
 				#Giving SLO it's core back
 				if = {
@@ -4173,17 +4108,6 @@ country_event = {
 					limit = {
 						has_country_flag = CZE_hlinka_guard_forms_due_to_the_fall_of_the_republic
 						has_war = no
-					}
-					SLO = {
-						inherit_technology = CZE #Doing this now so it's not a massive popup later during Germany.55 event
-						set_popularities = {
-							democratic = 5
-							fascism = 90
-							communism = 5
-						}
-						set_politics = { #Yeah man the elections we just had we're very legit, why do you ask?
-							ruling_party = fascism
-						}
 					}
 				}
 				#Giving SLO it's core back
@@ -5756,25 +5680,6 @@ country_event = { #Now Ruthenian wants out
     			freedom_level = 0.5
 			}
 			hidden_effect = {
-				RUT = {
-					#add_ideas = CZE_back_against_the_mountains_RUT Set in history file
-					set_popularities = {
-						democratic = 76
-						fascism = 9
-						communism = 14
-						neutrality = 1
-					}
-					set_politics = { #No one is listening to me :(
-						ruling_party = democratic 
-					}
-					#load_oob = "RUT_fall_of_the_republic"
-					if = {
-						limit = {
-							num_of_military_factories < 1
-						}
-						add_offsite_building = { type = arms_factory level = 1 }
-					}
-				}
 			}
 		}
 	}
@@ -5822,9 +5727,6 @@ country_event = { #Now Ruthenian wants out
 				73 = {
 					add_core_of = RUT
 				}
-				RUT = {
-					transfer_state = 73
-				}
 				89 = {
 					add_core_of = RUT
 				}
@@ -5846,32 +5748,6 @@ country_event = { #Now Ruthenian wants out
 				}
 			}
 			hidden_effect = {
-				RUT = {
-					add_political_power = 150
-					add_command_power = 25
-					army_experience = 25
-					remove_ideas = CZE_back_against_the_mountains_RUT #Set in history file
-					add_ideas = low_economic_mobilisation
-					add_ideas = limited_conscription
-					add_ideas = CZE_back_against_the_mountains_RUT_player
-					set_popularities = {
-						democratic = 76
-						fascism = 9
-						communism = 14
-						neutrality = 1
-					}
-					set_politics = {
-						ruling_party = democratic 
-					}
-					load_oob = "RUT_fall_of_the_republic"
-					if = {
-						limit = {
-							num_of_military_factories < 1
-						}
-						add_offsite_building = { type = arms_factory level = 1 }
-					}
-					add_offsite_building = { type = industrial_complex level = 1 }
-				}
 			}
 			RUT = { change_tag_from = ROOT }
 		}

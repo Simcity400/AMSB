@@ -4516,7 +4516,6 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 215 }
 			hidden_effect = {
 				215 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
@@ -4549,7 +4548,6 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 216 }
 			hidden_effect = {
 				216 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
@@ -4579,7 +4577,6 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 146 }
 			hidden_effect = {
 				146 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
@@ -4604,7 +4601,6 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 147 }
 			hidden_effect = {
 				147 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
@@ -4622,90 +4618,13 @@ country_event = {
 		puppet = KAR
 
 		hidden_effect = {
-			KAR = {
-				if = {
-					limit = {
-						owns_state = 215
-					}
-					set_capital = {
-						state = 215
-					}
-				}
-				
-				division_template = {
-				    name = "Karjalan Metsäsissit"
-					is_locked = yes
-					priority = 1
-					template_counter = 27
-					regiments = {
-						infantry = { x = 0 y = 0 }
-						infantry = { x = 0 y = 1 }
-						infantry = { x = 0 y = 2 }
-						infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-					}
-				}
-				every_owned_state = {
-					limit = { is_core_of = KAR }
-					create_unit = { 
-						division = "name = \"Karjalan Metsäsissit\" division_template = \"Karjalan Metsäsissit\" start_experience_factor = 0.05 start_equipment_factor = 0.95"
-						owner = KAR
-						count = 1
-					}
-				}
-				random_owned_state = {
-					limit = { 
-						is_core_of = KAR 
-						is_capital = yes
-					}
-					create_unit = { 
-						division = "name = \"Karjalan Metsäsissit\" division_template = \"Karjalan Metsäsissit\" start_experience_factor = 0.05 start_equipment_factor = 0.95"
-						owner = KAR
-						count = 2
-					}
-				}
-
-				#Add some equipment to Stockpile (Finland sent equipment for the uprising)
-				add_equipment_to_stockpile = { 
-					type = infantry_equipment_1
-					amount = 2000
-					producer = ROOT
-				}
-				add_equipment_to_stockpile = { 
-					type = support_equipment
-					amount = 500
-					producer = ROOT
-				}
-			}
 
 			if = {
 				limit = {
 					has_government = fascism
 				}
-				KAR = {
-					set_politics = { 
-						ruling_party = fascism
-						elections_allowed = no
-					}
-					set_popularities = {
-						fascism = 75
-						neutrality = 20
-						democratic = 5
-					}
-				}
 			}
 			else = {
-				KAR = {
-					set_politics = { 
-						ruling_party = neutrality
-						elections_allowed = no
-					}
-					set_popularities = {
-						neutrality = 60
-						fascism = 35
-						democratic = 5
-					}
-				}
 			}
 			KAR = {
 				# Add extra country leader trait to the possible leaders (fascist & non-aligned)
@@ -4814,7 +4733,6 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 215 }
 			hidden_effect = {
 				215 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
@@ -4848,7 +4766,6 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 216 }
 			hidden_effect = {
 				216 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
@@ -4878,7 +4795,6 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 146 }
 			hidden_effect = {
 				146 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
@@ -4903,7 +4819,6 @@ country_event = {
 					}
 				}
 			}
-			KAR = { transfer_state = 147 }
 			hidden_effect = {
 				147 = {
 					remove_dynamic_modifier = { modifier = FIN_anti_soviet_sentiment }
@@ -4918,90 +4833,13 @@ country_event = {
 		}
 
 		hidden_effect = {	
-			KAR = {
-				if = {
-					limit = {
-						owns_state = 215
-					}
-					set_capital = {
-						state = 215
-					}
-				}
-
-				division_template = {
-				    name = "Karjalan Metsäsissit"
-					is_locked = yes
-					priority = 1
-					template_counter = 27
-					regiments = {
-						infantry = { x = 0 y = 0 }
-						infantry = { x = 0 y = 1 }
-						infantry = { x = 0 y = 2 }
-						infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-					}
-				}
-				every_owned_state = {
-					limit = { is_core_of = KAR }
-					create_unit = { 
-						division = "name = \"Karjalan Metsäsissit\" division_template = \"Karjalan Metsäsissit\" start_experience_factor = 0.05 start_equipment_factor = 0.95"
-						owner = KAR
-						count = 1
-					}
-				}
-				random_owned_state = {
-					limit = { 
-						is_core_of = KAR 
-						is_capital = yes
-					}
-					create_unit = { 
-						division = "name = \"Karjalan Metsäsissit\" division_template = \"Karjalan Metsäsissit\" start_experience_factor = 0.05 start_equipment_factor = 0.95"
-						owner = KAR
-						count = 2
-					}
-				}
-
-				#Add some equipment to Stockpile (Finland sent equipment for the uprising)
-				add_equipment_to_stockpile = { 
-					type = infantry_equipment_1
-					amount = 2000
-					producer = ROOT
-				}
-				add_equipment_to_stockpile = { 
-					type = support_equipment
-					amount = 500
-					producer = ROOT
-				}
-			}
 
 			if = {
 				limit = {
 					has_government = fascism
 				}
-				KAR = {
-					set_politics = { 
-						ruling_party = fascism
-						elections_allowed = no
-					}
-					set_popularities = {
-						fascism = 75
-						neutrality = 20
-						democratic = 5
-					}
-				}
 			}
 			else = {
-				KAR = {
-					set_politics = { 
-						ruling_party = neutrality
-						elections_allowed = no
-					}
-					set_popularities = {
-						neutrality = 60
-						fascism = 35
-						democratic = 5
-					}
-				}
 			}
 			KAR = {
 				# Add extra country leader trait to the possible leaders (fascist & non-aligned)
@@ -5097,25 +4935,21 @@ country_event = {
 				limit = {
 					KAR = { owns_state = 215}
 				}
-				KAR = { transfer_state = 215 }
 			}
 			if = {
 				limit = {
 					KAR = { owns_state = 216}
 				}
-				KAR = { transfer_state = 216 }
 			}
 			if = {
 				limit = {
 					KAR = { owns_state = 146}
 				}
-				KAR = { transfer_state = 146 }
 			}
 			if = {
 				limit = {
 					KAR = { owns_state = 147}
 				}
-				KAR = { transfer_state = 147 }
 			}
 
 			if = { #FULL FINNISH SUPPORT
@@ -5173,12 +5007,6 @@ country_event = {
 							has_country_flag = FIN_full_support_for_karelia_flag
 						}
 					}
-					KAR = {
-						declare_war_on = {
-							target = SOU
-							type = independence_wargoal
-						}
-					}
 					if = {
 						limit = {
 							FROM = { has_country_flag = FIN_joining_war_against_sov_flag }
@@ -5194,14 +5022,6 @@ country_event = {
 				}
 				else = { #UNOFFICIAL FINNISH SUPPORT
 					effect_tooltip = {
-						KAR = {
-							declare_war_on = {
-								target = SOU
-								type = independence_wargoal
-							}
-
-							give_military_access = SOU
-						}
 						give_military_access = KAR
 					}
 				}
@@ -5246,25 +5066,21 @@ country_event = {
 				limit = {
 					KAR = { owns_state = 215}
 				}
-				KAR = { transfer_state = 215 }
 			}
 			if = {
 				limit = {
 					KAR = { owns_state = 216}
 				}
-				KAR = { transfer_state = 216 }
 			}
 			if = {
 				limit = {
 					KAR = { owns_state = 146}
 				}
-				KAR = { transfer_state = 146 }
 			}
 			if = {
 				limit = {
 					KAR = { owns_state = 147}
 				}
-				KAR = { transfer_state = 147 }
 			}
 
 			if = { #FULL FINNISH SUPPORT
@@ -5275,12 +5091,6 @@ country_event = {
 				}
 				FROM = {
 					puppet = KAR
-				}
-				KAR = {
-					declare_war_on = {
-						target = SOU
-						type = independence_wargoal
-					}
 				}
 				if = {
 					limit = {
@@ -5297,14 +5107,6 @@ country_event = {
 			}
 			else = { #UNOFFICIAL FINNISH SUPPORT
 				effect_tooltip = {
-					KAR = {
-						declare_war_on = {
-							target = SOU
-							type = independence_wargoal
-						}
-
-						give_military_access = SOU
-					}
 					give_military_access = KAR
 				}
 			}
@@ -5391,20 +5193,6 @@ country_event = {
 
 		add_manpower = -1000
 
-		KAR = {
-			add_manpower = 1000
-			#Add some equipment to Stockpile (Finland sent equipment for the uprising)
-			add_equipment_to_stockpile = { 
-				type = infantry_equipment_1
-				amount = 2000
-				producer = FIN
-			}
-			add_equipment_to_stockpile = { 
-				type = support_equipment
-				amount = 500
-				producer = FIN
-			}
-		}
 
 		add_relation_rule_override = {
 			target = KAR

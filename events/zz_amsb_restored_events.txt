@@ -10,85 +10,6 @@ add_namespace = tfv_south_africa
 add_namespace = ww_congo
 
 # Source: vanilla/events/GOE_Iraq.txt; reachable repair closure.
-country_event = { 
-	id = IRQ_political_events.72
-	title = IRQ_political_events.72.t
-	desc = IRQ_political_events.72.desc
-	picture = GFX_report_event_IRQ_ghazi_i_death
-
-	trigger = {
-		original_tag = IRQ
-
-		has_dlc = "Graveyard of Empires"
-
-		has_idea = IRQ_ghazi_i
-
-		date > 1939.4.1
-		
-		date < 1940.1.1
-		
-	}
-
-	mean_time_to_happen = { days = 1 }
-
-	hidden = no
-
-	fire_only_once = yes
-	
-	# Abd Al-Ilah will take up the Regency
-	option = {
-		name = IRQ_political_events.72.a
-		ai_chance = {
-			base = 10
-		}
-
-		hidden_effect = {
-			set_country_flag = IRQ_ghazi_died_flag
-		}
-
-		retire_character = IRQ_ghazi_i
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		IF = {
-			limit = {
-				NOT = {
-					has_country_flag = IRQ_has_abd_al_illah_regent_flag
-				}
-			}
-			set_country_flag = IRQ_has_abd_al_illah_regent_flag
-		}
-		activate_advisor = IRQ_abd_al_ilah_regent
-
-	}
-	# Faisal II should replace him directly!
-	option = {
-		name = IRQ_political_events.72.b
-		ai_chance = {
-			base = 0
-		}
-
-		hidden_effect = {
-			set_country_flag = IRQ_ghazi_died_flag
-		}
-
-		retire_character = IRQ_ghazi_i
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		IF = {
-			limit = {
-				NOT = {
-					has_country_flag = IRQ_has_faisal_as_direct_ruler_flag
-				}
-			}
-			set_country_flag = IRQ_has_faisal_as_direct_ruler_flag
-		}
-		activate_advisor = IRQ_faisal_ii
-
-	}
-	
-}
 
 # Source: vanilla/events/SEA_Communist_China.txt; reachable repair closure.
 country_event = { 
@@ -2013,105 +1934,16 @@ country_event = {
 				16 = { NOT = { is_controlled_by = FRA } } #Paris	
 			}
 		} 
-		COG = {
-			country_event = { days = 5 id = ww_congo.11 }
-		}
 	}
 	option = { # Refuse
 		name = ww_congo.10.b
 		ai_chance = { 
 			base = 15 
 		}
-		COG = {
-			country_event = { days = 5 id = ww_congo.12 }
-		}
 	}
 }
 
-country_event = {
-	id = ww_congo.11
-	title = ww_congo.11.t
-	desc = ww_congo.11.d
-	picture = GFX_report_event_COG_force_publique_capturing_area
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ww_congo.11.a
-		ai_chance = {
-			base = 100
-		}
 
-		772 = {
-			add_core_of = ROOT
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-		
-		COG = {
-			IF = {
-				limit = {
-					772 = {
-						CONTROLLER = {
-							OR = {
-								original_tag = FRA
-								is_subject_of = FRA
-								is_subject_of = EFR
-							}
-						}
-					}
-				}
-				transfer_state = 772
-			}
-		}
-
-	}
-}
-
-country_event = {
-	id = ww_congo.12
-	title = ww_congo.12.t
-	desc = ww_congo.12.d
-	picture = GFX_report_event_COG_force_publique_marching_to_war
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ww_congo.12.a
-		ai_chance = {
-			base = 100
-		}
-
-		772 = {
-			add_core_of = ROOT
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		every_country = {
-			limit = {
-				OR = {
-					AND = {
-						original_tag = BEL
-						has_subject = COG
-					}
-					AND = {
-						original_tag = COG
-						is_subject_of = BEL
-					}
-				}
-			}
-			create_wargoal = {
-				type = take_state
-				target = FROM
-				generator = {
-					772
-				}
-			}
-		}
-
-	}
-}
 
 country_event = {
 	id = ww_congo.13
@@ -2126,79 +1958,16 @@ country_event = {
 		ai_chance = {
 			base = 75
 		} 
-		COG = {
-			country_event = { days = 5 id = ww_congo.14 }
-		}
 	}
 	option = { # Refuse
 		name = ww_congo.13.b
 		ai_chance = { 
 			base = 25 
 		}
-		COG = {
-			country_event = { days = 5 id = ww_congo.15 }
-		}
 	}
 }
 
-country_event = {
-	id = ww_congo.14
-	title = ww_congo.14.t
-	desc = ww_congo.14.d
-	picture = GFX_report_event_COG_force_publique_marching_to_war
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ww_congo.14.a
-		ai_chance = {
-			base = 100
-		}
-		
-		772 = {
-			add_core_of = ROOT
-		}
 
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		annex_country = {
-			target = FROM
-			transfer_troops = yes
-		}	
-
-	}
-}
-
-country_event = {
-	id = ww_congo.15
-	title = ww_congo.15.t
-	desc = ww_congo.15.d
-	picture = GFX_report_event_COG_force_publique_marching_to_war
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ww_congo.15.a
-		ai_chance = {
-			base = 100
-		}
-
-		772 = {
-			add_core_of = ROOT
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		create_wargoal = {
-			type = annex_everything
-			target = FROM
-			generator = {
-				772
-			}
-		}
-
-	}
-}
 
 news_event = {
 	id = ww_congo.16
@@ -2456,12 +2225,6 @@ country_event = {
 			}
 		}
 
-		COG = {
-			country_event = {
-				id = ww_congo.72
-				hours = 1
-			}	
-		}
 
 	}
 
@@ -3015,12 +2778,6 @@ country_event = {
 		custom_effect_tooltip = congolese_civil_war_starting_tt
 
 		hidden_effect = {
-			COG = {
-				country_event = {
-					id = congo_independence_struggle.24
-					hours = 0
-				}	
-			}
 			clr_global_flag = COG_BEL_negotiations_ongoing_flag
 		}
 
@@ -3167,49 +2924,6 @@ country_event = {
 						end_wars  = no
 						end_civil_wars = no
 					}		
-				}
-				KAT = {
-
-					set_politics = {
-						ruling_party = neutrality
-						elections_allowed = yes
-					}	
-
-					delete_unit_template_and_units = {
-						division_template = "Division de Katanga"
-						disband = yes #if yes, will refund equipment/manpower.
-					}
-
-					division_template = {
-						name = "Division de Katanga"		
-						division_names_group = BEL_INF_01
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
-							infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-						}
-						support = {
-						}
-					}
-
-					889 = { 
-						create_unit = {
-						    division = "name = \"Première Division de Katanga\" division_template = \"Division de Katanga\" start_experience_factor = 0.4 start_equipment_factor = 0.8"
-						    owner = KAT
-						}
-						create_unit = {
-						    division = "name = \"Deuxième Division de Katanga\" division_template = \"Division de Katanga\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						    owner = KAT
-						}
-					}
-
-					declare_war_on = {
-						target = ROOT
-						type = civil_war
-					}	
-
 				}
 			}
 
@@ -3788,49 +3502,6 @@ country_event = {
 						end_wars  = no
 						end_civil_wars = no
 					}		
-				}
-				KAT = {
-
-					set_politics = {
-						ruling_party = neutrality
-						elections_allowed = yes
-					}	
-
-					delete_unit_template_and_units = {
-						division_template = "Division de Katanga"
-						disband = yes #if yes, will refund equipment/manpower.
-					}
-
-					division_template = {
-						name = "Division de Katanga"		
-						division_names_group = BEL_INF_01
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
-							infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-						}
-						support = {
-						}
-					}
-
-					889 = { 
-						create_unit = {
-						    division = "name = \"Première Division de Katanga\" division_template = \"Division de Katanga\" start_experience_factor = 0.4 start_equipment_factor = 0.8"
-						    owner = KAT
-						}
-						create_unit = {
-						    division = "name = \"Deuxième Division de Katanga\" division_template = \"Division de Katanga\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						    owner = KAT
-						}
-					}
-
-					declare_war_on = {
-						target = ROOT
-						type = civil_war
-					}	
-
 				}
 			}
 

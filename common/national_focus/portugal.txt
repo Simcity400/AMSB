@@ -114,8 +114,6 @@ focus_tree = {
 		cost = 5
 		search_filters = {FOCUS_FILTER_ANNEXATION}
 		completion_reward = {
-			unlock_decision_tooltip = POR_mozambique_overseas_territory
-			unlock_decision_tooltip = POR_angola_overseas_province
 		}
 	}
 
@@ -454,7 +452,6 @@ focus_tree = {
 
 		completion_reward = { 
 
-			unlock_decision_tooltip = POR_timor_overseas_territory
 							
 		}
 
@@ -1088,11 +1085,9 @@ focus_tree = {
 		completion_reward = { 	
 			if = {
 				limit = { has_full_control_of_state = 112 }	
-				unlock_decision_tooltip = POR_develop_lisbon_tungsten_deposits
 			}
 			if = {
 				limit = { has_full_control_of_state = 795 }
-				unlock_decision_tooltip = POR_develop_santarem_chromium_deposits
 			}			
 		}
 	}
@@ -1779,8 +1774,6 @@ focus_tree = {
 					}
 				}
 			}
-			unlock_decision_tooltip = POR_buy_ships_britain
-			unlock_decision_tooltip = POR_buy_ships_italy	
 		}
 	}
 
@@ -3874,7 +3867,6 @@ focus_tree = {
 		relative_position_id = POR_visit_the_front
 		cost = 10
 		completion_reward = { 	
-			unlock_decision_tooltip = POR_fight_alongside_the_republic
 			if = { 
 				limit = { country_exists = SPA }
 				SPA = {
@@ -4228,9 +4220,6 @@ focus_tree = {
 		relative_position_id = POR_strict_neutrality_in_the_spanish_civil_war
 		cost = 10
 		completion_reward = { 
-			unlock_decision_tooltip = POR_buy_aa_in_britain	
-			unlock_decision_tooltip = POR_buy_at_in_britain
-			unlock_decision_tooltip = POR_buy_artillery_in_britain
 		}
 	}
 
@@ -4625,8 +4614,6 @@ focus_tree = {
 		relative_position_id = POR_allow_free_elections
 		cost = 10
 		completion_reward = { 
-			unlock_decision_tooltip = POR_iberian_summit_pro_axis
-			unlock_decision_tooltip = POR_iberian_summit_pro_allies
 		}
 	}
 
@@ -4856,7 +4843,6 @@ focus_tree = {
 		relative_position_id = POR_observation_mission
 		cost = 10
 		completion_reward = { 	
-			unlock_decision_tooltip = POR_fight_alongside_the_nationalists
 			if = { 
 				limit = { country_exists = SPD }
 				SPD = {
@@ -6154,8 +6140,6 @@ focus_tree = {
 				news_event = { id = lar_news.25 days = 3 random_days = 5 }
 			}	
 			add_political_power = 120
-			unlock_decision_tooltip = POR_stir_monarchist_sentiment_in_brazil
-			unlock_decision_tooltip = POR_stir_monarchist_sentiment_in_portugal
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = POR_joao_de_azevedo_coutinho
 			show_ideas_tooltip = POR_joao_francisco_de_barbosa_azevedo
@@ -6380,7 +6364,6 @@ focus_tree = {
 		relative_position_id = POR_assist_the_requetes
 		cost = 10
 		completion_reward = { 	
-			unlock_decision_tooltip = POR_fight_alongside_the_carlists
 			if = { 
 				limit = { country_exists = SPA }
 				SPA = {
@@ -6495,72 +6478,8 @@ focus_tree = {
 				limit = {
 					has_dlc = "Trial of Allegiance"
 				}
-				BRA = {
-					country_event ={
-						id = JUNO_brazil_events.190
-						days = 1
-					}
-					custom_effect_tooltip = if_they_accept
-					event_option_tooltip = JUNO_brazil_events.190.a
-				}
 			}
 			ELSE = {
-				BRA = {
-					country_event = lar_portugal_promote_monarchist_cause.7
-					effect_tooltip = {
-						add_timed_idea = {
-						    idea = POR_monarchists_on_the_rise
-						    days = 730
-						}
-						set_party_name = { 
-						    ideology = neutrality
-						    long_name = BRA_monarchy_party_long
-						    name = BRA_monarchy_party
-						}
-						set_party_name = { 
-						    ideology = fascism
-						    long_name = BRA_antimonarchist_coalition_long
-						    name = BRA_antimonarchist_coalition
-						}
-						if = {
-							limit = {
-								OR = {
-									has_government = neutrality
-									has_government = democratic
-									has_government = communism
-								} 
-							}
-							set_politics = {
-								ruling_party = fascism
-							}
-						}
-						set_popularities = {
-							democratic = 0
-							neutrality = 20
-							fascism = 80
-							communism = 0
-						}
-						hidden_effect = {
-							retire_country_leader = yes
-						}
-						BRA_getulio_vargas = {
-							remove_country_leader_role = {
-								ideology = despotism
-							}
-							add_country_leader_role = {
-								country_leader = {
-									expire = "1954.8.24"
-									ideology = fascism_ideology
-									traits = {
-										anti_communist
-									}
-								}
-								promote_leader = yes
-							}
-						}
-						promote_character = BRA_arlindo_veiga_dos_santos
-					}
-				}
 			}
 		}
 	}
@@ -6630,10 +6549,8 @@ focus_tree = {
 						}
 					}
 				}
-				BRA = { country_event = lar_portugal_promote_monarchist_cause.3 }
 			}
 			else = {
-				BRA = { country_event = lar_portugal_promote_monarchist_cause.4 }
 			}
 			custom_effect_tooltip = POR_the_empire_of_brazil_potential_civil_war_tt
 
@@ -6764,9 +6681,6 @@ focus_tree = {
 			if = {
 				limit = {
 					country_exists = BRA
-				}
-				BRA = {
-					country_event = { id = lar_portugal_promote_monarchist_cause.2 hours = 6 }
 				}
 			}
 			set_rule = { can_create_factions = yes }

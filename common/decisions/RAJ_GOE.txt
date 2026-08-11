@@ -1136,7 +1136,6 @@ RAJ_akhand_bharat_cat = {
 				}
 			}
 
-			BAN = { custom_effect_tooltip = RAJ_akhand_bharat_annex_subject }
 		}	
 	}
 
@@ -1474,7 +1473,6 @@ RAJ_akhand_bharat_cat = {
 				}
 			}
 
-			PAK = { custom_effect_tooltip = RAJ_akhand_bharat_annex_subject }
 		}	
 	}
 
@@ -1541,7 +1539,6 @@ RAJ_akhand_bharat_cat = {
 				}
 			}
 
-			BRM = { custom_effect_tooltip = RAJ_akhand_bharat_annex_subject }
 		}	
 	}
 
@@ -1988,9 +1985,6 @@ RAJ_GOE_partition_cat = {
 		    				check_variable = { PAK_pressure > t_BAN_pressure_scaled }
 		    				check_variable = { PAK_Pressure > 0 }
 		    			}
-		    			PAK = {
-		    				transfer_state = PREV
-		    			}
 
 		    			if = {
 		    				limit = {
@@ -2008,9 +2002,6 @@ RAJ_GOE_partition_cat = {
 		    				check_variable = { BAN_pressure > t_RAJ_pressure_scaled }
 		    				check_variable = { BAN_pressure > t_PAK_pressure_scaled }
 		    				check_variable = { BAN_pressure > 0 }
-		    			}
-		    			BAN = {
-		    				transfer_state = PREV
 		    			}
 
 		    			if = {
@@ -2057,10 +2048,8 @@ RAJ_GOE_partition_cat = {
     						has_idea = neutrality_idea	
     					}
     				}
-    				PAK = { remove_ideas = neutrality_idea }
     			}
 
-    			PAK = { set_rule = { can_join_factions = yes } }
     		}
 
     		if = {
@@ -2076,10 +2065,8 @@ RAJ_GOE_partition_cat = {
     						has_idea = neutrality_idea	
     					}
     				}
-    				BAN = { remove_ideas = neutrality_idea }
     			}
 
-    			BAN = { set_rule = { can_join_factions = yes } }
     		}
 
     		for_each_scope_loop = {
@@ -2233,51 +2220,7 @@ RAJ_GOE_partition_cat = {
 				}
 			}
 
-			if = {
-				limit = {
-					ROOT = {
-						original_tag = PAK
-					}
-				}
-				FROM = {
 
-					ROOT = { subtract_from_variable = { pressure_left = 1 } }
-					FROM = {
-						if = {
-							limit = { has_state_flag = prefers_pak }
-							set_temp_variable = { t_pressure = 1 }
-							multiply_temp_variable = { t_pressure = preference }
-							add_to_variable = { PAK_pressure = t_pressure }
-						}
-						else  = {
-							add_to_variable = { PAK_pressure = 1 }
-						}
-					}
-				}
-			}
-
-			if = {
-				limit = {
-					ROOT = {
-						original_tag = BAN
-					}
-				}
-				FROM = {
-
-					ROOT = { subtract_from_variable = { pressure_left = 1 } }
-					FROM = {
-						if = {
-							limit = { has_state_flag = prefers_ban }
-							set_temp_variable = { t_pressure = 1 }
-							multiply_temp_variable = { t_pressure = preference }
-							add_to_variable = { BAN_pressure = t_pressure }
-						}
-						else  = {
-							add_to_variable = { BAN_pressure = 1 }
-						}
-					}
-				}
-			}
 		}
 	}
 }
@@ -4292,9 +4235,6 @@ RAJ_GOE_communism_border_clashes_cat = {
 			base = 1
 		}
 		complete_effect = {
-			PAK = {
-				country_event = { id = GOE_RAJ.42 hours = 2 }
-			}
 			custom_effect_tooltip = RAJ_red_punjab_operation_decision_tt
 			hidden_effect = { set_country_flag = RAJ_started_border_war }
 		}
@@ -4379,9 +4319,6 @@ RAJ_GOE_communism_border_clashes_cat = {
 			base = 1
 		}
 		complete_effect = {
-			PAK = {
-				country_event = { id = GOE_RAJ.44 hours = 2 }
-			}
 			custom_effect_tooltip = RAJ_red_punjab_operation_decision_tt
 			hidden_effect = { set_country_flag = RAJ_started_border_war }
 		}
@@ -4465,9 +4402,6 @@ RAJ_GOE_communism_border_clashes_cat = {
 			base = 1
 		}
 		complete_effect = {
-			PAK = {
-				country_event = { id = GOE_RAJ.40 hours = 2 }
-			}
 			custom_effect_tooltip = RAJ_red_punjab_operation_decision_tt
 			hidden_effect = { set_country_flag = RAJ_started_border_war }
 		}

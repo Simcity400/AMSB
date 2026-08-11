@@ -95,13 +95,11 @@ debug_decisions = {
 				limit = {
 					is_on_continent = africa
 				}
-				ETH = { transfer_state = PREV }
 			}
 			every_state = {
 				limit = {
 					is_on_continent = australia
 				}
-				NZL = { transfer_state = PREV }
 			}
 			every_state = {
 				limit = {
@@ -6231,168 +6229,7 @@ SOV_diplomacy_balkan_decision_category = {
 ###################
 
 SOV_diplomacy_middle_east_decision_category = {
-	SOV_pressure_country_government_middle_east = {
-		priority = 50
 
-		icon = hol_attract_foreign_investors
-
-		ai_will_do = {
-			base = 0.8
-			modifier = {
-				factor = 2
-				has_political_power > 160
-			}
-			modifier = { #If ideological rallies happened, then it's better
-				factor = 4
-				FROM = { has_country_flag = SOV_ideological_rallies_promoted_flag }
-			}
-			modifier = { #Do it only once, don't spam
-				factor = 0
-				FROM = { has_country_flag = SOV_government_pressured_flag }
-			}
-		}
-
-		targets = { AFG SAU }
-
-		target_trigger = {
-			SOV_basic_pressure_government_triggers = yes
-			OR = {
-				AND = { #AFG
-					FROM = { tag = AFG }
-					always = no
-				}
-				AND = { #SAU
-					FROM = { tag = SAU }
-					always = no
-				}
-			}
-		}
-
-		target_root_trigger = {
-			OR = {
-				always = no
-				always = no
-			}
-			is_subject = no
-		}
-
-		allowed = {
-			original_tag = SOV
-		}
-
-		available = {
-			is_faction_leader = yes
-			FROM = {
-				has_opinion = {
-					target = ROOT
-					value > 49
-				}
-				#SOV_is_valid_subject = yes # The Soviet Union might not give a sh*t about their petty overlord ;) # -> THE USSR does indeed not care about their petty overlord, for now.
-				NOT = { has_war_with = ROOT }
-			}
-			NOT = { has_country_flag = SOV_pressure_government_active_flag }
-		}
-
-		visible = {
-		}
-
-		days_remove = SOV_pressure_government_days
-
-		days_re_enable = SOV_pressure_government_cd
-
-		cost = SOV_pressure_country_government_cost
-
-		modifier = {
-			political_power_gain = -0.25
-		}
-
-		complete_effect = {
-			set_country_flag = SOV_pressure_government_active_flag
-		}
-
-		remove_effect = {
-			FROM = {
-				country_event = { id = NSB_soviet_foreign_politics_events.1 hours = 4 random_hours = 2 }
-				set_country_flag = SOV_government_pressured_flag #For AI weights - don't spam
-			}
-			clr_country_flag = SOV_pressure_government_active_flag
-			custom_effect_tooltip = SOV_pressure_government_effects_tt
-			custom_effect_tooltip = SOV_pressure_government_cd_tt
-		}
-	}
-
-	SOV_promote_ideology_rallies_middle_east = {
-		priority = 50
-
-		icon = hol_attract_foreign_investors
-
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 2
-				has_political_power > 160
-			}
-		}
-
-		targets = { AFG SAU }
-
-		target_trigger = {
-			SOV_basic_promote_rallies_triggers = yes
-			OR = {
-				AND = { #AFG
-					FROM = { tag = AFG }
-					always = no
-				}
-				AND = { #SAU
-					FROM = { tag = SAU }
-					always = no
-				}
-			}
-		}
-
-		target_root_trigger = {
-			OR = {
-				always = no
-				always = no
-			}
-			is_subject = no
-		}
-
-		allowed = {
-			original_tag = SOV
-		}
-
-		available = {
-			FROM = {
-				#SOV_is_valid_subject = yes # The Soviet Union might not give a sh*t about their petty overlord ;) # -> THE USSR does indeed not care about their petty overlord, for now.
-				NOT = { has_war_with = ROOT }
-			}
-		}
-
-		visible = {
-		}
-
-		days_remove = SOV_ideological_rallies_days
-
-		fire_only_once = yes
-
-		cost = SOV_promote_ideology_rallies_cost
-
-		modifier = {
-			political_power_gain = -0.25
-		}
-
-		complete_effect = {
-		}
-
-		remove_effect = {
-			FROM = {
-				country_event = { id = NSB_soviet_foreign_politics_events.2 hours = 4 random_hours = 2 }
-			}
-			custom_effect_tooltip = SOV_promote_rallies_effects_tt
-			custom_effect_tooltip = SOV_promote_ideological_rallies_cd_tt
-		}
-	}
 
 	SOV_send_ultimatum_to_country_middle_east = {
 		priority = 50
@@ -7595,64 +7432,6 @@ SOV_diplomacy_asia_decision_category = {
 		}
 	}
 
-	SOV_formalize_of_the_soviet_republic_of_sinkiang = {
-		priority = 20
-
-		icon = generic_nationalism
-
-		ai_will_do = {
-			base = 0.8
-		}
-
-		fire_only_once = yes
-
-		allowed = {
-			original_tag = SOV
-		}
-
-		available = {
-			has_country_flag = SOV_sinkiang_prospection_flag
-			has_country_flag = SOV_sinkiang_oil_prospection_flag
-			has_country_flag = SOV_sinkiang_military_aid_flag
-			
-			has_country_flag = { flag = SOV_sinkiang_joined_comintern_counter_flag days > 730 }
-			custom_trigger_tooltip = {
-				tooltip = SOV_sinkiang_joined_comintern_days_tt
-				has_country_flag = {
-					flag = SOV_sinkiang_joined_comintern_counter_flag
-					days > 730
-				}
-			}
-			strength_ratio = {
-			    tag = SIK
-			    ratio > 2
-			}
-		}
-
-		visible = {
-			always = no
-			country_exists = SIK
-			
-			NOT = { has_war_with = FROM }
-		}
-
-		cost = 100
-
-		complete_effect = {
-			
-			# IF THEY ACCEPT
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				
-			}
-
-			# IF THEY REFUSE
-			custom_effect_tooltip = if_they_refuse_tt
-			
-
-			custom_effect_tooltip = SOV_formalize_of_the_soviet_republic_of_sinkiang_only_once_tt
-		}
-	}
 }
 
 

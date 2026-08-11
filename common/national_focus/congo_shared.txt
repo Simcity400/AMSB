@@ -210,34 +210,6 @@
 					}
 				}
 				effect_tooltip = {
-					COG = {
-						add_political_power = 50
-
-						custom_effect_tooltip = generic_skip_one_line_tt
-
-						random_owned_controlled_state = {
-							limit = {
-								is_core_of = COG
-								is_fully_controlled_by = COG
-								is_owned_by = COG
-								free_building_slots = {
-									building = industrial_complex
-									size > 1
-									include_locked = yes
-								}	
-							}
-							
-							prioritize = { 295 } 
-
-							add_extra_state_shared_building_slots = 1
-
-							add_building_construction = {
-								type = industrial_complex
-								level = 1
-								instant_build = yes
-							}	
-						}
-					}
 				}
 			}
 
@@ -312,27 +284,6 @@
 					}
 				}
 				effect_tooltip = {
-					COG = {
-						every_state = {
-							limit = {
-								is_owned_and_controlled_by = PREV
-								OR = {
-									state = 295
-									state = 538
-									state = 718
-									state = 890
-									state = 888
-									state = 889
-									state = 768
-									state = 769
-									state = 796
-									state = 772
-									state = 540
-								}
-							}
-							add_extra_state_shared_building_slots = 1
-						}
-					}
 				}
 			}
 
@@ -432,55 +383,6 @@
 					}
 				}
 				effect_tooltip = {
-					COG = {
-						random_owned_controlled_state = {
-							limit = {
-								is_core_of = COG
-								is_fully_controlled_by = COG
-								is_owned_by = COG
-								free_building_slots = {
-									building = industrial_complex
-									size > 0
-									include_locked = yes
-								}	
-							}
-							
-							prioritize = { 295 } 
-
-							add_extra_state_shared_building_slots = 1
-
-							add_building_construction = {
-								type = industrial_complex
-								level = 1
-								instant_build = yes
-							}	
-						}
-
-						custom_effect_tooltip = generic_skip_one_line_tt
-
-						random_owned_controlled_state = {
-							limit = {
-								is_core_of = COG
-								is_fully_controlled_by = COG
-								is_owned_by = COG
-								free_building_slots = {
-									building = industrial_complex
-									size > 0
-									include_locked = yes
-								}	
-							}
-							
-							prioritize = { 889 } 
-
-							add_extra_state_shared_building_slots = 1
-
-							add_building_construction = {
-								type = industrial_complex
-								level = 1
-								instant_build = yes
-							}	
-						}
-					}
 				}
 			}
 
@@ -533,9 +435,6 @@
 					}
 				}
 				effect_tooltip = {
-					COG = {
-						custom_effect_tooltip = CONGO_secure_international_funding_tt
-					}
 				}
 			}
 
@@ -610,30 +509,6 @@
 					}
 				}
 				effect_tooltip = {
-					COG = {
-						random_owned_controlled_state = {
-							limit = {
-								is_core_of = COG
-								is_fully_controlled_by = COG
-								is_owned_by = COG
-								free_building_slots = {
-									building = arms_factory
-									size > 1
-									include_locked = yes
-								}	
-							}
-							
-							prioritize = { 295 889 } 
-
-							add_extra_state_shared_building_slots = 2
-
-							add_building_construction = {
-								type = arms_factory
-								level = 2
-								instant_build = yes
-							}	
-						}
-					}
 				}
 			}
 
@@ -712,35 +587,6 @@
 					}
 				}
 				effect_tooltip = {
-					COG = {
-						random_owned_controlled_state = {
-							limit = {
-								is_core_of = COG
-								is_fully_controlled_by = COG
-								is_owned_by = COG
-								free_building_slots = {
-									building = industrial_complex
-									size > 1
-									include_locked = yes
-								}	
-							}
-							
-							prioritize = { 890 } 
-
-							add_extra_state_shared_building_slots = 1
-
-							add_building_construction = {
-								type = industrial_complex
-								level = 1
-								instant_build = yes
-							}	
-						}
-
-						custom_effect_tooltip = generic_skip_one_line_tt
-
-						custom_effect_tooltip = available_industrial_concern
-						show_ideas_tooltip = COG_rawji_group
-					}
 				}
 			}
 			
@@ -1048,17 +894,10 @@
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
-				COG = {
-					country_event = {
-						id = ww_congo.1
-						hours = 0
-					}	
-				}
 				
 			}
 
 			hidden_effect = {
-				COG = { unlock_national_focus = CONGO_congo_investments } #Completes focus for Congo
 			}
 		}
 
@@ -1109,13 +948,6 @@
 						}
 					}
 				}
-				COG = {
-					add_dynamic_modifier = { 
-						modifier = COG_belgian_congo_colonial_dynamic_modifier
-					}
-					custom_effect_tooltip = generic_skip_one_line_tt
-					custom_effect_tooltip = warning_this_idea_can_be_removed_tt
-				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -1144,10 +976,6 @@
 			}
 
 			hidden_effect = {
-				COG = { 
-					unlock_national_focus = CONGO_societe_generale_de_belgique  #Completes focus for Congo
-					force_update_dynamic_modifier = yes
-				}
 			}
 		}
 
@@ -2992,7 +2820,6 @@
 			}
 
 			hidden_effect = {
-				COG = { unlock_national_focus = CONGO_symbiotic_industrialization } #Completes focus for Congo
 				CONGO_one_more_focus_done = yes
 			}
 		}
@@ -4805,10 +4632,6 @@
 			add_to_variable = { BEL.COG_belgian_congo_colonial_dynamic_modifier_stability_factor = -0.05 tooltip = stability_factor_tt }
 
 			hidden_effect = {
-				COG = { 
-					unlock_national_focus = CONGO_cheap_labor #Completes focus for Congo
-					force_update_dynamic_modifier = yes
-				} 
 				CONGO_one_more_focus_done = yes
 			}
 		}
@@ -6076,7 +5899,6 @@
 			}
 
 			hidden_effect = {
-				COG = { unlock_national_focus = CONGO_fuel_for_belgium } #Completes focus for Congo
 				CONGO_one_more_focus_done = yes
 			}
 		}
@@ -6516,10 +6338,6 @@
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
-				unlock_decision_tooltip = {
-					decision = COG_increased_food_production_scheme_decision
-					show_effect_tooltip = yes
-				}	
 			}
 
 			hidden_effect = {
@@ -6547,10 +6365,6 @@
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
-				unlock_decision_tooltip = {
-					decision = COG_increased_food_production_scheme_decision
-					show_effect_tooltip = yes
-				}	
 			}
 
 		}
@@ -7090,7 +6904,6 @@
 			}
 
 			hidden_effect = {
-				COG = { unlock_national_focus = CONGO_requisition_funds } #Completes focus for Congo
 				CONGO_one_more_focus_done = yes
 			}
 		}

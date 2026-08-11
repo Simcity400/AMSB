@@ -3351,15 +3351,7 @@ country_event = {
 		}
 		hidden_effect = {
 			INS = {
-				add_days_mission_timeout = {
-					mission = INS_take_batavia
-					days = 100
-				}
 			}
-		}
-		add_days_mission_timeout = {
-			mission = INS_hold_batavia_HOL
-			days = 100
 		}
 
 		INS = {
@@ -3410,10 +3402,6 @@ country_event = {
 				indonesia_reduce_escalation_1_effect = yes
 			}
 			INS = {
-				add_days_mission_timeout = {
-					mission = INS_take_batavia
-					days = 100
-				}
 			}
 			add_stability = -0.05
 			add_war_support = -0.05
@@ -3561,7 +3549,6 @@ country_event = {
 
 	option = {
 		name = INS_revolution_events.34.a
-		activate_mission = INS_renville_timer_mission_republic
 	}
 }
 
@@ -3575,7 +3562,6 @@ country_event = {
 
 	option = {
 		name = INS_revolution_events.35.a
-		activate_mission = INS_renville_timer_mission_HOL
 	}
 }
 
@@ -3761,7 +3747,6 @@ country_event = {
 
 	option = {
 		name = INS_revolution_events.42.a
-		activate_mission_tooltip = INS_hold_batavia_HOL
 	}
 }
 
@@ -4658,7 +4643,6 @@ country_event = {
 				}
 			}
 		}
-		activate_decision = INS_rubber_for_civ
 	}
 }
 
@@ -4739,7 +4723,6 @@ country_event = {
 				}
 			}
 		}
-		activate_decision = INS_rubber_for_mil
 	}
 }
 
@@ -4790,7 +4773,6 @@ country_event = {
 			air_experience = 25
 			navy_experience = 25
 		}
-		activate_decision = INS_rubber_for_xp
 	}
 }
 
@@ -4839,7 +4821,6 @@ country_event = {
 			add_political_power = 50
 			add_command_power = 10
 		}
-		activate_decision = INS_rubber_for_pp
 	}
 }
 
@@ -4950,7 +4931,6 @@ country_event = {
 				}
 			}
 		}
-		activate_decision = INS_rubber_for_infantry_eq
 	}
 }
 
@@ -5006,7 +4986,6 @@ country_event = {
 				producer = INS
 			}
 		}
-		activate_decision = INS_rubber_for_truck
 	}
 }
 
@@ -5155,7 +5134,6 @@ country_event = {
 				}
 			}
 		}
-		activate_decision = INS_oil_for_civ
 	}
 }
 
@@ -5237,7 +5215,6 @@ country_event = {
 				}
 			}
 		}
-		activate_decision = INS_oil_for_mil
 	}
 }
 
@@ -5294,7 +5271,6 @@ country_event = {
 				days = 365
 			}
 		}
-		activate_decision = INS_oil_for_plane
 	}
 }
 
@@ -5351,7 +5327,6 @@ country_event = {
 				level = 2
 			}
 		}
-		activate_decision = INS_oil_for_dockyard
 	}
 }
 
@@ -5490,7 +5465,6 @@ country_event = {
 	option = {
 		name = INS_chaos_events.3.a
 		add_stability = -0.025
-		activate_mission = INS_national_revolution_republic_sukarno_threatened
 	}
 }
 
@@ -5819,12 +5793,6 @@ country_event = {
 			}
 		}
 
-		MAL = {
-			country_event = {
-				id = INS_loyalist_events.8
-				hours = 12
-			}
-		}
 		custom_effect_tooltip = if_they_accept_tt
 		effect_tooltip = {
 			INS = {

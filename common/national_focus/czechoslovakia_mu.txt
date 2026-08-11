@@ -5570,9 +5570,6 @@ focus_tree = {
 							is_subject_of = ROOT
 						}
 					}
-					SLO ={
-						set_cosmetic_tag = CZE_puppet
-					}
 				}
 				set_country_flag = CZE_slovakia_autonomy_agreement_was_bypassed
 			}
@@ -5632,9 +5629,6 @@ focus_tree = {
     				autonomy_state = autonomy_integrated_puppet
     				freedom_level = 0.25
 				}
-				SLO = {
-					add_ideas = CZE_federalization_agreement_puppets
-				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -5675,20 +5669,11 @@ focus_tree = {
 							has_completed_focus = CZE_form_a_federation
 						}
 					}
-					SLO ={
-						set_cosmetic_tag = CZE_puppet
-					}
 				}
 				else_if = {
 					limit = {
 						has_completed_focus = CZE_form_a_federation
 					}
-					SLO = {
-						set_cosmetic_tag = CZE_CEF_puppet
-					}
-				}
-				SLO = {
-					add_ideas = CZE_federalization_agreement_puppets
 				}
 				if = {
 					limit = {
@@ -6077,20 +6062,11 @@ focus_tree = {
 						has_completed_focus = CZE_form_a_federation
 					}
 				}
-				RUT ={
-					set_cosmetic_tag = CZE_puppet
-				}
 			}
 			else_if = {
 				limit = {
 					has_completed_focus = CZE_form_a_federation
 				}
-				RUT = {
-					set_cosmetic_tag = CZE_CEF_puppet
-				}
-			}
-			RUT = {
-				add_ideas = CZE_federalization_agreement_puppets
 			}
 
 			if = {
@@ -10162,12 +10138,6 @@ focus_tree = {
 				freedom_level = 0.5
 			}
 			hidden_effect = {	#necessary or theyll keep elections
-				RUT = {
-					set_politics = {
-						ruling_party = communism
-						elections_allowed = no
-					}
-				}
 			}
 			release_autonomy = {
 				target = SLO

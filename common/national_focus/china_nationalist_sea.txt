@@ -118,7 +118,6 @@ focus_tree = {
 					limit = {
 						JAP = { NOT = { has_completed_focus = JAP_okadas_military_purge_speech } }
 					}
-					activate_mission = CHI_kwantung_army_impatience_dummy
 				custom_effect_tooltip = generic_skip_one_line_tt
 				}
 			}
@@ -166,7 +165,6 @@ focus_tree = {
 				JAP = {
 					set_variable = { kwantung_army_timeout_dummy_time_var  = days_mission_timeout@JAP_kwantung_army_impatience }
 				}
-				activate_mission = CHI_kwantung_army_impatience_dummy
 				}
 			}
 		}
@@ -2171,7 +2169,6 @@ focus_tree = {
 					limit = {
 						JAP = { NOT = { has_completed_focus = JAP_okadas_military_purge_speech } }
 					}
-					activate_mission = CHI_kwantung_army_impatience_dummy
 				custom_effect_tooltip = generic_skip_one_line_tt
 				}
 			}
@@ -2221,7 +2218,6 @@ focus_tree = {
 					JAP = {
 						set_variable = { kwantung_army_timeout_dummy_time_var  = days_mission_timeout@JAP_kwantung_army_impatience }
 					}
-					activate_mission = CHI_kwantung_army_impatience_dummy
 				}
 			}
 		}
@@ -4175,11 +4171,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.05
-			unlock_decision_tooltip = {
-				decision = CHI_demonstrate_our_resolve_decision
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 
@@ -5302,7 +5293,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			activate_mission = CHI_burma_campaign_mission
             CHI_tu_yuming = {
                 custom_effect_tooltip = unlock_general_tt
             }
@@ -5357,7 +5347,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			activate_mission = CHI_indo_chinese_campaign_mission
 		}
 	}
 
@@ -9265,7 +9254,6 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-			unlock_decision_tooltip = CHI_invest_in_officer_training
 
 			IF = {
 				limit = {
@@ -9653,7 +9641,6 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			unlock_decision_tooltip = CHI_breach_the_yellow_river
 
 		}
 
@@ -9677,7 +9664,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			unlock_decision_tooltip = CHI_declare_war_zone
 			custom_effect_tooltip = CHI_modify_corruption_in_the_armed_forces_tt
 			add_to_variable = {
 				CHI_corruption_in_the_armed_forces_army_attack_factor = 0.025
@@ -9902,7 +9888,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			unlock_decision_tooltip = CHI_bog_them_down
 			custom_effect_tooltip = generic_skip_one_line_tt
 			every_core_state = {
 				limit = {

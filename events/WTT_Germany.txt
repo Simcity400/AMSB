@@ -2991,10 +2991,6 @@ country_event = {
 								is_ai = yes
 							}
 						}
-						ARG = {
-							add_timed_idea = { idea = fascism_drift_ARG days = 1460 }
-							country_event = { id = wtt_germany.1004 days = 1095 random_days = 365 }
-						}
 					}
 					
 					IF = {
@@ -3002,12 +2998,6 @@ country_event = {
 							has_dlc = "Trial of Allegiance"
 							ARG = {
 								exists = yes
-							}
-						}
-						ARG = {
-							country_event = {
-								id = ARG_political_events.120
-								days = 30
 							}
 						}
 					}
@@ -4446,32 +4436,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = wtt_germany.1004
-
-	hidden = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		set_politics = { 
-			ruling_party = fascism 
-			elections_allowed = no 
-		}
-		add_country_leader_role = {
-			character = ARG_senor_hitler
-			country_leader = {
-				expire = "1965.1.1"
-				ideology = nazism
-				traits = {
-					dictator
-					incognito
-				}
-			}
-			promote_leader = yes
-		}
-	}
-}
 
 country_event = {
 	id = wtt_germany.1005

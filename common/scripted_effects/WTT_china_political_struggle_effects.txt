@@ -66,11 +66,6 @@ WTT_setup_political_struggle = {
 
 
 
-		GXC = { set_variable = { warlord_political_support_value = @WARLORD_SUPPORT_VALUE } }
-		YUN = { set_variable = { warlord_political_support_value = @WARLORD_SUPPORT_VALUE } }
-		SHX = { set_variable = { warlord_political_support_value = @WARLORD_SUPPORT_VALUE } }
-		XSM = { set_variable = { warlord_political_support_value = @WARLORD_SUPPORT_VALUE } }
-		SIK = { set_variable = { warlord_political_support_value = @WARLORD_SUPPORT_VALUE } }
 		
 		event_target:WTT_current_china_leader = {
 			WTT_save_country_as_event_target = yes
@@ -126,42 +121,6 @@ WTT_save_country_as_event_target = {
 		}
 		save_global_event_target_as = scope_CHI
 	}
-	else_if = {
-		limit = {
-			original_tag = PRC
-		}
-		save_global_event_target_as = scope_PRC
-	}
-	else_if = {
-		limit = {
-			original_tag = GXC
-		}
-		save_global_event_target_as = scope_GXC
-	}
-	else_if = {
-		limit = {
-			original_tag = YUN
-		}
-		save_global_event_target_as = scope_YUN
-	}
-	else_if = {
-		limit = {
-			original_tag = SHX
-		}
-		save_global_event_target_as = scope_SHX
-	}
-	else_if = {
-		limit = {
-			original_tag = XSM
-		}
-		save_global_event_target_as = scope_XSM
-	}
-	else_if = {
-		limit = {
-			original_tag = SIK
-		}
-		save_global_event_target_as = scope_SIK
-	}
 }
 
 WTT_clear_country_event_target = {
@@ -170,42 +129,6 @@ WTT_clear_country_event_target = {
 			original_tag = CHI
 		}
 		clear_global_event_target = scope_CHI
-	}
-	else_if = {
-		limit = {
-			original_tag = PRC
-		}
-		clear_global_event_target = scope_PRC
-	}
-	else_if = {
-		limit = {
-			original_tag = GXC
-		}
-		clear_global_event_target = scope_GXC
-	}
-	else_if = {
-		limit = {
-			original_tag = YUN
-		}
-		clear_global_event_target = scope_YUN
-	}
-	else_if = {
-		limit = {
-			original_tag = SHX
-		}
-		clear_global_event_target = scope_SHX
-	}
-	else_if = {
-		limit = {
-			original_tag = XSM
-		}
-		clear_global_event_target = scope_XSM
-	}
-	else_if = {
-		limit = {
-			original_tag = SIK
-		}
-		clear_global_event_target = scope_SIK
 	}
 }
 

@@ -5768,34 +5768,9 @@ focus = {
 							}
 						}
 					}
-					COG = {
-						every_controlled_state = {
-							limit = { 
-								is_capital = yes 
-							}
-							add_building_construction = {
-								type = infrastructure
-								level = 1
-								instant_build = yes
-							}
-						}
-					}
 				}
 
 				ELSE = {
-					COG = {
-						random_controlled_state = {
-							limit = {
-								infrastructure < 5
-							}
-							add_building_construction = {
-								type = infrastructure
-								level = 1
-								instant_build = yes
-							}
-							
-						}
-					}
 				}
 				
 			}
@@ -6374,13 +6349,6 @@ focus = {
 							}	
 						}
 					}
-				}
-				COG = {
-					add_dynamic_modifier = { 
-						modifier = COG_belgian_congo_colonial_dynamic_modifier
-					}
-					custom_effect_tooltip = generic_skip_one_line_tt
-					custom_effect_tooltip = warning_this_idea_can_be_removed_tt
 				}
 			}
 

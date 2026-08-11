@@ -799,18 +799,10 @@ focus_tree = {
 				limit = {
 					has_active_mission = POL_looming_peasants_strike_mission
 				}
-				add_days_mission_timeout  = {
-					mission = POL_looming_peasants_strike_mission
-					days = 70
-				}
 			}
 			if = {
 				limit = {
 					has_active_mission = POL_peasants_strike
-				}
-				add_days_mission_timeout  = {
-					mission = POL_peasants_strike
-					days = 70
 				}
 			}
 		}
@@ -2054,10 +2046,6 @@ focus_tree = {
 				add_idea = POL_sanation_left_opposition_2
 				remove_idea = POL_sanation_left_opposition_1
 			}
-			activate_mission = POL_sanation_left_irritation
-			activate_mission = POL_sanation_right_irritation
-			unlock_decision_tooltip = POL_sideline_the_left
-			unlock_decision_tooltip = POL_sideline_the_right
 		}
 	}
 
@@ -3824,7 +3812,6 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			unlock_decision_tooltip = POL_defend_in_west_state
 			add_doctrine_cost_reduction = {
 				name = POL_local_western_plans
 				cost_reduction = 0.5
@@ -4533,7 +4520,6 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
-			unlock_decision_tooltip = POL_defend_in_east_state
 		}
 	}
 
@@ -5215,7 +5201,6 @@ focus_tree = {
 				}
 				add_unit_leader_trait = peasant_sympathiser
 			}
-			unlock_decision_tooltip = POL_woo_military_staff
 
 			# Set next general 
 			hidden_effect = {
@@ -5282,18 +5267,10 @@ focus_tree = {
 				limit = {
 					has_active_mission = POL_looming_peasants_strike_mission
 				}
-				add_days_mission_timeout  = {
-					mission = POL_looming_peasants_strike_mission
-					days = 100
-				}
 			}
 			if = {
 				limit = {
 					has_active_mission = POL_peasants_strike
-				}
-				add_days_mission_timeout  = {
-					mission = POL_peasants_strike
-					days = 90
 				}
 			}
 			custom_effect_tooltip = add_dem_civil_war_tt
@@ -7514,9 +7491,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			LIB = {
-				country_event = { id = NSB_poland_events.6 days = 1 }
-			}
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
 				puppet = LIB
@@ -7994,7 +7968,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			unlock_decision_tooltip = POL_arm_monarchist_militants
 		}
 	}
 
@@ -9256,9 +9229,6 @@ focus_tree = {
 				limit = {
 					SLO = { exists = yes }
 				}
-				SLO = {
-					country_event = NSB_poland_events.1
-				}
 			}
 			else_if = {
 				limit = {
@@ -10061,7 +10031,6 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			unlock_decision_tooltip = POL_arm_monarchist_militants
 		}
 	}
 
@@ -11264,9 +11233,6 @@ focus_tree = {
 			if = {
 				limit = {
 					SLO = { exists = yes }
-				}
-				SLO = {
-					country_event = NSB_poland_events.1
 				}
 			}
 			else_if = {
@@ -13879,7 +13845,6 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			unlock_decision_tooltip = POL_diplomatic_mission_to_FIN
 		}
 	}
 
@@ -13928,9 +13893,6 @@ focus_tree = {
 				}
 			}
 
-			unlock_decision_tooltip = POL_diplomatic_mission_to_DEN
-			unlock_decision_tooltip = POL_diplomatic_mission_to_SWE
-			unlock_decision_tooltip = POL_diplomatic_mission_to_NOR
 		}
 	}
 
@@ -14061,8 +14023,6 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			unlock_decision_tooltip = POL_diplomatic_mission_to_CZE
-			unlock_decision_tooltip = POL_diplomatic_mission_to_YUG
 		}
 	}
 
@@ -14101,8 +14061,6 @@ focus_tree = {
 			CZE = {
 				country_event = { id = poland.16 days = 1 }
 			}
-			unlock_decision_tooltip = POL_diplomatic_mission_to_AUS
-			unlock_decision_tooltip = POL_diplomatic_mission_to_HUN
 		}
 	}
 
@@ -14179,7 +14137,6 @@ focus_tree = {
 					country_event = { id = poland.16 days = 1 }
 				}
 			}
-			unlock_decision_tooltip = POL_diplomatic_mission_to_ITA
 		}
 	}
 
@@ -14219,8 +14176,6 @@ focus_tree = {
 			YUG = {
 				country_event = { id = poland.16 days = 1 }
 			}
-			unlock_decision_tooltip = POL_diplomatic_mission_to_GRE
-			unlock_decision_tooltip = POL_diplomatic_mission_to_TUR
 		}
 	}
 
@@ -14270,7 +14225,6 @@ focus_tree = {
 			GRE = {
 				country_event = { id = poland.16 days = 1 }
 			}
-			unlock_decision_tooltip = POL_diplomatic_mission_to_ITA
 		}
 	}
 
@@ -14320,7 +14274,6 @@ focus_tree = {
 			TUR = {
 				country_event = { id = poland.16 days = 1 }
 			}
-			unlock_decision_tooltip = POL_diplomatic_mission_to_ITA
 		}
 	}
 

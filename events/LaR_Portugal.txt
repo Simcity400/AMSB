@@ -156,14 +156,12 @@ country_event = {
 				target = ROOT
 				modifier = POR_iberian_summit_working_together
 			}
-			activate_decision = POR_iberian_summit_proposal_delayed
 		}
 		ROOT = {
 			add_opinion_modifier = {
 				target = FROM
 				modifier = POR_iberian_summit_working_together
 			}
-			activate_decision = POR_iberian_summit_proposal_delayed
 		}
 		set_global_flag = POR_iberian_summit_proposal_delayed_flag
 	}
@@ -273,14 +271,12 @@ country_event = {
 					target = ROOT
 					modifier = POR_iberian_summit_working_together
 				}
-				activate_decision = POR_iberian_summit_proposal_delayed
 			}
 			ROOT = {
 				add_opinion_modifier = {
 					target = FROM
 					modifier = POR_iberian_summit_working_together
 				}
-				activate_decision = POR_iberian_summit_proposal_delayed
 			}
 		}
 	}
@@ -558,14 +554,12 @@ country_event = {
 				target = ROOT
 				modifier = POR_iberian_summit_working_together
 			}
-			activate_decision = POR_iberian_summit_proposal_delayed
 		}
 		ROOT = {
 			add_opinion_modifier = {
 				target = FROM
 				modifier = POR_iberian_summit_working_together
 			}
-			activate_decision = POR_iberian_summit_proposal_delayed
 		}
 		set_global_flag = POR_iberian_summit_proposal_delayed_flag
 	}
@@ -674,14 +668,12 @@ country_event = {
 					target = ROOT
 					modifier = POR_iberian_summit_working_together
 				}
-				activate_decision = POR_iberian_summit_proposal_delayed
 			}
 			ROOT = {
 				add_opinion_modifier = {
 					target = FROM
 					modifier = POR_iberian_summit_working_together
 				}
-				activate_decision = POR_iberian_summit_proposal_delayed
 			}
 		}
 	}
@@ -1370,7 +1362,6 @@ country_event = {
 		custom_effect_tooltip = lar_portugal_naval_blockade.1_tt
 		every_country = {
 			limit = { has_war_with = ENG }
-			unlock_decision_tooltip = POR_evade_blockade_with_portuguese_convoys
 		}
 	}
 }
@@ -1411,7 +1402,6 @@ country_event = {
 		custom_effect_tooltip = lar_portugal_naval_blockade.1_tt
 		every_country = {
 			limit = { has_war_with = ENG }
-			unlock_decision_tooltip = POR_evade_blockade_with_portuguese_convoys
 		}
 		effect_tooltip = {
 			remove_opinion_modifier = {
@@ -1536,7 +1526,6 @@ country_event = {
 				target = ENG
 				modifier = POR_ships_trade
 			}
-			activate_decision = POR_british_submarines_construction_progress
 			set_country_flag = POR_purchase_british_submarines_flag
 		}
 		else_if = {
@@ -1549,7 +1538,6 @@ country_event = {
 				target = ITA
 				modifier = POR_ships_trade
 			}
-			activate_decision = POR_italian_submarines_construction_progress
 			set_country_flag = POR_purchase_italian_submarines_flag
 		}
 	}
@@ -1579,7 +1567,6 @@ country_event = {
 				target = ENG
 				modifier = POR_ships_trade
 			}
-			activate_decision = POR_british_destroyers_construction_progress
 			set_country_flag = POR_purchase_british_destroyers_flag
 		}
 		else_if = {
@@ -1592,7 +1579,6 @@ country_event = {
 				target = ITA
 				modifier = POR_ships_trade
 			}
-			activate_decision = POR_italian_destroyers_construction_progress
 			set_country_flag = POR_purchase_italian_destroyers_flag
 		}
 	}
@@ -1622,7 +1608,6 @@ country_event = {
 				target = ENG
 				modifier = POR_ships_trade
 			}
-			activate_decision = POR_british_light_cruiser_construction_progress
 			set_country_flag = POR_purchase_british_light_cruiser_flag
 		}
 		else_if = {
@@ -1635,7 +1620,6 @@ country_event = {
 				target = ITA
 				modifier = POR_ships_trade
 			}
-			activate_decision = POR_italian_light_cruiser_construction_progress
 			set_country_flag = POR_purchase_italian_light_cruiser_flag
 		}
 	}
@@ -1714,7 +1698,6 @@ country_event = {
 
 	option = {
 		name = lar_portugal_promote_monarchist_cause.1.a
-		unlock_decision_tooltip = POR_repress_brazilian_monarchists
 	}
 }
 
@@ -2302,7 +2285,6 @@ country_event = {
 	option = {
 		name = lar_portugal_spanish_civil_war.1.a
 		POR = {
-			unlock_decision_tooltip = POR_fight_alongside_the_republic
 		}
 		custom_effect_tooltip = lar_portugal_spanish_civil_war.1_tt
 	}
@@ -2320,7 +2302,6 @@ country_event = {
 	option = {
 		name = lar_portugal_spanish_civil_war.2.a
 		POR = {
-			unlock_decision_tooltip = POR_fight_alongside_the_nationalists
 		}
 		custom_effect_tooltip = lar_portugal_spanish_civil_war.2_tt
 	}
@@ -2338,7 +2319,6 @@ country_event = {
 	option = {
 		name = lar_portugal_spanish_civil_war.3.a
 		POR = {
-			unlock_decision_tooltip = POR_fight_alongside_the_carlists
 		}
 		custom_effect_tooltip = lar_portugal_spanish_civil_war.3_tt
 	}

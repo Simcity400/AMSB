@@ -3151,37 +3151,6 @@ country_event = {
 }
 
 # We have been assigned a new monarch - event for CRO
-country_event = {
-	id = WW_hungary.65
-	title = WW_hungary.65.t 
-	desc = WW_hungary.65.desc
-	picture = GFX_report_event_military_planning
-	
-	is_triggered_only = yes
-
-	# oki
-	option = { 
-		name = WW_hungary.65.a
-
-		set_politics = {
-			ruling_party = neutrality
-			elections_allowed = no
-			name = CRO_house_of_habsburg
-			long_name = CRO_house_of_habsburg
-		}	
-
-		add_country_leader_role = {
-		    character = CRO_joseph_francis
-		    promote_leader = yes
-		    country_leader = {
-		        ideology = despotism
-		        expire = "1965.1.1.1"
-		        traits = { ban_of_croatia_slavonia }
-		    }
-		}
-
-	}
-}
 
 # Hungary Demands we restore Habsburg Rule - event for CRO
 country_event = {
@@ -3307,14 +3276,6 @@ country_event = {
 			transfer_state_to = CRO
 		} 
 
-		CRO = {
-			drop_cosmetic_tag = yes
-			set_cosmetic_tag = CRO_croatia_slavonia_kingdom
-			country_event = {
-				id = WW_hungary.65
-				hours = 0
-			}	
-		}
 
 		IF = {
 			limit = {
@@ -3453,30 +3414,7 @@ country_event = {
 			factor = 100
 		}
 
-		LBV = {
-			every_core_state = {
-				limit = {
-					OR = {
-						is_controlled_by = ROOT
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = PREV
-						}
-					}
-					NOT = {
-						is_core_of = ROOT
-					}
-					NOT = {
-						is_owned_and_controlled_by = LBV
-					}
-				}
-				transfer_state_to = LBV
-			}
-		}
 
-		LBV = {
-			drop_cosmetic_tag = yes	
-		}
 
 		IF = {
 			limit = {
@@ -5321,9 +5259,6 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt	
 
-		TRA = {
-			set_cosmetic_tag = TRA_szekely_land
-		}
 
 		hidden_effect = {
 			IF = {
@@ -6576,54 +6511,6 @@ country_event = {
 }
 
 # Stalin Arrives in Georgia
-country_event = {
-	id = WW_hungary.124
-	title = WW_hungary.124.t
-	desc = WW_hungary.124.desc
-	picture = GFX_report_event_stalin_meeting
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-	
-	option = {
-		name = WW_hungary.124.a
-		
-		GEO_ioseb_jughashvili = {
-			add_country_leader_role = {
-				promote_leader = yes
-				country_leader = {
-					ideology = stalinism
-					expire = "1965.1.1.1"
-					traits = { GEO_vengeful_stalinist } 
-				}
-			}	
-		}
-
-		IF = {
-			limit = {
-				NOT = {
-					has_government = communism
-				}
-			}
-			set_politics = {
-				ruling_party = communism
-				elections_allowed = no
-				long_name = SOV_communism_party_russian_long
-				name = SOV_communism_party
-			}
-		}
-		
-		
-	}
-
-	option = {
-		name = WW_hungary.124.b
-		
-		add_political_power = 50
-		
-	}
-}
 
 
 

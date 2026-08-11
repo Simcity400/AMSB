@@ -338,73 +338,12 @@ country_event = {
 		#		states = { 70 71 664 73 }
 		#	}
 
-		SLO = {
-			if = {
-				limit = {
-					CZE = {
-						owns_state = 70
-					}
-				}
-				transfer_state = 70
-			}
-			if = {
-				limit = {
-					CZE = {
-						owns_state = 71
-					}
-				}
-				transfer_state = 71
-			}
-			if = {
-				limit = {
-					CZE = {
-						owns_state = 73
-					}
-				}
-				transfer_state = 73
-			}
-			if = {
-				limit = {
-					CZE = {
-						owns_state = 664
-					}
-				}
-				transfer_state = 664
-			}
-			
-		}
 		declare_war_on = {
 			target = SLO
 			type = annex_everything
 		}
-		SLO = { add_state_core = 70 }
-		SLO = { add_state_core = 71 }
-		SLO = { add_state_core = 73 }
-		SLO = { add_state_core = 664 }
 		
 		hidden_effect = {
-			SLO = {
-				if = {
-					limit = {
-						NOT = {
-							has_dlc = "No Step Back"
-						}
-					}
-					load_oob = "SLO_independence"
-				}
-				else = {
-					load_oob = "SLO_independence_nsb"
-				}
-				if = {
-					limit = {
-						has_dlc = "By Blood Alone"
-					}
-					load_oob = "SLO_1939_air_bba"
-				}
-				else = {
-					load_oob = "SLO_1939_air_legacy"
-				}
-			}
 		}
 	}
 }

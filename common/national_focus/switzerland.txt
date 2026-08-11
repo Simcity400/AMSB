@@ -923,7 +923,6 @@
 				value = 1
 				tooltip = SWI_reduce_militia_activation_time_TT
 			}
-			unlock_decision_tooltip = SWI_improve_deployment_speed 
 			
 			SWI_add_suspicious_prep_opinion = yes 
 		}
@@ -2589,10 +2588,6 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			unlock_decision_tooltip = {
-				decision = SWI_offer_fascist_to_trade_gold
-				show_effect_tooltip  = yes
-			}		
 		}
 	}
 
@@ -2829,10 +2824,6 @@
 					SWI_saint_bernard_tech = 1
 					popup = no 
 				 } 
-			}
-			unlock_decision_tooltip = {
-				decision = SWI_field_hospital_for_militias
-				show_effect_tooltip  = yes
 			}
 		}
 	}
@@ -3308,7 +3299,6 @@
 			hidden_effect = {
 				SWI_find_best_democratic_ally = yes
 			}
-			unlock_decision_tooltip = SWI_offer_democratic_to_trade_gold
 		}
 	}	
 
@@ -3637,7 +3627,6 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			unlock_decision_tooltip = { decision = SWI_case_north_decision show_effect_tooltip = yes}
 			var:SWI_biggest_fascist = {
 				add_opinion_modifier = {
 					modifier = SWI_is_planning_against_us
@@ -3732,9 +3721,6 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			unlock_decision_tooltip = { 
-				decision = SWI_fund_resistance_decision 
-			}
 		}
 	}
 	
@@ -3977,9 +3963,6 @@
 			remove_ideas = { SWI_swiss_neutrality }
 
 			custom_effect_tooltip = SWI_oasis_of_democracy_tt
-			unlock_decision_tooltip = {
-				decision = SWI_seize_fascist_gold
-			}
 		}
 	}
 
@@ -4285,7 +4268,6 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			unlock_decision_tooltip = SWI_offer_intel_support
 		}
 	}	
 
@@ -4380,7 +4362,6 @@
 
 		completion_reward = {
 			add_political_power = 100
-			unlock_decision_tooltip = SWI_offer_operative
 			hidden_effect = { 
 				SWI_find_best_democratic_ally = yes
 			}
@@ -4459,9 +4440,6 @@
 				SWI = { set_variable = { SWI_best_dem_ally = PREV } }
 			}
 			custom_effect_tooltip = if_they_accept_tt
-			unlock_decision_tooltip = {
-				decision = SWI_support_secret_ally
-			}
 			custom_effect_tooltip = SWI_secret_pact_with_allies_TT
 
 		}
@@ -4507,9 +4485,6 @@
 			add_war_support = 0.1
 
 			custom_effect_tooltip = SWI_oasis_of_democracy_tt
-			unlock_decision_tooltip = {
-				decision = SWI_seize_fascist_gold
-			}
 
 		}
 	}
@@ -5868,9 +5843,6 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			unlock_decision_tooltip = {
-				decision = SWI_influence_future_cantons
-			}
 			custom_effect_tooltip = SWI_press_for_future_canton_TT
 		}
 	}
@@ -5948,8 +5920,6 @@
 				limit = {
 					communism > 0.3
 				}
-				unlock_decision_tooltip = SWI_embrace_communism 
-				unlock_decision_tooltip = SWI_declare_the_alpine_union
 			}
 			if = {
 				limit = {
@@ -5958,8 +5928,6 @@
 						neutrality > 0.3
 					}
 				}
-				unlock_decision_tooltip = SWI_dismiss_council
-				unlock_decision_tooltip = SWI_declare_the_alpine_confederation
 			}
 		}
 	}
@@ -6163,7 +6131,6 @@
 				name = SWI_neutral_entente_faction
 				icon = GFX_faction_logo_generic_democratic
 			}
-			unlock_decision_tooltip =  SWI_invite_to_entente
 		}
 	}
 	
@@ -6456,7 +6423,6 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			unlock_decision_tooltip = SWI_buy_ships_from_country
 		}
 	}
 
@@ -7408,7 +7374,6 @@ focus = {
 
 				}
 			}
-			unlock_decision_tooltip = { decision = SWI_case_west_decision show_effect_tooltip = yes}
 			FRA = {
 				add_opinion_modifier = {
 					modifier = SWI_is_planning_against_us
@@ -7692,9 +7657,6 @@ focus = {
 					target = ROOT
 				}
 			}
-			unlock_decision_tooltip = {
-				decision = SWI_seize_democratic_gold
-			}
 		}
 	}
 	
@@ -7757,11 +7719,6 @@ focus = {
 			hidden_effect = {
 				SWI_robert_tobler = { SWI_make_character_confederation_president = yes } 
 			}
-			unlock_decision_tooltip = {
-				decision = SWI_appease_fascists
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}			
 			retire_character = SWI_rolf_henne
 			SWI_make_helvetia_aggressive = yes
 		}
@@ -7830,11 +7787,6 @@ focus = {
 			SWI_make_helvetia_aggressive = yes
 			remove_power_balance = {
 				id = SWI_centralization_bop
-			}
-			unlock_decision_tooltip = {
-				decision = SWI_spouse_fascism
-				show_effect_tooltip = yes
-				show_modifiers = yes
 			}
 		}
 	}
@@ -7952,11 +7904,6 @@ focus = {
 			set_politics = {
 				ruling_party = fascism
 				elections_allowed = no
-			}
-			unlock_decision_tooltip = {
-				decision = SWI_spouse_fascism
-				show_effect_tooltip = yes
-				show_modifiers = yes
 			}
 			hidden_effect = {
 				set_country_flag = SWI_elected_centralized_president

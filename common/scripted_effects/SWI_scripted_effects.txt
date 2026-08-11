@@ -837,10 +837,6 @@ SWI_check_if_angry = {
 					limit = {
 						has_active_mission = SWI_country_angry_mission
 					}
-					add_days_mission_timeout = {
-						mission = SWI_country_angry_mission
-						days = 50
-					}
 				}
 			}
 		}
@@ -1891,7 +1887,6 @@ SWI_outgoing_president_cleanup = {
 		}
 		if = {
 			limit = { has_active_mission = SWI_recently_finished_president_initiative_mission }
-			remove_mission = SWI_recently_finished_president_initiative_mission 
 		}
 		if = {
 			limit = { has_country_flag = SWI_president_gave_MR_speech }
@@ -2046,7 +2041,6 @@ SWI_president_initiative_remove_effect = {
 	set_country_flag = SWI_recently_finished_president_initiative
 	clr_country_flag = SWI_ongoing_president_initiative
 	hidden_effect = {
-		activate_mission = SWI_recently_finished_president_initiative_mission
 	}
 }
 
@@ -2096,11 +2090,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_defense_fund_drive
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2111,11 +2100,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_swiss_democratic_tradition_campaign
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2126,11 +2110,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_rally_workers
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2141,11 +2120,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_spouse_fascism
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2156,12 +2130,7 @@ SWI_show_president_decisions = {
 			}
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_appease_fascists
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			
-	}	}
+			}
 	}
 	else_if = {
 		limit = {
@@ -2171,11 +2140,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_focus_on_swiss_unity
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2185,11 +2149,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_isolate_switzerland
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2200,11 +2159,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_militarization_drive
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2214,11 +2168,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_expand_covert_operations
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2228,11 +2177,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_expand_arms_industry
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}	
 	else_if = {
@@ -2243,11 +2187,6 @@ SWI_show_president_decisions = {
 			}		
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_anti_fascist_drive
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2255,11 +2194,6 @@ SWI_show_president_decisions = {
 			has_trait = SWI_humanitarian
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_support_humanitarian_efforts
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	else_if = {
@@ -2267,11 +2201,6 @@ SWI_show_president_decisions = {
 			has_trait = SWI_diplomat
 		}
 		SWI = {
-			unlock_decision_tooltip = {
-				decision = SWI_diplomatic_mission
-				show_effect_tooltip = yes
-				show_modifiers = yes
-			}
 		}
 	}
 	if = {

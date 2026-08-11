@@ -34,42 +34,10 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 73 }
 				}
-				if =  {
-					limit = {
-						FROM = {
-							original_tag = RUT
-							is_ai = yes #Don't remove core from player
-						}
-					}
-					FROM.FROM = {
-						if = {
-							limit = {
-								is_core_of = RUT
-							}
-							remove_core_of = RUT
-						}
-					}
-				}
 			}
 			if = {
 				limit = {
 					FROM.FROM = { state = 73 }
-				}
-				if =  {
-					limit = {
-						FROM = {
-							original_tag = SDL
-							is_ai = yes #Don't remove core from player
-						}
-					}
-					FROM.FROM = {
-						if = {
-							limit = {
-								is_core_of = SDL
-							}
-							remove_core_of = SDL
-						}
-					}
 				}
 			}
 			if = {
@@ -78,22 +46,6 @@ on_actions = {
 						OR = {
 							state = 9
 							state = 74
-						}
-					}
-				}
-				if =  {
-					limit = {
-						FROM = {
-							tag = RKH
-							is_ai = yes #Don't remove core from player
-						}
-					}
-					FROM.FROM = {
-						if = {
-							limit = {
-								is_core_of = RKH
-							}
-							remove_core_of = RKH
 						}
 					}
 				}

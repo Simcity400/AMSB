@@ -529,15 +529,6 @@ country_event = {
 			base = 5
 		}
 
-		MAN = {
-			country_event = { 
-				id = wtt_japan.32 
-				hours = 3
-			}
-			effect_tooltip = {
-				add_ideas = MAN_exiled_imperial_family
-			}
-		}
 
 	}
 
@@ -554,25 +545,6 @@ country_event = {
 }
 
 #Event to MAN. Exiled imperial family comes knocking
-country_event = {
-	id = wtt_japan.32
-	title = wtt_japan.32.t
-	desc = wtt_japan.32.desc
-	picture = GFX_report_event_jap_imperial_family
-
-	is_triggered_only = yes
-	
-	option = {
-		name = wtt_japan.32.a
-		ai_chance = {
-			base = 10
-		}
-
-		add_ideas = MAN_exiled_imperial_family
-
-	}
-
-}
 
 #Event from Communist China: turn over Manchuria OR ELSE
 country_event = {
@@ -1156,27 +1128,17 @@ country_event = {
 					
 				}
 			}
-			MAN = {
-				set_cosmetic_tag = MAN_kwantung_army
-				hidden_effect = {
-					set_country_flag = MAN_kwantung_army_took_control_flag
-				}
-			}
 		}
 		if = {
 			limit = {
 				MAN = { has_idea = MAN_kwantung_veto }
 			}
-			MAN = { remove_ideas = MAN_kwantung_veto }
 		}
 		if = {
 			limit = {
 				KOR = { is_subject_of = ROOT }
 			}
 			set_autonomy = { target = KOR autonomy_state = autonomy_free }
-			KOR = {
-				retire_character = KOR_jiro_minami
-			}
 
 		}
 		add_popularity = { ideology = democratic popularity = 0.1 }
@@ -1191,7 +1153,7 @@ country_event = {
 					is_core_of = KOR
 				}
 			}
-			release = KOR
+
 		}
 	}
 }
@@ -1706,12 +1668,6 @@ country_event = {
 					}
 					white_peace = ROOT
 					hidden_effect = {
-						if = {
-							limit = {
-								original_tag = PRC
-								has_government = communism
-							}
-						}
 						country_event = {
 							id = SEA_PRC_misc_events.9
 							days = 15
@@ -1776,14 +1732,6 @@ country_event = {
 					owns_state = 1028
 				}
 			}
-			KOR = {
-				transfer_state = 525
-				transfer_state = 527
-				transfer_state = 1029
-				transfer_state = 1031
-				transfer_state = 1030
-				transfer_state = 1028
-			}
 		}
 		else_if = {
 			limit = {
@@ -1815,22 +1763,6 @@ country_event = {
 				}
 				white_peace = KOR
 			}
-			MAN = {
-				puppet = KOR
-			}
-			KOR = {	
-				set_party_name = {
-					ideology = neutrality
-					long_name = KOR_neutrality_party
-					name = KOR_neutrality_party
-				}
-				set_party_name = {
-					ideology = democratic
-					long_name = KOR_democratic_party
-					name = KOR_democratic_party
-				}
-				retire_character = KOR_jiro_minami
-			}
 		}
 		else_if = {
 			limit = {
@@ -1859,23 +1791,6 @@ country_event = {
 					has_war_with = KOR
 				}
 				white_peace = KOR
-			}
-			KOR = {	
-				set_politics = {
-					ruling_party = democratic
-					elections_allowed = yes
-				}
-				set_party_name = {
-					ideology = neutrality
-					long_name = KOR_neutrality_party
-					name = KOR_neutrality_party
-				}
-				set_party_name = {
-					ideology = democratic
-					long_name = KOR_democratic_party
-					name = KOR_democratic_party
-				}
-				retire_character = KOR_jiro_minami
 			}
 
 		}
@@ -2046,17 +1961,6 @@ country_event = {
 					}
 				}
 				FROM = { release = KOR }
-				KOR = {
-					transfer_state = 525
-					transfer_state = 527
-					transfer_state = 1029
-					transfer_state = 1031
-					transfer_state = 1030
-					transfer_state = 1028
-				}
-				MAN = {
-					puppet = KOR
-				}
 			}
 			else_if = {
 				limit = {
@@ -2072,9 +1976,6 @@ country_event = {
 						end_wars  = yes 
 						end_civil_wars = yes
 					}	
-				}
-				MAN = {
-					puppet = KOR
 				}
 			}
 			if = {
@@ -2167,29 +2068,6 @@ country_event = {
 				}
 			}
 			FROM = { release = KOR }
-			KOR = {
-				transfer_state = 525
-				transfer_state = 527
-				transfer_state = 1029
-				transfer_state = 1031
-				transfer_state = 1030
-				transfer_state = 1028
-			}
-			MAN = {
-				puppet = KOR
-			}
-			KOR = {	
-				set_party_name = {
-					ideology = neutrality
-					long_name = KOR_neutrality_party
-					name = KOR_neutrality_party
-				}
-				set_party_name = {
-					ideology = democratic
-					long_name = KOR_democratic_party
-					name = KOR_democratic_party
-				}
-			}
 		}
 		else_if = {
 			limit = {
@@ -2206,22 +2084,6 @@ country_event = {
 					end_civil_wars = yes
 				}	
 			}
-			MAN = {
-				puppet = KOR
-			}
-			KOR = {	
-				set_party_name = {
-					ideology = neutrality
-					long_name = KOR_neutrality_party
-					name = KOR_neutrality_party
-				}
-				set_party_name = {
-					ideology = democratic
-					long_name = KOR_democratic_party
-					name = KOR_democratic_party
-				}
-				retire_character = KOR_jiro_minami
-			}
 		}
 		if = {
 			limit = {
@@ -2229,7 +2091,6 @@ country_event = {
 					is_controlled_by = JAP
 				}
 			}
-			MAN = { transfer_state = 524 }
 		}
 		MAN = {
 			every_controlled_state = {

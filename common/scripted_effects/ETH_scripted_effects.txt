@@ -748,9 +748,6 @@ ETH_create_federation = {
 				limit = {
 					is_core_of = HAR 
 				}
-				HAR = {
-					transfer_state = PREV 
-				}
 			
 			}
 			IF = {
@@ -766,16 +763,12 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = HAR
 			}
-			HAR = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { TIG = { exists = no } any_owned_state = {is_core_of = TIG }}
 			every_owned_state = {
 				limit = {
 					is_core_of = TIG 
-				}
-				TIG = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -791,16 +784,12 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = TIG
 			}
-			TIG = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { AFA = { exists = no }any_owned_state = {is_core_of = AFA }}
 			every_owned_state = {
 				limit = {
 					is_core_of = AFA 
-				}
-				AFA = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -816,16 +805,12 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = AFA
 			}
-			AFA = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { BEG = { exists = no }any_owned_state = {is_core_of = BEG }}
 			every_owned_state = {
 				limit = {
 					is_core_of = BEG 
-				}
-				BEG = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -841,16 +826,12 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = BEG
 			}
-			BEG = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { GBA = { exists = no } any_owned_state = {is_core_of = GBA }}
 			every_owned_state = {
 				limit = {
 					is_core_of = GBA 
-				}
-				GBA = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -866,16 +847,12 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = GBA
 			}
-			GBA = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { SID = { exists = no } any_owned_state = {is_core_of = SID }}
 			every_owned_state = {
 				limit = {
 					is_core_of = SID 
-				}
-				SID = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -891,16 +868,12 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = SID
 			}
-			SID = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { QEM = { exists = no }any_owned_state = {is_core_of = QEM }}	
 			every_owned_state = {
 				limit = {
 					is_core_of = QEM 
-				}
-				QEM = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -916,7 +889,6 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = QEM
 			}
-			QEM = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { ORO = { exists = no } any_owned_state = {is_core_of = ORO }}
@@ -924,9 +896,6 @@ ETH_create_federation = {
 				limit = {
 					is_core_of = ORO 
 					NOT = { state = 271 } # Avoid transferring Addis
-				}
-				ORO = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -942,16 +911,12 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = ORO
 			}
-			ORO = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { SOM = { exists = no }any_owned_state = {is_core_of = SOM }}
 			every_owned_state = {
 				limit = {
 					is_core_of = SOM 
-				}
-				SOM = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -967,16 +932,12 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = SOM
 			}
-			SOM = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		IF = {
 			limit = { ERI = { exists = no } any_owned_state = {is_core_of = ERI }}
 			every_owned_state = {
 				limit = {
 					is_core_of = ERI 
-				}
-				ERI = {
-					transfer_state = PREV 
 				}
 			}
 			IF = {
@@ -992,7 +953,6 @@ ETH_create_federation = {
 			ELSE = {
 				puppet = ERI
 			}
-			ERI = { set_cosmetic_tag = ETH_ethiopian_federation }
 		}
 		every_other_country = {
 			limit = {
@@ -1258,7 +1218,6 @@ ETH_haile_selassie_returns = {
 		}
 		custom_effect_tooltip = ETH_haile_selassie_returns_tt
 		add_war_support = 0.1
-		ETH = { remove_country_leader_trait = imperator_absentis }
 		
 		ETH_haile_selassie = {
 			gain_xp = 500 
@@ -1646,9 +1605,6 @@ ETH_transfer_promised_states = {
 						check_variable = { ETH.host_nation = THIS }
 					}
 				}
-			}
-			ETH = { 
-				transfer_state = PREV 
 			}
 			remove_dynamic_modifier = { modifier = ETH_arranged_expansion_modifier } 
 		}

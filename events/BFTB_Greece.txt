@@ -1811,9 +1811,6 @@ country_event = {
 					add_state_claim = 345
 				}
 			}
-			ARM = {
-				add_state_core = 354
-			}
 			clear_variable = global.convention_ayes
 			clear_variable = global.convention_nays
 			set_country_flag = GRE_heraklion_convention_finished
@@ -1965,9 +1962,6 @@ country_event = {
 			ENG = {
 				add_state_claim = 354
 			}
-			ARM = {
-				add_state_core = 354
-			}
 			if = {
 				limit = {
 					ITA = { has_country_flag = GRE_italy_attending_convention }
@@ -2062,9 +2056,6 @@ country_event = {
 			}
 			ENG = {
 				add_state_claim = 354
-			}
-			ARM = {
-				add_state_core = 354
 			}
 			FRA = {
 				add_state_claim = 344
@@ -2386,9 +2377,6 @@ country_event = {
 			ENG = {
 				add_state_claim = 354
 			}
-			ARM = {
-				add_state_core = 354
-			}
 			clear_variable = global.convention_ayes
 			clear_variable = global.convention_nays
 			set_country_flag = GRE_heraklion_convention_finished
@@ -2700,7 +2688,6 @@ country_event = {
 			set_province_name = { id = 9932 name = "Trapizon" }
 			set_province_name = { id = 3979 name = "Gyumushkhana" }
 			set_province_name = { id = 10472 name = "Ghars" }
-			ARM = { set_cosmetic_tag = ARM_UK }
 		}
 		if = { 
 			limit = { 
@@ -2760,11 +2747,6 @@ country_event = {
 					autonomy_state = autonomy_puppet
 					freedom_level = 0.8
 				}
-				KUR = {
-					transfer_state = 344
-					add_state_core = 344
-					set_cosmetic_tag = KUR_FRA
-				}
 				country_event = { id = bftb_greece.210 days = 7 }
 
 				# Handing Back Deir az Zur 
@@ -2773,9 +2755,6 @@ country_event = {
 						FRA = {
 							has_subject = SYR
 						}
-					}
-					SYR = {
-						transfer_state = 680
 					}
 				}
 				ELSE = {
@@ -2794,9 +2773,6 @@ country_event = {
 						FRA = {
 							has_subject = SYR
 						}
-					}
-					SYR = {
-						transfer_state = 799
 					}
 				}
 				ELSE = {
@@ -3997,7 +3973,6 @@ country_event = {
 
 	option = {
 		name = bftb_greece.60.a 
-		CYP = { transfer_state = 183 }
 		GRE = { puppet = CYP }
 		add_stability = 0.1
 		hidden_effect = { 
@@ -4014,7 +3989,6 @@ country_event = {
 					set_autonomy = { target = CYP autonomy_state = autonomy_puppet }
 				}
 			}
-			CYP = { set_cosmetic_tag = CYP_UK }
 			183 = { add_core_of = GRE }
 			if = { 
 				limit = { ENG = { is_faction_leader = yes } }

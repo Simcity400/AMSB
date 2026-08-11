@@ -125,30 +125,6 @@ on_actions = {
 					}
 					reset_province_name = 385
 				}
-				if = {
-					limit = {
-						ROOT = { original_tag = NIR }
-					}
-					random_list = { #Difficult to say if an independent Northern Ireland would call it Derry or Londonderry, let's let the dice gods decide.
-						1 = {
-							set_province_name = {
-								id = 385
-								name = "Derry"
-							}
-							modifier = {
-								factor = 0
-								is_subject_of = ENG
-							}
-						}
-						1 = {
-							reset_province_name = 385
-							modifier = {
-								factor = 0
-								is_subject_of = IRE
-							}
-						}
-					}
-				}
 			}
 		}
 
@@ -508,7 +484,6 @@ on_actions = {
 					}
 				}
 				85 = {
-					add_core_of = DNZ
 					set_demilitarized_zone = yes
 					add_dynamic_modifier = { modifier =  international_city }
 				}
@@ -648,71 +623,6 @@ on_actions = {
 				unlock_national_focus = POL_dissolve_the_bbwr
 			}
 			#Annex Belarus when the civil war ends
-			if = {
-				limit = {
-					original_tag = BLR
-				}
-				set_global_flag = belarus_baltic_resolved
-				if = {
-					limit = {
-						ROOT = { has_cosmetic_tag = BLR_baltic }
-					}
-					random_country = {
-						limit = {
-							is_baltic_country = yes
-							has_country_flag = sponsored_belarus_flag
-						}
-						annex_country = {
-							target = PREV
-							transfer_troops = yes
-						}
-						every_state = {
-							limit = {
-								is_core_of = BLR
-							}
-							add_core_of = PREV
-						}
-						if = {
-							limit = {
-								NOT = { has_cosmetic_tag = BAL_UNIFIED }
-								NOT = { has_cosmetic_tag = PLC_UNIFIED }
-							}
-							if = {
-								limit = {
-									original_tag = LIT
-								}
-								set_cosmetic_tag = LIT_belarus
-							}
-							if = {
-								limit = {
-									original_tag = LAT
-								}
-								set_cosmetic_tag = LAT_belarus
-							}
-							if = {
-								limit = {
-									original_tag = EST
-								}
-								set_cosmetic_tag = EST_belarus
-							}
-						}
-					}
-				}
-				else = {
-					SOV = {
-						annex_country = {
-							target = PREV
-							transfer_troops = yes
-						}
-					}
-					every_state = {
-						limit = {
-							is_core_of = BLR
-						}
-						add_core_of = SOV
-					}
-				}
-			}
 			#Puppet Lithuania/Romania when civil war ends
 			if = {
 				limit = {

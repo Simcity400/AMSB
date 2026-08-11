@@ -763,20 +763,6 @@ on_actions = {
 		}
 
 		effect = {
-			if = {
-				limit = {
-					ROOT = {
-						original_tag = PRC
-						has_completed_focus = PRC_asian_democratic_union
-					}
-				}
-				ROOT = {
-					PRC_increase_asian_democratic_union_modfier_strength = yes
-				}
-				FROM = {
-					add_ideas = PRC_asian_democratic_union_idea
-				}
-			}
 		}
 
 	}
@@ -831,20 +817,6 @@ on_actions = {
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					FROM = {
-						original_tag = PRC
-						has_completed_focus = PRC_asian_democratic_union
-					}
-				}
-				FROM = {
-					PRC_increase_asian_democratic_union_modfier_strength = yes
-				}
-				ROOT = {
-					add_ideas = PRC_asian_democratic_union_idea
-				}
-			}
 		}
 	}
 
@@ -1070,20 +1042,6 @@ on_actions = {
 		}
 
 		effect = {
-			if = {
-				limit = {
-					FROM = {
-						original_tag = PRC
-						has_completed_focus = PRC_asian_democratic_union
-					}
-				}
-				FROM = {
-					PRC_decrease_asian_democratic_union_modfier_strength = yes
-				}
-				ROOT = {
-					remove_ideas = PRC_asian_democratic_union_idea
-				}
-			}
 		}
 
 		effect = {
@@ -1650,218 +1608,6 @@ on_actions = {
 			}
 
 			#Flip the Communist Infiltrated States to PRC
-			if = {
-				limit = {
-					OR = {
-						AND = {
-							ROOT = {
-								original_tag = PRC
-							}
-							FROM = {
-								any_controlled_state = {
-									is_core_of = PRC
-									has_dynamic_modifier = {
-										modifier = PRC_infiltrated_state_3
-										scope = PRC
-									}
-								}
-							}
-						}
-						AND = {
-							FROM = {
-								original_tag = PRC
-							}
-							ROOT = {
-								any_controlled_state = {
-									is_core_of = PRC
-									has_dynamic_modifier = {
-										modifier = PRC_infiltrated_state_3
-										scope = PRC
-									}
-								}
-							}
-						}
-					}
-				}
-				#log = "China at war!"
-				ROOT = {
-					division_template = {
-						name = "Mínbīng" # Represents militia units
-						division_names_group = PRC_MIL_02
-						template_counter = 118
-
-						regiments = {
-							militia = { x = 0 y = 0 }
-							militia = { x = 0 y = 1 }
-							militia = { x = 1 y = 0 }
-							militia = { x = 1 y = 1 }
-							militia = { x = 2 y = 0 }
-							militia = { x = 2 y = 1 }
-						}
-						priority = 1
-					}
-				}
-
-
-				#ACHIEVEMENT CHECKS
-				if = {
-					limit = {
-						is_ironman = yes #This only applies if you can get achievements
-
-					}
-					FROM = {
-						every_controlled_state = {
-							limit = {
-								is_core_of = PRC
-								has_dynamic_modifier = {
-									modifier = PRC_infiltrated_state_3
-									scope = PRC
-								}
-							}
-
-							add_to_temp_array = {
-								array = PRC.PRC_infiltrated_states_array
-								value = THIS
-							}
-						}
-					}
-
-				}
-
-				if = {
-					limit = {
-						FROM = {
-							NOT = {
-								original_tag = PRC
-							}
-							any_controlled_state = {
-								is_core_of = PRC
-								has_dynamic_modifier = {
-									modifier = PRC_infiltrated_state_3
-									scope = PRC
-								}
-							}
-						}
-					}
-					FROM = { ## Checks if all states are taken, fixes edge case with taking an entire nation resulting in not calling any allies
-						if = {
-							limit = {
-								all_controlled_state = {
-									is_core_of = PRC
-									has_dynamic_modifier = {
-										modifier = PRC_infiltrated_state_3
-										scope = PRC
-									}
-								}
-							}
-							every_allied_country = {
-								limit = {
-									NOT = {
-										has_war_with = PRC
-									}
-								}
-								add_to_war = {
-									targeted_alliance = PREV
-									enemy = PRC
-								}
-							}
-						}
-					}
-					#log = "PRC attacked!"
-					FROM = {
-						every_controlled_state = {
-							limit = {
-								is_core_of = PRC
-								has_dynamic_modifier = {
-									modifier = PRC_infiltrated_state_3
-									scope = PRC
-								}
-							}
-							transfer_state_to = ROOT
-							create_unit = {
-								division = "division_template = \"Mínbīng\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
-								owner = ROOT
-								count = 2
-							}
-						}
-					}
-				}
-				else_if = {
-					limit = {
-						ROOT = {
-							NOT = {
-								original_tag = PRC
-							}
-							any_controlled_state = {
-								is_core_of = PRC
-								has_dynamic_modifier = {
-									modifier = PRC_infiltrated_state_3
-									scope = PRC
-								}
-							}
-						}
-					}
-					FROM = {
-						division_template = {
-							name = "Mínbīng" # Represents militia units
-							division_names_group = PRC_MIL_02
-							template_counter = 118
-
-							regiments = {
-								militia = { x = 0 y = 0 }
-								militia = { x = 0 y = 1 }
-								militia = { x = 1 y = 0 }
-								militia = { x = 1 y = 1 }
-								militia = { x = 2 y = 0 }
-								militia = { x = 2 y = 1 }
-							}
-							priority = 1
-						}
-					}
-					ROOT = { ## Checks if all states are taken, fixes edge case with taking an entire nation resulting in not calling any allies
-						if = {
-							limit = {
-								all_controlled_state = {
-									is_core_of = PRC
-									has_dynamic_modifier = {
-										modifier = PRC_infiltrated_state_3
-										scope = PRC
-									}
-								}
-							}
-							every_allied_country = {
-								limit = {
-									NOT = {
-										has_war_with = PRC
-									}
-								}
-								add_to_war = {
-									targeted_alliance = PREV
-									enemy = PRC
-								}
-							}
-						}
-					}
-					#log = "PRC defends!"
-					ROOT = {
-						every_controlled_state = {
-							limit = {
-								is_core_of = PRC
-								has_dynamic_modifier = {
-									modifier = PRC_infiltrated_state_3
-									scope = PRC
-								}
-							}
-							transfer_state_to = FROM
-							create_unit = {
-								division = "division_template = \"Mínbīng\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
-								owner = FROM
-								count = 2
-							}
-						}
-					}
-				}
-			}
 			IF = { ## When war against CHI and PRC breaks out - some generals flip to PRC
 				limit = {
 					has_dlc = "No Compromise, No Surrender"
@@ -3481,20 +3227,6 @@ on_actions = {
 
 		#PRC capitulates
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = PRC
-						owns_state = 1046
-					}
-					1046 = {
-						has_dynamic_modifier = { modifier = PRC_the_yulin_garrison }
-					}
-				}
-				1046 = {
-					remove_dynamic_modifier = { modifier = PRC_the_yulin_garrison }
-				}
-			}
 			IF = { #If PRC capitulates after having completed Burn the Paper tiger and is faction leader, then make China a major so they can continue the fight against Japan
 				limit = {
 					ROOT = {

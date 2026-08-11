@@ -74,33 +74,6 @@ on_actions = {
 	}
 	on_ruling_party_change = {
 		effect = {
-			if = {
-				limit = {
-					has_dlc = "Trial of Allegiance"
-					OR = {
-						original_tag = URG
-						original_tag = PAR
-					}
-				}
-				if = {
-					limit = {
-						has_completed_focus = GUAY_the_permanent_leader
-						NOT = { has_country_leader_with_trait = JUNO_the_permanent_leader }
-					}
-
-					add_country_leader_trait = JUNO_the_permanent_leader
-				}
-
-				if = {
-					limit = {
-						has_completed_focus = GUAY_cult_of_personality
-						NOT = { has_country_leader_with_trait = JUNO_cult_of_personality }
-					}
-
-					add_country_leader_trait = JUNO_cult_of_personality
-				}
-
-			}
 		}
 		effect = {
 			IF = {
@@ -268,9 +241,6 @@ on_actions = {
 						is_subject_of = GER
 					}
 				}
-				URG = {
-					set_cosmetic_tag = URG_german
-				}
 			}
 		}	
 		# Make sure that Uruguay drops their cosmetic tag if it applies
@@ -302,9 +272,6 @@ on_actions = {
 							has_completed_focus = CHL_crown_antoine_as_sovereign_king
 						}
 					}
-				}
-				BOL = {
-					set_cosmetic_tag = BOL_orelia
 				}
 			}
 		}	
@@ -345,22 +312,6 @@ on_actions = {
 
 		# Make sure that Bolivia get's their araucanian cosmetic tag if it applies
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = BOL
-					}
-					FROM = {
-						original_tag = CHL
-					}
-					CHL = {
-						has_completed_focus = CHL_crown_antoine_as_sovereign_king
-					}
-				}
-				ROOT = {
-					set_cosmetic_tag = BOL_orelia
-				}
-			}
 		}	
 
 
@@ -369,22 +320,6 @@ on_actions = {
 	on_release_as_puppet = { # ROOT is the nation being released, FROM is the overlord.
 
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = BOL
-					}
-					FROM = {
-						original_tag = CHL
-					}
-					CHL = {
-						has_completed_focus = CHL_crown_antoine_as_sovereign_king
-					}
-				}
-				ROOT = {
-					set_cosmetic_tag = BOL_orelia
-				}
-			}
 		}
 
 		effect = {
@@ -404,16 +339,6 @@ on_actions = {
 		}
 
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						tag = WLA
-					}
-				}
-				WLA = {
-					load_oob = "WLA_1936"
-				}
-			}
 		}
 	}
 
@@ -435,19 +360,6 @@ on_actions = {
 			}
 		}
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						original_tag = BOL
-					}
-					FROM = {
-						original_tag = CHL
-					}
-				}
-				ROOT = {
-					drop_cosmetic_tag = yes
-				}
-			}
 		}
 		effect = {
 			USA_add_monroe_doctrine_to_target = yes
@@ -497,22 +409,6 @@ on_actions = {
 	on_declare_war = {
 
 		effect = {
-			IF = {
-				limit = {
-					has_dlc = "Trial of Allegiance"
-					ROOT = {
-						tag = ARG
-					}
-					FROM = { tag = URG }
-				}
-
-				BRA = {
-					country_event = {
-						id = ARG_political_events.110
-						hours = 5
-					}
-				}
-			}
 		}
 
 		effect = {
@@ -525,12 +421,6 @@ on_actions = {
 					FROM = { tag = URG }
 				}
 
-				ARG = {
-					country_event = {
-						id = ARG_political_events.110
-						hours = 5
-					}
-				}
 			}
 		}
 
@@ -754,16 +644,6 @@ on_actions = {
 			USA_add_monroe_doctrine_to_target = yes
 		}
 		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						tag = WLA
-					}
-				}
-				WLA = {
-					load_oob = "WLA_1936"
-				}
-			}
 		}
 	}	
 
@@ -844,38 +724,10 @@ on_actions = {
 						has_government = fascism
 					}
 				} 
-				ARG = {
-					country_event = {
-						id = ARG_political_events.120
-						days = 14
-					}
-				}
 			}
 		}
 
 		effect = {
-			if = {
-				limit = {
-					has_dlc = "Trial of Allegiance"
-					ROOT = {
-						original_tag = PAR
-					}
-				}
-
-				PAR = {
-					every_core_state = {
-						limit = {
-							has_dynamic_modifier = {
-								modifier = idea_PAR_river_navy
-							}
-						}
-
-						remove_dynamic_modifier = {
-							modifier = idea_PAR_river_navy
-						}
-					}
-				}
-			}
 		}
 	}
 }

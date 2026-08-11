@@ -26,92 +26,6 @@ add_namespace = BBA_italy_human_torpedo_raid
 
 
 # Italy offer for peace - Event for ETH
-country_event = {
-	id = BBA_italy_second_italo_ethiopian_war.1
-	title = BBA_italy_second_italo_ethiopian_war.1.t
-	desc = BBA_italy_second_italo_ethiopian_war.1.desc
-	picture = GFX_report_event_african_soldiers
-	
-	is_triggered_only = yes
-	
-	#ACCEPT
-	option = {
-		name = BBA_italy_second_italo_ethiopian_war.1.a
-		ai_chance = {
-			base = 10
-			modifier = { #If they're stronger than ITA then never accept
-				factor = 0
-				strength_ratio = {
-					tag = FROM
-					ratio > 1
-				}
-			}
-		}
-		effect_tooltip = {
-			if = { #ERITREA
-				limit = {
-					has_full_control_of_state = 550
-				}
-				transfer_state = 550
-				550 = { add_compliance = 50 }
-			}
-			if = { #SOMALILAND
-				limit = {
-					has_full_control_of_state = 559
-				}
-				transfer_state = 559
-				559 = { add_compliance = 50 }
-			}
-			if = { #JUBALAND
-				limit = {
-					has_full_control_of_state = 844
-				}
-				transfer_state = 844
-				844 = { add_compliance = 50 }
-			}
-			if = {
-				limit = {
-					908 = {
-						is_owned_by = FROM
-					}
-				}
-				#AFAR always goes to ETH if owned by ITA
-				transfer_state = 908 
-				908 = { add_compliance = 50 }
-			}
-			white_peace = FROM
-		}
-
-		hidden_effect = {
-			FROM = {
-				country_event = { id = BBA_italy_second_italo_ethiopian_war.2 days = 1 }
-			}
-			if = {
-				limit = {
-					is_in_faction = no
-				}
-				set_country_flag = ETH_forced_ITA_peace_achievement
-			}
-		}
-	}
-	
-	option = {
-		name = BBA_italy_second_italo_ethiopian_war.1.b
-		ai_chance = {
-			base = 1
-			modifier = { #Usually they should accept
-				factor = 0
-				strength_ratio = {
-					tag = FROM
-					ratio < 1
-				}
-			}
-		}
-		FROM = {
-			country_event = { id = BBA_italy_second_italo_ethiopian_war.3 days = 1 }
-		}
-	}
-}
 
 # ETH accepts ITA peace offer - Event for ITA
 country_event = {
@@ -3317,9 +3231,6 @@ unit_leader_event = {
 					has_resistance = yes
 				}
 			}
-			ORO = {
-				transfer_state = 271 #SHEWA
-			}
 		}
 		if = {
 			limit = {
@@ -3328,66 +3239,17 @@ unit_leader_event = {
 					has_resistance = yes
 				}
 			}
-			ORO = {
-				transfer_state = 837 #SIDAMO
-			}
 		}
 		puppet = ORO
 		if = {
 			limit = {
 				country_exists = ETH
 			}
-			ETH = {
-				ETH_haile_selassie_gugsa = {
-					if = {
-						limit = {
-							is_advisor = yes
-						}
-						remove_any_country_role_from_character = yes
-					}
-					add_country_leader_role = { #Add non-aligned role in case Italy changes to monarchy
-						country_leader = {
-							ideology = despotism 
-							expire = "1965.1.1.1"
-							traits = { crowned_adder }
-							id = -1
-						}
-					}
-					set_nationality = ORO
-				}
-			}
 		}
 		else = {
 			for_each_scope_loop = {
 				array = global.countries
 
-				if = {
-					limit = {
-						original_tag = ETH
-						has_character = ETH_haile_selassie_gugsa
-					}
-					ETH_haile_selassie_gugsa = {
-						if = {
-							limit = {
-								is_advisor = yes
-							}
-							remove_any_country_role_from_character = yes
-						}
-						add_country_leader_role = { #Add non-aligned role in case Italy changes to monarchy
-							country_leader = {
-								ideology = despotism 
-								expire = "1965.1.1.1"
-								traits = { crowned_adder }
-								id = -1
-							}
-						}
-						set_nationality = ORO
-					}
-				}
-			}
-			ORO = {
-				promote_character = { character = ETH_haile_selassie_gugsa ideology = despotism }
-				promote_character = { character = ETH_haile_selassie_gugsa ideology = fascism_ideology }
 			}
 		}
 
@@ -3682,9 +3544,6 @@ unit_leader_event = {
 					has_resistance = yes
 				}
 			}
-			GBA = {
-				transfer_state = 838 #ILLUBABOR-KAFFA
-			}
 		}
 		if = {
 			limit = {
@@ -3693,84 +3552,18 @@ unit_leader_event = {
 					has_resistance = yes
 				}
 			}
-			GBA = {
-				transfer_state = 839 #WELEGA
-			}
 			839 = { add_core_of = GBA }
 		}
 		puppet = GBA
-		GBA = { set_cosmetic_tag = jimma }
 		if = {
 			limit = {
 				country_exists = ETH
-			}
-			ETH = {
-				ETH_abba_jofir = {
-					add_country_leader_role = {
-						country_leader = {
-							ideology = fascism_ideology 
-							expire = "1965.1.1.1"
-							traits = { inexperienced_sultan }
-							id = -1
-						}
-					}
-					add_country_leader_role = { #Add non-aligned role in case Italy changes to monarchy
-						country_leader = {
-							ideology = despotism 
-							expire = "1965.1.1.1"
-							traits = { inexperienced_sultan }
-							id = -1
-						}
-					}
-					if = {
-						limit = {
-							is_advisor = yes
-						}
-						remove_any_country_role_from_character = yes
-					}
-					set_nationality = GBA
-				}
 			}
 		}
 		else = {
 			for_each_scope_loop = {
 				array = global.countries
 
-				if = {
-					limit = {
-						original_tag = ETH
-						has_character = ETH_abba_jofir
-					}
-					ETH_abba_jofir = {
-						add_country_leader_role = {
-							country_leader = {
-								ideology = fascism_ideology 
-								expire = "1965.1.1.1"
-								traits = { inexperienced_sultan }
-								id = -1
-							}
-						}
-						add_country_leader_role = { #Add non-aligned role in case Italy changes to monarchy
-							country_leader = {
-								ideology = despotism 
-								expire = "1965.1.1.1"
-								traits = { inexperienced_sultan }
-								id = -1
-							}
-						}
-						if = {
-							limit = {
-								is_advisor = yes
-							}
-							remove_any_country_role_from_character = yes
-						}
-						set_nationality = GBA
-					}
-				}
-			}
-			GBA = {
-				promote_character = { character = ETH_abba_jofir ideology = despotism }
-				promote_character = { character = ETH_abba_jofir ideology = fascism_ideology }
 			}
 		}
 
@@ -4027,9 +3820,6 @@ unit_leader_event = {
 					has_resistance = yes
 				}
 			}
-			BEG = {
-				transfer_state = 840 #GOJJAM
-			}
 		}
 		if = {
 			limit = {
@@ -4038,84 +3828,18 @@ unit_leader_event = {
 					has_resistance = yes
 				}
 			}
-			BEG = {
-				transfer_state = 841 #BEGEMDER
-			}
 			841 = {add_core_of = BEG}
 		}
 		puppet = BEG
-		BEG = { set_cosmetic_tag = gojjam }
 		if = {
 			limit = {
 				country_exists = ETH
-			}
-			ETH = {
-				ETH_hailu_tekle_haymanot = {
-					add_country_leader_role = {
-						country_leader = {
-							ideology = fascism_ideology 
-							expire = "1965.1.1.1"
-							traits = { tainted_ras }
-							id = -1
-						}
-					}
-					add_country_leader_role = { #Add non-aligned role in case Italy changes to monarchy
-						country_leader = {
-							ideology = despotism 
-							expire = "1965.1.1.1"
-							traits = { tainted_ras }
-							id = -1
-						}
-					}
-					if = {
-						limit = {
-							is_advisor = yes
-						}
-						remove_any_country_role_from_character = yes
-					}
-					set_nationality = BEG
-				}
 			}
 		}
 		else = {
 			for_each_scope_loop = {
 				array = global.countries
 
-				if = {
-					limit = {
-						original_tag = ETH
-						has_character = ETH_hailu_tekle_haymanot
-					}
-					ETH_hailu_tekle_haymanot = {
-						add_country_leader_role = {
-							country_leader = {
-								ideology = fascism_ideology 
-								expire = "1965.1.1.1"
-								traits = { tainted_ras }
-								id = -1
-							}
-						}
-						add_country_leader_role = { #Add non-aligned role in case Italy changes to monarchy
-							country_leader = {
-								ideology = despotism 
-								expire = "1965.1.1.1"
-								traits = { tainted_ras }
-								id = -1
-							}
-						}
-						if = {
-							limit = {
-								is_advisor = yes
-							}
-							remove_any_country_role_from_character = yes
-						}
-						set_nationality = BEG
-					}
-				}
-			}
-			BEG = {
-				promote_character = { character = ETH_hailu_tekle_haymanot ideology = despotism }
-				promote_character = { character = ETH_hailu_tekle_haymanot ideology = fascism_ideology }
 			}
 		}
 
@@ -4330,9 +4054,6 @@ unit_leader_event = {
 					has_resistance = yes
 				}
 			}
-			TIG = {
-				transfer_state = 842 #TIGRAY
-			}
 		}
 		if = {
 			limit = {
@@ -4340,9 +4061,6 @@ unit_leader_event = {
 					is_fully_controlled_by = ITA
 					has_resistance = yes
 				}
-			}
-			TIG = {
-				transfer_state = 843 #WELLO
 			}
 			843 = { add_core_of = TIG }
 		}
@@ -4354,9 +4072,6 @@ unit_leader_event = {
 					has_resistance = yes
 				}
 			}
-			TIG = {
-				transfer_state = 908 #AFAR
-			}
 			908 = { add_core_of = TIG }
 		}
 		puppet = TIG
@@ -4364,73 +4079,11 @@ unit_leader_event = {
 			limit = {
 				country_exists = ETH
 			}
-			ETH = {
-				ETH_seyoum_mengesha = {
-					add_country_leader_role = {
-						country_leader = {
-							ideology = fascism_ideology 
-							expire = "1965.1.1.1"
-							traits = { eager_collaborator }
-							id = -1
-						}
-					}
-					add_country_leader_role = { #Add non-aligned role in case Italy changes to monarchy
-						country_leader = {
-							ideology = despotism 
-							expire = "1965.1.1.1"
-							traits = { eager_collaborator }
-							id = -1
-						}
-					}
-					if = {
-						limit = {
-							is_advisor = yes
-						}
-						remove_any_country_role_from_character = yes
-					}
-					set_nationality = TIG
-				}
-			}
 		}
 		else = {
 			for_each_scope_loop = {
 				array = global.countries
 
-				if = {
-					limit = {
-						original_tag = ETH
-						has_character = ETH_seyoum_mengesha
-					}
-					ETH_seyoum_mengesha = {
-						add_country_leader_role = {
-							country_leader = {
-								ideology = fascism_ideology 
-								expire = "1965.1.1.1"
-								traits = { eager_collaborator }
-								id = -1
-							}
-						}
-						add_country_leader_role = { #Add non-aligned role in case Italy changes to monarchy
-							country_leader = {
-								ideology = despotism 
-								expire = "1965.1.1.1"
-								traits = { eager_collaborator }
-								id = -1
-							}
-						}
-						if = {
-							limit = {
-								is_advisor = yes
-							}
-							remove_any_country_role_from_character = yes
-						}
-						set_nationality = TIG
-					}
-				}
-			}
-			TIG = {
-				promote_character = { character = ETH_seyoum_mengesha ideology = despotism }
-				promote_character = { character = ETH_seyoum_mengesha ideology = fascism_ideology }
 			}
 		}
 
@@ -7704,7 +7357,6 @@ country_event = {
 			has_war_with = ETH
 		}
 
-		ETH = { country_event = { id = BBA_italy_anti_colonialism_events.02 hours = 4 random_hours = 2 } }
 
 		custom_effect_tooltip = if_they_accept_tt
 		effect_tooltip = {
@@ -7757,7 +7409,6 @@ country_event = {
 			ETH = { is_subject_of = ROOT }
 		}
 		
-		ETH = { country_event = { id = BBA_italy_anti_colonialism_events.05 hours = 4 random_hours = 2 } }
 
 		custom_effect_tooltip = if_they_accept_tt
 		effect_tooltip = {
@@ -7784,28 +7435,8 @@ country_event = {
 			ETH = { is_subject_of = ROOT }
 		}
 		
-		ETH = { country_event = { id = BBA_italy_anti_colonialism_events.08 hours = 4 random_hours = 2 } }
 
 		effect_tooltip = {
-			ETH = {
-				capital_scope = {
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}
-				}
-				add_autonomy_score = {
-					value = -75
-					localization = BBA_italy_anti_colonialism_events.08.t
-				}
-			}
 		}
 	}
 
@@ -7839,7 +7470,6 @@ country_event = {
 			NOT = { ETH = { is_subject_of = ROOT } }
 		}
 		
-		ETH = { country_event = { id = BBA_italy_anti_colonialism_events.09 hours = 4 random_hours = 2 } }
 
 		custom_effect_tooltip = if_they_accept_tt
 		effect_tooltip = {
@@ -7868,7 +7498,6 @@ country_event = {
 			NOT = { ETH = { is_subject_of = ROOT } }
 		}
 		
-		ETH = { country_event = { id = BBA_italy_anti_colonialism_events.13 hours = 4 random_hours = 2 } }
 
 		custom_effect_tooltip = if_they_accept_tt
 		effect_tooltip = {
@@ -7900,81 +7529,6 @@ country_event = {
 }
 
 # The Ethiopian Question - Peace offer from ITA - Event for ETH
-country_event = {
-	id = BBA_italy_anti_colonialism_events.02
-	title = BBA_italy_anti_colonialism_events.02.t
-	desc = BBA_italy_anti_colonialism_events.02.desc
-	picture = GFX_report_event_generic_sign_treaty2
-
-	is_triggered_only = yes
-
-	#Accept - White Peace
-	option = {
-		name = BBA_italy_anti_colonialism_events.02.a
-
-		ai_chance = {
-			base = 1
-		}
-
-		trigger = {
-			OR = {
-				is_ai = no
-				surrender_progress < 0.5
-			}
-		}
-
-		effect_tooltip = {
-			white_peace = FROM
-		}
-
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.03 hours = 8 random_hours = 4 } }
-		}
-	}
-
-	#Accept - Puppet (only AI)
-	option = {
-		name = BBA_italy_anti_colonialism_events.02.b
-		
-		ai_chance = {
-			base = 5
-		}
-
-		trigger = {
-			is_ai = yes
-			surrender_progress > 0.5
-		}
-
-
-		effect_tooltip = {
-			white_peace = FROM
-			FROM = { puppet = ROOT }
-			set_country_flag = ITA_ethiopia_gets_puppeted_flag
-		}
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.03 hours = 8 random_hours = 4 } }
-		}
-	}
-
-	#Nej tack
-	option = {
-		name = BBA_italy_anti_colonialism_events.02.c
-
-		ai_chance = {
-			base = 0
-			modifier = {
-				add = 10
-				FROM = {
-					surrender_progress < 0.3
-				}
-			}
-		}
-
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.04 hours = 8 random_hours = 4 } }
-		}
-	}
-}
 
 # The Ethiopian Question - ETH accepts Peace - Event for ITA
 country_event = {
@@ -8041,47 +7595,6 @@ country_event = {
 }
 
 # The Ethiopian Question - Annexation demand from ITA - Event for ETH (as Italian Puppet)
-country_event = {
-	id = BBA_italy_anti_colonialism_events.05
-	title = BBA_italy_anti_colonialism_events.05.t
-	desc = BBA_italy_anti_colonialism_events.05.desc
-	picture = GFX_report_event_generic_read_write
-
-	is_triggered_only = yes
-
-	#Oki
-	option = {
-		name = BBA_italy_anti_colonialism_events.05.a
-
-		ai_chance = {
-			base = 1
-		}
-
-		effect_tooltip = {
-			FROM = {
-				annex_country = { target = ROOT }
-			}
-			custom_effect_tooltip = GAME_OVER_TT
-		}
-
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.06 hours = 6 random_hours = 2 } }
-		}
-	}
-
-	#No gracias
-	option = {
-		name = BBA_italy_anti_colonialism_events.05.b
-
-		ai_chance = {
-			base = 0
-		}
-
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.07 hours = 6 random_hours = 2 } }
-		}
-	}
-}
 
 # The Ethiopian Question - ETH accepts annexation - Event for ITA
 country_event = {
@@ -8118,133 +7631,8 @@ country_event = {
 }
 
 # The Ethiopian Question - Development Investments from ITA - Event for ETH (as Italian puppet)
-country_event = {
-	id = BBA_italy_anti_colonialism_events.08
-	title = BBA_italy_anti_colonialism_events.08.t
-	desc = BBA_italy_anti_colonialism_events.08.desc
-	picture = GFX_report_event_generic_factory
-
-	is_triggered_only = yes
-
-	#Oki
-	option = {
-		name = BBA_italy_anti_colonialism_events.08.a
-
-		capital_scope = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-		add_autonomy_score = {
-			value = -75
-			localization = BBA_italy_anti_colonialism_events.08.t
-		}
-	}
-}
 
 # The Ethiopian Question - Italian offer for puppet/change government - Event for ETH
-country_event = {
-	id = BBA_italy_anti_colonialism_events.09
-	title = BBA_italy_anti_colonialism_events.09.t
-	desc = BBA_italy_anti_colonialism_events.09.desc
-	picture = GFX_report_event_generic_sign_treaty2
-
-	is_triggered_only = yes
-
-	#Oki
-	option = {
-		name = BBA_italy_anti_colonialism_events.09.a
-
-		ai_chance = {
-			base = 5
-		}
-
-		effect_tooltip = {
-			FROM = { puppet = ROOT }
-			if = {
-				limit = {
-					FROM = {
-						is_in_faction = yes
-					}
-				}
-				FROM = {
-					faction_leader = {
-						add_to_faction = ROOT
-					}
-				}
-			}
-		}
-
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.10 hours = 6 random_hours = 2 } }
-		}
-	}
-
-	#Let's just change government
-	option = {
-		name = BBA_italy_anti_colonialism_events.09.b
-
-		ai_chance = {
-			base = 1
-		}
-
-		effect_tooltip = {
-			set_politics = { ruling_party = FROM }
-			diplomatic_relation = { 
-				country = FROM #target country
-				relation = non_aggression_pact 
-				active = yes #yes to add relation, no to cancel existing one
-			}
-		}
-
-		hidden_effect = {
-			add_ai_strategy = { 
-				type = alliance
-				id = FROM
-				value = 100
-			}
-		}
-		
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.11 hours = 6 random_hours = 2 } }
-		}
-	}
-
-	#Nope
-	option = {
-		name = BBA_italy_anti_colonialism_events.09.c
-
-		ai_chance = {
-			base = 0
-			modifier = {
-				add = 1
-				has_opinion = {
-					target = FROM
-					value < 10
-				} 
-			}
-			modifier = {
-				add = 10
-				has_opinion = {
-					target = FROM
-					value < 0
-				} 
-			}
-		}
-		
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.12 hours = 6 random_hours = 2 } }
-		}
-	}
-}
 
 # The Ethiopian Question - ETH becomes a puppet - Event for ITA
 country_event = {
@@ -8341,63 +7729,6 @@ country_event = {
 }
 
 # The Ethiopian Question - Italy proposes NAP + Guarantees - Event for ETH
-country_event = {
-	id = BBA_italy_anti_colonialism_events.13
-	title = BBA_italy_anti_colonialism_events.13.t
-	desc = BBA_italy_anti_colonialism_events.13.desc
-	picture = GFX_report_event_generic_sign_treaty1
-
-	is_triggered_only = yes
-
-	#Oki
-	option = {
-		name = BBA_italy_anti_colonialism_events.13.a
-
-		ai_chance = {
-			base = 5
-		}
-
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.14 hours = 6 random_hours = 2 } }
-		}
-
-		effect_tooltip = {
-			diplomatic_relation = { 
-				country = FROM #target country
-				relation = non_aggression_pact
-				active = yes #yes to add relation, no to cancel existing one
-			}
-
-			give_guarantee = FROM
-			FROM = { give_guarantee = ROOT }
-		}
-
-		hidden_effect = {
-			add_ai_strategy = { 
-				type = alliance
-				id = FROM
-				value = 75
-			}
-		}
-	}
-
-	#Nope
-	option = {
-		name = BBA_italy_anti_colonialism_events.13.b
-
-		ai_chance = {
-			base = 0
-			modifier = {
-				add = 10
-				surrender_progress < 0.3
-			}
-		}
-
-		hidden_effect = {
-			FROM = { country_event = { id = BBA_italy_anti_colonialism_events.15 hours = 6 random_hours = 2 } }
-		}
-	}
-}
 
 # The Ethiopian Question - ETH acepts NAP + Guarantees - Event for ITA
 country_event = {
@@ -9334,7 +8665,7 @@ country_event = {
 			release_on_controlled = MOR
 			release_on_controlled = ALG
 			release_on_controlled = TUN
-			release_on_controlled = LBA
+
 			release_on_controlled = EGY
 			release_on_controlled = SUD
 		}
@@ -9387,7 +8718,7 @@ country_event = {
 		custom_effect_tooltip = ITA_release_colonies_east_africa_tt
 		hidden_effect = {
 			release_on_controlled = ERI
-			release_on_controlled = ETH
+
 			release_on_controlled = KEN
 			release_on_controlled = DJI
 			release_on_controlled = SOM #Below DJI KEN and ETH so that it doesn't steel their territories
@@ -11342,7 +10673,6 @@ country_event = {
 					ETH = { is_in_faction_with = ENG }
 				}
 				effect_tooltip = {
-					ETH = { leave_faction = yes}
 				}
 			}
 			effect_tooltip = {
@@ -11472,7 +10802,6 @@ country_event = {
 					ETH = { is_in_faction_with = ENG }
 				}
 				effect_tooltip = {
-					ETH = { leave_faction = yes}
 				}
 			}
 			effect_tooltip = {

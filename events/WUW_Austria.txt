@@ -4582,7 +4582,6 @@ country_event = { #FROM integrates
 
 			ELSE_IF = {
 				limit = { TRA = { has_country_flag = is_current_expansion_target_for_AUS_flag }}
-				TRA = { clr_country_flag = is_current_expansion_target_for_AUS_flag }
 			}
 		}
 
@@ -5492,20 +5491,6 @@ country_event = { #FROM installs a Habsburg on our throne :(
 			}			
 		}
 
-		ELSE_IF = {
-			limit = {
-				ROOT = {
-					original_tag = CRO
-					has_character = CRO_joseph_francis
-				}
-			}
-
-			effect_tooltip = {
-				CRO = {
-					promote_character = CRO_joseph_francis
-				}
-			}			
-		}
 	}
 }
 

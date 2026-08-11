@@ -2098,31 +2098,9 @@ country_event = {
 				factor = 0
 			}
 		}
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_exile_events.31
-				hours = 4
-				random_hours = 8
-			}
-		}	
 	}
 }
 # For Ethiopia - Sweden says no
-country_event = {
-	id = BBA_ethiopia_exile_events.31
-	title = BBA_ethiopia_exile_events.31.t
-	desc = BBA_ethiopia_exile_events.31.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_generic_conference
-
-	# At least we tried 
-	option = { 
-		name = BBA_ethiopia_exile_events.31.a
-		ai_chance = {
-			base = 10
-		}	
-	}
-}
 
 # For Faction leader - joint request from Sweden and Ethiopia 
 country_event = {
@@ -2879,7 +2857,6 @@ country_event = {
 			}
 		}
 		effect_tooltip = {
-			ETH = { transfer_state = 268 }
 		}
 		add_timed_idea = {
 			idea = ETH_djibouti_sale_idea
@@ -3586,9 +3563,6 @@ country_event = {
 			ideology = ROOT 
 			popularity = -0.05
 		}
-		ETH = {
-			clr_country_flag = ETH_currently_demanding_peace_flag
-		}		
 		clear_variable = global.african_revolt_country
 		clear_variable = global.african_supporting_country
 		clear_variable = global.african_colonial_country
@@ -3641,9 +3615,6 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		ETH = {
-			clr_country_flag = ETH_currently_demanding_peace_flag
-		}
 		clear_variable = global.african_revolt_country
 		clear_variable = global.african_supporting_country
 		clear_variable = global.african_colonial_country
@@ -3664,9 +3635,6 @@ country_event = {
 		name = BBA_ethiopia_anti_colonialism_events.6.a
 		ai_chance = {
 			base = 10
-		}
-		ETH = {
-			clr_country_flag = ETH_currently_demanding_peace_flag
 		}
 		clear_variable = global.african_revolt_country
 		clear_variable = global.african_supporting_country
@@ -3715,7 +3683,6 @@ country_event = {
 							ETH.ETH_local_state = THIS 
 						}
 					}
-					activate_mission = 	ETH_local_development_state_grows_mission
 				}
 				10 = { 
 					modifier = {
@@ -3746,7 +3713,6 @@ country_event = {
 							ETH.ETH_local_state = THIS 
 						}
 					}
-					activate_mission = 	ETH_local_development_industry_grows_mission
 				}
 				10 = { 
 					modifier = {
@@ -3777,7 +3743,6 @@ country_event = {
 							ETH.ETH_local_state = THIS 
 						}
 					}
-					activate_mission = 	ETH_local_development_arms_industry_grows_mission
 				}
 				10 = { 
 					modifier = {
@@ -3795,7 +3760,6 @@ country_event = {
 							ETH.ETH_local_state = THIS 
 						}
 					}
-					activate_mission = 	ETH_local_development_improved_production_mission
 				}
 			}
 		}
@@ -4353,19 +4317,16 @@ country_event = {
 					limit = {
 						ETH = { has_character = ETH_ayalew_birru }
 					}
-					ETH = { ETH_ayalew_birru = { set_nationality = PREV.PREV } }
 				}
 				IF = {
 					limit = {
 						ETH = { has_character = ETH_beyene_merid }
 					}
-					ETH = { ETH_beyene_merid = { set_nationality = PREV.PREV } }
 				}
 				IF = {
 					limit = {
 						ETH = { has_character = ETH_balcho_safo }
 					}
-					ETH = { ETH_balcho_safo = { set_nationality = PREV.PREV } }
 				}
 				# Set up Dynamic Modifiers for Haile Selassie
 				add_dynamic_modifier = {
@@ -4471,11 +4432,6 @@ country_event = {
 		add_ideas = ETH_victor_emanuel_of_ethiopia_idea
 		hidden_effect = {
 			# Remove Red Cross - they stay with haile Selassie
-			ETH = {
-				remove_dynamic_modifier = {
-					modifier = ETH_international_red_cross_dynamic_modifier
-				}
-			}
 
 			IF = { # safety for if ITA has changed ideology - we still want to keep that ideology here regardless 
 				limit = {
@@ -4840,24 +4796,12 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_fascist_events.51
-				hours = 1
-			}
-		}
 	}
 	# War with ETH
 	option = {
 		name = BBA_ethiopia_fascist_events.50.b
 		ai_chance = {
 			base = 0
-		}
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_fascist_events.52
-				hours = 1
-			}
 		}
 		add_stability = -0.05
 		create_wargoal = {
@@ -4869,40 +4813,8 @@ country_event = {
 }
 
 #Vichy give up DJI
-country_event = {
-	id = BBA_ethiopia_fascist_events.51
-	title = BBA_ethiopia_fascist_events.51.t
-	desc = BBA_ethiopia_fascist_events.51.desc
-	picture = GFX_report_event_military_planning
-	is_triggered_only = yes
-	#Ok - Get DJI
-	option = {
-		name = BBA_ethiopia_fascist_events.51.a
-		ai_chance = {
-			base = 10
-		}
-		ETH = {
-			transfer_state = 268
-			268 = { add_core_of = ETH }
-		}
-	}
-}
 
 #Vichy Refuse to give up DJI
-country_event = {
-	id = BBA_ethiopia_fascist_events.52
-	title = BBA_ethiopia_fascist_events.52.t
-	desc = BBA_ethiopia_fascist_events.52.desc
-	picture = GFX_report_event_tur_machine_gunners
-	is_triggered_only = yes
-	# That sucks
-	option = {
-		name = BBA_ethiopia_fascist_events.52.a
-		ai_chance = {
-			base = 10
-		}
-	}
-}
 
 ##########################################################################
 #					Request Italian Equipment Events
@@ -4964,12 +4876,6 @@ country_event = {
 				}
 			}
 		}
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_fascist_events.56
-				hours = 24
-			}
-		}
 	}
 	# No
 	option = {
@@ -4983,89 +4889,13 @@ country_event = {
 				}
 			}
 		}
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_fascist_events.55
-				hours = 24
-			}
-		}
 	}
 }
 
 
 # ITA refuses to send equipment
-country_event = {
-	id = BBA_ethiopia_fascist_events.55
-	title = BBA_ethiopia_fascist_events.55.t
-	desc = BBA_ethiopia_fascist_events.55.desc
-	picture = GFX_report_event_generic_read_write
-	is_triggered_only = yes
-	# Oh well
-	option = {
-		name = BBA_ethiopia_fascist_events.55.a
-		ai_chance = {
-			base = 10
-		}
-	}
-}
 
 #ITA agrees to send equipment
-country_event = {
-	id = BBA_ethiopia_fascist_events.56
-	title = BBA_ethiopia_fascist_events.56.t
-	desc = BBA_ethiopia_fascist_events.56.desc
-	picture = GFX_report_event_generic_rifles
-	is_triggered_only = yes
-	option = {
-		name = BBA_ethiopia_fascist_events.56.a
-		ai_chance = {
-			base = 10
-		}
-		IF = {
-			limit = {
-				has_country_flag = ETH_wants_inf_equip_flag
-			}
-			add_equipment_to_stockpile = { 
-				type = infantry_equipment_1 
-				amount = 2500  
-				producer = ITA
-			}
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				add_equipment_subsidy = {
-					cic = 500
-					equipment_type = infantry_equipment
-					seller_tags  = { ITA }
-				}
-			}
-			clr_country_flag = ETH_wants_inf_equip_flag
-		}
-		ELSE_IF = {
-			limit = {
-				has_country_flag = ETH_wants_artillery_flag
-			}
-			add_equipment_to_stockpile = { 
-				type = artillery_equipment 
-				amount = 500  
-				producer = ITA
-			}
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				add_equipment_subsidy = {
-					cic = 250
-					equipment_type = artillery_equipment
-					seller_tags  = { ITA }
-				}
-			}
-			clr_country_flag = ETH_wants_artillery_flag
-		}
-
-	}
-}
 
 # ETH requests designers from ITA
 country_event = {
@@ -5334,13 +5164,6 @@ country_event = {
 				}
 			}
 		}
-		ETH = {
-			set_country_flag = ETH_wants_ERI_flag
-			country_event = {
-				id = BBA_ethiopia_fascist_events.66
-				hours = 1
-			}
-		}			
 	}
 	option = {
 		name = BBA_ethiopia_fascist_events.64.b
@@ -5353,12 +5176,6 @@ country_event = {
 				}
 			}
 		}	
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_fascist_events.67
-				days = 3
-			}
-		}		
 	}
 }
 
@@ -5380,13 +5197,6 @@ country_event = {
 				}
 			}
 		}
-		ETH = {
-			set_country_flag = ETH_wants_som_flag
-			country_event = {
-				id = BBA_ethiopia_fascist_events.66
-				hours = 1
-			}
-		}		
 	}
 	option = {
 		name = BBA_ethiopia_fascist_events.65.b
@@ -5399,59 +5209,12 @@ country_event = {
 				}
 			}
 		}	
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_fascist_events.67
-				days = 3
-			}
-		}			
 	}
 }
 
 #ITA Agree to give ETH land
-country_event = {
-	id = BBA_ethiopia_fascist_events.66
-	title = BBA_ethiopia_fascist_events.66.t
-	desc = BBA_ethiopia_fascist_events.66.desc
-	picture = GFX_report_event_military_planning
-	is_triggered_only = yes
-	option = {
-		name = BBA_ethiopia_fascist_events.66.a
-		ai_chance = {
-			base = 10
-		}
-		IF = {
-			limit = {
-				has_country_flag = ETH_wants_ERI_flag
-			}
-			ETH = { transfer_state = 550}
-			clr_country_flag = ETH_wants_ERI_flag
-		}
-		ELSE_IF = {
-			limit = {
-				has_country_flag = ETH_wants_som_flag
-			}
-			ETH = { transfer_state = 559}
-			ETH = { transfer_state = 844}
-			clr_country_flag = ETH_wants_som_flag
-		}
-	}
-}
 
 # Italy Refuse compensation
-country_event = {
-	id = BBA_ethiopia_fascist_events.67
-	title = BBA_ethiopia_fascist_events.67.t
-	desc = BBA_ethiopia_fascist_events.67.desc
-	picture = GFX_report_event_military_planning
-	is_triggered_only = yes
-	option = {
-		name = BBA_ethiopia_fascist_events.67.a
-		ai_chance = {
-			base = 10
-		}	
-	}
-}
 
 ##########################################################################
 #							Raid Italian Depots Events
@@ -5632,12 +5395,6 @@ country_event = {
 			}
 		}
 
-		ETH = {
-			country_event = {
-				days = 2
-				id = BBA_ethiopia_communist_events.04
-			}
-		}
 
 		ITA = {
 			country_event = {
@@ -5660,36 +5417,10 @@ country_event = {
 				}				
 			}
 		}
-		ETH = {
-			country_event = {
-				days = 2
-				id = BBA_ethiopia_communist_events.02
-			}
-		}
 	}
 }
 
 # Event for ETH if SOV rejects call for aid
-country_event = {
-	id = BBA_ethiopia_communist_events.02
-	title = BBA_ethiopia_communist_events.02.t
-	desc = BBA_ethiopia_communist_events.02.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_spr_anarchists2
-	# So much for class solidarity
-	option = {
-		name = BBA_ethiopia_communist_events.02.a
-		ai_chance = {
-			base = 10
-		}
-		
-		uncomplete_national_focus = {
-				focus = ETH_soviet_aid
-				uncomplete_children = yes
-		}
-		complete_national_focus = ETH_callout_to_the_world
-	}
-}
 
 # Event for ITA if SOV sends aid to ETH
 country_event = {
@@ -5715,21 +5446,6 @@ country_event = {
 }
 
 # Event for ETH if SOV agrees to send aid
-country_event = {
-	id = BBA_ethiopia_communist_events.04
-	title = BBA_ethiopia_communist_events.04.t
-	desc = BBA_ethiopia_communist_events.04.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_SOV_tank_column
-	# Workers of the world unite!
-	option = {
-		name = BBA_ethiopia_communist_events.04.a
-		ai_chance = {
-			base = 10
-		}
-		
-	}
-}
 
 #Black Lions and Military coup against HS - form prov gov
 country_event = {
@@ -5800,9 +5516,6 @@ country_event = {
 			long_name = ETH_provisonal_military_admin_long 
 			name = ETH_provisonal_military_admin
 		}
-		ETH = {
-			promote_character = ETH_prov_mil_admin
-		}		
 	}
 }
 
@@ -5931,12 +5644,6 @@ country_event = {
 				}				
 			}
 		}
-		ETH = {
-			country_event = {
-				hours = 1
-				id = BBA_ethiopia_communist_events.10
-			}
-		}	
 	}
 	#Agree to send rifles
 	option = {
@@ -5954,49 +5661,12 @@ country_event = {
 				}				
 			}
 		}
-		ETH = {
-			country_event = {
-				hours = 1
-				id = BBA_ethiopia_communist_events.09
-			}
-		}
 	}
 }
 
 #Soviets agree to send rifles
-country_event = {
-	id = BBA_ethiopia_communist_events.09
-	title = BBA_ethiopia_communist_events.09.t
-	desc = BBA_ethiopia_communist_events.09.desc
-	picture = GFX_report_event_generic_rifles
-	is_triggered_only = yes
-	option = {
-		name = BBA_ethiopia_communist_events.09.a
-		ai_chance = {
-			base = 10
-		}
-		add_equipment_to_stockpile = { 
-				type = infantry_equipment_1 
-				amount = 10000  
-				producer = SOV
-		}
-	}
-}
 
 #Soviets refuse to send rifles
-country_event = {
-	id = BBA_ethiopia_communist_events.10
-	title = BBA_ethiopia_communist_events.10.t
-	desc = BBA_ethiopia_communist_events.10.desc
-	picture = GFX_report_event_generic_rifles
-	is_triggered_only = yes
-	option = {
-		name = BBA_ethiopia_communist_events.10.a
-		ai_chance = {
-			base = 10
-		}
-	}
-}
 
 #Sov event for sending advisors to ETH
 country_event = {
@@ -6020,13 +5690,6 @@ country_event = {
 					}
 				}				
 			}
-		}
-		ETH = {
-			country_event = {
-				hours = 1
-				id = BBA_ethiopia_communist_events.15
-			}
-			set_country_flag = has_soviet_advisors_flag
 		}
 	}
 	#Refuse to send advisors
@@ -6107,12 +5770,6 @@ country_event = {
 				}				
 			}
 		}
-		ETH = {
-			country_event = {
-				hours = 1
-				id = BBA_ethiopia_communist_events.21
-			}
-		}
 	} 
 	#Refuse to help ETH
 	option = {
@@ -6125,12 +5782,6 @@ country_event = {
 					NOT = { has_government = communism }
 					has_civil_war = yes
 				}				
-			}
-		}
-		ETH = {
-			country_event = {
-				hours = 1
-				id = BBA_ethiopia_communist_events.20
 			}
 		}
 	}
@@ -6200,12 +5851,6 @@ country_event = {
 				}				
 			}
 		}
-		ETH = {
-			country_event = {
-				hours = 1
-				id = BBA_ethiopia_communist_events.19
-			}
-		}
 	}
 	#Refuse to send aid
 	option = {
@@ -6220,153 +5865,16 @@ country_event = {
 				}
 			}
 		}
-		ETH = {
-			country_event = {
-				hours = 1
-				id = BBA_ethiopia_communist_events.18
-			}
-		}
 	}
 }
 
 #Event for ETH if SOV refuse to send cars/tanks
-country_event = {
-	id = BBA_ethiopia_communist_events.18
-	title = BBA_ethiopia_communist_events.18.t
-	desc = BBA_ethiopia_communist_events.18.desc
-	picture = GFX_report_event_generic_lend_lease
-	is_triggered_only = yes
-	option = {
-		name = BBA_ethiopia_communist_events.18.a
-		ai_chance = {
-			base = 10
-		}
-	}
-}
 
 #ETH event when SOV sends cars/tanks
-country_event = {
-	id = BBA_ethiopia_communist_events.19
-	title = BBA_ethiopia_communist_events.19.t
-	desc = BBA_ethiopia_communist_events.19.desc
-	picture = GFX_report_event_generic_lend_lease
-	is_triggered_only = yes
-	option = {
-		name = BBA_ethiopia_communist_events.19.a
-		ai_chance = {
-			base = 10
-		}
-		
-		if = {
-			limit = {
-					has_dlc = "La Resistance"
-			}
-			set_technology = { armored_car1 = 1 }
-			add_equipment_to_stockpile = { 
-				type = gw_armored_car_equipment 
-				amount = 480 
-				producer = SOV
-			}
-
-			division_template = {
-				name = "Armored-Car Division"
-				is_locked = no
-				division_names_group = ETH_MOT_01
-				priority = 1
-				template_counter = 0
-				regiments = {
-					armored_car = { x = 0 y = 0 }
-					armored_car = { x = 0 y = 1 }
-					armored_car = { x = 1 y = 0 }
-					armored_car = { x = 1 y = 1 }
-				}
-			}
-		}
-		else = {		
-			if = {
-				limit = {
-					NOT = {
-						has_dlc = "No Step Back"
-					}
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_tech = gwtank
-						}
-					}
-					set_technology = { gwtank = 1 }
-					add_equipment_to_stockpile = { 
-						type = light_tank_equipment_1 
-						amount = 200 producer = SOV 
-					}
-				}
-			}
-			else = {
-				if = {
-					limit = {
-						NOT = {
-							has_tech = gwtank_chassis
-						}
-					}
-					set_technology = { gwtank_chassis = 1 }
-					add_equipment_to_stockpile = { 
-						type = light_tank_chassis_1 
-						amount = 200 producer = SOV 
-						variant_name = "T-26TU mod. 1933" 
-					}
-				}				
-			}
-		}
-	}
-}
 
 #Sov refuses to send planes
-country_event = {
-	id = BBA_ethiopia_communist_events.20
-	title = BBA_ethiopia_communist_events.20.t
-	desc = BBA_ethiopia_communist_events.20.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_SOV_purge_aircraft_2
-	option = {
-		name = BBA_ethiopia_communist_events.20.a
-		ai_chance = {
-			base = 10
-		}
-	}
-}
 
 #Sov agree to train pilots
-country_event = {
-	id = BBA_ethiopia_communist_events.21
-	title = BBA_ethiopia_communist_events.21.t
-	desc = BBA_ethiopia_communist_events.21.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_SOV_purge_aircraft_2
-	option = {
-		name = BBA_ethiopia_communist_events.21.a
-		ai_chance = {
-			base = 10
-		}
-
-		set_technology = { iw_small_airframe = 1 }
-		create_equipment_variant = {
-			name = "I-15" #
-			type = small_plane_airframe_0
-			modules = {
-				fixed_main_weapon_slot = light_mg_4x
-				engine_type_slot = engine_1_1x
-				special_type_slot_1 = empty
-			}
-		}
-		add_equipment_to_stockpile = { 
-			type = small_plane_airframe_0
-			producer = "SOV" 
-			amount = 100
-			variant_name = "I-15"
-		}
-	}
-}
 
 #Sov event for ITA refusing to end war
 
@@ -6398,12 +5906,6 @@ country_event = {
    				target = ITA
 			}
 		}
-		ETH = {
-			country_event = {
-				hours = 24
-				id = BBA_ethiopia_communist_events.24 
-			}
-		}	
 	}
 	#Back down to prevent war
 	option = {
@@ -6426,12 +5928,6 @@ country_event = {
 		ITA = {
 			country_event = {
 				id = BBA_ethiopia_communist_events.23
-				hours = 1
-			}
-		}
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.27
 				hours = 1
 			}
 		}
@@ -6528,9 +6024,6 @@ country_event = {
 				hours = 2
 			}
 		}
-		ETH = {
-			set_country_flag = ETH_SOV_wants_to_puppet_flag
-		}
 	}
 	#Refuse to mediate
 	option = {
@@ -6560,45 +6053,13 @@ country_event = {
 				}
 			}			
 		}
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.26
-				hours = 1
-			}
-		}
 	}
 }
 
 #ETH event for when Sov refuses to mediate
-country_event = {
-	id = BBA_ethiopia_communist_events.26
-	title = BBA_ethiopia_communist_events.26.t
-	desc = BBA_ethiopia_communist_events.26.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_generic_conference
-	option = {
-		name = BBA_ethiopia_communist_events.26.a
-		ai_chance = {
-			base = 10
-		}
-	}
-}
 
 #ETH Event for SOV backing down against ITA
 
-country_event = {
-	id = BBA_ethiopia_communist_events.27
-	title = BBA_ethiopia_communist_events.27.t
-	desc = BBA_ethiopia_communist_events.27.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_gre_italian_troops
-	option = {
-		name = BBA_ethiopia_communist_events.27.a
-		ai_chance = {
-			base = 10
-		}
-	}
-}
 
 #Event for ETH when ITA backs down but SOV still want to puppet
 country_event = {
@@ -6662,15 +6123,6 @@ country_event = {
 					set_state_flag = eth_occupied_ita_states_flag
 				}
 			}
-			ETH = {
-				every_owned_state = {
-					limit = {
-						is_on_continent = africa
-						is_controlled_by = ITA
-					}
-					set_state_flag = ita_occupied_eth_states_flag
-				}
-			}
 		}
 	}
 
@@ -6692,12 +6144,6 @@ country_event = {
 		
 
 		# Event for ETH if ITA accepts
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.31
-				hours = 1
-			}
-		}
 		news_event = {
 			id = bba_news.3
 			hours = 5
@@ -6744,12 +6190,6 @@ country_event = {
 			ideology = ROOT
 		}
 		#Event for ETH if ITA refuses to end war
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.32
-				hours = 1
-			}
-		}
 		clr_global_flag =  italo_ethiopian_peace_negotiations_ongoing
 	} 
 }
@@ -6789,21 +6229,12 @@ country_event = {
 		ITA = {
 			every_owned_state = {
 				limit = { has_state_flag = eth_occupied_ita_states_flag }
-				ETH = {	transfer_state = PREV }
 				clr_state_flag = eth_occupied_ita_states_flag
 			}
 		}
 		set_global_flag = ethiopia_recognized_flag
 		if = {
 			limit = { ETH = { owns_state = 550 } }
-			ETH = {
-				#Event to release Eritrea
-				country_event = {
-					id = BBA_ethiopia_communist_events.33
-					days = 11
-					random_days =  10
-				}
-			}
 		}
 		if = {
 			limit = { 
@@ -6836,62 +6267,8 @@ country_event = {
 }
 
 #ETH event if ITA continues the war
-country_event = {
-	id = BBA_ethiopia_communist_events.32
-	title = BBA_ethiopia_communist_events.32.t
-	desc = BBA_ethiopia_communist_events.32.desc
-	picture = GFX_report_event_generic_sign_treaty2
-	is_triggered_only = yes
-
-	option = {
-		name = BBA_ethiopia_communist_events.32.a
-		ai_chance = {
-			base = 10
-		}
-		add_war_support = 0.1
-		set_global_flag = ethiopia_recognized_flag
-	}
-}
 
 #Release Eritrea 
-country_event = {
-	id = BBA_ethiopia_communist_events.33
-	title = BBA_ethiopia_communist_events.33.t
-	desc = BBA_ethiopia_communist_events.33.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_generic_sign_treaty2
-
-	#Agree to release
-	option = {
-		name = BBA_ethiopia_communist_events.33.a
-		ai_chance = {
-			base = 10
-		}
-		release = ERI
-		hidden_effect = {
-			ERI = {
-				set_popularities = {
-					democratic = 20
-					fascism = 5
-					neutrality = 15
-					communism = 60
-				}
-				set_politics = {
-					ruling_party = communism
-					elections_allowed = no
-				}
-			}
-		}		
-	}
-	#Refuse to release
-	option = {
-		name = BBA_ethiopia_communist_events.33.b
-		ai_chance = {
-			base = 10
-		}
-		add_stability = -0.03
-	}
-}
 
 #Release Somalia
 
@@ -6950,27 +6327,6 @@ country_event = {
 			}
 			ELSE = {
 				release = SOM
-				SOM = {
-					835 = {
-						ETH = {	transfer_state = PREV }
-						add_core_of = ETH
-						clr_state_flag = eth_core_flag_som
-					}
-					836 = {
-						ETH = {	transfer_state = PREV }
-						add_core_of = ETH
-						clr_state_flag = eth_core_flag_som
-					}
-					set_popularities = {
-						democratic = ETH.party_popularity_100@democratic
-						neutrality = ETH.party_popularity_100@neutrality
-						fascism = ETH.party_popularity_100@fascism
-						communism = ETH.party_popularity_100@communism
-					}
-					set_politics = {
-						ruling_party = ROOT
-					}
-				}
 			}
 		}		
 	}
@@ -7004,12 +6360,6 @@ country_event = {
 			}
 		}
 		
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.36
-				hours = 1
-			}
-		}
 	}
 	#Refuse to release Rif
 	option = {
@@ -7017,68 +6367,13 @@ country_event = {
 		ai_chance = {
 			base = 1
 		}
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.37
-				hours = 1
-			}
-		}
 	}
 }
 
 #ETH event if Spain Agrees
-country_event = {
-	id = BBA_ethiopia_communist_events.36
-	title = BBA_ethiopia_communist_events.36.t
-	desc = BBA_ethiopia_communist_events.36.desc
-	is_triggered_only = yes
-	Picture = GFX_report_event_generic_sign_treaty2
-	option = {
-		name = BBA_ethiopia_communist_events.36.a
-		ai_chance = {
-			base = 10
-		}
-		SPC = {
-			release = RIF
-		}
-	}
-}
 
 #ETH event if Spain refuses
 
-country_event = {
-	id = BBA_ethiopia_communist_events.37
-	title = BBA_ethiopia_communist_events.37.t
-	desc = BBA_ethiopia_communist_events.37.desc
-	is_triggered_only = yes
-	Picture = GFX_report_event_generic_sign_treaty2
-	# Gain liberate war goal on Spain
-	option = {
-		name = BBA_ethiopia_communist_events.37.a
-		ai_chance = {
-			base = 10
-			modifier = {
-				factor = 0
-				strength_ratio = {
-					tag = SPC
-					ratio < 0.8
-				}
-			}
-		}
-		create_wargoal = {
-			type = liberate_wargoal
-			target = SPC
-		}
-	}
-	
-	# Drop the issue
-	option = {
-		name = BBA_ethiopia_communist_events.37.b
-		ai_chance = {
-			base = 1
-		}
-	}
-}
 
 #SPC event for ETH sending support during SCW
 country_event = {
@@ -7631,25 +6926,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = BBA_ethiopia_communist_events.54
-	title = BBA_ethiopia_communist_events.54.t
-	desc = BBA_ethiopia_communist_events.54.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_japanese_soldiers_01
-	option = {
-		name = BBA_ethiopia_communist_events.54.a
-		ai_chance = {
-			base = 10
-		}
-		add_equipment_to_stockpile = { 
-			type = infantry_equipment_1 
-			amount = 5000 
-			producer = JAP
-		}	
-		add_manpower = 10000	
-	}
-}
 
 country_event = {
 	id = BBA_ethiopia_communist_events.55
@@ -7669,12 +6945,6 @@ country_event = {
 			base = 10
 		}
 
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.57
-				days = 7
-			}
-		}		
 	}
 }
 
@@ -7696,34 +6966,9 @@ country_event = {
 			base = 10
 		}
 
-		ETH = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.54
-				days = 7
-			}
-		}		
 	}
 }
 
-country_event = {
-	id = BBA_ethiopia_communist_events.57
-	title = BBA_ethiopia_communist_events.57.t
-	desc = BBA_ethiopia_communist_events.57.desc
-	is_triggered_only = yes
-	picture = GFX_report_event_japanese_reply
-	option = {
-		name = BBA_ethiopia_communist_events.57.a
-		ai_chance = {
-			base = 5
-		}
-		FROM = {
-			country_event = {
-				id = BBA_ethiopia_communist_events.58
-				days = 3
-			}
-		}		
-	}
-}
 
 country_event = {
 	id = BBA_ethiopia_communist_events.58
@@ -7860,9 +7105,6 @@ country_event = {
 							has_state_flag = ETH_prio_state_flag
 						}
 						#PREV.PREV is ETH
-						ETH = {
-							transfer_state = PREV
-						}
 						
 					}
 				}

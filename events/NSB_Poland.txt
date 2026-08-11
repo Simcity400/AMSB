@@ -88,12 +88,6 @@ country_event = {
 			}
 			set_cosmetic_tag = CZE_ONLY
 		}
-		if = {
-			limit = {
-				original_tag = SLO
-			}
-			custom_effect_tooltip = GAME_OVER_TT
-		}
 	}
 
 	option = { #No thank you
@@ -1870,36 +1864,6 @@ country_event = {
 			base = 10
 		}
 		
-		DON = {
-			transfer_state = 218
-			transfer_state = 245
-			transfer_state = 238
-			transfer_state = 217
-			transfer_state = 265
-			if = {
-				limit = {
-					PREV = { controls_state = 236 }
-				}
-				transfer_state = 236
-			}
-			if = {
-				limit = {
-					PREV = { controls_state = 237 }
-				}
-				transfer_state = 237
-			}
-			custom_effect_tooltip = spawn_cossacks_tt
-			hidden_effect = {
-				load_oob = "DON_cossack_host"
-				set_politics = {
-					ruling_party = fascism
-				}
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.5
-				}
-			}
-		}
 		add_to_faction = DON
 		# Make sure Don Republic is added to the Soviet war.
 		if = {
@@ -1922,29 +1886,6 @@ country_event = {
 			base = 10
 		}
 		
-		DON = {
-			transfer_state = 218
-			transfer_state = 245
-			transfer_state = 238
-			transfer_state = 217
-			transfer_state = 265
-			if = {
-				limit = {
-					PREV = { controls_state = 236 }
-				}
-				transfer_state = 236
-			}
-			if = {
-				limit = {
-					PREV = { controls_state = 237 }
-				}
-				transfer_state = 237
-			}
-			custom_effect_tooltip = spawn_cossacks_tt
-			hidden_effect = {
-				load_oob = "DON_cossack_host"
-			}
-		}
 		add_to_faction = DON
 		puppet = DON
 		# Make sure Don Republic is added to the Soviet war.
@@ -1992,47 +1933,6 @@ country_event = {
 			base = 10
 		}
 		
-		KUB = {
-			transfer_state = 234
-			transfer_state = 235
-			transfer_state = 233
-			transfer_state = 232
-			if = {
-				limit = {
-					PREV = { controls_state = 137 }
-				}
-				transfer_state = 137
-			}
-			if = {
-				limit = {
-					PREV = { controls_state = 827 }
-				}
-				transfer_state = 827
-			}
-			if = {
-				limit = {
-					PREV = { controls_state = 828 }
-				}
-				transfer_state = 828
-			}
-			if = {
-				limit = {
-					PREV = { controls_state = 821 }
-				}
-				transfer_state = 821
-			}
-			custom_effect_tooltip = spawn_cossacks_tt
-			hidden_effect = {
-				load_oob = "KUB_cossack_host"
-				set_politics = {
-					ruling_party = fascism
-				}
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.5
-				}
-			}
-		}
 		add_to_faction = KUB
 		# Make sure Kuban Republic is added to the Soviet war.
 		if = {
@@ -2055,22 +1955,6 @@ country_event = {
 			base = 10
 		}
 		
-		KUB = {
-			transfer_state = 234
-			transfer_state = 235
-			transfer_state = 233
-			transfer_state = 232
-			if = {
-				limit = {
-					PREV = { controls_state = 137 }
-				}
-				transfer_state = 137
-			}
-			custom_effect_tooltip = spawn_cossacks_tt
-			hidden_effect = {
-				load_oob = "KUB_cossack_host"
-			}
-		}
 		add_to_faction = KUB
 		puppet = KUB
 		# Make sure Kuban Republic is added to the Soviet war.

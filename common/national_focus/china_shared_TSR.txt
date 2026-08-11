@@ -701,160 +701,6 @@ shared_focus = {
 				}
 			}
 			if = {
-				limit = {
-					tag = PRC
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = PRC_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = YUN
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = YUN_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = GXC
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = GXC_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = SHX
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = SHX_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = XSM
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = XSM_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = SIK
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = SIK_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = MAN
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = MAN_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
-			}
-			if = {
 				limit = { NOT = { has_dlc = "No Step Back" } }
 				if = {
 					limit = {
@@ -2160,7 +2006,6 @@ shared_focus = {
 	available_if_capitulated = no
 
 	completion_reward = {
-		TIB = { country_event = wtt_china.10 }
 	}
 }
 
@@ -2515,7 +2360,6 @@ shared_focus = {
 				}
 			}
 		}
-		unlock_decision_tooltip = CHI_free_indochina_tsr
 	}
 }
 
@@ -2719,10 +2563,8 @@ shared_focus = {
 				ROOT = { is_faction_leader = yes }
 				MON = { is_subject = no }
 			}
-			MON = { country_event = { id = generic.5 } }
 		}
 		else = {
-			MON = { country_event = wtt_china_shared.1 }
 		}
 	}
 }
@@ -2833,7 +2675,6 @@ shared_focus = {
 				}
 			}
 		}
-		unlock_decision_tooltip = CHI_overlordship_over_indochina_tsr
 		hidden_effect = {
 			news_event = { id = wtt_news.47 days = 3}
 		}

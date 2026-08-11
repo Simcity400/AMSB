@@ -827,27 +827,10 @@ JAP_trigger_democratic_civil_war = {
 			MAN = { is_subject_of = ROOT }
 		}
 		set_autonomy = { target = MAN autonomy_state = autonomy_free }
-		MAN = {
-			country_event = {
-				id = SEA_japan_popup_events.26
-				hours = 4
-			}	
-			effect_tooltip = {
-				set_cosmetic_tag = MAN_kwantung_army
-				IF = {
-					limit = {
-						has_idea = MAN_kwantung_veto 
-					}
-					remove_ideas = MAN_kwantung_veto 
-				}
-				add_ideas = MAN_militarism 
-			}
-		}
 		IF = {
 			limit = {
 				MEN = { is_subject_of = ROOT }
 			}
-			MAN = { puppet = MEN }
 		}
 	}
 	
@@ -856,22 +839,6 @@ JAP_trigger_democratic_civil_war = {
 			KOR = { is_subject_of = ROOT }
 		}
 		set_autonomy = { target = KOR autonomy_state = autonomy_free }
-		KOR = {
-			country_event = {
-				id = SEA_japan_popup_events.27
-				hours = 4
-			}	
-			drop_cosmetic_tag = yes
-			retire_character = KOR_jiro_minami
-			add_popularity = {
-				ideology = communism
-				popularity = 0.15
-			}	
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.15
-			}	
-		}
 	}
 	IF = {
 		limit = {
@@ -879,7 +846,7 @@ JAP_trigger_democratic_civil_war = {
 				is_core_of = KOR
 			}
 		}
-		release = KOR # Korea
+
 	}
 	IF = {
 		limit = {
@@ -1064,46 +1031,6 @@ JAP_trigger_democratic_civil_war = {
 	subtract_from_temp_variable = { temp_imperial_air = ROOT.JAP_opposition_air_support }
 	
 	hidden_effect = {
-		MAN = {
-			every_owned_state = {
-				teleport_armies = {
-					limit = {
-						original_tag = JAP
-					}
-					to_state_array = JAP.owned_controlled_states
-				}
-			}
-		}
-		KOR = {
-			every_owned_state = {
-				teleport_armies = {
-					limit = {
-						original_tag = JAP
-					}
-					to_state_array = JAP.owned_controlled_states
-				}
-			}
-		}
-		FOR = {
-			every_owned_state = {
-				teleport_armies = {
-					limit = {
-						original_tag = JAP
-					}
-					to_state_array = JAP.owned_controlled_states
-				}
-			}
-		}
-		PLU = {
-			every_owned_state = {
-				teleport_armies = {
-					limit = {
-						original_tag = JAP
-					}
-					to_state_array = JAP.owned_controlled_states
-				}
-			}
-		}
 	}
 
 	# Start the Actual Civil War 
@@ -1606,27 +1533,10 @@ JAP_trigger_communist_civil_war = {
 			MAN = { is_subject_of = ROOT }
 		}
 		set_autonomy = { target = MAN autonomy_state = autonomy_free }
-		MAN = {
-			country_event = {
-				id = SEA_japan_popup_events.26
-				hours = 4
-			}	
-			effect_tooltip = {
-				set_cosmetic_tag = MAN_kwantung_army
-				IF = {
-					limit = {
-						has_idea = MAN_kwantung_veto 
-					}
-					remove_ideas = MAN_kwantung_veto 
-				}
-				add_ideas = MAN_militarism 
-			}
-		}
 		IF = {
 			limit = {
 				MEN = { is_subject_of = ROOT }
 			}
-			MAN = { puppet = MEN }
 		}
 	}
 	
@@ -1635,18 +1545,6 @@ JAP_trigger_communist_civil_war = {
 			KOR = { is_subject_of = ROOT }
 		}
 		set_autonomy = { target = KOR autonomy_state = autonomy_free }
-		KOR = {
-			country_event = {
-				id = SEA_japan_popup_events.27
-				hours = 4
-			}	
-			drop_cosmetic_tag = yes
-			retire_character = KOR_jiro_minami
-			add_popularity = {
-				ideology = communism
-				popularity = 0.3
-			}	
-		}
 	}
 	IF = {
 		limit = {
@@ -1654,7 +1552,7 @@ JAP_trigger_communist_civil_war = {
 				is_core_of = KOR
 			}
 		}
-		release = KOR # Korea
+
 	}
 	IF = {
 		limit = {
@@ -1839,46 +1737,6 @@ JAP_trigger_communist_civil_war = {
 	subtract_from_temp_variable = { temp_imperial_air = ROOT.JAP_opposition_air_support }
 
 	hidden_effect = {
-		MAN = {
-			every_owned_state = {
-				teleport_armies = {
-					limit = {
-						original_tag = JAP
-					}
-					to_state_array = JAP.owned_controlled_states
-				}
-			}
-		}
-		KOR = {
-			every_owned_state = {
-				teleport_armies = {
-					limit = {
-						original_tag = JAP
-					}
-					to_state_array = JAP.owned_controlled_states
-				}
-			}
-		}
-		FOR = {
-			every_owned_state = {
-				teleport_armies = {
-					limit = {
-						original_tag = JAP
-					}
-					to_state_array = JAP.owned_controlled_states
-				}
-			}
-		}
-		PLU = {
-			every_owned_state = {
-				teleport_armies = {
-					limit = {
-						original_tag = JAP
-					}
-					to_state_array = JAP.owned_controlled_states
-				}
-			}
-		}
 	}
 
 	# Start the Actual Civil War 

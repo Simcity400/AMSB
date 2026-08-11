@@ -140,9 +140,6 @@ ETH_second_italo_ethiopian_war_category = {
 		fire_only_once = yes
 
 		complete_effect = {
-			ETH = {
-				country_event = { id = BBA_italy_second_italo_ethiopian_war.1 hours = 1 }
-			}
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
 				custom_effect_tooltip = ITA_transfer_lost_states_tt
@@ -3172,67 +3169,6 @@ ITA_balance_of_power_category = {
 
 ETH_italian_occupation_category = {
 	#Expand Regional Control
-	ITA_expand_regional_control = {
-		icon = GFX_decision_oppression
-		target_trigger = {
-			FROM = {
-				owner = {
-					tag = ETH # For now - change if making it generic
-					is_government_in_exile = yes
-				}
-				is_fully_controlled_by = ROOT
-			}
-		}
-		target_root_trigger = { tag = ITA } # For now - change if making it generic
-		state_target = yes
-		on_map_mode = map_only
-
-		cost = 75
-		days_remove = 90
-
-		visible = {
-			has_completed_focus = ITA_triumph_in_africa_bba
-		}
-
-		available = {
-			NOT = { has_country_flag = expanding_regional_control_flag }
-			FROM = {
-				compliance > 60
-				any_neighbor_state = { is_owned_by = ROOT }
-				owner = {
-					#has_legitimacy < 60
-					faction_leader = { NOT = { has_war_with = ROOT } }
-				}
-			}
-		}
-
-		cancel_trigger = { FROM = { NOT = { is_controlled_by = ROOT } } }
-
-		complete_effect = {
-			set_country_flag = expanding_regional_control_flag
-			set_variable = { state_integrated = FROM }
-			hidden_effect = {
-				#FROM = { owner = { activate_mission = ETH_italian_control_mission } } # Starts "warning timer" for Original owner
-			}
-		}
-
-		remove_effect = {
-			FROM = { set_state_owner_to = ROOT }
-			clr_country_flag = expanding_regional_control_flag
-		}
-
-		ai_will_do = {
-			base = 10
-
-			modifier = {
-				NOT = {
-					is_historical_focus_on = no
-					has_war_with_major = no
-				}
-				factor = 25
-			}
-		}
-	}
 
 	#Discredit Haile Selassie
 	ITA_discredit_haile_selassie = {
@@ -3255,12 +3191,8 @@ ETH_italian_occupation_category = {
 		cost = 35
 
 		complete_effect = {
-			ETH = {
-				add_legitimacy = -10
-			}
 
 			hidden_effect = {
-				ETH = { country_event = { id = BBA_italo_ethiopian_war_events.510 hours = 1 } }
 			}
 
 			every_controlled_state = {

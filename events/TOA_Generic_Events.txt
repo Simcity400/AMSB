@@ -425,38 +425,6 @@ country_event = {
 			add_to_variable = { JUNO_army_modifier_army_artillery_attack_factor = 0.05 tooltip = army_artillery_attack_factor_tt }
 			add_to_variable = { JUNO_army_modifier_army_artillery_defence_factor = 0.1 tooltip = army_artillery_defence_factor_tt }
 		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_artillery_attack_factor = 0.05 tooltip = army_artillery_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_artillery_defence_factor =  0.1 tooltip = army_artillery_defence_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_artillery_attack_factor = 0.05 tooltip = army_artillery_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_artillery_defence_factor = 0.1 tooltip = army_artillery_defence_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = PAR
-			}
-			custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_artillery_attack_factor = 0.05 tooltip = army_artillery_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_artillery_defence_factor = 0.1 tooltip = army_artillery_defence_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = URG
-			}
-			custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_artillery_attack_factor = 0.05 tooltip = army_artillery_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_artillery_defence_factor = 0.1 tooltip = army_artillery_defence_factor_tt }
-		}
 		ELSE = {
 			custom_effect_tooltip = JUNO_modify_south_american_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_army_artillery_attack_factor = 0.05 tooltip = army_artillery_attack_factor_tt }
@@ -475,34 +443,6 @@ country_event = {
 				original_tag = CHL
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.15 tooltip = production_speed_anti_air_building_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.15 tooltip = production_speed_anti_air_building_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = ARG
-			}
-			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.15 tooltip = production_speed_anti_air_building_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = PAR
-			}
-			custom_effect_tooltip = PAR_modify_paraguayan_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.15 tooltip = production_speed_anti_air_building_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = URG
-			}
-			custom_effect_tooltip = URG_modify_uruguayan_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.15 tooltip = production_speed_anti_air_building_factor_tt }
 		}
 		ELSE = {
@@ -607,234 +547,6 @@ country_event = {
 
 
 # The February Revolution (Paraguay)
-country_event = {
-	id = south_american_events.11
-	title = south_american_events.11.t
-	desc = south_american_events.11.d
-	picture = GFX_report_event_gre_militaristic_march
-
-	trigger = {
-		tag = PAR
-		has_government = democratic
-		date > 1936.2.16
-		is_subject = no
-		has_civil_war = no
-		has_dlc = "Trial of Allegiance"
-	}
-
-	mean_time_to_happen = { days = 1 }
-
-	hidden = no
-
-	fire_only_once = yes
-
-	option = {
-		name = south_american_events.11.a
-		ai_chance = {
-			base = 100
-			modifier = {
-				has_game_rule = {
-					rule = PAR_AI_BEHAVIOR
-					option = DEMOCRATIC
-				}
-				factor = 0
-			}
-		}
-
-		#add_war_support = -0.1
-
-		#add_stability = -0.1
-
-		set_politics = {
-			ruling_party = communism
-			elections_allowed = no
-		}
-
-		add_popularity = {
-			ideology = neutrality
-			popularity = 0.05
-		}
-
-		add_popularity = {
-			ideology = communism
-			popularity = 0.07
-		}
-
-		#custom_effect_tooltip = higinio_and_estigarrabia_wont_cooperate
-
-
-
-		add_manpower = 120000
-
-		PAR_rafael_franco = {
-			promote_leader = yes
-		}
-
-		news_event = { 
-			id = south_american_news.8 
-			days = 3
-			random_days = 6
-		}
-	}
-
-	option = {
-		name = south_american_events.11.b
-			ai_chance = {
-				base = 0
-				
-				modifier = {
-					add = 50
-					is_historical_focus_on = no
-					NOT = {
-						has_country_flag = PAR_AI_RANDOM_HISTORICAL
-						has_game_rule = {
-							rule = PAR_AI_BEHAVIOR
-							option = COMMUNIST
-						}
-
-						has_country_flag = PAR_AI_RANDOM_HISTORICAL
-						has_game_rule = {
-							rule = PAR_AI_BEHAVIOR
-							option = HISTORICAL
-						}
-					}
-				}
-
-				modifier = {
-					has_game_rule = {
-						rule = PAR_AI_BEHAVIOR
-						option = DEMOCRATIC
-					}
-					add = 500
-				}
-				
-				modifier = {
-					OR = {
-						has_game_rule = {
-							rule = PAR_AI_BEHAVIOR
-							option = DEFAULT
-						}
-
-						has_game_rule = {
-							rule = PAR_AI_BEHAVIOR
-							option = HISTORICAL
-						}
-					}
-					factor = 0	
-				}
-			}
-
-			add_war_support = -0.25
-
-			add_stability = -0.3
-
-			add_popularity = {
-				ideology = communism
-				popularity = -0.1
-			}
-
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.1
-			}
-
-			division_template = {
-				name = "Anti-Socialist Militia"
-				is_locked = no
-				#division_names_group = NAMELIST_ID # optional
-				priority = 2 # optional 
-				#template_counter = <INT> # optional
-				regiments = {
-					militia = { x = 0 y = 0 }
-					militia = { x = 0 y = 1 }
-					militia = { x = 0 y = 2 }
-					militia = { x = 1 y = 0 }
-					militia = { x = 1 y = 1 }
-					militia = { x = 1 y = 2 }
-					
-				}
-				support = {
-					
-				}
-			}
-
-			amsb_cw_operative_purge = yes start_civil_war = {
-				ideology = communism
-				ruling_party = democratic
-				size = 0.9 # (0-1) Size modifier of the revolt. Affects stockpile, army, air and navy as well
-				
-				division_template = {
-					name = "Peasant Militia"
-					is_locked = no
-					#division_names_group = NAMELIST_ID # optional
-					priority = 2 # optional 
-					#template_counter = <INT> # optional
-					regiments = {
-						militia = { x = 0 y = 0 }
-						militia = { x = 0 y = 1 }
-						militia = { x = 0 y = 2 }
-						
-					}
-					support = {
-						
-					}
-				}
-				random_core_state = {
-					limit = {
-						is_controlled_by = PREV
-					}
-					create_unit = {
-						division = "name = \"Peasant Militia\" division_template = \"Peasant Militia\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = PREV
-						#prioritize_location = province_id # optional 
-						allow_spawning_on_enemy_provs = no 
-						count = 10
-					}
-				}
-			}
-
-			random_core_state = {
-				limit = { is_controlled_by = ROOT }
-				create_unit = {
-					division = "name = \"Anti-Socialist Militia\" division_template = \"Anti-Socialist Militia\" start_experience_factor = 0.05 start_equipment_factor = 0.2 start_manpower_factor = 0.8"
-					owner = PAR
-					#prioritize_location = province_id # optional 
-					allow_spawning_on_enemy_provs = no 
-					count = 4
-				}
-			}
-
-			random_other_country = {
-				limit = {
-					original_tag = PAR
-					has_government = communism		
-				}
-				PAR_rafael_franco = { set_nationality = PREV } 
-				add_country_leader_role = {		
-					character =  PAR_rafael_franco # optional if inside character scope
-					promote_leader = yes
-			 		country_leader = {
-			 			ideology =marxism
-			 			expire = 1950.1.1
-			 			#traits = {  } 
-			 		}
-				}
-			}
-
-			hidden_effect = {
-				PAR_Jose_Felix_Estigarribia = { set_nationality = ROOT } 
-				set_country_flag = PAR_is_going_democratic
-			}
-
-			swap_ideas = { remove_idea = BOL_toll_of_the_chaco_war add_idea = BOL_toll_of_the_chaco_war_2 }
-
-			#news_event = { 
-			#	id = south_american_news.9 
-			#	days = 3
-			#	random_days = 6
-			#}
-		}
-}
 
 # The February Revolution
 news_event = {
@@ -888,110 +600,6 @@ news_event = {
 
 
 # The Socialist Revolution of 1936 (Bolivia)
-country_event = {
-	id = south_american_events.12
-	title = south_american_events.12.t
-	desc = south_american_events.12.d
-	picture = GFX_report_event_BOL_bolivian_socialist_revolution
-
-	trigger = {
-		tag = BOL
-		has_government = democratic
-		date > 1936.5.14
-		is_subject = no
-
-		# TODO JA, set to require the correct DLC
-		has_dlc = "Trial of Allegiance"
-	}
-
-	mean_time_to_happen = { days = 1 }
-
-	hidden = no
-
-	fire_only_once = yes
-
-	option = {
-		name = south_american_events.12.a
-		ai_chance = {
-			base = 100
-		}
-
-		add_war_support = -0.15
-
-		add_stability = -0.1
-
-		set_politics = {
-			ruling_party = neutrality
-			elections_allowed = yes
-		}
-
-		add_popularity = {
-			ideology = neutrality
-			popularity = 0.3
-		}
-
-		add_popularity = {
-			ideology = communism
-			popularity = 0.15
-		}
-
-		BOL_german_busch_beccera = {
-			promote_leader = yes
-		}
-
-		add_manpower = 500
-
-		news_event = { 
-			id = south_american_news.11 
-			days = 3
-			random_days = 6
-		}
-	}
-
-	option = {
-		name = south_american_events.12.b
-		ai_chance = {
-			base = 0
-			
-			modifier = {
-				add = 50
-				is_historical_focus_on = no
-			}
-			
-		}
-
-		add_war_support = -0.2
-
-		add_stability = -0.3
-
-		add_popularity = {
-			ideology = neutrality
-			popularity = -0.1
-		}
-
-		custom_effect_tooltip = german_busch_and_gualberto_imprisoned
-
-		hidden_effect = {
-			retire_character = BOL_gualberto_villarroel_lopez
-			retire_character = BOL_german_busch_beccera
-		}
-
-		add_manpower = -500
-
-		swap_ideas = {
-		    remove_idea = BOL_toll_of_the_chaco_war
-		    add_idea = BOL_toll_of_the_chaco_war_2
-		}
-
-		news_event = { 
-			id = south_american_news.12 
-			days = 3
-			random_days = 6
-		}
-
-	}
-
-}
 
 # The 1936 Bolivian coup d'état
 news_event = {
@@ -1084,12 +692,6 @@ country_event = {
 			CHL_anarchic_society_level_down = yes
 		}
 
-		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			CHL_anarchic_society_level_up = yes
-		}
 
 		news_event = { 
 			id = south_american_news.13 
@@ -1116,12 +718,6 @@ country_event = {
 
 		add_command_power = 25
 
-		IF = {
-			limit = {
-				original_tag = CHL
-			}
-			CHL_anarchic_society_level_up = yes
-		}
 
 		news_event = { 
 			id = south_american_news.13 
@@ -1589,115 +1185,6 @@ news_event = {
 }
 
 
-country_event = {
-	id = south_american_events.61
-	title = south_american_events.61.t
-	desc =south_american_events.61.desc
-	# TODO_JUNO: set correct image
-	picture = GFX_report_event_usa_heavy_cruiser
-	
-	major = yes
-	
-
-	trigger = {
-		original_tag = URG
-		ENG = {
-			has_war_with = GER
-			OR = {
-				ships_in_area = {
-					area = 64
-					size > 0
-				}
-
-				ships_in_area = {
-					area = 63
-					size > 0
-				}
-			}
-		}
-
-		GER = {
-			has_war_with = ENG
-			OR = {
-				ships_in_area = {
-					area = 64
-					size > 0
-				}
-
-				ships_in_area = {
-					area = 63
-					size > 0
-				}
-			}
-		}
-
-		# TODO_JUNO: set to require the correct DLC
-		has_dlc = "Trial of Allegiance"
-	}
-
-	mean_time_to_happen = { days = 3 }
-
-	fire_only_once = yes
-	
-	option = {
-
-
-		name = south_american_events.61.a
-
-		add_popularity = {
-			ideology = democratic
-			popularity = 0.05
-		}
-
-		add_political_power = 45
-		ai_chance = {
-			base = 1
-			modifier = {
-				has_government = fascism 
-				factor = 0
-			}
-		}
-	}
-	option = {
-		name = south_american_events.61.b
-
-		add_popularity = {
-			ideology = fascism
-			popularity = 0.05
-		}
-
-		add_war_support = 0.05
-
-		if = {
-			limit = { has_dlc = "By Blood Alone" }
-
-			if = {
-				limit = {
-					USA = { 
-						OR = { 
-							has_war_with = GER 
-							has_government = democratic
-						} 
-					}
-				}
-				USA = { send_embargo = ROOT }
-			}
-
-			GER = {
-				every_enemy_country = { send_embargo = ROOT }
-			}
-
-		}
-		ai_chance = {
-			base = 0
-			modifier = {
-				has_government = fascism 
-				add = 1
-			}
-		}
-
-	}
-}
 
 #BATTLE OF THE RIVER PLATE Will be fixed after file changes
 country_event = {
@@ -2055,22 +1542,10 @@ country_event = { #Peru offers peace for the state they claim
 				}
 			}
 	
-			PRU = {
-				transfer_state = 490
-			}
 
 		}
 		
 
-		PRU = {
-			country_event = {
-				id = south_american_events.18
-				hours = 3 
-			}
-			hidden_effect = {
-				set_country_flag = PRU_has_ended_their_invasion_won
-			}
-		}
 
 
 	}
@@ -2083,92 +1558,11 @@ country_event = { #Peru offers peace for the state they claim
 
 		add_war_support = 0.1
 
-		PRU = {
-			country_event = {
-				id = south_american_events.19
-				hours = 3 # optional - can take hours/days/months
-			}	
-		}
 		
 	}
 }
 
-country_event = { #FROM accepts
-	id = south_american_events.18
-	title = south_american_events.18.t
-	desc = south_american_events.18.desc
-	picture = GFX_report_event_generic_sign_treaty1
 
-	is_triggered_only = yes
-
-	option = { #good
-		name = south_american_events.18.a
-
-		every_country = {
-			limit = {
-				has_idea = PRU_amazonian_war
-			}
-			remove_ideas = PRU_amazonian_war
-		}
-
-		every_country = {
-			limit = {
-				OR = {
-					AND = {
-						owns_state = 490
-						has_war_with = PRU
-					}
-					AND = {
-						is_ally_with = ECU
-						has_war_with = PRU
-					}
-					AND = {
-						is_subject_of = ECU
-						has_war_with = PRU
-					}
-					AND = {
-						has_subject = ECU
-						has_war_with = PRU
-					}
-				}
-			}
-			white_peace = PRU
-		}
-
-		IF = {
-			limit = {
-				490 = {
-					is_core_of = ECU
-				}
-			}
-			490 = {
-				remove_core_of = ECU
-			}
-		}
-
-		PRU = {
-			transfer_state = 490
-		}
-
-		
-	}
-}
-
-country_event = { #From Rejects
-	id = south_american_events.19
-	title = south_american_events.19.t
-	desc = south_american_events.19.desc
-	picture = GFX_report_event_chinese_soldiers_running
-
-
-
-	is_triggered_only = yes
-
-	option = { #then we'll take it all instead
-		name = south_american_events.19.a
-		add_war_support = 0.15
-	}
-}
 
 country_event = { #Peru requests a white peace in return for Loreto
 	id = south_american_events.20
@@ -2213,9 +1607,6 @@ country_event = { #Peru requests a white peace in return for Loreto
 				limit = {
 					has_war_with = ECU
 				}
-				ECU = {
-					transfer_state = 491
-				}
 				491 = {
 					add_core_of = ECU
 					remove_core_of = PRU
@@ -2247,12 +1638,6 @@ country_event = { #Peru requests a white peace in return for Loreto
 			}
 		}
 
-		PRU = {
-			country_event = {
-				id = south_american_events.21
-				hours = 3 # optional - can take hours/days/months
-			}
-		}
 
 
 	}
@@ -2266,100 +1651,10 @@ country_event = { #Peru requests a white peace in return for Loreto
 		add_war_support = 0.1
 
 
-		PRU = {
-			country_event = {
-				id = south_american_events.22
-				hours = 3 # optional - can take hours/days/months
-			}
-		}
 	}		
 }
 
-country_event = { #From accepts
-	id = south_american_events.21
-	title = south_american_events.21.t
-	desc = south_american_events.21.desc
-	picture = GFX_report_event_generic_sign_treaty1
 
-
-
-	is_triggered_only = yes
-
-	option = { #thank goodness
-		name = south_american_events.21.a
-		ai_chance = {
-			base = 1
-		}
-
-		
-		every_country = { 
-			limit = {
-				has_idea = PRU_amazonian_war
-			}
-			remove_ideas = PRU_amazonian_war
-		}
-		IF = {
-			limit = {
-				490 = {
-					is_core_of = PRU
-				}
-			}
-			490 = {
-				remove_core_of = PRU
-			}
-		}
-		IF = {
-			limit = {
-				has_war_with = ECU
-			}
-			ECU = {
-				transfer_state = 491
-			}
-			491 = {
-				add_core_of = ECU
-				remove_core_of = PRU
-			}
-		}
-		
-		every_country = {
-			limit = {
-				OR = {
-					AND = {
-						owns_state = 490
-						has_war_with = PRU
-					}
-					AND = {
-						is_ally_with = ECU
-						has_war_with = PRU
-					}
-					AND = {
-						is_subject_of = ECU
-						has_war_with = PRU
-					}
-					AND = {
-						has_subject = ECU
-						has_war_with = PRU
-					}
-				}
-			}
-			white_peace = PRU
-		}
-	}
-}
-
-country_event = { #From Rejects
-	id = south_american_events.22
-	title = south_american_events.22.t
-	desc = south_american_events.22.desc
-	picture = GFX_report_event_chinese_soldiers_running
-
-	is_triggered_only = yes
-
-	option = { #so that is kinda bad...
-		name = south_american_events.22.a
-		add_political_power = -50
-	}
-}
 
 country_event = { #FROM has gone communist, should we embargo/remove protection?
 	id = south_american_events.30

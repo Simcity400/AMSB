@@ -88,12 +88,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			add_dynamic_modifier = { modifier = BRA_army_modifier }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			add_dynamic_modifier = { modifier = ARG_army_modifier }
@@ -179,13 +173,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
 			add_to_variable = { JUNO_army_production_speed_arms_factory_factor = 0.05 tooltip = production_speed_arms_factory_factor_tt }
 		}
 		ELSE_IF = {
@@ -298,14 +285,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_supply_combat_penalties_on_core_factor = -0.15 tooltip = supply_combat_penalties_on_core_factor_tt }
-			add_to_variable = { JUNO_modifier_production_speed_supply_node_factor = 0.25 tooltip = production_speed_supply_node_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -406,13 +385,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
 			add_to_variable = { JUNO_army_operative_slot = 1 tooltip = operative_slot_tt }
 		}
 		ELSE_IF = {
@@ -562,23 +534,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory = 0.05 tooltip = industrial_capacity_factory_tt }
-			IF = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}		
-				custom_effect_tooltip = available_mio_tt
-				show_mio_tooltip = BRA_bernadini_organization
-				mio:BRA_bernadini_organization = {
-					add_mio_size = 2
-				}
-			}
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -634,13 +589,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_cold_climate_gain_factor = 0.15 tooltip = acclimatization_cold_climate_gain_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -692,13 +640,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_acclimatization_hot_climate_gain_factor = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_acclimatization_hot_climate_gain_factor = 0.15 tooltip = acclimatization_hot_climate_gain_factor_tt }
 		}
 		ELSE_IF = {
@@ -838,14 +779,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.05 tooltip = experience_gain_army_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.03 tooltip = army_org_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -890,14 +823,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.02 tooltip = army_org_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.02 tooltip = army_org_factor_tt }
 			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
 		}
@@ -1012,16 +937,6 @@ shared_focus = {
 				equipment_type = anti_air_equipment
 				seller_tags = { USA JAP ENG FRA ITA GER MEX SOV } 
 			}
-			if = {
-				limit = {
-					original_tag = BRA
-				}
-				custom_effect_tooltip = available_mio_tt
-				show_mio_tooltip = BRA_bernadini_organization
-				mio:BRA_bernadini_organization = {
-					add_mio_size = 2
-				}
-			}
 		}
 
 		IF = {
@@ -1097,15 +1012,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_attack_factor = 0.02 tooltip = army_attack_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.01 tooltip = army_org_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -1154,14 +1060,6 @@ shared_focus = {
 			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.25 tooltip = training_time_factor_tt }
 			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.05 tooltip = max_planning_factor_tt }
 			add_to_variable = { JUNO_army_modifier_army_artillery_defence_factor = 0.05 tooltip = army_artillery_defence_factor_tt }
-			add_to_variable = { JUNO_army_modifier_conscription = 0.015 tooltip = conscription_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_training_time_factor = 0.15 tooltip = training_time_factor_tt }
 			add_to_variable = { JUNO_army_modifier_conscription = 0.015 tooltip = conscription_tt }
 		}
 		ELSE_IF = {
@@ -1319,13 +1217,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.15 tooltip = special_forces_cap_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.15 tooltip = special_forces_cap_tt }
 		}
 		ELSE_IF = {
@@ -1590,13 +1481,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_out_of_supply_factor = -0.15 tooltip = special_forces_out_of_supply_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -1696,13 +1580,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 48 tooltip = extra_marine_supply_grace_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_extra_marine_supply_grace = 48 tooltip = extra_marine_supply_grace_tt }
 		}
 		ELSE_IF = {
@@ -1837,13 +1714,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_special_forces_cap = 0.1 tooltip = special_forces_cap_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -1947,13 +1817,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.15 tooltip = production_speed_anti_air_building_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -2050,12 +1913,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			add_dynamic_modifier = { modifier = BRA_airforce_modifier }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			add_dynamic_modifier = { modifier = ARG_airforce_modifier }
@@ -2095,14 +1952,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.15 tooltip = air_ace_generation_chance_factor_tt }
-			add_to_variable = { JUNO_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
 			add_to_variable = { JUNO_airforce_modifier_air_ace_generation_chance_factor = 0.15 tooltip = air_ace_generation_chance_factor_tt }
 			add_to_variable = { JUNO_airforce_modifier_air_doctrine_cost_factor = -0.1 tooltip = air_doctrine_cost_factor_tt }
 		}
@@ -2232,13 +2081,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory_airfoce = 0.05 tooltip = industrial_capacity_factory_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
 			add_to_variable = { JUNO_army_modifier_industrial_capacity_factory_airfoce = 0.05 tooltip = industrial_capacity_factory_tt }
 		}
 		ELSE_IF = {
@@ -2395,17 +2237,6 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = available_mio_tt
-			show_mio_tooltip = BRA_embraer_organization
-			mio:BRA_embraer_organization = {
-				add_mio_size = 1
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-		}
 		random_core_state = {
 			limit = {
 				free_building_slots = {
@@ -2616,14 +2447,6 @@ shared_focus = {
 		}
 		ELSE_IF = {
 			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_command_power_mult = 0.15 tooltip = max_command_power_mult_tt }
-			add_to_variable = { JUNO_army_modifier_command_power_gain_mult = 0.1 tooltip = command_power_gain_mult_tt }
-		}
-		ELSE_IF = {
-			limit = {
 				
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
@@ -2671,14 +2494,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.1 tooltip = max_planning_factor_tt }
-			add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.15 tooltip = planning_speed_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_max_planning_factor = 0.1 tooltip = max_planning_factor_tt }
 			add_to_variable = { JUNO_army_modifier_planning_speed_factor = 0.15 tooltip = planning_speed_factor_tt }
 		}
@@ -2736,13 +2551,6 @@ shared_focus = {
 				
 			}
 			custom_effect_tooltip = CHL_modify_chilean_airforce_ns_intro
-			add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.1 tooltip = conscription_factor_tt }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			custom_effect_tooltip = BRA_modify_brazilian_airforce_ns_intro
 			add_to_variable = { JUNO_airforce_modifier_conscription_factor = 0.1 tooltip = conscription_factor_tt }
 		}
 		ELSE_IF = {
@@ -2835,12 +2643,6 @@ shared_focus = {
 				
 			}
 			add_dynamic_modifier = { modifier = CHL_navy_modifier }
-		}
-		ELSE_IF = {
-			limit = {
-				original_tag = BRA
-			}
-			add_dynamic_modifier = { modifier = BRA_navy_modifier }
 		}
 		ELSE_IF = {
 			limit = {
@@ -3788,60 +3590,6 @@ shared_focus = {
 		add_to_variable = {
 			JUNO_modifier_production_speed_coastal_bunker_factor = 0.2
 			tooltip = production_speed_coastal_bunker_factor_tt
-		}
-		IF = {
-			limit = {
-				original_tag = BRA
-				any_owned_state = {
-					is_coastal = yes
-				}
-			}
-			500 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 5172
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 10980
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 8190
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 12996
-				}
-			}
-			498 = {
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 10933
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 2175
-				}
-				add_building_construction = {
-					type = coastal_bunker
-					level = 1
-					instant_build = yes 
-					province = 13273
-				}
-			}
 		}
 	}
 }

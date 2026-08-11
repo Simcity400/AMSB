@@ -396,9 +396,6 @@ focus_tree = {
 			#tooltip
 			effect_tooltip ={
 				release_puppet = SLV
-				SLV = {
-					custom_effect_tooltip = create_two_units_tt
-				}
 			}
 			
 			hidden_effect = {
@@ -566,9 +563,6 @@ focus_tree = {
 			#tooltip
 			effect_tooltip ={
 				release_puppet = CRO
-				CRO = {
-					custom_effect_tooltip = create_four_units_tt
-				}
 			}
 			
 			#actual effect
@@ -743,9 +737,6 @@ focus_tree = {
 			#tooltip
 			effect_tooltip ={
 				release_puppet = CRO
-				CRO = {
-					custom_effect_tooltip = create_two_units_tt
-				}
 			}
 			custom_effect_tooltip = release_dalmatia_tt
 			custom_effect_tooltip = release_dalmatia_units_tt
@@ -946,9 +937,6 @@ focus_tree = {
 			#tooltip
 			effect_tooltip ={
 				release_puppet = BOS
-				BOS = {
-					custom_effect_tooltip = create_three_units_tt
-				}
 			}
 			
 			hidden_effect = {
@@ -1055,14 +1043,9 @@ focus_tree = {
 		completion_reward = {
 			release_puppet = HRZ 
 			set_autonomy = { target = HRZ autonomy_state = autonomy_integrated_puppet }
-			HRZ = { custom_effect_tooltip = create_one_units_tt }
 			
 			effect_tooltip ={
 				release_puppet = BOS
-				BOS = {
-					set_cosmetic_tag = BOS_without_HRZ
-					custom_effect_tooltip = create_one_units_tt
-				}
 			}
 			
 			hidden_effect = {
@@ -1190,9 +1173,6 @@ focus_tree = {
 			remove_ideas = YUG_idea_macedonian_opposition
 			remove_ideas = YUG_idea_serbian_general_staff
 			release_puppet = MAC
-			MAC = {
-				custom_effect_tooltip = create_two_units_tt
-			}
 			hidden_effect = {
 				MAC = { save_event_target_as = released_nation_target }
 				event_target:released_nation_target = {
@@ -1233,9 +1213,6 @@ focus_tree = {
 				}
 			}
 			release_puppet = KOS 
-			KOS = {
-				custom_effect_tooltip = create_one_units_tt
-			}
 			hidden_effect = {
 				KOS = { save_event_target_as = released_nation_target }
 				event_target:released_nation_target = {
@@ -1269,9 +1246,6 @@ focus_tree = {
 				}
 			}
 			release_puppet = MNT
-			MNT = {
-				custom_effect_tooltip = create_one_units_tt
-			}
 			hidden_effect = {
 				MNT = { save_event_target_as = released_nation_target }
 				event_target:released_nation_target = {
@@ -1808,8 +1782,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			activate_mission = YUG_ustasa_uprising
-			activate_mission = YUG_ustasa_crushed_mission
 		}
 	}
 
@@ -2471,9 +2443,6 @@ focus_tree = {
 				}
 			}
 			else = {
-				MAC = {
-					add_state_core = 731
-				}
 			}
 			news_event = { id = news.327 }
 		}
@@ -3834,8 +3803,6 @@ focus_tree = {
 		completion_reward = {
 			set_rule = { can_create_factions = yes }
 			create_faction_from_template = faction_template_panslavic_workers_congress
-			unlock_decision_tooltip = YUG_instigate_in_bulgaria
-			unlock_decision_tooltip = YUG_instigate_in_albania
 			hidden_effect = { news_event = { id = news.330 } }
 		}
 	}
@@ -4070,9 +4037,6 @@ focus_tree = {
 
 		completion_reward = {
 			set_faction_name = panbalkan_workers_congress
-			unlock_decision_tooltip = YUG_instigate_in_greece
-			unlock_decision_tooltip = YUG_instigate_in_romania
-			unlock_decision_tooltip = YUG_instigate_in_hungary
 		}
 	}
 
@@ -4138,7 +4102,6 @@ focus_tree = {
 					has_completed_focus = YUG_invite_greece
 					has_completed_focus = YUG_invite_hungary
 				}
-				unlock_decision_tooltip = YUG_instigate_in_turkey
 			}
 		}
 	}
@@ -4205,7 +4168,6 @@ focus_tree = {
 					has_completed_focus = YUG_invite_hungary
 					has_completed_focus = YUG_invite_romania
 				}
-				unlock_decision_tooltip = YUG_instigate_in_turkey
 			}
 		}
 	}
@@ -4272,7 +4234,6 @@ focus_tree = {
 					has_completed_focus = YUG_invite_greece
 					has_completed_focus = YUG_invite_romania
 				}
-				unlock_decision_tooltip = YUG_instigate_in_turkey
 			}
 		}
 	}

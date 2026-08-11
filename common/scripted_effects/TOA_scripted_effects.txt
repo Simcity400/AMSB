@@ -86,30 +86,6 @@ JUNO_pick_navy_modifier_tt = {
 		}
 		custom_effect_tooltip = CHL_modify_chilean_navy_ns_intro
 	}
-	ELSE_IF = {
-		limit = {
-			original_tag = BRA
-		}
-		custom_effect_tooltip = BRA_modify_brazilian_navy_ns_intro
-	}
-	ELSE_IF = {
-		limit = {
-			original_tag = ARG
-		}
-		custom_effect_tooltip = ARG_modify_argentine_navy_ns_intro			
-	}
-	ELSE_IF = {
-		limit = {
-			original_tag = PAR
-		}
-		custom_effect_tooltip = PAR_modify_paraguayan_navy_ns_intro			
-	}
-	ELSE_IF = {
-		limit = {
-			original_tag = URG
-		}
-		custom_effect_tooltip = URG_modify_uruguayan_navy_ns_intro			
-	}
 	ELSE = {
 		custom_effect_tooltip = JUNO_modify_south_american_navy_ns_intro			
 	}
@@ -729,10 +705,6 @@ CHL_mapuche_conflict_level_up = {
 				has_country_flag = CHL_no_more_mapuche_conflict
 			}
 		}
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict_much_worse
-			add_idea = CHL_the_mapuche_conflict_rebellion
-		}
 	}
 	ELSE_IF = {
 		limit = { 
@@ -740,10 +712,6 @@ CHL_mapuche_conflict_level_up = {
 			NOT = {
 				has_country_flag = CHL_no_more_mapuche_conflict
 			}
-		}
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict_worse
-			add_idea = CHL_the_mapuche_conflict_much_worse
 		}
 	}
 	ELSE_IF = {
@@ -753,10 +721,6 @@ CHL_mapuche_conflict_level_up = {
 				has_country_flag = CHL_no_more_mapuche_conflict
 			}
 		}
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict
-			add_idea = CHL_the_mapuche_conflict_worse
-		}
 	}
 	ELSE_IF = {
 		limit = { 
@@ -764,10 +728,6 @@ CHL_mapuche_conflict_level_up = {
 			NOT = {
 				has_country_flag = CHL_no_more_mapuche_conflict
 			}
-		}
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict_calmed
-			add_idea = CHL_the_mapuche_conflict
 		}
 	}
 	ELSE_IF = {
@@ -777,10 +737,6 @@ CHL_mapuche_conflict_level_up = {
 				has_country_flag = CHL_no_more_mapuche_conflict
 			}
 		}
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict_near_gone
-			add_idea = CHL_the_mapuche_conflict_calmed
-		}		
 	}
 	ELSE_IF = {
 		limit = { 
@@ -792,7 +748,6 @@ CHL_mapuche_conflict_level_up = {
 				has_country_flag = CHL_no_more_mapuche_conflict
 			}
 		}
-		add_ideas = CHL_the_mapuche_conflict_near_gone
 	}
 }
 
@@ -803,47 +758,23 @@ custom_effect_tooltip = CHL_mapuche_conflict_down_tt
 		limit = { has_idea = CHL_the_mapuche_conflict_near_gone }
 		#Makes the tooltip clearer if player looks at the effect early in the game
 		effect_tooltip = {
-			swap_ideas = {
-				remove_idea = CHL_the_mapuche_conflict_near_gone
-				add_idea = CHL_mapuche_conflict_done
-			}
 		}
-		hidden_effect = { remove_ideas = CHL_the_mapuche_conflict_near_gone }
+		hidden_effect = { }
 	}
 	IF = {
 		limit = { has_idea = CHL_the_mapuche_conflict_calmed }
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict_calmed
-			add_idea = CHL_the_mapuche_conflict_near_gone
-		}
 	}
 	IF = {
 		limit = { has_idea = CHL_the_mapuche_conflict }
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict
-			add_idea = CHL_the_mapuche_conflict_calmed
-		}
 	}
 	IF = {
 		limit = { has_idea = CHL_the_mapuche_conflict_worse }
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict_worse
-			add_idea = CHL_the_mapuche_conflict
-		}
 	}
 	IF = {
 		limit = { has_idea = CHL_the_mapuche_conflict_much_worse }
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict_much_worse
-			add_idea = CHL_the_mapuche_conflict_worse
-		}
 	}
 	IF = {
 		limit = { has_idea = CHL_the_mapuche_conflict_rebellion }
-		swap_ideas = {
-			remove_idea = CHL_the_mapuche_conflict_rebellion
-			add_idea = CHL_the_mapuche_conflict_much_worse
-		}
 	}
 }
 
@@ -868,10 +799,6 @@ CHL_anarchic_society_level_down = {
 				has_country_flag = CHL_no_more_anarchy_flag
 			}
 		}
-		swap_ideas = {
-			remove_idea = idea_CHL_near_anarchic_society
-			add_idea = idea_CHL_near_anarchic_society_2
-		}	
 	}
 	ELSE_IF = {
 		limit = {
@@ -879,10 +806,6 @@ CHL_anarchic_society_level_down = {
 			NOT = {
 				has_country_flag = CHL_no_more_anarchy_flag
 			}
-		}
-		swap_ideas = {
-			remove_idea = idea_CHL_near_anarchic_society_2
-			add_idea = idea_CHL_near_anarchic_society_3
 		}
 	}
 	ELSE_IF = {
@@ -892,10 +815,6 @@ CHL_anarchic_society_level_down = {
 				has_country_flag = CHL_no_more_anarchy_flag
 			}
 		}
-		swap_ideas = {
-			remove_idea = idea_CHL_near_anarchic_society_3
-			add_idea = idea_CHL_near_anarchic_society_4
-		}
 	}
 	ELSE_IF = {
 		limit = {
@@ -904,7 +823,6 @@ CHL_anarchic_society_level_down = {
 				has_country_flag = CHL_no_more_anarchy_flag
 			}
 		}
-		remove_ideas = idea_CHL_near_anarchic_society_4
 	}
 }
 
@@ -937,10 +855,6 @@ CHL_anarchic_society_level_up = {
 				has_country_flag = CHL_no_more_anarchy_flag
 			}
 		}
-		swap_ideas = {
-			remove_idea = idea_CHL_near_anarchic_society_2
-			add_idea = idea_CHL_near_anarchic_society
-		}
 	}
 	ELSE_IF = {
 		limit = { 
@@ -949,10 +863,6 @@ CHL_anarchic_society_level_up = {
 				has_country_flag = CHL_no_more_anarchy_flag
 			}
 		}
-		swap_ideas = {
-			remove_idea = idea_CHL_near_anarchic_society_3
-			add_idea = idea_CHL_near_anarchic_society_2
-		}
 	}
 	ELSE_IF = {
 		limit = { 
@@ -960,10 +870,6 @@ CHL_anarchic_society_level_up = {
 			NOT = {
 				has_country_flag = CHL_no_more_anarchy_flag
 			}
-		}
-		swap_ideas = {
-			remove_idea = idea_CHL_near_anarchic_society_4
-			add_idea = idea_CHL_near_anarchic_society_3
 		}
 	}
 	ELSE_IF = {
@@ -978,7 +884,6 @@ CHL_anarchic_society_level_up = {
 				has_country_flag = CHL_no_more_anarchy_flag
 			}
 		}
-		add_ideas = idea_CHL_near_anarchic_society_4
 	}
 }
 
@@ -1172,20 +1077,6 @@ BRA_setup_colonized_countries_to_liberate_array = {
 
 
 BRA_communist_cw_transfer_chars = {
-		BRA = {
-			BRA_eurico_gaspar_dutra = {
-				set_character_flag = BRA_loyal_to_gov_char
-			}
-			BRA_mascarenhas_de_morais = {
-				set_character_flag = BRA_loyal_to_gov_char
-			}
-			every_character = {
-				limit = {
-					has_character_flag = BRA_loyal_to_gov_char
-				}
-				set_nationality = PREV.PREV
-			}
-		}
 }
 
 BRA_mio_military_factory = {
