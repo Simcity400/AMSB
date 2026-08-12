@@ -427,16 +427,16 @@ southern_thrust = {
 	enable = {
 		has_completed_focus = SOV_the_southern_thrust
 		OR = {
-			country_exists = IRQ
+			always = no         
 			country_exists = PER
-			country_exists = AFG
+			always = no         
 		}
 	}
 	abort = {
 		NOT = {
-			country_exists = IRQ
+			always = no         
 			country_exists = PER
-			country_exists = AFG
+			always = no         
 		}
 	}
 
@@ -667,10 +667,8 @@ manchukuo_soviet_aid = {
 	}
 	enable = {
 		has_government = communism
-		country_exists = MAN
-		MAN = {
-			has_completed_focus = MAN_tsr_soviet_aid
-		}
+		always = no         
+		
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {
@@ -1063,13 +1061,13 @@ SOV_dont_send_volunteers_that_early_to_china = {
 			#Soviet focus plans are set so that they support a Chinese tag in 39-40
 			AND = {
 				has_completed_focus = SOV_the_gobi_gambit
-				country_exists = SIK
-				SIK = { has_war_with = JAP }
+				always = no         
+				
 			}
 			AND = {
 				has_completed_focus = SOV_two_red_flags
-				country_exists = PRC
-				PRC = { has_war_with = JAP }
+				always = no         
+				
 			}
 			AND = {
 				has_completed_focus = SOV_support_the_kuomintang
@@ -1101,13 +1099,13 @@ SOV_send_volunteers_to_sinkiang = {
 		original_tag = SOV
 	}
 	enable = {
-		SIK = { has_war_with = KHM }
-		country_exists = SIK
+		
+		always = no         
 	}
 
 	abort = {
 		NOT = {
-			SIK = { has_war_with = KHM }
+			
 		}
 	}
 
@@ -1780,7 +1778,7 @@ SOV_molotov_active_hostile_others = {
 			original_tag = USA
 			original_tag = POL
 			original_tag = FIN
-			original_tag = SAU #Khakimov incident
+			always = no        #Khakimov incident
 		}
 	}
 
@@ -1881,7 +1879,7 @@ SOV_litvinov_active_friendly_others = {
 			original_tag = USA
 			original_tag = POL
 			original_tag = FIN
-			original_tag = SAU #Khakimov incident
+			always = no        #Khakimov incident
 		}
 	}
 
@@ -1949,28 +1947,17 @@ SOV_khakimov_proposal_sov = {
 	enable = {
 		has_idea = SOV_maksim_litvinov
 		has_completed_focus = SOV_the_khakimov_proposal
-		SAU = {
-			has_opinion = {
-				target = SOV
-				value < 0
-			}
-			is_subject = no
-		}
+		
 		is_subject = no
 	}
 
 	abort = {
 		OR = {
 			NOT = { has_idea = SOV_maksim_litvinov }
-			is_in_faction_with = SAU
-			SAU = { has_capitulated = yes }
-			SAU = { is_subject = no }
-			SAU = {
-				has_opinion = {
-					target = SOV
-					value > 75
-				}
-			}
+			always = no             
+			
+			
+			
 			is_subject = yes
 		}
 	}
@@ -1992,7 +1979,7 @@ SOV_khakimov_proposal_sov = {
 #Soviets
 SOV_khakimov_proposal_sau = {
 	allowed = {
-		original_tag = SAU
+		always = no       
 	}
 
 	enable = {

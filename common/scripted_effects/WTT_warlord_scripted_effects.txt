@@ -125,10 +125,10 @@ warlord_rule_all_parties = {
 	hidden_effect = {
 		if = {
 			limit = {
-				tag = XSM
+				always = no
 				has_dlc = "No Compromise, No Surrender"
 				NOT = {
-					has_completed_focus = XSM_send_ma_lin_on_hajj
+					always = no                                  
 				}
 			}
 			add_country_leader_role = {
@@ -167,7 +167,7 @@ warlord_rule_all_parties = {
 		}
 		else_if = {
 			limit = {
-				tag = XSM
+				always = no
 				NOT = {
 					has_dlc = "No Compromise, No Surrender"
 				}
@@ -208,9 +208,9 @@ warlord_rule_all_parties = {
 		}
 		if = {
 			limit = {
-				tag = KHM
+				always = no
 				NOT = {
-					has_completed_focus = KHM_shizangs_coup
+					always = no                            
 				}
 			}
 			add_country_leader_role = {
@@ -250,7 +250,7 @@ warlord_rule_all_parties = {
 		}
 		if = {
 			limit = {
-				tag = SIC
+				always = no
 				has_character = SIC_liu_xiang
 			}
 			add_country_leader_role = {
@@ -290,7 +290,7 @@ warlord_rule_all_parties = {
 		}
 		else_if = {
 			limit = {
-				tag = SIC
+				always = no
 				NOT = {
 					has_character = SIC_liu_xiang
 				}

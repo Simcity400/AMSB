@@ -3458,7 +3458,7 @@ ENG_appeal_to_imperial_loyalists = {
 
 		target_trigger = {
 			FROM = {
-				tag = NZL
+				always = no
 				NOT = { is_subject_of = ROOT }
 				if = {
 					limit = {
@@ -3514,7 +3514,7 @@ ENG_appeal_to_imperial_loyalists = {
 					FROM = { amsb_cw_operative_purge = yes start_civil_war = { ideology = neutrality size = 0.4 } }
 					random_other_country = {
 						limit = {
-							original_tag = NZL
+							always = no       
 							has_government = neutrality
 						}
 						add_opinion_modifier = { target = ROOT modifier = ENG_imperial_loyalist }
@@ -3528,7 +3528,7 @@ ENG_appeal_to_imperial_loyalists = {
 					FROM = { amsb_cw_operative_purge = yes start_civil_war = { ideology = fascism size = 0.4 } }
 					random_other_country = {
 						limit = {
-							original_tag = NZL
+							always = no       
 							has_government = fascism
 						}
 						add_opinion_modifier = { target = ROOT modifier = ENG_imperial_loyalist }
@@ -3554,12 +3554,12 @@ ENG_appeal_to_imperial_loyalists = {
 		fire_only_once = no
 
 		activation = {
-			tag = NZL
+			always = no
 			ENG = { has_country_flag = ENG_prepare_coup_in_NZL }
 		}
 
 		visible = {
-			tag = NZL
+			always = no
 			ENG = { has_country_flag = ENG_prepare_coup_in_NZL }
 		}
 
@@ -3575,37 +3575,34 @@ ENG_appeal_to_imperial_loyalists = {
 			if = {
 				limit = {
 					ENG = { has_government = neutrality }
-					NZL = { NOT = { has_government = neutrality } }
+					
 				}
-				NZL = { amsb_cw_operative_purge = yes start_civil_war = { ideology = neutrality size = 0.4 } }
+				
 				random_other_country = {
 					limit = {
-						original_tag = NZL
+						always = no       
 						has_government = neutrality
 					}
 					add_opinion_modifier = { target = ENG modifier = ENG_imperial_loyalist }
 					set_cosmetic_tag = ENG_imperialist_new_zealand
 				}
-				NZL = { hidden_effect = { news_event = { id = mtg_news.26 days = 1 } } }
+				
 			}
 			if = {
 				limit = {
 					ENG = { has_government = fascism }
-					NZL = { NOT = { has_government = fascism } }
+					
 				}
-				NZL = { amsb_cw_operative_purge = yes start_civil_war = { ideology = fascism size = 0.4 } }
+				
 				random_other_country = {
 					limit = {
-						original_tag = NZL
+						always = no       
 						has_government = fascism
 					}
 					add_opinion_modifier = { target = ENG modifier = ENG_imperial_loyalist }
 					set_cosmetic_tag = ENG_imperialist_new_zealand
 				}
-				NZL = {
-					hidden_effect = { news_event = { id = mtg_news.26 days = 1 } }
-					set_country_flag = ENG_imperialist_civil_war
-				}
+				
 			}
 			ENG = { clr_country_flag = ENG_prepare_coup_in_NZL }
 		}
@@ -3616,7 +3613,7 @@ ENG_appeal_to_imperial_loyalists = {
 		icon = eng_support_imperialist_coup
 
 		allowed = {
-			tag = NZL
+			always = no
 		}
 
 		available = {
@@ -3706,7 +3703,7 @@ ENG_appeal_to_imperial_loyalists = {
 		timeout_effect = {
 			custom_effect_tooltip = ENG_support_imperialist_coup_mission_2_tt
 			clr_country_flag = ENG_NZL_suppressed_coup
-			NZL = { clr_country_flag = NZL_suppressing_coup }
+			
 		}
 	}
 
@@ -3725,11 +3722,11 @@ ENG_appeal_to_imperial_loyalists = {
 			OR = {
 				AND = {
 					has_government = neutrality
-					NZL = { NOT = { has_government = neutrality } }
+					
 				}
 				AND = {
 					has_government = fascism
-					NZL = { NOT = { has_government = fascism } }
+					
 				}
 			}
 		}
@@ -3743,7 +3740,7 @@ ENG_appeal_to_imperial_loyalists = {
 
 		target_trigger = {
 			FROM = {
-				tag = NZL
+				always = no
 				if = {
 					limit = {
 						ROOT = { has_government = neutrality }
@@ -4139,8 +4136,8 @@ ENG_appeal_to_imperial_loyalists = {
 		}
 
 		available = {
-			NZL = { has_civil_war = yes }
-			NOT = { is_in_faction_with = NZL }
+			
+			NOT = { always = no              }
 		}
 
 		targets_dynamic = yes
@@ -4151,7 +4148,7 @@ ENG_appeal_to_imperial_loyalists = {
 
 		target_trigger = {
 			FROM = {
-				original_tag = NZL
+				always = no       
 				has_civil_war = yes
 				if = {
 					limit = {
@@ -7921,7 +7918,7 @@ ENG_move_to_secure_the_dominions = {
 		available = {
 			if = {
 				limit = {
-					NOT = { country_exists = PAK }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 442 amount < 9600 } }
 				NOT = { army_manpower_in_state = { state = 443 amount < 9600 } }
@@ -7943,7 +7940,7 @@ ENG_move_to_secure_the_dominions = {
 			NOT = { army_manpower_in_state = { state = 431 amount < 9600 } }
 			if = {
 				limit = {
-					NOT = { country_exists = BAN }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 430 amount < 9600 } }
 			}
@@ -7951,7 +7948,7 @@ ENG_move_to_secure_the_dominions = {
 			NOT = { army_manpower_in_state = { state = 434 amount < 9600 } }
 			if = {
 				limit = {
-					NOT = { country_exists = BRM }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 640 amount < 9600 } }
 				NOT = { army_manpower_in_state = { state = 288 amount < 9600 } }
@@ -8036,7 +8033,7 @@ ENG_move_to_secure_the_dominions = {
 		available = {
 			if = {
 				limit = {
-					NOT = { country_exists = PAK }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 442 amount < 9600 } }
 				NOT = { army_manpower_in_state = { state = 443 amount < 9600 } }
@@ -8058,7 +8055,7 @@ ENG_move_to_secure_the_dominions = {
 			NOT = { army_manpower_in_state = { state = 431 amount < 9600 } }
 			if = {
 				limit = {
-					NOT = { country_exists = BAN }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 430 amount < 9600 } }
 			}
@@ -8066,7 +8063,7 @@ ENG_move_to_secure_the_dominions = {
 			NOT = { army_manpower_in_state = { state = 434 amount < 9600 } }
 			if = {
 				limit = {
-					NOT = { country_exists = BRM }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 640 amount < 9600 } }
 				NOT = { army_manpower_in_state = { state = 288 amount < 9600 } }
@@ -8142,7 +8139,7 @@ ENG_move_to_secure_the_dominions = {
 		available = {
 			if = {
 				limit = {
-					NOT = { country_exists = PAK }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 442 amount < 9600 } }
 				NOT = { army_manpower_in_state = { state = 443 amount < 9600 } }
@@ -8164,7 +8161,7 @@ ENG_move_to_secure_the_dominions = {
 			NOT = { army_manpower_in_state = { state = 431 amount < 9600 } }
 			if = {
 				limit = {
-					NOT = { country_exists = BAN }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 430 amount < 9600 } }
 			}
@@ -8172,7 +8169,7 @@ ENG_move_to_secure_the_dominions = {
 			NOT = { army_manpower_in_state = { state = 434 amount < 9600 } }
 			if = {
 				limit = {
-					NOT = { country_exists = BRM }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 640 amount < 9600 } }
 				NOT = { army_manpower_in_state = { state = 288 amount < 9600 } }
@@ -8235,7 +8232,7 @@ ENG_move_to_secure_the_dominions = {
 		available = {
 			if = {
 				limit = {
-					NOT = { country_exists = PAK }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 442 amount < 9600 } }
 				NOT = { army_manpower_in_state = { state = 443 amount < 9600 } }
@@ -8257,7 +8254,7 @@ ENG_move_to_secure_the_dominions = {
 			NOT = { army_manpower_in_state = { state = 431 amount < 9600 } }
 			if = {
 				limit = {
-					NOT = { country_exists = BAN }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 430 amount < 9600 } }
 			}
@@ -8265,7 +8262,7 @@ ENG_move_to_secure_the_dominions = {
 			NOT = { army_manpower_in_state = { state = 434 amount < 9600 } }
 			if = {
 				limit = {
-					NOT = { country_exists = BRM }
+					NOT = { always = no          }
 				}
 				NOT = { army_manpower_in_state = { state = 640 amount < 9600 } }
 				NOT = { army_manpower_in_state = { state = 288 amount < 9600 } }
@@ -8610,7 +8607,7 @@ ENG_move_to_secure_the_dominions = {
 
 		target_trigger = {
 			FROM = {
-				original_tag = NZL
+				always = no       
 			}
 		}
 
@@ -8690,7 +8687,7 @@ ENG_move_to_secure_the_dominions = {
 
 		target_trigger = {
 			FROM = {
-				original_tag = NZL
+				always = no       
 			}
 		}
 
@@ -8763,7 +8760,7 @@ ENG_move_to_secure_the_dominions = {
 
 		target_trigger = {
 			FROM = {
-				original_tag = NZL
+				always = no       
 			}
 		}
 
@@ -8820,7 +8817,7 @@ ENG_move_to_secure_the_dominions = {
 
 		target_trigger = {
 			FROM = {
-				original_tag = NZL
+				always = no       
 			}
 		}
 
@@ -8908,7 +8905,7 @@ ENG_imperial_conference_decision = {
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = NZL
+							always = no
 						}
 					}
 				}
@@ -8953,11 +8950,7 @@ ENG_imperial_conference_decision = {
 								days = 365}
 				add_political_power = -25
 			}
-			NZL = {
-				add_timed_idea = { idea = ENG_imperial_conference_defense_dominion
-								days = 365}
-				add_political_power = -25
-			}
+			
 			AST = {
 				add_timed_idea = { idea = ENG_imperial_conference_defense_dominion
 								days = 365}
@@ -9046,11 +9039,7 @@ ENG_imperial_conference_decision = {
 								days = 365}
 				add_political_power = -25
 			}
-			NZL = {
-				add_timed_idea = { idea = ENG_imperial_conference_economy_dominion
-								days = 365}
-				add_political_power = -25
-			}
+			
 			CAN = {
 				add_timed_idea = { idea = ENG_imperial_conference_economy_dominion
 								days = 365}
@@ -9089,8 +9078,7 @@ ENG_imperial_conference_decision = {
 			add_war_support = 0.15
 			SAF = {add_war_support = 10
 					add_political_power = -25}
-					NZL = {add_war_support = 0.10
-					add_political_power = -25}			
+								
 					AST = {add_war_support = 0.10
 					add_political_power = -25}
 					RAJ = {add_war_support = 0.10
@@ -9118,7 +9106,7 @@ ENG_imperial_conference_decision = {
 				CAN = { exists = yes }
 				SAF = { exists = yes }
 				AST = { exists = yes }
-				NZL = { exists = yes }
+				
 				AND = {
 					RAJ = { is_subject_of = ENG }
 					always = no

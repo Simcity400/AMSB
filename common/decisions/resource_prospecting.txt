@@ -205,8 +205,8 @@ prospect_for_resources = {
 				factor = 20 #10 was the basic default AI weight before, meant for Chinas.
 				OR = {
 					is_literally_china = yes
-					original_tag = MAN
-					original_tag = MEN
+					always = no       
+					always = no       
 					original_tag = JAP
 				}
 			}
@@ -415,7 +415,7 @@ prospect_for_resources = {
 		icon = aluminium
 
 		allowed = {
-			NOT = { tag = MAN }
+			NOT = { always = no }
 		}
 
 		available = {
@@ -3700,7 +3700,7 @@ prospect_for_resources = {
 				limit = {
 					OR = {
 						original_tag = BEL
-						original_tag = COG
+						always = no       
 					}
 					has_dlc = "Gotterdammerung"
 				}
@@ -3820,8 +3820,8 @@ prospect_for_resources = {
 				factor = 10 #5 was the basic default AI weight before, meant for Chinas.
 				OR = {
 					is_literally_china = yes
-					original_tag = MAN
-					original_tag = MEN
+					always = no       
+					always = no       
 					original_tag = JAP
 				}
 			}
@@ -8745,9 +8745,9 @@ prospect_for_resources = {
 			controls_state = 688
 			if = {
 				limit = {
-					original_tag = PAR
+					always = no       
 				}
-				has_completed_focus = GUAY_exploit_mineral_wealth
+				always = no                                      
 			}
 			else = {
 				hidden_trigger = {
@@ -8781,10 +8781,10 @@ prospect_for_resources = {
 			modifier = {
 				factor = 20 
 				OR = {
-					original_tag = PAR
-					original_tag = BOL
-					original_tag = ARG
-					original_tag = BRA
+					always = no       
+					always = no       
+					always = no       
+					always = no       
 				}
 			}
 			modifier = {  # Too low PP
@@ -9295,10 +9295,10 @@ prospect_for_resources = {
 			num_of_civilian_factories_available_for_projects > 4
 			IF = {
 				limit = {
-					original_tag = BRA
+					always = no       
 					has_dlc = "Trial of Allegiance"
 				}
-				has_completed_focus = BRA_federal_development
+				always = no                                  
 			}
 			ELSE = {
 				has_tech = excavation4

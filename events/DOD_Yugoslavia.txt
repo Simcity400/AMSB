@@ -208,10 +208,7 @@ country_event = {
 
 		IF = {
 			limit = {
-				CRO = { 
-					exists = yes 
-					is_subject_of = YUG
-				}
+				
 				YUG = { 
 					NOT = { 
 						has_completed_focus = YUG_towards_independence 
@@ -310,8 +307,8 @@ country_event = {
 		}
 		OR = {
 			AND = {
-				CRO = { exists = yes }
-				CRO = { is_subject_of = YUG }
+				
+				
 			}
 			109 = { is_owned_and_controlled_by = YUG }
 			103 = { is_owned_and_controlled_by = YUG }
@@ -333,39 +330,21 @@ country_event = {
 		}	
 		IF = {
 			limit = {
-				CRO = {
-					exists = yes
-					is_subject_of = YUG
-				}
+				
 			}
 			set_autonomy = { target = CRO autonomy_state = autonomy_free }
-			CRO = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-			}
+			
 		}
 		IF = { #if Montenegro exists, they also join
 			limit = {
-				MNT = {
-					exists = yes
-					is_subject_of = YUG
-				}
+				
 			}
 			set_autonomy = { target = MNT autonomy_state = autonomy_free }
-			MNT = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-			}
+			
 		}
 		IF = {
 			limit = {
-				CRO = {
-					exists = no
-				}
+				
 			}
 			if = {
 				limit = { 109 = { is_owned_and_controlled_by = YUG } }
@@ -389,39 +368,14 @@ country_event = {
 
 				IF = {
 					limit = {
-						CRO = {
-							capital_scope = {
-								NOT = {
-									is_in_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							}
-						}
+						
 					}
 
-					CRO = {
-						capital_scope = {
-							add_to_array = {
-								array = AUS.expansion_targets
-								value = THIS
-							}
-						}
-					}
+					
 
 					IF = {
 						limit = {
-							SLV = {
-								capital_scope = {
-									NOT = {
-										is_in_array = {
-											array = AUS.expansion_targets
-											value = THIS
-										}
-									}
-								}
-							}
+							
 						}
 
 						YUG = {
@@ -441,16 +395,7 @@ country_event = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			CRO = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-				custom_effect_tooltip = YUG_CRO_independence_war_troops_tt
-				hidden_effect = {
-					load_oob = "CRO_YUG_independence"
-				}
-			}
+			
 		}
 	}
 	# Play as Croatia
@@ -462,41 +407,23 @@ country_event = {
 		
 		IF = {
 			limit = {
-				CRO = {
-					exists = yes
-					is_subject_of = YUG
-				}
+				
 			}
 			set_autonomy = { target = CRO autonomy_state = autonomy_free }
-			CRO = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-			}
+			
 		}
 
 		IF = { #if Montenegro exists, they also join
 			limit = {
-				MNT = {
-					exists = yes
-					is_subject_of = YUG
-				}
+				
 			}
 			set_autonomy = { target = MNT autonomy_state = autonomy_free }
-			MNT = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-			}
+			
 		}
 
 		IF = {
 			limit = {
-				CRO = {
-					exists = no
-				}
+				
 				109 = { is_owned_and_controlled_by = YUG }
 			}
 			IF = {
@@ -529,67 +456,7 @@ country_event = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			CRO = {
-				declare_war_on = {
-					target = YUG
-					type = annex_everything
-				}
-				custom_effect_tooltip = YUG_CRO_independence_war_troops_tt
-				hidden_effect = {
-					load_oob = "CRO_YUG_independence"
-
-					IF = {
-						limit = {
-							CRO = {
-								capital_scope = {
-									NOT = {
-										is_in_array = {
-											array = AUS.expansion_targets
-											value = THIS
-										}
-									}
-								}
-							}
-						}
-
-						CRO = {
-							capital_scope = {
-								add_to_array = {
-									array = AUS.expansion_targets
-									value = THIS
-								}
-							}
-						}
-
-						IF = {
-							limit = {
-								SLV = {
-									capital_scope = {
-										NOT = {
-											is_in_array = {
-												array = AUS.expansion_targets
-												value = THIS
-											}
-										}
-									}
-								}
-							}
-
-							YUG = {
-								capital_scope = {
-									remove_from_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							}
-						}
-					}
-				}
-
-				change_tag_from = ROOT
-
-			}
+			
 
 		}
 

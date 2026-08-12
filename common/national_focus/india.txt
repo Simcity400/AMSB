@@ -1198,7 +1198,7 @@ focus_tree = {
 		bypass = {
 			OR = {
 				has_idea = RAJ_marginalized_muslim_community_happy
-				PAK = { exists = yes }
+				
 			}
 		}
 
@@ -1613,10 +1613,10 @@ focus_tree = {
 		available = {
 			IF = {
 				limit = {
-					ETH = { has_character = RAJ_orde_wingate }
+					
 				}
 				OR = {
-					ETH = { controls_state = 271 }
+					
 					any_owned_state = {
 						NOT = { is_controlled_by = ROOT }
 					}
@@ -1639,14 +1639,9 @@ focus_tree = {
 		hidden_effect = {
 			IF = {
 				limit = {
-					ETH = { has_character = RAJ_orde_wingate }
+					
 				}
-				ETH = {
-					country_event = {
-						id = BBA_ethiopia_exile_events.05
-						hours = 1
-					}
-				}
+				
 			}
 			ELSE = {
 				add_corps_commander_role = {

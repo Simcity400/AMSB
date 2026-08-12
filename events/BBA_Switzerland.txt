@@ -3241,16 +3241,7 @@ country_event = { #Event to notify SWI that they won the state lottery and they'
 				check_variable = { var:SWI:SWI_requested_territory = VIC }
 			}
 
-			VIC = {
-				every_owned_state = {
-					limit = {
-						is_core_of = PREV 
-						is_alpine_state = yes
-						is_owned_and_controlled_by = PREV
-					}
-					transfer_state_to = SWI
-				}
-			}
+			
 		}
 		else = {
 			FROM = {
@@ -3308,10 +3299,7 @@ country_event = { #Event sent from Switzerland to ask for an occupied country
 
 			modifier = {
 				check_variable = { var:SWI.SWI_requested_territory = VIC }
-				VIC = {
-					is_ai = no
-					exists = yes
-				}
+				
 				factor = 0
 			}
 		}
@@ -3330,24 +3318,9 @@ country_event = { #Event sent from Switzerland to ask for an occupied country
 			}
 			if = {
 				limit = {
-					VIC = { 
-						exists = yes
-						any_owned_state = {
-							is_alpine_state = yes 
-							is_core_of = var:SWI.SWI_requested_territory
-						} 
-						is_ai = yes
-					}
+					
 				}
-				VIC = {
-					every_owned_state = {
-						limit = {
-							is_alpine_state = yes 
-							is_core_of = var:SWI.SWI_requested_territory
-						}
-						transfer_state_to = SWI 
-					}				
-				}
+				
 			}
 		}
 	}

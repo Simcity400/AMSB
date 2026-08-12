@@ -5792,6 +5792,7 @@ country_event = {
 # SOV-SINKIANG - Soviet Union is losing and we might need new friends - Event for removed Sinkiang (triggered via MTTH)
 country_event = {
 	id = NSB_soviet_foreign_politics_events.285
+	hidden = yes
 	is_triggered_only = yes
 	trigger = { always = no }
 	option = { name = OK }
@@ -10470,7 +10471,7 @@ country_event = {
 					original_tag = SOV
 				}
 				every_owned_state = {
-					limit = { is_core_of = UKR }
+					limit = { always = no      }
 
 				}
 			}
@@ -11224,7 +11225,7 @@ country_event = {
 					modifier = {
 						factor = 0.25
 						any_state = {
-							is_core_of = CRI
+							always = no     
 							is_controlled_by = SOV
 						}
 					}
@@ -11247,7 +11248,7 @@ country_event = {
 					modifier = {
 						factor = 0.25
 						any_state = {
-							is_core_of = KAR
+							always = no     
 							is_controlled_by = SOV
 						}
 					}
@@ -11369,7 +11370,7 @@ country_event = {
 					modifier = {
 						factor = 0.25
 						any_state = {
-							is_core_of = DAG
+							always = no     
 							is_controlled_by = SOV
 						}
 					}
@@ -11392,7 +11393,7 @@ country_event = {
 					modifier = {
 						factor = 0.25
 						any_state = {
-							is_core_of = CIN
+							always = no     
 							is_controlled_by = SOV
 						}
 					}
@@ -11488,7 +11489,7 @@ country_event = {
 					modifier = {
 						factor = 0.25
 						any_state = {
-							is_core_of = KHI
+							always = no     
 							is_controlled_by = SOV
 						}
 					}
@@ -11511,7 +11512,7 @@ country_event = {
 					modifier = {
 						factor = 0.25
 						any_state = {
-							is_core_of = BUK
+							always = no     
 							is_controlled_by = SOV
 						}
 					}
@@ -11534,7 +11535,7 @@ country_event = {
 					modifier = {
 						factor = 0
 						any_state = {
-							is_core_of = KAZ
+							always = no     
 							is_controlled_by = SOV
 						}
 					}
@@ -11558,7 +11559,7 @@ country_event = {
 					modifier = {
 						factor = 0.25
 						any_state = {
-							is_core_of = KKP
+							always = no     
 							is_controlled_by = SOV
 						}
 					}

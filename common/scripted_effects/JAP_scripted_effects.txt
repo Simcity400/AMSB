@@ -146,7 +146,7 @@ JAP_create_patrick_heenan_operative = {
 		traits = { operative_tough }
 		bypass_recruitment = no
 		available_to_spy_master = yes
-		nationalities = { ENG NZL MAL RAJ }
+		nationalities = { ENG RAJ }
 	}
 }
 
@@ -170,7 +170,7 @@ JAP_create_ignatius_lincoln_operative = {
 		traits = { operative_seducer operative_well_groomed operative_natural_orator }
 		bypass_recruitment = no
 		available_to_spy_master = yes
-		nationalities = { HUN AUS TIB CHI ISR }
+		nationalities = { HUN AUS CHI ISR }
 	}
 }
 
@@ -182,7 +182,7 @@ JAP_create_yoshiko_kawashima_operative = {
 		bypass_recruitment = no
 		available_to_spy_master = yes
 		female = yes
-		nationalities = { MAN JAP CHI }
+		nationalities = { JAP CHI }
 	}
 }
 
@@ -824,54 +824,54 @@ JAP_trigger_democratic_civil_war = {
 	# The Colonies and Imperial Protectorates Break Ties 
 	IF = {
 		limit = {
-			MAN = { is_subject_of = ROOT }
+			
 		}
 		set_autonomy = { target = MAN autonomy_state = autonomy_free }
 		IF = {
 			limit = {
-				MEN = { is_subject_of = ROOT }
+				
 			}
 		}
 	}
 	
 	IF = {
 		limit = {
-			KOR = { is_subject_of = ROOT }
+			
 		}
 		set_autonomy = { target = KOR autonomy_state = autonomy_free }
 	}
 	IF = {
 		limit = {
 			any_controlled_state = {
-				is_core_of = KOR
+				always = no     
 			}
 		}
 
 	}
 	IF = {
 		limit = {
-			PLU = { is_subject_of = ROOT }
+			
 		}
 		set_autonomy = { target = PLU autonomy_state = autonomy_free }
 	}
 	IF = {
 		limit = {
 			any_controlled_state = {
-				is_core_of = PLU
+				always = no     
 			}
 		}
 		release = PLU # Palau
 	}
 	IF = {
 		limit = {
-			FOR = { is_subject_of = ROOT }
+			
 		}
 		set_autonomy = { target = FOR autonomy_state = autonomy_free }
 	}
 	IF = {
 		limit = {
 			any_controlled_state = {
-				is_core_of = FOR
+				always = no     
 			}
 		}
 		release = FOR # Formosa/Taiwan
@@ -1530,54 +1530,54 @@ JAP_trigger_communist_civil_war = {
 	# The Colonies and Imperial Protectorates Break Ties 
 	IF = {
 		limit = {
-			MAN = { is_subject_of = ROOT }
+			
 		}
 		set_autonomy = { target = MAN autonomy_state = autonomy_free }
 		IF = {
 			limit = {
-				MEN = { is_subject_of = ROOT }
+				
 			}
 		}
 	}
 	
 	IF = {
 		limit = {
-			KOR = { is_subject_of = ROOT }
+			
 		}
 		set_autonomy = { target = KOR autonomy_state = autonomy_free }
 	}
 	IF = {
 		limit = {
 			any_controlled_state = {
-				is_core_of = KOR
+				always = no     
 			}
 		}
 
 	}
 	IF = {
 		limit = {
-			PLU = { is_subject_of = ROOT }
+			
 		}
 		set_autonomy = { target = PLU autonomy_state = autonomy_free }
 	}
 	IF = {
 		limit = {
 			any_controlled_state = {
-				is_core_of = PLU
+				always = no     
 			}
 		}
 		release = PLU # Palau
 	}
 	IF = {
 		limit = {
-			FOR = { is_subject_of = ROOT }
+			
 		}
 		set_autonomy = { target = FOR autonomy_state = autonomy_free }
 	}
 	IF = {
 		limit = {
 			any_controlled_state = {
-				is_core_of = FOR
+				always = no     
 			}
 		}
 		release = FOR # Formosa/Taiwan

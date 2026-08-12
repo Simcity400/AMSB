@@ -287,9 +287,9 @@ SIA_prep_uk_for_limited_war = {
 	allowed = {
 		has_dlc = "Thunder at Our Gates"
 		OR = {
-			original_tag = MAL
+			always = no       
 			original_tag = ENG
-			original_tag = BRM
+			always = no       
 		}
 	}
 	enable = {
@@ -447,8 +447,8 @@ GER_dont_get_involved_in_limited_war = {
 	}
    
  	enable = {
-		country_exists = VIC
- 		SIA = { has_war_with = VIC }
+		always = no         
+ 		SIA = { always = no        }
 		OR = {
 			original_tag = GER
 			original_tag = HUN
@@ -476,8 +476,8 @@ GER_dont_get_involved_in_limited_war = {
    
  	enable = {
 
- 		country_exists = VIC	
- 		VIC = { has_war_with = SIA }
+ 		always = no         	
+ 		
 
  		#SIA = { has_active_mission = SIA_limited_war_indochina } 
 
@@ -500,11 +500,9 @@ GER_dont_get_involved_in_limited_war = {
 
  VIC_dont_call_allies_in_limited_war = {
   	enable = {
-	 		country_exists = VIC
-	 		tag = VIC
-	 		VIC = {
-	 			has_war_with = SIA
-	 		}
+	 		always = no         
+	 		always = no
+	 		
 
 	 		SIA = { has_active_mission = SIA_limited_war_indochina } 
 		}
@@ -520,8 +518,8 @@ GER_dont_get_involved_in_limited_war = {
  VIC_prep_for_war_with_SIA = {
 
   	enable = {
-	 		country_exists = VIC
-	 		tag = VIC
+	 		always = no         
+	 		always = no
 
 	 		SIA = { 
 	 			focus_progress = {
@@ -540,7 +538,7 @@ GER_dont_get_involved_in_limited_war = {
 
  SIA_prep_for_war_with_VIC = {
   	enable = {
-	 		country_exists = VIC
+	 		always = no         
 	 		original_tag = SIA
 
 	 		SIA = { 

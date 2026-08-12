@@ -4406,9 +4406,7 @@ focus_tree = {
 		available = {	
 			has_government = neutrality
 			has_war = no
-			IRQ = {
-				exists = yes
-			}
+			
 
 			SOU = {
 				exists = yes
@@ -4416,9 +4414,7 @@ focus_tree = {
 		}
 
 		bypass = {
-			IRQ = {
-				exists = no
-			}
+			
 
 			SOU = {
 				exists = no
@@ -5293,8 +5289,8 @@ focus_tree = {
 				IF = {
 					limit = {
 						OR = {
-							tag = AFG
-							tag = IRQ
+							always = no
+							always = no
 							tag = TUR
 							tag = RAJ
 							tag = SOU
@@ -5566,10 +5562,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_timed_idea = {
-				idea = ETH_rebuilding_the_country_idea
-				days = 128
-			}
+			
 		}
 	}
 
@@ -6712,15 +6705,15 @@ focus_tree = {
 		available = {
 			has_government = neutrality
 			NOT = {
-				has_war_with = AFG
-				has_war_with = IRQ
+				always = no       
+				always = no       
 			}
 		}
 
 		bypass = {
 			OR = {
-				has_war_with = AFG
-				has_war_with = IRQ
+				always = no       
+				always = no       
 			}
 		}
 
@@ -6737,18 +6730,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			AFG = {
-				add_opinion_modifier = {
-				target = PER
-				modifier = huge_increase
-				}
-			}
-			IRQ = {
-				add_opinion_modifier = {
-				target = PER
-				modifier = huge_increase
-				}
-			}
+			
+			
 			custom_effect_tooltip = CHL_skip_one_line_tt
 		}
 	}
@@ -7638,27 +7621,11 @@ focus_tree = {
 		
 		available = {
 			has_government = neutrality
-			IRQ = {
-				exists = yes
-				is_subject = no
-				NOT = {
-					has_war_with = ROOT
-				}
-				OR = {
-					owns_state = 1011
-					owns_state = 676
-				}
-			}
+			
 		}
 
 		bypass = {
-			IRQ = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
-				}
-			}
+			
 		}
 
 		allow_branch = {
@@ -7697,27 +7664,11 @@ focus_tree = {
 		
 		available = {
 			has_government = neutrality
-			AFG = {
-				exists = yes
-				is_subject = no
-				NOT = {
-					has_war_with = ROOT
-				}
-				OR = {
-					owns_state = 415
-					owns_state = 1009
-				}
-			}
+			
 		}
 
 		bypass = {
-			AFG = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
-				}
-			}
+			
 		}
 
 		allow_branch = {
@@ -7850,30 +7801,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = PER_war_plan_darius
 		cost = 5
-		will_lead_to_war_with = AFG
+
 		
 		available = {
 			has_government = neutrality
 			is_subject = no
-			AFG = {
-				exists = yes
-				is_subject = no
-			}
+			
 			NOT = {
-				has_war_with = AFG
-				is_in_faction_with = AFG
+				always = no       
+				always = no             
 			}
 		}
 
 		bypass = {
 
-			AFG = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
-				}
-			}
+			
 			
 		}
 
@@ -7894,7 +7836,7 @@ focus_tree = {
 
 			every_state = {
 				limit = {
-					is_core_of = AFG
+					always = no     
 				}
 				add_claim_by = ROOT
 			}
@@ -8010,7 +7952,7 @@ focus_tree = {
 			}
 			every_state = {
 				limit = {
-					is_core_of = AFG
+					always = no     
 				}
 				add_core_of = ROOT
 			}
@@ -8284,30 +8226,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = PER_war_plan_cambyses
 		cost = 5
-		will_lead_to_war_with = IRQ
+
 		
 		available = {
 			has_government = neutrality
 			is_subject = no
-			IRQ = {
-				exists = yes
-				is_subject = no
-			}
+			
 			NOT = {
-				has_war_with = IRQ
-				is_in_faction_with = IRQ
+				always = no       
+				always = no             
 			}
 		}
 
 		bypass = {
 
-			IRQ = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
-				}
-			}
+			
 			
 		}
 
@@ -8327,7 +8260,7 @@ focus_tree = {
 
 			every_state = {
 				limit = {
-					is_core_of = IRQ
+					always = no     
 				}
 				add_claim_by = ROOT
 			}
@@ -8352,45 +8285,21 @@ focus_tree = {
 		y = 1
 		relative_position_id = PER_war_plan_cambyses
 		cost = 10
-		will_lead_to_war_with = SYR
-		will_lead_to_war_with = LEB
+
+
 		
 		available = {
 			has_government = neutrality
 			is_subject = no
-			SYR = {
-				exists = yes
-				NOT = {
-					has_war_with = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
+			
 
-			LEB = {
-				exists = yes
-				NOT = {
-					has_war_with = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
+			
 		}
 
 		bypass = {
-			SYR = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
 			
-			LEB = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
+			
+			
 		}
 
 		allow_branch = {
@@ -8410,7 +8319,7 @@ focus_tree = {
 
 			every_state = {
 				limit = {
-					is_core_of = SYR
+					always = no     
 				}
 				add_claim_by = ROOT
 			}
@@ -8419,7 +8328,7 @@ focus_tree = {
 
 			every_state = {
 				limit = {
-					is_core_of = LEB
+					always = no     
 				}
 				add_claim_by = ROOT
 			}
@@ -8428,13 +8337,7 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					SYR = {
-						exists = yes
-						NOT = {
-							has_war_with = ROOT
-							is_in_faction_with = ROOT
-						}
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -8446,13 +8349,7 @@ focus_tree = {
 			
 			IF = {
 				limit = {
-					LEB = {
-						exists = yes
-						NOT = {
-							has_war_with = ROOT
-							is_in_faction_with = ROOT
-						}
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -8472,9 +8369,9 @@ focus_tree = {
 		y = 1
 		relative_position_id = PER_path_through_iraq
 		cost = 5
-		will_lead_to_war_with = JOR
-		will_lead_to_war_with = PAL
-		will_lead_to_war_with = EGY
+
+
+
 
 		available = {
 
@@ -8482,21 +8379,9 @@ focus_tree = {
 			is_subject = no
 
 			OR = {
-				JOR = {
-					exists = yes
-					NOT = {
-						is_in_faction_with = ROOT
-						has_war_with = ROOT
-					}
-				}
+				
 
-				PAL = {
-					exists = yes
-					NOT = {
-						is_in_faction_with = ROOT
-						has_war_with = ROOT
-					}
-				}
+				
 
 				ENG = {
 					exists = yes
@@ -8510,21 +8395,9 @@ focus_tree = {
 		}
 
 		bypass = {
-			JOR = {
-				OR = {
-					is_in_faction_with = ROOT
-					has_war_with = ROOT
-					exists = no
-				}
-			}
+			
 
-			PAL = {
-				OR = {
-					is_in_faction_with = ROOT
-					has_war_with = ROOT
-					exists = no
-				}
-			}
+			
 
 			ENG = {
 				OR = {
@@ -8551,7 +8424,7 @@ focus_tree = {
 		completion_reward = {
 			every_state = {
 				limit = {
-					is_core_of = JOR
+					always = no     
 				}
 				add_claim_by = ROOT
 			}
@@ -8560,7 +8433,7 @@ focus_tree = {
 
 			every_state = {
 				limit = {
-					is_core_of = PAL
+					always = no     
 				}
 				add_claim_by = ROOT
 			}
@@ -8569,7 +8442,7 @@ focus_tree = {
 
 			every_state = {
 				limit = {
-					is_core_of = EGY
+					always = no     
 				}
 				add_claim_by = ROOT
 			}
@@ -8578,13 +8451,7 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					JOR = {
-						exists = yes
-						NOT = {
-							is_in_faction_with = ROOT
-							has_war_with = ROOT
-						}
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -8596,13 +8463,7 @@ focus_tree = {
 			
 			IF = {
 				limit = {
-					PAL = {
-						exists = yes
-						NOT = {
-							is_in_faction_with = ROOT
-							has_war_with = ROOT
-						}
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -8614,13 +8475,7 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					EGY = {
-						exists = yes
-						NOT = {
-							is_in_faction_with = ROOT
-							has_war_with = ROOT
-						}
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -10631,25 +10486,11 @@ focus_tree = {
 		
 		available = {
 			has_government = democratic
-			IRQ = {
-				exists = yes
-				NOT = {
-					OR = {
-						is_subject_of = ROOT
-						is_in_faction_with = ROOT
-					}
-				}
-			}
+			
 		}
 
 		bypass = {
-			IRQ = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
+			
 		}
 
 		allow_branch = {
@@ -10683,25 +10524,11 @@ focus_tree = {
 		
 		available = {
 			has_government = democratic
-			AFG = {
-				exists = yes
-				NOT = {
-					OR = {
-						is_subject_of = ROOT
-						is_in_faction_with = ROOT
-					}
-				}
-			}
+			
 		}
 
 		bypass = {
-			AFG = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
+			
 		}
 
 		allow_branch = {
@@ -11042,8 +10869,8 @@ focus_tree = {
 				every_owned_state = {
 					limit = {
 						OR = {
-							is_core_of = AZR
-							is_core_of = KUR
+							always = no     
+							always = no     
 						}
 					}
 					set_state_flag = PER_state_supports_communists
@@ -11451,11 +11278,9 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					KUR = {
-						exists = no
-					}
+					
 					any_owned_state = {
-						is_core_of = KUR
+						always = no     
 					}
 				}
 				release_puppet = KUR
@@ -11466,51 +11291,14 @@ focus_tree = {
 				}
 			}
 			ELSE = {
-				create_dynamic_country = {
-					original_tag = KUR
-					IF = {
-						limit = {
-							1001 = { OWNER = { tag = ROOT } }
-						}
-						1001 = {
-							transfer_state_to = PREV
-						}
-					}
-					IF = {
-						limit = {
-							421 = { OWNER = { tag = ROOT } }
-						}
-						421 = {
-							transfer_state_to = PREV
-						}
-					}
-					set_popularities = {
-						democratic = ROOT.party_popularity_100@democratic
-						neutrality = ROOT.party_popularity_100@neutrality
-						fascism = ROOT.party_popularity_100@fascism
-						communism = ROOT.party_popularity_100@communism
-					}
-					set_politics = {
-						ruling_party = communism
-					}
-					ROOT = {
-						puppet = PREV
-						set_autonomy = {
-							target = PREV
-							autonomous_state = autonomy_satellite
-							freedom_level = 0.2
-						}
-					}
-				}
+
 			}
 
 			IF = {
 				limit = {
-					AZR = {
-						exists = no
-					}
+					
 					any_owned_state = {
-						is_core_of = AZR
+						always = no     
 					}
 				}
 				release_puppet = AZR
@@ -11521,42 +11309,7 @@ focus_tree = {
 				}
 			}
 			ELSE = {
-				create_dynamic_country = {
-					original_tag = AZR
-					IF = {
-						limit = {
-							419 = { OWNER = { tag = ROOT } }
-						}
-						419 = {
-							transfer_state_to = PREV
-						}
-					}
-					IF = {
-						limit = {
-							1000 = { OWNER = { tag = ROOT } }
-						}
-						1000 = {
-							transfer_state_to = PREV
-						}
-					}
-					set_popularities = {
-						democratic = ROOT.party_popularity_100@democratic
-						neutrality = ROOT.party_popularity_100@neutrality
-						fascism = ROOT.party_popularity_100@fascism
-						communism = ROOT.party_popularity_100@communism
-					}
-					set_politics = {
-						ruling_party = communism
-					}
-					ROOT = {
-						puppet = PREV
-						set_autonomy = {
-							target = PREV
-							autonomous_state = autonomy_satellite
-							freedom_level = 0.2
-						}
-					}
-				}
+
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -12422,13 +12175,13 @@ focus_tree = {
 			every_other_country = {
 				limit = {
 					OR = {
-						tag = AFG
-						tag = PAK
-						tag = IRQ
+						always = no
+						always = no
+						always = no
 						tag = KUW
-						tag = SAU
-						tag = OMA
-						tag = YEM
+						always = no
+						always = no
+						always = no
 					}
 					NOT = {
 						has_war_with = ROOT
@@ -12536,7 +12289,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = PER_international_solidarity
 		cost = 5
-		will_lead_to_war_with = AFG
+
 		available = {
 			is_subject = no
 			#OR = {
@@ -12545,12 +12298,7 @@ focus_tree = {
 			#}
 		}
 		bypass = {
-			AFG = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-				}
-			}
+			
 		}
 		allow_branch = {
 		}
@@ -12583,9 +12331,7 @@ focus_tree = {
 			#	has_government = democratic
 			#	has_government = communism
 			#}
-			AFG = {
-				is_subject_of = ROOT
-			}
+			
 		}
 		bypass = {
 		}
@@ -12621,13 +12367,7 @@ focus_tree = {
 		}
 		bypass = {
 			OR = {
-				KUR = { 
-					exists = yes 
-					OR = {
-						has_government = communism
-						is_in_faction_with = ROOT
-					}
-				}
+				
 				676 = { is_owned_by = ROOT }
 				291 = { is_owned_by = ROOT }
 			}
@@ -14143,7 +13883,7 @@ focus_tree = {
 				exists = yes
 				OR = {
 					original_tag = RAJ
-					original_tag = PAK
+					always = no       
 				}
 				NOT = {
 					OR = {
@@ -14175,13 +13915,7 @@ focus_tree = {
 		completion_reward = {
 			IF = {
 				limit = {
-					PAK = {
-						exists = yes
-						NOT = {
-							is_in_faction_with = ROOT
-							has_war_with = ROOT
-						}
-					}
+					
 				}
 				create_wargoal = {
 					target = PAK
@@ -14232,15 +13966,7 @@ focus_tree = {
 		cost = 5
 		available = {
 			has_government = fascism
-			SAU = {
-				exists = yes
-				NOT = {
-					OR = {
-						is_subject_of = ROOT
-						is_in_faction_with = ROOT
-					}
-				}
-			}
+			
 		}
 		bypass = {
 		
@@ -14265,18 +13991,18 @@ focus_tree = {
 						}
 					}
 					OR = {
-						tag = IRQ
-						tag = SAU
+						always = no
+						always = no
 						tag = KUW
-						tag = YEM
-						tag = OMA
-						tag = UAE
-						tag = QAT
-						tag = PAL
-						tag = SYR
-						tag = JOR
-						tag = LEB
-						tag = EGY
+						always = no
+						always = no
+						always = no
+						always = no
+						always = no
+						always = no
+						always = no
+						always = no
+						always = no
 					}
 				}
 				ROOT = {
@@ -14395,24 +14121,11 @@ focus_tree = {
 		
 		available = {
 			has_government = fascism
-			IRQ = {
-				exists = yes
-				NOT = {
-					OR = {
-						is_subject_of = ROOT
-						is_in_faction_with = ROOT
-					}
-				}
-			}
+			
 		}
 
 		bypass = {
-			IRQ = { 
-				OR = { 
-					exists = no 
-					is_in_faction_with = ROOT
-				}
-			}
+			
 		}
 
 		allow_branch = {
@@ -14514,24 +14227,11 @@ focus_tree = {
 		
 		available = {
 			has_government = fascism
-			AFG = {
-				exists = yes
-				NOT = {
-					OR = {
-						is_subject_of = ROOT
-						is_in_faction_with = ROOT
-					}
-				}
-			}
+			
 		}
 
 		bypass = {
-			AFG = { 
-				OR = { 
-					exists = no 
-					is_in_faction_with = ROOT
-				}
-			}
+			
 		}
 
 		allow_branch = {

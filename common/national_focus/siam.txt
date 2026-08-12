@@ -2892,8 +2892,8 @@ focus_tree = {
 		}
 
 		will_lead_to_war_with = ENG
-		will_lead_to_war_with = BRM
-		will_lead_to_war_with = MAL
+
+
 		#allow_branch = {
 		#}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -4202,21 +4202,19 @@ focus_tree = {
 
 				if = { 
 					limit = { 
-						country_exists = MAL
-						MAL = { has_opinion = { target = ROOT value > 75 } } 
+						always = no         
+						 
 						NOT = { 
-							has_war_with = MAL 
-							is_embargoed_by = MAL
+							always = no        
+							always = no          
 						}
 					}
 					add_offsite_building = { type = industrial_complex level = 1 }
 				}
 				else = {
 					if = {
-						limit = { MAL = { exists = yes } }
-						MAL = {
-							custom_effect_tooltip = SIA_chemical_imports_tt
-						}
+						limit = {  }
+						
 					}
 				}
 

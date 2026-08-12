@@ -7,20 +7,20 @@
 		modifier = {
 			add = 10
 			OR = {
-				tag = YUN
-				tag = SIK
-				tag = GXC
-				tag = SHX
-				tag = XSM
-				tag = GDC
-				tag = XIC
-				tag = SND
-				tag = KHM
-				tag = NXM
-				tag = GSM
-				tag = SIC
-				tag = KUM
-				tag = HBC
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
+				always = no
 			}
 			has_dlc = "Waking the Tiger"
 		}
@@ -117,11 +117,11 @@
 			modifier = {
 				factor = 10
 				OR = {
-					original_tag = YUN
-					original_tag = XSM
-					original_tag = GDC
-					original_tag = XIC
-					original_tag = SND
+					always = no       
+					always = no       
+					always = no       
+					always = no       
+					always = no       
 				}
 			}
 		}
@@ -146,7 +146,7 @@
 			add_stability = 0.05
 			custom_effect_tooltip = CHI_cooperation_with_the_nationalists_effect_tooltip
 			CHI = { add_opinion_modifier = { modifier = CHI_cooperation_with_the_nationalists_positive target = ROOT } }
-			PRC = { add_opinion_modifier = { modifier = CHI_cooperation_with_the_nationalists_negative target = ROOT } }
+			
 		}
 	}
 
@@ -551,8 +551,8 @@
 			modifier = {
 				factor = 10
 				OR = {
-					original_tag = SHX
-					original_tag = SIK
+					always = no       
+					always = no       
 				}
 			}
 		}
@@ -562,7 +562,7 @@
 				is_subject = no
 				is_subject_of = event_target:WTT_communist_china
 			}
-			NOT = { has_war_with = PRC }
+			NOT = { always = no        }
 			NOT = { has_war_with = SOV }
 		}
 
@@ -588,12 +588,7 @@
 					value = 100
 				}
 			}
-			PRC = {
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = CHI_cooperation_with_the_communists_positive
-				}
-			}
+			
 			CHI = {
 				add_opinion_modifier = {
 					target = ROOT
@@ -799,12 +794,12 @@
 		available = {
 			communism > 0.4
 			if = {
-				limit = { NOT = { tag = SIK } }
+				limit = { NOT = { always = no } }
 				any_neighbor_country = {
 					tag = event_target:WTT_communist_china
 				}
 			}			
-			NOT = { has_war_with = PRC }
+			NOT = { always = no        }
 			NOT = { has_war_with = SOV }
 			SOV = { has_government = communism }			
 			is_subject = no
@@ -868,7 +863,7 @@
 				value > 50
 			}
 			is_subject = no
-			NOT = { has_war_with = PRC }
+			NOT = { always = no        }
 			NOT = { has_war_with = SOU }
 			SOU = { has_government = communism }
 		}
@@ -910,7 +905,7 @@
 			factor = 1
 			modifier = {
 				factor = 10
-				original_tag = GXC
+				always = no       
 			}
 		}
 
@@ -1399,7 +1394,6 @@
 					}
 					NOT = { neutrality > 0.5 }
 				}
-				load_focus_tree = china_communist_focus
 			}
 			else = {
 				load_focus_tree = china_nationalist_focus

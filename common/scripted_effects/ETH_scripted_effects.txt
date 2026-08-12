@@ -638,7 +638,7 @@ ETH_set_up_african_resistance_states = {
 					limit = {  
 						OR = {
 							is_on_continent = africa 
-							is_core_of = EGY
+							always = no     
 						}	
 						has_resistance = yes
 						NOT = { # no point adding if already in there
@@ -743,10 +743,10 @@ ETH_create_federation = {
 		}
 		# Doing this one by one rather than "every_country" to manage state core overlaps in the "right" way
 		IF = {
-			limit = { HAR = { exists = no } any_owned_state = {is_core_of = HAR }}
+			limit = {  any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = HAR 
+					always = no      
 				}
 			
 			}
@@ -765,10 +765,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { TIG = { exists = no } any_owned_state = {is_core_of = TIG }}
+			limit = {  any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = TIG 
+					always = no      
 				}
 			}
 			IF = {
@@ -786,10 +786,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { AFA = { exists = no }any_owned_state = {is_core_of = AFA }}
+			limit = { any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = AFA 
+					always = no      
 				}
 			}
 			IF = {
@@ -807,10 +807,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { BEG = { exists = no }any_owned_state = {is_core_of = BEG }}
+			limit = { any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = BEG 
+					always = no      
 				}
 			}
 			IF = {
@@ -828,10 +828,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { GBA = { exists = no } any_owned_state = {is_core_of = GBA }}
+			limit = {  any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = GBA 
+					always = no      
 				}
 			}
 			IF = {
@@ -849,10 +849,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { SID = { exists = no } any_owned_state = {is_core_of = SID }}
+			limit = {  any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = SID 
+					always = no      
 				}
 			}
 			IF = {
@@ -870,10 +870,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { QEM = { exists = no }any_owned_state = {is_core_of = QEM }}	
+			limit = { any_owned_state = {always = no      }}	
 			every_owned_state = {
 				limit = {
-					is_core_of = QEM 
+					always = no      
 				}
 			}
 			IF = {
@@ -891,10 +891,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { ORO = { exists = no } any_owned_state = {is_core_of = ORO }}
+			limit = {  any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = ORO 
+					always = no      
 					NOT = { state = 271 } # Avoid transferring Addis
 				}
 			}
@@ -913,10 +913,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { SOM = { exists = no }any_owned_state = {is_core_of = SOM }}
+			limit = { any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = SOM 
+					always = no      
 				}
 			}
 			IF = {
@@ -934,10 +934,10 @@ ETH_create_federation = {
 			}
 		}
 		IF = {
-			limit = { ERI = { exists = no } any_owned_state = {is_core_of = ERI }}
+			limit = {  any_owned_state = {always = no      }}
 			every_owned_state = {
 				limit = {
-					is_core_of = ERI 
+					always = no      
 				}
 			}
 			IF = {
@@ -1015,29 +1015,17 @@ ETH_promote_ETH_abba_jofir = {
 
 
 ETH_BOP_centralization_small_effect = {
-	add_power_balance_value = {
-		id = ETH_centralization_balance
-		value = 0.05
-	}
+	
 
 }
 ETH_BOP_centralization_large_effect = {
-	add_power_balance_value = {
-		id = ETH_centralization_balance
-		value = 0.1
-	}
+	
 }
 ETH_BOP_decentralization_small_effect = {
-	add_power_balance_value = {
-		id = ETH_centralization_balance
-		value = -0.05
-	}
+	
 }
 ETH_BOP_decentralization_large_effect = {
-	add_power_balance_value = {
-		id = ETH_centralization_balance
-		value = -0.1
-	}
+	
 }
 
 
@@ -1209,12 +1197,7 @@ ETH_add_random_mil_factory_effect = {
 ETH_haile_selassie_returns = {
 	IF = {
 		limit = {
-			ETH = {
-				has_country_leader = {
-					ruling_only = yes
-					character = ETH_haile_selassie
-				}
-			}
+			
 		}
 		custom_effect_tooltip = ETH_haile_selassie_returns_tt
 		add_war_support = 0.1
@@ -1590,7 +1573,7 @@ ETH_transfer_promised_states = {
 		IF = { 
 			limit = {
 				owner = {
-					tag = ETH
+					always = no
 				}
 			}
 			remove_dynamic_modifier = { modifier = ETH_arranged_expansion_modifier } 
@@ -1600,8 +1583,8 @@ ETH_transfer_promised_states = {
 			limit = {
 				owner = {
 					OR = {
-						is_in_faction_with = ETH
-						ETH = { is_subject_of = PREV }  
+						always = no             
+						  
 						check_variable = { ETH.host_nation = THIS }
 					}
 				}

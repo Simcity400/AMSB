@@ -1009,8 +1009,8 @@ foreign_politics = {
 									AND = {
 										is_subject_of = JAP
 										OR = {
-											tag = MEN
-											tag = MAN
+											always = no
+											always = no
 										}
 									}
 								}
@@ -1018,15 +1018,7 @@ foreign_politics = {
 						}
 					}
 				}
-				MAN = {
-					OR = {
-						exists = no
-						NOT = {
-							is_subject_of = JAP
-						}
-						has_capitulated = yes
-					}
-				}
+				
 			}
 		}
 
@@ -1509,7 +1501,7 @@ foreign_politics = {
 	        FROM = {
 	        	NOT = { is_core_of = ROOT }
 	        	is_fully_controlled_by = ROOT
-	        	is_core_of = KOR
+	        	always = no     
 	        }
 	    }
 	    on_map_mode = map_only
@@ -1587,7 +1579,7 @@ foreign_politics = {
 	        FROM = {
 	        	NOT = { is_core_of = ROOT }
 	        	is_fully_controlled_by = ROOT
-	        	is_core_of = MAN
+	        	always = no     
 	        }
 	    }
 	    on_map_mode = map_only
@@ -1807,7 +1799,7 @@ JAP_pacific_guardian = {
 		icon = generic_independence
 
 		available = {
-			country_exists = KOR
+			always = no         
 		}
 
 		days_mission_timeout = 180
@@ -1818,7 +1810,7 @@ JAP_pacific_guardian = {
 			always = no
 			has_full_control_of_state = 525
 			has_full_control_of_state = 527
-			KOR = { exists = no }
+			
 		}
 
 		complete_effect = {
@@ -2506,28 +2498,28 @@ JAP_the_red_sun_over_asia_decisions = {
 	        		has_government = communism
 	        	}
 	        	OR = {
-	        		original_tag = PAK
+	        		always = no       
 	        		original_tag = RAJ
-	        		original_tag = KAS
+	        		always = no       
 	        		original_tag = KHL
 	        		original_tag = NWF
-	        		original_tag = BLC
-	        		original_tag = KLT
-	        		original_tag = SIN
-	        		original_tag = RJP
-	        		original_tag = WIS
-	        		original_tag = CIP
-	        		original_tag = HYD
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
 	        		original_tag = KOL
 	        		original_tag = MYS
-	        		original_tag = RAS
-	        		original_tag = BAN
-	        		original_tag = SKK
-	        		original_tag = MPU
-	        		original_tag = BRM
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
 	        		original_tag = BHU
 	        		original_tag = NEP
-	        		original_tag = AFG
+	        		always = no       
 	        	}
 	        }
 	    }
@@ -2604,28 +2596,28 @@ JAP_the_red_sun_over_asia_decisions = {
 	        	}
 	        	has_government = communism
 	        	OR = {
-	        		original_tag = PAK
+	        		always = no       
 	        		original_tag = RAJ
-	        		original_tag = KAS
+	        		always = no       
 	        		original_tag = KHL
 	        		original_tag = NWF
-	        		original_tag = BLC
-	        		original_tag = KLT
-	        		original_tag = SIN
-	        		original_tag = RJP
-	        		original_tag = WIS
-	        		original_tag = CIP
-	        		original_tag = HYD
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
 	        		original_tag = KOL
 	        		original_tag = MYS
-	        		original_tag = RAS
-	        		original_tag = BAN
-	        		original_tag = SKK
-	        		original_tag = MPU
-	        		original_tag = BRM
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
+	        		always = no       
 	        		original_tag = BHU
 	        		original_tag = NEP
-	        		original_tag = AFG
+	        		always = no       
 	        	}
 	        }
 	    }
@@ -3083,12 +3075,12 @@ JAP_colonial_independence = {
 				random_other_country = {
 					limit = {
 						OR = {
-							original_tag = GXC
-							original_tag = YUN
-							original_tag = XSM
-							original_tag = SIK
-							original_tag = SHX
-							original_tag = MEN
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
 						}
 						NOT = {
 							has_government = communism
@@ -3923,7 +3915,7 @@ operations = {
 		available = {
 				
 			OR = {
-				has_border_war_with = MON # Japan/MAN shouldn't lose war support if they actually use the window of opportunity
+				always = no               # Japan/MAN shouldn't lose war support if they actually use the window of opportunity
 				has_global_flag = initial_tauran_decision_taken_flag
 			}
 				
@@ -3962,7 +3954,7 @@ operations = {
 		allowed = {
 			OR = {
 				original_tag = JAP
-				original_tag = MAN
+				always = no       
 			}
 		}
 
@@ -3983,7 +3975,7 @@ operations = {
 				}
 			}
 			819 = {
-				is_owned_and_controlled_by = MON
+				always = no                     
 			}
 			NOT = {
 				has_global_flag = failed_to_assault_in_time_flag 
@@ -3993,14 +3985,14 @@ operations = {
 
 		available = {
 			NOT = {
-				has_war_with = MON
-				is_in_faction_with = MON
-				has_non_aggression_pact_with = MON
-				MON = { is_puppet_of = ROOT }
+				always = no       
+				always = no             
+				always = no                       
+				
 			}
 			761 = {
 				any_neighbor_state = {
-					is_controlled_by = MON
+					always = no           
 				}
 			}
 		}
@@ -4033,10 +4025,7 @@ operations = {
 				save_event_target_as = MAN_MON_defender_state
 				set_state_flag = border_incident_active
 			}
-			MON = {
-				country_event = { id = SEA_border_incidents_events.4 days = 1 }
-				activate_targeted_decision = { target = ROOT decision = JAP_tauran_border_conflict_warning_MON }
-			}
+			
 			hidden_effect = {
 				set_global_flag = initial_tauran_decision_taken_flag 
 			}
@@ -4084,11 +4073,9 @@ operations = {
 				IF = {
 					limit = {
 						761 = {
-							is_owned_and_controlled_by = MAN
+							always = no                     
 						}
-						MAN = {
-							is_subject = no
-						}
+						
 					}
 					remove_targeted_decision = { target = MAN decision = JAP_tauran_border_conflict_warning_MON }
 					activate_targeted_decision = { target = MAN decision = JAP_border_conflict_escalation_warning_MON }
@@ -4096,11 +4083,9 @@ operations = {
 				ELSE_IF = {
 					limit = {
 						761 = {
-							is_owned_and_controlled_by = MAN
+							always = no                     
 						}
-						MAN = {
-							is_subject_of = JAP
-						}
+						
 					}
 					remove_targeted_decision = { target = JAP decision = JAP_tauran_border_conflict_warning_MON }
 					activate_targeted_decision = { target = JAP decision = JAP_border_conflict_escalation_warning_MON }
@@ -4128,7 +4113,7 @@ operations = {
 			hidden_trigger = { 
 				NOT = { 
 					has_border_war_with = JAP 
-					has_border_war_with = MAN 
+					always = no               
 				} 
 			} 
 		}
@@ -4176,7 +4161,7 @@ operations = {
 			
 			hidden_trigger = {
 				OR = {
-					has_border_war_with = MON # Japan shouldn't lose war support if they actually use the window of opportunity
+					always = no               # Japan shouldn't lose war support if they actually use the window of opportunity
 					has_global_flag = JAP_did_the_tauran_border_war_flag
 				}
 			}
@@ -4208,7 +4193,7 @@ operations = {
 			add_political_power = -50
 			add_war_support = -0.05 #Shameful Display
 			hidden_effect = {
-				MON = { remove_targeted_decision = { target = ROOT decision = JAP_border_conflict_escalation_warning_MON } }
+				
 			}
 		}
 	}
@@ -5656,8 +5641,8 @@ JAP_kwantung_army_decisions = {
 			has_civil_war = no
 			is_subject = no 
 			NOT = { has_war_with = CHI }
-			has_war_with = SHX
-			has_subject = MEN
+			always = no       
+			always = no      
 		}
 
 		cancel_if_not_visible = yes
@@ -5810,7 +5795,7 @@ JAP_kwantung_army_decisions = {
 
 		visible = { 
 			OR = {
-				has_subject = RNG
+				always = no      
 				has_subject = CHI
 				AND = {
 					always = no
@@ -7831,7 +7816,7 @@ JAP_imperial_influence_decision_cat = {
 				has_war_with = USA
 				has_war_with = PHI
 				has_war_with = INS
-				has_war_with = MAL
+				always = no       
 			}
 		}
 
@@ -9158,14 +9143,7 @@ JAP_the_propaganda_department_decisions = {
 				has_government = neutrality
 				has_government = fascism
 			}
-			MON = {
-				exists = yes
-				is_subject = no
-				NOT = {
-					has_government = neutrality
-					has_government = fascism
-				}
-			}
+			
 		}
 	
 		available = {
@@ -9229,14 +9207,7 @@ JAP_the_propaganda_department_decisions = {
 				has_government = neutrality
 				has_government = fascism
 			}
-			MON = {
-				exists = yes
-				is_subject = no
-				NOT = {
-					has_government = neutrality
-					has_government = fascism
-				}
-			}
+			
 		}
 	
 		available = {
@@ -9298,14 +9269,7 @@ JAP_the_propaganda_department_decisions = {
 				has_government = neutrality
 				has_government = fascism
 			}
-			MON = {
-				exists = yes
-				is_subject = no
-				NOT = {
-					has_government = neutrality
-					has_government = fascism
-				}
-			}
+			
 		}
 	
 		available = {
@@ -9366,14 +9330,7 @@ JAP_the_propaganda_department_decisions = {
 				has_government = neutrality
 				has_government = fascism
 			}
-			MON = {
-				exists = yes
-				is_subject = no
-				NOT = {
-					has_government = neutrality
-					has_government = fascism
-				}
-			}
+			
 		}
 	
 		available = {
@@ -9381,14 +9338,7 @@ JAP_the_propaganda_department_decisions = {
 			NOT = {
 				has_country_flag = JAP_sent_jonjurjab_to_mongolia
 			}
-			MON = {
-				custom_trigger_tooltip = {
-					tooltip = JAP_send_collabs_to_mongolia_trigger_tt
-					set_temp_variable = { MON_rw_support = party_popularity@neutrality }
-					add_to_temp_variable = { MON_rw_support = party_popularity@fascism }
-					check_variable = { MON_rw_support > 0.35 }
-				}
-			}
+			
 			OR = {
 				
 				
@@ -9436,14 +9386,7 @@ JAP_the_propaganda_department_decisions = {
 				has_government = neutrality
 				has_government = fascism
 			}
-			MON = {
-				exists = yes
-				is_subject = no
-				NOT = {
-					has_government = neutrality
-					has_government = fascism
-				}
-			}
+			
 		}
 	
 		available = {
@@ -9451,22 +9394,10 @@ JAP_the_propaganda_department_decisions = {
 			NOT = {
 				has_country_flag = JAP_sent_jodbajab_to_mongolia
 			}
-			MON = {
-				custom_trigger_tooltip = {
-					tooltip = JAP_send_collabs_to_mongolia_trigger_tt
-					set_temp_variable = { MON_rw_support = party_popularity@neutrality }
-					add_to_temp_variable = { MON_rw_support = party_popularity@fascism }
-					check_variable = { MON_rw_support > 0.35 }
-				}
-			}
+			
 			OR = {
-				MAN = {
-					exists = yes
-					is_ally_with = ROOT
-				}
-				MAN = {
-					exists = no
-				}
+				
+				
 			}
 		}
 
@@ -9512,30 +9443,11 @@ JAP_the_propaganda_department_decisions = {
 				has_government = neutrality
 				has_government = fascism
 			}
-			MON = {
-				exists = yes
-				is_subject = no
-				NOT = {
-					has_government = neutrality
-					has_government = fascism
-				}
-			}
+			
 		}
 	
 		available = {
-			MON = {
-				custom_trigger_tooltip = {
-					tooltip = JAP_coup_mongolia_trigger_tt
-					set_temp_variable = { MON_rw_support = party_popularity@neutrality }
-					add_to_temp_variable = { MON_rw_support = party_popularity@fascism }
-					check_variable = { MON_rw_support > 0.4 }
-				}
-				is_subject = no
-				NOT = {
-					has_government = neutrality
-					has_government = fascism
-				}
-			}
+			
 			OR = {
 				has_country_flag = JAP_sent_jodbajab_to_mongolia
 				has_country_flag = JAP_sent_jonjurjab_to_mongolia
@@ -10113,7 +10025,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 				is_core_of = CHI
 				is_fully_controlled_by = ROOT
 				NOT = {
-					is_owned_by = RNG
+					always = no      
 				}
 				NOT = {
 					state = 745 # Kwantung Leased Territory
@@ -10135,7 +10047,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 		}
 	
 		available = {
-			has_subject = RNG
+			always = no      
 		}
 
 		days_re_enable = 70
@@ -10166,7 +10078,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 						is_core_of = CHI
 						is_fully_controlled_by = ROOT
 						NOT = {
-							is_owned_by = RNG
+							always = no      
 							is_owned_by = ROOT
 						}
 						NOT = {
@@ -10195,7 +10107,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 						is_fully_controlled_by = ROOT
 						is_core_of = CHI
 						NOT = {
-							is_owned_by = RNG
+							always = no      
 						}
 						NOT = {
 							state = 745 # Kwantung Leased Territory
@@ -10249,11 +10161,11 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		visible = { 
 			always = no
-			has_subject = RNG
+			always = no      
 			any_country = {
 				is_literally_china = yes
 				NOT = {
-					original_tag = RNG
+					always = no       
 				}
 				is_subject_of = ROOT
 				is_ai = yes
@@ -10283,7 +10195,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 				limit = {
 					is_literally_china = yes
 					NOT = {
-						original_tag = RNG
+						always = no       
 					}
 					is_subject_of = ROOT
 					is_ai = yes
@@ -10300,7 +10212,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 					limit = {
 						is_literally_china = yes
 						NOT = {
-							original_tag = RNG
+							always = no       
 						}
 						is_subject_of = ROOT
 						is_ai = yes
@@ -10361,20 +10273,10 @@ JAP_the_co_prosperity_sphere_decisions = {
 		available = {
 			is_subject = no
 			OR = {
-				BRM = {
-					exists = no
-				}
-				BRM = {
-					is_subject = yes
-					has_war_with = ROOT
-					has_civil_war = no
-				}
+				
+				
 			}
-			BRM = {
-				any_core_state = {
-					is_fully_controlled_by = ROOT
-				}
-			}
+			
 		}
 	
 		cost = 25
@@ -10383,9 +10285,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 			IF = {
 				limit = {
-					BRM = {
-						exists = no
-					}
+					
 				}
 				set_autonomy = {
 					target = BRM
@@ -10984,7 +10884,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 					is_controlled_by = ROOT
 				}
 				AND = {
-					has_subject = TML
+					always = no      
 					
 				}
 			}
@@ -11056,7 +10956,7 @@ JAP_the_co_prosperity_sphere_decisions = {
 			}	
 			ELSE_IF = {
 				limit = {
-					has_subject = TML
+					always = no      
 					
 				}
 
@@ -11155,12 +11055,8 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 		visible = { 
 			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
-			has_subject = KOR
-			KOR = {
-				NOT = {
-					has_government = fascism
-				}
-			}
+			always = no      
+			
 		}
 	
 		available = {

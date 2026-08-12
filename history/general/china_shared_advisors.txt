@@ -4,7 +4,7 @@ every_possible_country = {
 	limit = {
 		OR = {
 			is_literally_china = yes
-			tag = MAN
+			always = no
 		}
 		has_dlc = "Waking the Tiger"
 	}
@@ -86,11 +86,11 @@ every_possible_country = {
 		advisor={
 			slot = political_advisor
 			available  = {
-				has_completed_focus  = PRC_military_intelligence_department 
+				always = no                                                 
 			}
 			allowed  = {
 				OR = {
-					original_tag  = PRC
+					always = no        
 					is_chinese_warlord = yes 
 				}
 			}
@@ -149,7 +149,7 @@ every_possible_country = {
 					is_chinese_warlord = yes 
 				}
 				has_dlc = "La Resistance"
-				NOT = { original_tag = MAN }
+				NOT = { always = no        }
 			}
 			traits  = {
 				head_of_intelligence 
@@ -173,11 +173,11 @@ every_possible_country = {
 			}
 			allowed  = {
 				OR = {
-					original_tag = PRC
+					always = no       
 					is_chinese_warlord = yes
 				}
 				has_dlc = "La Resistance"
-				NOT = { original_tag = MAN }
+				NOT = { always = no        }
 			}
 			traits  = {
 				head_of_intelligence 
@@ -217,11 +217,11 @@ every_possible_country = {
 		advisor={
 			slot = political_advisor
 			available  = {
-				has_completed_focus  = PRC_socialist_market_economy 
+				always = no                                         
 			}
 			allowed  = {
 				OR = {
-					original_tag  = PRC
+					always = no        
 					is_chinese_warlord = yes 
 				}
 				has_dlc = "Waking the Tiger"

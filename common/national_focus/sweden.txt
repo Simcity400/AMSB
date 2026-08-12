@@ -4206,18 +4206,9 @@ focus_tree = {
 			if = {
 				limit = {
 					has_dlc = "By Blood Alone"
-					ETH = { 
-						OR = {
-							has_completed_focus = ETH_soviet_aid 
-							has_completed_focus = ETH_reach_out_to_the_italians
-							has_completed_focus = ETH_rally_around_the_emperor
-						}
-					}
+					
 				}
-				ETH = {
-					IA_emma_goldman = { set_nationality = ROOT }
-					IA_sakutaro_iwasa = { set_nationality = ROOT }
-				}
+				
 			}
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = SWE_exiled_revolutionaries
@@ -10604,7 +10595,7 @@ focus_tree = {
 					}
 				}
 				IF = {
-					limit = { original_tag = PRC }
+					limit = { always = no        }
 					SWE = {
 						add_ideas = { SWE_anti_prc_cold_war }
 					}

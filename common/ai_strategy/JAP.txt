@@ -315,9 +315,9 @@ southern_expansion = {
 		OR = {
 			country_exists = HOL
 			country_exists = ENG
-			country_exists = BRM
+			always = no         
 			country_exists = RAJ
-			country_exists = MAL
+			always = no         
 			country_exists = INS
 		}
 	}
@@ -325,9 +325,9 @@ southern_expansion = {
 		NOT = {
 			country_exists = HOL
 			country_exists = ENG
-			country_exists = BRM
+			always = no         
 			country_exists = RAJ
-			country_exists = MAL
+			always = no         
 			country_exists = INS 
 		}
 	}
@@ -426,9 +426,9 @@ chinese_war_dont_push_mas = {
 	enable = {
 		has_war_with = CHI
 		OR = {
-			has_war_with = XSM
-			has_war_with = NXM
-			has_war_with = GSM
+			always = no       
+			always = no       
+			always = no       
 		}
 		country_exists = CHI
 		CHI = {
@@ -444,23 +444,11 @@ chinese_war_dont_push_mas = {
 		}
 	}
 
-	ai_strategy = {
-	    type = front_unit_request
-	    tag = XSM
-	    value = -30
-	}
 
-	ai_strategy = {
-	    type = front_unit_request
-	    tag = NXM
-	    value = -30
-	}
 
-	ai_strategy = {
-	    type = front_unit_request
-	    tag = GSM
-	    value = -30
-	}
+
+
+
 
 }
 
@@ -472,19 +460,14 @@ JAP_push_snd_hard_initially = {
 	enable = {
 		#is_historical_focus_on = yes
 		
-		has_war_with = SND
+		always = no       
 		date < 1939.1.1
 	}
 
 	abort_when_not_enabled = yes
 
 	abort = {
-		SND = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
+		
 	}
 
 	ai_strategy = {
@@ -493,18 +476,7 @@ JAP_push_snd_hard_initially = {
 		value = 100
 	}
 
-	ai_strategy = {
-		type = front_control
 
-		tag = SND
-
-		ratio = 0.2
-
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-	}
 }
 
 # Make sure Japan tries to take down HBC aggressively 
@@ -518,7 +490,7 @@ JAP_push_hbc_hard_initially = {
 				is_historical_focus_on = yes
 				date > 1937.1.1
 			}
-			has_war_with = HBC
+			always = no       
 		}
 		date < 1939.1.1
 	}
@@ -1101,14 +1073,9 @@ all_china_must_prosper_in_my_prosperity_sphere_SIK = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = SIK
+		always = no         
 		NOT = {
-			SIK = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 			AND = {
 				OR = {
 					AND = {
@@ -1118,25 +1085,15 @@ all_china_must_prosper_in_my_prosperity_sphere_SIK = {
 					has_non_aggression_pact_with = SOU
 					is_in_faction_with = SOU
 				}
-				SIK = {
-					OR = {
-						is_in_faction_with = SOU
-						is_subject_of = SOU
-					}
-				}
+				
 			}
 		}
 	}
 
 	abort = {
 		OR = {
-			NOT = { country_exists = SIK }
-			SIK = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			NOT = { always = no          }
+			
 			AND = {
 				OR = {
 					AND = {
@@ -1146,12 +1103,7 @@ all_china_must_prosper_in_my_prosperity_sphere_SIK = {
 					has_non_aggression_pact_with = SOU
 					is_in_faction_with = SOU
 				}
-				SIK = {
-					OR = {
-						is_in_faction_with = SOU
-						is_subject_of = SOU
-					}
-				}
+				
 			}
 		}
 	}
@@ -1175,25 +1127,15 @@ all_china_must_prosper_in_my_prosperity_sphere_XSM = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = XSM
+		always = no         
 		NOT = {
-			XSM = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = XSM }
-		XSM = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1215,25 +1157,15 @@ all_china_must_prosper_in_my_prosperity_sphere_GXC = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = GXC
+		always = no         
 		NOT = {
-			GXC = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = GXC }
-		GXC = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1255,25 +1187,15 @@ all_china_must_prosper_in_my_prosperity_sphere_SHX = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = SHX
+		always = no         
 		NOT = {
-			SHX = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = SHX }
-		SHX = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1295,25 +1217,15 @@ all_china_must_prosper_in_my_prosperity_sphere_YUN = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = YUN
+		always = no         
 		NOT = {
-			YUN = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = YUN }
-		YUN = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1336,25 +1248,15 @@ all_china_must_prosper_in_my_prosperity_sphere_SND = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = SND
+		always = no         
 		NOT = {
-			SND = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = SND }
-		SND = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1377,25 +1279,15 @@ all_china_must_prosper_in_my_prosperity_sphere_GDC = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = GDC
+		always = no         
 		NOT = {
-			GDC = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = GDC }
-		GDC = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1418,25 +1310,15 @@ all_china_must_prosper_in_my_prosperity_sphere_SIC = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = SIC
+		always = no         
 		NOT = {
-			SIC = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = SIC }
-		SIC = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1459,25 +1341,15 @@ all_china_must_prosper_in_my_prosperity_sphere_XIC = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = XIC
+		always = no         
 		NOT = {
-			XIC = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = XIC }
-		XIC = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1500,25 +1372,15 @@ all_china_must_prosper_in_my_prosperity_sphere_NXM = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = NXM
+		always = no         
 		NOT = {
-			NXM = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = NXM }
-		NXM = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1541,25 +1403,15 @@ all_china_must_prosper_in_my_prosperity_sphere_GSM = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = GSM
+		always = no         
 		NOT = {
-			GSM = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = GSM }
-		GSM = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1582,25 +1434,15 @@ all_china_must_prosper_in_my_prosperity_sphere_HBC = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = HBC
+		always = no         
 		NOT = {
-			HBC = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = HBC }
-		HBC = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -1623,25 +1465,15 @@ all_china_must_prosper_in_my_prosperity_sphere_PRC = {
 				is_subject_of = JAP
 			}
 		}
-		country_exists = PRC
+		always = no         
 		NOT = {
-			PRC = {
-				OR = {
-					is_in_faction_with = JAP
-					is_subject_of = JAP
-				}
-			}
+			
 		}
 	}
 
 	abort = {
-		NOT = { country_exists = PRC }
-		PRC = {
-			OR = {
-				is_in_faction_with = JAP
-				is_subject_of = JAP
-			}
-		}
+		NOT = { always = no          }
+		
 	}
 
 	ai_strategy = {
@@ -2253,8 +2085,8 @@ JAP_hold_up_in_china = { #We got this far but there are bigger targets to worry 
 		1035 = { # Nanjing
 			OR = {
 				is_controlled_by = JAP
-				is_controlled_by = MAN
-				is_controlled_by = RNG
+				always = no           
+				always = no           
 			}
 		}
 
@@ -2268,8 +2100,8 @@ JAP_hold_up_in_china = { #We got this far but there are bigger targets to worry 
 				PHI = { has_capitulated = no }
 			}
 			AND = {
-				has_war_with = MAL
-				MAL = { has_capitulated = no }
+				always = no       
+				
 			}
 		}
 	}
@@ -2287,41 +2119,11 @@ JAP_hold_up_in_china = { #We got this far but there are bigger targets to worry 
 		execution_type = careful
 	}
 
-	ai_strategy = {
-		type = front_control
 
-		tag = GXC
 
-		ratio = 0.25
 
-		priority = 100
-		ordertype = front
-		execution_type = careful
-	}
 
-	ai_strategy = {
-		type = front_control
 
-		tag = YUN
-
-		ratio = 0.25
-
-		priority = 100
-		ordertype = front
-		execution_type = careful
-	}
-
-	ai_strategy = {
-		type = front_control
-
-		tag = GDC
-
-		ratio = 0.25
-
-		priority = 100
-		ordertype = front
-		execution_type = careful
-	}
 
 }
 

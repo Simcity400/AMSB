@@ -249,8 +249,8 @@ country_event = {
 					IF = { 
 						limit = {
 							has_dlc = "By Blood Alone"
-							ETH = { has_country_flag = ETH_anti_colonialism_flag } # Ethiopia is on anti-colonialism run
-							var:occupier_country = { NOT = { tag = ETH } } # just a sanity check
+							 # Ethiopia is on anti-colonialism run
+							var:occupier_country = { NOT = { always = no } } # just a sanity check
 							var:new_occupied_country = {
 								capital_scope = { is_on_continent = africa } # African country
 								any_owned_state = {

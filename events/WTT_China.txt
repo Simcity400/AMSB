@@ -23,19 +23,19 @@ country_event = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_war_with = PRC
-					has_war_with = YUN
-					has_war_with = SIK
-					has_war_with = XSM
-					has_war_with = GXC
+					always = no       
+					always = no       
+					always = no       
+					always = no       
+					always = no       
 					has_war_with = CHI
-					has_war_with = XIC
-					has_war_with = SND
-					has_war_with = KHM
-					has_war_with = GDC
-					has_war_with = NXM
-					has_war_with = GSM
-					has_war_with = SIC
+					always = no       
+					always = no       
+					always = no       
+					always = no       
+					always = no       
+					always = no       
+					always = no       
 				}
 			}
 		}
@@ -120,11 +120,11 @@ country_event = {
 				add = 80 #TODO_WTT_AI script modifiers for how likely people are to accept puppeting
 			}
 			modifier = {
-				tag = TIB
+				always = no
 				add = 30 #TODO_WTT_AI script modifiers for how likely people are to accept puppeting
 			}
 			modifier = {
-				tag = MON
+				always = no
 				add = 30 #TODO_WTT_AI script modifiers for how likely people are to accept puppeting
 			}
 		}
@@ -190,7 +190,7 @@ country_event = {
 	trigger = {
 		tag = event_target:WTT_current_china_leader
 		any_other_country = {
-			has_completed_focus = PRC_infiltration
+			always = no                           
 			has_government = communism
 		}
 	}
@@ -525,7 +525,7 @@ country_event = {
 			}
 		}
 		any_other_country = {
-			has_completed_focus = PRC_anti_japanese_expedition
+			always = no                                       
 			has_government = communism
 			not = { is_in_faction_with = ROOT }
 		}		
@@ -898,9 +898,7 @@ country_event = {
 				has_war_with = JAP
 			}
 			modifier = {
-				PRC = {
-					has_completed_focus = PRC_social_democracy_focus
-				}
+				
 				factor = 2 #Commies being nice to us
 			}
 			modifier = {
@@ -915,9 +913,7 @@ country_event = {
 		ai_chance = {
 			base = 75
 			modifier = {
-				PRC = {
-					has_completed_focus = PRC_focus_on_china #commies being mean to us!
-				}
+				
 				factor = 2
 			}
 			modifier = {
@@ -959,13 +955,7 @@ country_event = {
 					}
 				}
 				OR = {
-					PRC = {
-						has_completed_focus = PRC_the_unwilling_diarchy_focus
-						focus_progress = {
-							focus = PRC_the_unwilling_diarchy_focus
-							progress > 0
-						}
-					}
+					
 				}
 			}		
 		}
@@ -1014,9 +1004,7 @@ country_event = {
 		}
 		IF = {
 			limit = {
-				XIC = { 
-					has_completed_focus = XIC_invite_chiang_for_troop_inspections
-				}
+				
 			}
 		}
 
@@ -1171,9 +1159,7 @@ country_event = {
 		custom_effect_tooltip = reject_second_united_front_tt
 		if = {
 			limit = {
-				PRC = {
-					has_country_flag = SOV_xian_refuse
-				}
+				
 			}
 			add_opinion_modifier = {
 				target = SOV
@@ -1197,13 +1183,7 @@ country_event = {
 					}
 				}
 				OR = {
-					PRC = {
-						has_completed_focus = PRC_the_unwilling_diarchy_focus
-						focus_progress = {
-							focus = PRC_the_unwilling_diarchy_focus
-							progress > 0
-						}
-					}
+					
 				}
 			}		
 		}
@@ -1230,13 +1210,7 @@ country_event = {
 	option = {
 		name = wtt_xian_incident.7.e #no deals with anyone
 		trigger = { ## Only available for Unwilling Diarchy
-			PRC = {
-				has_completed_focus = PRC_the_unwilling_diarchy_focus
-				focus_progress = {
-					focus = PRC_the_unwilling_diarchy_focus
-					progress > 0
-				}
-			}
+			
 		}	
 		ai_chance = {
 			base = 100
@@ -1462,9 +1436,7 @@ country_event = {
 		}
 		IF = {
 			limit = {
-				XIC = { 
-					has_completed_focus = XIC_invite_chiang_for_troop_inspections
-				}
+				
 			}
 		}
 		event_target:CHI_xian_instigator = { clr_country_flag = CHI_xian_instigator_flag }

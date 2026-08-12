@@ -156,7 +156,7 @@ country_event = {
 		if = {
 			limit = {
 				FROM = {
-					original_tag = SLO
+					always = no       
 				}
 			}
 			annex_country = {
@@ -688,7 +688,7 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		remove_decision_on_cooldown = POL_purchase_madagascar
+		
 	}
 }
 
@@ -810,7 +810,7 @@ country_event = {
 						state = 701
 					}
 				}
-				remove_decision_on_cooldown = POL_purchase_gambia
+				
 			}
 			if = {
 				limit = {
@@ -818,7 +818,7 @@ country_event = {
 						state = 773
 					}
 				}
-				remove_decision_on_cooldown = POL_purchase_cheap_colony
+				
 			}
 			if = {
 				limit = {
@@ -826,7 +826,7 @@ country_event = {
 						state = 546
 					}
 				}
-				remove_decision_on_cooldown = POL_purchase_cheap_colony
+				
 			}
 			if = {
 				limit = {
@@ -834,7 +834,7 @@ country_event = {
 						state = 454
 					}
 				}
-				remove_decision_on_cooldown = POL_purchase_cheap_colony
+				
 			}
 		}
 	}
@@ -1870,13 +1870,7 @@ country_event = {
 			limit = {
 				has_war_with = SOV
 			}
-			DON = {
-				add_to_war = {
-					targeted_alliance = PREV 
-					enemy = SOV
-					hostility_reason = asked_to_join
-				}
-			}
+			
 		}
 	}
 	
@@ -1893,13 +1887,7 @@ country_event = {
 			limit = {
 				has_war_with = SOV
 			}
-			DON = {
-				add_to_war = {
-					targeted_alliance = PREV 
-					enemy = SOV
-					hostility_reason = asked_to_join
-				}
-			}
+			
 		}
 	}
 }
@@ -1939,13 +1927,7 @@ country_event = {
 			limit = {
 				has_war_with = SOV
 			}
-			KUB = {
-				add_to_war = {
-					targeted_alliance = PREV 
-					enemy = SOV
-					hostility_reason = asked_to_join
-				}
-			}
+			
 		}
 	}
 	
@@ -1962,13 +1944,7 @@ country_event = {
 			limit = {
 				has_war_with = SOV
 			}
-			KUB = {
-				add_to_war = {
-					targeted_alliance = PREV 
-					enemy = SOV
-					hostility_reason = asked_to_join
-				}
-			}
+			
 		}
 	}
 }
@@ -3761,7 +3737,7 @@ country_event = {
 					limit = {
 						OR = {
 							is_core_of = BLR
-							is_core_of = UKR
+							always = no     
 						}
 					}
 					add_core_of = POL
@@ -3777,7 +3753,7 @@ country_event = {
 			hidden_effect = {
 				every_state = {
 					limit = {
-						is_core_of = UKR
+						always = no     
 					}
 					add_core_of = POL
 				}

@@ -63,21 +63,21 @@ types = {
 
 		allowed = {
 			has_dlc = "No Compromise, No Surrender"
-			original_tag = PRC
+			always = no       
 		}
 
 		fire_only_once = no
 
 		visible = {
 			OR = {
-				has_completed_focus = PRC_raid_weapon_depots
-				has_completed_focus = PRC_raiding_parties
+				always = no                                 
+				always = no                              
 			}
 		}
 
 		show_target = {
 			var:target_state = {
-				is_core_of = PRC
+				always = no     
 				NOT = {
 					state = 524 #it's an island, bruh
 				}
@@ -476,7 +476,7 @@ types = {
 				factor = 0
 				var:target_state = { # Less chance to do eastern raid
 					controller = {
-						original_tag = SHX
+						always = no       
 					}
 				}
 			}
@@ -490,13 +490,13 @@ types = {
 	
 		allowed = {
 			has_dlc = "No Compromise, No Surrender"
-			original_tag = PRC
+			always = no       
 		}
 	
 		fire_only_once = no
 	
 		visible = {
-			has_completed_focus = PRC_know_the_enemy
+			always = no                             
 			NOT = {
 				has_country_flag = {
 					flag = PRC_probe_border_defenses_flag
@@ -510,8 +510,8 @@ types = {
 				NOT = { has_state_flag = PRC_probe_border_defenses_state_flag }
 				controller = {
 					OR = {
-						original_tag = SHX
-						original_tag = NXM
+						always = no       
+						always = no       
 						#original_tag = XIC
 					}
 					NOT = {
@@ -526,8 +526,8 @@ types = {
 			var:target_state = {
 				controller = {
 					OR = {
-						original_tag = SHX
-						original_tag = NXM
+						always = no       
+						always = no       
 						#original_tag = XIC
 					}
 					NOT = {

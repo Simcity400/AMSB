@@ -1723,7 +1723,7 @@ country_event = {
 		hidden_effect = {
 			POR = { news_event = { id = lar_news.26 days = 3 random_days = 5 } }
 			every_state = {
-				limit = { is_core_of = BRA }
+				limit = { always = no      }
 				add_core_of  = POR
 			}
 		}
@@ -1833,7 +1833,7 @@ country_event = {
 				}
 				random_country = {
 					limit = {
-						original_tag = BRA
+						always = no       
 						has_government = fascism
 					}
 					POR = { 
@@ -1847,38 +1847,7 @@ country_event = {
 						}
 					}
 				}
-				BRA = {
-					set_party_name = { 
-					    ideology = fascism
-					    long_name = BRA_fascism_party_long
-					    name = BRA_fascism_party
-					}
-					create_country_leader = {
-						name = "Plínio Salgado"
-						desc = "POLITICS_PLINIO_SALGADO_DESC"
-						picture = GFX_portrait_Plinio_Salgado
-						expire = "1965.1.1"
-						ideology = fascism_ideology
-						traits = {
-							#
-						}
-					}
-					effect_tooltip = {
-						give_military_access = POR
-					}
-					hidden_effect = {
-						diplomatic_relation = {
-							country = POR
-							relation = military_access
-							active = yes
-						}
-					}
-					add_opinion_modifier = {
-						target = POR
-						modifier = POR_helped_in_civil_war
-					}
-					set_global_flag = POR_portugal_joined_brazilian_civil_war_flag
-				}
+				
 			}
 			else = { #BRA player is Anti-Monarchist
 				set_temp_variable = { POR_bra_monarchist_cw_opposition = party_popularity@neutrality }
@@ -1901,7 +1870,7 @@ country_event = {
 				}
 				random_country = {
 					limit = {
-						original_tag = BRA
+						always = no       
 						has_government = neutrality
 					}
 					set_country_flag = EOB_empire_of_brazil_flag
@@ -1992,7 +1961,7 @@ country_event = {
 			}
 			random_country = {
 				limit = {
-					original_tag = BRA
+					always = no       
 					has_government = fascism
 				}
 				POR = { 
@@ -2000,13 +1969,7 @@ country_event = {
 					give_military_access = BRA
 				}
 			}
-			BRA = {
-				give_military_access = POR
-				add_opinion_modifier = {
-					target = POR
-					modifier = POR_helped_in_civil_war
-				}
-			}
+			
 		}
 		custom_effect_tooltip = lar_portugal_promote_monarchist_cause.3.a_tt
 	}
@@ -2032,7 +1995,7 @@ country_event = {
 			}
 			random_country = {
 				limit = {
-					original_tag = BRA
+					always = no       
 					has_government = neutrality
 				}
 				set_country_flag = EOB_empire_of_brazil_flag

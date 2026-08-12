@@ -1143,10 +1143,10 @@ ITA_abbandon_eth = {
 		state_trigger = {
 			controller = {
 				OR = {
-					tag = AOI 
+					always = no 
 					tag = FRA
 					tag = ENG
-					has_war_with = AOI
+					always = no       
 				}
 			}
 			OR = {
@@ -1236,15 +1236,15 @@ ITA_commit_to_ethiopian_theatre = {
 	}
 	enable = {
 		has_global_flag = second_italo_ethiopian_war_flag
-		country_exists = ETH
-		ETH = { has_country_flag = italian_major_offensive_against_ethiopia_flag }
+		always = no         
+		
 		ITA_is_communist_ai = no
 		ITA_is_socialist_ai = no
 	}
 	abort = {
 		OR = {
 			NOT = { has_global_flag = second_italo_ethiopian_war_flag }
-			NOT = { country_exists = ETH }
+			NOT = { always = no          }
 			date > 1939.6.1
 			any_enemy_country = {
 				is_major = yes
@@ -1274,16 +1274,7 @@ ITA_commit_to_ethiopian_theatre = {
 		value = 100
 	}
 	
-	ai_strategy = {
-		type = front_control
-		ordertype = front
-		ratio = 0.5
-		priority = 600
-		execution_type = rush_weak
-		execute_order = yes
 
-		tag = ETH
-	}
 	
 }
 
@@ -1292,20 +1283,20 @@ ITA_prepare_ethiopian_theatre = {
 		original_tag = ITA
 	}
 	enable = {
-		has_war_with = ETH
+		always = no       
 		ITA_is_communist_ai = no
 		ITA_is_socialist_ai = no
 	}
 	abort = {
 		OR = {
 			NOT = { has_global_flag = second_italo_ethiopian_war_flag }
-			NOT = { country_exists = ETH }
+			NOT = { always = no          }
 			date > 1939.6.1
 			any_enemy_country = {
 				is_major = yes
 				capital_scope = { is_on_continent = europe }
 			}
-			ETH = { has_country_flag = italian_major_offensive_against_ethiopia_flag }
+			
 		}
 	}
 
@@ -1329,16 +1320,16 @@ ITA_prepare_losing_ethiopian_theatre = {
 	enable = {
 		 OR = {
 			NOT = { has_global_flag = second_italo_ethiopian_war_flag }
-			NOT = { country_exists = ETH }
+			NOT = { always = no          }
 			any_enemy_country = {
 				is_major = yes
 				capital_scope = { is_on_continent = europe }
 			}
-			ETH = { has_country_flag = italian_major_offensive_against_ethiopia_flag }
+			
 		}
 	}
 	abort = {
-		has_war_with = ETH
+		always = no       
 	}
 
 	# ethiopia is not defending much
@@ -1354,7 +1345,7 @@ ITA_attack_north = {
 		original_tag = ITA
 	}
 	enable = {
-		has_war_with = ETH
+		always = no       
 		has_active_mission = ITA_conquer_the_north_mission
 		ITA_is_communist_ai = no
 		ITA_is_socialist_ai = no
@@ -1379,7 +1370,7 @@ ITA_attack_south = {
 		original_tag = ITA
 	}
 	enable = {
-		has_war_with = ETH
+		always = no       
 		has_active_mission = ITA_conquer_the_south_mission
 		ITA_is_communist_ai = no
 		ITA_is_socialist_ai = no
@@ -1404,8 +1395,8 @@ ITA_attack_addis = {
 		original_tag = ITA
 	}
 	enable = {
-		has_war_with = ETH
-		has_active_mission = ETH_conquer_addis_ababa_mission
+		always = no       
+		always = no                                         
 		ITA_is_communist_ai = no
 		ITA_is_socialist_ai = no
 	}
@@ -1429,8 +1420,8 @@ ITA_attack_harar = {
 		original_tag = ITA
 	}
 	enable = {
-		has_war_with = ETH
-		has_active_mission = ETH_conquer_harar_mission
+		always = no       
+		always = no                                   
 		ITA_is_communist_ai = no
 		ITA_is_socialist_ai = no
 	}
@@ -1454,8 +1445,8 @@ ITA_prepare_to_invade_afar = {
 		original_tag = ITA
 	}
 	enable = {
-		has_war_with = ETH
-		AFA = { exists = yes }
+		always = no       
+		
 		date < 1937.1.1
 	}
 	abort_when_not_enabled = yes
@@ -1471,7 +1462,7 @@ ITA_communists_downplay_ethiopian_theatre = {
 		original_tag = ITA
 	}
 	enable = {
-		has_war_with = ETH
+		always = no       
 		OR = {
 			ITA_is_communist_ai = yes
 			ITA_is_socialist_ai = yes
@@ -1479,7 +1470,7 @@ ITA_communists_downplay_ethiopian_theatre = {
 		NOT = { has_completed_focus = ITA_defy_the_duce }
 	}
 	abort = {
-		NOT = { has_war_with = ETH }
+		NOT = { always = no        }
 	}
 
 	ai_strategy = {
@@ -1487,18 +1478,7 @@ ITA_communists_downplay_ethiopian_theatre = {
 		id = horn_of_africa
 		value = -100
 	}
-	ai_strategy = {
-		type = front_control
 
-		tag = ETH
-
-		ratio = 0.6
-
-		priority = 100
-		ordertype = front
-		execution_type = careful
-		manual_attack = no
-	}
 }
 
 ITA_prepare_yugoslavian_invasion = {
@@ -1687,7 +1667,7 @@ ITA_ignore_vichy_we_will_annex_them_later = {
 		original_tag = ITA
 	}
 	enable = {
-		country_exists = VIC
+		always = no         
 	}
 	abort_when_not_enabled = yes
 

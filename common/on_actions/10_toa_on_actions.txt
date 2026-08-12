@@ -79,7 +79,7 @@ on_actions = {
 			IF = {
 				limit = {
 					NOT = { has_dlc = "Trial of Allegiance" }
-					original_tag = URG
+					always = no       
 					has_cosmetic_tag = URG_is_unaligned_URG_but_has_normal_URG_flag
 				}
 				drop_cosmetic_tag = yes
@@ -116,25 +116,12 @@ on_actions = {
 			if = {
 				limit = {
 					has_dlc = "Trial of Allegiance"
-					BRA = {
-						has_completed_focus = BRA_expand_fordlandia
-						NOT = {	
-							OR = {
-								has_government = communism 
-								has_country_flag = BRA_ford_event_has_happened
-							}
-						}
-					}
+					
 					USA = {
 						has_government = communism
 					}
 				}
-				BRA = {
-					country_event = {
-						id = JUNO_brazil_events.180
-						days = 14
-					}
-				}
+				
 			}
 		}
 	}
@@ -148,15 +135,15 @@ on_actions = {
 				every_country = {	
 					limit = {
 						OR = {
-							original_tag = URG
-							original_tag = BRA
-							original_tag = PAR
-							original_tag = CHL
-							original_tag = BOL
-							original_tag = ARG
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
 							original_tag = PRU
 							original_tag = VEN
-							original_tag = ECU
+							always = no       
 							original_tag = COL
 							
 						}
@@ -233,13 +220,7 @@ on_actions = {
 		effect = {
 			IF = {
 				limit = {
-					URG = {
-						NOT = {
-							has_cosmetic_tag = URG_german
-						}
-						is_subject = yes
-						is_subject_of = GER
-					}
+					
 				}
 			}
 		}	
@@ -247,14 +228,9 @@ on_actions = {
 		effect = {
 			IF = {
 				limit = {
-					URG = {
-						has_cosmetic_tag = URG_german
-						is_subject = no
-					}
+					
 				}
-				URG = {
-					drop_cosmetic_tag = yes
-				}
+				
 			}
 		}	
 
@@ -262,16 +238,7 @@ on_actions = {
 		effect = {
 			IF = {
 				limit = {
-					BOL = {
-						NOT = {
-							has_cosmetic_tag = BOL_orelia
-						}
-						is_subject = yes
-						is_subject_of = CHL
-						CHL = {
-							has_completed_focus = CHL_crown_antoine_as_sovereign_king
-						}
-					}
+					
 				}
 			}
 		}	
@@ -279,14 +246,9 @@ on_actions = {
 		effect = {
 			IF = {
 				limit = {
-					BOL = {
-						has_cosmetic_tag = BOL_orelia
-						is_subject = no
-					}
+					
 				}
-				BOL = {
-					drop_cosmetic_tag = yes
-				}
+				
 			}
 		}	
 	}
@@ -297,7 +259,7 @@ on_actions = {
 			IF = {
 				limit = {
 					ROOT = {
-						original_tag = URG
+						always = no       
 					}
 					FROM = {
 						original_tag = GER
@@ -326,7 +288,7 @@ on_actions = {
 			IF = {
 				limit = {
 					ROOT = {
-						original_tag = URG
+						always = no       
 					}
 					FROM = {
 						original_tag = GER
@@ -348,7 +310,7 @@ on_actions = {
 			IF = {
 				limit = {
 					ROOT = {
-						original_tag = URG
+						always = no       
 					}
 					FROM = {
 						original_tag = GER
@@ -373,7 +335,7 @@ on_actions = {
 		effect = {
 			if = { #Checks that sender is ARG and reciever is SPA
 				limit = {
-					original_tag = ARG
+					always = no       
 					FROM = { 
 						tag = SPA
 					}
@@ -387,10 +349,10 @@ on_actions = {
 					ROOT = {
 						is_ai = no
 						OR = {
-							tag = CHL
-							tag = BOL
+							always = no
+							always = no
 							tag = PRU
-							tag = ECU
+							always = no
 							tag = VEN
 							tag = COL
 						}
@@ -416,9 +378,9 @@ on_actions = {
 				limit = {
 					has_dlc = "Trial of Allegiance"
 					ROOT = {
-						tag = BRA
+						always = no
 					}
-					FROM = { tag = URG }
+					FROM = { always = no }
 				}
 
 			}
@@ -484,16 +446,16 @@ on_actions = {
 			IF = {
 				limit = {
 					ROOT = {
-						tag = PAR
+						always = no
 					}
 					FROM = {
 						NOT = {
 							has_country_flag = PAR_revenge_flag
 						}
 						OR = {
-							tag = BRA
-							tag = ARG
-							tag = URG
+							always = no
+							always = no
+							always = no
 						}
 					}
 				}
@@ -653,59 +615,6 @@ on_actions = {
 		}
 	}
 
-	on_weekly_ECU = {
-
-		effect = {
-			
-			IF = {
-				limit = {
-					AND = {
-						649 = {
-							is_owned_and_controlled_by = ROOT
-						}
-						305 = {
-							NOT = {
-								is_owned_and_controlled_by = ROOT
-							}
-						}
-						490 = {
-							NOT = {
-								is_owned_and_controlled_by = ROOT
-							}
-						}
-					}
-					ROOT = {
-						NOT = {
-							has_cosmetic_tag = ECU_galapagos_regime
-						}
-					}
-				}
-				ROOT = {
-					set_cosmetic_tag = ECU_galapagos_regime
-				}
-			}
-			
-		}
-
-		effect = {
-			
-			IF = {
-				limit = {
-					305 = {
-						is_owned_and_controlled_by = ROOT
-					}
-					ROOT = {
-						has_cosmetic_tag = ECU_galapagos_regime
-					}
-				}
-				ROOT = {
-					drop_cosmetic_tag = yes
-				}
-			}
-			
-		}
-
-	}
 	# ROOT is capitulated country, FROM is winner
 	on_capitulation = {
 		effect = {
@@ -720,9 +629,7 @@ on_actions = {
 							ruling_only = yes
 						}
 					}
-					ARG = {
-						has_government = fascism
-					}
+					
 				} 
 			}
 		}

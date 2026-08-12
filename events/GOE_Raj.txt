@@ -1691,7 +1691,7 @@ country_event = {
 		transfer_state = 986
 		if = {
 			limit = {
-				has_truce_with = PAK
+				always = no         
 			}
 			set_truce = {
 				target = PAK
@@ -1703,7 +1703,7 @@ country_event = {
 	option = {
 		name = GOE_RAJ.41.b
 		trigger = {
-			tag = PAK
+			always = no
 		}
 		effect_tooltip = {
 			986 = { set_state_owner_to = RAJ }
@@ -1733,7 +1733,7 @@ country_event = {
 		transfer_state = 431
 		if = {
 			limit = {
-				has_truce_with = PAK
+				always = no         
 			}
 			set_truce = {
 				target = PAK
@@ -1745,7 +1745,7 @@ country_event = {
 	option = {
 		name = GOE_RAJ.43.b
 		trigger = {
-			tag = PAK
+			always = no
 		}
 		effect_tooltip = {
 			431 = { set_state_owner_to = RAJ }
@@ -1774,7 +1774,7 @@ country_event = {
 		transfer_state = 433
 		if = {
 			limit = {
-				has_truce_with = PAK
+				always = no         
 			}
 			set_truce = {
 				target = PAK
@@ -1786,7 +1786,7 @@ country_event = {
 	option = {
 		name = GOE_RAJ.45.b
 		trigger = {
-			tag = PAK
+			always = no
 		}
 		effect_tooltip = {
 			433 = { set_state_owner_to = RAJ }
@@ -1951,7 +1951,7 @@ country_event = {
 	option = {
 		name = GOE_RAJ.49.b
 		trigger = {
-			tag = PAK
+			always = no
 		}
 	}
 }
@@ -1974,7 +1974,7 @@ country_event = {
 	option = {
 		name = GOE_RAJ.50.b
 		trigger = {
-			tag = PAK
+			always = no
 		}
 	}
 }
@@ -1997,7 +1997,7 @@ country_event = {
 	option = {
 		name = GOE_RAJ.51.b
 		trigger = {
-			tag = PAK
+			always = no
 		}
 	}
 }
@@ -2471,7 +2471,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				BAN = { exists = yes }
+				
 			}
 			set_variable = { pressure_left = 3 }
 			set_variable = { default_pressure = pressure_left }
@@ -2530,11 +2530,7 @@ country_event = {
 
 			if = {
 				limit = {
-					HYD = {
-						all_core_state = {
-							is_controlled_by = ROOT
-						}
-					}
+					
 				}
 				release = HYD
 
@@ -2552,11 +2548,7 @@ country_event = {
 			#Kalat
 			if = {
 				limit = {
-					KLT = {
-						all_core_state = {
-							is_controlled_by = ROOT
-						}
-					}
+					
 				}
 				release = KLT #kalat
 			}
@@ -2565,11 +2557,7 @@ country_event = {
 			#Kalat
 			if = {
 				limit = {
-					SKK = {
-						all_core_state = {
-							is_controlled_by = ROOT
-						}
-					}
+					
 				}
 				release = SKK #Sikkim
 			}
@@ -2628,7 +2616,7 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 0.25 }
 							set_variable = { default_pressure = pressure_left }
@@ -2685,19 +2673,13 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 0.25 }
 							set_variable = { default_pressure = pressure_left }
 
 						}
-						MPU = {
-							every_core_state = {
-								limit = { is_controlled_by = PREV }
-
-								add_to_array = { array = RAJ.states_in_play_partition }
-							}
-						}
+						
 					} 
 				}
 
@@ -2716,7 +2698,7 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 0.25 }
 							set_variable = { default_pressure = pressure_left }
@@ -2740,7 +2722,7 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 0.25 }
 							set_variable = { default_pressure = pressure_left }
@@ -2762,20 +2744,14 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 1 }
 							set_variable = { default_pressure = pressure_left }
 
 						}
 						release = RJP 
-						RJP = {
-							every_core_state = {
-								limit = { is_controlled_by = PREV }
-
-								add_to_array = { array = RAJ.states_in_play_partition }
-							}
-						}
+						
 					} 
 				}
 
@@ -2792,7 +2768,7 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 0.25 }
 							set_variable = { default_pressure = pressure_left }
@@ -2816,19 +2792,13 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 0.25 }
 							set_variable = { default_pressure = pressure_left }
 
 						}
-						WIS = {
-							every_core_state = {
-								limit = { is_controlled_by = PREV }
-
-								add_to_array = { array = RAJ.states_in_play_partition }
-							}
-						}
+						
 					} 
 
 				}
@@ -2847,19 +2817,13 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 0.25 }
 							set_variable = { default_pressure = pressure_left }
 
 						}
-						CIP = {
-							every_core_state = {
-								limit = { is_controlled_by = PREV }
-
-								add_to_array = { array = RAJ.states_in_play_partition }
-							}
-						}
+						
 					} 
 				}
 
@@ -2877,19 +2841,13 @@ country_event = {
 						}
 						if = {
 							limit = {
-								BAN = { exists = yes }
+								
 							}
 							add_to_variable = { pressure_left = 0.25 }
 							set_variable = { default_pressure = pressure_left }
 
 						} 
-						RAS = {
-							every_core_state = {
-								limit = { is_controlled_by = PREV }
-
-								add_to_array = { array = RAJ.states_in_play_partition }
-							}
-						}
+						
 					} 
 				}
 
@@ -2900,13 +2858,7 @@ country_event = {
 					var:no_independence = {   } 
 					var:SKK.liberty_desire = { 
 						release = SKK 
-						SKK = {
-							every_core_state = {
-								limit = { is_controlled_by = PREV }
-
-								add_to_array = { array = RAJ.states_in_play_partition }
-							}
-						}
+						
 					} 
 				}
 
@@ -2918,20 +2870,14 @@ country_event = {
 				min = 0
 				max = 13
 			}
-			PAK = { 
-				clamp_variable = {
-					var = pressure_left
-					min = 0
-					max = 13
-				}
-			}
+			
 
 			RAJ = {  
 				set_variable = { default_pressure = pressure_left }
 			}
 			if = {
 				limit = {
-					BAN = { exists = yes }
+					
 				}
 			}
 		}
@@ -2953,24 +2899,20 @@ country_event = {
 
 		if = {
 			limit = {
-				PAK = {
-					is_subject = yes
-				}
+				
 			}
 
-			PAK = { overlord = { set_autonomy = { target = PAK autonomy_state = autonomy_free } } } 
+			 
 			log = "Error: Somehow Pak is a subject after partition. Please Check"
 		}
 
 
 		if = {
 			limit = {
-				BAN = {
-					is_subject = yes
-				}
+				
 			}
 
-			BAN = { overlord = { set_autonomy = { target = BAN autonomy_state = autonomy_free } } } 
+			 
 			log = "Error: Somehow BAN is a subject after partition. Please Check"
 		}
 		hidden_effect = {
@@ -2982,7 +2924,7 @@ country_event = {
 			if = {
 				limit = {
 					THIS = { exists = yes }
-					NOT = { original_tag = PAK }
+					NOT = { always = no        }
 				}
 
 				set_rule = { can_declare_war_on_same_ideology = yes }
@@ -3240,7 +3182,7 @@ country_event = {
 		name = GOE_RAJ_partition.7.c
 		trigger = {
 			has_completed_focus = RAJ_a_secular_state	
-			PAK = { exists = no }
+			
 		}
 
 
@@ -4024,7 +3966,7 @@ country_event = {
 		if = {
 			limit = {
 				event_target:RAJ_annexing_country_target = {
-					tag = BRM
+					always = no
 				}
 			}
 			annex_country = {
@@ -4822,7 +4764,7 @@ country_event = {
 			modifier = {
 				OR = {
 					original_tag = AUS
-					original_tag = IRQ
+					always = no       
 					is_in_faction_with = FROM
 				}
 				factor = 3
@@ -5045,7 +4987,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				original_tag = GXC
+				always = no       
 			}
 
 			FROM = { 
@@ -5076,7 +5018,7 @@ country_event = {
 			}
 
 			modifier = {
-				original_tag = GXC
+				always = no       
 				NOT = { controls_state = 591 }
 				factor = 0
 			}
@@ -5850,13 +5792,7 @@ country_event = {
 	picture = GFX_report_event_indian_soldiers
 	option = {
 		name = GOE_RAJ_princely.1.a
-		HYD = {
-			RAJ_mir_osman_ali_khan = {
-				set_nationality = RAJ
-				set_character_flag = is_mughal_emperor
-			}
-			promote_character = RAJ_mir_osman_ali_khan
-		}	
+			
 	}
 	option = {
 		name = GOE_RAJ_princely.1.b
@@ -5876,23 +5812,11 @@ country_event = {
 	}
 	option = {
 		name = GOE_RAJ_princely.1.c
-		KLT = {
-			RAJ_ahmad_yar_khan = {
-				set_nationality = RAJ
-				set_character_flag = is_mughal_emperor
-			}
-			promote_character = RAJ_ahmad_yar_khan
-		}	
+			
 	}
 	option = {
 		name = GOE_RAJ_princely.1.d
-		BAN = {
-			RAJ_huseyn_shaheed_suhrawardy = {
-				set_nationality = RAJ
-				set_character_flag = is_mughal_emperor
-			}
-			promote_character = RAJ_huseyn_shaheed_suhrawardy
-		}	
+			
 	}
 }
 
@@ -5904,13 +5828,7 @@ country_event = {
 	picture = GFX_report_event_indian_soldiers
 	option = {
 		name = GOE_RAJ_princely.2.a
-		BAN = {
-			RAJ_huseyn_shaheed_suhrawardy = {
-				set_nationality = RAJ
-				set_character_flag = is_mughal_emperor
-			}
-			promote_character = RAJ_huseyn_shaheed_suhrawardy
-		}	
+			
 	}
 	#option = {
 	#	name = GOE_RAJ_princely.2.b

@@ -122,7 +122,7 @@ ETH_second_italo_ethiopian_war_category = {
 		}
 
 		visible = {
-			country_exists = ETH
+			always = no         
 			has_global_flag = second_italo_ethiopian_war_flag
 		}
 
@@ -172,7 +172,7 @@ ETH_second_italo_ethiopian_war_category = {
 			modifier = {
 				factor = 0.5
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 				}
 			}
 			modifier = {
@@ -3183,7 +3183,7 @@ ETH_italian_occupation_category = {
 
 		visible = {
 			any_controlled_state = {
-				is_owned_by = ETH
+				always = no      
 			}
 		}
 
@@ -3197,7 +3197,7 @@ ETH_italian_occupation_category = {
 
 			every_controlled_state = {
 				limit = {
-					is_owned_by = ETH
+					always = no      
 				}
 				add_compliance = 5
 			}
@@ -3294,10 +3294,10 @@ ITA_colonial_management_dec_cat = {
 			
 			any_controlled_state = {
 				OR = {
-					is_core_of = LBA
-					is_core_of = ERI
-					is_core_of = SOM
-					is_core_of = ETH
+					always = no     
+					always = no     
+					always = no     
+					always = no     
 				}
 			}
 		}
@@ -3415,13 +3415,13 @@ ITA_colonial_management_dec_cat = {
 			if = {
 				limit = {
 					any_owned_state = {
-						is_core_of = ERI
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_owned_controlled_state = {
 					limit = {
-						is_core_of = ERI
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 550 } # ERITREA (In case at some point this gets split or tag gets more cores)
@@ -3445,13 +3445,13 @@ ITA_colonial_management_dec_cat = {
 			if = {
 				limit = {
 					any_owned_state = {
-						is_core_of = LBA
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_owned_controlled_state = {
 					limit = {
-						is_core_of = LBA
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 448 } # TRIPOLI (In case at some point this gets split or tag gets more cores)
@@ -3475,13 +3475,13 @@ ITA_colonial_management_dec_cat = {
 			if = {
 				limit = {
 					any_owned_state = {
-						is_core_of = SOM
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_owned_controlled_state = {
 					limit = {
-						is_core_of = SOM
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 559 } # SOMALILAND (In case at some point this gets split or tag gets more cores)
@@ -3505,13 +3505,13 @@ ITA_colonial_management_dec_cat = {
 			if = {
 				limit = {
 					any_owned_state = {
-						is_core_of = ETH
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_owned_controlled_state = {
 					limit = {
-						is_core_of = ETH
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 271 } # ADDIS ABABA (In case at some point this gets split or tag gets more cores)
@@ -4279,9 +4279,7 @@ ITA_colonial_management_dec_cat = {
 			base = 200
 			modifier = {
 				factor = 0
-				ETH = {
-					has_completed_focus = ETH_declare_for_italy
-				}
+				
 			}
 		}
 	}
@@ -5318,7 +5316,7 @@ ITA_diplomacy_balkan_decision_category = {
 			base = 20
 			modifier = {
 				factor = 10
-				is_in_faction_with = CRO
+				always = no             
 			}
 			modifier = { #ITA struggles to garrison puppets that can be naval invaded
 				factor = 0.5
@@ -5768,7 +5766,7 @@ ITA_diplomacy_balkan_decision_category = {
 					is_controlled_by = ITA
 				}
 				any_subject_country = {
-					original_tag = MNT
+					always = no       
 					controls_state = 105
 				}
 				any_country = {

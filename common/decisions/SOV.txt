@@ -6654,7 +6654,7 @@ SOV_diplomacy_asia_decision_category = {
 			OR = {
 				AND = {
 					always = no
-					FROM = { tag = PRC }
+					FROM = { always = no }
 				}
 				AND = {
 					always = no
@@ -9682,7 +9682,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_UKR_flag }
-			NOT = { country_exists = UKR }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -9724,7 +9724,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_KAZ_flag }
-			NOT = { country_exists = KAZ }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -9766,7 +9766,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_GEO_flag }
-			NOT = { country_exists = GEO }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -9850,7 +9850,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_AZR_flag }
-			NOT = { country_exists = AZR }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -9892,7 +9892,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_UZB_flag }
-			NOT = { country_exists = UZB }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -9934,7 +9934,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_TMS_flag }
-			NOT = { country_exists = TMS }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -9976,7 +9976,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_KYR_flag }
-			NOT = { country_exists = KYR }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -10018,7 +10018,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_TAJ_flag }
-			NOT = { country_exists = TAJ }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -10355,7 +10355,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_TAN_flag }
-			NOT = { country_exists = TAN }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -10369,7 +10369,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		}
 
 		remove_effect = {
-			TAN = { SOV_build_national_academy_of_sciences_effect = yes } #Tooltip + increase research speed in dynamic modifier
+			 #Tooltip + increase research speed in dynamic modifier
 			set_country_flag = SOV_national_academy_of_sciences_built_TAN_flag
 		}
 	}
@@ -10397,7 +10397,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		visible = {
 			has_completed_focus = SOV_national_academies_of_sciences
 			NOT = { has_country_flag = SOV_national_academy_of_sciences_built_MON_flag }
-			NOT = { country_exists = MON }
+			NOT = { always = no          }
 		}
 
 		fire_only_once = yes
@@ -10411,7 +10411,7 @@ SOV_national_academy_of_sciences_dec_cat = {
 		}
 
 		remove_effect = {
-			MON = { SOV_build_national_academy_of_sciences_effect = yes } #Tooltip + increase research speed in dynamic modifier // Done in this scope for tooltip reasons
+			 #Tooltip + increase research speed in dynamic modifier // Done in this scope for tooltip reasons
 			set_country_flag = SOV_national_academy_of_sciences_built_MON_flag
 		}
 	}
@@ -12532,7 +12532,7 @@ SOV_great_patriotic_war = {
 			}
 			every_state = {
 				limit = {
-					is_core_of = UKR
+					always = no     
 					is_controlled_by = SOV
 				}
 				damage_building = {
@@ -14471,7 +14471,7 @@ SOV_soviet_civil_war_dec_cat = {
 		visible = {
 			OR = {
 				FROM = { has_state_flag = SOV_exiles_state }
-				FROM = { is_owned_by = MAN}
+				FROM = { always = no      }
 			}
 			NOT = { has_global_flag = SOV_soviet_civil_war }
 		}
@@ -14534,7 +14534,7 @@ SOV_soviet_civil_war_dec_cat = {
 		visible = {
 			OR = {
 				FROM = { has_state_flag = SOV_exiles_state }
-				FROM = { is_owned_by = MAN}
+				FROM = { always = no      }
 			}
 			always = no
 			NOT = { has_global_flag = SOV_soviet_civil_war }
@@ -17241,9 +17241,9 @@ operations = {
 
 		available = {
 			JAP = { always = no }
-			MAN = { is_puppet = no }
+			
 			NOT = {
-				has_war_with = MAN
+				always = no       
 			}
 		}
 
@@ -17251,7 +17251,7 @@ operations = {
 		fire_only_once = yes
 		visible = {
 			JAP = { always = no }
-			MAN = { exists = yes }
+			
 		}
 
 		complete_effect = {
@@ -17264,9 +17264,7 @@ operations = {
 		ai_will_do = {
 			base = 1
 			modifier = {
-				MAN = {
-					is_ai = no
-				}
+				
 				factor = 0 #we're mean but not that mean
 			}
 			modifier = {
@@ -17296,7 +17294,7 @@ political_actions = {
 					owns_state = 717
 				}
 				AND = {
-					MAN = { is_puppet_of = SOV }
+					
 					owns_state = 610
 					owns_state = 716
 					owns_state = 328

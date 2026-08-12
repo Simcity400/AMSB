@@ -56,20 +56,20 @@ autonomy_state = {
 					has_government = fascism
 					has_government = neutrality
 				}
-				OVERLORD = { original_tag = MAN }
+				OVERLORD = { always = no        }
 			}			
 		}
 	}
 
 	can_take_level = {
 		if = {
-			limit = { original_tag = MAN }
+			limit = { always = no        }
 				OR = {
-					has_completed_focus = MAN_the_two_emperors
+					always = no                               
 					hidden_trigger = {
-						has_completed_focus = MAN_tsr_the_two_emperors
+						always = no                                   
 					}
-					has_completed_focus = MAN_tsr_claim_outer_manchuria
+					always = no                                        
 				}
 		}
 	}

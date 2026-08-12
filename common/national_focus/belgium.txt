@@ -5706,67 +5706,26 @@ focus = {
 		cost = 10
 
 		available = {
-			COG = {
-				is_subject_of = ROOT
-			}
+			
 		}
 
 		available_if_capitulated = yes
 
 		bypass = {
-			COG = {
-				NOT = { is_subject_of = ROOT }
-			}
+			
 		}
 	
 		completion_reward = {
 			IF = {
-				limit = { COG = { is_subject_of = BEL } }
-				COG = {
-					add_ideas = BEL_communism_in_congo
-
-					custom_effect_tooltip = generic_skip_one_line_tt
-					custom_effect_tooltip = generic_skip_one_line_tt
-
-					COG_cyrille_adoula = {
-						set_nationality = BEL
-						add_advisor_role = {
-							advisor = {
-								slot = political_advisor
-								cost = 150
-								idea_token = COG_cyrille_adoula
-								traits = {
-									COG_trade_unionist 
-								}
-								allowed = {}
-							}
-						}
-					}
-
-					hidden_effect = {
-						COG_cristophe_gbenye = {
-							add_country_leader_role = {
-								promote_leader = yes
-								country_leader = {
-									ideology = marxism
-									expire = "1980.1.1.1"
-									traits = { revolutionary_general } 
-								}
-							}
-						}
-					}
-				}
+				limit = {  }
+				
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
 
 				IF = {
 					limit = {
-						COG = {
-							capital_scope = {
-								infrastructure < 5
-							}
-						}
+						
 					}
 				}
 
@@ -6342,13 +6301,7 @@ focus = {
 		completion_reward = {
 			IF = {
 				limit = {
-					COG = {
-						NOT = {
-							has_dynamic_modifier = {
-								modifier = COG_belgian_congo_colonial_dynamic_modifier
-							}	
-						}
-					}
+					
 				}
 			}
 
@@ -7178,9 +7131,7 @@ focus = {
 		available_if_capitulated = yes
 	
 		completion_reward = {
-			COG = { 
-				country_event = { id = ww_congo.62 hours = 6 }
-			}
+			
 		}
 
 	}

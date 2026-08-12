@@ -2573,7 +2573,7 @@ focus_tree = {
 		available = {
 			OR = {
 				any_country = {
-					original_tag = NZL
+					always = no       
 					is_in_faction_with = ROOT
 				}
 				any_country = {
@@ -2593,7 +2593,7 @@ focus_tree = {
 					is_in_faction_with = ROOT
 				}
 				any_country = {
-					original_tag = NZL
+					always = no       
 					is_in_faction_with = ROOT
 				}
 			}
@@ -2721,7 +2721,7 @@ focus_tree = {
 				SAF = { is_in_faction_with = ENG }
 				RAJ = { is_in_faction_with = ENG }
 				AST = { is_in_faction_with = ENG }
-				NZL = { is_in_faction_with = ENG }
+				
 				
 			}
 		}
@@ -3178,15 +3178,7 @@ focus_tree = {
 					exists = no
 				}
 			}
-			NZL = {
-				OR = {
-					AND = {
-						is_subject_of = ENG
-						
-					}
-					exists = no
-				}
-			}
+			
 	
 		}
 
@@ -3206,9 +3198,7 @@ focus_tree = {
 			AST = {
 				exists = no
 			}
-			NZL = {
-				exists = no
-			}
+			
 			NOT = {
 				any_state = {
 					OR = {
@@ -3216,7 +3206,7 @@ focus_tree = {
 						is_core_of = CAN
 						is_core_of = SAF
 						is_core_of = AST
-						is_core_of = NZL
+						always = no     
 					}
 					OWNER = {
 						NOT = { tag = ENG }
@@ -3259,7 +3249,7 @@ focus_tree = {
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = NZL
+							always = no
 						}
 					}
 				}
@@ -3472,7 +3462,7 @@ focus_tree = {
 						OR = {
 							is_controlled_by = ROOT
 							AND = {
-								is_controlled_by = MAL
+								always = no           
 								
 							}
 						}
@@ -3498,7 +3488,7 @@ focus_tree = {
 						OR = {
 							is_controlled_by = ROOT
 							AND = {
-								is_controlled_by = EGY
+								always = no           
 								
 							}
 						}
@@ -3516,7 +3506,7 @@ focus_tree = {
 						OR = {
 							is_controlled_by = ROOT
 							AND = {
-								is_controlled_by = EGY
+								always = no           
 								
 							}
 						}

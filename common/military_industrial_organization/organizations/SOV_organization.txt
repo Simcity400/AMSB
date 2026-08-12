@@ -87,7 +87,7 @@ SOV_morozov_design_bureau_organization = {
 			AND = {
 				OR = {
 					is_literally_china = yes
-					tag = MAN
+					always = no
 				} 
 				has_dlc = "Waking the Tiger"
 			}
@@ -133,8 +133,8 @@ SOV_morozov_design_bureau_organization = {
 				FROM = {
 					OR = {
 						is_literally_china = yes
-						tag = MAN
-						tag = MEN
+						always = no
+						always = no
 					}
 				} 
 			}
@@ -147,8 +147,8 @@ SOV_morozov_design_bureau_organization = {
 					FROM = {
 						OR = {
 							is_literally_china_not_prc = yes
-							tag = MAN
-							tag = MEN
+							always = no
+							always = no
 						}
 					}
 				}
@@ -652,7 +652,7 @@ SOV_mytishchy_machine_building_plant_organization = {
 		OR = {
 			tag = SOV
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -660,7 +660,7 @@ SOV_mytishchy_machine_building_plant_organization = {
 
 	visible = {
 		IF = { 
-			limit = { FROM = { original_tag = ETH } } 
+			limit = { FROM = { always = no        } } 
 			FROM = { has_completed_focus = ETH_mytishchi-ababa_plant }
 		}
 	}
@@ -1130,15 +1130,15 @@ SOV_rubin_design_bureau_organization = {
 		OR = {
 			tag = SOV
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
-				tag = ARG
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 			NOR_AAT = yes
@@ -1147,7 +1147,7 @@ SOV_rubin_design_bureau_organization = {
 
 	visible = {
 		IF = { 
-			limit = { FROM = { original_tag = ETH } } 
+			limit = { FROM = { always = no        } } 
 			FROM = { has_completed_focus = ETH_soviet-ethiopian_trade_agreement }
 		}
 	}
@@ -1170,14 +1170,14 @@ SOV_rubin_design_bureau_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ARG }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ARG_russian_manufacturers }
+			FROM = { always = no                                     }
 		}
 
 		IF = {
 			limit = {
-				FROM = { original_tag = BRA }
+				FROM = { always = no        }
 			}
 			FROM = { always = no }
 		}
@@ -1706,15 +1706,15 @@ SOV_mig_design_bureau_organization = {
 		OR = {
 			tag = SOV
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
-				tag = ARG
+				always = no
 				has_dlc = "Trial of Allegiance" 
 			}
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance" #TODO MH Change DLC
 			}
 		}
@@ -1722,12 +1722,12 @@ SOV_mig_design_bureau_organization = {
 	
 	visible = {
 		IF = { 
-			limit = { FROM = { original_tag = ETH } } 
+			limit = { FROM = { always = no        } } 
 			FROM = { has_completed_focus = ETH_soviet-ethiopian_trade_agreement }
 		}
 		IF = { 
 			limit = {
-				FROM = { tag = BRA }
+				FROM = { always = no }
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -1749,13 +1749,13 @@ SOV_mig_design_bureau_organization = {
 		}
 		IF = {
 			limit = {
-				FROM = { original_tag = ARG }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ARG_russian_manufacturers }
+			FROM = { always = no                                     }
 		}
 		IF = {
 			limit = {
-				FROM = { original_tag = BRA }
+				FROM = { always = no        }
 			}
 			FROM = { always = no }
 		}
@@ -2719,19 +2719,19 @@ SOV_gaz_organization = {
 				has_dlc = "Battle for the Bosporus"
 			}
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
-				tag = ARG
+				always = no
 				has_dlc = "Trial of Allegiance" #TODO_Eildih fix DLC
 			}
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance" #TODO MH fix DLC
 			}
 			AND = {
-				tag = AFG
+				always = no
 				has_dlc = "Graveyard of Empires"
 			}
 			NOR_AAT = yes
@@ -2740,7 +2740,7 @@ SOV_gaz_organization = {
 
 	visible = {
 		IF = { 
-			limit = { FROM = { original_tag = ETH } } 
+			limit = { FROM = { always = no        } } 
 			FROM = { has_completed_focus = ETH_soviet-ethiopian_trade_agreement }
 		}
 	}
@@ -2780,22 +2780,22 @@ SOV_gaz_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ARG }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ARG_russian_manufacturers }
+			FROM = { always = no                                     }
 		}
 
 		IF = {
 			limit = {
-				FROM = { original_tag = BRA }
+				FROM = { always = no        }
 			}
 			FROM = { always = no }
 		}
 		IF = {
 			limit = {
-				FROM = { original_tag = AFG }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = AFG_truck_factory }
+			FROM = { always = no                             }
 		}
 	}
 

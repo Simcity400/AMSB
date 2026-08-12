@@ -16,11 +16,11 @@ SWE_landsverk_organization = {
 		OR = {
 			tag = SWE 
 			AND = {
-				tag = ETH
+				always = no
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -28,8 +28,8 @@ SWE_landsverk_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 
@@ -44,7 +44,7 @@ SWE_landsverk_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -54,7 +54,7 @@ SWE_landsverk_organization = {
 			}
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -110,7 +110,7 @@ SWE_gotaverken_organization = {
 		OR = {
 			tag = SWE
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -123,7 +123,7 @@ SWE_gotaverken_organization = {
 			FROM = { NOT = { has_war_with = SWE } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -165,7 +165,7 @@ SWE_saab_organization = {
 		OR = {
 			tag = SWE
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -179,7 +179,7 @@ SWE_saab_organization = {
 			FROM = { NOT = { has_war_with = SWE } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -253,7 +253,7 @@ SWE_volvo_organization = {
 		OR = {
 			tag = SWE 
 			AND = {
-				tag = ETH
+				always = no
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -261,8 +261,8 @@ SWE_volvo_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 
@@ -277,7 +277,7 @@ SWE_volvo_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -297,7 +297,7 @@ SWE_scania_vabis_organization = {
 		OR = {
 			tag = SWE
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -310,7 +310,7 @@ SWE_scania_vabis_organization = {
 			FROM = { NOT = { has_war_with = SWE } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -331,7 +331,7 @@ SWE_bofors_organization = {
 		OR = {
 			tag = SWE 
 			AND = {
-				tag = ETH
+				always = no
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
@@ -344,8 +344,8 @@ SWE_bofors_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 		IF = {
 			limit = { FROM = { original_tag = PER } }
@@ -364,7 +364,7 @@ SWE_bofors_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt

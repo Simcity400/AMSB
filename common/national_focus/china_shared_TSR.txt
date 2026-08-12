@@ -44,14 +44,14 @@ shared_focus = {
 		x = -6
 		y = 0
 		trigger = {
-			tag = PRC
+			always = no
 		}
 	}
 	offset = {
 		x = -8
 		y = 0
 		trigger = {
-			tag = MAN 
+			always = no 
 		}
 	}
 	offset = {
@@ -315,7 +315,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 		modifier = {
 			factor = 4
@@ -356,7 +356,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 		modifier = {
 			factor = 4
@@ -609,7 +609,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 		modifier = {
 			factor = 4
@@ -770,7 +770,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 	}
 
@@ -814,7 +814,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 	}
 
@@ -871,7 +871,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 	}
 
@@ -907,7 +907,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 		modifier = {
 			factor = 4
@@ -1021,7 +1021,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 		modifier = {
 			factor = 4
@@ -1085,7 +1085,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 		modifier = {
 			factor = 4
@@ -1235,7 +1235,7 @@ shared_focus = {
 		}
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 	}
 
@@ -1305,7 +1305,7 @@ shared_focus = {
 		factor = 1
 		modifier = {
 			factor = 4
-			tag = PRC
+			always = no
 		}
 	}
 
@@ -1631,7 +1631,7 @@ shared_focus = {
 		base = 1
 		modifier = {
 			factor = 4
-			tag = PRC			
+			always = no			
 		}
 	}
 
@@ -1725,70 +1725,28 @@ shared_focus = {
 			}
 		}
 		if = {
-			limit = { NOT = { original_tag = PRC } }
-			PRC = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
+			limit = { NOT = { always = no        } }
+			
 		}
 		if = {
-			limit = { NOT = { original_tag = GXC } }
-			GXC = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
+			limit = { NOT = { always = no        } }
+			
 		}
 		if = {
-			limit = { NOT = { original_tag = YUN } }
-			YUN = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
+			limit = { NOT = { always = no        } }
+			
 		}
 		if = {
-			limit = { NOT = { original_tag = SHX } }
-			SHX = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
+			limit = { NOT = { always = no        } }
+			
 		}
 		if = {
-			limit = { NOT = { original_tag = XSM } }
-			XSM = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
+			limit = { NOT = { always = no        } }
+			
 		}
 		if = {
-			limit = { NOT = { original_tag = SIK } }
-			SIK = {
-				OR = {
-					exists = no
-					has_war_with = ROOT
-					is_subject_of = ROOT
-					ROOT = { has_wargoal_against = PREV }
-				}
-			}
+			limit = { NOT = { always = no        } }
+			
 		}
 	}
 
@@ -1982,7 +1940,7 @@ shared_focus = {
 	}
 
 	available = {
-		NOT = { is_in_faction_with = TIB }
+		NOT = { always = no              }
 		is_subject = no
 		OR = {
 			controls_state = 747
@@ -1993,12 +1951,7 @@ shared_focus = {
 	}
 
 	bypass = {
-		TIB = {
-			OR = {
-				exists = no
-				is_subject_of = ROOT
-			}
-		}
+		
 	}
 
 	cancel_if_invalid = yes
@@ -2025,7 +1978,7 @@ shared_focus = {
 		modifier = {
 			any_country = {
 				is_major = yes
-				is_in_faction_with = TIB
+				always = no             
 			}
 			factor = 0
 		}
@@ -2043,11 +1996,9 @@ shared_focus = {
 
 	bypass = {
 		OR = {
-			TIB = {
-				exists = no
-			}
-			has_war_with = TIB
-			has_wargoal_against = TIB
+			
+			always = no       
+			always = no              
 		}
 	}
 
@@ -2058,7 +2009,7 @@ shared_focus = {
 	completion_reward = {
 		if = {
 			limit = {
-				322 = { is_owned_and_controlled_by = TIB }
+				322 = { always = no                      }
 			}
 			ROOT = {
 				create_wargoal = {
@@ -2137,7 +2088,7 @@ shared_focus = {
 		modifier = {
 			any_country = {
 				is_major = yes
-				is_in_faction_with = MON
+				always = no             
 			}
 			factor = 0
 		}
@@ -2145,7 +2096,7 @@ shared_focus = {
 
 	available = {
 		not = {
-			is_in_faction_with = MON
+			always = no             
 		}
 		is_subject = no
 		OR = {
@@ -2163,9 +2114,9 @@ shared_focus = {
 
 	bypass = {
 		OR = {
-			NOT = { country_exists = MON }
-			has_war_with = MON
-			has_wargoal_against = MON
+			NOT = { always = no          }
+			always = no       
+			always = no              
 		}
 	}
 
@@ -2176,11 +2127,11 @@ shared_focus = {
 	completion_reward = {
 		if = {
 			limit = {
-				330 = { is_owned_and_controlled_by = MON }
-				817 = { is_owned_and_controlled_by = MON }
-				818 = { is_owned_and_controlled_by = MON }
-				819 = { is_owned_and_controlled_by = MON }
-				820 = { is_owned_and_controlled_by = MON }
+				330 = { always = no                      }
+				817 = { always = no                      }
+				818 = { always = no                      }
+				819 = { always = no                      }
+				820 = { always = no                      }
 			}
 			ROOT = {
 				create_wargoal = {
@@ -2216,7 +2167,7 @@ shared_focus = {
 		modifier = {
 			any_country = {
 				is_major = yes
-				is_in_faction_with = TAN
+				always = no             
 			}
 			factor = 0
 		}
@@ -2224,7 +2175,7 @@ shared_focus = {
 
 	available = {
 		NOT = {
-			is_in_faction_with = TAN
+			always = no             
 		}
 		329 = {
 			NOT = {
@@ -2315,9 +2266,9 @@ shared_focus = {
 	}
 
 	bypass = {
-		country_exists = VIN
-		country_exists = CAM
-		country_exists = LAO
+		always = no         
+		always = no         
+		always = no         
 	}
 
 	cancel_if_invalid = yes
@@ -2389,10 +2340,7 @@ shared_focus = {
 	bypass = {
 		OR = {
 			AND = {
-				KOR = {
-					exists = yes
-					is_subject = no
-				}
+				
 			}
 			527 = {
 				CONTROLLER = {
@@ -2445,7 +2393,7 @@ shared_focus = {
 					525 = { is_owned_and_controlled_by = ROOT }
 				}
 			}
-			activate_mission_tooltip = CHI_release_korea
+			
 		}
 		else = {
 			527 = {
@@ -2544,9 +2492,9 @@ shared_focus = {
 	available = {
 		OR = {
 			is_faction_leader = yes
-			MON = { is_subject = yes }
+			
 		}
-		MON = { NOT = { has_war_with = ROOT } }	
+			
 	}
 
 	bypass = {
@@ -2561,7 +2509,7 @@ shared_focus = {
 		if = {
 			limit = {
 				ROOT = { is_faction_leader = yes }
-				MON = { is_subject = no }
+				
 			}
 		}
 		else = {
@@ -2780,9 +2728,7 @@ shared_focus = {
 
 	bypass = {
 		OR = {
-			KOR = {
-				is_subject_of = ROOT
-			}
+			
 			AND = {
 				controls_state = 527
 				controls_state = 525
@@ -4002,7 +3948,7 @@ shared_focus = {
 			uses = 2
 			category = cv_tech
 		}
-		activate_mission_tooltip = CHI_build_a_carrier
+		
 	}
 }
 

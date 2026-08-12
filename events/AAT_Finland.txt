@@ -922,7 +922,7 @@ country_event = {
 		effect_tooltip = {
 			every_controlled_state = {
 				limit = {
-					is_core_of = SMI
+					always = no     
 				}
 				add_core_of = FROM
 				FROM = {
@@ -951,7 +951,7 @@ country_event = {
 		effect_tooltip = {
 			every_controlled_state = {
 				limit = {
-					is_core_of = SMI
+					always = no     
 					NOT = { is_claimed_by = FROM }
 				}
 				add_claim_by = FROM
@@ -979,7 +979,7 @@ country_event = {
 		FROM = {
 			every_controlled_state = {
 				limit = {
-					is_core_of = SMI
+					always = no     
 				}
 				add_core_of = ROOT
 				ROOT = {
@@ -1025,7 +1025,7 @@ country_event = {
 		FROM = {
 			every_controlled_state = {
 				limit = {
-					is_core_of = SMI
+					always = no     
 					NOT = { is_claimed_by = ROOT }
 				}
 				add_claim_by = ROOT
@@ -4626,87 +4626,10 @@ country_event = {
 			}
 			else = {
 			}
-			KAR = {
-				# Add extra country leader trait to the possible leaders (fascist & non-aligned)
-				KAR_ukki_vainamoinen = {
-					add_country_leader_trait = {
-					 	ideology = fascism_ideology
-					 	trait = veteran_guerrilla_fighter
-					 }
-				}
-				KAR_jalmari_takkinen = {
-					add_country_leader_trait = veteran_guerrilla_fighter
-				}
-
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = FIN_support_for_east_karealian_independence_big
-				}
-			}
+			
 		}
 		set_country_flag = FIN_full_support_for_karelia_flag #Used for the effect tooltip in the Soviet event
-		KAR = {
-			if = {
-				limit = {
-					any_other_country = {
-						original_tag = SOV
-						has_civil_war = yes
-					}
-				}
-				# This is AI Stalin in the CW, no need for event, just declare on them
-				random_other_country = {
-					limit = {
-						original_tag = SOV
-						has_civil_war = yes
-						has_country_leader_ideology = stalinism
-					}
-					PREV = {
-						declare_war_on = {
-							target = PREV
-							type = independence_wargoal
-						}
-					}
-					ROOT = {
-						if = {
-							limit = {
-								NOT = { has_war_with = PREV }
-							}
-							add_to_war = {
-								targeted_alliance = KAR
-								enemy = PREV
-								hostility_reason = asked_to_join
-							}
-						}
-					}
-				}
-				SOV = {
-					#Send event to the other side of the civil war - Actual original SOV (Trotskyist or Bukharinist)
-					set_variable = { SOV_nationalist_country = KAR }
-					set_country_flag = KAR_uprising_flag
-					country_event = NSB_soviet_nationalist.001
-				}
-			}
-			else = {
-				declare_war_on = {
-					target = SOV
-					type = independence_wargoal
-				}
-
-				if = {
-					limit = {
-						ROOT = { NOT = { has_war_with = SOV } }
-					}
-					ROOT = {
-						set_country_flag = FIN_joining_war_against_sov_flag #For Soviet tooltip
-						add_to_war = {
-							targeted_alliance = KAR
-							enemy = SOV
-							hostility_reason = asked_to_join
-						}
-					}
-				}
-			}
-		}
+		
 
 		hidden_effect = {
 			if = { #Send Karelian Uprising event if Finland has triggered the Karelian Uprising
@@ -4841,65 +4764,10 @@ country_event = {
 			}
 			else = {
 			}
-			KAR = {
-				# Add extra country leader trait to the possible leaders (fascist & non-aligned)
-				KAR_ukki_vainamoinen = {
-					add_country_leader_trait = {
-					 	ideology = fascism_ideology
-					 	trait = veteran_guerrilla_fighter
-					 }
-				}
-				KAR_jalmari_takkinen = {
-					add_country_leader_trait = veteran_guerrilla_fighter
-				}
-
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = FIN_support_for_east_karealian_independence_small
-				}
-			}
+			
 		}
 
-		KAR = {
-			if = {
-				limit = {
-					any_other_country = {
-						original_tag = SOV
-						has_civil_war = yes
-					}
-				}
-				# This is AI Stalin in the CW, no need for event, just declare on them
-				random_other_country = {
-					limit = {
-						original_tag = SOV
-						has_civil_war = yes
-						has_country_leader_ideology = stalinism
-					}
-					PREV = {
-						declare_war_on = {
-							target = PREV
-							type = independence_wargoal
-						}
-					}
-				}
-				SOV = {
-					#Send event to the other side of the civil war - Actual original SOV (Trotskyist or Bukharinist)
-					set_variable = { SOV_nationalist_country = KAR }
-					set_country_flag = KAR_uprising_flag
-					country_event = NSB_soviet_nationalist.001
-				}
-			}
-			else = {
-				declare_war_on = {
-					target = SOV
-					type = independence_wargoal
-				}
-			}
-
-			# Military access FIN-KAR
-			give_military_access = ROOT
-			ROOT = { give_military_access = PREV }
-		}
+		
 
 		hidden_effect = {
 			if = { #Send Karelian Uprising event if Finland has triggered the Karelian Uprising
@@ -4933,22 +4801,22 @@ country_event = {
 		effect_tooltip = {
 			if = {
 				limit = {
-					KAR = { owns_state = 215}
+					
 				}
 			}
 			if = {
 				limit = {
-					KAR = { owns_state = 216}
+					
 				}
 			}
 			if = {
 				limit = {
-					KAR = { owns_state = 146}
+					
 				}
 			}
 			if = {
 				limit = {
-					KAR = { owns_state = 147}
+					
 				}
 			}
 
@@ -4961,12 +4829,7 @@ country_event = {
 				FROM = {
 					puppet = KAR
 				}
-				KAR = {
-					declare_war_on = {
-						target = ROOT
-						type = independence_wargoal
-					}
-				}
+				
 				if = {
 					limit = {
 						FROM = { has_country_flag = FIN_joining_war_against_sov_flag }
@@ -4982,14 +4845,7 @@ country_event = {
 			}
 			else = { #UNOFFICIAL FINNISH SUPPORT
 				effect_tooltip = {
-					KAR = {
-						declare_war_on = {
-							target = ROOT
-							type = independence_wargoal
-						}
-
-						give_military_access = ROOT
-					}
+					
 					give_military_access = KAR
 				}
 			}
@@ -5064,22 +4920,22 @@ country_event = {
 		effect_tooltip = {
 			if = {
 				limit = {
-					KAR = { owns_state = 215}
+					
 				}
 			}
 			if = {
 				limit = {
-					KAR = { owns_state = 216}
+					
 				}
 			}
 			if = {
 				limit = {
-					KAR = { owns_state = 146}
+					
 				}
 			}
 			if = {
 				limit = {
-					KAR = { owns_state = 147}
+					
 				}
 			}
 
@@ -5202,10 +5058,7 @@ country_event = {
 		hidden_effect = {
 			ROOT = {
 				set_rule = { can_send_volunteers = yes }
-				add_timed_idea = {
-					idea = ETH_aid_SPC
-					days = 730
-				}
+				
 				add_ai_strategy = {
 					type = send_volunteers_desire
 					id = KAR

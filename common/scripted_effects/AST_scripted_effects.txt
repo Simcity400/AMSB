@@ -1019,18 +1019,7 @@ AST_divide_the_pacific_effect = {
 	custom_effect_tooltip = generic_skip_one_line_tt
 	custom_effect_tooltip = AST_dividing_the_pacific_ast_gain_tt 	
 	#If MAL/Singapore/SIA isn't controlled by JAP or AST, add AST state claims
-	MAL = {
-		every_core_state = {
-			limit = { 
-				NOT = {
-					is_controlled_by = AST
-					is_controlled_by = JAP				
-				}
-			}
-		set_state_flag = AST_claims_to_ast
-		add_claim_by = AST 
-		}
-	}
+	
 
 	custom_effect_tooltip = generic_skip_one_line_tt
 	SIA = {
@@ -1062,18 +1051,7 @@ AST_divide_the_pacific_effect = {
 	#If BRM/French Indochina isn't controlled by JAP or AST, add JAP state claims
 	custom_effect_tooltip = generic_skip_one_line_tt
 	custom_effect_tooltip = AST_dividing_the_pacific_jap_gain_tt 
-	BRM = {
-		every_core_state = {
-			limit = { 
-				NOT = {
-					is_controlled_by = AST
-					is_controlled_by = JAP				
-				}
-			}
-		set_state_flag = AST_claims_to_jap
-		add_claim_by = JAP 
-		}
-	}
+	
 
 	custom_effect_tooltip = generic_skip_one_line_tt
 	every_state = {
@@ -1116,14 +1094,9 @@ AST_divide_the_pacific_effect = {
 	IF = { #Only for tooltip
 	    limit = {
 	        OR = {
-	            BRM = { 
-	            	OR = {
-	            		is_subject_of = AST 
-	            		has_country_flag = AST_brm_puppet_to_jap
-	            	}
-	            }
+	            
 	            any_state = {
-	                is_core_of = BRM
+	                always = no     
 	                OR = {
 		                is_controlled_by = AST
 		                has_state_flag = AST_transfer_to_jap
@@ -1155,31 +1128,19 @@ AST_divide_the_pacific_effect = {
 	#If BRM is subject of AST, transfer it to JAP
 	IF = {
 		limit = {
-			BRM = {
-				is_subject_of = AST
-			}
+			
 		}
 		JAP = {
 			puppet = BRM
 		}	
-		BRM = { 
-			set_country_flag = AST_brm_puppet_to_jap
-		}
+		
 		hidden_effect = {
-			BRM = { country_event = { id = AST_diplomatic_events.37 hours = 3 } }
+			
 		}
 	}	
 				
 	#If BRM/French Indochina is controlled by AST, transfer it to JAP
-	BRM = {
-		every_core_state = {
-			limit = { 
-				is_controlled_by = AST			
-			}
-		set_state_flag = AST_transfer_to_jap
-		transfer_state_to = JAP 
-		}
-	}
+	
 
 	every_state = {
 		limit = {
@@ -1327,89 +1288,31 @@ AST_broken_nauru_pact_effect = {
 AST_hand_in_glove_effect = {	
 	IF = {
 		limit = {
-			BRM = {
-				is_ai = yes
-				is_subject_of = ENG
-			}
+			
 		}
-		BRM = { 
-			every_state = {
-				limit = {
-					OR = {
-						is_owned_by = BRM
-						has_state_flag = AST_hand_in_glove_transfer_to_ast
-					}
-				}
-				set_state_flag = AST_hand_in_glove_transfer_to_ast #For tt reasons
-				transfer_state_to = AST
-			} 
-		}
+		
 	}
 	
-	BRM = {
-		every_core_state = {
-			limit = { 
-				OR = {
-					is_owned_by = ENG	
-					has_state_flag = AST_hand_in_glove_transfer_to_ast	
-				}	
-			}
-			set_state_flag = AST_hand_in_glove_transfer_to_ast #For tt reasons
-			transfer_state_to = AST
-		}
-	}
+	
 
 	custom_effect_tooltip = generic_skip_one_line_tt
 	IF = {
 		limit = {
-			MAL = {
-				is_ai = yes
-				is_subject_of = ENG
-			}
+			
 		}
-		MAL = { 
-			every_state = {
-				limit = {
-					OR = {
-						is_owned_by = MAL
-						has_state_flag = AST_hand_in_glove_transfer_to_ast
-					}
-				}
-				set_state_flag = AST_hand_in_glove_transfer_to_ast #For tt reasons
-				transfer_state_to = AST
-			} 
-		}
+		
 		custom_effect_tooltip = generic_skip_one_line_tt
 	}
 	
-	MAL = {
-		every_core_state = {
-			limit = { 
-				OR = {
-					is_owned_by = ENG			
-					has_state_flag = AST_hand_in_glove_transfer_to_ast
-				}	
-			}
-			set_state_flag = AST_hand_in_glove_transfer_to_ast #For tt reasons
-			transfer_state_to = AST
-		}
-	}
+	
 }
 
 AST_hand_in_glove_deny_effect = {
 
-	BRM = {
-		every_core_state = {
-			add_claim_by = AST
-		}
-	}
+	
 
 	custom_effect_tooltip = generic_skip_one_line_tt
-	MAL = {
-		every_core_state = {
-			add_claim_by = AST
-		}
-	}
+	
 }
 
 AST_the_pacific_garrison_effect = {

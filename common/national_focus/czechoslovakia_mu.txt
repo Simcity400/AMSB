@@ -1625,15 +1625,8 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
-					RUT = {
-						exists = no
-					}
-					UKR = {
-						exists = yes
-						NOT = {
-							is_subject_of = ROOT
-						}
-					}
+					
+					
 				}
 				91 = {
 					add_core_of = RUT
@@ -1665,15 +1658,8 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
-					RUT = {
-						exists = no
-					}
-					UKR = {
-						exists = yes
-						NOT = {
-							is_subject_of = ROOT
-						}
-					}
+					
+					
 				}
 				91 = {
 					add_core_of = RUT
@@ -3454,7 +3440,7 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_completed_focus = YUG_limited_self_government
-				has_subject = SLV
+				always = no      
 			}
 		}
 
@@ -3644,17 +3630,11 @@ focus_tree = {
 						name = CZE_demanded_overlordship_HUN
 					}
 					puppet = HUN
-					CRO = {
-						every_core_state = {
-							add_core_of = HUN
-						}
-					}
+					
 					if = {
 						limit = {
-							has_subject = CRO
-							CRO = {
-								is_ai = yes
-							}
+							always = no      
+							
 						}
 						HUN = {
 							annex_country = {
@@ -3850,9 +3830,9 @@ focus_tree = {
 			OR = {
 				has_subject = HUN
 				has_subject = ROM
-				has_subject = CRO
-				has_subject = SLV
-				has_subject = TRA
+				always = no      
+				always = no      
+				always = no      
 			}
 		}
 
@@ -3864,9 +3844,9 @@ focus_tree = {
 					OR = {
 						original_tag = HUN
 						original_tag = ROM
-						original_tag = CRO
-						original_tag = SLV
-						original_tag = TRA
+						always = no       
+						always = no       
+						always = no       
 					}
 				}
 				add_timed_idea = {
@@ -5451,9 +5431,7 @@ focus_tree = {
 	
 		bypass = {
 			CZE_SLO_is_not_its_own_thing = no
-			SLO = {
-				is_subject_of = ROOT
-			}
+			
 			NOT = {
 				has_completed_focus = CZE_placate_benes_faction
 			}
@@ -5566,9 +5544,7 @@ focus_tree = {
 			hidden_effect = {
 				if = {
 					limit = {
-						SLO = {
-							is_subject_of = ROOT
-						}
+						
 					}
 				}
 				set_country_flag = CZE_slovakia_autonomy_agreement_was_bypassed
@@ -5679,7 +5655,7 @@ focus_tree = {
 					limit = {
 						73 = {
 							NOT = {
-								is_core_of = SLO
+								always = no     
 							}
 						}
 					}
@@ -6099,12 +6075,8 @@ focus_tree = {
 	
 		available = {
 			OR = {
-				SLO = {
-					is_subject_of = ROOT
-				}
-				RUT = {
-					is_subject_of = ROOT
-				}
+				
+				
 			}
 		}
 	
@@ -6414,19 +6386,15 @@ focus_tree = {
 							original_tag = CZE
 							if = {
 								limit = {
-									SLO = {
-										is_subject_of = CZE
-									}
+									
 								}
-								is_neighbor_of = SLO
+								always = no         
 							}
 							if = {
 								limit = {
-									RUT = {
-										is_subject_of = CZE
-									}
+									
 								}
-								is_neighbor_of = RUT
+								always = no         
 							}
 						}
 						NOT = {
@@ -6611,16 +6579,7 @@ focus_tree = {
 			OR = {
 				CZE_SLO_is_not_its_own_thing = yes
 				AND = {
-					SLO = {
-						is_subject_of = ROOT
-						NOT = {
-							has_government = fascism
-							has_country_leader = {
-								character = SLO_vojtech_tuka
-								ruling_only = yes
-							}
-						}
-					}
+					
 					ROOT = { #ROOT for tt reasons
 						has_character = CZE_vojtech_tuka
 					}
@@ -6752,10 +6711,7 @@ focus_tree = {
 					NOT = {
 						is_neighbor_of = HUN
 					}
-					SLO = {
-						is_subject_of = ROOT
-						is_neighbor_of = HUN
-					}
+					
 					HUN = {
 						NOT = {
 							has_war_with = ROOT
@@ -6843,8 +6799,8 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = {
-							original_tag = RUT
-							original_tag = SLO
+							always = no       
+							always = no       
 							has_idea = CZE_federalization_agreement_puppets
 						}
 					}
@@ -9801,13 +9757,7 @@ focus_tree = {
 											has_completed_focus = CZE_elevate_slovak_officers 
 										}
 									}
-									SLO = {
-										exists = yes
-										NOT = {
-											has_government = fascism
-											is_subject_of = ROOT
-										}
-									}
+									
 								}
 							}
 							AND = {
@@ -9818,12 +9768,7 @@ focus_tree = {
 											has_completed_focus = CZE_elevate_slovak_officers 
 										}
 									}
-									SLO = {
-										exists = yes
-										NOT = {
-											is_subject_of = ROOT
-										}
-									}
+									
 								}
 							}
 						}
@@ -10102,28 +10047,8 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			SLO = {
-				exists = no			#no stealing of someone elses puppet
-				all_core_state = {	#ensure no shenanigans where its released while occupied
-					OR = {
-						is_fully_controlled_by = ROOT
-						NOT = {
-							is_owned_by = ROOT
-						}
-					}
-				}
-			}
-			RUT = {
-				exists = no			#no stealing of someone elses puppet
-				all_core_state = {	#ensure no shenanigans where its released while occupied
-					OR = {
-						is_fully_controlled_by = ROOT
-						NOT = {
-							is_owned_by = ROOT
-						}
-					}
-				}
-			}
+			
+			
 		}
 
 		completion_reward = {
@@ -10152,16 +10077,8 @@ focus_tree = {
 				set_cosmetic_tag = CZE_union_communism
 			}
 			hidden_effect = {				#readd cores so it could be diplo-annexed back
-				SLO = {
-					every_core_state = {
-						add_core_of = ROOT
-					}
-				}
-				RUT = {
-					every_core_state = {
-						add_core_of = ROOT
-					}
-				}
+				
+				
 			}
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -11057,19 +10974,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			UKR = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-				}
-				any_core_state = {
-					owner = {		#sanity check
-						has_war_with = ROOT
-					}
-					region = 130	#prevent releasing tiny ukraine in Poland/Romania/Ruthenia
-					is_controlled_by = ROOT
-				}
-			}
+			
 			91 = {
 				is_controlled_by = ROOT
 			}
@@ -11096,7 +11001,7 @@ focus_tree = {
 					limit = {
 						has_country_flag = CZE_return_state_temp
 						73 = {
-							is_owned_by = UKR
+							always = no      
 						}
 					}
 					transfer_state = 73
@@ -16241,17 +16146,17 @@ focus_tree = {
 									value > 19
 								}
 							}
-							original_tag = AFG
+							always = no       
 							original_tag = BUL
 							original_tag = JAP
 							original_tag = TUR
-							original_tag = BOL
-							original_tag = ECU
+							always = no       
+							always = no       
 							original_tag = GUT
 							original_tag = NIC
 							original_tag = VEN
 							original_tag = COL
-							original_tag = URG
+							always = no       
 						}
 					}
 					add_relation_modifier = {
@@ -21745,12 +21650,7 @@ focus_tree = {
 		}
 	
 		available = {
-			SLO = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-				}
-			}
+			
 		}
 	
 		completion_reward = {

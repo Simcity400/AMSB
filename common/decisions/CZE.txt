@@ -1471,9 +1471,7 @@ CZE_bop_army_readiness_category = {
 			base = 25
 			modifier = {
 				factor = 2
-				ETH = {
-					is_ai = no
-				}
+				
 			}
 		}
 
@@ -1504,12 +1502,7 @@ CZE_bop_army_readiness_category = {
 						has_government = fascism
 					}
 				}
-				ETH = {
-					has_opinion = {
-						target = ROOT
-						value > -11
-					}
-				}
+				
 			}
 			else_if = {
 				limit = {
@@ -1532,7 +1525,7 @@ CZE_bop_army_readiness_category = {
 				NOT = {
 					OR = {
 						has_war_with = ITA
-						has_war_with = ETH
+						always = no       
 					}
 				}
 			}
@@ -1590,9 +1583,7 @@ CZE_bop_army_readiness_category = {
 
 				custom_effect_tooltip = generic_skip_one_line_tt
 
-				ETH = {
-					
-				}
+				
 			}
 			else = {
 				army_experience = 1
@@ -6667,7 +6658,7 @@ CZE_autonomous_sentiment = {
 			every_owned_state = {
 				limit = {
 					is_owned_and_controlled_by = ROOT
-					is_core_of = SLO
+					always = no     
 					OR = {
 						state = 70
 						state = 71

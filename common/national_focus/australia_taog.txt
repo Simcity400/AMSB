@@ -1950,12 +1950,8 @@ focus_tree = {
 				634 = { #Solomons
 					is_owned_and_controlled_by = ENG
 				}
-				MAL = {
-					is_puppet_of = ENG
-				}
-				BRM = { 
-					is_puppet_of = ENG
-				}
+				
+				
 			}
 		}
 
@@ -1963,12 +1959,8 @@ focus_tree = {
 			634 = { #Solomons
 				NOT = { is_owned_and_controlled_by = ENG }
 			}
-			MAL = {
-				NOT = { is_puppet_of = ENG }
-			}
-			BRM = { 
-				NOT = { is_puppet_of = ENG }
-			}
+			
+			
 		}
 
 		available_if_capitulated = no
@@ -1990,9 +1982,7 @@ focus_tree = {
 
 				IF = {	
 					limit = { 
-						MAL = {
-							is_puppet_of = ENG
-						}
+						
 					}
 					AST = {
 						annex_country = { target = MAL }
@@ -2001,9 +1991,7 @@ focus_tree = {
 
 				IF = {	
 					limit = { 
-						BRM = { 
-							is_puppet_of = ENG	
-						}
+						
 					}
 					AST = {
 						annex_country = { target = BRM }
@@ -3361,14 +3349,12 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			NZL = {
-				exists = yes
-			}
+			
 		}
 
 		bypass = {
 			# AMSB: NZL never exists (merged into AST day one) - auto-skip this vanilla focus
-			NOT = { country_exists = NZL }
+			NOT = { always = no          }
 		}
 
 		available_if_capitulated = no
@@ -3376,13 +3362,13 @@ focus_tree = {
 		completion_reward = {
 			every_state = {
 	 			limit = {
-  					is_core_of = NZL
+  					always = no     
   				}
   				add_core_of = AST
   			}
   			custom_effect_tooltip = generic_skip_one_line_tt
 
-			NZL = { country_event = { id = AST_diplomatic_events.13 days = 1 } }
+			
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
 				AST = { annex_country = { target = NZL } }

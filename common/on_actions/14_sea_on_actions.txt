@@ -26,9 +26,9 @@ on_actions = {
 			every_country = {
 				limit = {
 					OR = {
-						original_tag = MON
-						original_tag = TIB
-						original_tag = TAN
+						always = no       
+						always = no       
+						always = no       
 					}
 				}
 
@@ -501,7 +501,7 @@ on_actions = {
 					has_dlc = "No Compromise, No Surrender"
 					FROM.FROM = {
 						OR = {
-							is_core_of = PRC
+							always = no     
 							is_core_of = CHI
 						}
 						is_core_of = ROOT
@@ -586,7 +586,7 @@ on_actions = {
 			IF = {
 				limit = {
 					ROOT = { tag = CHI }
-					FROM = { tag = PRC }
+					FROM = { always = no }
 					FROM.FROM = { state = 1035 }
 				}
 				1035 = {
@@ -606,7 +606,7 @@ on_actions = {
 			IF = {
 				limit = {
 					ROOT = { tag = CHI }
-					FROM = { NOT = { tag = PRC } }
+					FROM = { NOT = { always = no } }
 					FROM.FROM = { state = 1035 }
 				}
 				1035 = {
@@ -627,7 +627,7 @@ on_actions = {
 			# New owner is PRC
 			IF = {
 				limit = {
-					ROOT = { tag = PRC }
+					ROOT = { always = no }
 					FROM = { tag = CHI }
 					FROM.FROM = { state = 1035 }
 				}
@@ -647,7 +647,7 @@ on_actions = {
 			}
 			IF = {
 				limit = {
-					ROOT = { tag = PRC }
+					ROOT = { always = no }
 					FROM = { NOT = { tag = CHI } }
 					FROM.FROM = { state = 1035 }
 				}
@@ -670,7 +670,7 @@ on_actions = {
 			IF = {
 				limit = {
 					ROOT = { NOT = { tag = CHI } }
-					FROM = { tag = PRC }
+					FROM = { always = no }
 					FROM.FROM = { state = 1035 }
 				}
 				1035 = {
@@ -689,7 +689,7 @@ on_actions = {
 			}
 			IF = {
 				limit = {
-					ROOT = { NOT = { tag = PRC } }
+					ROOT = { NOT = { always = no } }
 					FROM = { tag = CHI }
 					FROM.FROM = { state = 1035 }
 				}
@@ -957,8 +957,8 @@ on_actions = {
 			if = {
 				limit = {
 					FROM = {
-						original_tag = PRC
-						has_completed_focus = PRC_asian_democratic_union
+						always = no       
+						always = no                                     
 						NOT = {
 							is_in_faction_with = ROOT
 						}
@@ -1614,7 +1614,7 @@ on_actions = {
 					OR = {
 						AND = {
 							ROOT = {
-								original_tag = PRC
+								always = no       
 							}
 							FROM = {
 								original_tag = CHI
@@ -1622,7 +1622,7 @@ on_actions = {
 						}
 						AND = {
 							FROM = {
-								original_tag = PRC
+								always = no       
 							}
 							ROOT = {
 								original_tag = CHI
@@ -1635,10 +1635,10 @@ on_actions = {
 				every_country = {
 					limit = {
 						is_literally_china = yes
-						NOT = { tag = PRC }
+						NOT = { always = no }
 						NOT = {
-							is_subject_of = PRC
-							is_in_faction_with = PRC
+							always = no        
+							always = no             
 						}
 						any_character = {
 							has_character_flag = can_flip_to_prc
@@ -1726,13 +1726,13 @@ on_actions = {
 						AND = {
 							ROOT = {
 								OR = {
-									tag = PRC
+									always = no
 									tag = JAP
 								}
 							}
 							FROM = {
 								OR = {
-									tag = PRC
+									always = no
 									tag = JAP
 								}
 							}
@@ -1740,13 +1740,13 @@ on_actions = {
 						AND = {
 							ROOT = {
 								OR = {
-									tag = PRC
+									always = no
 									tag = CHI
 								}
 							}
 							FROM = {
 								OR = {
-									tag = PRC
+									always = no
 									tag = CHI
 								}
 							}
@@ -3204,11 +3204,11 @@ on_actions = {
 						OR = {
 							original_tag = JAP
 							AND = {
-								original_tag = MAN
+								always = no       
 								is_ally_with = JAP
 							}
 							AND = {
-								original_tag = MEN
+								always = no       
 								is_ally_with = JAP
 							}
 						}
@@ -3230,8 +3230,8 @@ on_actions = {
 			IF = { #If PRC capitulates after having completed Burn the Paper tiger and is faction leader, then make China a major so they can continue the fight against Japan
 				limit = {
 					ROOT = {
-						original_tag = PRC
-						has_completed_focus = PRC_burn_the_paper_tigers
+						always = no       
+						always = no                                    
 						is_faction_leader = yes
 						is_in_faction_with = CHI
 					}
@@ -3284,7 +3284,7 @@ on_actions = {
 					is_ironman = yes #This only applies if you can get achievements
 					has_global_flag = achievement_PRC_battle_royale
 					FROM = {
-						tag = PRC #using tag here instead of original_tag because that's what the achievement needs
+						always = no #using tag here instead of original_tag because that's what the achievement needs
 					}
 					ROOT = {
 						OR = {

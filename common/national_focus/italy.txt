@@ -267,12 +267,12 @@ focus_tree = {
 		available = {
 			OR = {
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 					is_fully_controlled_by = ROOT
 				}
 				any_subject_country = { #FOR PUPPETS
 					any_controlled_state = {
-						is_core_of = ETH
+						always = no     
 						is_fully_controlled_by = PREV
 					}
 				}
@@ -286,12 +286,12 @@ focus_tree = {
 				limit = {
 					NOT = {
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						any_subject_country = { #FOR PUPPETS
 							any_controlled_state = {
-								is_core_of = ETH
+								always = no     
 								is_fully_controlled_by = PREV
 							}
 						}
@@ -327,7 +327,7 @@ focus_tree = {
 				limit = {
 					ROOT = {
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -337,7 +337,7 @@ focus_tree = {
 					random_controlled_state = {
 						prioritize = { 835 } #HARARGHE
 						limit = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -355,7 +355,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = { #FOR PUPPETS
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -364,14 +364,14 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_controlled_state = {
 						prioritize = { 835 } #HARARGHE
 						limit = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -411,7 +411,7 @@ focus_tree = {
 				limit = {
 					ROOT = {
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -421,7 +421,7 @@ focus_tree = {
 					random_controlled_state = {
 						prioritize = { 837 } #SIDAMO
 						limit = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -439,7 +439,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = { #FOR PUPPETS
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -449,7 +449,7 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -457,7 +457,7 @@ focus_tree = {
 					random_controlled_state = {
 						prioritize = { 837 } #SIDAMO
 						limit = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -498,7 +498,7 @@ focus_tree = {
 				limit = {
 					ROOT = {
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -508,7 +508,7 @@ focus_tree = {
 					random_controlled_state = {
 						prioritize = { 841 } #BEGEMDER
 						limit = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -526,7 +526,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = { #FOR PUPPETS
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -536,7 +536,7 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -544,7 +544,7 @@ focus_tree = {
 					random_controlled_state = {
 						prioritize = { 841 } #BEGEMDER
 						limit = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -562,7 +562,7 @@ focus_tree = {
 			every_controlled_state = {
 				limit = {
 					state_is_fully_controlled_by_ROOT_or_subject = yes
-					is_core_of = ETH
+					always = no     
 					has_resistance = yes
 				}
 				add_compliance = 5
@@ -590,12 +590,12 @@ focus_tree = {
 				limit = {
 					NOT = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						any_subject_country = { #FOR PUPPETS
 							any_controlled_state = {
-								is_core_of = LBA
+								always = no     
 								is_fully_controlled_by = PREV
 							}
 						}
@@ -631,7 +631,7 @@ focus_tree = {
 				limit = {
 					ROOT = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -640,7 +640,7 @@ focus_tree = {
 				ROOT = {
 					random_controlled_state = {
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -658,7 +658,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = { #FOR PUPPETS
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -667,14 +667,14 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_controlled_state = {
 						prioritize = { 841 } #HARARGHE
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -716,7 +716,7 @@ focus_tree = {
 				limit = {
 					ROOT = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -725,7 +725,7 @@ focus_tree = {
 				ROOT = {
 					random_controlled_state = {
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -743,7 +743,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = { #FOR PUPPETS
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -753,7 +753,7 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -761,7 +761,7 @@ focus_tree = {
 					random_controlled_state = {
 						prioritize = { 841 } #HARARGHE
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -803,7 +803,7 @@ focus_tree = {
 				limit = {
 					ROOT = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -812,7 +812,7 @@ focus_tree = {
 				ROOT = {
 					random_controlled_state = {
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -830,7 +830,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = { #FOR PUPPETS
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -840,7 +840,7 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -848,7 +848,7 @@ focus_tree = {
 					random_controlled_state = {
 						prioritize = { 841 } #HARARGHE
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 							NOT = { has_state_flag = ITA_improved_infrastructure_in_state_flag }
 						}
@@ -1002,7 +1002,7 @@ focus_tree = {
 					random_controlled_state = {
 						limit = {
 							has_state_flag = ITA_improved_infrastructure_in_state_flag
-							is_core_of = ETH
+							always = no     
 						}
 						add_building_construction = {
 							type = industrial_complex
@@ -1026,14 +1026,14 @@ focus_tree = {
 						limit = {
 							is_subject_of = ROOT
 							any_controlled_state = {
-								is_core_of = ETH
+								always = no     
 								is_fully_controlled_by = PREV
 							}
 						}
 						random_controlled_state = {
 							limit = {
 								has_state_flag = ITA_improved_infrastructure_in_state_flag
-								is_core_of = ETH
+								always = no     
 							}
 							add_building_construction = {
 								type = industrial_complex
@@ -1048,7 +1048,7 @@ focus_tree = {
 				random_controlled_state = {
 					limit = {
 						has_state_flag = ITA_improved_infrastructure_in_state_flag
-						is_core_of = ETH
+						always = no     
 					}
 					add_building_construction = {
 						type = industrial_complex
@@ -1068,7 +1068,7 @@ focus_tree = {
 				random_controlled_state = {
 					limit = {
 						has_state_flag = ITA_improved_infrastructure_in_state_flag
-						is_core_of = LBA
+						always = no     
 					}
 					add_building_construction = {
 						type = industrial_complex
@@ -1090,7 +1090,7 @@ focus_tree = {
 				random_controlled_state = {
 					limit = {
 						has_state_flag = ITA_improved_infrastructure_in_state_flag
-						is_core_of = LBA
+						always = no     
 					}
 					add_building_construction = {
 						type = industrial_complex
@@ -3634,13 +3634,13 @@ focus_tree = {
 			if = {
 				limit = {
 					any_owned_state = {
-						is_core_of = LBA
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_owned_controlled_state = {
 					limit = {
-						is_core_of = LBA
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 448 450 }
@@ -3658,7 +3658,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -3666,13 +3666,13 @@ focus_tree = {
 				random_subject_country = {
 					limit = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_owned_controlled_state = {
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 448 450 }
@@ -5517,7 +5517,7 @@ focus_tree = {
 			if = {
 				limit = {
 					any_owned_state = {
-						is_core_of = ERI
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
@@ -5556,7 +5556,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					limit = {
-						is_core_of = ERI
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 550 }
@@ -5571,7 +5571,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = {
 						any_controlled_state = {
-							is_core_of = ERI
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -5612,13 +5612,13 @@ focus_tree = {
 				random_subject_country = {
 					limit = {
 						any_controlled_state = {
-							is_core_of = ERI
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_owned_controlled_state = {
 						limit = {
-							is_core_of = ERI
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 550 }
@@ -7381,7 +7381,7 @@ focus_tree = {
 				every_controlled_state = {
 					limit = {
 						is_fully_controlled_by = ROOT
-						is_core_of = ETH
+						always = no     
 					}
 					set_state_flag = ITA_can_electrify_state_flag
 				}
@@ -7473,7 +7473,7 @@ focus_tree = {
 			effect_tooltip = {
 				if = {
 					limit = {
-						country_exists = ETH
+						always = no         
 					}
 				}
 			}
@@ -7643,14 +7643,14 @@ focus_tree = {
 
 			if = {
 				limit = {
-					country_exists = ETH
+					always = no         
 				}
 			}
 
 			every_controlled_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
-					is_core_of = ETH
+					always = no     
 				}
 				add_compliance = 5
 			}
@@ -10500,13 +10500,13 @@ focus_tree = {
 			if = {
 				limit = {
 					any_controlled_state = {
-						is_core_of = ERI
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_controlled_state = {
 					limit = {
-						is_core_of = ERI
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 550 } # ERITREA (In case at some point this gets split or tag gets more cores)
@@ -10529,7 +10529,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = {
 						any_controlled_state = {
-							is_core_of = ERI
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -10538,13 +10538,13 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = ERI
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_controlled_state = {
 						limit = {
-							is_core_of = ERI
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 550 } # ERITREA (In case at some point this gets split or tag gets more cores)
@@ -10569,13 +10569,13 @@ focus_tree = {
 			if = {
 				limit = {
 					any_controlled_state = {
-						is_core_of = LBA
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_controlled_state = {
 					limit = {
-						is_core_of = LBA
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 448 } #TRIPOLI (In case at some point this gets split or tag gets more cores)
@@ -10598,7 +10598,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -10607,13 +10607,13 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_controlled_state = {
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 448 } #TRIPOLI (In case at some point this gets split or tag gets more cores)
@@ -10638,13 +10638,13 @@ focus_tree = {
 			if = {
 				limit = {
 					any_controlled_state = {
-						is_core_of = SOM
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_controlled_state = {
 					limit = {
-						is_core_of = SOM
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 559 } #SOMALILAND (In case at some point this gets split or tag gets more cores)
@@ -10662,7 +10662,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = {
 						any_controlled_state = {
-							is_core_of = SOM
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -10671,13 +10671,13 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = SOM
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_controlled_state = {
 						limit = {
-							is_core_of = SOM
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 559 } #SOMALILAND (In case at some point this gets split or tag gets more cores)
@@ -10698,13 +10698,13 @@ focus_tree = {
 			if = {
 				limit = {
 					any_controlled_state = {
-						is_core_of = ETH
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_controlled_state = {
 					limit = {
-						is_core_of = ETH
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 271 } #ADDIS ABABA (In case at some point this gets split or tag gets more cores)
@@ -10722,7 +10722,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = {
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -10731,13 +10731,13 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_controlled_state = {
 						limit = {
-							is_core_of = ETH
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 271 } #ADDIS ABABA (In case at some point this gets split or tag gets more cores)
@@ -10759,13 +10759,13 @@ focus_tree = {
 				if = {
 					limit = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 					}
 					random_controlled_state = {
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 448 } #TRIPOLI (In case at some point this gets split or tag gets more cores)
@@ -10781,7 +10781,7 @@ focus_tree = {
 					limit = {
 						any_subject_country = {
 							any_controlled_state = {
-								is_core_of = LBA
+								always = no     
 								is_fully_controlled_by = ROOT
 							}
 						}
@@ -10790,13 +10790,13 @@ focus_tree = {
 						limit = {
 							is_subject_of = ROOT
 							any_controlled_state = {
-								is_core_of = LBA
+								always = no     
 								is_fully_controlled_by = ROOT
 							}
 						}
 						random_controlled_state = {
 							limit = {
-								is_core_of = LBA
+								always = no     
 								is_fully_controlled_by = ROOT
 							}
 							prioritize = { 448 } #TRIPOLI (In case at some point this gets split or tag gets more cores)
@@ -12007,13 +12007,13 @@ focus_tree = {
 			if = {
 				limit = {
 					any_controlled_state = {
-						is_core_of = LBA
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 				}
 				random_controlled_state = {
 					limit = {
-						is_core_of = LBA
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 448 } #TRIPOLI (In case at some point this gets split or tag gets more cores)
@@ -12031,7 +12031,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = {
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -12040,13 +12040,13 @@ focus_tree = {
 					limit = {
 						is_subject_of = ROOT
 						any_controlled_state = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_controlled_state = {
 						limit = {
-							is_core_of = LBA
+							always = no     
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 448 } #TRIPOLI (In case at some point this gets split or tag gets more cores)

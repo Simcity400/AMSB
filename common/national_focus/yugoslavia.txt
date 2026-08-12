@@ -400,27 +400,13 @@ focus_tree = {
 			
 			hidden_effect = {
 				if = {
-					limit = { SLV = { exists = no } }
+					limit = {  }
 					release_puppet = SLV 
 					set_autonomy = { target = SLV autonomy_state = autonomy_integrated_puppet }
-					SLV = { save_event_target_as = released_nation_target }
+					
 				}
 				else = {
-					create_dynamic_country = {
-						original_tag = SLV
-						
-						save_event_target_as = released_nation_target
-						PREV = {
-							every_owned_state = {
-								limit = { is_core_of = SLV }
-								PREV.PREV = { transfer_state = PREV }
-							}
-						}
-						PREV = {
-							puppet = PREV
-							set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
-						}
-					}
+
 				}
 				event_target:released_nation_target = {
 					division_template = {
@@ -462,43 +448,18 @@ focus_tree = {
 
 				IF = {
 					limit = {
-						SLV = {
-							capital_scope = {
-								NOT = {
-									is_in_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							} 
-						}
+						
 						AUS = {
 							has_completed_focus = AUS_reclaiming_yugoslavian_territories
 						}
 					}
 
-					SLV = {
-						capital_scope = {
-							add_to_array = {
-								array = AUS.expansion_targets
-								value = THIS
-							}
-
-							log = "[THIS.GetName] Added to AUS expansion Array"
-						}
-					}
+					
 					
 
 					IF = {
 						limit = {
-							CRO = {
-								capital_scope = {
-									is_in_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							}
+							
 							AUS = {
 								has_completed_focus = AUS_reclaiming_yugoslavian_territories
 							}
@@ -568,27 +529,13 @@ focus_tree = {
 			#actual effect
 			hidden_effect = {
 				if = {
-					limit = { CRO = { exists = no } }
+					limit = {  }
 					release_puppet = CRO
 					set_autonomy = { target = CRO autonomy_state = autonomy_integrated_puppet }
-					CRO = { save_event_target_as = released_nation_target }
+					
 				}
 				else = {
-					create_dynamic_country = {
-						original_tag = CRO
-						
-						save_event_target_as = released_nation_target
-						PREV = {
-							every_owned_state = {
-								limit = { is_core_of = CRO }
-								PREV.PREV = { transfer_state = PREV }
-							}
-						}
-						PREV = {
-							puppet = PREV
-							set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
-						}
-					}
+
 				}
 				event_target:released_nation_target = {
 					division_template = {
@@ -643,43 +590,18 @@ focus_tree = {
 
 				IF = {
 					limit = {
-						CRO = {
-							capital_scope = {
-								NOT = {
-									is_in_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							}
-						}
+						
 						AUS = {
 							has_completed_focus = AUS_reclaiming_yugoslavian_territories
 						}
 					}
 
-					CRO = {
-						capital_scope = {
-							add_to_array = {
-								array = AUS.expansion_targets
-								value = THIS
-							}
-
-							log = "[THIS.GetName] Added to AUS expansion Array"
-						}
-					}
+					
 					
 
 					IF = {
 						limit = {
-							SLV = {
-								capital_scope = {
-									is_in_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							}
+							
 							AUS = {
 								has_completed_focus = AUS_reclaiming_yugoslavian_territories
 							}
@@ -743,29 +665,13 @@ focus_tree = {
 			
 			hidden_effect = {
 				if = {
-					limit = { CRO = { exists = no } }
+					limit = {  }
 					release_puppet = CRO 
 					set_autonomy = { target = CRO autonomy_state = autonomy_integrated_puppet }
-					CRO = { save_event_target_as = released_nation_target }
+					
 				}
 				else = {
-					create_dynamic_country = {
-						original_tag = CRO
-						
-						save_event_target_as = released_nation_target
-						PREV = {
-							every_owned_state = {
-								limit = { is_core_of = CRO }
-								PREV.PREV = { transfer_state = PREV }
-							}
-						}
-						PREV = {
-							puppet = PREV
-							set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
 
-						}
-						set_country_flag = yug_croatia_flag
-					}
 				}
 				event_target:released_nation_target = {
 					division_template = {
@@ -806,83 +712,22 @@ focus_tree = {
 			}
 			
 			hidden_effect = {
-				create_dynamic_country = {
-					original_tag = CRO
-					
-					set_cosmetic_tag = dalmatia
-					transfer_state = 103
-					PREV = {
-						puppet = PREV
-						set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
-					}
-					division_template = {
-						name = "Yugoslavian Division"
-						priority = 1
-						division_names_group = YUG_INF_01
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
 				
-							infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
-				
-							infantry = { x = 2 y = 0 }
-							infantry = { x = 2 y = 1 }
-						}
-						support = {
-							engineer = { x = 0 y = 0 }
-						}
-					}
-					random_owned_controlled_state = {
-						limit = { PREV = { has_full_control_of_state = PREV } }
-						create_unit = {
-							division = "name = \"Dalmatian Division\" division_template = \"Yugoslavian Division\" start_experience_factor = 0.9" 
-							owner = PREV
-						}
-					}
-				}
 
 				IF = {
 					limit = {
-						CRO = {
-							capital_scope = {
-								NOT = {
-									is_in_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							}
-						}
+						
 						AUS = {
 							has_completed_focus = AUS_reclaiming_yugoslavian_territories
 						}
 					}
 
-					CRO = {
-						capital_scope = {
-							add_to_array = {
-								array = AUS.expansion_targets
-								value = THIS
-							}
-
-							log = "[THIS.GetName] Added to AUS expansion Array"
-						}
-					}
+					
 					
 
 					IF = {
 						limit = {
-							SLV = {
-								capital_scope = {
-									is_in_array = {
-										array = AUS.expansion_targets
-										value = THIS
-									}
-								}
-							}
+							
 							AUS = {
 								has_completed_focus = AUS_reclaiming_yugoslavian_territories
 							}
@@ -941,28 +786,13 @@ focus_tree = {
 			
 			hidden_effect = {
 				if = {
-					limit = { BOS = { exists = no } }
+					limit = {  }
 					release_puppet = BOS 
 					set_autonomy = { target = BOS autonomy_state = autonomy_integrated_puppet }
-					BOS = { save_event_target_as = released_nation_target }
+					
 				}
 				else = {
-					create_dynamic_country = {
-						original_tag = BOS
-						
-						save_event_target_as = released_nation_target
-						PREV = {
-							every_owned_state = {
-								limit = { is_core_of = BOS }
-								PREV.PREV = { transfer_state = PREV }
-							}
-						}
-						PREV = {
-							puppet = PREV
-							set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
-						}
-						set_country_flag = yug_bosnia_flag
-					}
+
 				}
 				event_target:released_nation_target = {
 					division_template = {
@@ -1049,7 +879,7 @@ focus_tree = {
 			}
 			
 			hidden_effect = {
-				HRZ = { save_event_target_as = released_nation_target }
+				
 				event_target:released_nation_target = {
 					division_template = {
 						name = "Yugoslavian Division"
@@ -1080,27 +910,13 @@ focus_tree = {
 					}
 				}
 				if = {
-					limit = { BOS = { exists = no } }
+					limit = {  }
 					release_puppet = BOS 
 					set_autonomy = { target = BOS autonomy_state = autonomy_integrated_puppet }
-					BOS = { save_event_target_as = released_nation_target }
+					
 				}
 				else = {
-					create_dynamic_country = {
-						original_tag = BOS
-						
-						save_event_target_as = released_nation_target
-						PREV = {
-							every_owned_state = {
-								limit = { is_core_of = BOS }
-								PREV.PREV = { transfer_state = PREV }
-							}
-						}
-						PREV = {
-							puppet = PREV
-							set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
-						}
-					}
+
 				}
 				event_target:released_nation_target = {
 					set_cosmetic_tag = BOS_without_HRZ
@@ -1174,7 +990,7 @@ focus_tree = {
 			remove_ideas = YUG_idea_serbian_general_staff
 			release_puppet = MAC
 			hidden_effect = {
-				MAC = { save_event_target_as = released_nation_target }
+				
 				event_target:released_nation_target = {
 					division_template = {
 						name = "Yugoslavian Division"
@@ -1214,7 +1030,7 @@ focus_tree = {
 			}
 			release_puppet = KOS 
 			hidden_effect = {
-				KOS = { save_event_target_as = released_nation_target }
+				
 				event_target:released_nation_target = {
 					division_template = {
 						name = "Yugoslavian Division"
@@ -1247,7 +1063,7 @@ focus_tree = {
 			}
 			release_puppet = MNT
 			hidden_effect = {
-				MNT = { save_event_target_as = released_nation_target }
+				
 				event_target:released_nation_target = {
 					division_template = {
 						name = "Yugoslavian Division"
@@ -1369,13 +1185,13 @@ focus_tree = {
 				every_state = {
 					limit = {
 						is_core_of = YUG
-						NOT = { is_core_of = SER }
+						NOT = { always = no      }
 					}
 					remove_core_of = YUG
 				}
 				every_state = {
 					limit = {
-						is_core_of = SER
+						always = no     
 					}
 					remove_core_of = SER
 				}
@@ -1440,27 +1256,13 @@ focus_tree = {
 					hidden_effect = {
 					764 = { add_core_of = TRA }
 					if = {
-						limit = { TRA = { exists = no } }
+						limit = {  }
 						release_puppet = TRA 
 						set_autonomy = { target = TRA autonomy_state = autonomy_integrated_puppet }
-						TRA = { save_event_target_as = released_nation_target }
+						
 					}
 					else = {
-						create_dynamic_country = {
-							original_tag = TRA
-							save_event_target_as = released_nation_target
-							PREV = {
-								every_owned_state = {
-									limit = { is_core_of = TRA }
-									PREV.PREV = { transfer_state = PREV }
-								}
-							}
-							PREV = {
-								puppet = PREV
-								set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
-							}
-							set_country_flag = yug_transylvania_flag
-						}
+
 					}
 					event_target:released_nation_target = {
 							82 = {
@@ -1601,7 +1403,7 @@ focus_tree = {
 				every_state = {
 					limit = {
 						is_core_of = YUG
-						NOT = { is_core_of = SER }
+						NOT = { always = no      }
 					}
 					remove_core_of = YUG
 				}
@@ -1610,7 +1412,7 @@ focus_tree = {
 				}
 				every_state = {
 					limit = {
-						is_core_of = SER
+						always = no     
 					}
 					remove_core_of = SER
 				}
@@ -1688,13 +1490,13 @@ focus_tree = {
 				every_state = {
 					limit = {
 						is_core_of = YUG
-						NOT = { is_core_of = SER }
+						NOT = { always = no      }
 					}
 					remove_core_of = YUG
 				}
 				every_state = {
 					limit = {
-						is_core_of = SER
+						always = no     
 					}
 					remove_core_of = SER
 				}
@@ -1738,7 +1540,7 @@ focus_tree = {
 			add_stability = -0.10
 			every_owned_state = {
 				limit = {
-					is_core_of = SER
+					always = no     
 				}
 				add_extra_state_shared_building_slots = 1
 			}
@@ -2395,9 +2197,7 @@ focus_tree = {
 					is_subject_of = ROOT
 					owns_state = 106
 				}
-				MAC = {
-					is_in_faction_with = ROOT
-				}
+				
 			}
 			NOT = { has_completed_focus = YUG_end_the_regency }
 		}
@@ -2409,9 +2209,7 @@ focus_tree = {
 					is_subject_of = ROOT
 					owns_state = 106
 				}
-				MAC = {
-					is_in_faction_with = ROOT
-				}
+				
 			}
 		}
 
@@ -3412,15 +3210,15 @@ focus_tree = {
 			every_other_country = {
 				limit = {
 					OR = {
-						original_tag = SER
-						original_tag = SLV
-						original_tag = CRO
-						original_tag = MNT
-						original_tag = KOS
-						original_tag = BOS
-						original_tag = HRZ
-						original_tag = MAC
-						original_tag = TRA
+						always = no       
+						always = no       
+						always = no       
+						always = no       
+						always = no       
+						always = no       
+						always = no       
+						always = no       
+						always = no       
 						original_tag = HUN
 						original_tag = BUL
 					}
@@ -4430,7 +4228,7 @@ focus_tree = {
 								has_full_control_of_state = PREV
 							}
 							controller = {
-								tag = MNT
+								always = no
 								is_in_faction_with = ROOT
 								has_full_control_of_state = PREV
 							}
@@ -4463,7 +4261,7 @@ focus_tree = {
 								has_full_control_of_state = PREV
 							}
 							controller = {
-								tag = MNT
+								always = no
 								is_in_faction_with = ROOT
 								has_full_control_of_state = PREV
 							}
@@ -4727,15 +4525,15 @@ focus_tree = {
 					owner = {
 						NOT = { tag = ROOT }
 						OR = {
-							original_tag = SER
-							original_tag = SLV
-							original_tag = CRO
-							original_tag = MNT
-							original_tag = KOS
-							original_tag = BOS
-							original_tag = HRZ
-							original_tag = MAC
-							original_tag = TRA
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
+							always = no       
 							original_tag = HUN
 							original_tag = BUL
 						}
@@ -4845,7 +4643,7 @@ focus_tree = {
 							has_full_control_of_state = PREV
 						}
 						controller = {
-							tag = SLV
+							always = no
 							is_in_faction_with = ROOT
 							has_full_control_of_state = PREV
 						}
@@ -4859,7 +4657,7 @@ focus_tree = {
 							has_full_control_of_state = PREV
 						}
 						controller = {
-							tag = SLV
+							always = no
 							is_in_faction_with = ROOT
 							has_full_control_of_state = PREV
 						}
@@ -4892,7 +4690,7 @@ focus_tree = {
 								has_full_control_of_state = PREV
 							}
 							controller = {
-								tag = SLV
+								always = no
 								is_in_faction_with = ROOT
 								has_full_control_of_state = PREV
 							}
@@ -4923,7 +4721,7 @@ focus_tree = {
 								has_full_control_of_state = PREV
 							}
 							controller = {
-								tag = SLV
+								always = no
 								is_in_faction_with = ROOT
 								has_full_control_of_state = PREV
 							}
@@ -5375,7 +5173,7 @@ focus_tree = {
 						has_full_control_of_state = PREV
 					}
 					controller = {
-						tag = BOS
+						always = no
 						is_in_faction_with = ROOT
 						has_full_control_of_state = PREV
 					}
@@ -5404,7 +5202,7 @@ focus_tree = {
 								has_full_control_of_state = PREV
 							}
 							controller = {
-								tag = BOS
+								always = no
 								is_in_faction_with = ROOT
 								has_full_control_of_state = PREV
 							}

@@ -3450,17 +3450,14 @@ country_event = {
 			modifier = {
 				OR = { #France is in a weak position
 					AND = {
-						country_exists = VIC
-		 				VIC = { 
-		 					NOT = { has_war_with = SWE } 
-
-	 					}
-		 				tag = VIC
+						always = no         
+		 				
+		 				always = no
 					}
 
 					AND = {
 						tag = FRA
-						VIC = { exists = yes }
+						
 						FRA = { NOT = { has_war_with = SWE } }
 					}
 

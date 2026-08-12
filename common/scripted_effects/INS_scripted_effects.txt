@@ -45,17 +45,9 @@ indonesia_free_effect_2 = {
 indonesia_transfer_POK = {
 	if = {
 		limit = {
-			country_exists = POK
+			always = no         
 		}
-		POK = {
-			INS_syarif_muhammad_alkadrie = {
-				set_nationality = INS
-				remove_country_leader_role = { #we just want the advisor. if we want them as a leader, we can do that manually after
-					ideology = despotism
-				}
-				save_global_event_target_as = INS_syarif_muhammad_alkadrie
-			}
-		}
+		
 	}
 	else = {
 		every_possible_country = {
@@ -76,17 +68,9 @@ indonesia_transfer_POK = {
 indonesia_transfer_TNE = {
 	if = {
 		limit = {
-			country_exists = TNE
+			always = no         
 		}
-		TNE = {
-			INS_iskandar_sjah = {
-				set_nationality = INS
-				remove_country_leader_role = { #we just want the advisor. if we want them as a leader, we can do that manually after
-					ideology = despotism
-				}
-				save_global_event_target_as = INS_iskandar_sjah
-			}
-		}
+		
 	}
 	else = {
 		every_possible_country = {
@@ -107,17 +91,9 @@ indonesia_transfer_TNE = {
 indonesia_transfer_GOW = {
 	if = {
 		limit = {
-			country_exists = GOW
+			always = no         
 		}
-		GOW = {
-			INS_sultan_muhibuddin = {
-				set_nationality = INS
-				remove_country_leader_role = { #we just want the advisor. if we want them as a leader, we can do that manually after
-					ideology = despotism
-				}
-				save_global_event_target_as = INS_sultan_muhibuddin
-			}
-		}
+		
 	}
 	else = {
 		every_possible_country = {
@@ -138,17 +114,9 @@ indonesia_transfer_GOW = {
 indonesia_transfer_SSI = {
 	if = {
 		limit = {
-			country_exists = SSI
+			always = no         
 		}
-		SSI = {
-			INS_syarif_kasim = {
-				set_nationality = INS
-				remove_country_leader_role = { #we just want the advisor. if we want them as a leader, we can do that manually after
-					ideology = despotism
-				}
-				save_global_event_target_as = INS_syarif_kasim
-			}
-		}
+		
 	}
 	else = {
 		every_possible_country = {
@@ -169,17 +137,9 @@ indonesia_transfer_SSI = {
 indonesia_transfer_BLI = {
 	if = {
 		limit = {
-			country_exists = BLI
+			always = no         
 		}
-		BLI = {
-			INS_dewa_geg = {
-				set_nationality = INS
-				remove_country_leader_role = { #we just want the advisor. if we want them as a leader, we can do that manually after
-					ideology = despotism
-				}
-				save_global_event_target_as = INS_dewa_geg
-			}
-		}
+		
 	}
 	else = {
 		every_possible_country = {
@@ -200,17 +160,9 @@ indonesia_transfer_BLI = {
 indonesia_transfer_ATJ = {
 	if = {
 		limit = {
-			country_exists = ATJ
+			always = no         
 		}
-		ATJ = {
-			INS_alauddin_syah = {
-				set_nationality = INS
-				remove_country_leader_role = { #we just want the advisor. if we want them as a leader, we can do that manually after
-					ideology = despotism
-				}
-				save_global_event_target_as = INS_alauddin_syah
-			}
-		}
+		
 	}
 	else = {
 		every_possible_country = {
@@ -1503,10 +1455,7 @@ indonesia_declare_war_is_over_effect = { #always use this instead of directly cl
 					}
 					if = {
 						limit = { #give to malaya if it exists & is a british subject
-							MAL = {
-								exists = yes
-								is_subject_of = ENG
-							}
+							
 						}
 						334 = { transfer_state_to = MAL }
 						1055 = { transfer_state_to = MAL }

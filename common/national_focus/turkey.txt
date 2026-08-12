@@ -1112,7 +1112,7 @@ focus_tree = {
 			}
 			every_owned_state = {
 				limit = {
-					is_core_of = KUR
+					always = no     
 					free_building_slots = {
 						building = infrastructure
 						size > 0
@@ -2909,7 +2909,7 @@ focus_tree = {
 			}
 			#Set appropriate cosmetic tag to work with dynamic 3D models
 
-			unlock_decision_category_tooltip = form_ottoman_empire_category
+			
 		}
 	}
 
@@ -8829,7 +8829,7 @@ focus_tree = {
 		completion_reward = {
 			effect_tooltip = {
 				every_state = {
-					limit = { is_core_of = KUR }
+					limit = { always = no      }
 					add_core_of = TUR
 				}
 			}
@@ -8951,7 +8951,7 @@ if = {
 				}
 				TUR = { leave_faction = yes }
 			}
-			unlock_decision_category_tooltip = form_turan_category
+			
 		}
 	}
 
@@ -9042,14 +9042,14 @@ if = {
 					OR = {
 
 
-						is_core_of = MON
+						always = no     
 
-						is_core_of = TAN
-
-
+						always = no     
 
 
-						is_core_of = MAN
+
+
+						always = no     
 
 					}
 				}
@@ -9065,7 +9065,7 @@ if = {
 
 			if = {
 				limit = {
-					MON = { exists = yes }
+					
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -9075,7 +9075,7 @@ if = {
 
 			if = {
 				limit = {
-					TAN = { exists = yes }
+					
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -9088,7 +9088,7 @@ if = {
 
 			if = {
 				limit = {
-					MAN = { exists = yes }
+					
 				}
 				create_wargoal = {
 					type = annex_everything

@@ -650,7 +650,7 @@ USA_torch_boost = {
 		original_tag = USA
 	}
 	enable = {
-		country_exists = VIC
+		always = no         
 		has_war_with = GER
 		date > 1942.5.1
 		#has_war_with = 461.owner
@@ -1514,7 +1514,7 @@ USA_lose_fateful_lightning_from_terribly_swift_sword = {
 		}
 	}
 	enable = {
-		country_exists = VIC
+		always = no         
 		FRA = {
 			OR = {
 				has_capitulated = yes
@@ -1525,22 +1525,19 @@ USA_lose_fateful_lightning_from_terribly_swift_sword = {
 		}
 		OR = {
 			AND = {
-				VIC = {
-					is_ai = no
-					has_war = no
-				}
+				
 				is_historical_focus_on = yes
 				date > 1942.9.1
 			}
 			AND = {
 				OR = {
 					is_historical_focus_on = no
-					VIC = { has_war = yes }
+					
 				}
 				date > 1942.6.1
 			}
 			AND = {
-				VIC = { is_ai = yes }
+				
 				date > 1942.6.1
 			}
 		}

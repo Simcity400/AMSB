@@ -14,8 +14,8 @@ PRC_infiltrate_nationalist_areas = {
 
 	visible = {
 		OR = {
-			has_completed_focus = PRC_infiltration
-			has_completed_focus = PRC_sea_infiltration
+			always = no                           
+			always = no                               
 		}	
 	}
 }
@@ -36,8 +36,8 @@ PRC_anti_japanese_expedition = {
 
 	visible = {
 		OR = {
-				has_completed_focus = PRC_anti_japanese_expedition
-				has_completed_focus = PRC_sea_anti_japanese_expedition
+				always = no                                       
+				always = no                                           
 		}
 		OR = {
 			609 = {
@@ -82,7 +82,7 @@ PRC_the_communist_power_struggle_balance_of_power_category = {
 
 	allowed = {
 		has_dlc = "No Compromise, No Surrender"
-		original_tag = PRC
+		always = no       
 	}
 
 	visible = {
@@ -99,7 +99,7 @@ PRC_guerilla_warfare_sea_cat = {
 	allowed = {
 		has_dlc = "No Compromise, No Surrender"
 		OR = {
-			original_tag = PRC
+			always = no       
 			original_tag = CHI
 			original_tag = PHI
 		}
@@ -109,12 +109,12 @@ PRC_guerilla_warfare_sea_cat = {
 		hidden_trigger = {
 			OR = { #this is here only so that we can add different reqs for different countries
 				AND = {
-					original_tag = PRC
+					always = no       
 					is_subject = no
 					OR = {
-						has_completed_focus = PRC_on_guerilla_warfare
-						has_completed_focus = PRC_the_fight_of_a_people
-						has_completed_focus = PRC_promote_guerilla_warfare
+						always = no                                  
+						always = no                                    
+						always = no                                       
 					}
 				}
 				AND = { #TODO_Jean, aadd unlocks for guerilla here
@@ -144,7 +144,7 @@ PRC_guerilla_suppression_sea_cat = {
 		hidden_trigger = {
 			OR = {
 				AND = {
-					has_war_with = PRC
+					always = no       
 					any_controlled_state = {
 						OR = {
 							has_dynamic_modifier = {
@@ -191,11 +191,11 @@ PRC_infiltration_sea_cat = {
 		hidden_trigger = {
 			OR = { 
 				AND = {
-					original_tag = PRC
+					always = no       
 					OR = {
-						has_completed_focus = PRC_secure_the_peoples_support
-						has_completed_focus = PRC_playing_both_sides
-						has_completed_focus = PRC_gain_the_peoples_trust
+						always = no                                         
+						always = no                                 
+						always = no                                     
 					}
 				}
 				AND = {
@@ -238,7 +238,7 @@ PRC_economic_planning_cat = {
 
 	allowed = {	
 		has_dlc = "No Compromise, No Surrender"
-		original_tag = PRC
+		always = no       
 	}
 
 	visible_when_empty = no
@@ -262,11 +262,11 @@ PRC_28_bolshevik_faction_cat = {
 
 	allowed = {	
 		has_dlc = "No Compromise, No Surrender"
-		original_tag = PRC
+		always = no       
 	}
 
 	visible = {
-		has_completed_focus = PRC_a_stronger_united_front
+		always = no                                      
 		is_in_faction_with = CHI
 	}
 
@@ -284,12 +284,12 @@ PRC_appeal_for_foreign_aid_cat = {
 
 	allowed = {
 		has_dlc = "No Compromise, No Surrender"
-		original_tag = PRC
+		always = no       
 	}
 
 
 	visible = {
-		has_completed_focus = PRC_appeal_for_foreign_aid
+		always = no                                     
 		SOV = {
 			has_government = ROOT
 		}
@@ -303,7 +303,7 @@ PRC_border_wars_cat = {
 
 	allowed = {
 		has_dlc = "No Compromise, No Surrender"
-		original_tag = PRC
+		always = no       
 	}
 
 
@@ -315,7 +315,7 @@ PRC_war_of_resistance_cat = {
 	priority = 100
 
 	allowed = {
-		tag = PRC
+		always = no
 		has_dlc = "No Compromise, No Surrender"
 	}
 
@@ -334,7 +334,7 @@ PRC_rural_surveyer_decision_cat = {
 
 	allowed = {	
 		has_dlc = "No Compromise, No Surrender"
-		original_tag = PRC
+		always = no       
 	}
 
 	visible_when_empty = no
@@ -351,7 +351,7 @@ PRC_integration_decision_cat = {
 
 	allowed = {	
 		has_dlc = "No Compromise, No Surrender"
-		original_tag = PRC
+		always = no       
 	}
 
 	visible_when_empty = no 

@@ -2058,17 +2058,13 @@ focus_tree = {
 		}
 
 		available = {
-			MAN = {
-				is_ally_with = ROOT
-			}
+			
 			is_faction_leader = yes
 		}
 
 		bypass = {
 			NOT = {
-				MAN = {
-					is_ally_with = ROOT
-				}
+				
 			}
 		}
 
@@ -2084,9 +2080,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			MAN = {
-				add_ideas = JAP_MAN_joint_economic_block_idea
-			}
+			
 				
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -4494,7 +4488,7 @@ focus_tree = {
 		available_if_capitulated = no
 
 		will_lead_to_war_with = AST
-		will_lead_to_war_with = NZL
+
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 
@@ -4532,7 +4526,7 @@ focus_tree = {
 		}
 
 		will_lead_to_war_with = AST
-		will_lead_to_war_with = NZL
+
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
@@ -4572,12 +4566,12 @@ focus_tree = {
 			IF = {
 				limit = {
 					NOT = {
-						has_war_with = NZL
+						always = no       
 						has_wargoal_against = {
 							target = NZL
 						}
-						has_subject = NZL
-						is_in_faction_with = NZL
+						always = no      
+						always = no             
 					}
 				}
 				create_wargoal = {
@@ -5069,7 +5063,7 @@ focus_tree = {
 							}
 							OR = {
 								original_tag = SIA
-								original_tag = BRM
+								always = no       
 							}
 						}
 					}
@@ -5090,7 +5084,7 @@ focus_tree = {
 						}
 						OR = {
 							original_tag = SIA
-							original_tag = BRM
+							always = no       
 
 						}
 					}
@@ -5299,8 +5293,8 @@ focus_tree = {
 				has_war_with = INS
 			}
 			OR = {
-				has_wargoal_against = MAL
-				has_war_with = MAL
+				always = no              
+				always = no       
 			}
 			OR = {
 				has_wargoal_against = PHI
@@ -5327,12 +5321,12 @@ focus_tree = {
 		}
 
 		will_lead_to_war_with = PHI
-		will_lead_to_war_with = MAL
+
 		will_lead_to_war_with = ENG
 		will_lead_to_war_with = FRA
 		will_lead_to_war_with = INS
 		will_lead_to_war_with = HOL
-		will_lead_to_war_with = BRM
+
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
@@ -5464,9 +5458,9 @@ focus_tree = {
 			}
 			IF = {
 				limit = {
-					NOT = { has_wargoal_against = MAL }
-					NOT = { has_war_with = MAL }
-					country_exists = MAL
+					NOT = { always = no               }
+					NOT = { always = no        }
+					always = no         
 				}
 				create_wargoal = {
 					target = MAL
@@ -7107,8 +7101,8 @@ focus_tree = {
 
 		available = {
 			OR = {
-				has_subject = MAN
-				has_subject = KOR
+				always = no      
+				always = no      
 				524 = {
 					state_is_fully_controlled_by_ROOT_or_subject = yes
 				}
@@ -7132,15 +7126,15 @@ focus_tree = {
 			if = {
 				limit = {
 					OR = {
-						has_subject = MAN
-						has_subject = KOR
+						always = no      
+						always = no      
 					}
 				}
 				random_subject_country = {
 					limit = {
 					OR = {
-						original_tag = MAN
-						original_tag = KOR
+						always = no       
+						always = no       
 					}
 				}
 					random_core_state = {
@@ -7274,9 +7268,9 @@ focus_tree = {
 
 		available = {
 			OR = {
-				has_subject = MAN
+				always = no      
 				any_controlled_state = {
-					is_core_of = MAN
+					always = no     
 					is_fully_controlled_by = ROOT
 				}
 			}
@@ -7296,17 +7290,9 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					has_subject = MAN
+					always = no      
 				}
-				MAN = {				
-					add_stability = 0.1
-					add_war_support = 0.1
-					add_political_power = 100
-					add_timed_idea = {
-						idea = JAP_japanese_investments
-						days = 720
-					}
-				}
+				
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
@@ -7327,31 +7313,14 @@ focus_tree = {
 			}
 			IF = {
 				limit = {
-					has_subject = MAN
+					always = no      
 				}
-				MAN  = {
-					every_core_state = {
-						limit = {
-							is_fully_controlled_by = PREV
-							free_building_slots = {
-								building = industrial_complex
-								size > 1
-								include_locked = yes }
-						}
-						random_select_amount = 2
-						add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
+				
 			}
 			ELSE = {
 				random_controlled_state = {
 					limit = {
-						is_core_of = MAN
+						always = no     
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
 							building = industrial_complex
@@ -7394,9 +7363,9 @@ focus_tree = {
 
 		available = {
 			OR = {
-				has_subject = MAN
+				always = no      
 				any_controlled_state = {
-					is_core_of = MAN
+					always = no     
 				}
 			}
 		}
@@ -7414,35 +7383,14 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					has_subject = MAN
+					always = no      
 				}
-				MAN  = {
-					every_core_state = {
-						limit = {
-							is_fully_controlled_by = PREV
-							free_building_slots = {
-								building = arms_factory
-								size > 1
-								include_locked = yes }
-						}
-						random_select_amount = 2
-						add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = arms_factory
-							level = 1
-							instant_build = yes
-						}
-					}
-					add_breakthrough_progress = {
-						specialization = specialization_air
-						value = 0.15
-					}
-				}
+				
 			}
 			else = {
 				random_controlled_state = {
 					limit = {
-						is_core_of = MAN
+						always = no     
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
 							building = arms_factory
@@ -7497,9 +7445,7 @@ focus_tree = {
 						state_is_fully_controlled_by_ROOT_or_subject = yes
 					}
 				}
-				KOR = {
-					is_ally_with = ROOT
-				}
+				
 			}
 		}
 
@@ -7547,58 +7493,9 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					has_subject = MAN
+					always = no      
 				}
-				MAN = {
-					IF = {
-						limit = {
-							controls_state = 328
-							controls_state = 715
-							controls_state = 716
-						}
-						build_railway = { #in Kirin
-							path = { 4572 }
-						}
-						build_railway = { #in Liaoning
-							path = { 916 4642 4572 }
-						}
-						build_railway = { #in Liaotung
-							path = { 11808 }
-						}
-					}
-					ELSE_IF = {
-						limit = {
-							controls_state = 328
-							controls_state = 717
-						}
-						build_railway = { #in Kirin
-							path = { 4572 7663 9913 9928 }
-						}
-						build_railway = { #in Sungkiang
-							path = { 11893 6964 9897 }
-						}
-					}
-					IF = {
-						limit = {
-							controls_state = 716
-						}
-						build_railway = { #Mukden-Korean border
-							path = { 11771 9885 3895 3839 3970 6981 }
-						}
-						build_railway = { #Mukden - Dalian
-							path = { 11771 987 9781 11764 964 3783 6851 1150 }
-						}
-					}
-					IF = {
-						limit = {
-							controls_state = 716
-							controls_state = 610
-						}
-						build_railway = { #Mukden - Chinese border
-							path = { 11771 6951 11815 9835 6837 11886 3900 }
-						}
-					}
-				}
+				
 			}
 			ELSE = {
 				IF = {
@@ -7724,14 +7621,9 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					MAN = {
-						exists = yes
-						is_ally_with = ROOT
-					}
+					
 				}
-				MAN = {
-					add_ideas = MAN_hydroelectric_power
-				}
+				
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
@@ -8071,9 +7963,9 @@ focus_tree = {
 		
 		available = {
 			OR = {
-				has_subject = KOR
+				always = no      
 				any_controlled_state = {
-					is_core_of = KOR
+					always = no     
 					is_fully_controlled_by = ROOT
 				}
 			}
@@ -8092,47 +7984,22 @@ focus_tree = {
 		completion_reward = {
 			IF = {
 				limit = {
-					has_subject = KOR
+					always = no      
 				}
-				KOR = {				
-					add_stability = 0.1
-					add_war_support = 0.1
-					add_political_power = 100
-					add_timed_idea = {
-						idea = JAP_japanese_investments
-						days = 720
-					}
-				}
+				
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			
 			IF = {
 				limit = {
-					has_subject = KOR
+					always = no      
 				}
-				KOR  = {
-					every_core_state = {
-						limit = {
-							is_fully_controlled_by = PREV
-							free_building_slots = {
-								building = industrial_complex
-								size > 1
-								include_locked = yes }
-						}
-						random_select_amount = 2
-						add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
+				
 			}
 			ELSE = {
 				every_controlled_state = {
 					limit = {
-						is_core_of = KOR
+						always = no     
 						is_fully_controlled_by = ROOT
 						free_building_slots = {
 							building = industrial_complex
@@ -8175,9 +8042,9 @@ focus_tree = {
 
 		available = {
 			OR = {
-				has_subject = KOR
+				always = no      
 				any_controlled_state = {
-					is_core_of = KOR
+					always = no     
 					is_fully_controlled_by = ROOT
 				}
 			}
@@ -8197,22 +8064,14 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					has_subject = KOR
+					always = no      
 				}
-				KOR = {
-					every_core_state = {
-						limit = {
-							is_fully_controlled_by = KOR
-						}
-						random_select_amount = 2
-						add_extra_state_shared_building_slots = 1
-					}
-				}
+				
 			}
 			ELSE = {
 				every_controlled_state = {
 					limit = {
-						is_core_of = KOR
+						always = no     
 						is_fully_controlled_by = ROOT
 					}
 					random_select_amount = 2
@@ -8269,14 +8128,9 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					KOR = {
-						exists = yes
-						is_ally_with = ROOT
-					}
+					
 				}
-				KOR = {
-					add_ideas = MAN_hydroelectric_power
-				}
+				
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			1029 = {
@@ -8319,13 +8173,8 @@ focus_tree = {
 				controls_state = 527
 				controls_state = 1028
 				AND = {
-					has_subject = KOR
-					KOR = {
-						OR = {
-							controls_state = 527
-							controls_state = 1028
-						}
-					}
+					always = no      
+					
 				}
 			}
 		}
@@ -8344,11 +8193,9 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					has_subject = KOR
+					always = no      
 				}
-				KOR = {				
-					add_war_support = 0.15
-				}
+				
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 
@@ -8473,7 +8320,7 @@ focus_tree = {
 		available = {
 			OR = {
 				controls_state = 525
-				has_subject = KOR
+				always = no      
 			}
 		}
 
@@ -8491,17 +8338,9 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					has_subject = KOR
+					always = no      
 				}
-				KOR = {
-					add_war_support = 0.1
-					add_manpower = 25000
-					add_equipment_to_stockpile = { 
-						type = infantry_equipment
-						amount = 15000 
-						producer = ROOT
-					}	
-				}
+				
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			ELSE = {

@@ -523,7 +523,7 @@ country_event = {
 	option = {
 		name = wtt_japan.31.a
 		trigger = {
-			country_exists = MAN
+			always = no         
 		}
 		ai_chance = {
 			base = 5
@@ -1120,7 +1120,7 @@ country_event = {
 		name = wtt_japan.114.a
 		if = {
 			limit = {
-				MAN = { is_subject_of = ROOT }
+				
 			}
 			set_autonomy = { target = MAN autonomy_state = autonomy_free }
 			if = {
@@ -1131,12 +1131,12 @@ country_event = {
 		}
 		if = {
 			limit = {
-				MAN = { has_idea = MAN_kwantung_veto }
+				
 			}
 		}
 		if = {
 			limit = {
-				KOR = { is_subject_of = ROOT }
+				
 			}
 			set_autonomy = { target = KOR autonomy_state = autonomy_free }
 
@@ -1150,7 +1150,7 @@ country_event = {
 		if = {
 			limit = {
 				any_controlled_state = {
-					is_core_of = KOR
+					always = no     
 				}
 			}
 
@@ -1559,14 +1559,7 @@ country_event = {
 			if = {
 				limit = {
 					NOT = {
-						MAN = {
-							controls_state = 525
-							controls_state = 527
-							controls_state = 1029
-							controls_state = 1031
-							controls_state = 1030
-							controls_state = 1028
-						}
+						
 					}
 				}
 				FROM = { release = KOR }
@@ -1596,7 +1589,7 @@ country_event = {
 					limit = {
 						OR = {
 							AND = {
-								tag = MAN
+								always = no
 								is_in_faction_with = event_target:WTT_current_china_leader
 							}
 							is_literally_china = yes
@@ -1633,7 +1626,7 @@ country_event = {
 					limit = {
 						OR = {
 							AND = {
-								tag = MAN
+								always = no
 								is_in_faction_with = event_target:WTT_current_china_leader
 							}
 							is_literally_china = yes
@@ -1659,7 +1652,7 @@ country_event = {
 					limit = {
 						OR = {
 							AND = {
-								tag = MAN
+								always = no
 								is_in_faction_with = event_target:WTT_current_china_leader
 							}
 							is_literally_china = yes
@@ -1714,14 +1707,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					MAN = {
-						controls_state = 525
-						controls_state = 527
-						controls_state = 1029
-						controls_state = 1031
-						controls_state = 1030
-						controls_state = 1028
-					}
+					
 				}
 				JAP = {
 					owns_state = 525
@@ -1735,18 +1721,8 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				KOR = {
-					exists = yes
-					is_subject_of = JAP
-				}
-				MAN = {
-					controls_state = 525
-					controls_state = 527
-					controls_state = 1029
-					controls_state = 1031
-					controls_state = 1030
-					controls_state = 1028
-				}
+				
+				
 			}
 			JAP = {
 				set_autonomy = {
@@ -1759,17 +1735,14 @@ country_event = {
 			every_other_country = {
 				limit = {
 					is_literally_china = yes
-					has_war_with = KOR
+					always = no       
 				}
 				white_peace = KOR
 			}
 		}
 		else_if = {
 			limit = {
-				KOR = {
-					exists = yes
-					is_subject_of = JAP
-				}
+				
 			}
 			JAP = {
 				set_autonomy = {
@@ -1783,12 +1756,12 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							tag = MAN
+							always = no
 							is_in_faction_with = event_target:WTT_current_china_leader
 						}
 						is_literally_china = yes
 					}
-					has_war_with = KOR
+					always = no       
 				}
 				white_peace = KOR
 			}
@@ -1819,7 +1792,7 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							original_tag = MAN
+							always = no       
 							is_in_faction_with = event_target:WTT_current_china_leader
 						}
 						is_literally_china = yes
@@ -1846,7 +1819,7 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							original_tag = MAN
+							always = no       
 							is_in_faction_with = event_target:WTT_current_china_leader
 						}
 						is_literally_china = yes
@@ -1862,7 +1835,7 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							original_tag = MAN
+							always = no       
 							is_in_faction_with = event_target:WTT_current_china_leader
 						}
 						is_literally_china = yes
@@ -1888,7 +1861,7 @@ country_event = {
 				limit = {
 					OR = {
 						AND = {
-							original_tag = MAN
+							always = no       
 							is_in_faction_with = event_target:WTT_current_china_leader
 						}
 						is_literally_china = yes
@@ -1964,10 +1937,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					KOR = {
-						exists = yes
-						is_subject_of = JAP
-					}
+					
 				}
 				JAP = {
 					set_autonomy = {
@@ -1986,35 +1956,7 @@ country_event = {
 				}
 				transfer_state = 524
 			}
-			MAN = {
-				every_controlled_state = {
-					limit = {
-						OR = {
-							is_owned_by = JAP
-							AND = {
-								is_owned_by = MEN
-								
-							}
-						}
-						NOT = {
-							state = 525
-							state = 527
-							state = 1029
-							state = 1031
-							state = 1030
-							state = 1028
-						}
-					}
-					every_country = {
-						limit = {
-							original_tag = MAN
-							controls_state = PREV
-						}
-						transfer_state = PREV
-					}
-				}
-				white_peace = JAP
-			}
+			
 		}
 		FROM = {
 			country_event = { id = wtt_japan.130 }
@@ -2071,10 +2013,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				KOR = {
-					exists = yes
-					is_subject_of = JAP
-				}
+				
 			}
 			JAP = {
 				set_autonomy = {
@@ -2092,23 +2031,7 @@ country_event = {
 				}
 			}
 		}
-		MAN = {
-			every_controlled_state = {
-				limit = {
-					OR = {
-						is_owned_by = JAP
-						AND = {
-							is_owned_by = MEN
-							
-						}
-					}
-				}
-				MAN = {
-					transfer_state = PREV
-				}
-			}
-			white_peace = ROOT
-		}
+		
 	}
 }
 
@@ -2280,10 +2203,10 @@ country_event = {
 				}
 			}
 			AND = {
-				has_war_with = BRM
+				always = no       
 				OR = {
-					BRM = { is_in_faction_with = ENG }
-					BRM = { is_subject_of = ENG }
+					
+					
 				}
 			}
 		}

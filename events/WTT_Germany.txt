@@ -2977,9 +2977,7 @@ country_event = {
 					modifier = {
 						factor = 100
 						has_dlc = "Trial of Allegiance"
-						ARG = {
-							has_completed_focus = ARG_work_with_the_nationalists
-						}
+						
 					}
 
 					if = {
@@ -2987,18 +2985,14 @@ country_event = {
 							NOT = {
 								has_dlc = "Trial of Allegiance"
 							}
-							ARG = {
-								is_ai = yes
-							}
+							
 						}
 					}
 					
 					IF = {
 						limit = {
 							has_dlc = "Trial of Allegiance"
-							ARG = {
-								exists = yes
-							}
+							
 						}
 					}
 				}
@@ -3006,16 +3000,16 @@ country_event = {
 					set_global_flag = MTG_flag_955
 					modifier = { 
 						has_dlc = "Trial of Allegiance"
-						tag = ARG
-						has_completed_focus = ARG_guardia_nacional
+						always = no
+						always = no                               
 						factor = 0
 					}
 				}
 				1 = { 
 					modifier = { 
 						has_dlc = "Trial of Allegiance"
-						tag = ARG
-						has_completed_focus = ARG_guardia_nacional
+						always = no
+						always = no                               
 						factor = 0
 					}
 					if = { 

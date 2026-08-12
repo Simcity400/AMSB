@@ -72,7 +72,7 @@ country_event = {
 					any_neighbor_state = { 
 						OR = {
 							is_owned_by = JAP							
-							is_owned_by = MAN								
+							always = no      								
 						}
 					} 
 				}
@@ -87,7 +87,7 @@ country_event = {
 						any_neighbor_state = { 
 							OR = {
 								is_owned_by = JAP
-								is_owned_by = MAN
+								always = no      
 							} 	
 						}
 					}
@@ -98,7 +98,7 @@ country_event = {
 					any_neighbor_state = { 
 						OR = {
 							is_owned_by = JAP
-							is_owned_by = MAN
+							always = no      
 						}
 					} 
 				} 
@@ -127,7 +127,7 @@ country_event = {
 					any_neighbor_state = { 
 						OR = {
 							is_owned_by = JAP
-							is_owned_by = MAN							
+							always = no      							
 						} 
 					} 
 				}
@@ -142,7 +142,7 @@ country_event = {
 						any_neighbor_state = { 
 							OR = {
 								is_owned_by = JAP
-								is_owned_by = MAN
+								always = no      
 							}
 						}
 					}
@@ -153,7 +153,7 @@ country_event = {
 					any_neighbor_state = { 
 						OR = {
 							is_owned_by = JAP
-							is_owned_by = MAN
+							always = no      
 						}
 					} 
 				}
@@ -713,7 +713,7 @@ country_event = {
 	option = {
 		name = soviet.21.a
 		effect_tooltip = {
-			PRC = { remove_opinion_modifier = { target = CHI modifier = hostile_status } }
+			
 			CHI = { remove_opinion_modifier = { target = PRC modifier = hostile_status } }
 		}
 	}
@@ -2546,16 +2546,16 @@ country_event = {
 	
 	trigger = {
 		tag = SOV
-		country_exists = UKR
+		always = no         
 		country_exists = BLR
-		country_exists = GEO
-		country_exists = AZR
+		always = no         
+		always = no         
 		country_exists = ARM
-		country_exists = UZB
-		country_exists = TAJ
-		country_exists = KYR
-		country_exists = TMS
-		country_exists = KAZ
+		always = no         
+		always = no         
+		always = no         
+		always = no         
+		always = no         
 		NOT = { has_global_flag = SOV_became_russia }
 	}
 
@@ -2575,16 +2575,16 @@ country_event = {
 	
 	trigger = {
 		tag = SOV
-		NOT = { country_exists = UKR }
+		NOT = { always = no          }
 		NOT = { country_exists = BLR }
-		NOT = { country_exists = GEO }
-		NOT = { country_exists = AZR }
+		NOT = { always = no          }
+		NOT = { always = no          }
 		NOT = { country_exists = ARM }
-		NOT = { country_exists = UZB }
-		NOT = { country_exists = TAJ }
-		NOT = { country_exists = KYR }
-		NOT = { country_exists = TMS }
-		NOT = { country_exists = KAZ }
+		NOT = { always = no          }
+		NOT = { always = no          }
+		NOT = { always = no          }
+		NOT = { always = no          }
+		NOT = { always = no          }
 		NOT = {
 			any_state = {
 				is_core_of = SOV

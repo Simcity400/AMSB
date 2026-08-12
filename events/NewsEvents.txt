@@ -4258,7 +4258,7 @@ news_event = {
 			2 = { is_controlled_by = USA }
 			2 = { is_controlled_by = AST }
 			2 = { is_controlled_by = CAN }
-			2 = { is_controlled_by = NZL }
+			2 = { always = no            }
 			2 = { is_controlled_by = SAF }
 		}
 		OR = {
@@ -4471,7 +4471,7 @@ news_event = {
 			219 = { is_controlled_by = USA }
 			219 = { is_controlled_by = AST }
 			219 = { is_controlled_by = CAN }
-			219 = { is_controlled_by = NZL }
+			219 = { always = no            }
 			219 = { is_controlled_by = SAF }
 			219 = { is_controlled_by = FRA }
 		}
@@ -5348,7 +5348,7 @@ news_event = {
 			}
 			has_offensive_war = yes
 			NOT = {
-				has_war_with = SIL
+				always = no       
 			}
 		}
 		42 = {
@@ -9550,7 +9550,7 @@ news_event = {
 		trigger = {
 			OR = {
 				tag = MEX
-				tag = ARG
+				always = no
 			}
 		}
 	}
@@ -9570,7 +9570,7 @@ news_event = {
 				OR = {
 					tag = USA
 					tag = MEX
-					tag = ARG
+					always = no
 				}
 			}
 		}
@@ -9583,7 +9583,7 @@ news_event = {
 				has_government = democratic
 				tag = USA
 				tag = MEX
-				tag = ARG
+				always = no
 			}
 		}
 	}
@@ -10870,12 +10870,7 @@ news_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		NZL = { 
-			OR = {
-				has_tech = basic_light_tank 
-				has_tech = basic_light_tank_chassis
-			}
-		}
+		
 	}
 	
 	option = {
@@ -10907,7 +10902,7 @@ news_event = {
 	fire_only_once = yes
 	
 	trigger = {
-	NZL = { has_tech = super_heavy_tank }
+	
 	}
 	
 	option = {
@@ -12182,9 +12177,9 @@ news_event = {
 		text = news.309.desc.a
 		trigger = { 
 			OR = {
-				NOT = { country_exists = SLO }
+				NOT = { always = no          }
 				AND = {
-					country_exists = SLO
+					always = no         
 					
 				}
 			}
@@ -12193,7 +12188,7 @@ news_event = {
 	desc = {
 		text = news.309.desc.b
 		trigger = { 
-			country_exists = SLO
+			always = no         
 			
 		}
 	}
@@ -12214,9 +12209,9 @@ news_event = {
 		trigger = { 
 			TAG = CZE
 			OR = {
-				NOT = { country_exists = SLO }
+				NOT = { always = no          }
 				AND = {
-					country_exists = SLO
+					always = no         
 					
 				}
 			}
@@ -12254,9 +12249,9 @@ news_event = {
 		text = news.310.desc.a
 		trigger = { 
 			OR = {
-				NOT = { country_exists = SLO }
+				NOT = { always = no          }
 				AND = {
-					country_exists = SLO
+					always = no         
 					
 				}
 			}
@@ -12265,7 +12260,7 @@ news_event = {
 	desc = {
 		text = news.310.desc.b
 		trigger = { 
-			country_exists = SLO
+			always = no         
 			
 		}
 	}
@@ -12306,9 +12301,9 @@ news_event = {
 		text = news.311.desc.a
 		trigger = { 
 			OR = {
-				NOT = { country_exists = SLO }
+				NOT = { always = no          }
 				AND = {
-					country_exists = SLO
+					always = no         
 					
 				}
 			}
@@ -12317,7 +12312,7 @@ news_event = {
 	desc = {
 		text = news.311.desc.b
 		trigger = { 
-			country_exists = SLO
+			always = no         
 			
 		}
 	}
@@ -13496,7 +13491,7 @@ news_event = {
 		name = news.337.a
 		trigger = {
 			NOT = { tag = ITA }
-			NOT = { tag = ETH }
+			NOT = { always = no }
 			NOT = { has_government = fascism }
 		}
 	}
@@ -13504,7 +13499,7 @@ news_event = {
 		name = news.337.b
 		trigger = {
 			NOT = { tag = ITA }
-			NOT = { tag = ETH }
+			NOT = { always = no }
 			has_government = fascism
 		}
 	}
@@ -13517,7 +13512,7 @@ news_event = {
 	option = {
 		name = news.337.d
 		trigger = {
-			tag = ETH
+			always = no
 		}
 	}
 }

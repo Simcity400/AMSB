@@ -2089,7 +2089,7 @@ focus_tree = {
 					664 = {
 						NOT = {
 							OR = {
-								is_owned_by = SLO
+								always = no      
 								is_owned_by = CZE
 								is_owned_by = ROOT
 							}
@@ -2454,9 +2454,9 @@ focus_tree = {
 				}
 			}
 			IF = {
-				limit = { country_exists = SLO }
-				strength_ratio = { tag = SLO ratio > 0.75 }
-				NOT = { has_war_with = SLO }
+				limit = { always = no          }
+				always = no
+				NOT = { always = no        }
 			}
 		
 

@@ -1501,7 +1501,7 @@ country_event = {
 		add_state_claim = 799
 		if = {
 			limit = {
-				SYR = { owns_state = 799 }
+				
 			}
 			create_wargoal = {
 				type = take_claimed_state
@@ -2090,17 +2090,13 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					has_subject = JOR
-					JOR = {
-						owns_state = 455
-					}
+					always = no      
+					
 				}
 				TUR = {
 					if = {
 						limit = {
-							JOR = {
-								is_puppet = no
-							}
+							
 						}
 						set_autonomy = {
 							target = JOR
@@ -2125,17 +2121,13 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					has_subject = PAL
-					PAL = {
-						owns_state = 454
-					}
+					always = no      
+					
 				}
 				TUR = {
 					if = {
 						limit = {
-							PAL = {
-								is_puppet = no
-							}
+							
 						}
 						set_autonomy = {
 							target = PAL
@@ -2203,17 +2195,13 @@ country_event = {
 		else_if = {
 			limit = {
 				FROM = {
-					has_subject = JOR
+					always = no      
 				}
-				JOR = {
-					owns_state = 455
-				}
+				
 			}
 			if = {
 				limit = {
-					JOR = {
-						is_puppet = no
-					}
+					
 				}
 				set_autonomy = {
 					target = JOR
@@ -2242,17 +2230,13 @@ country_event = {
 		else_if = {
 			limit = {
 				FROM = {
-					has_subject = PAL
+					always = no      
 				}
-				PAL = {
-					owns_state = 454
-				}
+				
 			}
 			if = {
 				limit = {
-					PAL = {
-						is_puppet = no
-					}
+					
 				}
 				set_autonomy = {
 					target = PAL
@@ -3026,7 +3010,7 @@ country_event = {
 			ENG = { remove_resource_rights = 676 }
 			random_other_country = { 
            		limit = { 
-           		    original_tag = IRQ 
+           		    always = no        
            		    has_government = fascism 
            		} 
           		ROOT = { set_variable = { civil_war_opponent = PREV } }
@@ -3062,7 +3046,7 @@ country_event = {
 			ITA = { country_event = { id = bftb_turkey.73 hours = 8 } } 
 			if = {
 				limit = {
-					IRQ = { NOT = { has_idea = nationalism } }
+					
 				}
 				add_ideas = nationalism
 			}
@@ -3094,7 +3078,7 @@ country_event = {
 		
 		random_other_country = { 
 			limit = { 
-				original_tag = IRQ 
+				always = no        
 				has_government = fascism
 			} 
 			ROOT = { give_guarantee = PREV }
@@ -3102,7 +3086,7 @@ country_event = {
 		hidden_effect = {
 			random_other_country = { 
 				limit = { 
-					original_tag = IRQ 
+					always = no        
 					has_government = fascism
 				} 
 				set_country_flag = TUR_iraqi_fascists_flag
@@ -3377,7 +3361,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				IRQ = { is_guaranteed_by = TUR }
+				
 			}
 			TUR = { 
 				diplomatic_relation = {
@@ -3389,7 +3373,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				IRQ = { is_guaranteed_by = GER }
+				
 			}
 			GER = { 
 				diplomatic_relation = {
@@ -3401,7 +3385,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				IRQ = { is_guaranteed_by = ITA }
+				
 			}
 			ITA = { 
 				diplomatic_relation = {
@@ -4087,7 +4071,7 @@ country_event = {
 		effect_tooltip = {
 			every_state = {
 				limit = { 
-					is_core_of = KUR
+					always = no     
 					is_owned_by = TUR
 				}
 				THIS = { set_resistance = 85 }
@@ -4417,7 +4401,7 @@ country_event = {
 					factor = 0
 					all_owned_state = {
 						AND = {  
-							is_core_of = KUR
+							always = no     
 							infrastructure > 1
 						}
 					}
@@ -4432,7 +4416,7 @@ country_event = {
 					factor = 0
 					all_owned_state = {
 						AND = {  
-							is_core_of = KUR
+							always = no     
 							has_dynamic_modifier = { modifier = conscription_exemptions_granted }
 						}
 					}
@@ -4444,7 +4428,7 @@ country_event = {
 					factor = 0
 					any_owned_state = {
 						AND = { 
-							is_core_of = KUR
+							always = no     
 							NOT = {
 								has_dynamic_modifier = { modifier = kurdish_rebellion }
 							}
@@ -4471,7 +4455,7 @@ country_event = {
 		name = bftb_turkey.106.a #support
 		random_owned_state = {
 			limit = {
-				is_core_of = KUR
+				always = no     
 			}
 			add_building_construction = {
 				type = infrastructure
@@ -4508,7 +4492,7 @@ country_event = {
 		name = bftb_turkey.106.b #oppose
 		every_owned_state = {
 			limit = {
-				is_core_of = KUR
+				always = no     
 			}
 			add_resistance = 10
 		}
@@ -4533,7 +4517,7 @@ country_event = {
 		add_political_power = -50
 		every_owned_state = {
 			limit = {
-				is_core_of = KUR
+				always = no     
 			}
 			add_compliance = 10
 		}
@@ -4545,7 +4529,7 @@ country_event = {
 		name = bftb_turkey.107.b #oppose
 		every_owned_state = {
 			limit = {
-				is_core_of = KUR
+				always = no     
 			}
 			add_resistance = 5
 		}
@@ -4580,7 +4564,7 @@ country_event = {
 		add_stability = -0.05
 		every_owned_state = {
 			limit = {
-				is_core_of = KUR
+				always = no     
 			}
 			add_resistance = 10
 		}
@@ -4607,7 +4591,7 @@ country_event = {
 		random_owned_state = {
 			if = {
 				limit = {
-					is_core_of = KUR
+					always = no     
 					THIS = { has_dynamic_modifier = { modifier = kurdish_rebellion } }
 				}
 				remove_dynamic_modifier = { modifier = kurdish_rebellion }
@@ -4616,7 +4600,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					is_core_of = KUR
+					always = no     
 					THIS = { has_dynamic_modifier = { modifier = kurdish_separatism } }
 				}
 				remove_dynamic_modifier = { modifier = kurdish_separatism }
@@ -4625,7 +4609,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					is_core_of = KUR
+					always = no     
 					THIS = { has_dynamic_modifier = { modifier = kurdish_agitation } }
 				}
 				add_compliance = 40
@@ -4637,7 +4621,7 @@ country_event = {
 		random_owned_state = {
 			if = {
 				limit = {
-					is_core_of = KUR
+					always = no     
 					THIS = { has_dynamic_modifier = { modifier = kurdish_rebellion } }
 				}
 				remove_dynamic_modifier = { modifier = kurdish_rebellion }
@@ -4646,7 +4630,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					is_core_of = KUR
+					always = no     
 					THIS = { has_dynamic_modifier = { modifier = kurdish_separatism } }
 				}
 				remove_dynamic_modifier = { modifier = kurdish_separatism }
@@ -4655,7 +4639,7 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					is_core_of = KUR
+					always = no     
 					THIS = { has_dynamic_modifier = { modifier = kurdish_agitation } }
 				}
 				add_compliance = 40
@@ -4673,7 +4657,7 @@ country_event = {
 		add_stability = -0.1
 		every_owned_state = {
 			limit = {
-				is_core_of = KUR
+				always = no     
 			}
 			add_compliance = -25
 		}
@@ -4807,11 +4791,11 @@ country_event = {
 							OR = {
 								is_core_of = TUR
 								AND = {
-									is_core_of = KUR
+									always = no     
 									is_owned_by = TUR
 									NOT = {
 										OR = {
-											is_core_of = IRQ
+											always = no     
 											is_core_of = PER
 										}
 									}
@@ -5246,7 +5230,7 @@ country_event = {
 				}
 			}
 		}
-		activate_targeted_decision = { target = TUR decision = ROOT_invest_in_turkish_state_building }
+		
 		if = {
 			limit = {
 				has_opinion = {
@@ -5254,7 +5238,7 @@ country_event = {
 					value > 25
 				}
 			}
-			activate_targeted_decision = { target = TUR decision = ROOT_invest_in_turkish_state_light_industry }
+			
 		}
 		if = {
 			limit = {
@@ -5263,7 +5247,7 @@ country_event = {
 					value > 50
 				}
 			}
-			activate_targeted_decision = { target = TUR decision = ROOT_invest_in_turkish_state_heavy_industry }
+			
 		}
 
 		hidden_effect = { #Country has accepted Turkish portfolio so the decision to actually invest is available, but the country still need to take it!
@@ -6057,7 +6041,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					IRQ = { has_country_flag = TUR_saadabad_pact_member }
+					
 				}
 			}
 			if = {
@@ -6068,12 +6052,12 @@ country_event = {
 			}
 			if = {
 				limit = {
-					AFG = { has_country_flag = TUR_saadabad_pact_member }
+					
 				}
 			}
 			if = {
 				limit = {
-					SYR = { has_country_flag = TUR_saadabad_pact_member }
+					
 				}
 			}
 		}

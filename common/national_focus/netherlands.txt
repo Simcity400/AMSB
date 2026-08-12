@@ -5991,9 +5991,9 @@ focus_tree = {
 		available = {
 			has_government = communism
 			OR = {
-				CRC = { is_subject_of = HOL }
+				
 				695 = { is_fully_controlled_by = HOL }
-				SUR = { is_subject_of = HOL }
+				
 				309 = { is_fully_controlled_by = HOL }
 				custom_trigger_tooltip = {
 					tooltip = HOL_decolonization_tt2
@@ -6042,8 +6042,8 @@ focus_tree = {
 			}
 			NOT = {
 				OR = {
-					CRC = { is_subject_of = HOL }
-					SUR = { is_subject_of = HOL }
+					
+					
 					INS = { is_subject_of = HOL }
 				}
 			}
@@ -6129,7 +6129,7 @@ focus_tree = {
 			if = {
 				limit = {
 					OR = {
-						CRC = { is_subject_of = HOL }
+						
 						695 = { is_fully_controlled_by = HOL }
 					}
 				}
@@ -6138,7 +6138,7 @@ focus_tree = {
 			if = {
 				limit = {
 					OR = {
-						SUR = { is_subject_of = HOL }
+						
 						309 = { is_fully_controlled_by = HOL }
 					}
 				}
@@ -7573,10 +7573,10 @@ focus_tree = {
 			has_government = democratic
 			is_in_faction_with = ENG
 			is_in_faction_with = AST
-			is_in_faction_with = MAL
+			always = no             
 			NOT = { has_war_with = USA }
 			OR = {
-				MAL = { has_full_control_of_state = 336 }
+				
 				ENG = { has_full_control_of_state = 336 }
 			}
 		}

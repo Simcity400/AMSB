@@ -1094,16 +1094,8 @@ focus_tree = {
 			OR = {
 
 
-				MON = {
-					any_core_state = {
-						is_controlled_by = ROOT
-					}
-				}
-				TAN = {
-					any_core_state = {
-						is_controlled_by = ROOT
-					}
-				}
+				
+				
 			}
 		}
 
@@ -1119,13 +1111,7 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					MON = {
-						exists = yes
-						NOT = {
-							is_ally_with = ROOT
-							has_war_with = ROOT
-						}
-					}
+					
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -1136,13 +1122,7 @@ focus_tree = {
 			}
 			IF = {
 				limit = {
-					TAN = {
-						exists = yes
-						NOT = {
-							is_ally_with = ROOT
-							has_war_with = ROOT
-						}
-					}
+					
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -1154,13 +1134,7 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					MAN = {
-						exists = yes
-						NOT = {
-							is_ally_with = ROOT
-							has_war_with = ROOT
-						}
-					}
+					
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -5268,14 +5242,7 @@ focus_tree = {
 				tooltip = CHI_burma_campaign_trigger
 
 				NOT = { # TODO_JNS Check that we don't have faction weirdness
-					BRM = {
-						all_core_state = {
-							OR = {
-								is_fully_controlled_by = BRM
-								state_is_fully_controlled_by_ROOT_subject_or_faction_member = yes
-							}
-						}
-					}
+					
 				}
 			}
 		}
@@ -6352,7 +6319,7 @@ focus_tree = {
 			factor = 1
 		}
 
-		will_lead_to_war_with = KOR
+
 
 		available = {
 			is_subject = no
@@ -6365,20 +6332,13 @@ focus_tree = {
 			}
 			NOT = {
 				any_enemy_country = {
-					original_tag = KOR
+					always = no       
 				}
 			}
 		}
 
 		bypass = {
-			KOR = {
-				OR = {
-					has_war_with = ROOT
-					all_core_state = {
-						state_is_fully_controlled_by_ROOT_or_subject = yes
-					}
-				}
-			}
+			
 		}
 
 		cancel_if_invalid = yes
@@ -6389,16 +6349,16 @@ focus_tree = {
 			every_other_country = {
 				limit = {
 					NOT = {
-						original_tag = KOR
+						always = no       
 					}
 					any_controlled_state = {
-						is_core_of = KOR
+						always = no     
 					}
 				}
 				display_individual_scopes = yes
 				every_controlled_state = {
 					limit = {
-						is_core_of = KOR
+						always = no     
 					}
 					add_to_temp_array = {
 						array = PREV.PRC_subjugate_korea_target_states_array
@@ -6415,9 +6375,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					KOR = {
-						exists = yes
-					}
+					
 				}
 				create_wargoal = {
 					type = puppet_wargoal_focus
@@ -6454,13 +6412,13 @@ focus_tree = {
 			}
 			any_enemy_country = {
 				NOT = {
-					original_tag = TAN
+					always = no       
 					original_tag = SOV
 				}
 			}
 		}
 
-		will_lead_to_war_with = TAN
+
 		will_lead_to_war_with = SOV
 
 		bypass = {
@@ -6477,7 +6435,7 @@ focus_tree = {
 				limit = {
 					any_controlled_state = {
 						OR = {
-							is_core_of = TAN
+							always = no     
 							state = 732
 							state = 586
 							state = 589
@@ -6494,7 +6452,7 @@ focus_tree = {
 				every_controlled_state = {
 					limit = {
 						OR = {
-							is_core_of = TAN
+							always = no     
 							state = 732
 							state = 586
 							state = 589
@@ -6534,7 +6492,7 @@ focus_tree = {
 						is_core_of = ROOT
 					}
 					OR = {
-						is_core_of = TAN
+						always = no     
 						state = 732
 						state = 586
 						state = 589
@@ -8450,19 +8408,9 @@ focus_tree = {
 		}
 
 		bypass = {
-			MON = {
-				OR = {
-					exists = no
-					is_ally_with = ROOT
-				}
-			}
+			
 
-			TAN = {
-				OR = {
-					exists = no
-					is_ally_with = ROOT
-				}
-			}
+			
 
 
 		}
@@ -8475,16 +8423,9 @@ focus_tree = {
 		completion_reward = {
 			IF = {
 				limit = {
-					MON = {
-						exists = yes
-						NOT = { is_ally_with = ROOT }
-					}
+					
 				}
-				MON = {
-					every_core_state = {
-						add_claim_by = ROOT
-					}
-				}
+				
 				create_wargoal = {
 					type = annex_everything
 					target = MON
@@ -8495,16 +8436,9 @@ focus_tree = {
 
 			IF = {
 				limit = {
-					TAN = {
-						exists = yes
-						NOT = { is_ally_with = ROOT }
-					}
+					
 				}
-				TAN = {
-					every_core_state = {
-						add_claim_by = ROOT
-					}
-				}
+				
 				create_wargoal = {
 					type = annex_everything
 					target = TAN

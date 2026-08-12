@@ -6945,7 +6945,7 @@ country_event = {
 					OWNER = {
 						NOT = {
 							OR = {
-								original_tag = COG
+								always = no       
 								original_tag = BEL
 							}
 						}
@@ -6955,7 +6955,7 @@ country_event = {
 					OWNER = {
 						NOT = {
 							OR = {
-								original_tag = COG
+								always = no       
 								original_tag = BEL
 							}
 						}
@@ -6965,7 +6965,7 @@ country_event = {
 					OWNER = {
 						NOT = {
 							OR = {
-								original_tag = COG
+								always = no       
 								original_tag = BEL
 							}
 						}
@@ -6975,7 +6975,7 @@ country_event = {
 					OWNER = {
 						NOT = {
 							OR = {
-								original_tag = COG
+								always = no       
 								original_tag = BEL
 							}
 						}
@@ -6985,7 +6985,7 @@ country_event = {
 					OWNER = {
 						NOT = {
 							OR = {
-								original_tag = COG
+								always = no       
 								original_tag = BEL
 							}
 						}
@@ -7090,7 +7090,7 @@ country_event = {
 						}
 						OR = {
 							is_fully_controlled_by = BEL
-							is_fully_controlled_by = COG
+							always = no                 
 						}
 					}
 					transfer_state_to = ENG
@@ -7107,7 +7107,7 @@ country_event = {
 						}
 						OR = {
 							is_fully_controlled_by = BEL
-							is_fully_controlled_by = COG
+							always = no                 
 						}
 					}
 					transfer_state_to = GER
@@ -7258,7 +7258,7 @@ country_event = {
 					}
 					OR = {
 						is_fully_controlled_by = BEL
-						is_fully_controlled_by = COG
+						always = no                 
 					}
 				}
 				add_claim_by = ENG
@@ -7277,7 +7277,7 @@ country_event = {
 					}
 					OR = {
 						is_fully_controlled_by = BEL
-						is_fully_controlled_by = COG
+						always = no                 
 					}
 				}
 				add_claim_by = GER
@@ -7351,9 +7351,9 @@ country_event = {
 		every_state = {
 			limit = {
 				OR = {
-					is_core_of = COG
-					is_core_of = RWA
-					is_core_of = BRD
+					always = no     
+					always = no     
+					always = no     
 				}
 			}
 			add_claim_by = ROOT
@@ -7895,7 +7895,7 @@ country_event = {
 					OR = {
 						is_owned_and_controlled_by = ROOT
 						is_owned_and_controlled_by = SAF
-						is_owned_and_controlled_by = NZL
+						always = no                     
 						is_owned_and_controlled_by = AST
 					}
 					OR = {
@@ -8001,14 +8001,12 @@ country_event = {
 
 		IF = {
 			limit = {
-				NZL = {
-					is_subject_of = FROM
-				}
+				
 			}
 			effect_tooltip = {
 				every_state = {
 					limit = {
-						is_owned_and_controlled_by = NZL
+						always = no                     
 						OR = {
 							state = 773
 							state = 777
@@ -8298,7 +8296,7 @@ country_event = {
 			factor = 60
 			modifier = {
 				factor = 0.3
-				original_tag = ANG
+				always = no       
 			}
 			modifier = {
 				strength_ratio = { tag = GER ratio < 1 }
@@ -8324,7 +8322,7 @@ country_event = {
 			factor = 40
 			modifier = {
 				factor = 1.5
-				original_tag = ANG
+				always = no       
 			}
 			modifier = {
 				strength_ratio = { tag = GER ratio > 1 }
@@ -8367,7 +8365,7 @@ country_event = {
 
 		every_state = {
 			limit = {
-				is_core_of = ANG
+				always = no     
 				is_owned_and_controlled_by = FROM
 			}
 			transfer_state_to = ROOT
@@ -10450,17 +10448,9 @@ country_event = {
 
 			IF = {
 				limit = {
-					BRA = {
-						NOT = {
-							AND = {
-								has_government = fascism
-								exists = yes
-							}
-						}
-					}
+					
 				}
-				BRA = {
-				}
+				
 			}
 
 		}
@@ -10497,14 +10487,7 @@ country_event = {
 	option = { # It might be wise to use a local puppet
 		name = wuw_GER_reichskommissariats.19.b
 		trigger = {
-			BRA = {
-				NOT = {
-					AND = {
-						has_government = fascism
-						exists = yes
-					}
-				}
-			}
+			
 		}
 		ai_chance = {
 			base = 15
@@ -11699,7 +11682,7 @@ country_event = {
 					state = 762
 					state = 74
 				}
-				is_owned_and_controlled_by = SIL
+				always = no                     
 			}
 		}
 
@@ -11711,7 +11694,7 @@ country_event = {
 					state = 762
 					state = 74
 				}
-				is_owned_and_controlled_by = SIL
+				always = no                     
 			}
 		}
 
@@ -11723,7 +11706,7 @@ country_event = {
 					state = 762
 					state = 74
 				}
-				is_owned_and_controlled_by = SIL
+				always = no                     
 			}
 		}
 
@@ -12615,7 +12598,7 @@ country_event = {
 		}
 		random_state = {
 			limit = {
-				is_core_of = SER
+				always = no     
 				OR = {
 					is_controlled_by = ROOT
 					any_country = {
@@ -12662,7 +12645,7 @@ country_event = {
 
 		random_state = {
 			limit = {
-				is_core_of = SER
+				always = no     
 				OR = {
 					is_controlled_by = ROOT
 					any_country = {
@@ -18751,7 +18734,7 @@ news_event = {
 			NOT = {
 				OR = {
 					original_tag = GER
-					original_tag = SIL
+					always = no       
 					original_tag = POL
 				}
 			}
@@ -18773,7 +18756,7 @@ news_event = {
 		ai_chance = {
 			base = 100
 		}
-		trigger = { original_tag = SIL }
+		trigger = { always = no        }
 	}
 
 	# Let's hope they succeed this time (for Poland)

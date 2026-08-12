@@ -384,7 +384,7 @@ country_event = {
 					has_variable = equipment_amount_for_support_@FROM
 				}
 			}
-			modifier = { tag = SIK  add = 1 }
+			modifier = { always = no  add = 1 }
 		}
 		add_to_variable = { step_increase_from_opinion_ideology_@FROM = increase_from_amount_times_asked_for_support_by_@FROM }
 		set_temp_variable = { temp_extra_PP_amount = step_increase_from_opinion_ideology_@FROM }
@@ -417,7 +417,7 @@ country_event = {
 					has_variable = PP_amount_for_support_@FROM
 				}
 			}
-			modifier = { tag = GXC  add = 1 }
+			modifier = { always = no  add = 1 }
 		}
 		add_to_variable = { step_increase_from_opinion_ideology_@FROM = increase_from_amount_times_asked_for_support_by_@FROM }
 		
@@ -452,7 +452,7 @@ country_event = {
 					has_variable = PP_amount_for_support_@FROM
 				}
 			}
-			modifier = { tag = XSM  add = 1 }
+			modifier = { always = no  add = 1 }
 		}
 
 		add_to_variable = { step_increase_from_opinion_ideology_@FROM = increase_from_amount_times_asked_for_support_by_@FROM }
@@ -656,7 +656,7 @@ country_event = {
 				save_event_target_as = new_leader
 				if = {
 					limit = {
-						not = { has_completed_focus = PRC_social_democracy_focus } # PRC branch to political struggle
+						not = { always = no                                      } # PRC branch to political struggle
 					}
 					CHI_negative_spirit_transfer = yes
 				}

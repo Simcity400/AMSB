@@ -1245,12 +1245,12 @@ country_event = {
 				has_dlc = "By Blood Alone"
 				ETH_is_in_exile = yes
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 					NOT = { is_owned_by = ROOT }
 				}
 			}
 			any_owned_state = {
-				is_core_of = ETH
+				always = no     
 				NOT = { state = 908 } #Exclude Afar
 				compliance < 70 #WARNING THIS VALUE NEEDS TO MATCH THE ONE IN DECISION GOAL
 			}
@@ -3126,23 +3126,12 @@ unit_leader_event = {
 		#Ruler joins Italy as General
 		if = {
 			limit = {
-				country_exists = ETH
+				always = no         
 			}
 			hidden_effect = {
 				FROM = { retire_character = ITA_haile_selassie_gugsa_doppleganger }
 			}
-			ETH = {
-				ETH_haile_selassie_gugsa = {
-					demote_leader = yes
-					if = {
-						limit = {
-							is_advisor = yes
-						}
-						remove_any_country_role_from_character = yes
-					}
-					set_nationality = ITA
-				}
-			}
+			
 		}
 		else = {
 			show_unit_leaders_tooltip = ITA_haile_selassie_gugsa_doppleganger
@@ -3152,7 +3141,7 @@ unit_leader_event = {
 					array = global.countries
 					if = {
 						limit = {
-							original_tag = ETH
+							always = no       
 							has_character = ETH_haile_selassie_gugsa
 						}
 						ETH_haile_selassie_gugsa = {
@@ -3243,7 +3232,7 @@ unit_leader_event = {
 		puppet = ORO
 		if = {
 			limit = {
-				country_exists = ETH
+				always = no         
 			}
 		}
 		else = {
@@ -3386,7 +3375,7 @@ unit_leader_event = {
 		
 		every_controlled_state = { #Reduce resistance in all future states affected by the event chain (Somali cores in ETH are excluded)
 			limit = {
-				is_core_of = ETH
+				always = no     
 				is_fully_controlled_by = ITA
 				NOT = { state = 835 } #HARARGHE
 				NOT = { state = 836 } #BALE
@@ -3450,23 +3439,12 @@ unit_leader_event = {
 		#Ruler joins Italy as General
 		if = {
 			limit = {
-				country_exists = ETH
+				always = no         
 			}
 			hidden_effect = {
 				FROM = { retire_character = ITA_abba_jofir_doppleganger }
 			}
-			ETH = {
-				ETH_abba_jofir = {
-					demote_leader = yes
-					if = {
-						limit = {
-							is_advisor = yes
-						}
-						remove_any_country_role_from_character = yes
-					}
-					set_nationality = ITA
-				}
-			}
+			
 		}
 		else = {
 			show_unit_leaders_tooltip = ITA_abba_jofir_doppleganger
@@ -3478,7 +3456,7 @@ unit_leader_event = {
 
 					if = {
 						limit = {
-							original_tag = ETH
+							always = no       
 							has_character = ETH_abba_jofir
 						}
 						ETH_abba_jofir = {
@@ -3557,7 +3535,7 @@ unit_leader_event = {
 		puppet = GBA
 		if = {
 			limit = {
-				country_exists = ETH
+				always = no         
 			}
 		}
 		else = {
@@ -3674,7 +3652,7 @@ unit_leader_event = {
 		
 		every_controlled_state = { #Reduce resistance in all future states affected by the event chain (Somali cores in ETH are excluded)
 			limit = {
-				is_core_of = ETH
+				always = no     
 				is_fully_controlled_by = ITA
 				NOT = { state = 835 } #HARARGHE
 				NOT = { state = 836 } #BALE
@@ -3740,23 +3718,12 @@ unit_leader_event = {
 		#Ruler joins Italy as General
 		if = {
 			limit = {
-				country_exists = ETH
+				always = no         
 			}
 			hidden_effect = {
 				FROM = { retire_character = ITA_hailu_tekle_haymanot_doppleganger }
 			}
-			ETH = {
-				ETH_hailu_tekle_haymanot = {
-					demote_leader = yes
-					if = {
-						limit = {
-							is_advisor = yes
-						}
-						remove_any_country_role_from_character = yes
-					}
-					set_nationality = ITA
-				}
-			}
+			
 		}
 		else = {
 			show_unit_leaders_tooltip = ITA_hailu_tekle_haymanot_doppleganger
@@ -3767,7 +3734,7 @@ unit_leader_event = {
 
 					if = {
 						limit = {
-							original_tag = ETH
+							always = no       
 							has_character = ETH_hailu_tekle_haymanot
 						}
 						ETH_hailu_tekle_haymanot = {
@@ -3833,7 +3800,7 @@ unit_leader_event = {
 		puppet = BEG
 		if = {
 			limit = {
-				country_exists = ETH
+				always = no         
 			}
 		}
 		else = {
@@ -3924,7 +3891,7 @@ unit_leader_event = {
 		
 		every_controlled_state = { #Reduce resistance in all future states affected by the event chain (Somali cores in ETH are excluded)
 			limit = {
-				is_core_of = ETH
+				always = no     
 				is_fully_controlled_by = ITA
 				NOT = { state = 835 } #HARARGHE
 				NOT = { state = 836 } #BALE
@@ -3992,23 +3959,13 @@ unit_leader_event = {
 		#Ruler joins Italy as General
 		if = {
 			limit = {
-				country_exists = ETH
+				always = no         
 			}
 			log = "ETH exists"
 			hidden_effect = {
 				FROM = { retire_character = ITA_seyoum_mengesha_doppleganger }
 			}
-			ETH = {
-				ETH_seyoum_mengesha = {
-					if = {
-						limit = {
-							is_advisor = yes
-						}
-						remove_any_country_role_from_character = yes
-					}
-					set_nationality = ITA
-				}
-			}
+			
 		}
 		else = {
 			log = "ETH is gone"
@@ -4020,7 +3977,7 @@ unit_leader_event = {
 
 					if = {
 						limit = {
-							original_tag = ETH
+							always = no       
 							has_character = ETH_seyoum_mengesha
 						}
 						ETH_seyoum_mengesha = {
@@ -4077,7 +4034,7 @@ unit_leader_event = {
 		puppet = TIG
 		if = {
 			limit = {
-				country_exists = ETH
+				always = no         
 			}
 		}
 		else = {
@@ -4167,7 +4124,7 @@ country_event = {
 			factor = 0.5
 			date > 1940.06.01
 			any_controlled_state = {
-				is_core_of = LBA
+				always = no     
 				any_neighbor_state = {
 					controller = { has_war_with = ROOT }
 				}
@@ -7354,7 +7311,7 @@ country_event = {
 		}
 
 		trigger = {
-			has_war_with = ETH
+			always = no       
 		}
 
 
@@ -7362,12 +7319,7 @@ country_event = {
 		effect_tooltip = {
 			if = {
 				limit = {
-					ETH = {
-						OR = {
-							is_ai = no
-							surrender_progress < 0.5
-						}
-					}
+					
 				}
 				white_peace = FROM
 			}
@@ -7387,7 +7339,7 @@ country_event = {
 		}
 
 		trigger = {
-			has_war_with = ETH
+			always = no       
 		}
 
 		custom_effect_tooltip = BBA_italy_anti_colonialism_events_war_will_continue_tt
@@ -7401,12 +7353,12 @@ country_event = {
 			base = 1
 			modifier = {
 				factor = 0
-				ETH = { is_ai = no }
+				
 			}
 		}
 
 		trigger = {
-			ETH = { is_subject_of = ROOT }
+			
 		}
 		
 
@@ -7427,12 +7379,12 @@ country_event = {
 			base = 1
 			modifier = {
 				factor = 0
-				ETH = { is_ai = no }
+				
 			}
 		}
 
 		trigger = {
-			ETH = { is_subject_of = ROOT }
+			
 		}
 		
 
@@ -7449,7 +7401,7 @@ country_event = {
 		}
 
 		trigger = {
-			ETH = { is_subject_of = ROOT }
+			
 		}
 	}
 
@@ -7461,13 +7413,13 @@ country_event = {
 			base = 1
 			modifier = {
 				factor = 0
-				ETH = { is_ai = no }
+				
 			}
 		}
 
 		trigger = {
-			NOT = { has_war_with = ETH }
-			NOT = { ETH = { is_subject_of = ROOT } }
+			NOT = { always = no        }
+			NOT = {  }
 		}
 		
 
@@ -7494,8 +7446,8 @@ country_event = {
 		}
 		
 		trigger = {
-			NOT = { has_war_with = ETH }
-			NOT = { ETH = { is_subject_of = ROOT } }
+			NOT = { always = no        }
+			NOT = {  }
 		}
 		
 
@@ -7508,7 +7460,7 @@ country_event = {
 			}
 
 			give_guarantee = ETH
-			ETH = { give_guarantee = ROOT }
+			
 		}
 	}
 
@@ -7521,8 +7473,8 @@ country_event = {
 		}
 		
 		trigger = {
-			NOT = { has_war_with = ETH }
-			NOT = { ETH = { is_subject_of = ROOT } }
+			NOT = { always = no        }
+			NOT = {  }
 		}
 		
 	}
@@ -7717,7 +7669,7 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 0.1
-				ETH = { is_ai = no }
+				
 			}
 		}
 
@@ -10166,7 +10118,7 @@ country_event = {
 			limit = {#Checks if ENG is hosting exiled ETH or if an ally does
 				ITA_hosting_exiled_ethiopia = yes
 				ITA = { #ITA must be at war with ETH
-					has_war_with = ETH
+					always = no       
 				}
 			}
 			ENG = {
@@ -10664,13 +10616,11 @@ country_event = {
 
 		if = {
 			limit = {
-				ETH = {
-					has_country_flag = ETH_refused_forced_peace_flag
-				}
+				
 			}
 			if = {
 				limit = {
-					ETH = { is_in_faction_with = ENG }
+					
 				}
 				effect_tooltip = {
 				}
@@ -10793,13 +10743,11 @@ country_event = {
 
 		if = {
 			limit = {
-				ETH = {
-					has_country_flag = ETH_refused_forced_peace_flag
-				}
+				
 			}
 			if = {
 				limit = {
-					ETH = { is_in_faction_with = ENG }
+					
 				}
 				effect_tooltip = {
 				}

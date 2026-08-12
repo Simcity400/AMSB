@@ -57,21 +57,9 @@ country_event = {
 			}
 			IF = {
 				limit = {
-					MAN = {
-						is_subject_of = ROOT
-						NOT = {
-							has_completed_focus = MAN_assertiveness
-							has_completed_focus = MAN_tsr_assertiveness
-						}
-					}
+					
 				}
-				MAN = {
-					add_to_war = {
-					    targeted_alliance = ROOT
-					    enemy = CHI
-					    hostility_reason = asked_to_join
-					}
-				}
+				
 			}
 			IF = {
 				limit = {
@@ -224,7 +212,7 @@ country_event = {
 				1039 = {
 					is_controlled_by = FROM
 				}
-				has_subject = MEN
+				always = no      
 			}
 			
 		}
@@ -234,7 +222,7 @@ country_event = {
 					is_controlled_by = FROM
 				}
 				NOT = {
-					has_subject = MEN
+					always = no      
 				}
 			}
 			transfer_state = 1039
@@ -478,7 +466,7 @@ country_event = {
 			714 = { 
 				OR = {
 					is_owned_by = JAP
-					is_owned_by = MAN
+					always = no      
 				} 
 				any_neighbor_state = { is_owned_by = SOV } }
 			} 
@@ -490,7 +478,7 @@ country_event = {
 					714 = {
 						OR = {
 							is_owned_by = JAP
-							is_owned_by = MAN
+							always = no      
 						}
 						any_neighbor_state = { is_owned_by = SOV } 
 					}
@@ -531,7 +519,7 @@ country_event = {
 			714 = { 
 				OR = {
 					is_owned_by = JAP
-					is_owned_by = MAN						
+					always = no      						
 				}
 				any_neighbor_state = { is_owned_by = SOV } }
 			} 
@@ -543,7 +531,7 @@ country_event = {
 					714 = {
 						OR = {
 							is_owned_by = JAP							
-							is_owned_by = MAN						
+							always = no      						
 						}
 						any_neighbor_state = { is_owned_by = SOV } 
 					}

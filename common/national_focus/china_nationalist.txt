@@ -10,7 +10,7 @@
 		}
 		modifier = {
 			add = 10
-			tag = RNG
+			always = no
 			has_dlc = "Waking the Tiger"
 		}
 	}
@@ -683,7 +683,7 @@
 						has_character = CHI_kwong_jiang
 					}
 					NOT = {
-						original_tag = RNG
+						always = no       
 					}
 				}
 
@@ -696,7 +696,7 @@
 			IF = {
 				limit = {
 					NOT = {
-						original_tag = RNG
+						always = no       
 					}
 				}
 				custom_effect_tooltip = available_political_advisor
@@ -786,8 +786,8 @@
 			factor = 1
 			modifier = {
 				AND = {
-					MAN = {	exists = no }
-					PRC = { exists = no }
+					
+					
 				}
 				factor = 0
 			}
@@ -835,7 +835,7 @@
 		}
 
 		bypass = {
-			is_in_faction_with = PRC
+			always = no             
 		}
 
 		cancel_if_invalid = yes
@@ -882,7 +882,7 @@
 		bypass = {
 			OR = {
 				has_war_with = JAP
-				has_war_with = MAN
+				always = no       
 			}
 		}
 
@@ -897,12 +897,7 @@
 		completion_reward = {
 			if = {
 				limit = {
-					MAN = {
-						OR = {
-							is_in_faction_with = JAP
-							is_puppet_of = JAP
-						}
-					}
+					
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -942,13 +937,13 @@
 			NOT = { has_government = communism }
 			any_country = {
 				OR = {
-					tag = YUN
-					tag = SIK
-					tag = GXC
-					tag = SHX
-					tag = XSM
-					tag = TIB
-					tag = PRC
+					always = no
+					always = no
+					always = no
+					always = no
+					always = no
+					always = no
+					always = no
 				}
 				has_government = communism
 			}
@@ -956,17 +951,17 @@
 
 		bypass = {
 			OR = {
-				is_in_faction_with = PRC
+				always = no             
 				NOT = { 
 					any_country = {
 						OR = {
-							tag = YUN
-							tag = SIK
-							tag = GXC
-							tag = SHX
-							tag = XSM
-							tag = TIB
-							tag = PRC
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
+							always = no
 						}
 						has_government = communism
 					}
@@ -985,9 +980,7 @@
 		completion_reward = {
 			if = {		
 				limit = {
-					SIK = {
-						has_government = communism
-					}
+					
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -997,9 +990,7 @@
 			}
 			if = {		
 				limit = {
-					TIB = {
-						has_government = communism
-					}
+					
 				}
 				create_wargoal = {
 					type = annex_everything
@@ -1009,9 +1000,7 @@
 			}
 			if = {
 				limit = {
-					PRC = {
-						has_government = communism
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -1023,9 +1012,7 @@
 			}
 			if = {
 				limit = {
-					YUN = {
-						has_government = communism
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -1037,9 +1024,7 @@
 			}
 			if = {
 				limit = {
-					SHX = {
-						has_government = communism
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -1051,9 +1036,7 @@
 			}
 			if = {
 				limit = {
-					GXC = {
-						has_government = communism
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -1065,9 +1048,7 @@
 			}
 			if = {
 				limit = {
-					XSM = {
-						has_government = communism
-					}
+					
 				}
 				ROOT = {
 					create_wargoal = {
@@ -1099,41 +1080,11 @@
 		}
 
 		bypass = {
-			GXC = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-					has_war_with = ROOT
-				}
-			}
-			YUN = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-					has_war_with = ROOT
-				}
-			}
-			SHX = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-					has_war_with = ROOT
-				}
-			}
-			XSM = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-					has_war_with = ROOT
-				}
-			}
-			SIK = {
-				OR = {
-					exists = no
-					is_subject_of = ROOT
-					has_war_with = ROOT
-				}
-			}
+			
+			
+			
+			
+			
 		}
 
 		cancel_if_invalid = yes
@@ -1149,11 +1100,11 @@
 			every_other_country = {
 				limit = {
 					OR = {
-						tag = GXC
-						tag = YUN
-						tag = SHX
-						tag = XSM
-						tag = SIK
+						always = no
+						always = no
+						always = no
+						always = no
+						always = no
 					}
 				}
 				country_event = { id = wtt_china.1 }
@@ -1320,7 +1271,7 @@
 		available = {
 			OR = {
 				has_war_with = JAP
-				has_war_with = MAN
+				always = no       
 			}
 			has_country_flag = CHI_lessons_of_war_completed
 		}
@@ -2205,7 +2156,7 @@
 						has_character = CHI_t_v_soong
 					}
 					NOT = {
-						original_tag = RNG
+						always = no       
 					}
 				}
 				CHI = {
@@ -2217,7 +2168,7 @@
 			IF = {
 				limit = {
 					NOT = {
-						original_tag = RNG
+						always = no       
 					}
 				}
 				custom_effect_tooltip = available_political_advisor

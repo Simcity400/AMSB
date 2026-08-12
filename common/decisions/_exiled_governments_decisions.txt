@@ -127,7 +127,7 @@ governments_in_exile = {
 		remove_effect = {
 			IF = {
 				limit = {
-					tag = ETH
+					always = no
 				}
 				country_event = {
 					id = BBA_ethiopia_exile_events.53
@@ -351,10 +351,7 @@ governments_in_exile = {
 		#}
 		complete_effect = {
 			FROM = {
-				add_timed_idea = {
-					idea = ETH_purge_ideology_boost_idea
-					days = 30
-				}
+				
 			}			
 		}
 

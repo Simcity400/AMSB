@@ -16,11 +16,11 @@ FRA_renault_organization = {
 		OR = {
 			tag = FRA 
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -29,9 +29,9 @@ FRA_renault_organization = {
 	visible = {
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			FROM = { always = no                                             }
 		}
 	}
 
@@ -46,7 +46,7 @@ FRA_renault_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -56,7 +56,7 @@ FRA_renault_organization = {
 			}
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -205,7 +205,7 @@ FRA_acf_organization = {
 		OR = {
 			tag = FRA
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -218,7 +218,7 @@ FRA_acf_organization = {
 			FROM = { NOT = { has_war_with = FRA } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -256,11 +256,11 @@ FRA_bloch_organization = {
 		OR = {
 			tag = FRA 
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -269,9 +269,9 @@ FRA_bloch_organization = {
 	visible = {
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			FROM = { always = no                                             }
 		}
 	}
 	
@@ -286,7 +286,7 @@ FRA_bloch_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -296,7 +296,7 @@ FRA_bloch_organization = {
 			}
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -408,7 +408,7 @@ FRA_mas_organization = {
 		OR = {
 			tag = FRA 
 			AND = {
-				tag = ETH
+				always = no
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -417,9 +417,9 @@ FRA_mas_organization = {
 	visible = {
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			FROM = { always = no                                             }
 		}
 	}
 
@@ -434,7 +434,7 @@ FRA_mas_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt

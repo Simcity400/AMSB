@@ -7,7 +7,7 @@ ETH_italian_occupation_category = { # TODO_TA Update for BBA
 	
 	allowed = {
 		OR = {
-			tag = ETH
+			always = no
 			original_tag = ITA
 		}
 	}
@@ -24,23 +24,13 @@ ETH_italian_occupation_category = { # TODO_TA Update for BBA
 
 	visible = {
 		OR = {
-			ETH = {
-				is_government_in_exile = yes
-				any_owned_state = {
-					is_controlled_by = ITA
-				}
-			}
+			
 			AND = {
 				original_tag = ITA
 				any_controlled_state = {
 					has_state_flag = ITA_can_electrify_state_flag #This is the only decision available if ETH is gone.
 				}
-				ETH = {
-					OR = {
-						has_capitulated = yes
-						exists = no
-					}
-				}
+				
 			}
 		}
 		OR = { #ITA needs to complete focus Triumph in Africa for these decs to show up
@@ -59,7 +49,7 @@ ETH_second_italo_ethiopian_war_category = {
 	allowed = {
 		OR = {
 			AND = {
-				original_tag = ETH
+				always = no       
 				has_dlc = "By Blood Alone"
 			}
 			original_tag = ITA
@@ -72,7 +62,7 @@ ETH_second_italo_ethiopian_war_category = {
 
 	visible = {
 		has_global_flag = second_italo_ethiopian_war_flag
-		country_exists = ETH
+		always = no         
 	}
 	visible_when_empty = no
 }

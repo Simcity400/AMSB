@@ -234,7 +234,7 @@ country_event = { #Ethiopa is told about Czech 'Observers'
 		name = MUN_czech_bop.3.a
 		trigger = {
 			NOT = {
-				has_completed_focus = ETH_arms_purchases
+				always = no                             
 			}
 		}
 		add_political_power = -5
@@ -285,15 +285,13 @@ country_event = { #Ethiopa is cool with us smuggling in some guns
 		name = MUN_czech_bop.4.a
 		trigger = {
 			NOT = {
-				has_completed_focus = ETH_arms_purchases
+				always = no                             
 			}
 		}
 		ai_chance = {
 			base = 1
 			modifier = {
-				ETH = {
-					is_ai = no
-				}
+				
 				add = 10
 			}
 		}
@@ -409,9 +407,7 @@ country_event = { #Ethiopa is cool with us smuggling in some guns
 		ai_chance = {
 			base = 1
 			modifier = {
-				ETH = {
-					is_ai = yes
-				}
+				
 				add = 10
 			}
 		}
@@ -443,8 +439,8 @@ country_event = { #Triggers MUN_czech.2
 			original_tag = GER
 			original_tag = AUS
 			original_tag = BAY
-			original_tag = SIL
-			original_tag = PRE
+			always = no       
+			always = no       
 			original_tag = THU
 			original_tag = HAN
 			original_tag = SHL
@@ -1266,10 +1262,10 @@ country_event = {
 		every_subject_country = {
 			limit = {
 				OR = {
-					original_tag = SLV
-					original_tag = CRO
-					original_tag = BOS
-					original_tag = HRZ
+					always = no       
+					always = no       
+					always = no       
+					always = no       
 					has_cosmetic_tag = vojvodina
 				}
 			}
@@ -1489,10 +1485,8 @@ country_event = {	#puppet Hungary, but they get expanded
 			puppet = ROOT
 			if = {
 				limit = {
-					has_subject = CRO
-					CRO = {
-						is_ai = yes
-					}
+					always = no      
+					
 				}
 				ROOT = {
 					annex_country = {
@@ -1504,11 +1498,7 @@ country_event = {	#puppet Hungary, but they get expanded
 			set_variable = { global.CZE_origin_event = 1007 }
 			country_event = MUN_czech.1048
 		}
-		CRO = {
-			every_core_state = {
-				add_core_of = ROOT
-			}
-		}
+		
 
 	}
 
@@ -3836,27 +3826,7 @@ country_event = { #CZE asks to enter exile
 					add_claim_by = RKH
 					add_compliance = 25
 				}
-				RKH = {
-					add_manpower = 50000
-					add_equipment_to_stockpile = { 
-						type = infantry_equipment
-						amount = 5000
-						producer = GER
-					}	
-					add_equipment_to_stockpile = { 
-						type = support_equipment
-						amount = 500
-						producer = GER
-					}	
-					inherit_technology = GER
-					add_offsite_building = { type = arms_factory level = 2 }
-					load_oob = "RK_OOB"
-					declare_war_on = {
-						target = FROM
-						type = annex_everything
-					}
-					add_timed_idea = { idea = CZE_adminstrative_chaos months = 4 }
-				}
+				
 				every_possible_country = {
 					limit = {
 						has_country_flag = CZE_exile_committee
@@ -3893,7 +3863,7 @@ country_event = { #CZE asks to enter exile
 			hidden_effect = {
 				if = {
 					limit = {
-						has_cosmetic_tag = RKH
+						always = no           
 					}
 					drop_cosmetic_tag = yes
 				}
@@ -3994,7 +3964,7 @@ country_event = {
 				limit = {
 					73 = {
 						NOT = {
-							is_core_of = SLO
+							always = no     
 						}
 					}
 				}
@@ -4041,7 +4011,7 @@ country_event = {
 					limit = {
 						73 = {
 							NOT = {
-								is_core_of = SLO
+								always = no     
 							}
 						}
 					}
@@ -4057,7 +4027,7 @@ country_event = {
 					limit = {
 						73 = {
 							NOT = {
-								is_core_of = SLO
+								always = no     
 							}
 						}
 					}
@@ -4115,7 +4085,7 @@ country_event = {
 					limit = {
 						73 = {
 							NOT = {
-								is_core_of = SLO
+								always = no     
 							}
 						}
 					}
@@ -4131,7 +4101,7 @@ country_event = {
 					limit = {
 						73 = {
 							NOT = {
-								is_core_of = SLO
+								always = no     
 							}
 						}
 					}
@@ -4146,9 +4116,7 @@ country_event = {
 				}
 			}
 		}
-		SLO = {
-			change_tag_from = ROOT 
-		}
+		
 		if = {
 			limit = {
 				GER = {
@@ -5662,9 +5630,7 @@ country_event = { #Now Ruthenian wants out
 		}
 		if = {
 			limit = {
-				RUT = {
-					exists = no
-				}
+				
 				73 = {
 					is_fully_controlled_by = ROOT
 				}
@@ -5716,9 +5682,7 @@ country_event = { #Now Ruthenian wants out
 		}
 		if = {
 			limit = {
-				RUT = {
-					exists = no
-				}
+				
 				73 = {
 					is_fully_controlled_by = ROOT
 				}
@@ -5735,7 +5699,7 @@ country_event = { #Now Ruthenian wants out
 				}
 				every_state = {
 					limit = {
-						is_core_of = UKR
+						always = no     
 						NOT = {
 							OR = {
 								state = 73
@@ -5749,7 +5713,7 @@ country_event = { #Now Ruthenian wants out
 			}
 			hidden_effect = {
 			}
-			RUT = { change_tag_from = ROOT }
+			
 		}
 	}
 
@@ -5793,7 +5757,7 @@ country_event = { #For FROM, time to go after RUT
 		random_country = {
 			limit = {
 				owns_state = 73
-				original_tag = RUT
+				always = no       
 			}
 			country_event = {
 				id = MUN_the_fall_of_the_republic.5
@@ -6042,15 +6006,7 @@ country_event = { #Exile event for when Czech dies, more sanity checks are on ev
 				}
 				if = {
 					limit = {
-						SLO = {
-							OR = {
-								exists = no
-								is_subject_of = GER
-								is_subject_of = CZE
-								is_subject_of = FRA
-								has_government = fascism
-							}
-						}
+						
 					}
 					every_possible_country = {
 						limit = {
@@ -6488,7 +6444,7 @@ news_event = { #Hungary delcares War on Ruthenia
 			NOT = {
 				OR = {
 					original_tag = HUN
-					original_tag = RUT
+					always = no       
 				}
 			}
 		}
@@ -6498,14 +6454,14 @@ news_event = { #Hungary delcares War on Ruthenia
 		name = MUN_czech.news.2.b
 		trigger = {
 			original_tag = HUN
-			NOT = {	original_tag = RUT }
+			NOT = {	always = no        }
 		}
 	}
 
 	option = { #RUT
 		name = MUN_czech.news.2.c
 		trigger = {
-			original_tag = RUT
+			always = no       
 			NOT = {	original_tag = HUN }
 		}
 	}

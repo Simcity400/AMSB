@@ -168,60 +168,9 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 			add_manpower = 30000
-			ANG = {
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 796 }
-					}
-					transfer_state = 796
-					POR = { set_country_flag = POR_released_angola_flag }
-				}
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 540 }
-					}
-					transfer_state = 540
-					POR = { set_country_flag = POR_released_angola_flag }
-				}
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 891 }
-					}
-					transfer_state = 891
-					POR = { set_country_flag = POR_released_angola_flag }
-				}	
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 892 }
-					}
-					transfer_state = 892
-					POR = { set_country_flag = POR_released_angola_flag }
-				}							
-			}
+			
 
-			MZB = {
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 544 }
-					}
-					transfer_state = 544
-					POR = { set_country_flag = POR_released_mozambique_flag }
-				}	
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 896 }
-					}
-					transfer_state = 896
-					POR = { set_country_flag = POR_released_mozambique_flag }
-				}
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 897 }
-					}
-					transfer_state = 897
-					POR = { set_country_flag = POR_released_mozambique_flag }
-				}
-			}
+			
 
 			if = {
 				limit = {
@@ -3585,16 +3534,16 @@ focus_tree = {
 			has_global_flag = scw_over
 			has_government = communism
 			OR = {
-				country_exists = BRA country_exists = MEX
-				country_exists = COL country_exists = ARG
+				always = no          country_exists = MEX
+				country_exists = COL always = no         
 				country_exists = PRU country_exists = VEN
-				country_exists = CHL country_exists = GUA
-				country_exists = ECU country_exists = CUB
-				country_exists = BOL country_exists = HAI
+				always = no          country_exists = GUA
+				always = no          country_exists = CUB
+				always = no          country_exists = HAI
 				country_exists = DOM country_exists = HON
-				country_exists = PAR country_exists = ELS
+				always = no          country_exists = ELS
 				country_exists = NIC country_exists = COS
-				country_exists = PAN country_exists = URG
+				country_exists = PAN always = no         
 			}				
 		}
 
@@ -6026,7 +5975,7 @@ focus_tree = {
 	focus = {
 		id = POR_recover_brazil
 
-		will_lead_to_war_with = BRA
+
 
 		select_effect = {
 			random_country = {
@@ -6458,13 +6407,7 @@ focus_tree = {
 		}
 
 		bypass = {
-			BRA = { 
-				OR = { 
-					exists = no
-					has_capitulated = yes 
-					has_completed_focus = BRA_romanticize_the_old_empire
-				}
-			}
+			
 		}
 		prerequisite = { focus = POR_the_return_of_duarte }
 		icon = GFX_focus_por_reclaim_crown_jewel
@@ -6507,9 +6450,7 @@ focus_tree = {
 				}
 				is_subject = no
 				NOT = {
-					BRA = {
-						has_country_flag = BRA_rejected_monarchism
-					}
+					
 				}
 			}
 			ELSE = {
@@ -6518,13 +6459,7 @@ focus_tree = {
 		}
 
 		bypass = {
-			BRA = { 
-				OR = { 
-					exists = no
-					has_capitulated = yes 
-					has_completed_focus = BRA_romanticize_the_old_empire
-				}
-			}
+			
 		}
 		prerequisite = { focus = POR_monarchist_uprising_in_brazil }
 		icon = GFX_focus_generic_home_defense
@@ -6536,18 +6471,7 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					BRA = {
-						OR = {
-							has_country_flag = POR_brazil_supports_fascist_coalition_flag
-							AND = {
-								NOT = { has_government = neutrality }
-								OR = {
-									has_stability < 0.5
-									neutrality < 0.7
-								}
-							}
-						}
-					}
+					
 				}
 			}
 			else = {
@@ -6557,7 +6481,7 @@ focus_tree = {
 			hidden_effect = {
 				every_country = {
 					limit = {
-						original_tag = BRA
+						always = no       
 						has_government = neutrality
 					}
 					add_ai_strategy = {
@@ -6638,24 +6562,20 @@ focus_tree = {
 		available = {
 			has_government = neutrality
 			NOT = {
-				is_subject_of = BRA
+				always = no        
 			}
 			OR = {
 				AND = {
-					country_exists = BRA
-					BRA = {
-						has_government = neutrality
-						has_civil_war = no
-						NOT = { has_war_with = ROOT }
-					}
+					always = no         
+					
 					NOT = {
 						any_enemy_country = {
-							is_in_faction_with = BRA
+							always = no             
 						}
 					}
 				}
 				AND = {
-					NOT = { country_exists = BRA }
+					NOT = { always = no          }
 					owns_state = 500
 				}
 			}
@@ -6680,7 +6600,7 @@ focus_tree = {
 			add_ideas = POR_the_portuguese_empire
 			if = {
 				limit = {
-					country_exists = BRA
+					always = no         
 				}
 			}
 			set_rule = { can_create_factions = yes }
@@ -6839,9 +6759,9 @@ focus_tree = {
 	focus = {
 		id = POR_latin_america
 
-		will_lead_to_war_with = PAR
-		will_lead_to_war_with = URG
-		will_lead_to_war_with = ARG
+
+
+
 
 		select_effect = {
 			random_country = {

@@ -556,7 +556,7 @@ country_event = {
 			factor = 60
 			modifier = {
 				factor = 0.3
-				original_tag = SLO
+				always = no       
 			}
 			modifier = {
 				strength_ratio = { tag = HUN ratio < 1 }
@@ -582,7 +582,7 @@ country_event = {
 			factor = 40
 			modifier = {
 				factor = 1.5
-				original_tag = SLO
+				always = no       
 			}
 			modifier = {
 				strength_ratio = { tag = HUN ratio > 1 }
@@ -625,7 +625,7 @@ country_event = {
 
 		every_state = {
 			limit = {
-				is_core_of = SLO
+				always = no     
 				is_owned_and_controlled_by = FROM
 			}
 			transfer_state_to = ROOT
@@ -1094,11 +1094,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				RUT = {
-					exists = yes
-					is_subject_of = FROM
-					owns_state = 73
-				}
+				
 			}
 			add_ai_strategy = {
 				type = declare_war
@@ -1490,9 +1486,9 @@ country_event = {
 					original_tag = ROM
 					original_tag = YUG
 					original_tag = CZE
-					original_tag = SLO
-					original_tag = TRA
-					original_tag = SER
+					always = no       
+					always = no       
+					always = no       
 				}
 			}
 			create_wargoal = {
@@ -3250,7 +3246,7 @@ country_event = {
 					state = 804
 				}
 				NOT = {
-					is_core_of = CRO
+					always = no     
 				}
 			}
 			add_core_of = CRO
@@ -3268,9 +3264,9 @@ country_event = {
 				NOT = {
 					is_core_of = ROOT
 				}
-				is_core_of = CRO
+				always = no     
 				NOT = {
-					is_owned_and_controlled_by = CRO
+					always = no                     
 				}
 			}
 			transfer_state_to = CRO
@@ -3279,11 +3275,7 @@ country_event = {
 
 		IF = {
 			limit = {
-				CRO = {
-					NOT = {
-						is_subject_of = ROOT
-					}
-				}
+				
 			}
 			puppet = CRO 
 		}
@@ -3418,11 +3410,7 @@ country_event = {
 
 		IF = {
 			limit = {
-				LBV = {
-					NOT = {
-						is_subject_of = ROOT
-					}
-				}
+				
 			}
 			puppet = LBV 
 		}
@@ -3480,7 +3468,7 @@ country_event = {
 			factor = 60
 			modifier = {
 				factor = 0.3
-				original_tag = SIL
+				always = no       
 			}
 			modifier = {
 				factor = 0.2
@@ -3510,7 +3498,7 @@ country_event = {
 			factor = 40
 			modifier = {
 				factor = 1.5
-				original_tag = SIL
+				always = no       
 			}
 			modifier = {
 				strength_ratio = { tag = HUN ratio > 1 }
@@ -3559,7 +3547,7 @@ country_event = {
 			}
 			every_state = {
 				limit = {
-					is_core_of = SIL
+					always = no     
 					is_owned_and_controlled_by = FROM
 				}
 				transfer_state_to = CZE
@@ -3567,7 +3555,7 @@ country_event = {
 			ELSE = {
 				every_state = {
 					limit = {
-						is_core_of = SIL
+						always = no     
 						is_owned_and_controlled_by = FROM
 					}
 					transfer_state_to = ROOT
@@ -3638,7 +3626,7 @@ country_event = {
 			factor = 60
 			modifier = {
 				factor = 0.3
-				original_tag = PAL
+				always = no       
 			}
 			modifier = {
 				factor = 0.2
@@ -3668,7 +3656,7 @@ country_event = {
 			factor = 40
 			modifier = {
 				factor = 1.5
-				original_tag = PAL
+				always = no       
 			}
 			modifier = {
 				factor = 1.5
@@ -5043,7 +5031,7 @@ country_event = {
 			factor = 60
 			modifier = {
 				factor = 0.3
-				original_tag = SLO
+				always = no       
 			}
 			modifier = {
 				strength_ratio = { tag = HUN ratio < 1 }
@@ -5108,9 +5096,9 @@ country_event = {
 
 		every_state = {
 			limit = {
-				is_core_of = SLO
+				always = no     
 				OR = {
-					is_owned_and_controlled_by = SLO
+					always = no                     
 					is_owned_and_controlled_by = FROM
 				}
 			}
@@ -5263,26 +5251,10 @@ country_event = {
 		hidden_effect = {
 			IF = {
 				limit = {
-					TRA = {
-						capital_scope = {
-							NOT = {
-								is_in_array = {
-									array = AUS.expansion_targets
-									value = THIS
-								}
-							}
-						}
-					}
+					
 				}
 
-				TRA = {
-					capital_scope = {
-						add_to_array = {
-							array = AUS.expansion_targets
-							value = TRA
-						}
-					}
-				}
+				
 			}
 		}
 
@@ -5492,7 +5464,7 @@ country_event = {
 			factor = 60
 			modifier = {
 				factor = 0.5
-				original_tag = CRO
+				always = no       
 			}
 			modifier = {
 				strength_ratio = { tag = HUN ratio < 1 }
@@ -5522,7 +5494,7 @@ country_event = {
 			factor = 40
 			modifier = {
 				factor = 1.5
-				original_tag = CRO
+				always = no       
 			}
 			modifier = {
 				strength_ratio = { tag = HUN ratio > 1 }
@@ -5584,11 +5556,9 @@ country_event = {
 			limit = {
 				OR = {
 					FROM = {
-						original_tag = CRO
+						always = no       
 					}
-					CRO = {
-						exists = no
-					}
+					
 				}
 			}
 

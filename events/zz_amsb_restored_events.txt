@@ -25,8 +25,8 @@ country_event = {
 		name = SEA_PRC_misc_events.13.a
 		trigger = {
 			any_controlled_state = {
-				is_core_of = PRC
-				is_core_of = MAN
+				always = no     
+				always = no     
 				is_fully_controlled_by = ROOT
 				NOT = {
 					is_core_of = ROOT
@@ -72,8 +72,8 @@ country_event = {
 				factor = 0.5
 				NOT = { is_in_faction_with = FROM }
 				any_controlled_state = {
-					is_core_of = PRC
-					is_core_of = MAN
+					always = no     
+					always = no     
 					is_fully_controlled_by = ROOT
 					any_country_with_core = {
 						is_in_faction_with = ROOT
@@ -89,8 +89,8 @@ country_event = {
 		effect_tooltip = {
 			every_controlled_state = {
 				limit = {
-					is_core_of = PRC
-					is_core_of = MAN
+					always = no     
+					always = no     
 					is_fully_controlled_by = ROOT
 					NOT = {
 						is_core_of = ROOT
@@ -120,9 +120,9 @@ country_event = {
 		name = SEA_PRC_misc_events.13.b
 		trigger = {
 			any_controlled_state = {
-				is_core_of = PRC
-				is_core_of = MON
-				is_core_of = TAN
+				always = no     
+				always = no     
+				always = no     
 				NOT = {
 					is_core_of = ROOT
 				}
@@ -167,10 +167,10 @@ country_event = {
 				factor = 0.5
 				NOT = { is_in_faction_with = FROM }
 				any_controlled_state = {
-					is_core_of = PRC
-					is_core_of = MON
-					is_core_of = TAN
-					is_core_of = MEN
+					always = no     
+					always = no     
+					always = no     
+					always = no     
 					any_country_with_core = {
 						is_in_faction_with = ROOT
 					}
@@ -184,10 +184,10 @@ country_event = {
 		effect_tooltip = {
 			every_controlled_state = {
 				limit = {
-					is_core_of = PRC
-					is_core_of = MON
-					is_core_of = TAN
-					is_core_of = MEN
+					always = no     
+					always = no     
+					always = no     
+					always = no     
 					NOT = {
 						is_core_of = ROOT
 					}
@@ -215,7 +215,7 @@ country_event = {
 		name = SEA_PRC_misc_events.13.c
 		trigger = {
 			any_controlled_state = {
-				is_core_of = PRC
+				always = no     
 				is_fully_controlled_by = ROOT
 				NOT = {
 					is_core_of = ROOT
@@ -261,7 +261,7 @@ country_event = {
 				factor = 0.5
 				NOT = { is_in_faction_with = FROM }
 				any_controlled_state = {
-					is_core_of = PRC
+					always = no     
 					is_fully_controlled_by = ROOT
 					NOT = {
 						is_core_of = ROOT
@@ -280,7 +280,7 @@ country_event = {
 		effect_tooltip = {
 			every_controlled_state = {
 				limit = {
-					is_core_of = PRC
+					always = no     
 					NOT = {
 						is_core_of = ROOT
 					}
@@ -396,7 +396,7 @@ country_event = {
 
 		every_core_state = {
 			limit = {
-				is_core_of = MAN
+				always = no     
 				is_fully_controlled_by = FROM
 				NOT = {
 					is_core_of = FROM
@@ -438,9 +438,9 @@ country_event = { #PRC gets Mongolian states
 		every_core_state = {
 			limit = {
 				is_fully_controlled_by = FROM
-				is_core_of = MON
-				is_core_of = TAN
-				is_core_of = MEN
+				always = no     
+				always = no     
+				always = no     
 				NOT = {
 					is_core_of = FROM
 				}
@@ -715,7 +715,7 @@ country_event = {
 		name = SEA_PRC_misc_events.18.d
 		trigger = {
 			any_controlled_state = {
-				is_core_of = PRC
+				always = no     
 				is_fully_controlled_by = ROOT
 				NOT = {
 					is_core_of = ROOT
@@ -753,7 +753,7 @@ country_event = {
 				factor = 0.5
 				NOT = { is_in_faction_with = FROM }
 				any_controlled_state = {
-					is_core_of = PRC
+					always = no     
 					is_fully_controlled_by = ROOT
 					NOT = {
 						is_core_of = ROOT
@@ -772,7 +772,7 @@ country_event = {
 		effect_tooltip = {
 			every_controlled_state = {
 				limit = {
-					is_core_of = PRC
+					always = no     
 					NOT = {
 						is_core_of = ROOT
 					}
@@ -950,7 +950,7 @@ country_event = {
 		every_state = {
 			limit = {
 				is_fully_controlled_by = FROM
-				is_core_of = PRC 
+				always = no      
 				NOT = {
 					is_core_of = FROM
 				}
@@ -1185,7 +1185,7 @@ country_event = {
 
 	trigger = {
 		original_tag = SAF
-		has_completed_focus = SAF_support_the_german_coup
+		always = no                                      
 		has_government = fascism
 		has_civil_war = yes
 		OR = {
@@ -2021,7 +2021,7 @@ news_event = {
 		trigger = {
 			NOT = {
 				OR = {
-					original_tag = COG
+					always = no       
 					original_tag = BEL
 				}
 			}
@@ -2034,7 +2034,7 @@ news_event = {
 		ai_chance = {
 			base = 100
 		}
-		trigger = { original_tag = COG }
+		trigger = { always = no        }
 	}
 
 	# Perhaps it was for the best... (for BEL)
@@ -2054,7 +2054,7 @@ country_event = {
 	picture = GFX_report_event_portugal_navy_mutiny_prisoners
 
 	trigger = {
-		original_tag = COG
+		always = no       
 		
 		date > 1943.12.25
 
@@ -2067,7 +2067,7 @@ country_event = {
 		is_subject = yes
 
 		NOT = {
-			has_completed_focus = COG_establish_the_anc
+			always = no                                
 		}
 
 		has_dlc = "Gotterdammerung"
@@ -2296,7 +2296,7 @@ country_event = {
 		trigger = {
 			OR = {
 				has_completed_focus = CONGO_soviet_interest
-				has_completed_focus = COG_make_use_of_the_british_proposal
+				always = no                                               
 			}
 		}
 		ai_chance = { 
@@ -2908,7 +2908,7 @@ country_event = {
 			IF = {
 				limit = {
 					has_global_flag = KAT_uprising_in_congolese_independence_war_flag
-					KAT = { exists = yes }
+					
 				}
 				889 = {
 					transfer_state_to = KAT
@@ -3486,7 +3486,7 @@ country_event = {
 			IF = {
 				limit = {
 					has_global_flag = KAT_uprising_in_congolese_independence_war_flag
-					KAT = { exists = yes }
+					
 				}
 				889 = {
 					transfer_state_to = KAT
@@ -3764,7 +3764,7 @@ country_event = {
 		IF = {
 			limit = {
 				ROOT = {
-					has_completed_focus = COG_make_use_of_the_british_proposal
+					always = no                                               
 				}
 				ENG = {
 					NOT = {
@@ -3932,7 +3932,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		HBC = { exists = yes }
+		
 	}
 	
 	immediate = {
@@ -3944,7 +3944,7 @@ country_event = {
 			base = 80
 			modifier = {
 				factor = 0
-				HBC = { is_ai = no }
+				
 			}
 		}
 		name = SEA_warlords.69.a
@@ -3954,37 +3954,17 @@ country_event = {
 			transfer_troops = yes
 		}
 
-		HBC = {
-
-			IF = {
-				limit = {
-					has_character = CHI_song_zheyuan
-				}
-				CHI_song_zheyuan = {
-					set_nationality = ROOT
-				}
-			}
-
-			IF = {
-				limit = {
-					has_character = CHI_wan_fulin
-				}
-				CHI_wan_fulin = {
-					set_nationality = ROOT
-				}
-			}
-
-		}
+		
 
 		CHI = {
 			IF = {
 				limit = {
-					HBC = { is_subject_of = CHI }
+					
 				}
 				add_faction_influence_ratio = 0.05
 				IF = {
 					limit = {
-						HBC = { has_autonomy_state = autonomy_sea_integrated_warlord_subject }
+						
 					}
 					add_faction_influence_ratio = 0.1
 				}
@@ -3999,7 +3979,7 @@ country_event = {
 			base = 20
 			modifier = {
 				factor = 0
-				HBC = { is_ai = yes }
+				
 				is_historical_focus_on = yes
 			}
 		}

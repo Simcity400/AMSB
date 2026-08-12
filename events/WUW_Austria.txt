@@ -4544,12 +4544,12 @@ country_event = { #FROM integrates
 							ROM = { has_country_flag = is_current_expansion_target_for_AUS_flag }
 						} 
 						AND = {
-							original_tag = TRA
+							always = no       
 							has_country_flag = is_current_expansion_target_for_AUS_flag
 						}
 						AND = {
-							has_subject = TRA
-							TRA = { has_country_flag = is_current_expansion_target_for_AUS_flag }
+							always = no      
+							
 						}
 					}
 					
@@ -4581,7 +4581,7 @@ country_event = { #FROM integrates
 			}
 
 			ELSE_IF = {
-				limit = { TRA = { has_country_flag = is_current_expansion_target_for_AUS_flag }}
+				limit = { }
 			}
 		}
 

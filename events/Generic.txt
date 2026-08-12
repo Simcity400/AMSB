@@ -262,15 +262,11 @@ country_event = {
 					original_tag = SOV
 				}
 				FROM = {
-					original_tag = SIK
+					always = no       
 					always = no # AMSB: focus not present in this mod (SIK_reaffirm_soviet_connections)
 				}
 			}
-			SIK = {
-				every_enemy_country = {
-					white_peace = SIK
-				}
-			}
+			
 		}
 		hidden_effect = {
 			set_country_flag = alliance_inviter@ROOT
@@ -1065,7 +1061,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				FROM = { original_tag = JAP }
-				original_tag = ETH 
+				always = no        
 			}
 
 			modifier = {

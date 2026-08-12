@@ -142,8 +142,8 @@ country_event = {
 				SAF = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
 				RAJ = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
 				AST = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
-				NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
-				BRM = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+				
+				
 			}
 			dismantle_faction = yes
 		}
@@ -219,7 +219,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+					
 				}
 				set_autonomy = { target = NZL autonomy_state = autonomy_free }
 			}
@@ -247,7 +247,7 @@ country_event = {
 					}
 					if = {
 						limit = {
-							NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+							
 						}
 						add_to_faction = NZL
 					}
@@ -271,7 +271,7 @@ country_event = {
 					}
 					if = {
 						limit = {
-							NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+							
 						}
 						add_to_faction = NZL
 					}
@@ -289,7 +289,7 @@ country_event = {
 					}
 					if = {
 						limit = {
-							NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+							
 						}
 						add_to_faction = NZL
 					}
@@ -356,13 +356,13 @@ country_event = {
 			}
 			if = {
 				limit = {
-					NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+					
 				}
 			}
 
 			if = {
 				limit = {
-					BRM = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+					
 				}
 			}
 		}
@@ -945,7 +945,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+					
 				}
 				add_to_faction = NZL
 			}
@@ -954,7 +954,7 @@ country_event = {
 					limit = {
 						NOT = { tag = SAF }
 						NOT = { tag = AST }
-						NOT = { tag = NZL }
+						NOT = { always = no }
 					}
 					ROOT = {
 						add_ai_strategy = {
@@ -984,14 +984,14 @@ country_event = {
 				}
 				if = {
 					limit = {
-						NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+						
 					}
 					add_to_faction = NZL
 				}
 				hidden_effect = {
 					every_other_country = {
 						limit = {
-							NOT = { tag = NZL }
+							NOT = { always = no }
 						}
 						ROOT = {
 							add_ai_strategy = {
@@ -1007,7 +1007,7 @@ country_event = {
 
 		if = {
 			limit = {
-				tag = BRM
+				always = no
 			}
 			FROM = { set_autonomy = { target = BRM autonomy_state = autonomy_free } }
 			drop_cosmetic_tag = yes
@@ -1023,14 +1023,14 @@ country_event = {
 				}
 				if = {
 					limit = {
-						NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+						
 					}
 					add_to_faction = NZL
 				}
 				hidden_effect = {
 					every_other_country = {
 						limit = {
-							NOT = { tag = NZL }
+							NOT = { always = no }
 						}
 						ROOT = {
 							add_ai_strategy = {
@@ -1094,7 +1094,7 @@ country_event = {
 				}
 				if = {
 					limit = {
-						NZL = { has_country_flag = ENG_abdication_crisis_dominion_will_leave }
+						
 					}
 					add_to_faction = NZL
 				}
@@ -1102,7 +1102,7 @@ country_event = {
 					every_other_country = {
 						limit = {
 							NOT = { tag = SAF }
-							NOT = { tag = NZL }
+							NOT = { always = no }
 						}
 						ROOT = {
 							add_ai_strategy = {
@@ -1117,7 +1117,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = NZL
+				always = no
 			}
 			FROM = { set_autonomy = { target = NZL autonomy_state = autonomy_free } }
 		}
@@ -1160,7 +1160,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = NZL
+				always = no
 			}
 			effect_tooltip = {
 				add_stability = 0.05
@@ -1326,7 +1326,7 @@ country_event = {
 			}	
 			if = {
 				limit = {
-					tag = PAK
+					always = no
 					NOT = { is_subject = no }
 					NOT = { has_autonomy_state = autonomy_dominion }
 					has_dlc = "Together for Victory"
@@ -1337,7 +1337,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					tag = BAN
+					always = no
 					NOT = { is_subject = no }
 					NOT = { has_autonomy_state = autonomy_dominion }
 					has_dlc = "Together for Victory"
@@ -2024,7 +2024,7 @@ country_event = {
 						limit = {
 							NOT = { tag = SAF }
 							NOT = { tag = AST }
-							NOT = { tag = NZL }
+							NOT = { always = no }
 						}
 						CAN = {
 							add_ai_strategy = {
@@ -2575,7 +2575,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NOT = { original_tag = LBA }
+				NOT = { always = no        }
 				owns_state = 448
 				has_full_control_of_state = 448
 				owns_state = 661
@@ -2597,15 +2597,13 @@ country_event = {
 		}
 		if = {
 			limit = {
-				LBA = {
-					is_subject_of = ROOT
-				}
+				
 			}
 			set_autonomy = { target = LBA autonomy_state = autonomy_free }
 		}
 		if = {
 			limit = {
-				NOT = { original_tag = ETH }
+				NOT = { always = no        }
 				owns_state = 271
 				has_full_control_of_state = 271
 			}
@@ -2613,15 +2611,13 @@ country_event = {
 		}
 		if = {
 			limit = {
-				ETH = {
-					is_subject_of = ROOT
-				}
+				
 			}
 			set_autonomy = { target = ETH autonomy_state = autonomy_free }
 		}
 		if = {
 			limit = {
-				NOT = { original_tag = KOR }
+				NOT = { always = no        }
 				owns_state = 527
 				has_full_control_of_state = 527
 				owns_state = 525
@@ -2631,17 +2627,13 @@ country_event = {
 		}
 		if = {
 			limit = {
-				KOR = {
-					is_subject_of = ROOT
-				}
+				
 			}
 			set_autonomy = { target = KOR autonomy_state = autonomy_free }
 		}
 		if = {
 			limit = {
-				MAN = {
-					is_subject_of = ROOT
-				}
+				
 			}
 			set_autonomy = { target = MAN autonomy_state = autonomy_free }
 		}
@@ -3801,7 +3793,7 @@ country_event = {
 			tag = SAF
 			tag = RAJ
 			tag = AST
-			tag = NZL
+			always = no
 		}
 		NOT = {
 			has_government = ENG ## Make sure you're not communist / fascist too
@@ -4130,7 +4122,7 @@ country_event = {
 
 	trigger = {
 		tag = RAJ
-		NOT = { country_exists = PAK }
+		NOT = { always = no          }
 		NOT = { has_country_flag = RAJ_civil_war }
 		NOT = {
 			OR = {
@@ -4171,12 +4163,7 @@ country_event = {
 	option = {
 		name = mtg_britain.73.a
 
-		PAK = {
-			declare_war_on = {
-				target = ROOT
-				type = annex_everything
-			}
-		}
+		
 		hidden_effect = {
 			hidden_effect = {
 				division_template = {
@@ -4342,12 +4329,12 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty2
 
 	trigger = {
-		has_war_with = PAK
+		always = no       
 	}
 
 	trigger = {
 		tag = RAJ
-		has_war_with = PAK
+		always = no       
 		has_country_flag = RAJ_pakistani_civil_war_flag
 	}
 	
@@ -4379,7 +4366,7 @@ country_event = {
 		every_country = {
 			limit = {
 				is_in_faction_with = RAJ
-				has_war_with = PAK
+				always = no       
 			}
 			white_peace = PAK
 		}
@@ -4418,7 +4405,7 @@ country_event = {
 			every_country = {
 				limit = {
 					is_in_faction_with = RAJ
-					has_war_with = PAK
+					always = no       
 				}
 				white_peace = PAK
 			}
@@ -4445,8 +4432,8 @@ country_event = {
 	picture = GFX_report_event_ger_civil_war
 
 	trigger = {
-		tag = PAK
-		NOT = { country_exists = BAN }
+		always = no
+		NOT = { always = no          }
 		NOT = { has_country_flag = PAK_civil_war }
 		NOT = { ENG = { always = no } }
 		is_subject = no
@@ -4465,89 +4452,7 @@ country_event = {
 		set_country_flag = PAK_civil_war
 
 		hidden_effect = {
-			BAN = {
-				division_template = {
-					name = "Bangladeshi Liberation Army"
-					priority = 1
-					division_names_group = RAJ_INF_01
-					is_locked = yes
-					regiments = {
-						infantry = { x = 0 y = 0 }
-						infantry = { x = 0 y = 1 }
-						infantry = { x = 0 y = 2 }
-						infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-						infantry = { x = 1 y = 2 }
-					}
-				}
-				# East Bengal (Bangladesh)
-				430 = {
-					create_unit = {
-						division = "name = \"1. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"2. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"3. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"4. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"5. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"6. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"7. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"8. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"9. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"10. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"11. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"12. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"13. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"14. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-					create_unit = {
-						division = "name = \"15. Bangladeshi Liberation Army\" division_template = \"Bangladeshi Liberation Army\" start_experience_factor = 0.5" 
-						owner = BAN
-					}
-				}
-				declare_war_on = {
-					target = ROOT
-					type = annex_everything
-				}
-			}
+			
 			hidden_effect = { country_event = { id = mtg_britain.77 days = 270 random_days = 95 } }
 		}
 	}
@@ -4570,7 +4475,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty2
 
 	trigger = {
-		has_war_with = BAN
+		always = no       
 	}
 
 	is_triggered_only = yes
@@ -4750,7 +4655,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -4808,7 +4713,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -4843,7 +4748,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -4877,7 +4782,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5086,7 +4991,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5121,7 +5026,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5155,7 +5060,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5342,7 +5247,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5377,7 +5282,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5411,7 +5316,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5620,7 +5525,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5655,7 +5560,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5689,7 +5594,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5878,7 +5783,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5913,7 +5818,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -5947,7 +5852,7 @@ country_event = {
 					}
 					AND = {
 						is_subject_of = ENG
-						tag = NZL
+						always = no
 					}
 				}
 			}
@@ -6117,7 +6022,7 @@ country_event = {
 							tag = SAF
 							tag = RAJ
 							tag = AST
-							tag = NZL
+							always = no
 						}
 						has_country_flag = ENG_rejected_federation
 					}
@@ -6138,7 +6043,7 @@ country_event = {
 							tag = CAN
 							tag = SAF
 							tag = AST
-							tag = NZL
+							always = no
 						}
 						has_country_flag = ENG_rejected_federation
 					}
@@ -6154,7 +6059,7 @@ country_event = {
 						tag = CAN
 						tag = SAF
 						tag = AST
-						tag = NZL
+						always = no
 					}
 					has_country_flag = ENG_rejected_federation
 				}
@@ -6209,7 +6114,7 @@ country_event = {
 							tag = CAN
 							tag = SAF
 							tag = AST
-							tag = NZL
+							always = no
 						}
 						has_country_flag = ENG_rejected_federation
 					}
@@ -6225,7 +6130,7 @@ country_event = {
 						tag = CAN
 						tag = SAF
 						tag = AST
-						tag = NZL
+						always = no
 					}
 					has_country_flag = ENG_rejected_federation
 				}
@@ -6278,11 +6183,11 @@ country_event = {
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = NZL
+							always = no
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = MAL
+							always = no
 						}
 					}
 				}
@@ -6311,11 +6216,11 @@ country_event = {
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = NZL
+							always = no
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = MAL
+							always = no
 						}
 					}
 				}
@@ -6365,11 +6270,11 @@ country_event = {
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = NZL
+							always = no
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = MAL
+							always = no
 						}
 					}
 				}
@@ -6394,11 +6299,11 @@ country_event = {
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = NZL
+							always = no
 						}
 						AND = {
 							is_subject_of = ENG
-							tag = MAL
+							always = no
 						}
 					}
 				}

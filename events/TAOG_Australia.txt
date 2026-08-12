@@ -548,13 +548,13 @@ country_event = { #NZL: Choice to become Australian
 			}
 			hidden_effect = {
 				AST = { country_event = { id = AST_diplomatic_events.14 days = 7 } }
-				NZL = { country_event = { id = AST_diplomatic_events.14 days = 6 } }
+				
 			}
 
 			ELSE = { #Referendum fail
 				hidden_effect = {
 					AST = { country_event = { id = AST_diplomatic_events.15 days = 7 } }
-					NZL = { country_event = { id = AST_diplomatic_events.15 days = 7 } }
+					
 				}
 			}
 		}
@@ -1063,9 +1063,7 @@ country_event = { #ENG: Choice to create a pacific commonwealth under Australian
 
 		IF = {	
 			limit = { 
-				MAL = {
-					is_puppet_of = ENG
-				}
+				
 			}
 			AST = {
 				set_country_flag = AST_canberra_rule_mal
@@ -1075,9 +1073,7 @@ country_event = { #ENG: Choice to create a pacific commonwealth under Australian
 
 		IF = {	
 			limit = { 
-				BRM = { 
-					is_puppet_of = ENG	
-				}
+				
 			}
 			AST = {
 				set_country_flag = AST_canberra_rule_brm
@@ -1631,14 +1627,9 @@ country_event = { #JAP agreed to divide Pacific territories
 			IF = { #Only for tooltip
 			    limit = {
 			        OR = {
-			            BRM = { 
-			            	OR = {
-			            		is_subject_of = AST 
-			            		has_country_flag = AST_brm_puppet_to_jap
-			            	}
-			            }
+			            
 			            any_state = {
-			                is_core_of = BRM
+			                always = no     
 			                OR = {
 				                is_controlled_by = AST
 				                has_state_flag = AST_transfer_to_jap
@@ -1669,9 +1660,7 @@ country_event = { #JAP agreed to divide Pacific territories
 
 			IF = {
 				limit = {
-					BRM = { 
-						has_country_flag = AST_brm_puppet_to_jap
-					}
+					
 				}
 				JAP = {
 					puppet = BRM
@@ -3541,7 +3530,7 @@ country_event = { # Revolution breaks out in Malaya, communist forces need a mai
 			limit = {
 				has_country_flag = AST_instigated_communist_civil_war
 				has_government = communism
-				any_owned_state = { is_core_of = MAL }
+				any_owned_state = { always = no      }
 			}
 			save_global_event_target_as = AST_malaya_cw_communist_country
 		}

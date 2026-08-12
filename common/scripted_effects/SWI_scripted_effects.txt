@@ -835,7 +835,7 @@ SWI_check_if_angry = {
 				set_variable = { SWI_angriest_country = SWI_country_to_evaluate }
 				if = {
 					limit = {
-						has_active_mission = SWI_country_angry_mission
+						always = no                                   
 					}
 				}
 			}
@@ -1886,7 +1886,7 @@ SWI_outgoing_president_cleanup = {
 			set_character_flag = SWI_former_confederation_president
 		}
 		if = {
-			limit = { has_active_mission = SWI_recently_finished_president_initiative_mission }
+			limit = { always = no                                                             }
 		}
 		if = {
 			limit = { has_country_flag = SWI_president_gave_MR_speech }
@@ -2733,7 +2733,7 @@ SWI_create_david_frankfurter_operative = {
 			bypass_recruitment = yes 
 			available_to_spy_master = yes
 			female = no
-			nationalities = { CRO YUG GER ISR }
+			nationalities = { YUG GER ISR }
 		}
 	}
 }

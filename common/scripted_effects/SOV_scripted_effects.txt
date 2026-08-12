@@ -7317,7 +7317,7 @@ SOV_initiate_civil_war = {
 			limit = {
 				SOV_is_exiles = yes 
 			}
-			MAN = { give_military_access = SOP }
+			
 		}
 
 
@@ -8363,12 +8363,7 @@ SOV_exiles_civil_war_start = {
 		limit = {
 			always = no
 		}
-		MAN = {
-			country_event = {
-				id = NSB_Soviet_fascist_civil_war.004 # transfer Semyonov from MAN to SOV
-				days = 0
-			}
-		}
+		
 	}
 	IF = {
 		limit = {
@@ -8519,22 +8514,12 @@ SOV_exiles_civil_war_start = {
 	# Fyodor Konovalov
 	IF = {
 		limit = {
-			ETH = {
-				OR = {
-					exists = no
-					has_capitulated = yes
-					has_country_flag = ETH_selassie_left_flag
-				}
-			}
+			
 		}
 
 		set_country_flag = ETH_feodor_konovalov_went_to_rejoin_the_russian_whites_flag
 
-		ETH = {
-			ETH_feodor_konovalov = {
-				set_nationality = SOV
-			}
-		}
+		
 
 	}
 

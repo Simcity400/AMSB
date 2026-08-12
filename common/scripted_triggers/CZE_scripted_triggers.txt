@@ -138,9 +138,7 @@ CZE_has_a_skoda_naval_focus_focus = {
 }
 
 CZE_SLO_is_not_its_own_thing = { #An exists check but extra safe
-    SLO = {
-        exists = no
-    }
+    
     hidden_trigger = {
         any_country_with_original_tag = {
             original_tag_to_check = SLO
@@ -153,7 +151,7 @@ CZE_SLO_is_not_its_own_thing = { #An exists check but extra safe
                     num_of_controlled_states > 0
                     NOT = {
                         any_core_state = {
-                            is_controlled_by = SLO 
+                            always = no            
                         }
                     }
                 }
@@ -164,9 +162,7 @@ CZE_SLO_is_not_its_own_thing = { #An exists check but extra safe
 }
 
 CZE_RUT_is_not_its_own_thing = { #An exists check but extra safe
-    RUT = {
-        exists = no
-    }
+    
     hidden_trigger = {
         any_country_with_original_tag = {
             original_tag_to_check = RUT
@@ -179,7 +175,7 @@ CZE_RUT_is_not_its_own_thing = { #An exists check but extra safe
                     num_of_controlled_states > 0
                     NOT = {
                         any_core_state = {
-                            is_controlled_by = SLO 
+                            always = no            
                         }
                     }
                 }

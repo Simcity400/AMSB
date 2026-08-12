@@ -8262,10 +8262,10 @@ focus = {
 				
 		bypass = {
 			NOT = {
-				country_exists = IRQ
+				always = no         
 				country_exists = PER
-				country_exists = AFG
-				country_exists = SAU
+				always = no         
+				always = no         
 			}
 		}
 
@@ -8278,7 +8278,7 @@ focus = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = IRQ
+					always = no         
 				}
 				
 			}
@@ -8306,13 +8306,13 @@ focus = {
 			}
 			if = {
 				limit = {
-					country_exists = AFG
+					always = no         
 				}
 				
 			}
 			if = {
 				limit = {
-					country_exists = SAU
+					always = no         
 				}
 				
 			}
@@ -9133,7 +9133,6 @@ focus = {
 			
 			hidden_effect = {
 				219 = {
-				add_dynamic_modifier = { modifier = SOV_defend_city }
 				add_building_construction = {
 					type = bunker
 					level = 2
@@ -9332,7 +9331,6 @@ focus = {
 			
 			hidden_effect = {
 				217 = {
-				add_dynamic_modifier = { modifier = SOV_defend_city }
 				add_building_construction = {
 					type = bunker
 					level = 5
@@ -9524,7 +9522,6 @@ focus = {
 			
 			hidden_effect = {
 					195 = {
-				add_dynamic_modifier = { modifier = SOV_defend_city }
 				add_building_construction = {
 					type = bunker
 					level = 3
@@ -9944,7 +9941,7 @@ focus = {
 					every_state = {
 						limit = {	
 							AND = {
-								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = EFR is_controlled_by = YUG is_controlled_by = JAP is_controlled_by = MAN is_controlled_by = SIA} }
+								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = EFR is_controlled_by = YUG is_controlled_by = JAP always = no            is_controlled_by = SIA} }
 								is_controlled_by = SOV
 								NOT = {	state = 262 }
 								NOT = {	state = 825 }
@@ -10068,7 +10065,7 @@ focus = {
 					every_state = {
 						limit = {	
 							AND = {
-								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = EFR is_controlled_by = YUG is_controlled_by = JAP is_controlled_by = MAN is_controlled_by = SIA} }
+								any_neighbor_state = { OR = { is_controlled_by = GER is_controlled_by = ROM is_controlled_by = HUN is_controlled_by = FIN is_controlled_by = ITA is_controlled_by = BUL  is_controlled_by = SPR is_controlled_by = EFR is_controlled_by = YUG is_controlled_by = JAP always = no            is_controlled_by = SIA} }
 								is_controlled_by = SOV
 								NOT = {	state = 262 }
 								NOT = {	state = 825 }

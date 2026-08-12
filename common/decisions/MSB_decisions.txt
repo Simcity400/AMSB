@@ -354,9 +354,7 @@ operations = {
 				tag = JAP
 			}
 			available = {
-				MAN = {
-					is_ai = yes
-				}
+				
 			}
 			fire_only_once = yes
 			cost = 0
@@ -370,19 +368,7 @@ operations = {
 				MAN
 			}
 			complete_effect = {
-				MAN = {
-					transfer_units_fraction = {
-						target = JAP
-						size = 1
-						stockpile_ratio = 1
-						army_ratio = 1
-						navy_ratio = 1
-						air_ratio = 1
-						keep_unit_leaders_trigger = {
-							always = no
-						}
-					}
-				}
+				
 				JAP = {
 					annex_country = {
 						target = MAN
@@ -391,7 +377,7 @@ operations = {
 				}
 				every_state = {
 					limit = {
-						is_core_of = MAN
+						always = no     
 						is_controlled_by = JAP
 						has_resistance = yes
 					}
@@ -1088,7 +1074,7 @@ E_ll = {
 				original_tag = BUL
 				original_tag = FIN
 				original_tag = SPR
-				original_tag = IRQ
+				always = no       
 			}
 			NOT = { has_country_flag = sending_ll_to_ger }
 		}
@@ -1112,7 +1098,7 @@ E_ll = {
 				original_tag = BUL
 				original_tag = FIN
 				original_tag = SPR
-				original_tag = IRQ
+				always = no       
 			}
 			has_country_flag = sending_ll_to_ger
 		}
@@ -1133,7 +1119,7 @@ E_ll = {
 				original_tag = BUL
 				original_tag = FIN
 				original_tag = SPR
-				original_tag = IRQ
+				always = no       
 			} 
 		}
 		available = {
@@ -1167,7 +1153,7 @@ E_ll = {
 				original_tag = BUL
 				original_tag = FIN
 				original_tag = SPR
-				original_tag = IRQ
+				always = no       
 			} 
 		}
 		available = {

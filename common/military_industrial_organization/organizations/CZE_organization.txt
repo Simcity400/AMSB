@@ -15,9 +15,9 @@ CZE_ckd_organization = {
 	allowed = {	
 		OR = {
 			tag = CZE
-			tag = RKH
+			always = no
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -25,8 +25,8 @@ CZE_ckd_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 
@@ -41,7 +41,7 @@ CZE_ckd_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -126,7 +126,7 @@ CZE_tatra_organization = {
 	allowed = {
 		OR = {
 			tag = CZE
-			tag = RKH
+			always = no
 		}
 	}
 
@@ -166,9 +166,9 @@ CZE_skoda_armor_organization = {
 	allowed = {	
 		OR = {
 			tag = CZE
-			tag = SLO
+			always = no
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
@@ -185,8 +185,8 @@ CZE_skoda_armor_organization = {
 	
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 		IF = {
 			limit = { FROM = { original_tag = HUN } }
@@ -209,7 +209,7 @@ CZE_skoda_armor_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -301,7 +301,7 @@ CZE_skoda_plzen_tank_destroyer_organization = {
 		OR = {
 			tag = CZE
 			tag = AUS
-			tag = SLO
+			always = no
 		}
 		has_dlc = "Peace For Our Time"
 	}
@@ -505,7 +505,7 @@ CZE_skoda_shipyards_organization = {
 	allowed = { 
 		OR = {
 			tag = CZE
-			tag = RKH
+			always = no
 		}
 	}
 
@@ -537,7 +537,7 @@ CZE_avia_organization = {
 		OR = {
 			tag = CZE 
 			AND = {
-				tag = ETH
+				always = no
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -545,8 +545,8 @@ CZE_avia_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 
@@ -561,7 +561,7 @@ CZE_avia_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -658,7 +658,7 @@ CZE_ckd_praga_organization = {
 		OR = {
 			tag = CZE
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
@@ -819,7 +819,7 @@ CZE_aero_organization = {
 	allowed = {
 		OR = {
 			original_tag = CZE
-			tag = RKH
+			always = no
 		}
 	}
 
@@ -919,8 +919,8 @@ CZE_letov_organization = {
 	allowed = { 
 		OR = {
 			tag = CZE
-			tag = SLO
-			tag = RKH
+			always = no
+			always = no
 		}
 	}
 
@@ -1010,7 +1010,7 @@ CZE_benees_mraz_organization = {
 		has_dlc = "Peace For Our Time"
 		OR = {
 			tag = CZE
-			tag = RKH
+			always = no
 		}
 	}
 
@@ -1190,7 +1190,7 @@ CZE_avia_german_organization = {
 		has_dlc = "Peace For Our Time"
 		OR = {
 			original_tag = GER
-			tag = RKH
+			always = no
 		}
 	}
 
@@ -1334,10 +1334,10 @@ CZE_zbrojovka_brno_organization = {
 	allowed = {
 		OR = {
 			tag = CZE
-			tag = RKH
+			always = no
 			AND = {
 				has_dlc = "Peace For Our Time"
-				tag = ETH
+				always = no
 			}
 		}
 	}
@@ -1350,7 +1350,7 @@ CZE_zbrojovka_brno_organization = {
 			if = {
 				limit = {
 					FROM = {
-						original_tag = ETH
+						always = no       
 					}
 				}
 				FROM = {
@@ -1366,7 +1366,7 @@ CZE_zbrojovka_brno_organization = {
 			limit = {
 				FROM = {
 					has_global_flag = second_italo_ethiopian_war_flag
-					original_tag = ETH
+					always = no       
 				}
 			}
 			FROM = {
@@ -1393,7 +1393,7 @@ CZE_zbrojovka_brno_organization = {
 		
 		visible = {
 			FROM = { 
-				original_tag = ETH
+				always = no       
 				has_global_flag = second_italo_ethiopian_war_flag
 			}
 		}
@@ -1453,9 +1453,9 @@ CZE_ceska_zbrojovka_uhersky_brod_organization = {
 		has_dlc = "Peace For Our Time"
 		OR = {
 			tag = CZE
-			tag = SLO
+			always = no
 			tag = GER
-			tag = RKH
+			always = no
 		}
 	}
 
@@ -1464,7 +1464,7 @@ CZE_ceska_zbrojovka_uhersky_brod_organization = {
 			FROM = {
 				OR = {
 					original_tag = CZE
-					original_tag = SLO
+					always = no       
 				}
 				
 			}
@@ -1497,7 +1497,7 @@ CZE_ceska_zbrojovka_uhersky_brod_organization = {
 				FROM = {
 					OR = {
 						original_tag = GER
-						original_tag = SLO
+						always = no       
 					}
 				}
 			}
@@ -1632,10 +1632,10 @@ CZE_skoda_artillery_organization = {
 	allowed = {
 		OR = {
 			tag = CZE 
-			tag = SLO
-			tag = RKH
+			always = no
+			always = no
 			AND = {
-				tag = ETH
+				always = no
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -1643,8 +1643,8 @@ CZE_skoda_artillery_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 
@@ -1656,7 +1656,7 @@ CZE_skoda_artillery_organization = {
 					NOT = {
 						OR = {
 							original_tag = CZE 
-							original_tag = SLO
+							always = no       
 						}
 					} 
 				}
@@ -1666,7 +1666,7 @@ CZE_skoda_artillery_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -1784,7 +1784,7 @@ CZE_praga_organization = {
 	allowed = {
 		OR = {
 			tag = CZE
-			tag = RKH
+			always = no
 		}
 	}
 
@@ -1865,7 +1865,7 @@ CZE_ringhoffer_tatra_organization = {
 	allowed = {	
 		OR = {
 			tag = CZE
-			tag = RKH
+			always = no
 		}
 	}
 
@@ -1945,7 +1945,7 @@ CZE_zbrojovka_vsetin_organization = {
 		has_dlc = "Peace For Our Time"
 		OR = {
 			tag = CZE
-			tag = RKH
+			always = no
 		}
 	}
 

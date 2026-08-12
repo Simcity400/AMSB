@@ -24,7 +24,7 @@ ENG_vickers_armstrong_eng_organization = {
 				has_dlc = "Battle for the Bosporus"
 			}
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -32,8 +32,8 @@ ENG_vickers_armstrong_eng_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 	
@@ -50,7 +50,7 @@ ENG_vickers_armstrong_eng_organization = {
 			limit = { 
 				OR = { 
 					FROM = { original_tag = BUL }
-					FROM = { original_tag = ETH }
+					FROM = { always = no        }
 				}  
 			}
 			custom_trigger_tooltip = {
@@ -142,15 +142,15 @@ ENG_vauxhall_organization = {
 				has_dlc = "Battle for the Bosporus"
 			}
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
-				tag = BRA 
+				always = no 
 				has_dlc = "Trial of Allegiance"
 			}
 			AND = {
-				tag = IRQ 
+				always = no 
 				has_dlc = "Graveyard of Empires"
 			}
 		}
@@ -166,8 +166,8 @@ ENG_vauxhall_organization = {
 			}
 		}
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	
 	}
@@ -185,7 +185,7 @@ ENG_vauxhall_organization = {
 			limit = { 
 				OR = { 
 					FROM = { original_tag = BUL }
-					FROM = { original_tag = ETH }
+					FROM = { always = no        }
 				}  
 			}
 			custom_trigger_tooltip = {
@@ -207,7 +207,7 @@ ENG_vauxhall_organization = {
 			}
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -217,7 +217,7 @@ ENG_vauxhall_organization = {
 			}
 		}
 		IF = {
-			limit = { FROM = { original_tag = IRQ } }
+			limit = { FROM = { always = no        } }
 			FROM = {
 				OR = {
 					has_idea = IRQ_anglo_iraqi_treaty
@@ -304,7 +304,7 @@ ENG_cammell_laird_organization = {
 		OR = {
 			tag = ENG
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -318,7 +318,7 @@ ENG_cammell_laird_organization = {
 			FROM = { NOT = { has_war_with = ENG } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -430,7 +430,7 @@ ENG_john_brown_organization = {
 			}
 
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -438,8 +438,8 @@ ENG_john_brown_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 	
@@ -626,7 +626,7 @@ ENG_fairey_aviation_organization = {
 				has_dlc = "Battle for the Bosporus"
 			}
 			AND = {
-				tag = ETH
+				always = no
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -634,8 +634,8 @@ ENG_fairey_aviation_organization = {
 
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 	
@@ -667,7 +667,7 @@ ENG_fairey_aviation_organization = {
 		}
 		ELSE_IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -686,7 +686,7 @@ ENG_avro_organization = {
 		OR = {
 			tag = ENG
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -699,7 +699,7 @@ ENG_avro_organization = {
 			FROM = { NOT = { has_war_with = ENG } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -819,7 +819,7 @@ ENG_vauxhall_automotive_organization = {
 				has_dlc = "Battle for the Bosporus"
 			}
 			AND = {
-				tag = ETH 
+				always = no 
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -835,8 +835,8 @@ ENG_vauxhall_automotive_organization = {
 			}
 		}
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}	
 	}
 	
@@ -853,7 +853,7 @@ ENG_vauxhall_automotive_organization = {
 			limit = {
 				OR = { 
 					FROM = { original_tag = BUL }
-					FROM = { original_tag = ETH }
+					FROM = { always = no        }
 				}  
 			}
 			custom_trigger_tooltip = {
@@ -956,7 +956,7 @@ ENG_crossley_motors_organization = {
 				has_dlc = "No Step Back"
 			}
 			AND = {
-				tag = IRQ
+				always = no
 				has_dlc = "Graveyard of Empires"
 			}
 		}
@@ -999,7 +999,7 @@ ENG_crossley_motors_organization = {
 		}
 
 		IF = {
-			limit = { FROM = { original_tag = IRQ } }
+			limit = { FROM = { always = no        } }
 			FROM = {
 				OR = {
 					has_idea = IRQ_anglo_iraqi_treaty

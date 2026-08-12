@@ -45,7 +45,7 @@ AFG_economic_regionalism = { #STATE MODIFIER
 	state_resources_factor = AFG_state_development_state_resources_factor
 	state_production_speed_infrastructure_factor = AFG_state_production_speed_infrastructure_factor
 	remove_trigger = {
-		NOT = { OWNER = { original_tag = AFG } }
+		NOT = { OWNER = { always = no        } }
 	}
 }
 
@@ -55,7 +55,7 @@ AFG_electrification_modifier = {
 		ROOT = { 
 			NOT = {
 				OWNER = {
-					original_tag = AFG
+					always = no       
 				}
 			} # ROOT refers to the state on which the modifier is added
 		}
@@ -190,7 +190,7 @@ AFG_resistance_active_here = {
 AFG_disgruntled_minority = {
 	enable = { always = yes }
 	remove_trigger = {
-		NOT = { OWNER = { original_tag = AFG } }
+		NOT = { OWNER = { always = no        } }
 	}
 	icon = GFX_modifiers_generic_resistance
 	local_manpower = -0.4
@@ -655,7 +655,7 @@ KUR_resistance_modifier = {
 		ROOT = {
 			OWNER = {
 				OR = {
-					tag = KUR
+					always = no
 					has_cosmetic_tag = IRQ_kurdistan_tag
 					has_cosmetic_tag = greater_kurdistan
 				} 
@@ -677,7 +677,7 @@ IRQ_shia_resistance_modifier = {
 		ROOT = {
 			OWNER = {
 				NOT = {
-					original_tag = IRQ 
+					always = no        
 				} 
 			}
 		}
@@ -974,7 +974,7 @@ IRQ_navy_modifier_KUR = { #This is for the name only, no scripted loc for ideas
 
 IRQ_river_navy = { #STATE MODIFIER
 	remove_trigger = { 
-		IRQ = { has_capitulated = yes } 
+		 
 	}
 	icon = GFX_MODIFIER_NAVAL_INVASION_DIVISION_CAP
 	army_core_defence_factor = 0.1

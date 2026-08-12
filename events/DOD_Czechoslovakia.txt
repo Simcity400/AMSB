@@ -494,9 +494,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					RKH = {
-						exists = no #Hey, you never know
-					}
+					
 				}
 				CZE = {
 					set_cosmetic_tag = RKH
@@ -916,7 +914,7 @@ country_event = {
 			owns_state = 73
 			owns_state = 664
 		}
-		NOT = { has_war_with = SLO }
+		NOT = { always = no        }
 		NOT = { has_global_flag = CZE_became_czech }
 		NOT = {
 			AND = {
@@ -928,9 +926,7 @@ country_event = {
 					has_cosmetic_tag = CZE_CEF
 					has_cosmetic_tag = EUR_UNIFIED
 				}
-				SLO = {
-					is_subject_of = ROOT
-				}
+				
 			}
 		}
 	}

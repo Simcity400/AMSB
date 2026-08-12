@@ -82,7 +82,7 @@ JUNO_set_shared_military_branch_defaults = {
 JUNO_pick_navy_modifier_tt = {
 	IF = {
 		limit = {
-			original_tag = CHL
+			always = no       
 		}
 		custom_effect_tooltip = CHL_modify_chilean_navy_ns_intro
 	}
@@ -1001,7 +1001,7 @@ JUNO_create_rosita_serrano_operative = { #INITIAL
 		traits = { operative_linguist operative_seducer operative_well_groomed }
 		bypass_recruitment = no
 		available_to_spy_master = yes
-		nationalities = { CHL SPR GER }
+		nationalities = { SPR GER }
 	}
 }
 
@@ -1012,7 +1012,7 @@ JUNO_create_osmar_hellmuth_operative = { #INITIAL
 		traits = { operative_infiltrator operative_natural_orator operative_well_groomed }
 		bypass_recruitment = no
 		available_to_spy_master = yes
-		nationalities = { ARG GER }
+		nationalities = { GER }
 	}
 }
 
@@ -1024,10 +1024,10 @@ BRA_remove_economy_modifier = {
 			limit = {
 				has_dynamic_modifier = { modifier = BRA_undiversified_economy_modifier }
 				OR = {
-					has_completed_focus = BRA_war_production
+					always = no                             
 					AND = {
-						has_completed_focus = BRA_desenvolvimentismo
-						has_completed_focus = BRA_banco_do_brasil
+						always = no                                 
+						always = no                              
 					}
 				}
 			}
@@ -1037,9 +1037,9 @@ BRA_remove_economy_modifier = {
 	IF = {
 		limit = {
 			has_dynamic_modifier = { modifier = BRA_undiversified_economy_modifier }
-			has_completed_focus = BRA_war_production
-			has_completed_focus = BRA_desenvolvimentismo
-			has_completed_focus = BRA_banco_do_brasil
+			always = no                             
+			always = no                                 
+			always = no                              
 		}
 		remove_dynamic_modifier = { modifier = BRA_undiversified_economy_modifier }
 	}

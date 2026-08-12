@@ -758,7 +758,7 @@ BRA_neglected_state_dynamic_modifier = { #STATE MODIFIER
 	local_factories = BRA_state_development_local_factories
 	state_resources_factor = BRA_state_development_state_resources_factor
 	remove_trigger = {
-		NOT = { OWNER = { original_tag = BRA } }
+		NOT = { OWNER = { always = no        } }
 	}
 }
 
@@ -827,7 +827,7 @@ BRA_cangaceiro_state = {
 	state_production_speed_buildings_factor = -0.1
 	local_manpower = -0.2
 	remove_trigger = {
-		NOT = { OWNER = { original_tag = BRA } }
+		NOT = { OWNER = { always = no        } }
 	}
 }
 
@@ -865,7 +865,7 @@ JUNO_immigration_promoted = {
 
 idea_PAR_river_navy = { #STATE MODIFIER
 	remove_trigger = { 
-		PAR = { has_capitulated = yes } 
+		 
 
 	}
 	icon = GFX_MODIFIER_NAVAL_INVASION_DIVISION_CAP
@@ -879,7 +879,7 @@ idea_PAR_river_navy = { #STATE MODIFIER
 
 idea_URG_ruralism_good = { #STATE MODIFIER
 	remove_trigger = { 
-		URG = { has_capitulated = yes } 
+		 
 
 	}
 
@@ -893,7 +893,7 @@ idea_URG_ruralism_good = { #STATE MODIFIER
 
 idea_URG_ruralism_good_2 = { #STATE MODIFIER
 	remove_trigger = { 
-		URG = { has_capitulated = yes } 
+		 
 
 	}
 
@@ -907,7 +907,7 @@ idea_URG_ruralism_good_2 = { #STATE MODIFIER
 
 idea_URG_ruralism_bad = { #STATE MODIFIER
 	remove_trigger = { 
-		URG = { has_capitulated = yes } 
+		 
 
 	}
 	icon = BRA_neglected_state_dynamic_modifier
@@ -916,7 +916,7 @@ idea_URG_ruralism_bad = { #STATE MODIFIER
 
 idea_URG_ruralism_bad_2 = { #STATE MODIFIER
 	remove_trigger = { 
-		URG = { has_capitulated = yes } 
+		 
 
 	}
 	icon = BRA_neglected_state_dynamic_modifier

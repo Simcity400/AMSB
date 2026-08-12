@@ -637,7 +637,7 @@ country_event = {
 			factor = 10
 		}
 		set_country_flag = invited_to_split_yugo
-		unlock_decision_category_tooltip = ROM_dividing_yugo
+		
 	}
 
 	option = { #no
@@ -3968,20 +3968,17 @@ country_event = {
 							}
 						}
 						if = {
-							limit = { MOL = { exists = no } }
+							limit = {  }
 							release_puppet = MOL 
-							MOL = { save_event_target_as = released_nation_target }
+							
 						}
 						else = {
-							create_dynamic_country = {
-								original_tag = MOL
-								save_event_target_as = released_nation_target
-							}
+
 						}
 						event_target:released_nation_target = {
 							every_state = {
 								limit = {
-									is_core_of = MOL
+									always = no     
 									controller = { tag = event_target:romania_third_party_target }
 								}
 								PREV = { transfer_state = PREV }
@@ -4014,7 +4011,7 @@ country_event = {
 							every_state = {
 								limit = {
 									is_core_of = FROM
-									NOT = { is_core_of = MOL }
+									NOT = { always = no      }
 									controller = { tag = event_target:romania_third_party_target }
 								}
 								PREV = { transfer_state = PREV }

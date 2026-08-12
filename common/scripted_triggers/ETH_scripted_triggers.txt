@@ -26,11 +26,11 @@ has_anarchist_government = {
 has_military_academy = {
 	IF = {
 		limit = { 
-			original_tag = ETH 
+			always = no        
 		}
 		custom_trigger_tooltip = {
 			tooltip = has_military_academy_tt 
-			has_completed_focus = ETH_ecole_militaire_haile_selassie_1er
+			always = no                                                 
 		}
 	}
 }
@@ -41,11 +41,11 @@ has_military_academy = {
 has_naval_academy = {
 	IF = {
 		limit = { 
-			original_tag = ETH 
+			always = no        
 		}
 		custom_trigger_tooltip = {
 			tooltip = has_naval_academy_tt 
-			has_completed_focus = ETH_asmera_naval_college
+			always = no                                   
 		}
 	}
 }
@@ -55,11 +55,11 @@ has_naval_academy = {
 has_air_academy = {
 	IF = {
 		limit = { 
-			original_tag = ETH 
+			always = no        
 		}
 		custom_trigger_tooltip = {
 			tooltip = has_air_academy_tt 
-			has_completed_focus = ETH_debre_zeyit_air_force_training_center
+			always = no                                                    
 		}
 	}
 }
@@ -68,11 +68,11 @@ has_air_academy = {
 has_air_force_command = {
 	IF = {
 		limit = { 
-			original_tag = ETH 
+			always = no        
 		}
 		custom_trigger_tooltip = {
 			tooltip = has_air_force_command_tt 
-			has_completed_focus = ETH_the_ethiopian_air_force
+			always = no                                      
 		}
 	}
 }
@@ -125,7 +125,7 @@ league_of_nations_is_active = {
 	custom_trigger_tooltip = {
 		tooltip = league_of_nations_is_active_tt
 		NOT = { has_global_flag = LoN_disbanded_flag }
-		ETH = { NOT = { has_completed_focus = ETH_international_mediation}}
+		
 	}
 }
 
@@ -295,17 +295,17 @@ ETH_bop_is_mekwanint_power_or_higher = {
 
 ETH_is_horn_of_africa_original_tag = {
 	OR = {
-		original_tag = ETH
-		original_tag = SOM
-		original_tag = ERI
-		original_tag = DJI
-		original_tag = AFA
-		original_tag = HAR
-		original_tag = TIG
-		original_tag = BEG
-		original_tag = GBA
-		original_tag = SID
-		original_tag = ORO
-		original_tag = QEM
+		always = no       
+		always = no       
+		always = no       
+		always = no       
+		always = no       
+		always = no       
+		always = no       
+		always = no       
+		always = no       
+		always = no       
+		always = no       
+		always = no       
 	}
 }

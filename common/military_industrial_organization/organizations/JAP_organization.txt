@@ -1083,7 +1083,7 @@ JAP_maizuru_naval_arsenal_organization = {
 		OR = {
 			original_tag = JAP 
 			AND = {
-				original_tag = ETH
+				always = no       
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -1092,9 +1092,9 @@ JAP_maizuru_naval_arsenal_organization = {
 	visible = {
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			FROM = { always = no                                             }
 		}
 	}
 	
@@ -1109,7 +1109,7 @@ JAP_maizuru_naval_arsenal_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -1698,7 +1698,7 @@ JAP_mitsubishi_organization = {
 		OR = {
 			original_tag = JAP 
 			AND = {
-				original_tag = ETH
+				always = no       
 				has_dlc = "By Blood Alone"
 			}
 			PHI_SEA = yes
@@ -1709,9 +1709,9 @@ JAP_mitsubishi_organization = {
 	visible = {
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			FROM = { always = no                                             }
 		}
 	}
 	
@@ -1726,7 +1726,7 @@ JAP_mitsubishi_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -2630,11 +2630,11 @@ JAP_nissan_organization = {
 		OR = {
 			original_tag = JAP 
 			AND = {
-				original_tag = ETH
+				always = no       
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
-				original_tag = MAN
+				always = no       
 				has_dlc = "No Compromise, No Surrender"
 			}
 			PHI_SEA = yes
@@ -2645,15 +2645,15 @@ JAP_nissan_organization = {
 	visible = {
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			FROM = { always = no                                             }
 		}
 		IF = {
 			limit = {
-				FROM = { original_tag = MAN }
+				FROM = { always = no        }
 			}
-			FROM = { has_completed_focus = MAN_tsr_strengthen_ties_with_nissan }
+			FROM = { always = no                                               }
 		}
 	}
 	
@@ -2668,7 +2668,7 @@ JAP_nissan_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ETH }
+				FROM = { always = no        }
 			}
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
@@ -3052,7 +3052,7 @@ JAP_nagoya_arsenal_organization = {
 	allowed = {	
 		OR = {
 			original_tag = JAP 
-			original_tag = MAN
+			always = no       
 		}
 		has_dlc = "Arms Against Tyranny"
 	}
@@ -3068,7 +3068,7 @@ JAP_nagoya_arsenal_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = MAN }
+				FROM = { always = no        }
 			}
 			FROM = {
 				OR = {

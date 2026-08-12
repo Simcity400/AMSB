@@ -27,7 +27,7 @@ GER_porsche_organization = {
 				has_dlc = "Man the Guns"
 			}
 			AND = {
-				original_tag = IRQ 
+				always = no        
 				has_dlc = "Graveyard of Empires"
 			}
 			NOR_AAT = yes
@@ -268,7 +268,7 @@ GER_henschel_organization = {
 				has_dlc = "Battle for the Bosporus"
 			}
 			AND = {
-				original_tag = ETH
+				always = no       
 				has_dlc = "By Blood Alone"
 			}
 			AND = {
@@ -284,8 +284,8 @@ GER_henschel_organization = {
 	
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 		IF = {
 			limit = { FROM = { original_tag = PER } }
@@ -306,7 +306,7 @@ GER_henschel_organization = {
 			limit = { 
 				OR = { 
 					FROM = { original_tag = BUL }
-					FROM = { original_tag = ETH } 
+					FROM = { always = no        } 
 				} 
 			}
 			custom_trigger_tooltip = {
@@ -838,7 +838,7 @@ GER_daimler_benz_organization = {
 		OR = {
 			original_tag = GER 
 			AND = {
-				original_tag = BRA
+				always = no       
 				has_dlc = "Trial of Allegiance"
 			}
 			AND = {
@@ -858,7 +858,7 @@ GER_daimler_benz_organization = {
 		IF = {
 			limit = {
 				FROM = {
-					original_tag = BRA
+					always = no       
 				}
 			}
 			FROM = {
@@ -1979,7 +1979,7 @@ GER_junkers_organization = {
 		OR = {
 			original_tag = GER 
 			AND = {
-				original_tag = ETH
+				always = no       
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -1987,8 +1987,8 @@ GER_junkers_organization = {
 	
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 
@@ -3143,7 +3143,7 @@ GER_mauser_organization = {
 		OR = {
 			original_tag = GER 
 			AND = {
-				original_tag = ETH
+				always = no       
 				has_dlc = "By Blood Alone"
 			}
 		}
@@ -3151,8 +3151,8 @@ GER_mauser_organization = {
 	
 	visible = {
 		IF = {
-			limit = { FROM = { original_tag = ETH } }
-			FROM = { has_completed_focus = ETH_invite_foreign_industrialists }
+			limit = { FROM = { always = no        } }
+			FROM = { always = no                                             }
 		}
 	}
 	

@@ -523,17 +523,10 @@ SIA_movie_theater_cat = {
 		cost = SIA_propaganda_the_king_of_krung_thon_cost
 
 		visible = {
-			BRM = {
-				exists = yes
-				NOT = { is_subject_of = ROOT }
-			}
+			
 		}
 
-		targeted_modifier = {
-			tag = BRM
-			attack_bonus_against = 0.15
-			breakthrough_bonus_against = 0.15
-		}
+
 		
 		targeted_modifier = {
 			tag = ENG
@@ -2421,19 +2414,19 @@ SIA_asian_democratic_compact_cat = {
 	    	OR = {
 		    	1068 = {
 		    		owner = {
-		    			NOT = { original_tag = LAO }
+		    			NOT = { always = no        }
 		    			NOT = { tag = ROOT }
 		    		}
 		    	}
 		    	1069 = {
 		    		owner = {
-		    			NOT = { original_tag = LAO }
+		    			NOT = { always = no        }
 		    			NOT = { tag = ROOT }
 		    		}
 		    	}
 		    	670 = {
 		    		owner = {
-		    			NOT = { original_tag = LAO }
+		    			NOT = { always = no        }
 		    			NOT = { tag = ROOT }
 		    		}
 		    	}
@@ -2460,7 +2453,7 @@ SIA_asian_democratic_compact_cat = {
 	    				state = 670
 	    			}
 	    			NOT = { is_owned_by = ROOT }
-	    			owner = { NOT = { original_tag = LAO } }
+	    			owner = { NOT = { always = no        } }
 	    		}
 
 	    		if = {
@@ -2499,7 +2492,7 @@ SIA_asian_democratic_compact_cat = {
 		    		owner = {
 		    			NOT = { tag = ROOT }
 		    			NOT = {
-		    				original_tag = CAM
+		    				always = no       
 		    				has_war_with = ROOT
 		    			}
 		    		}
@@ -2508,7 +2501,7 @@ SIA_asian_democratic_compact_cat = {
 		    		owner = {
 		    			NOT = { tag = ROOT }
 		    			NOT = {
-		    				original_tag = CAM
+		    				always = no       
 		    				has_war_with = ROOT
 		    			}
 		    		}
@@ -2535,7 +2528,7 @@ SIA_asian_democratic_compact_cat = {
 	    				state = 741
 	    			}
 	    			NOT = { is_owned_by = ROOT }
-	    			owner = { NOT = { original_tag = CAM } }
+	    			owner = { NOT = { always = no        } }
 	    		}
 
 	    		if = {
@@ -2572,7 +2565,7 @@ SIA_asian_democratic_compact_cat = {
 		    		owner = {
 		    			NOT = { tag = ROOT }
 		    			NOT = {
-		    				original_tag = VIN
+		    				always = no       
 		    				has_war_with = ROOT
 		    			}
 		    		}
@@ -2583,7 +2576,7 @@ SIA_asian_democratic_compact_cat = {
 		    		owner = {
 		    			NOT = { tag = ROOT }
 		    			NOT = {
-		    				original_tag = VIN
+		    				always = no       
 		    				has_war_with = ROOT
 		    			}
 
@@ -2593,7 +2586,7 @@ SIA_asian_democratic_compact_cat = {
 		    		owner = {
 		    			NOT = { tag = ROOT }
 		    			NOT = {
-		    				original_tag = VIN
+		    				always = no       
 		    				has_war_with = ROOT
 		    			}
 		    		}
@@ -2603,7 +2596,7 @@ SIA_asian_democratic_compact_cat = {
 		    		owner = {
 		    			NOT = { tag = ROOT }
 		    			NOT = {
-		    				original_tag = VIN
+		    				always = no       
 		    				has_war_with = ROOT
 		    			}
 		    		}
@@ -2631,7 +2624,7 @@ SIA_asian_democratic_compact_cat = {
 						state = 1066
 	    			}
 	    			NOT = { is_owned_by = ROOT }
-	    			owner = { NOT = { original_tag = VIN } }
+	    			owner = { NOT = { always = no        } }
 	    		}
 
 	    		if = {

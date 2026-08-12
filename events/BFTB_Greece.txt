@@ -2753,7 +2753,7 @@ country_event = {
 				IF = {
 					limit = {
 						FRA = {
-							has_subject = SYR
+							always = no      
 						}
 					}
 				}
@@ -2771,7 +2771,7 @@ country_event = {
 				IF = {
 					limit = {
 						FRA = {
-							has_subject = SYR
+							always = no      
 						}
 					}
 				}
@@ -3834,15 +3834,11 @@ country_event = {
 		name = bftb_greece.56.a
 		183 = {
 			if = {
-				limit = { is_owned_by = CYP }
+				limit = { always = no       }
 				add_core_of = GRE
 			}
 		}
-		CYP = {
-			every_unit_leader = {
-				set_nationality = GRE
-			}
-		}
+		
 		annex_country = { target = CYP transfer_troops = yes }
 		add_war_support = 0.1
 		add_stability = 0.05

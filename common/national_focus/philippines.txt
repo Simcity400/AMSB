@@ -838,9 +838,7 @@ initial_show_position = {
 				INS = {
 					exists = yes
 				}
-				MAL = {
-						exists = yes
-				}
+				
 			}
 		}
 
@@ -852,9 +850,7 @@ initial_show_position = {
 				INS = {
 					exists = no
 				}
-				MAL = {
-					exists = no
-				}
+				
 			}
 		}
 
@@ -901,9 +897,7 @@ initial_show_position = {
 			}
 			if = {
 				limit = {
-					MAL = {
-						exists = yes
-					}
+					
 				}
 				custom_effect_tooltip = if_they_accept_tt
 				effect_tooltip = {
@@ -5927,7 +5921,7 @@ initial_show_position = {
 				factor = 0
 				OR = {
 					is_ally_with = USA
-					country_exists = PLU	#AI is never gonna get that naval invasion
+					always = no         	#AI is never gonna get that naval invasion
 				}
 			}
 		}
@@ -5965,9 +5959,9 @@ initial_show_position = {
 
 			if = {
 				limit = {
-					country_exists = PLU
+					always = no         
 					NOT = {
-						is_ally_with = PLU
+						always = no       
 					}
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
@@ -6098,9 +6092,9 @@ initial_show_position = {
 
 			if = {
 				limit = {
-					country_exists = FOR
+					always = no         
 					NOT = {
-						is_ally_with = FOR
+						always = no       
 					}
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt

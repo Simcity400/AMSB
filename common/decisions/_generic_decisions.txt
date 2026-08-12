@@ -574,19 +574,19 @@ propaganda_efforts = {
 			IF = {
 				limit = {
 					has_dlc = "Trial of Allegiance"
-					tag = BRA
+					always = no
 				}
 				threat > 0.25
 				#has_tech = radio
-				has_completed_focus = BRA_radio_nacional
+				always = no                             
 			}
 			ELSE_IF = {
 				limit = {
-					tag = AFG
+					always = no
 				}
 				threat > 0.25
 				#has_tech = radio
-				has_completed_focus = AFG_establish_radio_networks
+				always = no                                       
 			}
 			ELSE = {
 				threat > 0.25
@@ -1707,11 +1707,11 @@ war_measures = {
         		has_idea = tot_economic_mobilisation
         		if = {
         			limit = {
-        				original_tag = PRC
+        				always = no       
         			}
         			NOT = { 
-        				has_completed_focus = PRC_holding_half_the_sky
-        				has_completed_focus = PRC_promote_womens_suffrage
+        				always = no                                   
+        				always = no                                      
         			}
         		}
 			}
@@ -1947,11 +1947,11 @@ war_measures = {
 					has_dlc = "Trial of Allegiance"
 				}
 				NOT = {
-					tag = CHL #has a focus
-					tag = BRA #has a focus
-					tag = ARG #has a focus
-					tag = URG #has a focus
-					tag = PAR #has a focus
+					always = no #has a focus
+					always = no #has a focus
+					always = no #has a focus
+					always = no #has a focus
+					always = no #has a focus
 				}
 			}
 			IF = {
@@ -1960,7 +1960,7 @@ war_measures = {
 				}
 				NOT = {
 					tag = PER #has a focus
-					tag = IRQ #has a focus
+					always = no #has a focus
 					tag = RAJ #has a focus
 				}
 			}
@@ -1970,7 +1970,7 @@ war_measures = {
 				}
 				NOT = {
 					tag = BEL #has a focus
-					tag = COG #has a focus
+					always = no #has a focus
 				}
 			}
 			IF = {

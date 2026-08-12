@@ -19,7 +19,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 0 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -40,7 +40,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 1 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -61,7 +61,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 2 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -82,7 +82,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 3 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -103,7 +103,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 4 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -123,7 +123,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 5 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -143,7 +143,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 6 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -163,7 +163,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 7 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -183,7 +183,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 8 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -203,7 +203,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 			check_variable = { ETH.ETH_war_escalation_level > 9 }
 		}
 		localization_key = "GFX_war_escalation_level_green"
@@ -216,7 +216,7 @@ defined_text = {
 	name = GetEthiopianMilitaryAcademyName
 	text = {
 		trigger = {
-			ETH = { has_government = neutrality }
+			
 		}
 		localization_key = ecole_militaire_haile_selassie_1er
 	}
@@ -229,13 +229,13 @@ defined_text = {
 	name = GetEthiopianArmySpiritName
 	text = {
 		trigger = {
-			ETH = { has_dynamic_modifier = { modifier = ETH_army_3_dynamic_modifier } }
+			
 		}
 		localization_key = ETH_army_3_dynamic_modifier
 	}
 	text = {
 		trigger = {
-			ETH = { has_dynamic_modifier = { modifier = ETH_army_2_dynamic_modifier } }
+			
 		}
 		localization_key = ETH_army_2_dynamic_modifier
 	}
@@ -248,13 +248,13 @@ defined_text = {
 	name = GetEthiopianNavySpiritName
 	text = {
 		trigger = {
-			ETH = { has_dynamic_modifier = { modifier = ETH_navy_3_dynamic_modifier } }
+			
 		}
 		localization_key = ETH_navy_3_dynamic_modifier
 	}
 	text = {
 		trigger = {
-			ETH = { has_dynamic_modifier = { modifier = ETH_navy_2_dynamic_modifier } }
+			
 		}
 		localization_key = ETH_navy_2_dynamic_modifier
 	}
@@ -266,13 +266,13 @@ defined_text = {
 	name = GetEthiopianAirforceSpiritName
 	text = {
 		trigger = {
-			ETH = { has_dynamic_modifier = { modifier = ETH_airforce_3_dynamic_modifier } }
+			
 		}
 		localization_key = ETH_airforce_3_dynamic_modifier
 	}
 	text = {
 		trigger = {
-			ETH = { has_dynamic_modifier = { modifier = ETH_airforce_2_dynamic_modifier } }
+			
 		}
 		localization_key = ETH_airforce_2_dynamic_modifier
 	}
@@ -286,7 +286,7 @@ defined_text = {
 	name = Get2ndItaloEthiopianWarDesc
 	text = {
 		trigger = {
-			tag = ETH
+			always = no
 		}
 		localization_key = ETH_2ndItaloEthiopianWar
 	}
@@ -305,7 +305,7 @@ defined_text = {
 	name = GetItalianRenewedOffensiveText
 	text = {
 		trigger = {
-			ETH = { has_country_flag = italian_major_offensive_against_ethiopia_flag }
+			
 		}
 		localization_key = ETH_trigger_fulfilled
 	}
@@ -318,13 +318,13 @@ defined_text = {
 	name = GetItalian20DivisionsText
 	text = {
 		trigger = {
-			ETH = { has_country_flag = ETH_divisions_count_flag }
+			
 		}
 		localization_key = ETH_trigger_fulfilled
 	}
 	text = {
 		trigger = {
-			ETH = { NOT = { has_country_flag = ETH_divisions_count_flag } }
+			
 		}
 		localization_key = ETH_trigger_not_fulfilled
 	}
@@ -337,13 +337,13 @@ defined_text = {
 	name = GetItalianAircraftsText
 	text = {
 		trigger = {
-			ETH = { has_country_flag = ETH_planes_count_flag }
+			
 		}
 		localization_key = ETH_trigger_fulfilled
 	}
 	text = {
 		trigger = {
-			ETH = { NOT = { has_country_flag = ETH_planes_count_flag } }
+			
 		}
 		localization_key = ETH_trigger_not_fulfilled
 	}
@@ -356,7 +356,7 @@ defined_text = {
 	name = GetDefendTheNorthMissionText
 	text = {
 		trigger = {
-			ETH = { has_country_flag = ETH_hold_the_north_mission_success_flag }
+			
 		}
 		localization_key = ETH_hold_the_north_mission_success
 	}
@@ -366,7 +366,7 @@ defined_text = {
 	name = GetDefendTheSouthMissionText
 	text = {
 		trigger = {
-			ETH = { has_country_flag = ETH_hold_the_south_mission_success_flag }
+			
 		}
 		localization_key = ETH_hold_the_south_mission_success
 	}
@@ -376,7 +376,7 @@ defined_text = {
 	name = GetDefendTheCapitalMissionText
 	text = {
 		trigger = {
-			ETH = { has_country_flag = ETH_hold_the_capital_mission_success_flag }
+			
 		}
 		localization_key = ETH_hold_the_capital_mission_success
 	}
@@ -386,7 +386,7 @@ defined_text = {
 	name = GetDefendHararMissionText
 	text = {
 		trigger = {
-			ETH = { has_country_flag = ETH_hold_harar_mission_success_flag }
+			
 		}
 		localization_key = ETH_hold_harar_mission_success
 	}
@@ -505,7 +505,7 @@ defined_text = {
 	text = {
 		trigger = {
 			has_government = communism
-			has_completed_focus = ETH_callout_to_the_world
+			always = no                                   
 		}
 		#TODO_ASD Set name
 		localization_key = ETH_cie_anarcho_communist
@@ -513,7 +513,7 @@ defined_text = {
 	text = {
 		trigger = {
 			has_government = communism
-			has_completed_focus = ETH_soviet_aid
+			always = no                         
 		}
 		#TODO_ASD Set name
 		localization_key = ETH_cie_stalinist
@@ -764,23 +764,23 @@ defined_text = {
 		trigger = {
 			has_government = communism
 			OR = {
-				268 = {is_owned_by = ETH}
-				269 = {is_owned_by = ETH}
-				559 = {is_owned_by = ETH}
-				883 = {is_owned_by = ETH}
+				268 = {always = no      }
+				269 = {always = no      }
+				559 = {always = no      }
+				883 = {always = no      }
 			} 		
 		}
 		localization_key = ETH_naval_college_name_communist
 	}
 	text = {
 		trigger = {
-			550 = {is_owned_by = ETH}	
+			550 = {always = no      }	
 		}
 		localization_key = ETH_naval_college_name_historical
 	}
 	text = {
 		trigger = {
-			NOT = {550 = {is_owned_by = ETH}}
+			NOT = {550 = {always = no      }}
 		}
 		localization_key = ETH_naval_college_name_fallback
 	}
@@ -790,14 +790,14 @@ defined_text = {
 	name = ETHGetAirBaseName
 	text = {
 		trigger = {
-			271 = {is_owned_by = ETH} 
+			271 = {always = no      } 
 		}
 		localization_key = ETH_airbase_name
 	}
 	text = {
 		trigger = {
 			NOT = {
-				271 = {is_owned_by = ETH}
+				271 = {always = no      }
 			}
 		}
 		localization_key = ETH_airbase_name_fallback
@@ -880,7 +880,7 @@ defined_text = {
 	text = {
 		trigger = {
 			has_government = communism
-			has_completed_focus = ETH_callout_to_the_world
+			always = no                                   
 		}
 		localization_key = ETH_anarchist_bank
 	}

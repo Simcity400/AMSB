@@ -771,6 +771,7 @@ country_event = {
             # The glitched country died while the player was parked: move them to the
             # TAN observer tag instead of leaving them wedged on AIF forever.
             TAN = { change_tag_from = AIF }
+            
         }
         clear_variable = global.ai_fix_return_country
         clear_global_event_target = ht_aifix_country
@@ -822,6 +823,15 @@ country_event = {
                 event_target:ht_annexer_country = { exists = yes }
             }
             # crash-correlation breadcrumb: the annex EXECUTES here, not at click time
+            # AMSB 2026-08-12: annex also CORES the annexed land for the annexer (user request).
+            # Runs before annex_country while the target still owns its states; event targets
+            # only, same liveness guard as the annex itself (add_core_of = event_target: has
+            # in-tree precedent at common/decisions/RAJ_GOE.txt:726).
+            event_target:ht_annexed_country = {
+                every_owned_state = {
+                    add_core_of = event_target:ht_annexer_country
+                }
+            }
             log = "HOSTTOOL: annex_executed [?event_target:ht_annexed_country.GetName] -> [?event_target:ht_annexer_country.GetName]"
             event_target:ht_annexer_country = {
                 annex_country = { target = event_target:ht_annexed_country transfer_troops = yes }

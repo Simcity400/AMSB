@@ -467,13 +467,13 @@ ideas = {
 				modifier = {
 					factor = 100
 					OR = {
-						original_tag = URG
-						original_tag = PAR
+						always = no       
+						always = no       
 					}
 					NOT = {
 						has_idea = war_economy
 					}
-					has_completed_focus = GUAY_coup_detat
+					always = no                          
 				}
    			}
 		}
@@ -1251,10 +1251,10 @@ ideas = {
 
 				if = {
 					limit = {
-						original_tag = PRC
+						always = no       
 						has_dlc = "No Compromise, No Surrender"
 					}
-					NOT = { has_completed_focus = PRC_promote_paper_bills }
+					NOT = { always = no                                   }
 				}
 			}
 
@@ -1282,7 +1282,7 @@ ideas = {
 
 					OR = {
 						tag = PER
-						tag = IRQ
+						always = no
 					}
 					is_in_faction = no
 				}
@@ -1290,7 +1290,7 @@ ideas = {
 				modifier = {
 					factor = 300
 
-					tag = BRA
+					always = no
 					date > 1943.1.1 # at this point we can probably cash in on rubber lack in the world
 				}
 
@@ -1359,10 +1359,10 @@ ideas = {
 
 				if = {
 					limit = {
-						original_tag = PRC
+						always = no       
 						has_dlc = "No Compromise, No Surrender"
 					}
-					NOT = { has_completed_focus = PRC_promote_paper_bills }
+					NOT = { always = no                                   }
 				}
 			}
 
@@ -1401,7 +1401,7 @@ ideas = {
 
 						# Iraq & Iran are special oil snowflakes
 						tag = PER
-						tag = IRQ
+						always = no
 					}
 				}
 				modifier = {

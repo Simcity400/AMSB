@@ -1137,7 +1137,7 @@ country_event = {
 		ELSE_IF = {
 			limit = {
 				FROM = {
-					original_tag = AFG
+					always = no       
 				}
 			}
 			add_ai_strategy = {
@@ -7153,7 +7153,7 @@ country_event = {
 
 		random_country = {
 			limit = {
-				original_tag = KOR
+				always = no       
 				has_government = communism
 				is_subject = no
 			}
@@ -7169,7 +7169,7 @@ country_event = {
 		hidden_effect = {
 			random_country = {
 				limit = {
-					original_tag = KOR
+					always = no       
 					NOT = {
 						has_government = communism
 					}
@@ -7255,7 +7255,7 @@ country_event = {
 
 		random_country = {
 			limit = {
-				original_tag = KOR
+				always = no       
 				has_government = communism
 				is_subject = no
 			}
@@ -7271,7 +7271,7 @@ country_event = {
 		hidden_effect = {
 			random_country = {
 				limit = {
-					original_tag = KOR
+					always = no       
 					NOT = {
 						has_government = communism
 					}
@@ -8876,23 +8876,9 @@ country_event = {
 			}
 			IF = {
 				limit = {
-					MAN = {
-						is_subject_of = ROOT
-						NOT = {
-							OR = {
-								has_completed_focus = MAN_assertiveness
-								has_completed_focus = MAN_tsr_assertiveness
-							}
-						}
-					}
+					
 				}
-				MAN = {
-					add_to_war = {
-					    targeted_alliance = ROOT
-					    enemy = CHI
-					    hostility_reason = asked_to_join
-					}
-				}
+				
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 		}
@@ -10462,7 +10448,7 @@ country_event = {
 			has_global_flag = MON_choibalsan_ascended_flag
 		}
 
-		tag = MON
+		always = no
 		
 		date > 1939.1.1
 
@@ -11013,10 +10999,7 @@ country_event = {
 			has_government = fascism
 		}
 
-		MAN = {
-			exists = yes
-			is_ally_with = ROOT
-		}
+		
 
 	}
 
@@ -12621,10 +12604,7 @@ news_event = {
 			995 = {
 				is_owned_by = ENG
 			}
-			BRM = {
-				is_subject_of = ENG
-				owns_state = 995
-			}
+			
 		}
 		JAP = { has_war_with = ENG }
 	}
@@ -12695,20 +12675,11 @@ country_event = {
 
 		IF = {
 			limit = {
-				MAN = {
-					is_subject = no 
-				}
+				
 			}
 		}
 		ELSE = {
-			MAN = {
-				OVERLORD = {
-					country_event = {
-						id = SEA_border_incidents_events.2
-						hours = 6 
-					}
-				}
-			}
+			
 		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
@@ -12774,21 +12745,7 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		MON = {
-			country_event = {
-				id = SEA_border_incidents_events.8
-				hours = 6
-			}	
-			effect_tooltip = {
-				add_ideas = MON_income_from_hulunbuir_idea 
-
-				custom_effect_tooltip = generic_skip_one_line_tt
-
-				761 = {
-					add_core_of = PREV
-				}
-			}
-		}
+		
 
 	}
 }
@@ -12846,7 +12803,7 @@ country_event = {
 		trigger = {
 			OR = {
 				original_tag = JAP
-				original_tag = MAN
+				always = no       
 			}
 		}
 		
@@ -12862,7 +12819,7 @@ country_event = {
 	option = {
 		name = SEA_border_incidents_events.5.b
 		trigger = {
-			original_tag = MON
+			always = no       
 		}
 
 		add_war_support = -0.05
@@ -12886,7 +12843,7 @@ country_event = {
 		trigger = {
 			OR = {
 				original_tag = JAP
-				original_tag = MAN
+				always = no       
 			}
 		}
 		
@@ -12900,7 +12857,7 @@ country_event = {
 	option = {
 		name = SEA_border_incidents_events.6.b
 		trigger = {
-			original_tag = MON
+			always = no       
 		}
 
 		add_ideas = MON_income_from_hulunbuir_idea 
@@ -12929,7 +12886,7 @@ country_event = {
 		trigger = {
 			OR = {
 				original_tag = JAP
-				original_tag = MAN
+				always = no       
 			}
 		}
 		
@@ -12943,7 +12900,7 @@ country_event = {
 	option = {
 		name = SEA_border_incidents_events.7.b
 		trigger = {
-			original_tag = MON
+			always = no       
 		}
 
 		army_experience = 15  

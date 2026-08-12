@@ -293,7 +293,7 @@ ideas = {
 			allowed = {
 				OR = {
 					original_tag = RAJ
-					original_tag = AFG
+					always = no       
 				}
 			}
 
@@ -785,17 +785,12 @@ ideas = {
 			cancel = {
 
 				OR = {
-		            BRM = {
-		                NOT = { is_in_faction_with = RAJ }
-		                NOT = { controls_state = 995 }
-		                NOT = { controls_state = 640 }
-		                NOT = { controls_state = 998 }
-		            }
+		            
 
 		            any_enemy_country = {
 		            	OR = {
-		            		original_tag = BRM
-		            		is_in_faction_with = BRM	
+		            		always = no       
+		            		always = no             	
 		            	}
 		            }
 	            }
@@ -854,11 +849,7 @@ ideas = {
 				defense_bonus_against = 0.15
 			}
 
-			targeted_modifier = {
-				tag = BRM
-				attack_bonus_against = 0.15
-				defense_bonus_against = 0.15
-			}	
+
 
 		}
 
@@ -1858,7 +1849,7 @@ ideas = {
 
 		idea_RAJ_PAK_british_anti_communist_investments = {
 			allowed = {
-				original_tag = PAK
+				always = no       
 			}
 			picture = RAJ_external_investments
 			allowed_civil_war = {
@@ -2822,21 +2813,21 @@ ideas = {
 
 			allowed = {
 				tag = PSH
-				tag = HYD
+				always = no
 				tag = MYS
-				tag = RJP
-				tag = CIP
-				tag = RAS
+				always = no
+				always = no
+				always = no
 				tag = NWF
-				tag = KAS
-				tag = MPU
-				tag = WIS
+				always = no
+				always = no
+				always = no
 				tag = KOL
 				tag = KHL
-				tag = SIN
-				tag = KLT
-				tag = SKK
-				tag = BLC
+				always = no
+				always = no
+				always = no
+				always = no
 			}
 
 			allowed_civil_war = {

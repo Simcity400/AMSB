@@ -46,12 +46,12 @@ country_event = {
 	picture = GFX_report_event_election_vote
 
 	trigger = {
-		tag = URG
+		always = no
 		date > 1938.6.16
 		is_subject = no
 
 		has_dlc = "Trial of Allegiance"
-		NOT = { has_completed_focus = URG_establish_the_german_uruguayan_cultural_center }
+		NOT = { always = no                                                              }
 	}
 
 	mean_time_to_happen = { days = 3 }
@@ -353,7 +353,7 @@ news_event = {
 			NOT = {
 				OR = {
 					original_tag = PRU
-					original_tag = BOL
+					always = no       
 				}
 			}
 		}
@@ -363,7 +363,7 @@ news_event = {
 		trigger = { 
 			OR = {
 				original_tag = PRU
-				original_tag = BOL
+				always = no       
 			}
 		}
 	}
@@ -419,7 +419,7 @@ country_event = {
 		} 
 		IF = {
 			limit = {
-				original_tag = CHL
+				always = no       
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_army_artillery_attack_factor = 0.05 tooltip = army_artillery_attack_factor_tt }
@@ -440,7 +440,7 @@ country_event = {
 		} 
 		IF = {
 			limit = {
-				original_tag = CHL
+				always = no       
 			}
 			custom_effect_tooltip = CHL_modify_chilean_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_production_speed_anti_air_building_factor = 0.15 tooltip = production_speed_anti_air_building_factor_tt }
@@ -480,8 +480,8 @@ news_event = {
 			NOT = {
 				OR = {
 					original_tag = GYA
-					original_tag = SUR
-					original_tag = CAY
+					always = no       
+					always = no       
 				}
 			}
 		}
@@ -491,8 +491,8 @@ news_event = {
 		trigger = { 
 			OR = {
 				original_tag = GYA
-				original_tag = SUR
-				original_tag = CAY
+				always = no       
+				always = no       
 			}
 		}
 	}
@@ -683,10 +683,7 @@ country_event = {
 
 		add_manpower = -4000
 
-		add_timed_idea = {
-			idea = CHL_relief_efforts_idea
-			days = 360
-		}
+		
 		custom_effect_tooltip = CHL_relief_efforts_idea_tt
 		effect_tooltip = {
 			CHL_anarchic_society_level_down = yes
@@ -754,7 +751,7 @@ country_event = {
 	picture = GFX_report_event_election_vote
 
 	trigger = {
-		original_tag = CHL
+		always = no       
 		
 		date > 1938.10.20
 
@@ -762,8 +759,8 @@ country_event = {
 
 		NOT = {
 			OR = {
-				has_completed_focus = CHL_denounce_the_anarchy
-				has_completed_focus = CHL_look_to_tradition
+				always = no                                   
+				always = no                                
 				has_country_flag = CHL_1939_flag
 			}
 		}
@@ -802,7 +799,7 @@ country_event = {
 		IF = {
 			limit = {
 				NOT = {
-					has_completed_focus = CHL_endorse_the_constitution
+					always = no                                       
 				}
 			}
 			complete_national_focus = CHL_endorse_the_constitution
@@ -812,19 +809,19 @@ country_event = {
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = CHL_policies_of_arturo_alessandri
+						always = no                                            
 					}
 				}
-				unlock_national_focus = CHL_policies_of_arturo_alessandri
+				
 			}
 
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = CHL_inflation_control_by_the_central_bank
+						always = no                                                    
 					}
 				}
-				unlock_national_focus = CHL_inflation_control_by_the_central_bank
+				
 			}
 		}
 		
@@ -879,7 +876,7 @@ country_event = {
 		IF = {
 			limit = {
 				NOT = {
-					has_completed_focus = CHL_endorse_the_constitution
+					always = no                                       
 				}
 			}
 			complete_national_focus = CHL_endorse_the_constitution
@@ -889,19 +886,19 @@ country_event = {
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = CHL_policies_of_arturo_alessandri
+						always = no                                            
 					}
 				}
-				unlock_national_focus = CHL_policies_of_arturo_alessandri
+				
 			}
 
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = CHL_inflation_control_by_the_central_bank
+						always = no                                                    
 					}
 				}
-				unlock_national_focus = CHL_inflation_control_by_the_central_bank
+				
 			}
 		}
 		
@@ -926,7 +923,7 @@ country_event = {
 
 		IF = {
 			limit = {
-				has_completed_focus = CHL_prop_up_gustavo_ross
+				always = no                                   
 			}
 			add_stability = 0.05
 
@@ -963,7 +960,7 @@ country_event = {
 		IF = {
 			limit = {
 				NOT = {
-					has_completed_focus = CHL_endorse_the_constitution
+					always = no                                       
 				}
 			}
 			complete_national_focus = CHL_endorse_the_constitution
@@ -973,19 +970,19 @@ country_event = {
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = CHL_policies_of_arturo_alessandri
+						always = no                                            
 					}
 				}
-				unlock_national_focus = CHL_policies_of_arturo_alessandri
+				
 			}
 
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = CHL_inflation_control_by_the_central_bank
+						always = no                                                    
 					}
 				}
-				unlock_national_focus = CHL_inflation_control_by_the_central_bank
+				
 			}
 		}
 		
@@ -1051,7 +1048,7 @@ country_event = {
 		IF = {
 			limit = {
 				NOT = {
-					has_completed_focus = CHL_endorse_the_constitution
+					always = no                                       
 				}
 			}
 			complete_national_focus = CHL_endorse_the_constitution
@@ -1061,19 +1058,19 @@ country_event = {
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = CHL_policies_of_arturo_alessandri
+						always = no                                            
 					}
 				}
-				unlock_national_focus = CHL_policies_of_arturo_alessandri
+				
 			}
 
 			IF = {
 				limit = {
 					NOT = {
-						has_completed_focus = CHL_inflation_control_by_the_central_bank
+						always = no                                                    
 					}
 				}
-				unlock_national_focus = CHL_inflation_control_by_the_central_bank
+				
 			}
 		}
 		
@@ -1381,7 +1378,7 @@ country_event = {
 	picture = GFX_report_event_gathering_protest
 
 	trigger = {
-		original_tag = BOL
+		always = no       
 		NOT = {
 			OR = {
 				owns_state = 951
@@ -1515,15 +1512,15 @@ country_event = { #Peru offers peace for the state they claim
 							has_war_with = PRU
 						}
 						AND = {
-							is_ally_with = ECU
+							always = no       
 							has_war_with = PRU
 						}
 						AND = {
-							is_subject_of = ECU
+							always = no        
 							has_war_with = PRU
 						}
 						AND = {
-							has_subject = ECU
+							always = no      
 							has_war_with = PRU
 						}
 					}
@@ -1534,7 +1531,7 @@ country_event = { #Peru offers peace for the state they claim
 			IF = {
 				limit = {
 					490 = {
-						is_core_of = ECU
+						always = no     
 					}
 				}
 				490 = {
@@ -1605,7 +1602,7 @@ country_event = { #Peru requests a white peace in return for Loreto
 
 			IF = {
 				limit = {
-					has_war_with = ECU
+					always = no       
 				}
 				491 = {
 					add_core_of = ECU
@@ -1621,15 +1618,15 @@ country_event = { #Peru requests a white peace in return for Loreto
 							has_war_with = PRU
 						}
 						AND = {
-							is_ally_with = ECU
+							always = no       
 							has_war_with = PRU
 						}
 						AND = {
-							is_subject_of = ECU
+							always = no        
 							has_war_with = PRU
 						}
 						AND = {
-							has_subject = ECU
+							always = no      
 							has_war_with = PRU
 						}
 					}

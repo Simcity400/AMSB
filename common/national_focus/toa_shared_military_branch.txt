@@ -7,13 +7,13 @@ shared_focus = {
 
 	icon = {
 		GFX_focus_CHL_ejercito_de_chile = {
-			original_tag = CHL
+			always = no       
 		}
 		GFX_focus_ARG_army = {
-			original_tag = ARG
+			always = no       
 		}
 		GFX_focus_BRA_army = {
-			original_tag = BRA
+			always = no       
 		}
 		GFX_goal_panzerwaffe = yes
 	}
@@ -436,18 +436,16 @@ shared_focus = {
 		IF = {
 			limit = {
 				has_dlc = "Arms Against Tyranny"
-				original_tag = BRA
+				always = no       
 			}
 			IF = {
 				limit = {
-					NOT = { has_completed_focus = BRA_fabrica_nacional_de_motores }
+					NOT = { always = no                                           }
 				}
 				custom_effect_tooltip = available_mio_tt
-				show_mio_tooltip = BRA_fnm_organization
+				
 			}
-			mio:BRA_fnm_organization = {
-				add_mio_size = 1
-			}
+			
 
 		}
 		ELSE = {
@@ -500,7 +498,7 @@ shared_focus = {
 	id = SMB_domestic_production
 	icon = {
 		GFX_focus_BRA_dec = {
-			original_tag = BRA
+			always = no       
 		}
 		GFX_goal_generic_amphibious_assault = yes
 	}
@@ -732,7 +730,7 @@ shared_focus = {
 	id = SMB_army_academy
 	icon = {
 		GFX_focus_BRA_agulhas_negras = {
-			original_tag = BRA
+			always = no       
 		}
 		GFX_focus_ETH_ecole_militaire_haile_selassie_1er = yes
 	}
@@ -1259,7 +1257,7 @@ shared_focus = {
 	allow_branch = {
 		NOT = {
 			OR = {
-				original_tag = BRA
+				always = no       
 				
 			}
 		}
@@ -1309,7 +1307,7 @@ shared_focus = {
 	id = SMB_special_forces_option_2
 	icon = {
 		GFX_focus_BRA_corpo_navais = {
-			original_tag = BRA
+			always = no       
 		}
 		GFX_goal_generic_amphibious_assault = yes
 	}
@@ -1341,7 +1339,7 @@ shared_focus = {
 				
 
 
-				original_tag = BRA
+				always = no       
 				
 			}
 		}
@@ -1401,7 +1399,7 @@ shared_focus = {
 		y = 0
 		trigger = {
 			OR = {
-				original_tag = BRA
+				always = no       
 				
 			}
 		}
@@ -1784,7 +1782,7 @@ shared_focus = {
 		x = 2
 		y = 0
 		trigger = {
-			tag = BRA
+			always = no
 		}
 	}
 
@@ -1842,13 +1840,13 @@ shared_focus = {
 	dynamic = yes
 	icon = {
 		GFX_focus_CHL_fuerza_aerea_de_chile = {
-			original_tag = CHL
+			always = no       
 		}
 		GFX_focus_ARG_air_force = {
-			original_tag = ARG
+			always = no       
 		}
 		GFX_focus_BRA_air_force = {
-			original_tag = BRA
+			always = no       
 		}
 		GFX_goal_generic_build_airforce = yes
 	}
@@ -2578,13 +2576,13 @@ shared_focus = {
 
 	icon = {
 		GFX_focus_CHL_armada_de_chile = {
-			original_tag = CHL
+			always = no       
 		}
 		GFX_focus_ARG_navy = {
-			original_tag = ARG
+			always = no       
 		}
 		GFX_focus_BRA_navy = {
-			original_tag = BRA
+			always = no       
 		}
 		GFX_goal_generic_build_navy = yes
 	}
@@ -3370,7 +3368,7 @@ shared_focus = {
 	id = SMB_carrier_conversion
 	icon = GFX_focus_BRA_converted_carriers
 	allow_branch = { 
-		original_tag = BRA
+		always = no       
 	}
 	prerequisite = {focus = SMB_expand_repair_yards  }
 	relative_position_id = SMB_expand_repair_yards
@@ -3605,7 +3603,7 @@ shared_focus = {
 	cost = 10
 
 	allow_branch = { 
-		original_tag = BRA
+		always = no       
 	}
 
 	available = {
@@ -3660,7 +3658,7 @@ shared_focus = {
 
 	cost = 10
 
-	allow_branch = { tag = BRA }
+	allow_branch = { always = no }
 
 	available = {
 		
@@ -3701,7 +3699,7 @@ shared_focus = {
 
 	cost = 10
 
-	allow_branch = { tag = BRA }
+	allow_branch = { always = no }
 
 	available = {
 		

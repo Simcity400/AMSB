@@ -66,12 +66,7 @@ defined_text = { # for PRC tree
 	name = GetManchuriaPuppet
 	text = {
 		trigger = {
-			MAN = {
-				OR = {
-					is_subject_of = JAP
-					has_cosmetic_tag = MAN_kwantung_army 
-				}
-			}
+			
 		}
 		localization_key = PRC_provoke_japan_manchuria
 	}
@@ -269,7 +264,7 @@ defined_text = {
 	text = {
 		trigger = {
 			AST = { is_subject_of = ENG }
-			NZL = { is_subject_of = ENG }
+			
 		}
 		localization_key = AST_NZL_PUPPET
 	}
@@ -277,7 +272,7 @@ defined_text = {
 		trigger = {
 			AND = {
 				AST = { is_subject_of = ENG }
-				NZL = { not = { is_subject_of = ENG } }
+				
 			}
 		}
 		localization_key = AST_democratic
@@ -285,7 +280,7 @@ defined_text = {
 	text = {
 		trigger = {
 			AND = {
-				NZL = { is_subject_of = ENG }
+				
 				AST = { not = { is_subject_of = ENG } }
 			}
 		}
@@ -1665,7 +1660,7 @@ defined_text = {
 			
 			ROOT = { 
 				is_government_in_exile = yes
-				original_tag = ETH 
+				always = no        
 			}
 		}
 		localization_key = governments_in_exile_ETH_desc

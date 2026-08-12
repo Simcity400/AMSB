@@ -162,65 +162,29 @@ ideas = {
 			cancel = {
 				IF = {
 					limit = {
-						tag = BRA
+						always = no
 					}
 					AND = {
-						ARG = {
-							OR = {
-								has_capitulated = yes
-                    			exists = no
-                    			is_subject_of = ROOT
-							}
-						}
-						CHL = {
-							OR = {
-								has_capitulated = yes
-                    			exists = no
-                    			is_subject_of = ROOT
-							}
-						}
+						
+						
 					}
 				}
 				IF = {
 					limit = {
-						tag = ARG
+						always = no
 					}
 					AND = {
-						BRA = {
-							OR = {
-								has_capitulated = yes
-                    			exists = no
-                    			is_subject_of = ROOT
-							}
-						}
-						CHL = {
-							OR = {
-								has_capitulated = yes
-                    			exists = no
-                    			is_subject_of = ROOT
-							}
-						}
+						
+						
 					}
 				}
 				IF = {
 					limit = {
-						tag = CHL
+						always = no
 					}
 					AND = {
-						BRA = {
-							OR = {
-								has_capitulated = yes
-                    			exists = no
-                    			is_subject_of = ROOT
-							}
-						}
-						ARG = {
-							OR = {
-								has_capitulated = yes
-                    			exists = no
-                    			is_subject_of = ROOT
-							}
-						}
+						
+						
 					}
 				}
 			}

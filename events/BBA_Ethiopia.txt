@@ -73,7 +73,7 @@ country_event = {
 		# Ensure enemies also have war with target 
 		random_other_country = {
 			limit = {
-				original_tag = ETH 
+				always = no        
 				has_government = neutrality
 				has_war_with = ROOT 
 			}
@@ -114,7 +114,7 @@ country_event = {
 			# Ensure enemies also have war with target 
 			random_other_country = {
 				limit = {
-					original_tag = ETH 
+					always = no        
 					has_government = fascism
 					has_war_with = ROOT 
 				}
@@ -217,8 +217,8 @@ country_event = {
 				IF = { 
 					limit = {
 						exists = no # no country should get more than one state
-						NOT = { original_tag = ETH }
-						PREV = { is_core_of = ETH } # Ethiopia keeps all "colonies", only the ethiopian Nobility that is rising up 
+						NOT = { always = no        }
+						PREV = { always = no      } # Ethiopia keeps all "colonies", only the ethiopian Nobility that is rising up 
 					}
 					transfer_state = PREV 
 					# Ensure countries at war with Ethiopia are also at war with the new countries 
@@ -1082,19 +1082,15 @@ country_event = {
 		hidden_effect = {
 			IF = {
 				limit = {
-					ETH = { 
-						any_owned_state = { is_controlled_by = ITA }
-					}
+					
 				}
 				set_variable = { ETH.ETH_occupier_country = ITA}
 			}
 			ELSE = {
 				random_country = {
 					limit = {
-						has_war_with = ETH
-						ETH = { 
-						 	any_owned_state = { is_controlled_by = PREV.PREV }
-						}
+						always = no       
+						
 					}
 					set_variable = { ETH.ETH_occupier_country = THIS }
 				}
@@ -1302,7 +1298,7 @@ country_event = {
 		# Do we own any Somali state? 
 		trigger = {
 			any_state = {
-				is_core_of = SOM 
+				always = no      
 				is_owned_by = ROOT 
 			}
 		}
@@ -1319,13 +1315,13 @@ country_event = {
 		effect_tooltip = {
 			every_owned_state = {
 				limit = {
-					is_core_of = SOM 
+					always = no      
 				}
 				set_state_owner_to = FROM 
 			}
 			every_state = {
 				limit = {
-					is_core_of = SOM
+					always = no     
 					OWNER = { has_war_with = ROOT }
 				}
 				add_dynamic_modifier = {
@@ -1342,9 +1338,9 @@ country_event = {
 		trigger = {
 			# Is Ethiopia at war with anyone owning Somali states 
 			any_state = {
-				is_core_of = SOM 
+				always = no      
 				any_country = {
-					has_war_with = ETH 
+					always = no        
 					PREV = { is_owned_by = PREV }
 				}
 			}
@@ -1362,7 +1358,7 @@ country_event = {
 		effect_tooltip = {
 			every_state = {
 				limit = {
-					is_core_of = SOM
+					always = no     
 					OWNER = { has_war_with = ROOT }
 				}
 				add_dynamic_modifier = {
@@ -1405,7 +1401,7 @@ country_event = {
 		every_state = {
 			limit = {
 				is_owned_by = FROM 
-				is_core_of = SOM 
+				always = no      
 			}
 			# set_state_owner_to = ROOT 
 			IF = {
@@ -1427,7 +1423,7 @@ country_event = {
 		}
 		every_state = {
 			limit = {
-				is_core_of = SOM
+				always = no     
 				OWNER = { has_war_with = ROOT }
 			}
 			add_dynamic_modifier = {
@@ -1456,7 +1452,7 @@ country_event = {
 		}
 		every_state = {
 			limit = {
-				is_core_of = SOM
+				always = no     
 				OWNER = { has_war_with = ROOT }
 			}
 			add_dynamic_modifier = {
@@ -1705,15 +1701,7 @@ country_event = {
 				size < 11
 			}
 		}
-		ETH = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 3
-				category = dd_tech
-				category = ca_tech
-				category = bb_tech
-			}
-		}
+		
 		FROM = {
 			country_event = {
 				id = BBA_ethiopia_exile_events.21
@@ -2501,7 +2489,7 @@ country_event = {
 				}
 				random_state = {
 					limit = {
-						is_owned_by = ETH 
+						always = no       
 						any_neighbor_state = { 
 							owner = {
 								OR = {
@@ -2520,7 +2508,7 @@ country_event = {
 				}
 				random_state = {
 					limit = {
-						is_owned_by = ETH 
+						always = no       
 						any_neighbor_state = { 
 							owner = {
 								OR = {
@@ -2858,10 +2846,7 @@ country_event = {
 		}
 		effect_tooltip = {
 		}
-		add_timed_idea = {
-			idea = ETH_djibouti_sale_idea
-			days = 730
-		}
+		
 		FROM = {
 			country_event = {
 				id = BBA_ethiopia_imperial_events.2
@@ -2913,10 +2898,7 @@ country_event = {
 		ai_chance = {
 			base = 10
 		}
-		add_timed_idea = {
-			idea = ETH_djibouti_purchase_idea
-			days = 730
-		}
+		
 		IF = {
 			limit = {
 				268 = { is_fully_controlled_by = FROM } # Don't change control if someone else controls it, in case they are at war with Ethiopia too 
@@ -4315,17 +4297,17 @@ country_event = {
 			hidden_effect = {
 				IF = {
 					limit = {
-						ETH = { has_character = ETH_ayalew_birru }
+						
 					}
 				}
 				IF = {
 					limit = {
-						ETH = { has_character = ETH_beyene_merid }
+						
 					}
 				}
 				IF = {
 					limit = {
-						ETH = { has_character = ETH_balcho_safo }
+						
 					}
 				}
 				# Set up Dynamic Modifiers for Haile Selassie
@@ -4421,10 +4403,10 @@ country_event = {
 		}
 		every_state = {
 			limit = {
-				is_core_of = ETH 
+				always = no      
 				OR = {
 					is_controlled_by = ITA
-					is_controlled_by = ETH
+					always = no           
 				}
 			}
 			set_state_controller_to = ETH
@@ -4445,7 +4427,7 @@ country_event = {
 			}
 			IF = {
 				limit = {
-					has_completed_focus = ETH_expand_the_bodyguard
+					always = no                                   
 				}
 				division_template = {
 					name = "Guards"
@@ -5262,7 +5244,7 @@ country_event = {
 					NOT = { has_government = fascism }
 					has_civil_war = yes
 					NOT = {
-						ETH = {has_war_with = ITA}
+						
 					}
 				}				
 			}
@@ -5387,7 +5369,7 @@ country_event = {
 		}
 
 		SOV = {
-			add_timed_idea = { idea = ETH_aid_ethiopian_communists days = 730 }
+			
 			add_ai_strategy = {
 				type = send_volunteers_desire
 				id = ETH
@@ -5595,24 +5577,7 @@ country_event = {
 			}
 		}
 		add_stability = -0.5
-		ETH = {
-			white_peace = ITA
-			if = {
-				limit = {
-					has_country_flag = ETH_SOV_wants_to_puppet_flag
-				}
-				country_event = {
-					hours = 2
-					id = BBA_ethiopia_communist_events.28
-				}
-			}
-			else = {
-				country_event = {
-					hours = 2
-					id = BBA_ethiopia_communist_events.29
-				}
-			}
-		}
+		
 		
 		news_event = {
 			id = bba_news.2
@@ -5656,7 +5621,7 @@ country_event = {
 					NOT = { has_government = communism }
 					has_civil_war = yes
 					NOT = {
-						ETH = {has_war_with = ITA}
+						
 					}
 				}				
 			}
@@ -5686,7 +5651,7 @@ country_event = {
 					NOT = { has_government = communism }
 					has_civil_war = yes
 					NOT = {
-						ETH = {has_war_with = ITA}
+						
 					}
 				}				
 			}
@@ -5765,7 +5730,7 @@ country_event = {
 					NOT = { has_government = communism }
 					has_civil_war = yes
 					NOT = {
-						ETH = {has_war_with = ITA}
+						
 					}
 				}				
 			}
@@ -5895,7 +5860,7 @@ country_event = {
 					NOT = { has_government = communism }
 					has_civil_war = yes
 					NOT = {
-						ETH = {has_war_with = ITA}
+						
 					}
 				}				
 			}		
@@ -6007,7 +5972,7 @@ country_event = {
 					NOT = { has_government = communism }
 					has_civil_war = yes
 					NOT = {
-						ETH = {has_war_with = ITA}
+						
 					}
 				}				
 			}		
@@ -6036,7 +6001,7 @@ country_event = {
 					NOT = {has_government = communism}
 					has_civil_war = yes
 					NOT = {
-						ETH = {has_war_with = ITA}
+						
 					}
 				}				
 			}
@@ -6118,7 +6083,7 @@ country_event = {
 				every_owned_state = {
 					limit = {
 						is_on_continent = africa
-						is_controlled_by = ETH
+						always = no           
 					}
 					set_state_flag = eth_occupied_ita_states_flag
 				}
@@ -6211,21 +6176,13 @@ country_event = {
 		ITA = {
 			every_allied_country = {
 				limit = {
-					has_war_with = ETH
+					always = no       
 				}
 				white_peace = ROOT
 			}
 		}
 		white_peace = ITA
-		ETH = {
-			every_owned_state = {
-
-				log = "Currently in [THIS.GetName]"
-				limit = { has_state_flag = ita_occupied_eth_states_flag }
-				ITA = { transfer_state = PREV}
-				clr_state_flag = ita_occupied_eth_states_flag
-			}
-		}
+		
 		ITA = {
 			every_owned_state = {
 				limit = { has_state_flag = eth_occupied_ita_states_flag }
@@ -6234,16 +6191,11 @@ country_event = {
 		}
 		set_global_flag = ethiopia_recognized_flag
 		if = {
-			limit = { ETH = { owns_state = 550 } }
+			limit = {  }
 		}
 		if = {
 			limit = { 
-				ETH = {
-					AND = {
-						owns_state = 844
-						owns_state = 559
-					}
-				}
+				
 			}
 			if = {
 				limit = {owns_state = 836}
@@ -6289,40 +6241,9 @@ country_event = {
 		hidden_effect = {
 			IF = {
 				limit = {
-					SOM = {
-						exists = yes
-					}
+					
 				}
-				create_dynamic_country = {
-					original_tag = SOM
-					set_variable = { ETH.new_somalia = THIS }
-					log = "Dynamic tag: [THIS.GetName]"
-					PREV = {
-						log = "Prev tag: [THIS.GetName]"
-						every_owned_state = {
-							log = "State: [THIS.GetName]"
-							limit = {
-								is_core_of = SOM
-								NOT = {state = 835}
-								NOT = {state = 836}
-							}
-							#event_target:released_nation_target = {
-							var:ETH.new_somalia = {
-								log = "Prev Prev tag: [THIS.GetName]"
-								transfer_state = PREV
-							}
-						}
-					}
-					set_popularities = {
-						democratic = ETH.party_popularity_100@democratic
-						neutrality = ETH.party_popularity_100@neutrality
-						fascism = ETH.party_popularity_100@fascism
-						communism = ETH.party_popularity_100@communism
-					}
-					set_politics = {
-						ruling_party = ROOT
-					}
-				}
+
 				clear_variable = ETH.new_somalia
 			}
 			ELSE = {
@@ -6355,7 +6276,7 @@ country_event = {
 			modifier = {
 				factor = 0
 				SPC = {
-					has_war_with = ETH
+					always = no       
 				}
 			}
 		}
@@ -6572,9 +6493,7 @@ country_event = {
 				AND = {
 					is_in_faction = yes
 					has_war_with_major = yes
-					ETH = {
-						is_in_faction = yes
-					}
+					
 				}
 			}
 		}
@@ -6592,20 +6511,18 @@ country_event = {
 			modifier = {
 				add = 30
 				any_owned_state = {
-					is_core_of = SUD
-					is_owned_by = ETH
+					always = no     
+					always = no      
 				}
 			}
 			modifier = {
 				add = -15
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 				}
 			}
 		}
-		ETH = {
-			release_puppet_on_controlled = SUD
-		}
+		
 		white_peace = ETH
 	}
 }
@@ -6626,9 +6543,7 @@ country_event = {
 				AND = {
 					is_in_faction = yes
 					has_war_with_major = yes
-					ETH = {
-						is_in_faction = yes
-					}
+					
 				}
 			}
 		}
@@ -6646,20 +6561,18 @@ country_event = {
 			modifier = {
 				add = 30
 				any_owned_state = {
-					is_core_of = DJI
-					is_controlled_by = ETH
+					always = no     
+					always = no           
 				}
 			}
 			modifier = {
 				add = -15
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 				}
 			}
 		}
-		ETH = {
-			release_puppet_on_controlled = DJI
-		}
+		
 		white_peace = ETH
 	}
 }
@@ -6680,9 +6593,7 @@ country_event = {
 				AND = {
 					is_in_faction = yes
 					has_war_with_major = yes
-					ETH = {
-						is_in_faction = yes
-					}
+					
 				}
 			}
 		}
@@ -6700,20 +6611,18 @@ country_event = {
 			modifier = {
 				add = 30
 				any_owned_state = {
-					is_core_of = ERI
-					is_owned_by = ETH
+					always = no     
+					always = no      
 				}
 			}
 			modifier = {
 				add = -15
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 				}
 			}
 		}
-		ETH = {
-			release_puppet_on_controlled = ERI
-		}
+		
 		white_peace = ETH
 	}
 }
@@ -6734,9 +6643,7 @@ country_event = {
 				AND = {
 					is_in_faction = yes
 					has_war_with_major = yes
-					ETH = {
-						is_in_faction = yes
-					}
+					
 				}
 			}
 		}
@@ -6755,19 +6662,17 @@ country_event = {
 				add = 30
 				any_owned_state = {
 					is_core_of = KEN
-					is_owned_by = ETH
+					always = no      
 				}
 			}
 			modifier = {
 				add = -15
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 				}
 			}
 		}
-		ETH = {
-			release_puppet_on_controlled = KEN
-		}
+		
 		white_peace = ETH
 	}
 }
@@ -6787,9 +6692,7 @@ country_event = {
 				AND = {
 					is_in_faction = yes
 					has_war_with_major = yes
-					ETH = {
-						is_in_faction = yes
-					}
+					
 				}
 			}
 		}
@@ -6807,20 +6710,18 @@ country_event = {
 			modifier = {
 				add = 30
 				any_owned_state = {
-					is_core_of = SOM
-					is_owned_by = ETH
+					always = no     
+					always = no      
 				}
 			}
 			modifier = {
 				add = -15
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 				}
 			}
 		}
-		ETH = {
-			release_puppet_on_controlled = SOM
-		}
+		
 		white_peace = ETH
 	}
 }
@@ -6840,9 +6741,7 @@ country_event = {
 				AND = {
 					is_in_faction = yes
 					has_war_with_major = yes
-					ETH = {
-						is_in_faction = yes
-					}
+					
 				}
 			}
 		}
@@ -6861,19 +6760,17 @@ country_event = {
 				add = 30
 				any_owned_state = {
 					is_core_of = UGA
-					is_owned_by = ETH
+					always = no      
 				}
 			}
 			modifier = {
 				add = -15
 				any_controlled_state = {
-					is_core_of = ETH
+					always = no     
 				}
 			}
 		}
-		ETH = {
-			release_puppet_on_controlled = UGA
-		}
+		
 		white_peace = ETH
 	}
 }
@@ -7040,9 +6937,7 @@ country_event = {
 				AND = {
 					is_in_faction = yes
 					has_war_with_major = yes
-					ETH = {
-						is_in_faction = yes
-					}
+					
 				}
 			}
 		}
@@ -7061,7 +6956,7 @@ country_event = {
 				add = 30
 				any_owned_state = {
 					is_on_continent = africa
-					is_controlled_by = ETH
+					always = no           
 				}
 			}
 			modifier = {
@@ -7133,13 +7028,13 @@ country_event = {
 		every_other_country = {
 			limit = { 
 				is_in_faction_with = ROOT 
-				has_war_with = ETH
+				always = no       
 			}
 			white_peace = ETH
 		}
 		every_other_country = {
 			limit = {
-				is_in_faction_with = ETH
+				always = no             
 				has_war_with = ROOT
 			}
 			white_peace = ROOT

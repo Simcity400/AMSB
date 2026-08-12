@@ -1933,11 +1933,7 @@ focus_tree = {
             search_filters = {FOCUS_FILTER_ANNEXATION}
 
             completion_reward = {
-                BRM = {
-                    every_core_state = {
-                        add_core_of = ROOT
-                    }
-                }
+                
                 every_state = {
                     limit = {
                         is_in_array = {
@@ -2003,11 +1999,7 @@ focus_tree = {
 
                 if = {
                     limit = {
-                        BRM = {
-                            all_core_state = {
-                                is_fully_controlled_by = PREV
-                            }
-                        }
+                        
                     }
 
                     create_wargoal = {
@@ -2016,24 +2008,7 @@ focus_tree = {
                     }
                 }
                 else = {
-                    BRM = {
-                        every_core_state = {
-                            if = {
-                                limit = {
-
-                                    NOT = { ROOT = { has_annex_war_goal =  PREV.controller } }
-                                    controller = {  NOT = { original_tag = ROOT } } 
-                                }
-
-                                ROOT = {
-                                    create_wargoal = {
-                                        type = annex_everything
-                                        target = PREV.controller
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    
                 }
                 
                 if = {
@@ -2150,22 +2125,7 @@ focus_tree = {
                 
                 
                 
-                BAN = {
-                    RAJ_huseyn_shaheed_suhrawardy = {
-                        if = {
-                            limit = {
-                                NOT = {
-                                    has_character_flag = is_mughal_emperor
-                                }
-                            }
-                            set_nationality = RAJ
-                            remove_country_leader_role = {
-                                character = RAJ_huseyn_shaheed_suhrawardy
-                                ideology = despotism
-                            }
-                        }
-                    }
-                }
+                
                 
                 
                 
@@ -2190,21 +2150,21 @@ focus_tree = {
                     limit = {
                         OR = {
                             tag = PSH
-                            tag = HYD
+                            always = no
                             tag = MYS
-                            tag = RJP
-                            tag = CIP
-                            tag = RAS
+                            always = no
+                            always = no
+                            always = no
                             tag = NWF
-                            tag = KAS
-                            tag = MPU
-                            tag = WIS
+                            always = no
+                            always = no
+                            always = no
                             tag = KOL
                             tag = KHL
-                            tag = SIN
-                            tag = KLT
-                            tag = SKK
-                            tag = BLC
+                            always = no
+                            always = no
+                            always = no
+                            always = no
                         }
                         exists = yes
                         is_subject_of = ROOT
@@ -2458,7 +2418,7 @@ focus_tree = {
         completion_reward = {
             every_state = {
                 limit = {
-                    is_core_of = AFG
+                    always = no     
                 }
                 add_core_of = ROOT
             }            
@@ -2797,11 +2757,7 @@ focus_tree = {
         completion_reward = {
             if = {
                 limit = {
-                    MON = {
-                        all_core_state = {
-                            is_fully_controlled_by = PREV
-                        }
-                    }
+                    
                 }
 
                 create_wargoal = {
@@ -2810,24 +2766,7 @@ focus_tree = {
                 }
             }
             else = {
-                MON = {
-                    every_core_state = {
-                        if = {
-                            limit = {
-
-                                NOT = { ROOT = { has_annex_war_goal =  PREV.controller } }
-                                controller = {  NOT = { original_tag = ROOT } } 
-                            }
-
-                            ROOT = {
-                                create_wargoal = {
-                                    type = annex_everything
-                                    target = PREV.controller
-                                }
-                            }
-                        }
-                    }
-                }
+                
             }
         }
     }
@@ -2882,8 +2821,8 @@ focus_tree = {
                 limit = {
                     OR = {
                         is_core_of = PER
-                        is_core_of = AFG
-                        is_core_of = IRQ
+                        always = no     
+                        always = no     
                     }
                 }
                 add_core_of = ROOT
@@ -3564,7 +3503,7 @@ focus_tree = {
                         
                         
                         
-                        PAK = { is_subject_of = ROOT }
+                        
                     }
                 }
                 custom_effect_tooltip = RAJ_princely_autonomy_tt
@@ -3672,7 +3611,7 @@ focus_tree = {
 
             if = {
                 limit = {
-                    PAK = { is_subject_of = ROOT } 
+                     
                 }
             }
 
@@ -5863,13 +5802,7 @@ focus_tree = {
                 }
 
 
-                BRM = {
-                    exists = yes
-                    NOT = { 
-                        is_subject_of = ROOT 
-                        is_in_faction_with = ROOT
-                    }
-                }
+                
 
 
                 SAF = {
@@ -5890,13 +5823,7 @@ focus_tree = {
                 }
 
 
-                NZL = {
-                    exists = yes
-                    NOT = { 
-                        is_subject_of = ROOT 
-                        is_in_faction_with = ROOT
-                    }
-                }
+                
             }
         }
         
@@ -5918,13 +5845,7 @@ focus_tree = {
             }
 
 
-            BRM = {
-                OR = { 
-                    exists = no
-                    is_subject_of = ROOT 
-                    is_in_faction_with = ROOT
-                }
-            }
+            
 
 
             SAF = {
@@ -5945,13 +5866,7 @@ focus_tree = {
             }
 
 
-            NZL = {
-                OR = { 
-                    exists = no
-                    is_subject_of = ROOT 
-                    is_in_faction_with = ROOT
-                }
-            }
+            
         }
 
         cancel_if_invalid = yes
@@ -5981,13 +5896,7 @@ focus_tree = {
                         }
 
 
-                        BRM = {
-                            exists = yes
-                            NOT = { 
-                                is_subject_of = ROOT 
-                                is_in_faction_with = ROOT
-                            }
-                        }
+                        
 
 
                         SAF = {
@@ -6008,13 +5917,7 @@ focus_tree = {
                         }
 
 
-                        NZL = {
-                            exists = yes
-                            NOT = { 
-                                is_subject_of = ROOT 
-                                is_in_faction_with = ROOT
-                            }
-                        }
+                        
                     }
                 }
                 custom_effect_tooltip = RAJ_nothing_personal_tt
@@ -6056,13 +5959,7 @@ focus_tree = {
 
             if = {
                 limit = {
-                    BRM = {
-                        exists = yes
-                        NOT = { 
-                            is_subject_of = ROOT 
-                            is_in_faction_with = ROOT
-                        }
-                    }
+                    
                 }
 
                 create_wargoal = {
@@ -6090,13 +5987,7 @@ focus_tree = {
 
             if = {
                 limit = {
-                    NZL = {
-                        exists = yes
-                        NOT = { 
-                            is_subject_of = ROOT 
-                            is_in_faction_with = ROOT
-                        }
-                    }
+                    
                 }
 
                 create_wargoal = {
@@ -8962,12 +8853,7 @@ focus_tree = {
 
         available = {
             communism > var:RAJ_royal_indian_navy_mutiny_threshold
-            PAK = {
-                OR = {
-                    is_subject = no
-                    is_subject_of = RAJ
-                }
-            }
+            
         }
         
         bypass = {
@@ -9072,14 +8958,14 @@ focus_tree = {
 
             if = {
                 limit = {
-                    PAK = { exists = no }
+                    
                 }
 
             }
             else = {
                 if = {
                     limit = {
-                        PAK = { is_subject_of = RAJ }
+                        
                     }
                     end_puppet = PAK
                 }
@@ -9105,7 +8991,7 @@ focus_tree = {
             
                random_core_state = {
                     limit = {
-                        is_controlled_by = PAK   
+                        always = no              
                     }
                     prioritize = { 443 } #optional: to pick those states first if they fulfill the limit
                     create_unit = {
@@ -11009,12 +10895,12 @@ focus_tree = {
         bypass = {
 
             OR = {
-                PAK = { exists = no }
-                PAK = { is_subject_of = ROOT }
-                has_war_with = PAK
+                
+                
+                always = no       
                 AND = {
-                    PAK = { NOT = { controls_state = 430 } }
-                    PAK = { NOT = { controls_state = 431 } }
+                    
+                    
                 }
             }
         }
@@ -13135,10 +13021,7 @@ focus_tree = {
         }
 
         available = {
-            BRM = { 
-                exists = yes 
-                NOT = { is_subject_of = ROOT }
-            }
+            
 
         }
         
@@ -13193,7 +13076,7 @@ focus_tree = {
         completion_reward = {
             if = {
                 limit = {
-                    NOT = { has_war_with = MAL }
+                    NOT = { always = no        }
                 }
 
                 create_wargoal = {
@@ -14505,9 +14388,7 @@ focus_tree = {
         bypass = {
            OR = {
                 is_subject = no
-                BAN = {
-                    exists = yes
-                }
+                
             }
         }
         
@@ -14553,9 +14434,7 @@ focus_tree = {
         bypass = {
             OR = {
                 is_subject = no
-                PAK = {
-                    exists = yes
-                }
+                
             }
         }
 
@@ -14696,9 +14575,7 @@ focus_tree = {
         available = {
             if = {
                 limit = {
-                    PAK = {
-                        exists = yes
-                    }
+                    
                 }
                 OR = {
                     check_variable = { RAJ.num_of_factories >  pak_factories tooltip = pak_factories_tt }
@@ -14830,10 +14707,10 @@ focus_tree = {
         id = RAJ_tryst_with_destiny
         icon = {
             GFX_focus_RAJ_tryst_with_destiny_BAN = {
-                tag = BAN
+                always = no
             }
             GFX_focus_RAJ_tryst_with_destiny_PAK = {
-                tag = PAK
+                always = no
             }
             GFX_focus_RAJ_tryst_with_destiny = yes
         }
@@ -15490,11 +15367,7 @@ focus_tree = {
         }
 
         available = {
-            BRM = {
-                exists = yes
-                is_in_faction_with = ROOT
-                controls_province = 1330
-            }
+            
             controls_province = 4245
         }
         
@@ -19363,8 +19236,8 @@ focus = {
 			limit = {
 				
 				NOT = {
-					has_war_with = MAL
-					any_allied_country = { has_war_with = MAL }
+					always = no       
+					any_allied_country = { always = no        }
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -19818,46 +19691,22 @@ focus = {
 		#Event to annex Burma
 		if = { # BRM is independent -> Send event to them
 			limit = {
-				BRM = {
-					exists = yes 
-					controls_state = 995 # PEGU (Rangoon)
-					controls_state = 998 # SAGAING (Myitkyina)
-					OR = { #To avoid transferring states controlled by enemy, messing up the controller.
-						has_war = no
-						all_enemy_country = {
-							has_war_with = ROOT	
-						}
-					}
-					is_subject = no
-					is_in_faction = no
-					is_ai = yes #No point on sending an event to get annexed to a player, would be just clickbait
-				}
+				
 				NOT = {
-					has_war_with = BRM
-					any_allied_country = { has_war_with = BRM }
+					always = no       
+					any_allied_country = { always = no        }
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			BRM = { save_event_target_as = RAJ_annexing_country_target }
+			
 		}
 		else_if = { # BRM is subject of an ally -> Send event to overlord
 			limit = {
 				is_ally_with = BRM.OVERLORD
-				BRM = {
-					is_ai = yes #Do not annex a player without they having a say
-					exists = yes 
-					controls_state = 995 # PEGU (Rangoon)
-					controls_state = 998 # SAGAING (Myitkyina)
-					OR = { #To avoid transferring states controlled by enemy, messing up the controller.
-						has_war = no
-						all_enemy_country = {
-							has_war_with = ROOT	
-						}
-					}
-				}
+				
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			BRM = { save_event_target_as = RAJ_annexing_country_target }
+			
 			var:BRM.OVERLORD = { country_event = { id = GOE_RAJ_loyalist.88 hours = 8 random_hours = 4 } }
 		}
 	}
@@ -22948,9 +22797,9 @@ focus = {
                         has_character_flag = is_in_ethiopia
                     }
                     OR = {
-                        ETH = { is_ai = yes }
+                        
                         AND = {
-                            ETH = { is_ai = no }
+                            
                             RAJ = { is_ai = no }
                         }
                     }
@@ -23536,18 +23385,13 @@ focus = {
         }
 
         available = {
-            BRM = {
-                is_in_faction_with = ROOT
-                controls_state = 995
-                controls_state = 640
-                controls_state = 998
-            }
+            
 
             CHI = {
                 any_enemy_country = {
                     is_major = yes
                     NOT = { 
-                        original_tag = BRM 
+                        always = no        
                         is_in_faction_with = RAJ
                         original_tag = RAJ
                     }
@@ -23948,7 +23792,7 @@ focus = {
                 any_enemy_country = {
                     is_major = yes
                     NOT = { 
-                        original_tag = BRM 
+                        always = no        
                         is_in_faction_with = RAJ
                         original_tag = RAJ
                     }
@@ -25063,19 +24907,14 @@ focus = {
         }
 
         available = {
-            NOT = { has_war_with = PAK }
+            NOT = { always = no        }
         }
         
         bypass = {
             OR = {
-                PAK = {
-                    OR = {
-                        exists = no
-                        is_subject_of = ROOT
-                    }
-                }
+                
 
-                has_war_with = PAK
+                always = no       
                 controls_state = 986
             }
 
@@ -25111,21 +24950,16 @@ focus = {
         }
 
         available = {
-            NOT = { has_war_with = PAK }
+            NOT = { always = no        }
             controls_state = 437
             controls_state = 991
         }
         
         bypass = {
             OR = {
-                PAK = {
-                    OR = {
-                        exists = no
-                        is_subject_of = ROOT
-                    }
-                }
+                
 
-                has_war_with = PAK
+                always = no       
                 controls_state = 433
             }
 
@@ -25161,19 +24995,14 @@ focus = {
         }
 
         available = {
-            NOT = { has_war_with = PAK }
+            NOT = { always = no        }
         }
         
         bypass = {
             OR = {
-                PAK = {
-                    OR = {
-                        exists = no
-                        is_subject_of = ROOT
-                    }
-                }
+                
 
-                has_war_with = PAK
+                always = no       
                 controls_state = 431
             }
 
@@ -25210,7 +25039,7 @@ focus = {
 
         available = {
             NOT = {
-                has_truce_with = PAK
+                always = no         
             }
         }
         
@@ -25230,17 +25059,11 @@ focus = {
                 target = PAK 
             }
             custom_effect_tooltip = generic_skip_one_line_tt
-            PAK = {
-                every_core_state = {
-                    add_core_of = ROOT
-                }
-            }
+            
 
             if = {
                 limit = {
-                    BRM = {
-                        is_in_faction_with = ENG
-                    }
+                    
                 }
 
                 create_wargoal = {
@@ -25248,11 +25071,7 @@ focus = {
                     target = BRM 
                 }
                 custom_effect_tooltip = generic_skip_one_line_tt
-                BRM = {
-                    every_core_state = {
-                        add_core_of = ROOT
-                    }
-                }
+                
             }
         }
     }

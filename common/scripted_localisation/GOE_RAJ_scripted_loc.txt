@@ -21,14 +21,14 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = PAK
+			always = no       
 		}
 		localization_key = pakistan
 	}
 
 	text = {
 		trigger = {
-			original_tag = BAN
+			always = no       
 		}
 		localization_key = bangladesh
 	}
@@ -45,14 +45,14 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = PAK
+			always = no       
 		}
 		localization_key = pakistani
 	}
 
 	text = {
 		trigger = {
-			original_tag = BAN
+			always = no       
 		}
 		localization_key = bangladeshi
 	}
@@ -83,10 +83,7 @@ defined_text = {
 				original_tag = RAJ 
 				NOT = { has_country_flag = reveal_pressure }
 			}
-			BAN = { 
-				is_subject = no 
-				exists = yes
-			}
+			
 		}
 		localization_key = RAJ_hidden_pressure_RAJ_BAN_exists
 	}
@@ -97,12 +94,7 @@ defined_text = {
 				original_tag = RAJ 
 				NOT = { has_country_flag = reveal_pressure }
 			}
-			BAN = { 
-				OR = {
-					is_subject = yes 
-					exists = no
-				}
-			}
+			
 		}
 		localization_key = RAJ_hidden_pressure_RAJ_BAN_does_not_exist
 	}
@@ -111,13 +103,10 @@ defined_text = {
 	text = { #I am PAK, BAN Exists and havent revealed pressure
 		trigger = {
 			ROOT = { 
-				original_tag = PAK 
+				always = no        
 				NOT = { has_country_flag = reveal_pressure }
 			}
-			BAN = { 
-				is_subject = no 
-				exists = yes
-			}
+			
 		}
 		localization_key = RAJ_hidden_pressure_PAK_BAN_exists
 	}
@@ -125,15 +114,10 @@ defined_text = {
 	text = { #I am RAJ, BAN does not exist and havent revealed pressure
 		trigger = {
 			ROOT = { 
-				original_tag = PAK 
+				always = no        
 				NOT = { has_country_flag = reveal_pressure }
 			}
-			BAN = { 
-				OR = {
-					is_subject = yes 
-					exists = no
-				}
-			}
+			
 		}
 		localization_key = RAJ_hidden_pressure_PAK_BAN_does_not_exist
 	}
@@ -273,7 +257,7 @@ defined_text = {
 	text = {
 		trigger = {
 			var:RAJ_annexing_country_target = {
-				original_tag = BRM
+				always = no       
 			}
 		}
 		localization_key = BRM #BURMA

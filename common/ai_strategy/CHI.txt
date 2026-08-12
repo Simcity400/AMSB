@@ -500,13 +500,13 @@ CHI_dont_defend_HBC = {
 	}
 
 	enable = {
-		is_in_faction_with = HBC
+		always = no             
 		OR = {	
 			1039 = {
-				is_controlled_by = HBC
+				always = no           
 			}
 			608 = {
-				is_controlled_by = HBC
+				always = no           
 			}
 		}
 		CHI = {
@@ -531,12 +531,12 @@ CHI_dont_defend_SND = {
 	}
 
 	enable = {
-		is_in_faction_with = SND
+		always = no             
 		597 = {
-			is_controlled_by = SND
+			always = no           
 		}
 		1038 = {
-			is_controlled_by = SND
+			always = no           
 		}
 	}
 
@@ -824,7 +824,7 @@ CHI_prioritize_coast_garrisons_low_effort = { # Specifically for fasc-chi
 # Make sure Sinkiang tries to push aggressively 
 SIK_push_khotan = {
 	allowed = {
-		original_tag = SIK
+		always = no       
 	}
 	enable = {
 		#is_historical_focus_on = yes
@@ -833,23 +833,14 @@ SIK_push_khotan = {
 				focus = SIK_march_into_khotan
 				progress > 0.01
 			}
-			has_war_with = KHM
+			always = no       
 		}
 	}
 	abort = {
-		KHM = {
-			OR = {
-				has_capitulated = yes
-				exists = no
-			}
-		}
+		
 	}
 
-	ai_strategy = {
-		type = front_unit_request
-		tag = KHM
-		value = 75
-	}
+
 
 	ai_strategy = {
 		type = conquer
@@ -863,24 +854,13 @@ SIK_push_khotan = {
 		value = 200
 	}
 
-	ai_strategy = {
-		type = front_control
 
-		tag = KHM
-
-		ratio = 0.7
-
-		priority = 100
-		ordertype = front
-		execution_type = rush
-		execute_order = yes
-	}
 
 }
 
 HBC_do_everything_possible_to_allow_japan_to_invade = {
 	allowed = {
-		original_tag = HBC
+		always = no       
 	}
 	enable = {	
 		has_war = no
@@ -944,9 +924,9 @@ CHI_southern_warlords_should_prioritize_southern_borders = {
 	allowed = {
 		has_dlc = "No Compromise, No Surrender"
 		OR = {
-			original_tag = YUN 
-			original_tag = GXC
-			original_tag = GDC
+			always = no        
+			always = no       
+			always = no       
 		}
 	}
 	enable = {
@@ -978,7 +958,7 @@ CHI_southern_warlords_should_prioritize_southern_borders = {
 PRC_let_everyone_else_do_the_fighting = {
 	allowed = {
 		has_dlc = "No Compromise, No Surrender"
-		original_tag = PRC
+		always = no       
 	}
 	enable = {
 		date < 1940.8.20
@@ -987,7 +967,7 @@ PRC_let_everyone_else_do_the_fighting = {
 			any_controlled_state = {
 				any_neighbor_state = {
 					controller = {
-						has_war_with = PRC
+						always = no       
 					}
 				}
 			}
@@ -1008,7 +988,7 @@ PRC_let_everyone_else_do_the_fighting = {
 #Building Mils and Infantry Equipment 0 is faster and cheaper and we gonna need everything we can get
 PRC_military_factories_and_production = {
 	allowed = { 
-		original_tag = PRC 
+		always = no        
 	}
 	enable = {
 		date < 1939.1.1
@@ -1030,7 +1010,7 @@ PRC_military_factories_and_production = {
 
 PRC_focus_militias_early_game = {
 	allowed = { 
-		original_tag = PRC 
+		always = no        
 	}
 	enable = {
 		date < 1944.1.1
@@ -1157,9 +1137,7 @@ CHI_stop_helping_HBC = {
 	}
 	enable = {
 		NOT = {
-			HBC = {
-				is_subject_of = CHI
-			}
+			
 		}
 	}
 	abort_when_not_enabled = yes

@@ -2792,12 +2792,12 @@ country_event = {
 		trigger = {
 			OR = {
 				AST = { is_subject = yes }
-				NZL = { is_subject = yes }
+				
 			}
 			NOT = {
 				OR = {
 					original_tag = AST
-					original_tag = NZL
+					always = no       
 				}
 			}
 		}
@@ -2807,11 +2807,11 @@ country_event = {
 		trigger = {
 			OR = {
 				AST = { is_subject = no }
-				NZL = { is_subject = no }
+				
 			}
 			OR = {
 				original_tag = AST
-				original_tag = NZL
+				always = no       
 			}
 		}
 	}
@@ -2894,9 +2894,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NZL = {
-					is_subject = yes
-				}
+				
 			}
 			puppet = NZL
 		}
@@ -2905,7 +2903,7 @@ country_event = {
 				FROM = {
 					OR = {
 						original_tag = AST
-						original_tag = NZL
+						always = no       
 					}
 				}
 			}
@@ -4017,29 +4015,29 @@ country_event = {
  				608 = { #Beijing
  					OR = {
 						is_controlled_by = JAP
-						is_controlled_by = MAN
-						is_controlled_by = MEN
+						always = no           
+						always = no           
 					}
 			 	} 
 				614 = { #Hebei
 					OR = {
 						is_controlled_by = JAP
-						is_controlled_by = MAN
-						is_controlled_by = MEN
+						always = no           
+						always = no           
 					}
 			 	} 
 				597 = { #Shandong
 					OR = {
 						is_controlled_by = JAP
-						is_controlled_by = MAN
-						is_controlled_by = MEN
+						always = no           
+						always = no           
 					}
 				} 
 				598 = { #Jiangsu
 					OR = {
 						is_controlled_by = JAP
-						is_controlled_by = MAN
-						is_controlled_by = MEN
+						always = no           
+						always = no           
 					}
 				}
 			}
@@ -4047,15 +4045,15 @@ country_event = {
 				597 = {  #Shanghai
 					OR = {
 						is_controlled_by = JAP
-						is_controlled_by = MAN
-						is_controlled_by = MEN
+						always = no           
+						always = no           
 					}
 				}
 				592 = {  #Guangzhou
 					OR = {
 						is_controlled_by = JAP
-						is_controlled_by = MAN
-						is_controlled_by = MEN
+						always = no           
+						always = no           
 					}
 			 	}
 			}

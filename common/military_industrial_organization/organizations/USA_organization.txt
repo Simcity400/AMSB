@@ -16,7 +16,7 @@ USA_marmon_herrington_organization = {
 		OR = {
 			tag = USA
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -29,7 +29,7 @@ USA_marmon_herrington_organization = {
 			FROM = { NOT = { has_war_with = USA } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -800,7 +800,7 @@ USA_newport_news_shipbuilding_organization = {
 		OR = {
 			tag = USA
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 		}
@@ -813,7 +813,7 @@ USA_newport_news_shipbuilding_organization = {
 			FROM = { NOT = { has_war_with = USA } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -876,7 +876,7 @@ USA_north_american_aviation_organization = {
 		OR = {
 			tag = USA 
 			AND = {
-				tag = BRA
+				always = no
 				has_dlc = "Trial of Allegiance"
 			}
 			PHI_SEA = yes
@@ -891,7 +891,7 @@ USA_north_american_aviation_organization = {
 			FROM = { NOT = { has_war_with = USA } }
 		}
 		IF = {
-			limit = { FROM = { original_tag = BRA } }
+			limit = { FROM = { always = no        } }
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
@@ -1498,7 +1498,7 @@ USA_ford_motor_company_organization = {
 		}
 		IF = { 
 			limit = {
-				FROM = { tag = BRA }
+				FROM = { always = no }
 			}
 			FROM = {
 				has_country_flag = BRA_toa_DLC
@@ -1540,7 +1540,7 @@ USA_ford_motor_company_organization = {
 				}
 			}
 			FROM = {
-				has_completed_focus = BRA_expand_fordlandia
+				always = no                                
 			}
 		}
 		else_if = {

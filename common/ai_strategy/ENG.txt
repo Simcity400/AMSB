@@ -2187,13 +2187,8 @@ ENG_prepare_for_war_with_iraq = {
 		original_tag = ENG
 	}
 	enable = {
-		IRQ = {
-			focus_progress = {
-				focus = IRQ_revoke_anglo_iraq_treaty
-				progress > 0 
-			}
-		}
-		NOT = { is_in_faction_with = IRQ }
+		
+		NOT = { always = no              }
 	}
 
 	abort_when_not_enabled = yes
@@ -2202,11 +2197,7 @@ ENG_prepare_for_war_with_iraq = {
 		id = IRQ
 		value = 100
 	}
-	ai_strategy = {
-		type = front_unit_request
-		tag = IRQ
-		value = 100
-	}
+
 	ai_strategy = {
 		type = put_unit_buffers
 
@@ -2946,7 +2937,7 @@ ENG_ethiopian_continuation_war = {
 	enable = {
 		is_historical_focus_on = yes  # Don't like locking it behind a checkbox...
 		date < 1941.5.1  # Historically, the main Italian forces in Ethiopia surrendered in November 1941. (After that, there were remnants fighting a guerilla war until September 1943.)
-		ETH = { is_exiled_in = ENG }
+		
 		has_war = yes
 	}
 	abort_when_not_enabled = yes

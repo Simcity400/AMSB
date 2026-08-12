@@ -287,7 +287,7 @@ PRC_transfer_negative_spirits = {
 PRC_check_if_red_army_or_pla = {
 	if = { ## For localisation reasons, if hasn't completed it display "Modify Red Army" when hover over, if has then display "Modify PLA"
 			limit = {
-				has_completed_focus = PRC_peoples_liberation_army_sea
+				always = no                                          
 			}
 			custom_effect_tooltip = PRC_pla_ground_force_modify_tt
 		}
@@ -327,10 +327,7 @@ PRC_increase_mao_BOP_small = {
 				id = PRC_communist_power_struggle
 			}
 		}
-		add_power_balance_value = {
-			id = PRC_communist_power_struggle
-			value = -0.05
-		}
+		
 	}
 }
 
@@ -341,10 +338,7 @@ PRC_increase_bolsheviks_BOP_small = {
 				id = PRC_communist_power_struggle
 			}
 		}
-		add_power_balance_value = {
-			id = PRC_communist_power_struggle
-			value = 0.05
-		}
+		
 	}
 }
 

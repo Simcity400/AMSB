@@ -8318,7 +8318,7 @@ focus = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = VIC
+					always = no         
 				}
 				set_variable = {
 					SWI_requested_territory = VIC
@@ -8342,14 +8342,7 @@ focus = {
 								is_alpine_state = yes
 							}
 						}
-						VIC = {
-							exists = yes 
-							is_ai = no
-							any_owned_state = {
-								is_core_of = FRA 
-								is_alpine_state = yes
-							} 
-						}
+						
 					}
 				}
 				custom_effect_tooltip = if_they_accept 
@@ -8367,15 +8360,7 @@ focus = {
 						limit = {
 							FRA = { exists = no }
 						}
-						VIC = {
-							every_owned_state = {
-								limit = {
-									is_core_of = FRA 
-									is_alpine_state = yes 
-								}
-								transfer_state_to = SWI 
-							}
-						}
+						
 					}
 					custom_effect_tooltip = SWI_size_and_opinion_chance_tooltip
 				}
