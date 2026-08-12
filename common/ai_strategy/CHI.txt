@@ -822,102 +822,9 @@ CHI_prioritize_coast_garrisons_low_effort = { # Specifically for fasc-chi
 #}
 
 # Make sure Sinkiang tries to push aggressively 
-SIK_push_khotan = {
-	allowed = {
-		always = no       
-	}
-	enable = {
-		#is_historical_focus_on = yes
-		OR = {
-			focus_progress = {
-				focus = SIK_march_into_khotan
-				progress > 0.01
-			}
-			always = no       
-		}
-	}
-	abort = {
-		
-	}
 
 
 
-	ai_strategy = {
-		type = conquer
-		id = KHM
-		value = 200
-	}
-
-	ai_strategy = {
-		type = antagonize
-		id = KHM
-		value = 200
-	}
-
-
-
-}
-
-HBC_do_everything_possible_to_allow_japan_to_invade = {
-	allowed = {
-		always = no       
-	}
-	enable = {	
-		has_war = no
-		date < 1938.1.1
-		CHI = {
-			NOT = { has_completed_focus = CHI_strengthening_our_resolve }
-		}
-	}
-	abort_when_not_enabled = yes
-	
-	#We don't need to keep a watch over Japan, right?
-	ai_strategy = {
-		type = front_control
-		id = JAP
-		value = -50
-	}
-	#Who even cares about Mengchukuo?
-	ai_strategy = {
-		type = front_control
-		id = MEN
-		value = -50
-	}
-	#China sounds very sus, let's watch THEM
-	ai_strategy = {
-		type = front_control
-		id = CHI
-		value = 50
-	}
-	#We're watching you Shanxi!
-	ai_strategy = {
-		type = front_control
-		id = SHX
-		value = 50
-	}
-	#Who's dis then? Better keep a close eye on.... *looks in notes* Shandong
-	ai_strategy = {
-		type = front_control
-		id = SND
-		value = 50
-	}
-	#Don't Garrison our Victory Points - they're too close to Japan!
-	ai_strategy = {
-		type = garrison
-		value = -25
-	}
-	#Put our troops literally anywhere but close to Japan
-	ai_strategy = {
-		type = put_unit_buffers
-		states = {
-			614 #Hebei
-		}
-		ratio = 2
-		area = asia
-		subtract_invasions_from_need = no
-		subtract_fronts_from_need = no
-	}
-}
 
 #Japan will be gunning for us from the south soon!
 CHI_southern_warlords_should_prioritize_southern_borders = {
@@ -986,44 +893,10 @@ PRC_let_everyone_else_do_the_fighting = {
 }
 
 #Building Mils and Infantry Equipment 0 is faster and cheaper and we gonna need everything we can get
-PRC_military_factories_and_production = {
-	allowed = { 
-		always = no        
-	}
-	enable = {
-		date < 1939.1.1
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = { #All you need is guns - Guns is all you need
-		type = building_target
-		id = arms_factory
-		value = 50
-	}
-	ai_strategy = { #Skip infantry_equipment_1 and jump straight to infantry_equipment_2 - we need quantity!
-   		type = production_upgrade_desire_offset
- 	 	id = infantry_equipment_1
-  	 	value = -100
-	}
-}
 
 
-PRC_focus_militias_early_game = {
-	allowed = { 
-		always = no        
-	}
-	enable = {
-		date < 1944.1.1
-	}
 
-	abort_when_not_enabled = yes
-	ai_strategy = { #All you need is militias in early game
-		type = role_ratio
-		id = militias
-		value = 300
-	}
 
-}
 
 warlords_hunker_down_now  = {
 	allowed = {

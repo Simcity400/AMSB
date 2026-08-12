@@ -1977,36 +1977,7 @@ SOV_khakimov_proposal_sov = {
 }
 
 #Soviets
-SOV_khakimov_proposal_sau = {
-	allowed = {
-		always = no       
-	}
 
-	enable = {
-		SOV = {
-			has_idea = SOV_maksim_litvinov
-			has_completed_focus = SOV_the_khakimov_proposal
-			is_subject = no
-		}
-		is_subject = no
-	}
-
-	abort = {
-		OR = {
-			SOV = { NOT = { has_idea = SOV_maksim_litvinov } }
-			is_in_faction_with = SOV
-			SOV = { has_capitulated = yes }
-			is_subject = yes
-		}
-	}
-
-	ai_strategy = {
-		type = diplo_action_desire
-		id = SOV
-		target = befriend
-		value = 25
-	}
-}
 
 SOV_unit_buffer_for_asian_threat = {
 	allowed = {

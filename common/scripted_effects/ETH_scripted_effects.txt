@@ -979,31 +979,11 @@ ETH_create_federation = {
 
 # make Hailu Tekle hayamot Party Leader
 ETH_promote_ETH_hailu_tekle_haymanot = {
-	ETH_hailu_tekle_haymanot = {
-		add_country_leader_role = {
-			promote_leader = yes 
-			country_leader = {
-				ideology = fascism_ideology 
-				expire = "1965.1.1.1"
-				traits = { tainted_ras }
-				id = -1
-			}
-		}
-	}
+
 }
 # Make Abba Jofir Party Leader
 ETH_promote_ETH_abba_jofir = {
-	ETH_abba_jofir = {
-		add_country_leader_role = {
-			promote_leader = yes 
-			country_leader = {
-				ideology = fascism_ideology 
-				expire = "1965.1.1.1"
-				traits = { inexperienced_sultan }
-				id = -1
-			}
-		}
-	}
+
 }
 
 
@@ -1202,9 +1182,7 @@ ETH_haile_selassie_returns = {
 		custom_effect_tooltip = ETH_haile_selassie_returns_tt
 		add_war_support = 0.1
 		
-		ETH_haile_selassie = {
-			gain_xp = 500 
-		}
+
 		IF = {
 			limit = {
 				is_in_faction_with = ENG 

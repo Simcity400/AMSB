@@ -484,9 +484,7 @@ unit_leader_event = {
 		ai_chance = {
 			base = 10
 		}
-		ETH_balcho_safo = {
-			set_character_flag = safo_active_flag
-		}
+
 		random_owned_controlled_state = {
 			limit = {
 				is_core_of = ROOT
@@ -3283,16 +3281,7 @@ unit_leader_event = {
 		ai_chance = {
 			base = 10
 		}
-		ETH_amha_selassie = {
-			add_country_leader_role = {
-				promote_leader = yes
-				country_leader = {
-					ideology = conservatism
-					expire = "1965.1.1.1"
-					traits = { king_of_ethiopia }
-				}
-			}
-		}
+
 		set_politics = {
 			ruling_party = democratic
 			elections_allowed = yes 
@@ -4500,32 +4489,17 @@ country_event = {
 		}
 		hidden_effect = {
 			var:ETH_haile_selassie_country = {
-				ETH_seyoum_mengesha = {
-					set_nationality = ROOT
-					set_character_flag = ETH_imprisoned_flag 
-				}
-				ETH_ayalew_birru = {
-					set_nationality = ROOT
-					set_character_flag = ETH_imprisoned_flag 
-				}
-				ETH_ras_kassa = {
-					set_nationality = ROOT
-					set_character_flag = ETH_imprisoned_flag 
-				}
+
+
+
 			}
 			IF = {
 				limit = {
 					has_cosmetic_tag = jimma
 				}
 				var:ETH_haile_selassie_country = {
-					ETH_balcho_safo = {
-						set_nationality = ROOT
-						set_character_flag = ETH_imprisoned_flag 
-					}
-					ETH_tadesse_birru = {
-						set_nationality = ROOT
-						set_character_flag = ETH_imprisoned_flag 
-					}
+
+
 				}
 			}
 
@@ -5370,11 +5344,7 @@ country_event = {
 
 		SOV = {
 			
-			add_ai_strategy = {
-				type = send_volunteers_desire
-				id = ETH
-				value = 200
-			}
+
 		}
 
 
@@ -5463,9 +5433,7 @@ country_event = {
 			ideology = communism
 			popularity = 0.1
 		}
-		ETH_haile_selassie = {
-			set_character_flag = ETH_imprisoned_flag
-		}
+
 		ETH_provisional_government_effect = yes
 	}
 }
