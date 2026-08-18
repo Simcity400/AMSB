@@ -1,0 +1,56 @@
+﻿# AMSB 2026-08-15: events for the "Spanish Civil War Event = Disabled" lobby rule.
+# Scheduled from common/on_actions/zz_amsb_scw_disabled.txt on day one; nothing here fires otherwise.
+add_namespace = amsb_scw
+
+# 1936-08-01: no civil war -> nobody could send attachés. Compensation: +10% war support to every
+# playable country and every human-controlled country. Hidden carrier event on WST, then a major
+# news popup for everyone.
+country_event = {
+	id = amsb_scw.1
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_ai = no
+					is_playable_country = yes
+				}
+			}
+			add_war_support = 0.10
+		}
+		news_event = { id = amsb_scw.2 }
+	}
+	option = { }
+}
+
+news_event = {
+	id = amsb_scw.2
+	title = amsb_scw.2.t
+	desc = amsb_scw.2.d
+	picture = GFX_news_event_spr_francoist_civil_war_victory
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = amsb_scw.2.a
+	}
+}
+
+# 1938-01-01: Nationalist Spain's national focus tree unlocks (hard lock chosen so Spain gets no
+# head start on the post-war tree). Unlocking SPA_unify_the_nationalist_front (no reward) opens the
+# whole tree; every other focus chains from it and its own available block is always = no.
+country_event = {
+	id = amsb_scw.3
+	title = amsb_scw.3.t
+	desc = amsb_scw.3.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			unlock_national_focus = SPA_unify_the_nationalist_front
+		}
+	}
+	option = {
+		name = amsb_scw.3.a
+	}
+}
