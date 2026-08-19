@@ -1,8 +1,0 @@
-# DISABLED 2026-06-14 (neutralized dead content).
-# This Barbarossa-mode Soviet joint-focus tree used an invalid top-level keyword `shared_joint_focus`,
-# so the WHOLE file failed to parse and NEVER loaded in-game ("Unexpected token: shared_joint_focus").
-# Its container id `soviet_joint_focus_barb` is unreferenced anywhere in the mod, and the tree was never
-# engine-validated (it also contained a duplicate focus id: SOV_swap_to_political_advisors).
-# Emptied to stop the parse error with ZERO gameplay change (the tree was already absent in-game).
-# To revive: recover the original from git history, restructure the 49 joint_focus blocks as valid
-# top-level `joint_focus = { ... }` entries (no wrapper), fix the duplicate id, and validate all references.
