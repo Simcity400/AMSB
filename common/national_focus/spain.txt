@@ -2248,7 +2248,15 @@ focus_tree = {
 	focus = {
 		id = SPA_unify_the_nationalist_front
 		available = {
-	
+			# AMSB 2026-08-19: hard lock only applies when the SCW lobby rule is Enabled.
+			# With the rule Disabled (default) this focus is selectable normally.
+			OR = {
+				has_game_rule = { rule = amsb_spanish_civil_war option = disabled }
+				AND = {
+					has_global_flag = spanish_civil_war
+					hidden_trigger = { always = no }
+				}
+			}
 		}
 		bypass = {
 			NOT = {
