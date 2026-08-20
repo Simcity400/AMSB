@@ -1,0 +1,28 @@
+# AMSB balance pack: global hidden spirits ported from master hmm_ideas.txt (owner-approved 2026-08-20)
+ideas = {
+	country = {
+		fast_training = {
+			# AMSB: the peacetime -89% division training time, split out of peace_training so it stays active all game
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				training_time_army_factor = -0.89
+			}
+		}
+		dd_torp_nerf = {
+			# -25% torpedo attack on light hulls only - cruiser-mounted ship_torpedo modules keep full stats
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				ship_hull_light = {
+					torpedo_attack = -0.25
+					instant = yes
+				}
+			}
+		}
+	}
+}
