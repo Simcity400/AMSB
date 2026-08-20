@@ -2432,6 +2432,9 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
+			add_to_variable = { ITA_military_industry_dm_factory_max_efficiency_factor = 0.05 }
+			add_to_variable = { ITA_military_industry_dm_production_factory_efficiency_gain_factor = 0.05 }
+			custom_effect_tooltip = ITA_il_sol_dell_avvenire_military_industry_dm_tt
 			add_to_variable = { ITA_iri_consumer_goods_factor = 0.02 }
 			custom_effect_tooltip = ITA_ricostruzione_industriale_cg_penalty_tt
 
@@ -2440,7 +2443,7 @@ focus_tree = {
 					has_completed_focus = ITA_strengthen_northern_industry
 				}
 				custom_effect_tooltip = ITA_new_industrialization_program_north_tt
-				ITA_replace_designers_by_improved_version_north = yes 
+				ITA_replace_designers_by_improved_version_north = yes
 			}
 			else_if = {
 				limit = {
@@ -2687,14 +2690,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_equipment_bonus = {
-				name = ITA_brescia_small_arms_industry
-				bonus = {
-					infantry_equipment = {
-						build_cost_ic = -0.1
-					}
-				}
-			}
+			add_ideas = italian_arms_discount
 
 			if = {
 				limit = {
@@ -5579,7 +5575,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = ITA_expand_naval_facilities
-		cost = 10
+		cost = 5
 		available = {
 			has_tech = marines
 		}
@@ -5617,7 +5613,7 @@ focus_tree = {
 			if = {
 				limit = {
 					any_owned_state = {
-						is_core_of = ERI
+						always = no
 						is_fully_controlled_by = ROOT
 					}
 				}
@@ -5656,7 +5652,7 @@ focus_tree = {
 				}
 				random_owned_controlled_state = {
 					limit = {
-						is_core_of = ERI
+						always = no
 						is_fully_controlled_by = ROOT
 					}
 					prioritize = { 550 }
@@ -5671,7 +5667,7 @@ focus_tree = {
 				limit = {
 					any_subject_country = {
 						any_controlled_state = {
-							is_core_of = ERI
+							always = no
 							is_fully_controlled_by = PREV
 						}
 					}
@@ -5712,13 +5708,13 @@ focus_tree = {
 				random_subject_country = {
 					limit = {
 						any_controlled_state = {
-							is_core_of = ERI
+							always = no
 							is_fully_controlled_by = PREV
 						}
 					}
 					random_owned_controlled_state = {
 						limit = {
-							is_core_of = ERI
+							always = no
 							is_fully_controlled_by = ROOT
 						}
 						prioritize = { 550 }
@@ -5741,7 +5737,7 @@ focus_tree = {
 
 			if = {
 				limit = {
-					NOT = { has_completed_focus = ITA_strengthen_ascari_corps }
+					NOT = { always = no }
 					NOT = { has_completed_focus = ITA_forza_navale_especiale }
 				}
 				custom_effect_tooltip = ITA_strengthen_ascari_corps_ibrahim_farag_mohammed_tt

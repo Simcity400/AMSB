@@ -84,6 +84,53 @@ ideas = {
 			}
 		
 		}
+		march_to_victory = { 
+			picture = SOV_transformation_of_nature
+			modifier = { 
+				production_factory_efficiency_gain_factor = 0.25
+				production_speed_arms_factory_factor = 0.3
+				industrial_capacity_factory = 0.10
+				stability_weekly = 0.01
+				equipment_conversion_speed = 0.50
+				#AMSB_trainfix training_time_army_factor = -0.15
+				supply_node_range = 0.10
+			}
+		}
+		GER_stop_the_offensive = {
+			allowed = {
+				original_tag = GER
+				always = no
+			}
+			removal_cost = -1
+			picture = SOV_the_road_of_life
+			modifier = {
+				command_power_gain = 0.2
+			}
+		}
+		italian_arms_discount = { # MSB addition
+			
+			name = italian_arms_discount
+
+			allowed = {
+				always = no
+			}
+			
+			allowed_civil_war = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			removal_cost = -1
+
+			picture = generic_infantry_bonus
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
 	}
 	economy = {
 		sov_totaler_krieg_economy = {

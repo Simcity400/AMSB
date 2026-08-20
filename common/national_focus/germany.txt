@@ -861,7 +861,7 @@ focus_tree = {
 		x =-1
 		y = 1
 		relative_position_id = GER_wirtschaftswunder
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				has_war = yes
@@ -2703,7 +2703,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = GER_concentrated_armament_program
-		cost = 10
+		cost = 5
 		available = {
 			has_war_with_major = yes
 			has_civil_war = no
@@ -4553,7 +4553,7 @@ focus_tree = {
 					design_team = mio:GER_daimler_benz_organization #We feed on your tears
 					parent_version = 0
 					modules = {
-						main_armament_slot = tank_close_support_gun
+						main_armament_slot = tank_medium_cannon
 						turret_type_slot = tank_medium_three_man_tank_turret
 						suspension_type_slot = tank_bogie_suspension
 						armor_type_slot = tank_welded_armor
@@ -11642,6 +11642,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = GER_danzig_or_war
+				x = -1
 		cost = 1
 
 		will_lead_to_war_with = BEL
@@ -11677,9 +11678,6 @@ focus_tree = {
 			is_subject = no
 			OR = {
 				NOT = { HOL = { is_in_faction_with = GER } }
-				if = { 
-
-				}
 				NOT = { BEL = { is_in_faction_with = GER } }
 				NOT = { LUX = { is_in_faction_with = GER } }
 			}
@@ -11724,29 +11722,50 @@ focus_tree = {
 
 		completion_reward = {
 			#limit wargoals to when it makes sense to give them. No faction, war or non exist
-			
-				create_wargoal = {
-					type = take_state_focus
+			if = { 
+				limit = {
+					country_exists = BEL
+					NOT = { BEL = { is_in_faction_with = GER } }
+					NOT = { has_war_with = BEL }
+				}
+				declare_war_on = {
 					target = BEL
-					expire = 0
+					type = take_state_focus
 					generator = { 6 }
 				}
-			
-			
-				create_wargoal = {
-					type = take_state_focus
+			}
+			if =  {
+				limit = {
+					country_exists = HOL
+					NOT = { HOL = { is_in_faction_with = GER } }
+					NOT = { has_war_with = HOL }
+				}
+				declare_war_on = {
 					target = HOL
-					expire = 0
+					type = take_state_focus
 					generator = { 7 }
 				}
-		
-			
-			
-			
-				create_wargoal = {
-					type = take_state_focus
+			}
+			if =  {
+				limit = {
+					country_exists = HOL
+					NOT = { HOL = { is_in_faction_with = GER } }
+					NOT = { has_war_with = HOL }
+					always = no # HOL has no focus tree in ZHM - branch can never fire
+				}
+				HOL = {
+					country_event = { id = mtg_germany.1 hours = 6 }
+				}
+			}
+			if = {
+				limit = {
+					country_exists = LUX
+					NOT = { LUX = { is_in_faction_with = GER } }
+					NOT = { has_war_with = LUX }
+				}
+				declare_war_on = {
 					target = LUX
-					expire = 0
+					type = take_state_focus
 					generator = { 8 }
 				}		
 				add_ai_strategy = { 
@@ -11754,7 +11773,7 @@ focus_tree = {
 					id = LUX
 					value = 100
 				}		
-			
+			}
 			hidden_effect = {
 				news_event = { hours = 6 id = news.234 }
 			}
@@ -14160,7 +14179,7 @@ focus_tree = {
 	focus = {
 		id = GER_war_with_the_ussr
 
-		icon = GFX_focus_attack_soviet
+		icon = GFX_GER_barbarossa
 		alternate_icon = GFX_focus_GER_war_with_the_ussr
 
 		prerequisite = { focus = GER_anti_comintern_pact }
@@ -14168,6 +14187,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = GER_anti_comintern_pact
+				x = 6
 		cost = 0.2
 
 		will_lead_to_war_with = SOV
@@ -14184,12 +14204,11 @@ focus_tree = {
 		available_if_capitulated = no
 
 		available = {
-			is_subject = no
+			# Lobby rules (historical_war / barb_date_lock) not ported - plain date per owner decision.
 			date > 1941.6.22
 		}
 
 		cancel = {
-			is_subject = yes
 			NOT = { country_exists = SOV }
 		}
 
@@ -14216,7 +14235,7 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				OR = {
-					has_army_manpower = { size < 1199999 }
+					
 					any_home_area_neighbor_country = {
 						has_war_with = ROOT
 					}
@@ -14250,37 +14269,26 @@ focus_tree = {
 
 			IF = {
 				limit = { SOV = { has_civil_war = no } }
-				create_wargoal = {
-					type = annex_everything
+				declare_war_on = {
 					target = SOV
-					expire = 0
+					type = take_state_focus
+					generator = { 206 }
 				}
 			}
 			ELSE = {
 				every_country = {
 					limit = { original_tag = SOV }
 					GER = {
-						create_wargoal = {
-							type = annex_everything
-							target = PREV
-							expire = 0
+						declare_war_on = {
+							target = SOV
+							type = take_state_focus
+							generator = { 206 }
 						}
 					}
 				}
 			}
-
-			IF = {
-				limit = {
-					SOV = {
-						NOT = {
-							has_completed_focus = SOV_beaten_but_not_defeated
-						}
-					}
-				}
-				country_event = {
-					id = wuw_GER_legions.8
-				}	
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_command_power = 50
 		}
 	}
 
@@ -14454,6 +14462,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_timed_idea = {
+				idea = GER_stop_the_offensive
+				days = 100
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			every_state = {
 				limit = {
