@@ -4834,65 +4834,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SOV_the_road_of_life
-		icon = GFX_focus_SOV_the_road_of_life
-		prerequisite = { focus = SOV_war_mobilisation }
-		x = 4
-		y = 1
-		relative_position_id = SOV_war_mobilisation
-		cost = 5
-
-		available = {
-			OR = {
-				195 = { #LENINGRAD
-					is_controlled_by = ROOT
-					any_neighbor_state = {
-						is_owned_by = ROOT
-						NOT = { is_fully_controlled_by = ROOT }
-					}
-				}
-				219 = { #MOSCOW
-					is_controlled_by = ROOT
-					any_neighbor_state = {
-						is_owned_by = ROOT
-						NOT = { is_fully_controlled_by = ROOT }
-					}
-				}
-				217 = { #STALINGRAD
-					is_controlled_by = ROOT
-					any_neighbor_state = {
-						is_owned_by = ROOT
-						NOT = { is_fully_controlled_by = ROOT }
-					}
-				}
-				137 = { #SEVASTOPOL
-					is_controlled_by = ROOT
-					any_neighbor_state = {
-						is_owned_by = ROOT
-						NOT = { is_fully_controlled_by = ROOT }
-					}
-				}
-				202 = { #Kiev
-					is_controlled_by = ROOT
-					any_neighbor_state = {
-						is_owned_by = ROOT
-						NOT = { is_fully_controlled_by = ROOT }
-					}
-				}
-			}
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = SOV_the_road_of_life_ns
-				days = 730
-			}
-		}
-	}
-
-	focus = {
 		id = SOV_the_molotov_line
 		icon = GFX_sov_eastern_security
 		prerequisite = { focus = SOV_military_engineering_university }
@@ -13602,6 +13543,65 @@ focus_tree = {
 			}
 		}
 
+	}
+
+	focus = {
+		id = SOV_the_road_of_life
+		icon = GFX_focus_SOV_the_road_of_life
+		prerequisite = { focus = SOV_war_mobilisation }
+		x = 4
+		y = 1
+		relative_position_id = SOV_war_mobilisation
+		cost = 5
+
+		available = {
+			OR = {
+				195 = { #LENINGRAD
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						is_owned_by = ROOT
+						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+				219 = { #MOSCOW
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						is_owned_by = ROOT
+						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+				217 = { #STALINGRAD
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						is_owned_by = ROOT
+						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+				137 = { #SEVASTOPOL
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						is_owned_by = ROOT
+						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+				202 = { #Kiev
+					is_controlled_by = ROOT
+					any_neighbor_state = {
+						is_owned_by = ROOT
+						NOT = { is_fully_controlled_by = ROOT }
+					}
+				}
+			}
+		}
+		
+		search_filters = {}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = SOV_the_road_of_life_ns
+				days = 730
+			}
+		}
 	}
 
 }

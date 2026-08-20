@@ -13954,48 +13954,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ITA_balkan_ambition
-		icon = GFX_focus_generic_balkans_focus
-		prerequisite = { focus = ITA_pact_of_steel }
-
-		x = -1
-		y = 1
-		relative_position_id = ITA_pact_of_steel
-		cost = 1
-		available = {
-			GER = { has_war = yes }
-			GER = { controls_state = 16 }
-			is_subject = no
-
-			YUG = { exists = yes }
-			NOT = { is_in_faction_with = YUG }
-			NOT = { has_guaranteed = YUG }
-			NOT = { has_non_aggression_pact_with = YUG }
-			NOT = { YUG = { is_subject_of = ROOT } }
-		}
-
-		bypass = {
-			is_subject = no
-			OR = {
-				YUG = { is_subject_of = ROOT }
-				YUG = { exists = no }
-				is_in_faction_with = YUG
-			}
-		}
-
-		search_filters = {}
-
-		completion_reward = {
-
-			create_wargoal = {
-				type = annex_everything
-				target = YUG
-			}
-
-		}
-	}
-
-	focus = {
 		id = ITA_potential_allies_in_the_balkans
 		icon = GFX_focus_generic_balkan_diplomacy
 		prerequisite = { focus = ITA_foreign_affairs }
@@ -14748,6 +14706,7 @@ focus_tree = {
 
 	focus = {
 		id = ITA_pact_of_steel
+		mutually_exclusive = { focus = ITA_guarantee_austrian_independence focus = ITA_italy_first }
 		icon = GFX_goal_support_fascism
 		prerequisite = {  focus = ITA_foreign_affairs }
 		x = 10
@@ -15401,6 +15360,7 @@ focus_tree = {
 
 	focus = {
 		id = ITA_war_with_greece
+		mutually_exclusive = { focus = ITA_befriend_greece }
 		icon = GFX_focus_generic_attack_greece
 		prerequisite = { focus = ITA_pact_of_steel }
 		x = 1
@@ -21607,6 +21567,49 @@ allow_branch = {
 					}
 				}
 			}
+		}
+	}
+
+	focus = {
+		id = ITA_balkan_ambition
+		mutually_exclusive = { focus = ITA_potential_allies_in_the_balkans }
+		icon = GFX_focus_generic_balkans_focus
+		prerequisite = { focus = ITA_pact_of_steel }
+
+		x = -1
+		y = 1
+		relative_position_id = ITA_pact_of_steel
+		cost = 1
+		available = {
+			GER = { has_war = yes }
+			GER = { controls_state = 16 }
+			is_subject = no
+
+			YUG = { exists = yes }
+			NOT = { is_in_faction_with = YUG }
+			NOT = { has_guaranteed = YUG }
+			NOT = { has_non_aggression_pact_with = YUG }
+			NOT = { YUG = { is_subject_of = ROOT } }
+		}
+
+		bypass = {
+			is_subject = no
+			OR = {
+				YUG = { is_subject_of = ROOT }
+				YUG = { exists = no }
+				is_in_faction_with = YUG
+			}
+		}
+
+		search_filters = {}
+
+		completion_reward = {
+
+			create_wargoal = {
+				type = annex_everything
+				target = YUG
+			}
+
 		}
 	}
 

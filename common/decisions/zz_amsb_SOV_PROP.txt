@@ -1872,12 +1872,7 @@ SOV_propaganda_campaigns = {
 
 		visible = {
 			OR = {
-				NOT = { 
-					has_game_rule = { 
-					rule = larp_barb
-					option = on
-					}
-				}
+				always = yes
 				#has_completed_focus = SOV_the_komsomol
 				has_country_flag = SOV_debug_unlock_propaganda_campaigns_flag #debug
 			}
@@ -1959,10 +1954,7 @@ SOV_propaganda_campaigns = {
 
 		visible = {
 				OR = {
-					has_game_rule = { 
-					rule = larp_barb
-					option = on
-				}
+					always = no
 				#has_completed_focus = SOV_the_komsomol
 				has_country_flag = SOV_debug_unlock_propaganda_campaigns_flag #debug
 			}
