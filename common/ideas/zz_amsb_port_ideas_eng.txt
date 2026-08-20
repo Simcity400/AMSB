@@ -406,5 +406,38 @@ ideas = {
 
 			}	
 		}
+		GBR_british_mobilisation_support = {
+			name = GBR_british_mobilisation_support
+			picture = can_send_in_the_zombies
+			allowed = {
+				is_in_faction_with = ENG
+			}
+			allowed_civil_war = { always = no }
+
+			removal_cost = -1		
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.1
+				conversion_cost_civ_to_mil_factor = -0.1
+			}
+		}
+		ENG_devaluated_pound = {
+			removal_cost = -1
+
+			picture = ITA_devaluated_lira
+				
+			allowed = {
+				original_tag = ITA
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+					
+			modifier = {
+				consumer_goods_factor = -0.15
+				stability_factor = -0.05
+			}
+		}
 	}
 }
