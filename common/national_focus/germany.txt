@@ -448,22 +448,30 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			GER_modify_industrial_modifier = yes
-			#add_to_variable = { 
+			add_to_variable = { 
+				GER_industrial_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = { 
+				GER_industrial_industrial_capacity_dockyard = 0.05
+				tooltip = industrial_capacity_dockyard_tt
+			}
+			#add_to_variable = {
 			#	GER_industrial_production_factory_max_efficiency_factor = 0.05
 			#	tooltip = production_factory_max_efficiency_factor_tt
 			#}
-			add_to_variable = { 
-				GER_industrial_production_factory_efficiency_gain_factor = 0.05
-				tooltip = production_factory_efficiency_gain_factor_tt
-			}
-			add_to_variable = { 
-				GER_industrial_production_factory_start_efficiency_factor = 0.05
-				tooltip = production_factory_start_efficiency_factor_tt
-			}
-			add_to_variable = { 
-				GER_industrial_line_change_production_efficiency_factor = 0.05
-				tooltip = line_change_production_efficiency_factor_tt
-			}
+			#add_to_variable = {
+			#	GER_industrial_production_factory_efficiency_gain_factor = 0.05
+			#	tooltip = production_factory_efficiency_gain_factor_tt
+			#}
+			#add_to_variable = {
+			#	GER_industrial_production_factory_start_efficiency_factor = 0.05
+			#	tooltip = production_factory_start_efficiency_factor_tt
+			#}
+			#add_to_variable = {
+			#	GER_industrial_line_change_production_efficiency_factor = 0.05
+			#	tooltip = line_change_production_efficiency_factor_tt
+			#}
 		}
 	}
 
@@ -490,8 +498,7 @@ focus_tree = {
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
-						include_locked = yes
-					}
+						include_locked = yes }
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -506,13 +513,12 @@ focus_tree = {
 					free_building_slots = {
 						building = arms_factory
 						size > 0
-						include_locked = yes
-					}
+						include_locked = yes }
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -531,9 +537,11 @@ focus_tree = {
 			modify_building_resources = {
         	   building = synthetic_refinery
         	   resource = rubber
-        	   amount = 2
+	amount = 1
         	}
 
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = expand_german_coal_mines_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			GER_modify_industrial_modifier = yes
@@ -549,7 +557,6 @@ focus_tree = {
 				GER_industrial_research_speed_factor = 0.05
 				tooltip = research_speed_factor_tt 
 			}
-			
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
@@ -570,7 +577,6 @@ focus_tree = {
 					}
 				}
 			}
-			custom_effect_tooltip = expand_german_coal_mines_tt
 
 		}
 	}
@@ -807,8 +813,7 @@ focus_tree = {
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
-						include_locked = yes
-					}
+						include_locked = yes }
 				}
 				random_select_amount = 2
 				add_extra_state_shared_building_slots = 1
@@ -836,12 +841,8 @@ focus_tree = {
 				tooltip = consumer_goods_factor_tt
 			}
 			add_to_variable = { 
-				GER_industrial_production_speed_buildings_factor = 0.1
+				GER_industrial_production_speed_buildings_factor = 0.05
 				tooltip = production_speed_buildings_factor_tt
-			}
-			add_to_variable = { 
-				GER_global_building_slots = 1
-				tooltip = global_building_slots_tt
 			}
 			
 			hidden_effect = { 
@@ -878,8 +879,7 @@ focus_tree = {
 					free_building_slots = {
 						building = arms_factory
 						size > 1
-						include_locked = yes
-					}
+						include_locked = yes }
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -892,10 +892,6 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			GER_modify_industrial_modifier = yes
-			add_to_variable = { 
-				GER_industrial_production_lack_of_resource_penalty_factor = -0.05
-				tooltip = production_lack_of_resource_penalty_factor_tt
-			}
 			add_to_variable = { 
 				GER_industrial_industrial_capacity_factory = 0.05
 				tooltip = industrial_capacity_factory_tt
@@ -916,7 +912,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = GER_wirtschaftswunder
-		cost = 10
+		cost = 5
 		available = {
 			OR = {
 				has_war = yes
@@ -933,8 +929,7 @@ focus_tree = {
 					free_building_slots = {
 						building = arms_factory
 						size > 1
-						include_locked = yes
-					}
+						include_locked = yes }
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -944,22 +939,33 @@ focus_tree = {
 				}
 			}
 
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			GER_modify_industrial_modifier = yes
 			#add_to_variable = { 
 			#	GER_industrial_production_factory_max_efficiency_factor = 0.05
 			#	tooltip = production_factory_max_efficiency_factor_tt
 			#}
+			#add_to_variable = {
+			#	GER_industrial_production_factory_efficiency_gain_factor = 0.05
+			#	tooltip = production_factory_efficiency_gain_factor_tt
+			#}
+			#add_to_variable = {
+			#	GER_industrial_production_factory_start_efficiency_factor = 0.05
+			#	tooltip = production_factory_start_efficiency_factor_tt
+			#}
+			#add_to_variable = {
+			#	GER_industrial_line_change_production_efficiency_factor = 0.05
+			#	tooltip = line_change_production_efficiency_factor_tt
+			#}
+
 			add_to_variable = { 
-				GER_industrial_production_factory_efficiency_gain_factor = 0.05
-				tooltip = production_factory_efficiency_gain_factor_tt
+				GER_industrial_conversion_cost_civ_to_mil_factor = -0.2
+				tooltip = conversion_cost_civ_to_mil_factor_tt
 			}
 			add_to_variable = { 
-				GER_industrial_production_factory_start_efficiency_factor = 0.05
-				tooltip = production_factory_start_efficiency_factor_tt
-			}
-			add_to_variable = { 
-				GER_industrial_line_change_production_efficiency_factor = 0.05
-				tooltip = line_change_production_efficiency_factor_tt
+				GER_industrial_production_lack_of_resource_penalty_factor = -0.05
+				tooltip = production_lack_of_resource_penalty_factor_tt
 			}
 		}
 	}
@@ -990,8 +996,7 @@ focus_tree = {
 					free_building_slots = {
 						building = arms_factory
 						size > 1
-						include_locked = yes
-					}
+						include_locked = yes }
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1004,6 +1009,28 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			GER_modify_industrial_modifier = yes
+
+
+			add_to_variable = { 
+				GER_industrial_production_factory_max_efficiency_factor = 0.05
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			#add_to_variable = { 
+			#	GER_industrial_production_factory_efficiency_gain_factor = 0.05
+			#	tooltip = production_factory_efficiency_gain_factor_tt
+			#}
+			#add_to_variable = {
+			#	GER_industrial_production_factory_start_efficiency_factor = 0.05
+			#	tooltip = production_factory_start_efficiency_factor_tt
+			#}
+			#add_to_variable = {
+			#	GER_industrial_line_change_production_efficiency_factor = 0.05
+			#	tooltip = line_change_production_efficiency_factor_tt
+			#}
+			#add_to_variable = {
+			#	GER_industrial_conversion_cost_civ_to_mil_factor = -0.2
+			#	tooltip = conversion_cost_civ_to_mil_factor_tt
+			#}
 			add_to_variable = { 
 				GER_industrial_industrial_capacity_factory = 0.05
 				tooltip = industrial_capacity_factory_tt
@@ -1011,26 +1038,6 @@ focus_tree = {
 			add_to_variable = { 
 				GER_industrial_industrial_capacity_dockyard = 0.05
 				tooltip = industrial_capacity_dockyard_tt
-			}
-			add_to_variable = { 
-				GER_industrial_conversion_cost_civ_to_mil_factor = -0.2
-				tooltip = conversion_cost_civ_to_mil_factor_tt
-			}
-			#add_to_variable = { 
-			#	GER_industrial_production_factory_max_efficiency_factor = 0.05
-			#	tooltip = production_factory_max_efficiency_factor_tt
-			#}
-			add_to_variable = { 
-				GER_industrial_production_factory_efficiency_gain_factor = 0.05
-				tooltip = production_factory_efficiency_gain_factor_tt
-			}
-			add_to_variable = { 
-				GER_industrial_production_factory_start_efficiency_factor = 0.05
-				tooltip = production_factory_start_efficiency_factor_tt
-			}
-			add_to_variable = { 
-				GER_industrial_line_change_production_efficiency_factor = 0.05
-				tooltip = line_change_production_efficiency_factor_tt
 			}
 
 		}
@@ -1659,8 +1666,7 @@ focus_tree = {
 					free_building_slots = {
 						building = industrial_complex
 						size > 1
-						include_locked = yes
-					}
+						include_locked = yes }
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1691,25 +1697,16 @@ focus_tree = {
 			add_ideas = autarkic_economy
 
 			custom_effect_tooltip = generic_skip_one_line_tt
-
 			custom_effect_tooltip = expand_german_coal_mines_tt
-
 			custom_effect_tooltip = generic_skip_one_line_tt
-
 			custom_effect_tooltip = GER_improve_trade_relations_tt
 			every_other_country = {
 				limit = {
 					is_in_faction_with = PREV
 				}	
-				add_opinion_modifier = {
-					target = GER
-					modifier = GER_autarky_trade_opinion
-				}
+
 				GER = {
-					add_opinion_modifier = {
-						target = PREV
-						modifier = GER_german_trade_opinion
-					}
+
 				}
 			}
 		}
@@ -2096,11 +2093,11 @@ focus_tree = {
 
 			GER_add_or_modify_wehrwirtschaft = yes
 			add_to_variable = { 
-				GER_wehrwirtschaft_production_speed_synthetic_refinery_factor = 0.1
+				GER_wehrwirtschaft_production_speed_synthetic_refinery_factor = 0.15
 				tooltip = production_speed_synthetic_refinery_factor_tt
 			}
 			add_to_variable = { 
-				GER_wehrwirtschaft_production_speed_fuel_silo_factor = 0.1
+				GER_wehrwirtschaft_production_speed_fuel_silo_factor = 0.15
 				tooltip = production_speed_fuel_silo_factor_tt
 			}
 			
@@ -2263,10 +2260,10 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			modify_building_resources = {
-        	   building = synthetic_refinery
-        	   resource = rubber
-        	   amount = 2
-        	}
+			   building = synthetic_refinery
+			   resource = rubber
+			   amount = 3
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2344,7 +2341,7 @@ focus_tree = {
 			has_resources_in_collection = {
 				collection = collection:country_and_all_subjects
 				resource = rubber
-				amount > 99 #This needs to correspond to the Bypass values in the previous focuses
+				amount > 149 #This needs to correspond to the Bypass values in the previous focuses
 				extracted = yes
 			}
 			has_resources_in_collection = {
@@ -2597,9 +2594,111 @@ focus_tree = {
 	#}
 	
 	focus = {
+		id = GER_integrate_war_economies
+		icon = GFX_focus_generic_military_industry
+		prerequisite = { focus = GER_concentrated_armament_program focus = GER_establish_production_targets }
+
+		x = 1
+		y = 1
+		relative_position_id = GER_concentrated_armament_program
+		cost = 10
+
+		available = {
+			if = {
+				limit = { HUN = { exists = yes } }
+				HUN = {
+					is_in_faction_with = ROOT
+					is_free_or_subject_of_root = yes
+				}
+			}
+			if = {
+				limit = { ROM = { exists = yes } }
+				ROM = {
+					is_in_faction_with = ROOT
+					is_free_or_subject_of_root = yes
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						HUN = { exists = no }
+						ROM = { exists = no }
+					}
+				}
+				date > 1938.1.1
+			}
+		}
+
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 7
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 8
+				add_building_construction = {
+					type = arms_factory
+					level = 8
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { HUN = { exists = yes } }
+				HUN = {
+					random_core_state = {
+						limit = {
+							is_fully_controlled_by = ROOT
+							free_building_slots = {
+								building = arms_factory
+								size > 3
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 4
+						add_building_construction = {
+							type = arms_factory
+							level = 4
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { ROM = { exists = yes } }
+				ROM = {
+					random_core_state = {
+						limit = {
+							is_fully_controlled_by = ROOT
+							free_building_slots = {
+								building = arms_factory
+								size > 3
+								include_locked = yes
+							}
+						}
+						prioritize = { 46 79 }
+						add_extra_state_shared_building_slots = 4
+						add_building_construction = {
+							type = arms_factory
+							level = 4
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = GER_zentrale_planung
 		icon = GFX_focus_generic_central_planning
-		prerequisite = { focus = GER_concentrated_armament_program focus = GER_establish_production_targets}
+		prerequisite = { focus = GER_integrate_war_economies }
 
 		x = 1
 		y = 2
@@ -4406,7 +4505,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = GER_adopt_new_panzer_doctrine
-		cost = 10
+		cost = 5
 		available = {
 			has_tech = radio
 		}
@@ -4872,6 +4971,21 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
+					62 = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+				62 = {
+	add_building_construction = {
+                        type = air_facility
+                        level = 1
+                        instant_build = yes
+                        province = 9388 # Wilhelmshaven Naval Dockyards
+                    }
+                }
+			}
+			if = {
+				limit = {
 					controls_state = 59
 				}
 				59 = { #Hannover
@@ -4901,7 +5015,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = GER_aeronautical_research_institute
-				bonus = 0.25
+				bonus = 0.75
 				uses = 2
 				category = air_equipment
 			}
@@ -4953,7 +5067,6 @@ focus_tree = {
 		alternate_icon = GFX_focus_GER_sturzkampfbomber_historical
 
 		prerequisite = { focus = GER_aeronautical_research_institute }
-		mutually_exclusive = { focus = GER_tactical_bombers focus = GER_uralbomber_program }
 		x = -2
 		y = 1
 		relative_position_id = GER_aeronautical_research_institute
@@ -4967,15 +5080,10 @@ focus_tree = {
 
 			add_mastery_bonus = {
 				name = GER_dive_bombers
-				bonus = 0.05
-				days = 180
-				grand_doctrine = new_battlefield_support
-			}
-			add_mastery_bonus = {
-				name = GER_dive_bombers
-				bonus = 0.15
+				bonus = 0.2
 				days = 180
 				track = strike_aircraft
+				grand_doctrine = new_operational_integrity # AMSB: was new_battlefield_support - doctrine removed by the rework, nonexistent grand doctrine CTDs the reward tooltip
 			}
 			add_doctrine_cost_reduction = {
 				name = GER_dive_bombers
@@ -4987,24 +5095,23 @@ focus_tree = {
 				name = GER_dive_bombers
 				bonus = 0.5
 				uses = 1
-				category = light_air
+				category = cat_air_bombs
 			}
 
-			# On historical, this focus is completed mid-late 1939
 			if = {
 				limit = {
 					has_dlc = "By Blood Alone"
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 				create_equipment_variant = { 
-					name = "Ju 87 D" 
+					name = "Ju 87 G"
 					type = small_plane_cas_airframe_2
 					allow_without_tech = no
 					design_team = mio:GER_junkers_organization
 					modules = {
 						fixed_main_weapon_slot = bomb_locks
-						fixed_auxiliary_weapon_slot_1 = bomb_locks
-						engine_type_slot = engine_2_1x
+						fixed_auxiliary_weapon_slot_1 = tank_buster_1
+						engine_type_slot = engine_3_1x
 						special_type_slot_1 = lmg_defense_turret
 						special_type_slot_2 = empty
 					}
@@ -5097,7 +5204,6 @@ focus_tree = {
 		id = GER_tactical_bombers
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = GER_aeronautical_research_institute }
-		mutually_exclusive = { focus = GER_dive_bombers focus = GER_uralbomber_program }
 		x = 0
 		y = 1
 		relative_position_id = GER_aeronautical_research_institute
@@ -5113,14 +5219,9 @@ focus_tree = {
 
 			add_mastery_bonus = {
 				name = GER_tactical_bombers
-				bonus = 0.15
+				bonus = 0.2
 				days = 180
 				grand_doctrine = new_operational_integrity
-			}
-			add_mastery_bonus = {
-				name = GER_tactical_bombers
-				bonus = 0.05
-				days = 180
 				track = medium_aircraft
 			}
 
@@ -5151,7 +5252,7 @@ focus_tree = {
 						fixed_main_weapon_slot = medium_bomb_bay
 						fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
 						fixed_auxiliary_weapon_slot_2 = torpedo_mounting
-						engine_type_slot = engine_2_2x
+						engine_type_slot = engine_3_2x
 						special_type_slot_1 = lmg_defense_turret_2x
 						special_type_slot_2 = empty	
 					}
@@ -5167,10 +5268,10 @@ focus_tree = {
 				GER_military_air_strategic_bomber_bombing_factor = 0.1
 				tooltip = air_strategic_bomber_bombing_factor_tt
 			}
-			add_to_variable = { 
-				GER_military_air_cas_efficiency = 0.05
-				tooltip = air_cas_efficiency_tt
-			}
+			#add_to_variable = {
+			#	GER_military_air_cas_efficiency = 0.05
+			#	tooltip = air_cas_efficiency_tt
+			#}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -5240,7 +5341,6 @@ focus_tree = {
 		id = GER_uralbomber_program
 		icon = GFX_focus_generic_long_range_aircraft
 		prerequisite = { focus = GER_aeronautical_research_institute }
-		mutually_exclusive = { focus = GER_dive_bombers focus = GER_tactical_bombers }
 		x = 2
 		y = 1
 		relative_position_id = GER_aeronautical_research_institute
@@ -5258,14 +5358,9 @@ focus_tree = {
 
 			add_mastery_bonus = {
 				name = GER_uralbomber_program
-				bonus = 0.05
+				bonus = 0.2
 				days = 180
-				grand_doctrine = new_strategic_destruction
-			}
-			add_mastery_bonus = {
-				name = GER_uralbomber_program
-				bonus = 0.15
-				days = 180
+				grand_doctrine = new_operational_integrity # AMSB: was new_strategic_destruction - doctrine removed by the rework, nonexistent grand doctrine CTDs the reward tooltip
 				track = heavy_aircraft
 			}
 			add_doctrine_cost_reduction = {
@@ -5308,7 +5403,7 @@ focus_tree = {
 
 			GER_modify_airforce_modifier = yes
 			add_to_variable = { 
-				GER_military_air_range_factor = 0.15
+				GER_military_air_range_factor = 0.10
 				tooltip = air_range_factor_tt
 			}
 			add_to_variable = { 
@@ -5528,13 +5623,17 @@ focus_tree = {
 				GER_military_air_ace_generation_chance_factor = 0.25
 				tooltip = air_ace_generation_chance_factor_tt
 			}
-			add_to_variable = { 
+			add_to_variable = {
 				GER_military_air_agility_factor = 0.05
 				tooltip = air_agility_factor_tt
 			}
 
-			# On historical, this focus is completed late 1939
-			#This one is not really needed, first 'FW 190'
+			add_to_variable = {
+				GER_military_air_superiority_efficiency_factor = 0.05
+				tooltip = air_superiority_efficiency_tt
+			}
+
+
 			if = {
 				limit = {
 					has_dlc = "By Blood Alone"
@@ -5547,8 +5646,12 @@ focus_tree = {
 					design_team = mio:GER_messerschmitt_organization
 					modules = {
 						fixed_main_weapon_slot = light_mg_4x
-						fixed_auxiliary_weapon_slot_1 = light_mg_2x
-						engine_type_slot = engine_2_1x
+						fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
+						fixed_auxiliary_weapon_slot_2 = heavy_mg_4x
+						engine_type_slot = engine_3_1x
+						special_type_slot_1 = armor_plate_small
+						special_type_slot_2 = drop_tanks
+						special_type_slot_3 = self_sealing_fuel_tanks_small
 					}
 					icon = "GFX_GER_fighter2_medium"
 					model = "GER_fighter_equipment_2_entity"
@@ -5623,7 +5726,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = GER_form_the_jagdwaffe
-		cost = 10
+		cost = 5
 		available = {
 			GER_hermann_goring = {
 				is_air_chief = no
@@ -5670,7 +5773,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = GER_reorganize_the_luftwaffe
-		cost = 10
+		cost = 5
 		available = {
 			GER_hermann_goring = {
 				is_air_chief = no
@@ -8808,19 +8911,20 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		available = {
-            #is_subject = no
-			#has_war = no
-			#has_civil_war = no
-            OR = {
-                date > 1937.6.1
-                custom_trigger_tooltip = {
-                tooltip = GER_anschluss_eq_trigger_tt
-                	has_equipment = {
+			is_subject = no
+			has_war = no
+			has_civil_war = no
+			date > 1936.5.1
+			OR = {
+				date > 1937.1.1
+				custom_trigger_tooltip = {
+					tooltip = GER_anschluss_eq_trigger_tt
+					has_equipment = {
 						infantry_equipment > 40000
 					}
-            	}
-        	}
-    	}
+				}
+			}
+		}
 		
 
 		ai_will_do = {
@@ -11247,7 +11351,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = GER_reassert_eastern_claims
-		cost = 0
+		cost = 0.2
 
 		will_lead_to_war_with = POL
 
@@ -11274,7 +11378,7 @@ focus_tree = {
 			is_subject = no
 			AND = { 
 				has_completed_focus = GER_molotov_ribbentrop_pact
-				date > 1939.8.30
+				date > 1939.6.1
 			}
 		}
 
@@ -11306,7 +11410,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ANNEXATION }
 		
 		completion_reward = {
-			add_named_threat = { threat = 5 name = GER_danzig_or_war }
+			add_named_threat = { threat = 30 name = GER_danzig_or_war }
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
@@ -11538,7 +11642,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = GER_danzig_or_war
-		cost = 4
+		cost = 1
 
 		will_lead_to_war_with = BEL
 		will_lead_to_war_with = HOL
@@ -11668,7 +11772,7 @@ focus_tree = {
 		x = 1
 		y = 2
 		relative_position_id = GER_danzig_or_war
-		cost = 4
+		cost = 1
 
 		will_lead_to_war_with = DEN 
 		will_lead_to_war_with = NOR
@@ -11970,7 +12074,7 @@ focus_tree = {
 		x = 4
 		y = 2
 		relative_position_id = GER_war_with_france
-		cost = 10
+		cost = 5
 
 		cancel_if_invalid = yes
 		
@@ -14064,7 +14168,7 @@ focus_tree = {
 		x = 0
 		y = 3
 		relative_position_id = GER_anti_comintern_pact
-		cost = 10
+		cost = 0.2
 
 		will_lead_to_war_with = SOV
 
@@ -14081,6 +14185,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
+			date > 1941.6.22
 		}
 
 		cancel = {
@@ -14175,6 +14280,427 @@ focus_tree = {
 				country_event = {
 					id = wuw_GER_legions.8
 				}	
+			}
+		}
+	}
+
+	focus = {
+		id = GER_vitebsk
+		icon = GFX_focus_attack_soviet
+		prerequisite = { focus = GER_war_with_the_ussr}
+	    mutually_exclusive = { focus = GER_kiev }
+		mutually_exclusive = { focus = GER_riga }
+		x = 0
+		y = 1
+		cost = 1
+		available = {
+		}
+		relative_position_id = GER_war_with_the_ussr
+		bypass = {
+
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 207
+						state = 96
+						state = 206
+						state = 241
+						state = 243
+						state = 242
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = GER_focus_kiev
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_kiev
+		icon = GFX_focus_attack_soviet
+		prerequisite = { focus = GER_war_with_the_ussr }
+		mutually_exclusive = { focus = GER_vitebsk }
+		mutually_exclusive = { focus = GER_riga }
+		x = 2
+		y = 1
+		cost = 1
+		available = {
+		}
+		relative_position_id = GER_war_with_the_ussr
+		bypass = {
+
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 202
+						state = 203
+						state = 197
+						state = 226
+						state = 196
+						state = 200
+						state = 259
+						state = 193
+						state = 221
+						state = 220
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = GER_focus_kiev
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_riga
+		icon = GFX_focus_attack_soviet
+		prerequisite = { focus = GER_war_with_the_ussr }
+		mutually_exclusive = { focus = GER_kiev }
+		mutually_exclusive = { focus = GER_vitebsk }
+		x = -2
+		y = 1
+		cost = 1
+		available = {
+		}
+		relative_position_id = GER_war_with_the_ussr
+		bypass = {
+
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 808
+						state = 12
+						state = 13
+						state = 812
+						state = 813
+						state = 191
+						state = 810
+						state = 809
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = GER_focus_kiev
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_continuetheoffence
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = GER_kiev focus = GER_riga focus = GER_vitebsk  }
+		mutually_exclusive = { focus = GER_halttheoffence }
+		x = 1
+		y = 1
+		relative_position_id = GER_vitebsk
+		cost = 1
+
+		available_if_capitulated = yes
+
+		available = {
+			date > 1942.1.1
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = SOV
+				}
+				add_dynamic_modifier = {
+					modifier = GER_continue_offensive
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_halttheoffence
+		icon = GFX_goal_fortify_the_westwall
+		prerequisite = { focus = GER_kiev focus = GER_riga focus = GER_vitebsk  }
+		mutually_exclusive = { focus = GER_continuetheoffence }
+		x = -1
+		y = 1
+		relative_position_id = GER_vitebsk
+		cost = 1
+
+		available_if_capitulated = yes
+
+		available = {
+			date > 1942.1.1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_state = {
+				limit = {
+					is_owned_by = SOV
+				}
+				add_dynamic_modifier = {
+					modifier = GER_stop_offensive
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_entrenching
+		icon = GFX_goal_fortify_the_westwall
+		prerequisite = { focus = GER_halttheoffence }
+		x = -1
+		y = 1
+		relative_position_id = GER_halttheoffence
+		cost = 1
+
+		available_if_capitulated = yes
+
+		available = {
+			date > 1942.3.1
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = SOV
+				}
+				add_dynamic_modifier = {
+					modifier = GER_dig_in
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_typhoon
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = GER_continuetheoffence }
+		x = 1
+		y = 1
+		relative_position_id = GER_continuetheoffence
+		cost = 1
+
+		available_if_capitulated = yes
+
+		available = {
+			date > 1942.3.1
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = SOV
+				}
+				add_dynamic_modifier = {
+					modifier = GER_operation_typhoon
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_fallblau
+		icon = GFX_goal_generic_major_war
+		x = -1
+		y = 1
+		cost = 1
+		ai_will_do = {
+			factor = 500
+		}
+		available = {
+			date > 1942.6.1
+		}
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_continuetheoffence focus = GER_halttheoffence }
+		relative_position_id = GER_continuetheoffence
+
+        search_filters = {FOCUS_FILTER_FRA_POLITICAL_VIOLENCE}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = SOV
+				}
+				add_dynamic_modifier = {
+					modifier = GER_fall_blau
+					scope = GER
+					days = 120
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_Leningrad
+		icon = GFX_focus_attack_soviet
+		x = -2
+		y = 1
+		cost = 1
+		ai_will_do = {
+			factor = 500
+		}
+
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_fallblau }
+		relative_position_id = GER_fallblau
+		mutually_exclusive = { focus = GER_Moscow }
+		mutually_exclusive = { focus = GER_Stalingrad }
+
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 195
+						state = 146
+						state = 208
+						state = 244
+						state = 263
+						state = 209
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = GER_focus_moscow
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_Moscow
+		icon = GFX_focus_attack_soviet
+		x = 0
+		y = 1
+		cost = 1
+		ai_will_do = {
+			factor = 500
+		}
+
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_fallblau }
+		relative_position_id = GER_fallblau
+		mutually_exclusive = { focus = GER_Stalingrad }
+		mutually_exclusive = { focus = GER_Leningrad }
+
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 219
+						state = 242
+						state = 205
+						state = 223
+						state = 254
+						state = 253
+						state = 248
+						state = 247
+						state = 246
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = GER_focus_moscow
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_Stalingrad
+		icon = GFX_focus_attack_soviet
+		x = 2
+		y = 1
+		cost = 1
+		ai_will_do = {
+			factor = 500
+		}
+
+		available_if_capitulated = yes
+		prerequisite = { focus = GER_fallblau }
+		relative_position_id = GER_fallblau
+		mutually_exclusive = { focus = GER_Moscow }
+		mutually_exclusive = { focus = GER_Leningrad }
+
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 217
+						state = 265
+						state = 245
+						state = 238
+						state = 237
+						state = 236
+						state = 407
+						state = 829
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = GER_focus_moscow
+					scope = GER
+					days = 100
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_citadel
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = GER_Moscow focus = GER_Stalingrad focus = GER_Leningrad }
+		x = 0
+		y = 1
+		relative_position_id = GER_Moscow
+		cost = 1
+
+		available_if_capitulated = yes
+
+		available = {
+			date > 1943.6.1
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = SOV
+				}
+				add_dynamic_modifier = {
+					modifier = GER_operation_citadel
+					scope = GER
+					days = 120
+				}
 			}
 		}
 	}
