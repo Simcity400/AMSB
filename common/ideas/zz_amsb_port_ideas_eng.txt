@@ -1,0 +1,410 @@
+ideas = {
+	country = {
+		Increased_enlistment = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = prc_the_long_march2
+
+			modifier = {
+			conscription = 0.025
+			conscription_factor = 0.1
+			stability_factor = -0.05
+			}	
+		}
+		Trade_expanded = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_flexible_foreign_policy
+
+			modifier = {
+			trade_opinion_factor = 0.25
+			industrial_capacity_factory = 0.05
+			}	
+		}
+		ENG_state_of_the_economy = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = eng_guided_by_britain
+
+			modifier = {
+			production_speed_buildings_factor = -0.1
+			consumer_goods_factor = 0.15
+			industrial_capacity_factory = -0.1
+			}	
+		}
+		ENG_state_of_the_economy_two = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = eng_guided_by_britain
+
+			modifier = {
+			production_speed_buildings_factor = -0.05
+			consumer_goods_factor = 0.1
+			industrial_capacity_factory = -0.05
+			}	
+		}
+		ENG_state_of_the_economy_three = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = eng_guided_by_britain
+
+			modifier = {
+				production_speed_buildings_factor = 0
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = 0
+			}	
+		}
+		ENG_state_of_the_economy_four = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = eng_guided_by_britain
+
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = 0
+				industrial_capacity_factory = 0.05
+			}	
+		}
+		ENG_state_of_the_economy_five = {
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = eng_guided_by_britain
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0
+				industrial_capacity_factory = 0.1
+				production_factory_max_efficiency_factor = 0.05
+				global_building_slots_factor = 1
+			}	
+		}
+		ENG_colonial_investors = {
+			
+			picture = generic_economic_increase
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		ENG_raf_idea = { 
+			
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = raf
+			
+			modifier = {
+				air_superiority_efficiency = 0.1
+				air_range_factor = 0.1
+				# air_home_defence_factor = 0.1
+			}
+		}
+		ENG_special_operations_executive_idea = {
+			name = ENG_special_operations_executive
+			picture = generic_spy_coup
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+			
+			research_bonus = {
+				decryption_tech = 0.05
+				encryption_tech = 0.05
+			}			
+
+			modifier = {
+				decryption_factor = 0.2
+			}
+		}
+		ENG_special_operations_executive_idea_lar = {
+			name = ENG_special_operations_executive
+			picture = generic_spy_coup
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1			
+
+			modifier = {
+				operative_slot = 2
+				operation_infiltrate_outcome = 0.25
+				boost_resistance_factor = 0.25
+			}
+		}
+		welsh_miners_exploited = {
+			
+			name = welsh_miners_exploited
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = prc_low_popular_support3
+			
+			modifier = {
+				local_resources_factor = 0.1	
+				production_speed_buildings_factor = 0.1
+				stability_factor = -0.05
+			}
+		}
+		motorized_army = {
+			
+			name = motorized_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = vauxhall
+			
+			modifier = {
+				mechanized_attack_factor = 0.05
+				mechanized_defence_factor = 0.05
+			}
+		}
+		motorized_army_two = {
+			
+			name = motorized_army_two
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = vauxhall
+			
+			modifier = {
+				mechanized_attack_factor = 0.05
+				mechanized_defence_factor = 0.05
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+			}
+		}
+		motorized_army_three = {
+			
+			name = motorized_army_three
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = vauxhall
+			
+			modifier = {
+				mechanized_attack_factor = 0.05
+				mechanized_defence_factor = 0.05
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				army_armor_speed_factor = 0.1
+			}
+		}
+		british_patriotism = {
+			
+			name = british_patriotism
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_victors_of_ww1
+			
+			modifier = {
+				#war_support_factor = 0.025
+				conscription = 0.005
+				army_core_defence_factor = 0.05
+			}
+		}
+		ENG_home_army_idea = {
+
+			name = ENG_the_home_army
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				conscription = 0.02
+				army_core_defence_factor = 0.1
+			}
+
+			picture = generic_production_bonus
+			
+			removal_cost = -1
+		}
+		ENG_crypto_bomb_idea_lar = {
+	
+			name = ENG_crypto_bomb_idea_lar
+		
+			allowed = {
+				original_tag = ENG
+				always = no
+			}
+	
+			allowed_civil_war = {
+				always = yes
+			}
+				
+			removal_cost = -1
+			
+			picture = POL_Intelligence_Service1
+			
+			modifier = {
+				decryption_power_factor = 0.1
+			}
+		}
+		ENG_admiralty_naval_staff = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_army_war_college
+			
+			modifier = {
+				navy_leader_start_defense_level = 1
+				navy_leader_start_coordination_level = 1
+				navy_chief_cost_factor = -0.33 
+			}
+		}
+		saf_expand_tank_production = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.05 instant = yes 
+				}
+				mechanized = {
+					build_cost_ic = -0.05 instant = yes 
+				}
+				motorized = {
+					build_cost_ic = -0.05 instant = yes 
+				}
+
+			}	
+		}
+	}
+}
