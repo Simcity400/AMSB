@@ -1,0 +1,487 @@
+FRA_propaganda_campaigns = {
+	FRA_maginot_prop = { # ID = 2
+		priority = 18
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			has_war = yes
+			FRA = { controls_state = 28 }
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			army_core_defence_factor = 0.05
+			dig_in_speed_factor = 0.5
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 2 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 2 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_bonds_prop = { # ID = 3
+		priority = 17
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			has_war = yes 
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			consumer_goods_factor = -0.09
+			political_power_gain = 0.10
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 3 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 3 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_air_force = { # ID = 4
+		priority = 16
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			air_advisor_cost_factor = -0.1
+			air_home_defence_factor = 0.1
+			paratrooper_aa_defense = 0.15
+			air_training_xp_gain_factor = 0.2
+			air_untrained_pilots_penalty_factor = -0.1
+			experience_gain_air_factor = 0.2
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 4 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 4 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_steel_prop = { # ID = 5
+		priority = 15
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			NOT = {has_idea = civilian_economy}
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			local_resources_factor = 0.2
+		}
+
+		complete_effect = {
+	
+			set_variable = { FRA_new_propaganda_campaign = 5 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+
+			
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 5 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+			
+
+		}
+
+	}
+
+	FRA_men_prop = { # ID = 6
+		priority = 14
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			GER = { has_war = yes }
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			war_support_factor = 0.1
+			mobilization_speed = 0.1
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 6 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 6 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_intel_prop = { # ID = 7
+		priority = 13
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			threat > 0.10
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			intelligence_agency_defense = 0.5
+			operative_slot = 1
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 7 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 7 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_air_prop = { # ID = 8
+		priority = 12
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			has_global_flag = fall_of_france
+			NOT = { has_government = fascism }
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			air_attack_factor = 0.10
+			air_defence_factor = 0.10
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 8 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 8 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_inevitable_prop = { # ID = 9
+		priority = 11
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			has_global_flag = fall_of_france
+
+			NOT = { has_government = fascism }
+			OR = {
+				16 = {
+					is_controlled_by = ROOT
+				}
+				15 = {
+					is_controlled_by = ROOT
+				}
+				14 = {
+					is_controlled_by = ROOT
+				}
+			}
+
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+			supply_combat_penalties_on_core_factor = -0.15
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 9 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 9 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_hammer_prop = { # ID = 10
+		priority = 10
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			has_global_flag = fall_of_france
+			NOT = { has_government = fascism }
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = 0.075
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 10 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 10 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_eternal_prop = { # ID = 11
+		priority = 9
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			has_global_flag = fall_of_france
+
+			NOT = { has_government = fascism }
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		targeted_modifier = {
+			tag = ENG
+			trade_cost_for_target_factor = -0.2
+		}
+		targeted_modifier = {
+			tag = USA
+			trade_cost_for_target_factor = -0.2
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 11 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 11 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_vichy_prop = { # ID = 12
+		priority = 8
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			has_global_flag = fall_of_france
+
+			
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		
+
+
+		targeted_modifier = {
+			tag = GER
+			attack_bonus_against = 0.1
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 12 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 12 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+
+	FRA_usa_prop = { # ID = 13
+		priority = 7
+
+		icon = eng_propaganda_campaigns
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		available = {
+			FRA_propaganda_poster_slot_available = yes
+			has_global_flag = fall_of_france
+
+			NOT = { has_government = fascism }
+		}
+
+		days_remove = 365
+
+		days_re_enable = 360
+
+		cost = 25
+
+		modifier = {
+			exiled_government_weekly_manpower = 500
+		}
+		targeted_modifier = {
+			tag = USA
+			license_production_speed = 0.15
+			license_tech_difference_speed = 0.15
+		}
+
+		complete_effect = {
+			set_variable = { FRA_new_propaganda_campaign = 13 }
+			FRA_pick_propaganda_campaign_slot_effect = yes
+		}
+
+		remove_effect = {
+			set_variable = { FRA_propaganda_campaign_to_remove = 13 }
+			FRA_reset_propaganda_campaign_slot_effect = yes
+			hidden_effect = { FROM = { country_event = { id = msb.7 hours = 1} } }
+		}
+	}
+}
