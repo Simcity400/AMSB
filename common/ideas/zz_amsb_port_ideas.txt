@@ -1,0 +1,116 @@
+ideas = {
+	country = {
+		SOV_tankograd_idea = {
+			name = "Tankograd"
+
+			removal_cost = -1
+
+			picture = man_five_year_plan_tank # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.05
+				}
+			}
+		}
+		SOV_tankograd_idea2 = {
+			name = "Tankograd"
+
+			removal_cost = -1
+
+			picture = man_five_year_plan_tank # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.15
+					hardness = -0.2
+				}
+			}
+		}
+		SOV_guards_ideas = {
+				name = "Red Guard"
+
+			removal_cost = -1
+
+			picture = ger_the_great_red_menace # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				command_abilities_cost_factor = -0.25
+			}
+		}
+		SOV_slack_inf = {
+				name = "Cheap Guns"
+
+			removal_cost = -1
+
+			picture = generic_infantry_equipment_manufacturer_2 # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+				}
+			}
+		
+		}
+		SOV_technical_assistance  = {
+			name = "Technical Assistance"
+
+			removal_cost = -1
+
+			picture = generic_research_bonus # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		
+		}
+	}
+	economy = {
+		sov_totaler_krieg_economy = {
+			picture = new_economic_policy
+
+			visible = {
+				original_tag = SOV
+				has_completed_focus = SOV_war_mobilisation
+			}
+
+			available = {
+				has_completed_focus = SOV_war_mobilisation
+			}
+
+			cost = 150
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				production_speed_rail_way_factor = 0.5
+				production_speed_supply_node_factor = 0.5
+				production_speed_arms_factory_factor = 0.3
+				conversion_cost_civ_to_mil_factor= -0.3
+				conversion_cost_mil_to_civ_factor = -0.3
+				factory_energy_consumption = 0.10
+			}
+			cancel_if_invalid = no
+		}
+	}
+}
