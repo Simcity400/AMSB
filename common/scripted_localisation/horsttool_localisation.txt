@@ -71,7 +71,6 @@ defined_text = { # global
 	text = {
 		trigger = {
 			check_variable = {WST.pause_blocker_variable=0}
-			NOT={Root={has_global_flag=blocking_pauses}}
 		}
 		localization_key = PAUSE_SELECT
 	}
@@ -300,12 +299,6 @@ defined_text = { # global
 			check_variable = { Root.selected_cheat = 32 }
 		}
 		localization_key = CHEAT32
-	}
-	text = {
-		trigger = {
-			check_variable = { Root.selected_cheat = 33 }
-		}
-		localization_key = CHEAT33
 	}
 
 }
