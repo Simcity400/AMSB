@@ -1,0 +1,39 @@
+characters = {
+	#### COUNTRY LEADERS 
+	ETH_haile_selassie = {
+		name = ETH_haile_selassie
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ETH_haile_selassie
+				small = GFX_portrait_ETH_haile_selassie_imprisoned_small
+			}
+			army = {
+				large = GFX_portrait_ETH_haile_selassie_field_marshal
+				small = GFX_portrait_ETH_haile_selassie_field_marshal_small
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1.1"
+			traits = { king_of_kings }
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ETH_haile_selassie
+			allowed  = {
+
+			}
+			available = {
+				NOT = { has_character_flag = ETH_imprisoned_flag}
+			}
+			traits = {
+				imprisoned_emperor
+			}
+			visible = {
+				has_character_flag = ETH_imprisoned_flag
+			}				
+		}
+		
+	}
+}

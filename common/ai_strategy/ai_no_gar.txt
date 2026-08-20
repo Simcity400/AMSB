@@ -1,0 +1,25 @@
+ai_no_gar = {
+	enable = {
+		always = yes
+	}
+	abort = { always = no }
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -9999
+	}
+}
+
+ai_dont_atagonize_WST = { 
+	enable = { 
+		is_playable_country = yes
+	}
+	abort = { 
+		always = no
+	}
+	ai_strategy = { 
+		type = antagonize
+		id = WST
+		value = -9999
+	}
+}

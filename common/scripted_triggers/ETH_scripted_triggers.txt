@@ -1,0 +1,141 @@
+#scripted triggers for Ethiopia
+
+# Is initial war still ongoing?
+has_lon_arms_embargo = {
+	custom_trigger_tooltip = {
+		#TODO Localize this properly
+		tooltip = lon_arms_resolution_tt
+		has_global_flag = second_italo_ethiopian_war_flag
+		FROM = { has_idea = league_of_nations_member_idea }
+	}	
+}
+
+# Is the government either anarchist or anarchist communist ? 
+has_anarchist_government = {
+	custom_trigger_tooltip = {
+		tooltip = has_anarchist_government_tt
+		OR = {
+			has_country_leader_ideology = anarchist_communism 
+			has_country_leader_ideology = anarchism 
+		}
+	}	
+}
+
+# Does Ethiopia (or anyone else that want to use this) have a Military Academy? 
+# Add triggers for those countries as needed 
+has_military_academy = {
+	
+}
+
+
+# Does Ethiopia (or anyone else that want to use this) have a Naval Academy? 
+# Add triggers for those countries as needed 
+has_naval_academy = {
+	
+}
+
+# Does Ethiopia (or anyone else that want to use this) have an Air Force Academy? 
+# Add triggers for those countries as needed 
+has_air_academy = {
+	
+}
+# Does Ethiopia (or anyone else that want to use this) have an established Air Force? 
+# Add triggers for those countries as needed 
+has_air_force_command = {
+	
+}
+
+# War Escalation triggers
+has_war_escalation_level_1 = {
+	custom_trigger_tooltip = {
+		tooltip = has_war_escalation_level_1_tt
+		check_variable = { ETH.ETH_war_escalation_level > 0 }
+	}
+}
+has_war_escalation_level_2 = {
+	custom_trigger_tooltip = {
+		tooltip = has_war_escalation_level_2_tt
+		check_variable = { ETH.ETH_war_escalation_level > 1 }
+	}
+}
+has_war_escalation_level_3 = {
+	custom_trigger_tooltip = {
+		tooltip = has_war_escalation_level_3_tt
+		check_variable = { ETH.ETH_war_escalation_level > 2 }
+	}
+}
+has_war_escalation_level_4 = {
+	custom_trigger_tooltip = {
+		tooltip = has_war_escalation_level_4_tt
+		check_variable = { ETH.ETH_war_escalation_level > 3 }
+	}
+}
+has_war_escalation_level_5 = {
+	custom_trigger_tooltip = {
+		tooltip = has_war_escalation_level_5_tt
+		check_variable = { ETH.ETH_war_escalation_level > 4 }
+	}
+}
+has_war_escalation_level_6 = {
+	custom_trigger_tooltip = {
+		tooltip = has_war_escalation_level_6_tt
+		check_variable = { ETH.ETH_war_escalation_level > 5 }
+	}
+}
+has_war_escalation_level_7 = {
+	custom_trigger_tooltip = {
+		tooltip = has_war_escalation_level_7_tt
+		check_variable = { ETH.ETH_war_escalation_level > 6 }
+	}
+}
+
+league_of_nations_is_active = {
+	custom_trigger_tooltip = {
+		tooltip = league_of_nations_is_active_tt
+		NOT = { has_global_flag = LoN_disbanded_flag }
+		
+	}
+}
+
+controls_all_ethiopian_core_states = {
+	custom_trigger_tooltip = {
+		tooltip = controls_ethiopian_cores_tt 
+		controls_state = 271 
+		controls_state = 835 
+		controls_state = 836 
+		controls_state = 837
+		controls_state = 838
+		controls_state = 839 
+		controls_state = 840
+		controls_state = 841 
+		controls_state = 842 
+		controls_state = 843 
+	}
+}
+
+controls_half_ethiopian_owned_states = {
+	custom_trigger_tooltip = {  
+		tooltip = controls_50_percent_of_territory
+		check_variable = { 
+			var = num_owned_controlled_states 
+			value = controlled_owned_50 
+			compare = greater_than_or_equals
+		}
+	}
+}
+controls_more_than_half_ethiopian_owned_states = {
+	custom_trigger_tooltip = {  
+		tooltip = controls_more_than_50_percent_of_territory
+		check_variable = { 
+			var = num_owned_controlled_states 
+			value = controlled_owned_50 
+			compare = greater_than
+		}
+	}
+}
+
+ETH_is_horn_of_africa_original_tag = {
+	OR = {
+		always = no 
+	}
+}

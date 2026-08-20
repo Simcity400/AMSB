@@ -1,0 +1,140 @@
+ideas = {
+	####################
+	####################
+	#### MUN IDEAS #####
+	####################
+	####################
+
+	country = {
+		#For bookmark and country selection only
+		CZE_a_divided_nation_fake_ns = {
+			name = CZE_a_divided_nation_dynamic_modifier
+			picture = CZE_divided_nation
+
+			allowed = {
+				always = no 
+			}
+
+			available = {
+				always = no
+				NOT = {
+					tag = CZE
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			#These need to match the startdate dynamic modifier vaules of CZE_a_divided_nation_dynamic_modifier
+			modifier = { 
+				stability_factor = -0.20
+				drift_defence_factor = -0.3
+				political_power_cost = 0.30
+			}
+		}
+		CZE_integrate_czech_manufacturers_GER_idea_aat = { #For GER_integrate_czech_manufacturers 
+			picture = ARG_rapid_militarization
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			available = {
+				9 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				tank_manufacturer_cost_factor = -0.05
+				military_industrial_organization_funds_gain = 0.05
+				line_change_production_efficiency_factor = 0.05
+			}
+		}
+		CZE_integrate_czech_manufacturers_GER_idea_no_aat = { #For GER_integrate_czech_manufacturers 
+			picture = ARG_rapid_militarization
+			name = "CZE_integrate_czech_manufacturers_GER_idea_aat"
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			available = {
+				9 = {
+					is_controlled_by_ROOT_or_ally = yes
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				tank_manufacturer_cost_factor = -0.25
+				materiel_manufacturer_cost_factor = -0.25
+				line_change_production_efficiency_factor = 0.10
+			}
+		}
+
+		CZE_pfot_fortification_destruction_research = {
+			picture = generic_artillery_regiments
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			available = {
+				
+			}
+
+			research_bonus = {
+				artillery = 0.15
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				sp_land_large_caliber_kinetic_energy_sabot_speed_factor = 0.50
+			}
+		}
+
+
+
+	}
+
+	# TECHNOLOGY
+	tank_manufacturer = { 
+		
+	}
+
+	naval_manufacturer = { 
+
+	}
+
+	aircraft_manufacturer = { 
+
+	}
+
+	materiel_manufacturer = { 
+
+	}
+
+	industrial_concern = { 
+
+	}
+}

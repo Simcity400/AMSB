@@ -1,0 +1,81 @@
+﻿division_template = {
+	name = "Gyalogdandár"				# Infantry Brigade
+
+	division_names_group = HUN_INF_02
+	role = infantry
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }   # cavalry recon
+		artillery = { x = 0 y = 1 } # Represents the smaller artillery regiments
+	}
+}
+division_template = {
+	name = "Huszár Dandár" 					# Cavalry Brigade
+	# Note: has 2x bicycle inf bns added during 1938-40 mobilization
+
+	division_names_group = HUN_CAV_01
+	role = mobile
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }   # recon bn of tankettes, ACs, mot inf
+	}
+}
+division_template = {
+	name = "Lovassági Társaság" 					# Cavalry Company (Independent)
+
+	division_names_group = HUN_CAV_01
+	role = suppression
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+	}
+}
+
+
+### Starting Production ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "HUN"
+		}
+		requested_factories = 2
+		progress = 0.68
+		efficiency = 100
+		industrial_manufacturer = mio:HUN_femaru_fegyver_es_gepgyar_organization
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "HUN"
+		}
+		requested_factories = 1
+		progress = 0.60
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "HUN"
+		}
+		requested_factories = 1
+		progress = 0.60
+		efficiency = 100
+		industrial_manufacturer = mio:HUN_digep_artillery
+	}
+}

@@ -1,0 +1,871 @@
+add_namespace = AAT_Sweden_flashpoints
+add_namespace = Sweden_rearnament
+add_namespace = AAT_Sweden
+add_namespace = AAT_Sweden_BoP
+add_namespace = AAT_Sweden_ball_bearing
+add_namespace = AAT_Sweden_strike
+add_namespace = AAT_Sweden_nationalists
+add_namespace = AAT_Sweden_nordic_defense_council
+add_namespace = AAT_Sweden_communism
+
+##################### Flashpoints #####################
+
+##### Pajala Bombing ####
+
+# Bombing of Pajala - Swedish Event
+
+
+# Soviet Event - Sweden denounce us
+
+
+# Soviet Event - Sweden contact us regarding incident
+
+
+# Sweden Event - Soviet Union apologizes for bombing
+
+
+# Sweden Event - Soviet Union refuses to acknowledge bombing
+
+
+
+# Finland Event - Sweden send aid
+country_event = { 
+	id = AAT_Sweden_flashpoints.15
+	title = AAT_Sweden_flashpoints.15.t
+	desc = AAT_Sweden_flashpoints.15.desc
+	picture = GFX_report_event_generic_rifles
+	is_triggered_only = yes
+	# Thanks Sweden!
+	option = {
+		name = AAT_Sweden_flashpoints.15.a
+		ai_chance = {
+			base = 10
+		}
+		#TODO_ASD: Should probably use IM system for this, for fallback we can just add equipment the old way
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 500
+			producer = SWE
+		}
+	}
+}
+
+# Soviet Event - Sweden backs down
+country_event = { 
+	id = AAT_Sweden_flashpoints.16
+	title = AAT_Sweden_flashpoints.16.t
+	desc = AAT_Sweden_flashpoints.16.desc
+	picture = GFX_report_event_finnish_soldiers_snow
+	is_triggered_only = yes
+	# Great
+	option = {
+		name = AAT_Sweden_flashpoints.16.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = 0.03
+	}
+}
+
+# Soviet Event - Sweden sending support to Finland in retaliation
+country_event = { 
+	id = AAT_Sweden_flashpoints.17
+	title = AAT_Sweden_flashpoints.17.t
+	desc = AAT_Sweden_flashpoints.17.desc
+	picture = GFX_report_event_finnish_soldiers_snow
+	is_triggered_only = yes
+	# Demand end to involvement in Finland
+	option = {
+		name = AAT_Sweden_flashpoints.17.a
+		ai_chance = {
+			base = 10
+		}
+		add_war_support = 0.05
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.18
+				days = 2
+			}
+		}
+	}
+	# Apologize and de-escalate
+	option = {
+		name = AAT_Sweden_flashpoints.17.b
+		ai_chance = {
+			base = 0
+		}
+		FROM = {
+			country_event = { 
+				id = AAT_Sweden_flashpoints.13
+				days = 4
+			}
+		}
+	}
+}
+
+# Sweden Event - Soviet Union demands we stop aiding Finland
+country_event = { 
+	id = AAT_Sweden_flashpoints.18
+	title = AAT_Sweden_flashpoints.18.t
+	desc = AAT_Sweden_flashpoints.18.desc
+	picture = GFX_report_event_soviet_tanks
+	is_triggered_only = yes
+	# Reject Soviet Ultimatum but prepare for war
+	option = {
+		name = AAT_Sweden_flashpoints.18.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				is_in_faction_with = SOV
+			}
+		}	
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.19
+				days = 3
+			}	
+		}
+	}
+	# Agree to back down
+	option = {
+		name = AAT_Sweden_flashpoints.18.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_war_with = SOV
+			}
+		}
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.16
+				days = 3
+			}
+		}
+	}
+}
+
+# Soviet Event - Sweden Refuses to backdown
+country_event = { 
+	id = AAT_Sweden_flashpoints.19
+	title = AAT_Sweden_flashpoints.19.t
+	desc = AAT_Sweden_flashpoints.19.desc
+	picture = GFX_report_event_soviet_soldiers_tank
+	is_triggered_only = yes
+	# Declare war on Sweden
+	option = {
+		name = AAT_Sweden_flashpoints.19.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0 
+				OR = {
+					is_in_faction_with = SWE
+					has_war_with_major = yes
+					has_civil_war = yes
+				}
+			}
+		}	
+		create_wargoal = {
+			target = SWE
+			type = puppet_wargoal_focus
+		}
+		SWE = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.21
+				days = 2
+			}
+		}
+	}
+	# Drop the issue
+	option = {
+		name = AAT_Sweden_flashpoints.19.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_war_with = SWE
+			}
+		}
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.13
+				days = 2
+			}
+		}
+	}
+	# TODO_ASD: News Events for war/peace
+}
+
+# Finland Event - Sweden propose alliance against Soviets
+
+
+# Sweden Event - Propose alliance with Finland
+
+
+# Sweden Event - Finland reject alliance
+
+
+
+###### Permittenttrafiken ######
+
+
+# German Event - Should we begin requesting access to Swedish infrastructure to support the invasion/occupation of Norway?
+country_event = {
+	id = AAT_Sweden_flashpoints.30
+	title = AAT_Sweden_flashpoints.30.t
+	desc = AAT_Sweden_flashpoints.30.desc
+	picture = GFX_report_event_german_inspect_troops
+	fire_only_once = yes
+	is_triggered_only = no
+	trigger = {
+	    tag = GER
+	    SWE = {
+	    	exists = yes
+	    }
+	    NOT = {
+	    	has_war_with = SWE
+	    	is_in_faction_with = SWE
+	    }
+	    OR = {
+	    	any_allied_country = {
+	    		any_controlled_state = {
+	    			is_core_of = NOR
+	    		}
+	    		OR = {
+    				NOT = { original_tag = NOR }
+					has_country_leader = { character = NOR_vidkun_quisling }  #Eff u Quisling
+	    		}
+	    	}
+	    	any_controlled_state = {
+	    		is_core_of = NOR
+	    	}
+	    	any_allied_country = {
+	    		any_controlled_state = {
+	    			is_core_of = FIN
+	    		}
+	    	}
+	    	any_controlled_state = {
+	    		is_core_of = FIN
+	    	}
+	    	AND = {
+	    		has_war_with = SOV
+	    		FIN = {
+	    			has_war_with = SOV
+	    		}
+	    		has_military_access_to = FIN
+	    	}
+	    }
+	}
+
+	mean_time_to_happen = {
+	    days = 3
+	}
+	
+	# We will request 'humanitarian' transit rights from Sweden
+	option = { 
+		name = AAT_Sweden_flashpoints.30.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_war_with = SWE
+			}
+			modifier = {
+				factor = 0
+				
+			}
+			modifier = {
+				factor = 0
+				#SWE = { SWE_is_historical_ai = yes }
+			}
+		}
+		SWE = {
+			set_country_flag = GER_want_transit
+			country_event = {
+				id = AAT_Sweden_flashpoints.31
+				days = 1
+			}
+		}
+	}
+	# Don't ask for access, ends event chain here.
+
+
+}
+
+# Sweden Event - Germany requests 'humanitarian' transit rights
+country_event = { 
+	id = AAT_Sweden_flashpoints.31
+	title = AAT_Sweden_flashpoints.31.t
+	desc = AAT_Sweden_flashpoints.31.desc
+	picture = GFX_report_event_german_troops
+	is_triggered_only = yes
+
+	# Give the Germans what they want (Reduces neutrality)
+	option = {
+		name = AAT_Sweden_flashpoints.31.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_war_with = FROM
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+			}
+		}
+		SWE_permittentrafiken_response_picker = yes
+	}
+	# No, maintain neutrality 
+	option = {
+		name = AAT_Sweden_flashpoints.31.b
+		ai_chance = {
+			base = 0
+			# TODO_ASD: Add historical AI check
+			#modifier = {
+			#	add = 10 
+			#}
+		}
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.32
+				days = 3
+			}
+			add_opinion_modifier = {
+				target = SWE
+				modifier = refused_GER_transit_request
+			}
+		}
+	}
+}
+
+# German Event - Sweden refuses request
+country_event = { 
+	id = AAT_Sweden_flashpoints.32
+	title = AAT_Sweden_flashpoints.32.t
+	desc = AAT_Sweden_flashpoints.32.desc
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+
+	# Escalate tensions
+	option = {
+		name = AAT_Sweden_flashpoints.32.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						any_allied_country = {
+							any_controlled_state = {
+								is_core_of = NOR
+							}
+						}
+						any_controlled_state = {
+							is_core_of = NOR
+						}
+						any_allied_country = {
+							any_controlled_state = {
+								is_core_of = FIN
+							}
+						}
+						any_controlled_state = {
+							is_core_of = FIN
+						}
+						AND = {
+							has_war_with = SOV
+							FIN = {
+								has_war_with = SOV
+							}
+							has_military_access_to = FIN
+						}
+					}
+				}
+			}
+		}
+		SWE = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.33
+				days = 3
+			}
+		}
+	}
+	# drop the issue
+	option = {
+		name = AAT_Sweden_flashpoints.32.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				NOT = {
+					OR = {
+						any_allied_country = {
+							any_controlled_state = {
+								is_core_of = NOR
+							}
+						}
+						any_controlled_state = {
+							is_core_of = NOR
+						}
+						any_allied_country = {
+							any_controlled_state = {
+								is_core_of = FIN
+							}
+						}
+						any_controlled_state = {
+							is_core_of = FIN
+						}
+						AND = {
+							has_war_with = SOV
+							FIN = {
+								has_war_with = SOV
+							}
+							has_military_access_to = FIN
+						}
+					}
+				}
+			}
+		}
+		SWE = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.36
+				days = 3
+			}
+		}
+	}
+}
+
+# Sweden Event - Germany questions neutrality of Sweden
+country_event = { 
+	id = AAT_Sweden_flashpoints.33
+	title = AAT_Sweden_flashpoints.33.t
+	desc = AAT_Sweden_flashpoints.33.desc
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+
+	# allow them access
+	option = {
+		name = AAT_Sweden_flashpoints.33.a
+		ai_chance = {
+			base = 10
+		}
+		SWE_permittentrafiken_response_picker = yes
+	}
+	# refuse request, increase tensions by increasing mobilization
+	option = {
+		name = AAT_Sweden_flashpoints.33.b
+		ai_chance = {
+			base = 0
+		}
+		GER = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.34
+				days = 3
+			}
+		}
+	}
+}
+
+# Germany Event - Sweden increases mobilization
+country_event = { 
+	id = AAT_Sweden_flashpoints.34
+	title = AAT_Sweden_flashpoints.34.t
+	desc = AAT_Sweden_flashpoints.34.desc
+	picture = GFX_report_event_swedish_soldier
+	is_triggered_only = yes
+
+	# Begin moving forces to the Swedish border and send ultimatum
+	option = {
+		name = AAT_Sweden_flashpoints.34.a
+		ai_chance = {
+			base = 10
+		}
+		SWE = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.35
+				days = 3
+			}
+		}
+	}
+	# Give up and end escalation
+	option = {
+		name = AAT_Sweden_flashpoints.34.b
+		ai_chance = {
+			base = 0
+		}
+		SWE = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.36
+				days = 3
+			}
+		}
+	}
+}
+
+# Sweden Event - Germany sends ultimatum
+country_event = { 
+	id = AAT_Sweden_flashpoints.35
+	title = AAT_Sweden_flashpoints.35.t
+	desc = AAT_Sweden_flashpoints.35.desc
+	picture = GFX_report_event_german_troops
+	is_triggered_only = yes
+
+	# Cave to the Germans
+	option = {
+		name = AAT_Sweden_flashpoints.35.a
+		ai_chance = {
+			base = 10
+		}
+		SWE_permittentrafiken_response_picker = yes
+	}
+	# Pre-emptive strike on Germany
+	option = {
+		name = AAT_Sweden_flashpoints.35.b
+		ai_chance = {
+			base = 0
+		}
+		GER = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.38
+				hours = 12
+			}
+		}
+		create_wargoal = {
+			target = GER
+			type = puppet_wargoal_focus
+		}
+	}
+	# Refuse to abandon neutrality
+	option = {
+		name = AAT_Sweden_flashpoints.35.c
+		ai_chance = {
+			base = 0
+		}
+		GER = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.37
+				days = 3
+			}
+		}
+	}
+}
+
+# Sweden Event - Tensions with Germany decrease
+country_event = { 
+	id = AAT_Sweden_flashpoints.36
+	title = AAT_Sweden_flashpoints.36.t
+	desc = AAT_Sweden_flashpoints.36.desc
+	picture = GFX_report_event_german_reichstag_gathering
+	is_triggered_only = yes
+
+	# Great
+	option = {
+		name = AAT_Sweden_flashpoints.36.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+# German Event - Sweden rejects ultimatum
+country_event = { 
+	id = AAT_Sweden_flashpoints.37
+	title = AAT_Sweden_flashpoints.37.t
+	desc = AAT_Sweden_flashpoints.37.desc
+	picture = GFX_report_event_swedish_soldier
+	is_triggered_only = yes
+
+	# We have to back down
+	option = {
+		name = AAT_Sweden_flashpoints.37.a
+		ai_chance = {
+			base = 10
+		}
+		SWE = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.36
+				days = 3
+			}
+		}
+	}
+	# Begin the invasion of Sweden
+	option = {
+		name = AAT_Sweden_flashpoints.37.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_in_faction = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						any_allied_country = {
+							any_controlled_state = {
+								is_core_of = NOR
+							}
+						}
+						any_controlled_state = {
+							is_core_of = NOR
+						}
+						any_allied_country = {
+							any_controlled_state = {
+								is_core_of = FIN
+							}
+						}
+						any_controlled_state = {
+							is_core_of = FIN
+						}
+						AND = {
+							has_war_with = SOV
+							FIN = {
+								has_war_with = SOV
+							}
+							has_military_access_to = FIN
+						}
+					}
+				}
+			}
+		}
+		create_wargoal = {
+			target = SWE
+			type = puppet_wargoal_focus
+		}
+	}
+}
+
+# German Event - Sweden attacks positions in Norway and Denmark
+country_event = { 
+	id = AAT_Sweden_flashpoints.38
+	title = AAT_Sweden_flashpoints.38.t
+	desc = AAT_Sweden_flashpoints.38.desc
+	picture = GFX_report_event_sweden_tank
+	is_triggered_only = yes
+
+	# We shall fight them in the Fjords and in the streets...
+	option = {
+		name = AAT_Sweden_flashpoints.38.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+# German Event - Sweden allows transit of humanitarian stuff 
+country_event = { 
+	id = AAT_Sweden_flashpoints.39
+	title = AAT_Sweden_flashpoints.39.t
+	desc = AAT_Sweden_flashpoints.39.desc
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+
+	# Great - End event chain
+	option = {
+		name = AAT_Sweden_flashpoints.39.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = FROM
+			}
+			modifier = {
+				factor = 0.25
+				FROM = { is_in_faction = yes }
+			}
+		}
+	}
+	# Push for more concessions - telephone, telegraph
+	option = {
+		name = AAT_Sweden_flashpoints.39.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_war_with = FROM
+			}
+			modifier = {
+				factor = 2
+				FROM = { is_in_faction = yes }
+			}
+		}
+		
+		FROM = {
+			set_country_flag = GER_want_communications
+			country_event = {
+				id = AAT_Sweden_flashpoints.40
+				days = 30
+			}
+			# Note: Setting flag here so it's one place to maintain rather than every event where Sweden concedes. Will only be relevant if the event chain continues from here anyway.
+			set_country_flag = SWE_gave_germany_humanitarian_access_flag
+		}
+	}
+}
+
+# Sweden Event - Germany requests access to our comms infrastructure
+country_event = { 
+	id = AAT_Sweden_flashpoints.40
+	title = AAT_Sweden_flashpoints.40.t
+	desc = AAT_Sweden_flashpoints.40.desc
+	picture = GFX_report_event_radar_01
+	is_triggered_only = yes
+
+	# Allow them access to the communications system
+	option = {
+		name = AAT_Sweden_flashpoints.40.a
+		ai_chance = {
+			base = 0
+		}
+		SWE_permittentrafiken_response_picker = yes
+	}
+	# Sure but we're going to spy on German comms 
+	option = {
+		trigger = {
+			has_dlc = "La Resistance"
+		}
+		name = AAT_Sweden_flashpoints.40.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_war_with = FROM
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+			}
+		}
+		SWE_permittentrafiken_response_picker = yes
+		set_country_flag = SWE_spying_on_GER
+		custom_effect_tooltip = AAT_Sweden_flashpoints_tt_arne_beurling
+		
+	}
+	# We will not budge from our neutrality any further
+	option = {
+		name = AAT_Sweden_flashpoints.40.c
+		ai_chance = {
+			base = 0
+		}
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.32
+				days = 3
+			}
+			add_opinion_modifier = {
+				target = SWE
+				modifier = refused_GER_military_access_request
+			}
+		}
+	}
+}
+
+# German Event - Sweden allows access to comms
+country_event = { 
+	id = AAT_Sweden_flashpoints.41
+	title = AAT_Sweden_flashpoints.41.t
+	desc = AAT_Sweden_flashpoints.41.desc
+	picture = GFX_report_event_radar_01
+	is_triggered_only = yes
+
+	# Great - End event chain
+	option = {
+		name = AAT_Sweden_flashpoints.41.a
+		ai_chance = {
+			base = 0
+		}
+	}
+	# Push for more concessions - military access
+	option = {
+		name = AAT_Sweden_flashpoints.41.b
+		ai_chance = {
+			base = 10
+		}		
+		SWE = {
+			set_country_flag = GER_want_military_access
+			country_event = {
+				id = AAT_Sweden_flashpoints.42
+				days = 30
+			}
+			# Note: Setting flag here so it's one place to maintain rather than every event where Sweden concedes. Will only be relevant if the event chain continues from here anyway.
+			set_country_flag = SWE_gave_germany_comms_access
+		}
+	}
+}
+
+# Sweden Event - Germany requests military access
+country_event = { 
+	id = AAT_Sweden_flashpoints.42
+	title = AAT_Sweden_flashpoints.42.t
+	desc = AAT_Sweden_flashpoints.42.desc
+	picture = GFX_report_event_german_troops_paris
+	is_triggered_only = yes
+
+	# allow access
+
+	option = {
+		name = AAT_Sweden_flashpoints.42.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_war_with = FROM
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+			}
+		}
+		SWE_permittentrafiken_response_picker = yes
+
+	}
+	# maintain neutrality
+	option = {
+		name = AAT_Sweden_flashpoints.42.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = FROM
+			}
+			modifier = {
+				factor = 10
+				is_in_faction = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.32
+				days = 3
+			}
+			add_opinion_modifier = {
+				target = SWE
+				modifier = refused_GER_military_access_request
+			}
+		}
+	}
+}
+
+# Germany Event - Sweden allows military access
+country_event = { 
+	id = AAT_Sweden_flashpoints.43
+	title = AAT_Sweden_flashpoints.43.t
+	desc = AAT_Sweden_flashpoints.43.desc
+	picture = GFX_report_event_german_troops_paris
+	is_triggered_only = yes
+
+	# Great
+	option = {
+		name = AAT_Sweden_flashpoints.43.a
+		ai_chance = {
+			base = 0
+		}
+		set_country_flag = SWE_gave_germany_military_access
+		FROM = {
+			give_military_access = PREV
+		}
+	}
+}

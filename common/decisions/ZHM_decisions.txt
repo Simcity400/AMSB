@@ -1,0 +1,45 @@
+
+form_greater_german_reich_category = {
+
+	form_greater_german_reich = {
+
+		icon = generic_form_nation
+
+		allowed = {
+			original_tag = GER
+			has_dlc = "Waking the Tiger"
+		}
+
+		cost = 0
+
+		available = {
+			is_subject = no
+			
+		}
+
+		visible = {
+			AND = {
+				original_tag = GER
+				has_government = fascism
+				# Should be formable by other Nazis as well
+				#has_country_leader = { 
+				#	ruling_only = yes 
+				#	character = GER_adolf_hitler 
+				#}
+			}
+			NOT = { has_global_flag = form_greater_german_reich_flag }
+			has_global_flag = fall_of_france
+		}
+
+		complete_effect = { # Zeny's Request
+            set_cosmetic_tag = GER_greater_german_reich
+            hidden_effect = {
+				set_global_flag = form_greater_german_reich_flag
+			}
+        }
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}

@@ -1,0 +1,773 @@
+#There are some vanilla repeating errors inside the file , in this version how ever they are dealt with and are NOT an issue anymore
+on_actions = {
+	
+
+	#ROOT is the nation being released, FROM is the overlord.
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = {
+					is_owned_by = RAJ
+					check_variable = { core_countries^num > 0 }
+				}
+				
+				for_each_scope_loop = {
+					array = core_countries
+					if = {
+						limit = {
+							NOT = { THIS = { original_tag = RAJ } }	
+							NOT = { THIS = { original_tag = YEM } } #not u
+							NOT = { 
+								is_in_array = {
+								 	array = RAJ.raj_releasables
+								 	value = THIS
+								 } 
+							}
+						}
+						add_to_array = { RAJ.raj_releasables = THIS }
+					}
+					
+				}
+			}
+
+			RAJ = {
+				set_occupation_law_where_available   = foreign_civilian_oversight
+			}
+
+
+		}
+	}
+
+
+	on_release_as_puppet = {
+		effect = {
+			
+
+			
+		}
+	}
+
+	on_weekly_RAJ = {
+		effect = {
+			controlled_civilian_factories_excluding_trade = yes
+		}
+		effect = {
+			if = {
+				limit = {
+					check_variable = { pmc_timer^num > 0 }
+				}
+
+				for_each_loop = {
+					array = pmc_timer
+					index = i
+					value = v
+
+					set_variable = { v_copy = v }
+					add_to_variable = { v_copy = -1 }
+					if = {
+						limit = {
+							check_variable = { v_copy < 1 }
+						}
+
+						remove_from_array = {
+							array = pmc_timer
+							index = i
+						}
+
+						remove_from_array = {
+							array = pmc_recievers
+							index = i
+						}
+
+						add_offsite_building = {
+							type = industrial_complex
+							level = -1
+						}
+					}
+				}
+
+				clear_variable = v_copy
+			}
+
+			
+
+		}
+	}
+	on_monthly_RAJ = {
+		effect = {
+			check_painful_memory = yes
+		}
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = worldwide_opium_trade
+				}
+				
+				random_country = {
+					limit = {
+						exists = yes
+					}
+					random_army_leader = {
+						limit = {
+							NOT = { has_trait = substance_addict }
+						}
+						add_trait = {
+							trait = substance_addict
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_completed_focus = RAJ_local_recruitment_offices
+				}
+				#recalc_projected_time_local_recruitment_offices = yes
+				subtract_from_variable = { RAJ_recruitment_offices_timeout = 1 }
+				if = {
+					limit = {
+						check_variable = { RAJ_recruitment_offices_timeout < 1 }
+					}
+
+					set_variable = { RAJ_recruitment_offices_timeout = RAJ_recruitment_offices_timeout_max }
+		            add_to_variable = { RAJ_agrarian_society_conscription_factor = RAJ_agrarian_society_conscription_factor_penalty_reduction  }
+		            add_to_variable = { RAJ_agrarian_society_mobilization_speed = RAJ_agrarian_society_mobilization_speed_penalty_reduction  }
+		            add_to_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor = RAJ_agrarian_society_mobilization_laws_cost_factor_penalty_reduction  }
+					
+				}
+
+
+				remove_agrarian_society_if_void = yes
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					GER = {
+						exists = yes
+						is_subject = no
+						has_government = fascism
+					}
+					RAJ = {
+						RAJ_GOE_william_rhodes_davis = {
+							is_hired_as_advisor = yes	
+						}
+					}
+				}
+
+
+				randomize_variable = {
+					var = global.RAJ_GOE_william_rhodes_davis_fuel
+					distribution = uniform 
+					min = 3000 # optional 
+					max = 6500 # optional 
+				}
+				round_variable = global.RAJ_GOE_william_rhodes_davis_fuelvariable_name
+				GER = { #ready for duty, C-80
+
+					add_fuel = var:global.RAJ_GOE_william_rhodes_davis_fuel
+				}
+
+				RAJ = {
+					multiply_variable = { global.RAJ_GOE_william_rhodes_davis_fuel = -1 }
+					add_fuel = var:global.RAJ_GOE_william_rhodes_davis_fuel
+				}
+
+				clear_variable = var:global.RAJ_GOE_william_rhodes_davis_fuel
+			}
+		}
+	}
+
+	#	ROOT is the subject, FROM is the previous overlord.
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					ROOT = { 
+						original_tag = RAJ 
+						NOT = { has_global_flag = RAJ_GOE_partition_has_happened }
+					}
+					FROM = { original_tag = ENG }
+					NOT = {
+						OR = {
+							has_completed_focus = RAJ_red_in_the_shadows
+							
+							has_completed_focus = RAJ_forward_bloc
+							has_completed_focus = RAJ_his_majestys_loyal_government
+						}
+					}
+
+				}
+
+				RAJ = { 
+					country_event = { id = GOE_RAJ_partition.6 hours = 2  } 	
+				}
+			}
+		}
+	}
+
+	#on_weekly_RAJ = {
+	#	effect = {
+	#		if = {
+	#			limit = { has_completed_focus = RAJ_provincial_autonomy }
+	#			for_each_scope_loop = {
+	#				array = owned_states_at_game_start
+	#				if = {
+	#					limit = {
+	#						has_resistance = yes
+	#						occupation_law  = demand_princely_donations
+	#					}
+	#					add_to_variable = { RAJ.donations_count = 1 }
+	#				}
+	#				
+	#				
+	#			}
+#
+	#			if = {
+	#				limit = {
+	#					check_variable = { donations_count > 25 }
+	#				}
+	#				subtract_from_variable = { donations_count = 25 }
+	#				random_list = {
+#
+	#					seed = random 
+	#					1 = {  
+	#						add_equipment_to_stockpile = { 
+	#							type = infantry_equipment_0
+	#							amount = 300
+	#							producer = MYS
+	#						}
+	#					} 
+	#					1 = {
+	#						add_equipment_to_stockpile = { 
+	#							type = support_equipment_1
+	#							amount = 100
+	#							producer = HYD
+	#						}
+	#					} 
+#
+	#					1 = {
+	#						add_equipment_to_stockpile = {
+	#							type = artillery_equipment_1
+	#							amount = 50
+	#							producer = KAS	
+	#						}
+	#					}
+#
+	#					1 = {
+	#						add_equipment_to_stockpile = {
+	#							type = motorized_equipment_1
+	#							amount = 50
+	#							producer = RJP
+	#						}
+	#					}
+	#					
+	#				}
+	#			}
+	#		}
+#
+#
+#
+	#	}
+	#}
+	#ROOT = attacking side
+	#FROM = defending side
+	#fired when two countries end up at war with each other (on_war is fired when a country goes to war against anyone and is not fired again when it enters war against another country unless it went to peace first)
+	on_war_relation_added = {
+		effect = {
+			#block raj releasables from insta joining facftions if they spawn
+			if = {
+				limit = {
+					is_in_array = {
+						array = RAJ.raj_releasables
+						value = FROM
+					}
+					FROM = { 
+						is_ai = yes 
+						NOT = { original_tag = RAJ }
+					}
+				}
+
+				FROM = { 
+					set_rule = { can_join_factions = no } 
+					country_event = { id = GOE_RAJ.35 days = 60 } #reset rule
+				}
+			}
+
+			if = {
+				limit = {
+					is_in_array = {
+						array = RAJ.raj_releasables
+						value = ROOT
+					}
+					ROOT = { 
+						is_ai = yes 
+						NOT = { original_tag = RAJ }
+					}
+				}
+
+				ROOT = { 
+					set_rule = { can_join_factions = no } 
+					country_event = { id = GOE_RAJ.35 days = 60 } #reset rule
+				}
+			}
+
+
+		
+			# Will tidy this up with scripted effects someday (TM)
+			#It was in fact, not tidied up
+			
+
+			if = {
+				limit = {
+					OR = {
+						ROOT = { original_tag = ENG }
+						FROM = { original_tag = ENG }
+					}
+
+					OR = {
+						ROOT = { original_tag = RAJ }
+						FROM = { original_tag = RAJ }
+					}
+					RAJ = { NOT = { has_completed_focus = RAJ_keep_british_generals } }
+				}
+
+				RAJ = {
+					every_army_leader = {
+						limit = {
+							has_trait = loyalty_to_britain
+						}
+
+						set_nationality = ENG
+					}
+				}
+			}
+		}
+	}
+
+	on_peace = {
+		effect = {
+			IF = {
+				limit = {
+					THIS = { original_tag = RAJ }
+					THIS = { has_completed_focus = RAJ_war_taxes }
+				}
+				THIS = {
+					set_variable = {
+						var = amount_of_times_raised_taxes
+						value = 0
+					}
+					set_variable = {
+						var = RAJ_war_taxes_war_support
+						value = 0
+					}
+					set_variable = {
+						var = RAJ_war_taxes_stability
+						value = 0
+					}
+					set_variable = {
+						var = RAJ_war_taxes_mil
+						value = 0
+					}
+				}
+			}
+		}
+	}
+
+	#FROM is war target
+	#ROOT is country declaring war
+	on_declare_war = {
+		effect = {
+			IF = { 
+
+			}
+			#Picking out who is the leader in a war when invading Iran
+			IF = { 
+
+			}
+		}
+	}
+
+	on_subject_free = {
+		effect = {
+			##ROOT is subject FROM is previous overlord
+			if = { 
+
+			}
+
+
+			if = {
+				limit = {
+					ROOT = {
+						has_dlc = "Graveyard of Empires"
+						has_dynamic_modifier = { modifier = idea_RAJ_tea_exports }
+					}
+				}
+
+				ROOT = { remove_dynamic_modifier = { modifier = idea_RAJ_tea_exports } }
+			}
+
+			if = {
+				limit = {
+					ROOT = { has_variable = RAJ_times_expanded_tea_exports }
+				}
+				ROOT = {
+					clear_variable = RAJ_times_expanded_tea_exports
+					set_variable = { RAJ_times_expanded_tea_exports = 0 }
+				}
+			}
+		}
+	}
+
+	#ROOT is capitulated country, FROM is winner.
+	on_capitulation_immediate = {
+		effect = {
+			if = {
+				limit =	{
+					ROOT = { is_raj_or_raj_inheritor = yes } 
+				}
+
+				for_each_scope_loop = {
+					array = RAJ.owned_states_at_game_start
+					if = {
+						limit = {
+							controller = {
+								NOT = { is_raj_or_raj_inheritor = yes }
+								NOT = { is_in_faction_with = ROOT }
+							}
+
+							NOT = { has_dynamic_modifier = { modifier = idea_RAJ_resistant_to_occupation } }
+							NOT = {has_state_flag = RAJ_resistance_already_squashed_flag }
+						}
+
+						add_dynamic_modifier = {
+						 	modifier = idea_RAJ_resistant_to_occupation
+						 	days = 1400
+						 } 
+
+
+					}
+				}
+			}
+
+			#Bose capitulated other RAJ
+			if = {
+				limit = {
+					ROOT = { 
+						original_tag = RAJ 
+					}
+					FROM = { 
+						has_war_with = ENG
+						original_tag = RAJ 
+						OR = {
+							has_country_leader = {
+								character = RAJ_subhas_chanda_bose 
+							}
+
+							has_country_leader = {
+								character = RAJ_v_d_savarkar 
+							}
+						}
+					}
+				}
+
+				RAJ = { country_event = { id = GOE_RAJ.21 hours = 2 } }
+			}
+		}
+		#Capitulations Pertaining to Achievements
+		effect = {
+			if = { 
+
+			}
+			if = { 
+
+			}
+			if = { 
+
+			}
+			if = { 
+				
+			}
+		}
+		effect = {
+			IF = {
+				limit = {
+					ROOT = {
+						tag = RAJ
+						has_country_flag = RAJ_mughal_uprising_started
+					}
+				}
+				ROOT = {
+					clr_country_flag = RAJ_mughal_uprising_started
+				}
+				FROM = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = no
+					}
+				}
+			}
+		}
+	}
+
+	#ROOT is new controller, FROM is old controller, FROM.FROM is state ID.
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					FROM.FROM = { state = 733 }
+					ROOT = { 
+						OR = {
+							AND = {
+								original_tag = JAP 
+								has_country_flag = agreed_to_help_bose
+								NOT = { has_war_with = RAJ }
+							}
+							AND = {
+								original_tag = RAJ
+								OR = {
+									has_country_leader = { character = RAJ_subhas_chanda_bose }
+									has_country_leader = { character = RAJ_v_d_savarkar }
+								}
+							}
+						}
+					}
+				}
+				RAJ = { 
+					transfer_state = 733 
+				}
+			}
+
+			if = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+
+					FROM = {
+						is_raj_or_raj_inheritor = yes
+					}
+					is_in_array = {
+						array = RAJ.owned_states_at_game_start
+						value = FROM.FROM
+					}
+
+					NOT = { 
+						has_dynamic_modifier = { modifier = idea_RAJ_resistant_to_occupation }
+					}
+					ROOT = { has_war_with = FROM }
+					FROM.FROM = { NOT = { is_core_of = ROOT } } 
+					
+				}
+
+				FROM.FROM = { 
+					add_dynamic_modifier = {
+					 	modifier = idea_RAJ_resistant_to_occupation
+					 	days = 1400
+					}
+
+					set_state_flag = RAJ_resistance_already_squashed_flag 
+				}
+			}
+			else_if = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					ROOT = {
+						is_raj_or_raj_inheritor = yes
+					}
+
+					FROM.FROM = { has_dynamic_modifier = { modifier = idea_RAJ_resistant_to_occupation } }
+				}
+				FROM.FROM = { remove_dynamic_modifier = { modifier = idea_RAJ_resistant_to_occupation } }
+ 			}
+
+			if = { #Free Bose
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					RAJ = { has_country_flag = has_arrested_bose }
+					FROM.FROM = { state = var:global.bose_arrest_location }
+				}
+
+				RAJ = { country_event = { id = GOE_RAJ.26 hours = 2 } }
+			}
+
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							#is_core_of = BRM
+							is_in_array = {
+								array = RAJ.owned_states_at_game_start
+								value = THIS
+							}
+							NOT = { has_state_flag = RAJ_time_to_retake_state_famine }
+						}
+					}
+
+					FROM = {
+						OR = {
+							original_tag = RAJ
+							#original_tag = BRM
+						}
+					}
+				}
+
+				FROM.FROM =  {
+					set_state_flag = { flag = RAJ_time_to_retake_state_famine days = 30 value = 1 }
+				}
+			}
+		}
+	}
+
+	#FROM is faction leader on join faction requests. THIS DOES NOT FIRE ON ADD_TO_FACTION EFFECT! USE ON_OFFER_JOIN_FACTION!
+	ON_OFFER_JOIN_FACTION = { 
+		effect = { # Adding the correct stuff for faction joiners for the AH joint focus tree
+			IF = { 
+				
+			}
+		}
+	}
+
+	#ROOT is sender, FROM is receiver.
+	on_send_volunteers = {
+		effect = {
+		
+		}
+	}
+
+
+	on_release_as_puppet = {
+		effect = {
+			IF = {
+				limit = {
+					FROM = { original_tag = RAJ }
+					ROOT = {
+						is_in_array = {
+							array = RAJ.raj_releasables
+							value = THIS
+						}
+					}
+				}
+				RAJ = {
+					if = {
+						limit = {
+							check_variable = { RAJ_hindu_mahasabha_released < 0.32 }
+						}
+						add_to_variable = { RAJ_hindu_mahasabha_released = 0.04 }
+					}
+				}
+				RAJ = {
+					add_to_variable = { RAJ_hindu_mahasabha_counter = 1 }
+				}
+			}
+			RAJ = {
+				clamp_variable = {
+					var = RAJ_hindu_mahasabha_released
+					min = 0
+					max = 32
+				}
+			}
+		}
+	}
+
+	on_capitulation = {
+		effect = {
+			IF = {
+				limit = {
+					ROOT = {
+						is_in_array = {
+							array = RAJ.raj_releasables
+							value = THIS
+						}
+					}
+					RAJ = { check_variable = { RAJ_hindu_mahasabha_released > 0.03 } }
+				}
+				RAJ = {
+					if = {
+						limit = {
+							check_variable = { RAJ_hindu_mahasabha_counter < 8 }
+						}
+						subtract_from_variable = { RAJ_hindu_mahasabha_released = 0.04 }
+					}
+					subtract_from_variable = { RAJ_hindu_mahasabha_counter = 1 }
+				}
+			}
+			RAJ = {
+				clamp_variable = {
+					var = RAJ_hindu_mahasabha_released
+					min = 0
+					max = 32
+				}
+			}
+		}
+	}
+
+	on_subject_annexed = {
+		effect = {
+			IF = {
+				limit = {
+					FROM = { original_tag = RAJ }
+					ROOT = {
+						is_in_array = {
+							array = RAJ.raj_releasables
+							value = THIS
+						}
+					}
+					RAJ = { check_variable = { RAJ_hindu_mahasabha_released > 0.03 } }
+				}
+				RAJ = {
+					if = {
+						limit = {
+							check_variable = { RAJ_hindu_mahasabha_counter < 8 }
+						}
+						subtract_from_variable = { RAJ_hindu_mahasabha_released = 0.04 }
+					}
+					subtract_from_variable = { RAJ_hindu_mahasabha_counter = 1 }
+				}
+			}
+			RAJ = {
+				clamp_variable = {
+					var = RAJ_hindu_mahasabha_released
+					min = 0
+					max = 32
+				}
+			}
+		}
+	}
+
+	on_subject_free = {
+		effect = {
+			IF = {
+				limit = {
+					FROM = { original_tag = RAJ }
+					ROOT = {
+						is_in_array = {
+							array = RAJ.raj_releasables
+							value = THIS
+						}
+					}
+					RAJ = { check_variable = { RAJ_hindu_mahasabha_released > 0.03 } }
+				}
+				RAJ = {
+					if = {
+						limit = {
+							check_variable = { RAJ_hindu_mahasabha_counter < 8 }
+						}
+						subtract_from_variable = { RAJ_hindu_mahasabha_released = 0.04 }
+					}
+					subtract_from_variable = { RAJ_hindu_mahasabha_counter = 1 }
+				}
+			}
+			RAJ = {
+				clamp_variable = {
+					var = RAJ_hindu_mahasabha_released
+					min = 0
+					max = 32
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,252 @@
+﻿###########################
+# South-African TFV events Events
+###########################
+
+add_namespace = tfv_south_africa
+
+# SAF_secure_interests_in_africa completed
+# South-African National focus
+country_event = {
+	id = tfv_south_africa.1
+	title = tfv_south_africa.1.t	# Ask ENG for control over british South-East Africa strip. 
+	desc = tfv_south_africa.1.d		#
+	picture = GFX_report_event_saf_soldiers					#
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_south_africa.1.a	# ENG accepts the proposal
+		
+		ai_chance = {
+			base = 80
+
+		}
+		
+		effect_tooltip = {
+			SAF = {
+				transfer_state = 542
+				transfer_state = 545
+				transfer_state = 546
+				transfer_state = 547
+				transfer_state = 903
+				transfer_state = 904
+				transfer_state = 905
+				transfer_state = 548
+				transfer_state = 771
+				transfer_state = 770
+				transfer_state = 981
+			}
+		}
+		hidden_effect = {
+			SAF = {
+				country_event = { id = tfv_south_africa.2 }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_south_africa.1.b # ENG refuses the proposal
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			SAF = {
+				country_event = { id = tfv_south_africa.3 }
+			}
+		}
+	}
+
+}
+
+#ENG transfers colonies
+country_event = {
+	id = tfv_south_africa.2
+	title = tfv_south_africa.2.t	#
+	desc = tfv_south_africa.2.d		#
+	picture = GFX_report_event_saf_soldiers_2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_south_africa.2.a
+		transfer_state = 542
+				transfer_state = 545
+				transfer_state = 546
+				transfer_state = 547
+				transfer_state = 903
+				transfer_state = 904
+				transfer_state = 905
+				transfer_state = 548
+				transfer_state = 771
+				transfer_state = 770
+				transfer_state = 981
+		hidden_effect = {
+			news_event = { id = news.260 hours = 6 }
+		}
+	}
+		
+	
+}
+#ENG refuses
+country_event = {
+	id = tfv_south_africa.3
+	title = tfv_south_africa.3.t	#
+	desc = tfv_south_africa.3.d		#
+	picture = GFX_report_event_saf_soldiers_3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_south_africa.3.a
+	}
+}
+#ENG compromises
+country_event = {
+	id = tfv_south_africa.4
+	title = tfv_south_africa.4.t	#
+	desc = tfv_south_africa.4.d		#
+	picture = GFX_report_event_saf_soldiers					#
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_south_africa.4.a
+		
+		hidden_effect = {
+			news_event = { id = news.261 hours = 6 }
+			}
+		}
+
+		
+	}
+
+
+# SAF_support_the_german_coup completed
+# South-African national focus
+
+#SAF support for spain
+country_event = {
+	id = tfv_south_africa.50
+	title = tfv_south_africa.50.t	# 
+	desc = tfv_south_africa.50.d	#
+	picture = GFX_report_event_german_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_south_africa.50.a # SAF offers "volunteers"
+		
+		ai_chance = {
+			base = 45
+		}
+		
+		effect_tooltip = {
+			set_rule = { can_send_volunteers = yes }
+		}
+		
+		hidden_effect = {
+			SAF = {
+				set_rule = { can_send_volunteers = yes }
+				set_country_flag = SAF_spanish_volunteers
+				add_ideas = { SAF_support_spain }
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_south_africa.50.b # SAF offers volunteers
+		trigger = {
+			
+			has_war = no	
+			has_manpower > 5000
+		}
+		ai_chance = {
+			base = 45
+		}
+
+		effect_tooltip = { add_manpower = -5000 }
+		
+		hidden_effect = {
+			SAF = {
+				add_manpower = -5000
+				set_country_flag = SAF_spanish_volunteers
+				if = {
+					limit = {
+						NOT = { has_dlc = "La Resistance" }
+					}
+					random_other_country = {
+						limit = {
+							original_tag = SPR
+							has_government = communism
+						}
+						country_event = { id = tfv_south_africa.51 hours = 6 }
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "La Resistance"
+					}
+					SPD = {
+						country_event = { id = tfv_south_africa.51 hours = 6 }
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = tfv_south_africa.50.c # SAF decides not to
+		
+		ai_chance = {
+			base = 0
+		}
+		
+		hidden_effect = {
+			
+		}
+	}
+}
+
+country_event = {
+	id = tfv_south_africa.51
+	title = tfv_south_africa.51.t	# SAF sends volunteers to Spain
+	desc = tfv_south_africa.51.d	#
+	picture = GFX_report_event_german_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tfv_south_africa.51.a
+		add_manpower = 5000		
+	}
+}
+
+country_event = {
+	id = tfv_south_africa.52
+	title = tfv_south_africa.52.t	# SAF volunteers return
+	desc = tfv_south_africa.52.d	#
+	picture = GFX_report_event_saf_soldiers_2
+	
+	fire_only_once = yes
+
+	trigger = {
+	tag = SAF
+	has_global_flag = scw_over
+	has_country_flag = SAF_spanish_volunteers
+	}
+
+	mean_time_to_happen = { days = 30 }
+	
+	option = { 
+		name = tfv_south_africa.52.a
+		add_ideas = {
+			SAF_scw_veterans
+			}
+		clr_country_flag = SAF_spanish_volunteers		
+	}
+	
+}
+
+#European Colonies Liberation Events (not to be confused with Liberation Events for European Colonies!)

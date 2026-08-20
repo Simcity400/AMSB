@@ -1,0 +1,220 @@
+ideas = {
+	country = {
+		peace_training = {
+			allowed = {
+				always = no
+			}
+			cancel = {
+				OR = {
+					has_war = yes
+					AND = {
+						tag = SPR
+						any_country = {
+							has_volunteers_amount_from = {
+								tag = SPR
+								count > 0
+							} 
+						}
+						
+					}
+				}
+			}
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				experience_gain_army = 0.25
+				training_time_army_factor = -0.89
+				air_training_xp_gain_factor = 10
+				experience_gain_navy_unit_factor = 10
+				air_accidents_factor = -10
+				naval_accidents_chance = -10
+				mobilization_speed = 2
+				army_fuel_consumption_factor = -0.9
+				air_fuel_consumption_factor = -0.9
+				navy_fuel_consumption_factor = -0.99
+			}
+		}
+
+		WAR_join = {
+			allowed = {
+				always = no
+			}
+			cancel = {
+			}
+			removal_cost = -1
+			picture = MEX_politicised_army
+			modifier = {
+			}
+			on_remove = {
+					add_to_war = {
+						targeted_alliance = GER
+						enemy = ENG
+						hostility_reason = asked_to_join
+					}
+			}
+			}
+
+			no_tradebacks = {
+			cancel = {
+				GER = {
+					has_war = yes
+				}
+			}
+			allowed = {
+				always = no				# Added via game rule
+			}
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				production_lack_of_resource_penalty_factor = -1
+			}
+		
+		}
+		fix_production_idea = {
+			picture = generic_central_management 
+			modifier = { 
+				production_factory_start_efficiency_factor = 0.8
+			} 
+		}
+
+		ger_eco_nerf = {
+			picture = combined_bomber_offensive
+			modifier = { 
+				production_speed_arms_factory_factor = -0.2
+			} 
+		}
+		axis_fuel = {
+            picture = generic_stockpile_fuel
+            modifier = {
+                base_fuel_gain = 3122
+            }
+        }
+
+		ai_idea = {
+			cancel = {
+				is_ai = no
+			}
+			removal_cost = -1
+			picture = ger_mefo_bills_payment
+			allowed = {
+				is_ai = yes
+			}
+			modifier = {
+				industrial_capacity_factory = -10
+				production_factory_max_efficiency_factor = -10
+				conscription = -10
+				consumer_goods_factor = 100
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+				ai_desired_divisions_factor = -1000
+				lend_lease_tension = 99
+				ai_license_acceptance = -1000
+				navy_intel_to_others = -1000
+				army_intel_to_others = -1000
+				airforce_intel_to_others = -1000
+			}
+		}
+	}
+
+	hidden_ideas = {
+		noresistance = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				resistance_target = -1
+				required_garrison_factor = -1
+				resistance_damage_to_garrison = -1
+			}
+		}
+		ai_conscription_laws = {
+			modifier = {
+				mobilization_laws_cost_factor = 10000
+			}
+		}
+		novols = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				send_volunteer_size = -100
+				air_volunteer_cap = -1000
+			}
+		}
+		no_faction = {
+            allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+						
+			modifier = {
+
+			}  
+            on_add = {
+				set_rule = { 
+					desc = NO_Faction
+					can_create_factions = no
+					can_join_factions = no
+					can_send_volunteers = yes
+				}
+			}
+
+        }
+		Spies_no_capture = {
+			removal_cost = -1
+			modifier = {
+				enemy_operative_detection_chance = -200
+				enemy_operative_capture_chance_factor = -2
+			}
+		}
+		ai_tradelaw ={
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				trade_laws_cost_factor = 10000
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+				ai_license_acceptance = -1000
+			}
+			
+		}
+		ai_annex = {
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = 100
+				conscription = -1
+				industrial_capacity_factory = -10
+				production_factory_max_efficiency_factor = -10
+				industrial_capacity_dockyard = -10
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+			}
+		}
+		ai_war = {
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = 100
+				industrial_capacity_factory = -10
+				production_factory_max_efficiency_factor = -10
+				industrial_capacity_dockyard = -10
+				conversion_cost_civ_to_mil_factor = 100
+				conversion_cost_mil_to_civ_factor = 100
+			}
+		}
+	}
+}

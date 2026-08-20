@@ -1,0 +1,19 @@
+#scripted trigger for RAJ - GOE
+
+
+is_raj_or_raj_inheritor = {
+	OR = {
+		original_tag = RAJ
+		
+	}
+}
+
+is_raj_releasable = {
+	OR = {
+	
+		is_in_array = { #mostly as failsafe
+			array = RAJ.raj_releasables
+			value = THIS
+		}
+	} 
+}

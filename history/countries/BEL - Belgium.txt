@@ -1,0 +1,248 @@
+﻿capital = 6 # Brussels
+
+IF = {
+	limit = { 
+		has_dlc = "Gotterdammerung"
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+	set_oob = "BEL_WW_1936_lar"
+	ELSE_IF = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+			NOT = {
+				has_dlc = "La Resistance"
+			}
+		}
+		set_oob = "BEL_WW_1936"
+	}
+	ELSE_IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Gotterdammerung"
+			}
+		}
+		set_oob = "BEL_1936"
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = { bicycle_infantry = 1 }
+}
+
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "BEL_1936_air_bba"
+	else = {
+		set_technology = {
+			early_fighter = 1
+		}
+		set_air_oob = "BEL_1936_air_legacy"
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Gotterdammerung"
+	}
+	give_guarantee = FRA
+	give_guarantee = ENG
+}
+
+set_research_slots = 3
+set_stability = 0.7
+set_war_support = 0.3 #we see what you are doing there Adolf
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	basic_train = 1
+	gw_artillery = 1
+	interwar_antitank = 1
+	tech_mountaineers = 1
+}
+
+set_grand_doctrine = grand_battleplan
+
+IF = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+			basic_light_tank = 1
+			basic_light_td = 1
+		}
+	}
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+	}
+}
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_battery = 1
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "BEL_1936_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			engines_1 = 1
+			early_bombs = 1
+			aircraft_construction = 1
+			iw_small_airframe = 1
+			iw_medium_airframe = 1
+			iw_large_airframe = 1
+			bba_early_transport_plane = 1
+		}
+	else = {
+		set_air_oob = "BEL_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			cv_early_fighter = 1
+			cv_naval_bomber1 = 1
+			naval_bomber1 = 1
+			early_bomber = 1
+			CAS1 = 1
+			early_transport_plane = 1
+		}
+	}
+}
+
+## VARIABLES ##
+
+
+
+
+
+if = {
+	limit = { has_dlc = Gotterdammerung }
+	recruit_character = BEL_hubert_pierlot
+	recruit_character = BEL_paul_van_zeeland
+	
+	else = {
+		recruit_character = BEL_hubert_pierlot
+	}
+}
+
+
+IF = {
+	limit = {
+		has_dlc = "No Step Back"
+		has_dlc = "Gotterdammerung"
+	}
+	create_equipment_variant = {
+		name = "T13 B1"
+		type = light_tank_destroyer_chassis_1
+		parent_version = 1
+		
+		modules = {
+			main_armament_slot = tank_high_velocity_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		icon = "GFX_BEL_basic_light_td_tank_medium"
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 2
+		}
+	}
+
+	ELSE_IF = {
+		limit = {
+			has_dlc = "No Step Back"
+			NOT = { has_dlc = "Gotterdammerung" }
+		}
+		create_equipment_variant = {
+			name = "T13 B1"
+			type = light_tank_destroyer_chassis_1
+			parent_version = 1
+			
+			modules = {
+				main_armament_slot = tank_high_velocity_cannon
+				turret_type_slot = tank_light_two_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 2
+				tank_nsb_armor_upgrade = 2
+			}
+		}
+	}
+}
+
+
+
+1939.1.1 = { 
+	
+}
+
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1936.1.1" #Was 1932.11.27 but changed to allow for Government Resigns focus to simulate this election.
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 83
+	fascism = 11
+	communism = 6
+}
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1939.4.2"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 87
+		fascism = 8
+		communism = 5
+	}
+}
+
+set_convoys = 80
+set_stability = 0.75
+
+IF = {
+	limit = { has_dlc = "Gotterdammerung" }
+	add_ideas = {
+		
+	}
+}
+

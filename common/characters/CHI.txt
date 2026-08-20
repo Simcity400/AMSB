@@ -1,0 +1,241 @@
+characters = { 
+		CHI_chiang_kaishek={
+		instance = {
+			allowed = {
+				has_dlc = "No Compromise, No Surrender"
+			}
+			name=CHI_chiang_kaishek
+			portraits={
+				civilian={
+					large = GFX_portrait_CHI_chiang_kai_shek
+				}
+			}
+			country_leader={
+				ideology=despotism
+				traits={ CHI_generallissimo_sea blue_shirt_connections_0 }
+				expire="1965.1.1.1"
+				id=-1
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "No Compromise, No Surrender" }
+			}
+			name=CHI_chiang_kaishek
+			portraits={
+				civilian={
+					large=GFX_portrait_CHI_chiang_kaishek
+				}
+			}
+			country_leader={
+				ideology=despotism
+				traits={ generallissimo }
+				expire="1965.1.1.1"
+				id=-1
+			}
+		}
+	}
+		CHI_alexander_von_falkenhausen = {
+		instance = {
+			allowed = {
+				has_dlc = "No Compromise, No Surrender"
+				#original_tag = CHI
+			}
+	
+			name = CHI_alexander_von_falkenhausen
+			portraits = {
+				army = {
+					large="GFX_portrait_chi_alexander_von_falkenhausen"
+					small="GFX_idea_CHI_alexander_von_falkenhausen" 
+				}
+			}
+
+			#Insert SEA role here TODO_JNS
+
+			advisor = {
+				slot = army_chief
+				available = {
+					NOT = { has_global_flag = falkenhausen_recalled }
+				}
+				idea_token = CHI_alexander_von_falkenhausen
+				traits = { army_chief_offensive_2 }
+				ai_will_do = {
+					base = 2
+					modifier = {
+						factor = 3
+						GER = {
+							has_government = neutrality
+						}
+					}
+				}
+				cost = 50
+			}
+			corps_commander = {
+				skill = 4
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 3
+				traits = { infantry_leader organizer }
+				visible = {
+					NOT = { has_global_flag = falkenhausen_recalled }
+				}
+			}
+		}
+	
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+			}
+			name = CHI_alexander_von_falkenhausen
+			portraits = {
+				army = {
+					large="GFX_portrait_chi_alexander_von_falkenhausen"
+					small="GFX_idea_CHI_alexander_von_falkenhausen" 
+				}
+			}
+			advisor = {
+				slot = army_chief
+				allowed = {
+					OR = {
+						is_literally_china = yes
+						tag = MAN
+					}
+				}
+				available = {
+					has_completed_focus = CHI_give_falkenhausen_citizenship
+					NOT = { has_global_flag = falkenhausen_recalled }
+				}
+				idea_token = CHI_alexander_von_falkenhausen
+				traits = { army_chief_offensive_2 }
+				ai_will_do = {
+					factor = 2
+				}
+				cost = 50
+			}
+			corps_commander = {
+				skill = 3
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 3
+				traits = { infantry_officer }
+				visible = { has_completed_focus = CHI_give_falkenhausen_citizenship }
+			}
+		}
+	}
+	
+	CHI_claire_lee_chennault = {
+		instance = {
+			allowed = {
+				has_dlc = "No Compromise, No Surrender"
+				# original_tag = CHI 
+			}
+			name = claire_lee_chennault
+			portraits = {
+				army = { small="GFX_idea_CHI_claire_chennault" }
+			}
+
+			advisor = {
+				slot = air_chief
+				cost = 25
+				allowed = {
+					OR = {
+						is_literally_china = yes
+						tag = MAN
+					}
+				}
+				available = {
+					OR = {
+						
+						has_completed_focus = CHI_sea_hire_chennault
+						
+					}	
+					not_already_hired_except_as = air_chief
+
+					NOT = { has_war_with = USA }
+				}
+				idea_token = CHI_claire_lee_chennault_ground_support
+				traits = { air_chief_reform_2 }
+				ai_will_do = {
+					factor = 0.5
+				}
+			}
+
+			advisor = {
+				slot = theorist
+				ledger = air
+				cost = 25
+				available = {
+					OR = {
+					
+					}
+					not_already_hired_except_as = theorist
+					NOT = { has_war_with = USA }
+				}
+				idea_token = CHI_claire_lee_chennault_theorist
+				traits = { air_warfare_theorist }
+			}
+		}
+
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				#has_dlc = "Waking the Tiger"
+			}
+
+			name = claire_lee_chennault
+			portraits = {
+				army = { small="GFX_idea_CHI_claire_chennault" }
+			}
+
+			advisor = {
+				slot = air_chief
+				cost = 25
+				allowed = {
+					OR = {
+						is_literally_china = yes
+						tag = MAN
+					}
+				}
+				available = {
+					has_completed_focus = CHI_hire_chennault
+					NOT = { 
+						has_idea = CHI_claire_lee_chennault_theorist
+					}
+					NOT = { has_war_with = USA }
+				}
+				idea_token = CHI_claire_lee_chennault
+				traits = { air_chief_ground_support_2 }
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			advisor = {
+				slot = theorist
+				ledger = air
+				cost = 25
+				allowed = {
+					OR = {
+						is_literally_china = yes
+						tag = MAN
+					}
+				}
+				available = {
+					has_completed_focus = CHI_hire_chennault
+					NOT = { 
+						has_idea = CHI_claire_lee_chennault_air_chief
+					}
+					NOT = { has_war_with = USA }
+				}
+				idea_token = CHI_claire_lee_chennault_theorist
+				traits = { air_warfare_theorist }
+			}
+		}
+	}
+}
+

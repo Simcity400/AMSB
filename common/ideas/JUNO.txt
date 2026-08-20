@@ -1,0 +1,144 @@
+ideas = {
+        hidden_ideas = {
+		idea_JUNO_truck_production_cost = {
+			removal_cost = -1
+			#picture = ITA_bandits_war
+				
+			allowed = {
+				OR = {
+					original_tag = BRA
+					original_tag = ARG
+				}
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+					
+			equipment_bonus = {
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.15
+					reliability = 0.05
+				}
+				mechanized_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+					reliability = 0.05
+				}
+			}
+
+			modifier = {
+			}
+		}
+
+		JUNO_hidden_aa_production_ns = { #Hidden idea to apply aa production bonuses. 
+
+			removal_cost = -1
+
+			picture = generic_artillery_regiments 
+				
+			allowed = {
+				OR = {
+					original_tag = BRA
+					original_tag = ARG
+				}
+			}
+					
+			equipment_bonus = { 
+				anti_air_equipment = {
+					instant = yes
+					build_cost_ic = -0.06
+				}
+			}
+		}
+
+		JUNO_hidden_aa_production_ns_2 = { #Hidden idea to apply aa production bonuses. 
+
+			removal_cost = -1
+
+			picture = generic_artillery_regiments 
+				
+			allowed = {
+				OR = {
+					original_tag = BRA
+					original_tag = ARG
+				}
+			}
+					
+			equipment_bonus = { 
+				anti_air_equipment = {
+					instant = yes
+					build_cost_ic = -0.1
+				}
+			}
+		}
+
+		JUNO_hidden_at_production_ns = { #Hidden idea to apply at production bonuses. 
+
+			removal_cost = -1
+
+			picture = generic_artillery_regiments 
+
+			allowed = {
+				OR = {
+					original_tag = BRA
+					original_tag = ARG
+				}
+			}
+					
+			equipment_bonus = { 
+				anti_tank_equipment = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+			}
+		}
+
+		JUNO_license_idea = { #Hidden idea for license production
+
+			removal_cost = -1
+
+			picture = generic_artillery_regiments 
+
+			allowed = {
+				OR = {
+				original_tag = BRA
+					original_tag = ARG
+				}
+			}
+					
+			equipment_bonus = { 
+			}
+
+			modifier = {
+				license_armor_purchase_cost = -0.4
+				license_purchase_cost = -0.3
+			}
+		}
+
+		JUNO_license_air_idea = { #Hidden idea for license production
+
+			removal_cost = -1
+
+			picture = generic_artillery_regiments 
+
+			allowed = {
+				OR = {
+					
+					original_tag = BRA
+					original_tag = ARG
+				
+				}
+			}
+					
+			equipment_bonus = { 
+			}
+
+			modifier = {
+				license_air_purchase_cost = -0.4
+				license_purchase_cost = -0.3
+			}
+		}
+    }
+}

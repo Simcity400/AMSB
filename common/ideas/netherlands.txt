@@ -1,0 +1,181 @@
+ideas = {
+
+	country = { 
+				HOL_wilhelmina = {
+
+			picture = HOL_wilhelmina_ns
+			
+			allowed = {
+				original_tag = HOL
+			}
+
+			allowed_civil_war = {
+				NOT ={
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = HOL
+						has_government = democratic 
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+			
+			removal_cost = -1
+			
+			traits = { popular_figurehead }
+		}
+
+		HOL_aloof_neutrality = {
+
+			picture = hol_aloof_neutrality
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+						
+			modifier = {
+				#generate_wargoal_tension = 1.00
+				join_faction_tension = 1.00
+				#lend_lease_tension = 0.50
+				send_volunteers_tension = 0.50
+				guarantee_tension = 1.0
+				ai_badass_factor = 0.01    # Will receive 1% of the threat from others
+				ai_get_ally_desire_factor = -100
+			}
+		}
+	}
+
+	#TECHNOLOGUY
+
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+
+		koolhoven = {
+			
+			picture = generic_air_manufacturer_3
+
+			
+			allowed = {
+				original_tag = HOL
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+			
+			equipment_bonus = {
+				# recon and fighter airplanes
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		nsm_amsterdam = {
+			
+			picture = nsm_amsterdam
+
+			
+			allowed = {
+				original_tag = HOL
+				has_dlc = "Man the Guns"
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			equipment_bonus = {
+				# fast ships go go go
+			}
+			
+			traits = { raiding_fleet_naval_manufacturer }
+			
+			modifier = {
+			}
+		}
+
+		wilton_fijenoord = {
+			
+			picture = wilton_fijenoord
+		
+			
+			allowed = {
+				original_tag = HOL
+				has_dlc = "Man the Guns"
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			equipment_bonus = {
+				# submarines, light cruisers you name it!
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	
+	materiel_manufacturer = {
+		
+		designer = yes
+
+		
+		
+		hih_siderius = {
+				
+			picture = hih_siderius
+		
+			
+			allowed = {
+				original_tag = HOL
+				has_dlc = "Man the Guns"
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			equipment_bonus = {
+				# artillery for coastral defence
+			}
+			
+			traits = { artillery_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}
+
+	industrial_concern = {
+	
+		
+
+			
+	}
+}

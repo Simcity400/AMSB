@@ -1,0 +1,183 @@
+﻿capital = 4 # Vienna
+
+IF = {
+	limit = {
+		has_dlc = "Gotterdammerung"
+	}
+	set_oob = "AUS_ww_1936"
+	ELSE_IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Gotterdammerung"
+			}
+		}
+		set_oob = "AUS_1936"
+	}
+}
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "AUS_1936_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			engines_1 = 1
+			aircraft_construction = 1
+			iw_small_airframe = 1
+		}
+	else = {
+		set_air_oob = "AUS_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+
+		}
+	}
+}
+
+
+### Store Austrian initial states - Used for removing German cores in Austria when German capitulates after having done successful Anschluss
+every_owned_state = {
+	limit = {
+		is_core_of = ROOT
+	}
+	add_to_array = { ROOT.AUS_initial_states = THIS }
+}
+
+
+IF = {
+	limit = { 
+		has_dlc = "Gotterdammerung"
+	}
+
+	
+
+	#setting up all the dynamic modifiers
+
+
+	#National spirits are set here
+
+	
+
+	add_timed_idea = {
+		idea = AUS_treaty_of_saint_germain_en_laye
+		days = 1657
+	}
+
+	add_dynamic_modifier= {
+		modifier = AUS_austrofascism 
+	}	
+
+	add_opinion_modifier = {
+		target = GER
+		modifier = AUS_austrofascism_opm
+	}	
+
+	# rules are set here
+
+	country_lock_all_division_template = {
+		is_locked = yes
+		desc = AUS_cannot_train_due_to_treaty_of_saint_germain_en_laye
+	}
+
+
+	
+
+	#########################
+	##DLC-LOCKED CHARACTERS##
+	#########################
+
+	#Political
+	recruit_character = AUS_kurt_schuschnigg
+	
+
+	#Operatives
+
+	create_operative_leader = {
+		name = AUS_erwin_von_lahousen
+		bypass_recruitment = no 
+		available_to_spy_master = yes 
+		gfx = GFX_portrait_AUS_erwin_von_lahousen 
+		traits = { operative_double_agent operative_commando }
+		nationalities = { AUS GER }
+	}
+
+	create_operative_leader = {
+		name = AUS_wilhelm_ergert
+		bypass_recruitment = no 
+		available_to_spy_master = yes 
+		gfx = GFX_portrait_AUS_wilhelm_ergert 
+		traits = { operative_double_agent operative_linguist operative_safe_cracker }
+		nationalities = { AUS GER YUG }
+	}
+
+	ELSE_IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Gotterdammerung"
+			}
+		}
+
+		#########################
+		#####FREE CHARACTERS#####
+		#########################
+
+		recruit_character = AUS_kurt_schuschnigg
+		
+	}
+
+}
+
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_support = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	basic_train = 1
+	gw_artillery = 1
+}
+
+IF = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = {
+		gwtank_chassis = 1
+	}
+
+	ELSE = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+
+IF = {
+	limit = { has_dlc = "La Resistance" }
+		set_technology = {
+			armored_car1 = 1
+		}
+}
+
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 48
+	fascism = 50
+	democratic = 1
+	communism = 1
+}
+
+set_stability = 0.50
+
+
+

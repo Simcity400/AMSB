@@ -1,0 +1,540 @@
+on_actions = {
+	on_startup = {
+		effect = {
+
+  			  ######      ######    ##      ##  ##########        ########    ##      ##  ##          ##########    ########  
+  			  ######      ######    ##      ##  ##########        ########    ##      ##  ##          ##########    ########  
+			##          ##      ##  ####  ####  ##                ##      ##  ##      ##  ##          ##          ##          
+			##          ##      ##  ####  ####  ##                ##      ##  ##      ##  ##          ##          ##          
+			##    ####  ##########  ##  ##  ##  ########          ########    ##      ##  ##          ########      ######    
+			##    ####  ##########  ##  ##  ##  ########          ########    ##      ##  ##          ########      ######    
+			##      ##  ##      ##  ##      ##  ##                ##    ##    ##      ##  ##          ##                  ##  
+			##      ##  ##      ##  ##      ##  ##                ##    ##    ##      ##  ##          ##                  ##  
+  			  ######    ##      ##  ##      ##  ##########        ##      ##    ######    ##########  ##########  ########    
+  			  ######    ##      ##  ##      ##  ##########        ##      ##    ######    ##########  ##########  ########   
+			if = { 
+				limit = {
+					AND = { 
+						has_game_rule = { 
+							rule =	allied_pre_grind
+							option = on
+						}
+						has_game_rule = { 
+							rule =	cas_doctrines_status
+							option = banned
+						}
+					}
+				} 
+				USA = { # USA 2x Panzer Leaders, 1 Infantry Expert, & Patton Calvary Leader
+					USA_dwight_d_eisenhower = {
+						#add_attack = 2
+
+						add_trait = { trait = panzer_leader }
+						#add_unit_leader_trait = infantry_leader
+						add_trait = { trait = pre_grind }
+					}
+					USA_george_s_patton = {
+						#add_planning = 1
+
+						add_trait = { trait = cavalry_leader }
+						add_trait = { trait = infantry_leader }
+						add_trait = { trait = pre_grind }
+					}
+					USA_omar_bradley = {
+						#add_attack = 1
+						#add_defense = -1
+
+						add_trait = { trait = panzer_leader }
+						add_trait = { trait = cavalry_leader }
+						add_trait = { trait = infantry_leader }
+						add_trait = { trait = pre_grind }
+					}
+					USA_courtney_hodges = {
+						add_skill_level = 1
+						add_planning = 1
+
+						add_trait = { trait = cavalry_leader }
+						add_trait = { trait = infantry_leader }
+						add_trait = { trait = pre_grind }
+					}
+					USA_mark_clark = { 
+						add_skill_level = 1
+						add_defense = -1
+						add_attack = -1
+
+						add_trait = { trait = panzer_leader }
+						add_trait = { trait = cavalry_leader }
+						add_trait = { trait = infantry_leader }
+						add_trait = { trait = pre_grind }
+					}
+				}
+				FRA = { # FRENCH GENS
+					FRA_jean_de_lattre_de_tassigny = {
+						#add_skill_level = 1
+						#add_attack = -2
+						#add_planning = -2
+
+						add_trait = { trait = panzer_leader }
+					}
+					FRA_alphonse_juin = { 
+						#add_skill_level = 1
+						#add_attack = -1
+						#add_planning = -2
+					}
+				}
+				ENG = {
+					ENG_bernard_montgomery = { 
+						add_trait = { trait = infantry_leader } 
+						add_trait = { trait = panzer_leader }
+						add_trait = { trait = pre_grind }
+					}
+					ENG_jock_campbell = {
+						#add_skill_level = 1
+						#add_attack = 1
+
+						add_trait = { trait = infantry_leader } 
+						add_trait = { trait = panzer_leader }
+						add_trait = { trait = cavalry_leader }
+						add_trait = { trait = pre_grind }
+					}
+					ENG_claude_auchinleck = {
+						#add_attack = 2
+						#add_defense = -2
+
+						add_trait = { trait = infantry_leader } 
+						add_trait = { trait = panzer_leader }
+						add_trait = { trait = cavalry_leader }
+						add_trait = { trait = pre_grind }
+					}
+					ENG_harold_alexander = {
+						#add_attack = 1
+						
+						add_trait = { trait = infantry_leader } 
+						add_trait = { trait = panzer_leader }
+						add_trait = { trait = cavalry_leader }
+						add_trait = { trait = pre_grind }
+					}
+					ENG_alan_cunningham = { 
+						add_skill_level = 1
+						add_defense = 3
+						add_attack = -1
+
+						add_trait = { trait = infantry_leader } 
+						add_trait = { trait = panzer_leader }
+						add_trait = { trait = cavalry_leader }
+						add_trait = { trait = pre_grind }
+					}
+				}
+			}
+					
+					
+				    
+			if = { 
+				limit = { 
+					has_game_rule = { 
+						rule = soviet_research_slot
+						option = on
+					}
+				}
+				SOV = { 
+					add_research_slot = 1
+					}
+				}
+			if = { 
+				limit = { 
+					has_game_rule = { 
+						rule = soviet_collectivized_economy
+						option = on
+					}
+				}
+				SOV = { 
+					add_ideas = SOV_collectivized_society
+
+					add_offsite_building = {
+						type = industrial_complex
+						level = 4
+					}
+				}
+				651 = { 
+					add_resource = { 
+						type = coal
+						amount = 78
+					}
+				}
+			}
+
+		##########  ##      ##  ##      ##        ##########    ######      ######    ##      ##    ######    ##      ##  ##      ##  
+		##########  ##      ##  ##      ##        ##########    ######      ######    ##      ##    ######    ##      ##  ##      ##  
+      		  ##    ##      ##  ####  ####        ##          ##          ##      ##  ####    ##  ##      ##  ####  ####    ##  ##    
+      		  ##    ##      ##  ####  ####        ##          ##          ##      ##  ####    ##  ##      ##  ####  ####    ##  ##    
+    		##      ##########  ##  ##  ##        ########    ##          ##      ##  ##  ##  ##  ##      ##  ##  ##  ##      ##      
+    	   	##      ##########  ##  ##  ##        ########    ##          ##      ##  ##  ##  ##  ##      ##  ##  ##  ##      ##      
+  		  ##        ##      ##  ##      ##        ##          ##          ##      ##  ##    ####  ##      ##  ##      ##      ##      
+  		  ##        ##      ##  ##      ##        ##          ##          ##      ##  ##    ####  ##      ##  ##      ##      ##      
+		##########  ##      ##  ##      ##        ##########    ######      ######    ##      ##    ######    ##      ##      ##      
+		##########  ##      ##  ##      ##        ##########    ######      ######    ##      ##    ######    ##      ##      ##      
+
+			SOV = { 
+				country_event = {
+					id = lar_spain.53 # Spanish Gold
+					days = 420 # April 37
+				}
+			}
+			
+			every_state = { # FRANCE BUILD SLOTS
+				limit = { 
+					OR = { 
+						state = 694
+						state = 310
+						state = 730
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+			}
+			every_state = { # ENG BUILD SLOTS MOVED FROM EGYPT
+				limit = { 
+					is_core_of = ENG
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			every_state = { 
+				limit = { 
+					OR = { 
+						state = 691
+						state = 692
+						state = 689
+						state = 693
+						state = 690
+						state = 308
+						state = 687
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			every_state = { # British Egypt & French Syria building slots removed
+				limit = { 
+					AND = {
+						NOT = {
+							has_state_category = wasteland 
+						}
+						OR = { 
+							# EGYPT
+							state = 452
+							state = 447
+							state = 907
+							state = 446
+							state = 456
+							state = 457
+							state = 453
+							# PALESTINE/ISREAL
+							state = 454
+							# JORDAN
+							state =  455
+							# KUWAIT
+							state = 656
+							# FRENCH SYRIA & LEBANON
+							state = 554
+							state = 553
+							state = 680
+							state = 677
+						}
+					}
+				}
+				set_state_category = wasteland
+			}
+			if = { # IRAQ SLOTS REMOVED IF THERES NO PLAYER ON IT
+				limit = { 
+					has_game_rule = { 
+						rule = playable_iraq
+						option = no
+					}
+				}
+				every_state = { 
+					limit = {
+						AND = { 
+							is_core_of = IRQ
+							NOT = {
+								has_state_category = wasteland
+							}
+						} 
+					}
+					set_state_category = wasteland
+				}
+			}
+			HOL = { # France gets some oil!! [:
+				give_resource_rights = { 
+					receiver = FRA
+					state = 695
+				}
+			}
+			695 = { 
+				set_compliance = 100
+			}
+
+			AST = { # Manpower to Australia to defend Africa!
+				add_manpower = 450000
+			}
+
+			ITA = { # ZHM italy mandatory civ boost (Compensation for no mussolini events)
+				add_offsite_building = {
+					type = industrial_complex
+					level = 2
+				}
+				
+                complete_national_focus = ITA_solid_progress # Ethiopia annex decision removed
+				add_threat = 2.6
+			}
+			
+		#	█   █  ███   ████ █████     ████ █████  ███  ████  █████ █   █ ████     █████ █   █ █████ █   █ █████  ████ 
+		#	█   █ █   █ █       █      █       █   █   █ █   █   █   █   █ █   █    █     █   █ █     ██  █   █   █     
+		#	█████ █   █  ███    █       ███    █   █████ ████    █   █   █ ████     ████  █   █ ████  █ █ █   █    ███  
+		#	█   █ █   █     █   █          █   █   █   █ █  █    █   █   █ █        █      █ █  █     █  ██   █       █ 
+		#	█   █  ███  ████    █      ████    █   █   █ █   █   █    ███  █        █████   █   █████ █   █   █   ████  
+
+		if = { 
+			limit = {
+				POR = { 
+					is_ai = yes
+				}
+			}
+			WST = {
+                annex_country = {
+                    target = POR
+                    transfer_troops = no
+                }
+			
+            }
+		#	every_state = { 
+		#		limit = { 
+		#			OR = { 
+		#				state = 180
+		#				state = 112
+		#				state = 181
+		#				state = 795
+		#				state = 179
+		#			}
+		#		}
+		#		set_state_category = wasteland
+		#	}
+			180 = { 
+				add_manpower = -1904599
+				#set_state_category = wasteland
+				add_core_of = WST
+			}
+			181 = { 
+				add_manpower = -964699
+				#set_state_category = wasteland
+				add_core_of = WST
+			}
+			112 = { 
+				add_manpower = -1995799
+				#set_state_category = wasteland
+				add_core_of = WST
+			}
+			795 = { 
+				add_manpower = -729711
+				#set_state_category = wasteland
+				add_core_of = WST
+			}
+			179 = { 
+				add_manpower = -777894
+				#set_state_category = wasteland
+				add_core_of = WST
+			}
+			ITA = { 
+				country_event = { 
+					id = zhm.1
+				}
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+				#add_offsite_building = {
+				#	type = arms_factory
+				#	level = 4
+				#}
+			}
+		}
+		if = { 
+			limit = { 
+				ARG = { 
+					is_ai = yes
+				}
+			}
+			WST = {
+                annex_country = {
+                    target = ARG
+                    transfer_troops = no
+                }
+            }
+			every_state = { 
+				limit = { 
+					is_core_of = ARG
+				}
+				add_core_of = WST
+			}
+			BRA = { 
+				country_event = { 
+					id = zhm.2
+				}
+				add_offsite_building = {
+					type = industrial_complex
+					level = 4
+				}
+				#add_offsite_building = {
+				#	type = arms_factory
+				#	level = 2
+				#}
+			}
+		}
+
+
+
+
+
+		}
+	}
+
+	on_weekly = { 
+		effect = {
+			####  ##### #   # ### #     ### #####  ###  ####  ### ##### ##### ####  
+			#   # #     ## ##  #  #      #    #   #   # #   #  #     #  #     #   # 
+			#   # ####  # # #  #  #      #    #   ##### ####   #    #   ####  #   # 
+			#   # #     #   #  #  #      #    #   #   # #  #   #   #    #     #   # 
+			####  ##### #   # ### ##### ###   #   #   # #   # ### ##### ##### ####
+
+			if = { # No Ethiopia Memes
+				limit = {
+					NOT = { 
+						has_global_flag = fall_of_france
+					} 
+				}
+				550 = {
+					if = { 
+						limit = { 
+							NOT = { 
+								is_demilitarized_zone = no
+							}
+						}
+					} 
+					set_demilitarized_zone = yes
+				}
+				559 = {
+					if = { 
+						limit = {
+							NOT = { 
+								is_demilitarized_zone = no
+							}
+						}
+					}  
+					set_demilitarized_zone = yes
+				}
+				844 = {
+					if = { 
+						limit = {
+							NOT = { 
+								is_demilitarized_zone = no
+							}
+						}
+					}  
+					set_demilitarized_zone = yes
+				}
+			}
+
+			if = { # In case italy for some reason joins ww2 before france capitulation
+				limit = {
+					AND = {
+						ITA = { 
+							has_war = yes
+						}
+						has_global_flag = fall_of_france
+					}
+				}
+				550 = {
+					if = { 
+						limit = { 
+							is_demilitarized_zone = yes
+						}
+					} 
+					set_demilitarized_zone = no
+				}
+				559 = {
+					if = { 
+						limit = {
+							is_demilitarized_zone = yes
+						}
+					}  
+					set_demilitarized_zone = no
+				}
+				844 = {
+					if = { 
+						limit = {
+							is_demilitarized_zone = yes
+						}
+					}  
+					set_demilitarized_zone = no
+				}
+			}	
+		}
+
+		# ZHM Unused, let's just annex to black nation instead in on_startup.
+
+	#	effect = {  # Adds a spirit that gives 100% of factories to target 
+		#	POR = { # if SPAIN IS A PLAYER!
+		#		if = { 
+		#			limit = {
+		#				AND = { 
+		#					is_ai = yes
+		#					SPR = { 
+		#						is_ai = no
+		#					}
+		#				}
+		#			}
+		#			add_ideas = POR_is_ai
+		#		}
+		#	}
+
+		#	POR = { # IF SPAIN IS AI TOO
+		#		if = { 
+		#			limit = {
+		#				AND = { 
+		#					is_ai = yes
+		#					SPR = { 
+		#						is_ai = yes
+		#					}
+		#				}
+		#			}
+		#			add_ideas = POR_and_SPA_is_ai
+		#		}
+		#	}
+
+		#	ARG = { # IF BRAZIL IS A PLAYER!
+		#		if = { 
+		#			limit = { 
+		#				AND = { 
+		#					is_ai = yes
+		#					BRA = { 
+		#						is_ai = no
+		#					}
+		#				}
+		#			}
+		#			add_ideas = ARG_is_ai
+		#		}
+		#	}
+
+		#	ARG = { # IF BRAZIL IS AI TOO
+		#		if = { 
+		#			limit = { 
+		#				AND = { 
+		#					is_ai = yes
+		#					BRA = { 
+		#						is_ai = yes
+		#					}
+		#				}
+		#			}
+		#			add_ideas = ARG_and_BRA_is_ai
+		#		}
+		#	}
+	#	}
+	}
+}

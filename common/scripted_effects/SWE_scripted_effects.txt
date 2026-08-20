@@ -1,0 +1,72 @@
+
+SWE_permittentrafiken_set_positive_opinion_modifiers = {
+	IF = {
+		limit = { has_country_flag = GER_want_transit }
+		add_opinion_modifier = {
+			target = SWE
+			modifier = accepted_GER_transit_request
+		}
+		clr_country_flag = GER_want_transit
+	}
+	ELSE_IF = {
+		limit = { has_country_flag = GER_want_communications }
+		add_opinion_modifier = {
+			target = SWE
+			modifier = accepted_GER_communications_request
+		}
+		clr_country_flag = GER_want_communications
+	}
+	ELSE_IF = {
+		limit = { has_country_flag = GER_want_military_access }
+		add_opinion_modifier = {
+			target = SWE
+			modifier = accepted_GER_military_access_request
+		}
+		clr_country_flag = GER_want_military_access
+	}
+}
+
+SWE_permittentrafiken_response_picker = {
+	IF = {
+		limit = {
+			has_country_flag = GER_want_transit
+		}
+		# custom_effect_tooltip = # TODO_ASD: Add TT once reward is decided
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.39
+				days = 3
+			}
+			SWE_permittentrafiken_set_positive_opinion_modifiers = yes
+		}
+		clr_country_flag = GER_want_transit
+	}
+	ELSE_IF = {
+		limit = {
+			has_country_flag = GER_want_communications
+		}
+		# custom_effect_tooltip = # TODO_ASD: Add TT once reward is decided
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.41
+				days = 3
+			}
+			SWE_permittentrafiken_set_positive_opinion_modifiers = yes
+		}
+		clr_country_flag = GER_want_communications
+	}
+	ELSE_IF = {
+		limit = {
+			has_country_flag = GER_want_military_access
+		}
+		custom_effect_tooltip = SWE_GER_military_access_tt
+		FROM = {
+			country_event = {
+				id = AAT_Sweden_flashpoints.43
+				days = 3
+			}
+			SWE_permittentrafiken_set_positive_opinion_modifiers = yes
+		}
+		clr_country_flag = GER_want_military_access
+	}
+}

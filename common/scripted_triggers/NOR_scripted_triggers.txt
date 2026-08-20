@@ -1,0 +1,78 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+# 
+
+NOR_AAT = { # Trigger to check if playing as Norway while having AAT
+	original_tag = NOR
+	has_dlc = "Arms Against Tyranny"
+}
+
+
+
+
+###### AI Triggers ##### 
+
+NOR_is_historical_ai = { 
+	is_ai = yes 
+	OR = {
+		AND = {
+			is_historical_focus_on = yes 
+			has_game_rule = {
+				rule = NOR_AI_BEHAVIOR
+				option = DEFAULT
+			}
+		}
+		has_country_flag = NOR_AI_RANDOM_HISTORICAL
+		has_game_rule = {
+			rule = NOR_AI_BEHAVIOR
+			option = HISTORICAL
+		}
+	}
+}
+
+NOR_has_100_convoys = {
+	has_equipment = {
+		convoy > 99
+	}
+}
+
+NOR_has_75_convoys = {
+	has_equipment = {
+		convoy > 74
+	}
+}
+
+NOR_has_50_convoys = {
+	has_equipment = {
+		convoy > 49
+	}
+}
+
+NOR_has_25_convoys = {
+	has_equipment = {
+		convoy > 24
+	}
+}
+
+NOR_has_4_convoys = {
+	has_equipment = {
+		convoy > 3
+	}
+}
+
+NOR_has_40_convoys = {
+	has_equipment = {
+		convoy > 39
+	}
+}

@@ -1,0 +1,136 @@
+MAN_TSR_historical_plan_ZHM = {
+	name = "Manchukuo historical plan"
+	desc = "Historical behavior for Manchukuo"
+	# HMM: Annex build
+
+	allowed = {
+		original_tag = MAN
+		has_dlc = "No Compromise, No Surrender"
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = MAN_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = MAN_AI_RANDOM_OBEDIENCE
+			has_game_rule = {
+				rule = MAN_ai_behavior
+				option = OBEDIENCE
+			}
+		}
+	}
+	abort = {
+		JAP = {
+			OR = {
+				has_completed_focus = JAP_strengthen_civilian_government
+				has_completed_focus = JAP_the_unthinkable_option
+				has_completed_focus = JAP_okadas_military_purge_speech
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		MAN_tsr_pacify_the_countryside
+        MAN_tsr_invite_japanese_settlers
+		MAN_tsr_trade_delegation
+		MAN_tsr_expand_the_textile_industry
+        MAN_tsr_collective_farms
+        MAN_tsr_army_modernization
+        MAN_tsr_obedience
+        MAN_tsr_first_five_year_plan
+        MAN_tsr_invite_japanese_investors
+        MAN_tsr_expand_showa_steel_works
+        MAN_tsr_strengthen_ties_with_nissan
+        MAN_tsr_expand_the_railways
+        MAN_tsr_mangyo
+        MAN_tsr_mukden_arsenal
+        MAN_tsr_expand_the_navy
+        CHI_sea_invite_foreign_investors
+        CHI_sea_collaboration_with_the_japanese
+        CHI_sea_investment_into_shipbuilding
+        # HMM: everything after this isn't really useful for annex builds, but we want to leave all of the other Chinese investment focuses for last, so we have to have an entry for every Manchu focus
+        # In theory, Tank Plant gives +2 mils, but doing it requires the AI to improve relations with Germany and keep relations high enough, and I can't trust the AI to be able to do that
+        MAN_tsr_second_five_year_plan
+        MAN_tsr_national_defense_state
+        MAN_tsr_social_research_unit
+        MAN_tsr_hoankyoku
+        MAN_tsr_develop_aluminum_sources
+        MAN_tsr_mukden_military_academy
+        MAN_tsr_law_university
+        MAN_tsr_research_and_education_department
+        MAN_tsr_alliance_with_the_kwantung_army
+        MAN_tsr_further_mobilization
+        MAN_tsr_strengthen_the_manchukuo_imperial_army
+        MAN_tsr_the_question_of_leadership
+        MAN_tsr_empire_of_manchukuo
+        MAN_tsr_embrace_state_shintoism
+        MAN_tsr_promote_manchu_identity
+        MAN_tsr_work_with_the_kempeitai
+        MAN_tsr_claim_outer_manchuria
+        MAN_tsr_mamc
+        MAN_tsr_expand_xingan_army
+	}
+
+	
+	research = {
+		industry = 1000
+		air_equipment = -1000
+	}
+	
+    traits = {
+        air_warfare_theorist = -1000
+        dive_bomber = -1000
+        victory_through_airpower = -1000
+        close_air_support_proponent = -1000
+        assault_avaition = -1000
+        air_chief_reform_1 = -1000
+        air_chief_reform_2 = -1000
+        air_chief_reform_3 = -1000
+        air_chief_safety_1 = -1000
+        air_chief_safety_2 = -1000
+        air_chief_safety_3 = -1000
+        air_chief_night_operations_1 = -1000
+        air_chief_night_operations_2 = -1000
+        air_chief_night_operations_3 = -1000
+        air_chief_ground_support_1 = -1000
+        air_chief_ground_support_2 = -1000
+        air_chief_ground_support_3 = -1000
+        air_chief_all_weather_1 = -1000
+        air_chief_all_weather_2 = -1000
+        air_chief_all_weather_3 = -1000
+        air_air_combat_training_1 = -1000
+        air_air_combat_training_2 = -1000
+        air_air_combat_training_3 = -1000
+        air_naval_strike_1 = -1000
+        air_naval_strike_2 = -1000
+        air_naval_strike_3 = -1000
+        air_bomber_interception_1 = -1000
+        air_bomber_interception_2 = -1000
+        air_bomber_interception_3 = -1000
+        air_air_superiority_1 = -1000
+        air_air_superiority_2 = -1000
+        air_air_superiority_3 = -1000
+        air_close_air_support_1 = -1000
+        air_close_air_support_2 = -1000
+        air_close_air_support_3 = -1000
+        air_strategic_bombing_1 = -1000
+        air_strategic_bombing_2 = -1000
+        air_strategic_bombing_3 = -1000
+        air_tactical_bombing_1 = -1000
+        air_tactical_bombing_2 = -1000
+        air_tactical_bombing_3 = -1000
+        air_airborne_1 = -1000
+        air_airborne_2 = -1000
+        air_airborne_3 = -1000
+        BRA_minister_of_defense = 2000 # Necessary for us to get the War Support for Partial (we won't have enough CP for sending attache)
+    }	
+
+	focus_factors = {
+		
+	}
+}
+

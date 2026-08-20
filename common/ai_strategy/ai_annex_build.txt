@@ -1,0 +1,258 @@
+# build strategy that encourages the AI to generally do things that are beneficial for when it or its territory gets annexed
+HMM_ai_annex_build_infra_until_off_toaster_eco = {
+    allowed = {
+		OR = { # Don't apply this to "main" countries to prevent test build interference
+            is_playable_country = no
+            is_annexable_playable_country = yes
+        }
+	}
+    enable = {
+		OR = {
+            has_idea = undisturbed_isolation
+			has_idea = isolation
+            has_idea = civilian_economy
+        }
+	}
+    abort_when_not_enabled = yes
+    ai_strategy = {
+        type = building_target
+        id = infrastructure
+        value = 9999
+    }
+}
+
+HMM_ai_annex_build_no_mils_until_gun2 = {
+    allowed = {
+		OR = { # Don't apply this to "main" countries to prevent test build interference
+            is_playable_country = no
+            is_annexable_playable_country = yes
+        }
+	}
+    enable = {
+		OR = {
+            date < 1938.2.1
+            has_idea = undisturbed_isolation
+			has_idea = isolation
+            has_idea = civilian_economy
+        }
+	}
+    abort_when_not_enabled = yes
+    ai_strategy = {
+        type = added_military_to_civilian_factory_ratio
+        value = -9999
+    }
+}
+
+HMM_ai_annex_build_reserve_pp_for_partial = {
+    allowed = {
+		OR = { # Don't apply this to "main" countries to prevent test build interference
+            is_playable_country = no
+            is_annexable_playable_country = yes
+        }
+	}
+    enable = {
+        OR = {
+            has_war_support > 0.249
+            AND = { # these countries have special advisors that give +10% war support, so should start saving up for partial at lower WS
+                has_war_support > 0.149
+                OR = {
+                    original_tag = SIA
+                    original_tag = MAN
+                }
+            }
+        }
+		NOR = {
+			has_idea = partial_economic_mobilisation
+			has_idea = war_economy
+			has_idea = tot_economic_mobilisation
+		}
+	}
+    abort_when_not_enabled = yes
+    ai_strategy = {
+        type = pp_spend_amount
+        id = idea
+        value = 500
+    }
+}
+
+HMM_ai_annex_build_only_infra_mils_civs = {
+    allowed = {
+		OR = { # Don't apply this to "main" countries to prevent test build interference
+            is_playable_country = no
+            is_annexable_playable_country = yes
+        }
+	}
+    enable = { always = yes }
+    abort = { always = no }
+    ai_strategy = {
+        type = dockyard_to_military_factory_ratio
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = air_base
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = supply_node
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = rail_way
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = naval_facility
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = naval_base
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = bunker
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = coastal_bunker
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = stronghold_network
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = dockyard
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = anti_air_building
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = synthetic_refinery
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = fuel_silo
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = radar_station
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = mega_gun_emplacement
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = rocket_site
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = naval_supply_hub
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = naval_headquarters
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = nuclear_reactor
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = nuclear_reactor_heavy_water
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = commercial_nuclear_reactor
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = nuclear_facility
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = air_facility
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = land_facility
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = energy_infrastructure
+        value = -9999
+    }
+    ai_strategy = {
+        type = building_target
+        id = industrial_infrastructure
+        value = -9999
+    }
+}
+
+HMM_ai_annex_convoys_only = {
+    allowed = {
+		OR = { # Don't apply this to "main" countries to prevent test build interference
+            is_playable_country = no
+            is_annexable_playable_country = yes
+        }
+	}
+    enable = { always = yes }
+    abort = { always = no }
+
+    ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = -9999
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = carrier
+		value = -9999
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = submarine
+		value = -9999
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = -9999
+	}
+    ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 9999
+	}
+    ai_strategy = {
+		type = equipment_production_min_factories
+		id = convoy
+		value = 30
+	}
+}

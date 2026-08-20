@@ -1,0 +1,122 @@
+ideas = { 
+    country = { 
+        zhm_manpower = {
+			name = "Colonial Manpower"
+			removal_cost = -1
+			picture = MEX_politicised_army
+			modifier = {
+				conscription = 0.025
+			}
+		}
+
+		zhm_war_bonds = { 
+			name = "War Bonds"
+			picture = generic_foreign_capital
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		POR_is_ai = {
+			name = "Portuguese Integrated Economy"
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				OR = {
+					has_idea = POR_and_SPA_is_ai
+					POR = { 
+						is_ai = no
+					}
+				}
+			}
+			removal_cost = -1
+			picture = SPR_relocate_the_gold_reserves
+			targeted_modifier = {
+				tag = SPA
+				cic_to_target_factor = 1
+				mic_to_target_factor = 1
+			}
+		}
+
+		POR_and_SPA_is_ai = {
+			name = "Portuguese Integrated Economy"
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			cancel = {
+				SPR = { 
+					is_ai = no
+				}
+			}
+			removal_cost = -1
+			picture = SPR_relocate_the_gold_reserves
+			targeted_modifier = {
+				tag = ITA
+				cic_to_target_factor = 1
+				mic_to_target_factor = 1
+			}
+		}
+		
+		ARG_is_ai = {
+			name = "Argentinian Integrated Economy"
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_idea = ARG_and_BRA_is_ai
+					ARG = { 
+						is_ai = no
+					}
+				}
+			}
+
+			removal_cost = -1
+			picture = SPR_relocate_the_gold_reserves
+			targeted_modifier = {
+				tag = BRA
+				cic_to_target_factor = 1
+				mic_to_target_factor = 1
+			}
+		}
+
+		ARG_and_BRA_is_ai = {
+			name = "Argentinian Integrated Economy"
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = { 
+				BRA = { 
+					is_ai = no
+				}
+			}
+
+			removal_cost = -1
+			picture = SPR_relocate_the_gold_reserves
+			targeted_modifier = {
+				tag = USA
+				cic_to_target_factor = 1
+				mic_to_target_factor = 1
+			}
+		}
+		
+
+    }
+}

@@ -1,0 +1,170 @@
+﻿characters = {
+	
+	### COUNTRY LEADERS ###
+
+	CZE_karl_albrecht = { ### The King of Bohemia ### 
+		name=POL_karl_albrecht
+		portraits = {
+			civilian = {
+				large="GFX_portrait_POL_karl_albrecht"
+			}
+		}
+	}
+
+	CZE_milan_hodza = {
+		name = CZE_milan_hodza
+		portraits={
+			civilian={
+				large=GFX_portrait_CZE_milan_hodza
+				small=GFX_portrait_CZE_milan_hodza_small
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+			traits = {
+				CZE_disoriented_minister_of_foreign_affairs agrarian_old_guard
+			}
+		}
+	}
+
+	CZE_edvard_benesh={
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "Peace For Our Time"
+				}
+			}
+
+			name = CZE_edvard_benesh
+			portraits={
+				civilian={
+					large=GFX_portrait_Edvard_Benes
+				}
+			}
+			country_leader={
+				ideology=conservatism
+				expire="1965.1.1.1"
+				id=-1
+				traits = {
+					skillful_diplomat de_facto_leader
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				has_dlc = "Peace For Our Time"
+			}
+
+			name = CZE_edvard_benesh
+			portraits={
+				civilian={
+					large=GFX_portrait_Edvard_Benes
+					small=GFX_idea_CZE_edvard_benes
+				}
+			}
+			country_leader={
+				ideology=conservatism
+				expire="1965.1.1.1"
+				id=-1
+				traits = {
+					CZE_2nd_prezident CZE_diplomatic_workhorse de_facto_leader
+				}
+			}
+			
+		}
+	}
+
+	CZE_antonin_hampl = { #Democratic faction leader during the Second Republic - party leader flavor only
+		name = CZE_antonin_hampl
+		portraits={
+			civilian={
+				large = GFX_Portrait_Europe_Generic_3
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+			traits = {
+				staunch_anti_fascist
+			}
+		}
+	}
+
+	CZE_jaroslav_krejchi={ 
+		name="Jaroslav Krejčí"
+		portraits={
+			civilian={
+				large=GFX_portrait_Jaroslav_Krejci
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	CZE_andrej_hlinka = { #Non-aligned placeholder - party leader flavor only
+		name=CZE_andrej_hlinka
+		portraits = {
+			civilian={
+				large = GFX_Portrait_Europe_Generic_2
+			}
+		}
+
+		country_leader={
+			ideology=oligarchism
+			expire = "1938.1.16.9"
+			id=-1
+		}
+	}
+
+	CZE_robert_rychtrmoc={ #Non-aligned placeholder after Hlinka - party leader flavor only 
+		name=CZE_robert_rychtrmoc
+		portraits={
+			civilian={
+				large = GFX_Portrait_Europe_Generic_4
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			traits={ eager_collaborator baron_of_terror }
+			expire="1945.1.1.12"
+			id=-1
+		}
+	}
+
+	CZE_emil_hacha = { #Second Republic leader
+		name=CZE_emil_hacha
+		portraits = {
+			civilian={
+				large=GFX_portrait_CZE_emil_hacha
+				small=GFX_portrait_CZE_emil_hacha_small
+			}
+		}
+
+		country_leader={
+			ideology=oligarchism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	CZE_albrecht_franz = {
+		name = CZE_albrecht_franz
+		portraits = {
+			civilian = {
+				large = GFX_portrait_CZE_albrecht_franz_von_habsburg
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1.1"
+			id = -1
+			traits = { duke_of_teschen_king_of_bohemia }
+		}
+	}
+}

@@ -1,0 +1,160 @@
+is_playable_country = {
+	OR = {
+		tag = GER
+		tag = ITA
+		tag = HUN
+		tag = ROM
+		tag = SPR
+		tag = BUL
+		tag = JAP
+		tag = SIA
+		tag = MAN
+		tag = FIN
+		tag = ENG
+		tag = FRA
+		tag = CAN
+		tag = AST
+		tag = BRA
+		tag = MEX
+		tag = NZL
+		tag = USA
+		tag = RAJ
+		tag = SAF
+		tag = SOV
+		tag = PHI
+		tag = IRQ
+		tag = ARG
+		tag = POR
+	}
+}
+
+# Playable countries that are supposed to be annexed at some point or have an annex decision available
+is_annexable_playable_country = {
+	OR = {
+		# Annexed into Japan
+		tag = SIA
+		tag = MAN
+		# Annexed into Australia
+		tag = NZL
+		# Annexed into USA
+		tag = PHI
+		# Annexed into UK
+		tag = IRQ
+		# Brazil has annex decision
+		tag = MEX
+		# France/Raj have annex decision
+		tag = SAF
+	}
+}
+
+allies = {
+	OR = {
+		tag = ENG
+		tag = FRA
+		tag = CAN
+		tag = AST
+		tag = BRA
+		tag = MEX
+		tag = NZL
+		tag = USA
+		tag = RAJ
+		tag = SAF
+		tag = IRE
+		tag = SOV
+		tag = NOR
+		tag = HOL
+		tag = BEL
+		tag = LUX
+		tag = POL
+		tag = DEN
+		tag = PHI
+		tag = ARG
+	}
+}
+
+
+axis = {
+	OR = {
+		tag = GER
+		tag = ITA
+		tag = HUN
+		tag = ROM
+		tag = SPR
+		tag = BUL
+		tag = JAP
+		tag = SIA
+		tag = MAN
+		tag = FIN
+		tag = IRQ
+		tag = POR
+	}
+}
+
+can_grind_generals = {
+	if = {
+		limit = { axis = yes }
+		has_global_flag = axis_grind_allowed
+		OR = {
+			has_war_with = ENG
+			tag = SPR
+		}
+	}
+	else_if = {
+		limit = { allies = yes }
+		has_global_flag = allies_grind_allowed
+		has_war_with = GER
+	}
+}
+
+ai_manpower = {
+	OR = {
+		tag = BEL
+		tag = NOR
+		tag = LUX
+		tag = HOL
+		tag = POL
+		tag = YUG
+		tag = CHI
+		tag = GRE
+		tag = DEN
+		tag = IRE
+
+	}
+}
+ai_annex = {
+	OR = {
+		
+		tag = AUS
+		tag = CZE
+		tag = MON
+		tag = TAN	
+	}
+}
+ai_rk = {
+	OR = {
+	
+	}
+}
+ai_black = {
+	OR = {
+		tag = WST
+		tag = TUR
+		#tag = POR 
+		tag = SWE
+	}
+}
+
+DIPLOMACY_PEACE_PROPOSAL_ENABLE_TRIGGER = {
+	always = no
+}
+DIPLOMACY_RETURN_TERRITORY_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			FROM = { tag = WST }
+		}
+		custom_trigger_tooltip = {
+			tooltip = RETURN_TERRITORY_TO_WST_BLOCKED_TOOLTIP
+			NOT = { FROM = { tag = WST } }
+		}
+	}
+}

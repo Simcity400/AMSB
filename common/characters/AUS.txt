@@ -1,0 +1,78 @@
+characters = { 
+
+	#####################
+	###COUNTRY LEADERS###
+	#####################
+
+	#Nonaligned
+
+	
+	AUS_kurt_schuschnigg = {
+		instance = {
+
+			allowed = {
+				has_dlc = "Gotterdammerung"
+			}
+
+			name = AUS_kurt_schuschnigg
+			portraits = {
+				civilian = {
+					large = GFX_portrait_AUS_kurt_schuschnigg
+					small = GFX_portrait_AUS_kurt_schuschnigg_small
+				}
+			}
+			country_leader = {
+				ideology = despotism
+				expire = "1965.1.1.1"
+				id = -1
+				traits = { AUS_under_german_pressure }
+			}
+
+			advisor = {
+				slot = political_advisor
+				cost = 150
+				idea_token = AUS_kurt_schuschnigg
+				traits = {
+					fascist_corporatist
+				}
+				allowed = {}
+				available = {
+					NOT = {
+						has_country_leader = {
+							ruling_only = yes
+							character = AUS_kurt_schuschnigg
+						}
+					}
+				}
+				visible = {
+					has_country_flag = AUS_starhemberg_took_over
+				}
+				ai_will_do = {
+					base = 10
+				}
+			}
+		}
+
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "Gotterdammerung"
+				}
+			}
+			name = AUS_kurt_schuschnigg
+			portraits = {
+				civilian = {
+					large = GFX_portrait_AUS_kurt_schuschnigg
+				}
+			}
+			country_leader = {
+				ideology = despotism
+				expire = "1965.1.1.1"
+				id = -1
+			}
+		}
+
+	}
+	
+}
+

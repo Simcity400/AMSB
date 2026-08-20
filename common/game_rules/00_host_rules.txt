@@ -1,0 +1,655 @@
+horst_host_country = {
+	name = "Select Country For Host Tool"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	# axis
+	default = {
+		name = GER
+		text = "Germany"
+		desc = ""
+	}
+
+	option = {
+		name = ITA
+		text = "Italy"
+		desc = ""
+	}
+	option = {
+		name = SPR
+		text = "Spain"
+		desc = ""
+	}
+	option = {
+		name = ROM
+		text = "Romania"
+		desc = ""
+	}
+	option = {
+		name = HUN
+		text = "Hungary"
+		desc = ""
+	}
+	option = {
+		name = FIN
+		text = "Finland"
+		desc = ""
+	}
+	option = {
+		name = BUL
+		text = "Bulgaria"
+		desc = ""
+	}
+
+	# Co-prosperity Sphere
+	option = {
+		name = JAP
+		text = "Japan"
+		desc = ""
+	}
+	option = {
+		name = MAN
+		text = "Manchukuo"
+		desc = ""
+	}
+	# allies
+	option = {
+		name = ENG
+		text = "United Kingdom"
+		desc = ""
+	}
+	option = {
+		name = USA
+		text = "USA"
+		desc = ""
+	}
+	option = {
+		name = FRA
+		text = "France"
+		desc = ""
+	}
+	option = {
+		name = RAJ
+		text = "British Raj"
+		desc = ""
+	}
+	option = {
+		name = CAN
+		text = "Canada"
+		desc = ""
+	}
+	option = {
+		name = AST
+		text = "Australia"
+		desc = ""
+	}
+	option = {
+		name = SAF
+		text = "South Africa"
+		desc = ""
+	}
+	option = {
+		name = MEX
+		text = "Mexico"
+		desc = ""
+	}
+	option = {
+		name = BRA
+		text = "Brazil"
+		desc = ""
+	}
+	# comintern
+	option = {
+		name = SOV
+		text = "Soviet Union"
+		desc = ""
+	}
+}
+cas_doctrines_status = {
+	name = "Ground Support doctrines are..."
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	default = {
+		name = banned
+		text = "Fully Banned"
+		desc = "Battlefield Support and all air subdoctrines that provide ground support bonuses cannot be taken by anyone."
+	}
+	option = {
+		name = axis
+		text = "Axis Only"
+		desc = "Battlefield Support and all air subdoctrines that provide ground support bonuses are only allowed for Axis countries."
+	}
+	option = {
+		name = allies
+		text = "Allies Only"
+		desc = "Battlefield Support and all air subdoctrines that provide ground support bonuses are only allowed for Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "Allowed for Everyone"
+		desc = "All grand doctrines and air subdoctrines can be taken by anyone."
+	}
+}
+allied_pre_grind = { 
+	name = "Allies Pre-Grind"
+	group = "HMM Rules"
+	icon = "GFX_decision_category_eng_imperial_conference"
+	default = { 
+		name = on
+		text = "On"
+		desc = ZHM_game_rule
+	}
+	option = { 
+		name = off
+		text = "Off"
+		desc= ""
+	}
+}
+italy_alt_hist = {
+	name = "Italy Alt-Hist Paths"
+	group = "HMM Rules"
+	icon = "GFX_decision_ITA_claim_yugo_4"
+	default = {
+		name = on
+		text = "On"
+		desc = ""
+	} 
+	option = {
+		name =  off
+		text = "Off"
+		desc = ""
+	}
+}
+soviet_research_slot = {
+	name = "Soviet 4th Research Slot"
+	group = "HMM Rules"
+	icon = "GFX_decision_SOV_secure_the_administration"
+	option = {
+		name = on
+		text = "On"
+		desc = ""
+	} 
+	default = {
+		name = off
+		text = "Off"
+		desc = ""
+	}
+
+}
+soviet_collectivized_economy = {
+	name = "Soviet Collectivized Economy"
+	group = "HMM Rules"
+	icon = "GFX_decision_SOV_secure_the_administration"
+	default = {
+		name = on
+		text = "On"
+		desc = ""
+	} 
+	option = {
+		name = off
+		text = "Off"
+		desc = ""
+	}
+}
+soviet_eradicate_western_fascism_rule = {
+	name = "Soviet Eradicate Western Fascism"
+	group = "HMM Rules"
+	icon = "GFX_decision_SOV_secure_the_administration"
+	option = {
+		name = yes
+		text = "Allowed"
+		desc = ""
+	} 
+	default = {
+		name = no
+		text = "Banned"
+		desc = ""
+	}
+}
+Brasil_AC_rule = {
+	name = "Brazil AC"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	option = {
+		name = Brasil_AC
+		text = "Allowed"
+		desc = ""
+	} 
+	default = {
+		name = Brasil_no_AC
+		text = "Banned"
+		desc = ""
+	}
+
+}
+
+Germany_czech_manufacturers = {
+	name = "German Czech Manufacturers"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_GER_flag"
+	option = {
+		name = allowed
+		text = "Allowed"
+		desc = "Every Czech MIO gained from 'Integrate Czech Manufacturers' is allowed"
+	}
+	default = { 
+		name = skoda_works
+		text = "Skoda Works allowed"
+		desc = "Skoda Works(Tank Production) allowed, Czech Tank Destroyer and Aircraft MIOs are banned"
+	}
+	option = { 
+		name = td_mio
+		text = "Czech TD MIO banned"
+		desc = "Only Czech Tank Destroyer MIO is banned"
+	}
+	option = { 
+		name = air_mio
+		text = "Czech Aircraft MIO banned"
+		desc = "Only Czech Aircraft MIO is banned"
+	}
+	option = { 
+		name = production_mio
+		text = "Skoda Works banned"
+		desc = "Skoda Works banned, TD & Aircraft MIO allowed"
+	}
+	option = {
+		name = banned
+		text = "Banned"
+		desc = "Every Czech MIO gained from 'Integrate Czech Manufacturers' is banned"
+	}
+
+}
+Germany_Wirtschaftswunder = {
+	name = "German Prioritize Economic Growth "
+	group = "HMM Rules"
+	icon = "GFX_decision_ger_mefo_bills"
+	option = {
+		name = Germany_no_wirtschaftswunder
+		text = "Banned"
+		desc = ""
+	}
+	default = {
+		name = Germany_wirtschaftswunder
+		text = "Allowed"
+		desc = ""
+	}
+
+}
+
+Germany_Cancel_Mefo= {
+	name = "cancel MEFO Bills"
+	group = "HMM Rules"
+	icon = "GFX_decision_ger_mefo_bills"
+	default = {
+		name = Germany_no_cancel_MEFO_Bills
+		text = "Banned"
+		desc = ""
+	}
+	option = {
+		name = Germany_cancel_MEFO_Bills
+		text = "Allowed"
+		desc = ""
+	}
+
+}
+Germany_Fate_of_yugo= {
+	name = "Fate of Yugoslavia"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_GER_flag"
+	default = {
+		name = Germany_no_fate_of_yugo
+		text = "Banned"
+		desc = ""
+	}
+	option = {
+		name = Germany_fate_of_yugo
+		text = "Allowed"
+		desc = ""
+	}
+
+}
+urban_assault_vechile= {
+	name = "Urban Assault Vehicle"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_tank"
+	option = {
+		name = off
+		text = "Banned"
+		desc = ""
+	}
+	default = {
+		name = on
+		text = "Allowed"
+		desc = ""
+	}
+}
+railway_gun= {
+	name = "Railway Gun"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = off
+		text = "Banned"
+		desc = "###."
+	}
+	option = {
+		name = on
+		text = "Allowed"
+		desc = "###"
+	}
+}
+super_heavy_railway_gun= {
+	name = "Super Heavy Railway Gun"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = off
+		text = "Banned"
+		desc = "###."
+	}
+	option = {
+		name = on
+		text = "Allowed"
+		desc = "###"
+	}
+}
+multi_charge_large_caliber_gun= {
+	name = "Multi Charge LCG"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = off
+		text = "Banned"
+		desc = "###."
+	}
+	option = {
+		name = on
+		text = "Allowed"
+		desc = "###"
+	}
+}
+max_submarine_tech= {
+	name = "Submarine 3 and 4"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = sub2
+		text = "Submarine 3 & 4 Banned"
+		desc = "###."
+	}
+	option = {
+		name = sub3
+		text = "Submarine 3 and Snorkel 1 Allowed"
+		desc = "###"
+	}
+	option = {
+		name = sub4
+		text = "Submarine 4 and Snorkel 2. Allowed"
+		desc = "###"
+	}
+}
+sov_boost = {
+	name = "Soviet Civ Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Soviets won't receive civilian factories"
+	}
+	option = {
+		name = sov4
+		text = "ROn-4"
+		desc = "Soviets receives 4 Civilian factories"
+	}
+	option = {
+		name = sov8
+		text = "ROn-8"
+		desc = "Soviets receives 8 Civilian factories"
+	}
+	option = {
+		name = sov12
+		text = "ROn-12"
+		desc = "Soviets receives 12 Civilian factories"
+	}
+}     
+  
+ger_boost = {
+	name = "German Civ Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Germany won't have civilian factories buff (Recommmended)"
+	}
+	option = {
+		name = ger4
+		text = "ROn-4"
+		desc = "Germany get 4 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = ger8
+		text = "ROn-8"
+		desc = "Germany get 8 Civilian factories (Not Recommmended)"
+	}
+	option = {
+		name = ger12
+		text = "ROn-12"
+		desc = "Germany get 12 Civilian factories (Not Recommmended)"
+	}
+} 
+jap_boost = {
+	name = "Japan Civ Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Japan won't receive civilian factories"
+	}
+	option = {
+		name = jap4
+		text = "ROn-4"
+		desc = "Japan receives 4 Civilian factories"
+	}
+	option = {
+		name = jap8
+		text = "ROn-8"
+		desc = "Japan receives 8 Civilian factories)"
+	}
+	option = {
+		name = jap12
+		text = "ROn-12"
+		desc = "Japan receives 12 Civilian factories"
+	}
+}          
+eng_boost = {
+	name = "Britain Civ Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Britain won't receive civilian factories"
+	}
+	option = {
+		name = eng4
+		text = "ROn-4"
+		desc = "Britain receives 4 Civilian factories"
+	}
+	option = {
+		name = eng8
+		text = "ROn-8"
+		desc = "Britain receives 8 Civilian factories"
+	}
+	option = {
+		name = eng12
+		text = "ROn-12"
+		desc = "Britain receives 12 Civilian factories"
+	}
+}
+ita_boost = {
+	name = "Italy Civ Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "Italy won't have civilian factories buff"
+	}
+	option = {
+		name = ita4
+		text = "ROn-4"
+		desc = "Italy receives 4 Civilian factories"
+	}
+	option = {
+		name = ita8
+		text = "ROn-8"
+		desc = "Italy receives 8 Civilian factories"
+	}
+	option = {
+		name = ita12
+		text = "ROn-12"
+		desc = "Italy receives 12 Civilian factories"
+	}
+}
+fra_boost = {
+	name = "French Civ Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "France won't receive civilian factories"
+	}
+	option = {
+		name = fra4
+		text = "ROn-4"
+		desc = "France receives 4 Civilian factories"
+	}
+	option = {
+		name = fra8
+		text = "ROn-8"
+		desc = "France receives 8 Civilian factories"
+	}
+	option = {
+		name = fra12
+		text = "ROn-12"
+		desc = "France receives 12 Civilian factories"
+	}
+}
+usa_boost = {
+	name = "USA Civ Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "USA won't receive civilian factories"
+	}
+	option = {
+		name = usa4
+		text = "ROn-4"
+		desc = "USA receives 4 Civilian factories"
+	}
+	option = {
+		name = usa8
+		text = "ROn-8"
+		desc = "USA receives 8 Civilian factories"
+	}
+}
+playable_iraq = {
+	name = "Playable Iraq"
+	group = "HMM Rules"
+	icon = "GFX_decision_category_usa_intervention_mandate"
+	default = {
+		name = no
+		text = "No"
+		desc = "Iraq is annexed into the UK day 1"
+	}
+	option = {
+		name = yes
+		text = "Yes"
+		desc = "Iraq is playable"
+	}
+}
+strat_bombing = {
+	name = "Strategic Bombing"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	default = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Strategic Bombers allowed and German Eco Unnerfed"
+	}
+	option = {
+		name = banned
+		text = "RBanned"
+		desc = "Strategic Bombers banned and German Eco Nerfed"
+	}
+	option = {
+		name = banned_no_eco_nerf
+		text = "YBanned and German Eco Unnerfed"
+		desc = "Strategic Bombers banned and German Eco Unnerfed"
+	}
+}
+spanish_production = {
+	name = "Spanish Production"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_industry"
+	option = {
+		name = ger_mech
+		text = "GGerman Lend Lease for Mech"
+		desc = "It progressively gets better as time passes"
+	}
+	option = {
+		name = bul_mech
+		text = "BGerman-Bulgarian Lend Lease for Mech"
+		desc = "It progressively gets better as more time passes, sent to Bulgaria"
+	}
+	option = {
+		name = mixer
+		text = "4Germany can choose either BUL or GER"
+		desc = "It progressively gets better as time passes, Germany can choose between itself and Bulgaria"
+	}
+	default = {
+		name = off
+		text = "RGermany doesn't get a button for Mech Lend Lease"
+		desc = "No DDAY wall"
+	}
+}
+finish_production = {
+	name = "Finnish Production"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_industry"
+	option = {
+		name = ger_gun
+		text = "GGerman Lend Lease for Guns"
+		desc = "The gun amount progressively increases as time passes"
+	}
+	default = {
+		name = off
+		text = "RNo German Lend Lease for Guns"
+		desc = "Use if Finland has a player on it"
+	}
+}
+tradebacks = {
+	name = "No Tradebacks Idea"
+	group = "HMM Rules"
+	icon = "GFX_decision_category_generic_trade"
+	default = {
+		name = off
+		text = "GOff"
+		desc = "No tradeback idea (Recommmended)"
+	}
+	option = {
+		name = on
+		text = "ROn"
+		desc = "Everyone has a tradeback idea that gives -100% missing resource penalty"
+	}
+	option = {
+		name = only_axis
+		text = "YOnly Axis"
+		desc = "The axis has a tradeback idea that gives -100% missing resource penalty"
+	}
+}

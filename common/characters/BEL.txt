@@ -1,0 +1,114 @@
+characters={
+
+
+####### Country Leaders #######
+
+
+	BEL_hubert_pierlot = {
+		instance = {
+
+			allowed = {
+				has_dlc = "Gotterdammerung"
+			}
+
+			name=BEL_hubert_pierlot
+			portraits={
+				civilian={
+					large = GFX_portrait_BEL_hubert_pierlot 
+					small = GFX_portrait_BEL_hubert_pierlot_small 
+				}
+			}
+#			country_leader={
+#				ideology=conservatism
+#				expire=1965.1.1.1
+#				id = -1
+#				traits={ BEL_determined_prime_minister }
+#			}
+			advisor={
+				slot = political_advisor
+				idea_token = BEL_hubert_pierlot
+				allowed  = {
+					original_tag  = BEL
+				}
+				available = {
+					NOT = { 
+						has_government = fascism
+						has_government = neutrality 
+					}
+					NOT = {
+						has_country_leader = {
+							ruling_only = yes
+							character = BEL_hubert_pierlot
+						}
+					}
+				}
+				traits  = {
+					JUNO_minister_of_foreign_affairs 
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "Gotterdammerung"
+				}
+			}
+			name = BEL_hubert_pierlot
+			portraits = {
+				civilian = {
+					large = GFX_portrait_BEL_hubert_pierlot
+				}
+			}
+			country_leader={
+				ideology=conservatism
+				expire=1965.1.1.1
+				id=-1
+			}
+		}
+
+	}
+
+	BEL_paul_van_zeeland = {
+		instance = {
+			allowed = {
+				has_dlc = "Gotterdammerung"
+			}
+			name = BEL_paul_van_zeeland
+			portraits={
+				civilian={
+					large = GFX_portrait_BEL_paul_van_zeeland
+				}
+			}
+			country_leader={
+				ideology = conservatism
+				expire = 1965.1.1.1
+				id = -1
+				traits={ BEL_corrupt_old_guard }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = {
+					has_dlc = "Gotterdammerung"
+				}
+			}
+			name=BEL_paul_van_zeeland
+			portraits={
+				army={
+					small="GFX_idea_generic_political_advisor_europe_2"
+				}
+			}
+			advisor={
+				slot = political_advisor
+				idea_token = BEL_paul_van_zeeland
+				allowed  = {
+					original_tag  = BEL
+				}
+				traits  = {
+					silent_workhorse 
+				}
+			}
+		}
+	}
+
+}

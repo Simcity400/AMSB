@@ -1,0 +1,42 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+# 
+
+DEN_aat = { # Trigger to check if playing as Denmark while having AAT
+	original_tag = DEN
+	has_dlc = "Arms Against Tyranny"
+}
+
+DEN_aat_is_subject = { # Trigger to check if playing as Denmark while having AAT and is a subject
+	original_tag = DEN
+	has_dlc = "Arms Against Tyranny"
+	is_subject = yes
+}
+
+DEN_historical_ai = {
+	OR = {
+		AND = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = DEN_ai_behavior
+				option = DEFAULT
+			}
+		}
+		has_country_flag = DEN_AI_RANDOM_HISTORICAL
+		has_game_rule = {
+			rule = DEN_ai_behavior
+			option = HISTORICAL
+		}
+	}
+}

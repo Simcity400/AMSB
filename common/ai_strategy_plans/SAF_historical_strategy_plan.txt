@@ -1,0 +1,111 @@
+SAF_historical = {
+	name = "South African historical plan"
+	desc = ""
+
+	allowed = {
+		original_tag = SAF
+		has_dlc = "Together for Victory"
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = SAF_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = SAF_AI_RANDOM_DEMOCRATIC_HISTORICAL 
+			has_game_rule = {
+				rule = SAF_ai_behavior
+				option = DEMOCRATIC_HISTORICAL
+			}
+			has_country_flag = britain_enforced_our_loyalty
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		SAF_south_african_railways
+		SAF_expand_the_mining_industry
+		SAF_infrastructure_effort
+		SAF_armament_effort
+		SAF_south_african_steel
+		SAF_pretoria_arms	
+	}
+
+	research = {
+		industry = 1000
+		air_equipment = -1000
+	}
+
+	ideas = {
+		
+	}
+
+	traits = {
+		captain_of_industry = 5
+		war_industrialist = 5
+        air_warfare_theorist = -1000
+        dive_bomber = -1000
+        victory_through_airpower = -1000
+        close_air_support_proponent = -1000
+        assault_avaition = -1000
+        air_chief_reform_1 = -1000
+        air_chief_reform_2 = -1000
+        air_chief_reform_3 = -1000
+        air_chief_safety_1 = -1000
+        air_chief_safety_2 = -1000
+        air_chief_safety_3 = -1000
+        air_chief_night_operations_1 = -1000
+        air_chief_night_operations_2 = -1000
+        air_chief_night_operations_3 = -1000
+        air_chief_ground_support_1 = -1000
+        air_chief_ground_support_2 = -1000
+        air_chief_ground_support_3 = -1000
+        air_chief_all_weather_1 = -1000
+        air_chief_all_weather_2 = -1000
+        air_chief_all_weather_3 = -1000
+        air_air_combat_training_1 = -1000
+        air_air_combat_training_2 = -1000
+        air_air_combat_training_3 = -1000
+        air_naval_strike_1 = -1000
+        air_naval_strike_2 = -1000
+        air_naval_strike_3 = -1000
+        air_bomber_interception_1 = -1000
+        air_bomber_interception_2 = -1000
+        air_bomber_interception_3 = -1000
+        air_air_superiority_1 = -1000
+        air_air_superiority_2 = -1000
+        air_air_superiority_3 = -1000
+        air_close_air_support_1 = -1000
+        air_close_air_support_2 = -1000
+        air_close_air_support_3 = -1000
+        air_strategic_bombing_1 = -1000
+        air_strategic_bombing_2 = -1000
+        air_strategic_bombing_3 = -1000
+        air_tactical_bombing_1 = -1000
+        air_tactical_bombing_2 = -1000
+        air_tactical_bombing_3 = -1000
+        air_airborne_1 = -1000
+        air_airborne_2 = -1000
+        air_airborne_3 = -1000
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+		
+	}
+
+}
+

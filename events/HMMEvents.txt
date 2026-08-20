@@ -1,0 +1,128 @@
+add_namespace = hmm
+
+news_event = {
+	id = hmm.1
+	title = hmm.1.t
+	desc = hmm.1.d
+	picture = GFX_report_event_generic_read_write
+	
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = hmm.1.a
+	}
+}
+
+news_event = {
+	id = hmm.2
+	title = hmm.2.t
+	desc = hmm.2.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+    	
+	option = {
+		name = hmm.2.a
+	}
+}
+#######################################################################################
+country_event = {
+	id = hmm.3
+	title = hmm.3.a
+	desc = ""
+
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = hmm.7.y
+		CAN = {add_ideas = ENG_federal_integration_tfv}
+		country_event = {id = hmm.4}
+		
+	}
+	option = {
+		name = hmm.7.n
+		country_event = {id = hmm.4}
+	}
+}
+
+country_event = {
+	id = hmm.4
+	title = hmm.4.a
+	desc = ""
+
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = hmm.7.y
+		SAF = {add_ideas = ENG_federal_integration_tfv}
+		country_event = {id = hmm.5}
+		
+	}
+	option = {
+		name = hmm.7.n
+		country_event = {id = hmm.5}
+	}
+}
+
+country_event = {
+	id = hmm.5
+	title = hmm.5.a
+	desc = ""
+
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = hmm.7.y
+		AST = {add_ideas = ENG_federal_integration_tfv}
+		country_event = {id = hmm.6}
+		
+	}
+	option = {
+		name = hmm.7.n
+		country_event = {id = hmm.6}
+	}
+}
+
+country_event = {
+	id = hmm.6
+	title = hmm.6.a
+	desc = ""
+
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = hmm.7.y
+		RAJ = {add_ideas = ENG_federal_integration_tfv}	
+		set_country_flag = ENG_imperial_conference_timer_flag
+	}
+	option = {
+		name = hmm.7.n
+		set_country_flag = ENG_imperial_conference_timer_flag
+	}
+}
+news_event = {
+	id = hmm.7
+	title = hmm.7.t
+	desc = hmm.7.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+    	
+	option = {
+		name = hmm.7.a
+	}
+}

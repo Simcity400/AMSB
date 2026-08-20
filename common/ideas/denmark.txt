@@ -1,0 +1,134 @@
+ideas = {
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		htk_orlogsvaerftet = {
+			
+			picture = generic_air_manufacturer_3
+
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			# recon and fighter aircraft
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	naval_manufacturer = { 
+		
+		designer = yes
+		
+		burmeister_wain = {
+			
+			picture = generic_naval_manufacturer_1
+
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { naval_manufacturer }
+		}
+	}
+
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		disa = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+
+			
+			allowed = {
+				original_tag = DEN
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			# rifles
+			
+			traits = { infantry_equipment_manufacturer }
+
+		}
+	}
+
+####################
+####################
+#### AAT IDEAS #####
+####################
+#################### 
+
+	industrial_concern = { 
+
+	}
+
+
+##########################
+##########################
+#### NATIONAL SPIRITS ####
+##########################
+##########################
+
+	country = { 
+		
+	}
+
+
+	hidden_ideas = {
+		DEN_light_market_regulation_research_bonus = { #HIDDEN RESEARCH BONUS
+			name = DEN_light_market_regulation_research_bonus
+
+			picture = SOV_third_five_year_plan
+
+			removal_cost = -1	
+	
+			allowed = {
+				original_tag = DEN
+			}
+	
+			research_bonus = {
+				industry = 0.05
+			}
+		}
+
+		DEN_danish_resistance_ns = { 
+			name = DEN_resistance_dynamic_modifier
+			removal_cost = -1
+			picture = GFX_idea_DEN_resistance 
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				has_dynamic_modifier = { modifier = DEN_resistance_dynamic_modifier_improved } 
+			}
+			targeted_modifier = {
+				tag = DEN.DEN_overlord_nation
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+		}
+	}
+}

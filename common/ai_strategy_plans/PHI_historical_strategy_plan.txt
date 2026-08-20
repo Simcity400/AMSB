@@ -1,0 +1,61 @@
+PHI_historical_plan = {
+	name = "Philippines Historical Plan"
+	desc = "Historical behavior for Philippines"
+
+	allowed = {
+		original_tag = PHI
+	}
+
+	enable = {
+		is_historical_focus_on = yes 
+	}
+
+	abort = {
+	}
+
+	ai_national_focuses = {
+		
+		#Getting started as historical, then the focus AI weights will take over.
+
+		PHI_commonwealth_of_the_philippines
+		PHI_align_with_the_usa
+		PHI_peg_the_peso_to_the_dollar
+		PHI_quezon_city
+		PHI_offshore_patrol
+		PHI_cavite_naval_base
+		PHI_american_capital_injection
+		PHI_national_fiscal_policy
+		PHI_subsidies
+		PHI_reduce_unneccessary_expenditure
+		PHI_quezon_city_campus
+		PHI_pro_hacendados
+		PHI_investment_fund
+		PHI_sugar_barons
+		PHI_luzon_transport
+		PHI_textile_mills
+	}
+
+	#Focuses never to take
+	focus_factors = {
+
+	}			
+
+	research = {
+		industry = 1000
+		air_equipment = -1000
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

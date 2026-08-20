@@ -1,0 +1,36 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+# 
+
+suitable_fascist_major_in_europe = {
+	any_other_country = {
+		is_major = yes
+		capital_scope = { is_on_continent = europe }
+		exists = yes
+		has_capitulated = no
+		has_government = fascism
+		NOT = { has_war_with = ROOT }
+	}
+}
+
+suitable_democratic_major_in_europe = {
+	any_other_country = {
+		is_major = yes
+		capital_scope = { is_on_continent = europe }
+		exists = yes 
+		has_capitulated = no 
+		has_government = democratic
+		NOT = { has_war_with = ROOT } 
+	}
+}

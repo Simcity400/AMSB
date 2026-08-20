@@ -1,0 +1,69 @@
+characters={
+
+
+#################################
+#################################
+####                         ####
+####     Country Leaders     ####
+####                         ####
+#################################
+#################################
+
+	NOR_johan_nygaardsvold={ #Default Democratic Leader
+		name=NOR_johan_nygaardsvold
+		portraits={
+			civilian={
+				large=GFX_portrait_Johan_Nygaardsvold
+			}
+		}
+		allowed_civil_war = {
+		#	NOR_char_cw_democratic = yes
+		}
+		country_leader={
+			ideology=socialism
+			traits  = {
+				NOR_popular_reformer
+			}
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	NOR_martin_tranmael={ # Secondary Labour Leader
+		name=NOR_martin_tranmael
+		portraits={
+			civilian={
+				large=GFX_portrait_NOR_martin_tranmael
+				small=GFX_portrait_NOR_martin_tranmael_small
+			}
+		}
+		allowed_civil_war = {
+			#NOR_char_cw_democratic = yes
+		}
+		country_leader={
+			ideology=socialism
+			traits  = {
+				NOR_democratic_powerhouse
+			}
+			expire="1965.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = NOR_martin_tranmael
+			allowed  = {
+				NOR_AAT = yes 
+			}
+			traits  = {
+				NOR_democratic_powerhouse
+			}	
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					add = 20
+					NOR_is_historical_ai = yes 
+				}
+			}
+		}
+	}
+}

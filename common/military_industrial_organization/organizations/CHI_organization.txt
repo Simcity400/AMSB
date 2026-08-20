@@ -1,0 +1,212 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+ 
+CHI_sino_german_technical_mission_organization = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_porsche
+	allowed = {	
+		OR = {
+			is_literally_china = yes
+			tag = MAN
+		}
+		OR = {
+			NOT = { has_dlc = "No Compromise, No Surrender" }
+			AND = {
+				has_dlc = "No Compromise, No Surrender"
+				NOT = {
+					OR = {
+						tag = CHI
+					
+					}
+				}
+			}
+		} 
+	}
+	available = {
+		owner = {
+			OR = {
+				hidden_trigger = {
+					has_completed_focus = CHI_chinese_panzers
+					has_completed_focus = CHI_sea_chinese_panzers
+				}
+				custom_trigger_tooltip = {
+					tooltip = CHI_chinese_panzers_TT
+					OR = {
+						has_completed_focus = CHI_chinese_panzers
+						has_completed_focus = CHI_sea_chinese_panzers
+					}
+				}
+				
+				has_idea = german_advisors
+			}
+			NOT = {
+				has_war_with = GER
+			}
+		}
+	}
+}
+CHI_camco_medium_organization = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_CHI_camco
+	allowed = {	
+		OR = {
+			is_literally_china = yes
+			tag = MAN
+		}
+		OR = {
+			NOT = { has_dlc = "No Compromise, No Surrender" }
+			AND = {
+				has_dlc = "No Compromise, No Surrender"
+				NOT = {
+					OR = {
+						tag = CHI
+					
+					}
+				}
+			}
+		} 
+	}
+	available = {
+		owner = { 
+			hidden_trigger = {
+				OR = {
+					has_completed_focus = CHI_camco 
+					has_completed_focus = CHI_sea_camco 
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = CHI_camco_tt
+				OR = {
+					has_completed_focus = CHI_camco 
+					has_completed_focus = CHI_sea_camco 
+				}
+			}
+			
+		}
+
+	}
+}
+CHI_camco_fighter_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_CHI_camco
+	allowed = {	
+		OR = {
+			is_literally_china = yes
+			tag = MAN
+		}
+		OR = {
+			NOT = { has_dlc = "No Compromise, No Surrender" }
+			AND = {
+				has_dlc = "No Compromise, No Surrender"
+				NOT = {
+					OR = {
+						tag = CHI
+						
+					}
+				}
+			}
+		} 
+	}
+	available = {
+		owner = {
+			hidden_trigger = {
+				OR = {
+					has_completed_focus = CHI_local_fighter_production 
+					has_completed_focus = CHI_sea_local_fighter_production 
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = CHI_local_fighter_production_tt
+				OR = {
+					has_completed_focus = CHI_local_fighter_production 
+					has_completed_focus = CHI_sea_local_fighter_production 
+				}
+			} 
+		}
+	}
+}
+CHI_camco_bomber_organization = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_CHI_camco
+	allowed = {	
+		OR = {
+			is_literally_china = yes
+			tag = MAN
+		}
+		OR = {
+			NOT = { has_dlc = "No Compromise, No Surrender" }
+			AND = {
+				has_dlc = "No Compromise, No Surrender"
+				NOT = {
+					OR = {
+						tag = CHI
+						
+					}
+				}
+			}
+		} 
+	}
+	available = {
+		owner = {
+			hidden_trigger = {
+				OR = {
+					has_completed_focus = CHI_local_bomber_production 
+					has_completed_focus = CHI_sea_local_bomber_production 
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = CHI_local_bomber_production_tt
+				OR = {
+					has_completed_focus = CHI_local_bomber_production 
+					has_completed_focus = CHI_sea_local_bomber_production 
+				}
+			} 
+		}
+	}
+	
+}
+
+CHI_mukden_arsenal_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_CHI_mukden
+	allowed = {	
+		OR = {
+			is_literally_china = yes
+			tag = MAN
+			
+		}
+	}
+	available = {
+		IF = {
+			limit = {
+				FROM = { 
+					OR = {
+						NOT = { original_tag = CHI }
+						AND = {
+							original_tag = CHI 
+							NOT = { has_dlc = "No Compromise, No Surrender" }
+						}
+					}
+				}
+			}
+			owner = { controls_state = CHI.mio_locations^5 } # #716 Liaoning
+		}
+		IF = {
+			limit = {
+				FROM = { original_tag = CHI }
+				hidden_trigger = { has_dlc = "No Compromise, No Surrender" }
+			}
+			OR = {
+				#owner = { has_completed_focus = CHI_relocate_factories_from_the_coast }
+				owner = { controls_state = CHI.mio_locations^5 } # #716 Liaoning
+			}
+		}
+	}
+}

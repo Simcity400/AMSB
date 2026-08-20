@@ -1,0 +1,377 @@
+# For minor countries where advisors are not defined
+# Generate them from a generic template
+
+# Political advisors
+every_possible_country = {
+	limit = {
+		NOT = { OR = { tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = CZE tag = ROM tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = POL tag = FIN } }
+		# avoid generic advisors in temporary countries
+		is_dynamic_country = no
+		NOT = {
+			has_allowed_idea_with_traits = { idea = communist_revolutionary characters = yes }
+		}
+		IF = {
+			limit = { has_dlc = "Battle for the Bosporus" }
+			NOT = { tag = TUR tag = GRE }
+		}
+		IF = {
+			limit = { has_dlc = "By Blood Alone" }
+			NOT = { OR = { tag = ETH } }
+		}
+		IF = {
+			limit = { has_dlc = "Arms Against Tyranny" }
+			NOT = { OR = { tag = DEN tag = SWE tag = NOR } }
+		}
+
+		IF = {
+			limit = { has_dlc = "Trial of Allegiance" }
+			NOT = { OR = { tag = ARG tag = BRA } }
+		}
+		IF = {
+			limit = { has_dlc = "Gotterdammerung" }
+			NOT = { tag = HUN tag = AUS tag = BEL }
+		}
+		IF = {
+			limit = { has_dlc = "Graveyard of Empires" }
+			NOT = {  tag = IRQ tag = RAJ }
+		}
+		IF = {
+			limit = { has_dlc = "No Compromise, No Surrender" }
+			
+			NOT = { tag = PHI }
+		}
+		IF = {
+			limit = { has_dlc = "Thunder at Our Gates" }
+		
+			NOT = { tag = SIA }
+		}
+	}
+	generate_character = {
+		token_base = generic_communist_revolutionary # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { communist_revolutionary }
+			available = {
+				
+				IF = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_communist_revolutionary }
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		NOT = { OR = { tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = CZE tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = POL tag = FIN } }
+		is_dynamic_country = no
+		NOT = {
+			has_allowed_idea_with_traits = { idea = democratic_reformer characters = yes }
+		}
+		IF = {
+			limit = { has_dlc = "Battle for the Bosporus" }
+			NOT = { tag = TUR tag = GRE }
+		}
+		IF = {
+			limit = { has_dlc = "By Blood Alone" }
+			NOT = { OR = { tag = ETH } }
+		}
+		IF = {
+			limit = { has_dlc = "Arms Against Tyranny" }
+			NOT = { OR = { tag = DEN tag = SWE tag = NOR } }
+		}
+
+		IF = {
+			limit = { has_dlc = "Trial of Allegiance" }
+			NOT = { OR = { tag = ARG tag = BRA } }
+		}
+
+		IF = {
+			limit = { has_dlc = "Gotterdammerung"}
+			NOT = { OR = { tag = AUS tag = BEL }}
+		}
+		IF = {
+			limit = { has_dlc = "Graveyard of Empires" }
+			NOT = { tag = IRQ tag = RAJ }
+		}
+		IF = {
+			limit = { has_dlc = "No Compromise, No Surrender" }
+			NOT = { tag = PHI }
+		}
+		IF = {
+			limit = { has_dlc = "Thunder at Our Gates" }
+			
+			NOT = { tag = SIA }
+		}
+	}
+	generate_character = {
+		token_base = generic_democratic_reformer # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { democratic_reformer }
+			available = {
+				IF = {
+					limit = { 
+						original_tag = NZL
+						has_dlc = "Together for Victory"
+					}
+					OR = {
+						has_completed_focus = NZL_strengthen_the_commonwealth
+						
+					}
+				}
+				IF = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_democratic_reformer }
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		NOT = { OR = { tag = GER tag = ENG tag = SOV original_tag = FRA tag = ITA tag = JAP tag = USA tag = AST tag = RAJ tag = CAN tag = SAF tag = ROM tag = CZE tag = CHI tag = MAN tag = MEX tag = HOL original_tag = SPR original_tag = POR original_tag = POL tag = FIN tag = BEL } }
+		is_dynamic_country = no
+		NOT = {
+			has_allowed_idea_with_traits = { idea = fascist_demagogue characters = yes }
+		}
+		IF = {
+			limit = { has_dlc = "Battle for the Bosporus" }
+			NOT = { tag = TUR tag = GRE }
+		}
+		IF = {
+			limit = { has_dlc = "By Blood Alone" }
+			NOT = { OR = { tag = ETH } }
+		}
+		IF = {
+			limit = { has_dlc = "Arms Against Tyranny" }
+			NOT = { OR = { tag = DEN tag = SWE tag = NOR } }
+		}
+		# TODO CHANGE THIS TO THE CORRECT DLC LOCK
+		IF = {
+			limit = { has_dlc = "Trial of Allegiance" }
+			NOT = { OR = { tag = CHL tag = ARG tag = BRA } }
+		}
+		IF = {
+			limit = { has_dlc = "Gotterdammerung" }
+			NOT = { tag = HUN tag = AUS }
+		}
+		IF = {
+			limit = { has_dlc = "Graveyard of Empires" }
+			NOT = { tag = IRQ tag = RAJ }
+		}
+		IF = {
+			limit = { has_dlc = "No Compromise, No Surrender" }
+			NOT = { tag = PHI }
+		}
+		IF = {
+			limit = { has_dlc = "Thunder at Our Gates" }
+			
+			NOT = { tag = SIA }
+		}
+	}
+	generate_character = {
+		token_base = generic_fascist_demagogue # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { fascist_demagogue }
+			available = {
+			
+				IF = {
+					limit = { has_dlc = "Man the Guns" }	
+					NOT = { has_autonomy_state = autonomy_supervised_state }
+				}				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_fascist_demagogue }
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		has_dlc = "La Resistance"
+		# china gets a special one via focus
+		NOT = { original_tag = CHI }
+		# Germany as Wilhelm Canaris
+		NOT = { original_tag = GER }
+
+		if = {
+			limit = {
+				has_dlc = "Thunder at Our Gates"
+			}
+			NOT = { original_tag = INS }
+			NOT = { original_tag = AST }
+		}
+
+		NOT = { is_chinese_warlord = yes }
+		IF = {
+			limit = {
+				has_dlc = "Battle for the Bosporus"
+			}
+			NOT = {
+				tag = GRE
+				tag = TUR
+			}
+		}
+		IF = {
+			limit = { has_dlc = "By Blood Alone" }
+			NOT = { OR = { tag = ETH } }
+		}
+
+		IF = {
+			limit = { has_dlc = "Arms Against Tyranny" }
+			NOT = { OR = { tag = SWE } }
+		}
+
+		IF = {
+			limit = { has_dlc = "Trial of Allegiance" }
+			NOT = { OR = { tag = ARG tag = BRA } }
+		}
+
+		IF = {
+			limit = { has_dlc = "Gotterdammerung" }
+			NOT = { OR = { tag = HUN tag = AUS tag = BEL } }
+		}
+		IF = {
+			limit = { has_dlc = "Graveyard of Empires" }
+			NOT = { tag = IRQ tag = RAJ }
+		}
+		
+
+		NOT = {
+			has_allowed_idea_with_traits = { idea = head_of_intelligence characters = yes }
+		}
+
+		is_dynamic_country = no
+	}
+	generate_character = {
+		token_base = generic_head_of_intelligence # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { head_of_intelligence }
+			available = {
+				has_intelligence_agency = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					has_intelligence_agency = no
+					factor = 0
+				}
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_head_of_intelligence }
+		}
+	}
+}
+
+# Military advisors
+
+
+every_possible_country = {
+	limit = {
+		original_tag = MAN
+	}
+	generate_character = { #Apparently MAN needs this to get an Illusive Gentleman with the new character sytem
+		token_base = generic_head_of_intelligence # token will be TAG_token_base
+		advisor = {
+			slot = political_advisor
+			traits = { head_of_intelligence }
+			available = {
+				has_intelligence_agency = yes
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					has_intelligence_agency = no
+					factor = 0
+				}
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_head_of_intelligence }
+		}
+	}
+}
+
+
+every_possible_country = { #BEL has no chief of navy, nor any naval theorists
+	limit = {
+		original_tag = BEL
+	}
+	generate_character = {
+		token_base = generic_naval_theorist # token will be TAG_token_base
+		advisor = {
+			slot = theorist
+			traits = { naval_theorist }
+			ledger = navy
+			cost = 100
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_naval_theorist }
+		}
+	}
+	generate_character = {
+		token_base = navy_chief_reform # token will be TAG_token_base
+		advisor = {
+			slot = navy_chief
+			traits = { navy_chief_reform_1 }
+			cost = 50
+		}
+		portraits = { 
+			army = { small = GFX_idea_ENG_generic_navy_1 }
+		}
+	}
+}
+
+
+
+	every_possible_country = { #PHI has no air / army theorists.
+		limit = {
+			original_tag = PHI
+		}
+		generate_character = {
+			token_base = generic_air_warfare_theorist # token will be TAG_token_base
+			advisor = {
+				slot = theorist
+				traits = { air_warfare_theorist }
+				ledger = air
+				cost = 50
+			}
+			portraits = { 
+				army = { small = GFX_idea_generic_air_warfare_theorist }
+			}
+		}
+		generate_character = {
+			token_base = generic_military_theorist # token will be TAG_token_base
+			advisor = {
+				slot = theorist
+				traits = { military_theorist }
+				ledger = army
+				cost = 50
+			}
+			portraits = { 
+				army = { small = GFX_idea_generic_military_theorist }
+			}
+		}
+	}

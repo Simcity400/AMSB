@@ -1,0 +1,2183 @@
+operations = {
+    annex_South_Africa = {
+            # icon = generic_operation
+            allowed = {
+                tag = FRA
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            available = {
+                SAF = {
+                    is_ai = yes
+                }
+                ENG = {
+                    has_completed_focus = uk_south_africa_focus
+                }
+            }
+            targets = {
+                SAF
+            }
+            complete_effect = {
+                SAF = {
+                    transfer_units_fraction = {
+                        target = FRA
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            always = no
+                        }
+                    }
+                }
+                FRA = {
+                    annex_country = {
+                        target = SAF
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = SAF
+                        is_controlled_by = FRA
+                    }
+                    add_compliance = 100
+                }
+            }
+
+        }
+		annex_Ethopia = {
+            # icon = generic_operation
+            allowed = {
+                tag = ITA
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 100
+            }
+            available = {
+               always = no # ZHM removed since Ethiopia doesnt exist day 1.
+            }
+            targets = {
+                ETH
+            }
+            complete_effect = {
+                ITA = {
+                    annex_country = {
+                        target = ETH
+                        transfer_troops = no
+                    }
+                    complete_national_focus = ITA_solid_progress 
+
+                }
+				add_threat = 2.6
+                
+            }
+
+        }
+		annex_Mexiko = {
+            # icon = generic_operation
+            allowed = {
+                tag = BRA
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            available = {
+                MEX = {
+                    is_ai = yes
+                    has_completed_focus = MEX_focus_soldaderas
+                }
+            }
+            targets = {
+                MEX
+            }
+            complete_effect = {
+                MEX = {
+                    transfer_units_fraction = {
+                        target = BRA
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            always = no
+                        }
+                    }
+                }
+                BRA = {
+                    annex_country = {
+                        target = MEX
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = MEX
+                        is_controlled_by = BRA
+                    }
+                    add_core_of = BRA
+                }
+            }
+
+        }
+
+    annex_CONGO = {
+            # icon = generic_operation
+            allowed = {
+                always = no # Unused COG off the map.
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 100
+            }
+            available = {
+                always = no
+            }
+            targets = { 
+
+            }
+            complete_effect = { 
+
+            }
+
+        }
+
+         annex_Ireland = {
+            # icon = generic_operation
+            allowed = {
+                tag = FRA
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 100
+            }
+            available = {
+                FRA = {has_capitulated = yes}
+                }
+            targets = {
+                IRE
+            }
+            complete_effect = {
+                IRE = {
+                    transfer_units_fraction = {
+                        target = IRE
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            always = no
+                        }
+                    }
+                }
+                FRA = {
+                    annex_country = {
+                        target = IRE
+                        transfer_troops = yes
+                    }
+                }
+				every_state = {
+					limit = {
+						is_core_of = IRE
+						is_controlled_by = FRA
+					}
+					add_compliance = 100
+				}
+                
+            }
+
+        }
+	
+		annex_manchukuo = {
+			# icon = generic_operation
+			allowed = {
+				tag = JAP
+			}
+			available = {
+				MAN = {
+					is_ai = yes
+				}
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			visible = {
+				tag = JAP
+			}
+			targets = {
+				MAN
+			}
+			complete_effect = {
+				MAN = {
+					transfer_units_fraction = {
+						target = JAP
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				JAP = {
+					annex_country = {
+						target = MAN
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = MAN
+						is_controlled_by = JAP
+					}
+					add_compliance = 100
+				}
+			}
+		}
+		annex_new_zealand = {
+			# icon = generic_operation
+			allowed = {
+				tag = AST
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+				factor = 0
+			}
+			available = {
+				NZL = {
+					is_ai = yes
+				}
+				ENG = {
+						has_completed_focus = uk_new_zealand_focus
+				}
+				NZL = {
+						has_completed_focus = NZL_think_big
+				}
+	
+			}
+			targets = {
+				NZL
+			}
+			complete_effect = {
+				NZL = {
+					transfer_units_fraction = {
+						target = AST
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				AST = {
+					annex_country = {
+						target = NZL
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = NZL
+						is_controlled_by = AST
+					}
+					add_core_of = AST
+				}
+			}
+		}
+		annex_philippines= {
+			# icon = generic_operation
+			allowed = {
+				tag = USA
+			}
+			fire_only_once = yes
+			cost = 0
+			ai_will_do = {
+			    base = 1
+                modifier = { 
+                    factor = 100
+				    date > 1937.8.1
+                }
+			}
+			available = {
+				PHI = {
+					is_ai = yes
+				}
+			}
+			targets = {
+				PHI	
+			}
+			complete_effect = {
+				PHI = {
+					transfer_units_fraction = {
+						target = USA
+						size = 1
+						stockpile_ratio = 1
+						army_ratio = 1
+						navy_ratio = 1
+						air_ratio = 1
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+					}
+				}
+				USA = {
+					annex_country = {
+						target = PHI
+						transfer_troops = yes
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = PHI 
+						is_controlled_by = USA
+					}
+					add_compliance = 100
+				}
+			}
+		}
+	soviet_cap_timer = {
+	    activation = {
+            SOV = { exists = no }
+	    }
+
+	    fire_only_once = yes
+	    available = {
+	    	hidden_trigger = {
+	    		always = no
+	    	}
+	    }
+		icon = GFX_decision_SOV_secure_the_administration
+	    is_good = no
+	    days_mission_timeout = 365
+	    selectable_mission = no
+	    timeout_effect = {
+            news_event = { id = hmm.7 }
+	    }
+        cancel_trigger = {
+            NOT = {	GER = { has_war_with = ENG } }  
+        }
+	}
+}
+political_actions = {
+
+	move_capital_to_dublin = {
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+		}
+		complete_effect = {
+			set_capital = {
+				state = 113
+			}
+		}
+	}
+	move_capital_to_cascablanca = {
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+		}
+		complete_effect = {
+			set_capital = {
+				state = 461
+			}
+		}
+	}
+
+	move_capital_to_gabon = {
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+		}
+		complete_effect = {
+			set_capital = {
+				state = 539
+			}
+		}
+	}
+
+	move_capital_to_Kazan = {
+		fire_only_once = yes
+		allowed = {
+			tag = SOV
+		}
+		visible = {
+			tag = SOV
+			GER = { has_war_with = SOV }
+		}
+		complete_effect = {
+			set_capital = {
+				state = 249
+			}
+		}
+	}
+	move_capital_to_Stalingrad = {
+		fire_only_once = yes
+		allowed = {
+			tag = SOV
+		}
+		visible = {
+			tag = SOV
+			GER = { has_war_with = SOV }
+		}
+		complete_effect = {
+			set_capital = {
+				state = 217
+			}
+		}
+	}
+	move_capital_to_Vladivostok = {
+		fire_only_once = yes
+		allowed = {
+			tag = SOV
+		}
+		visible = {
+			tag = SOV
+			GER = { has_war_with = SOV }
+		}
+		complete_effect = {
+			set_capital = {
+				state = 408
+			}
+		}
+	}
+	SOV_assist_republican_spain = {
+		icon = GFX_decision_SOV_secure_the_administration
+		fire_only_once = yes
+		cost = 0
+		visible = {
+			tag = SOV
+		}
+		available = {
+			has_global_flag = spanish_civil_war
+			not = {
+				has_global_flag = scw_over
+			}
+		}
+        ai_will_do = { 
+            base = 1
+        }
+		complete_effect = {
+			SOV = {
+				army_experience = 300
+			}
+		}
+	}
+}
+Technologies = {
+    add_convoy = {
+		priority = 100
+        icon = SWE_set_navy_budget
+        allowed = {
+ 		}
+		visible = {
+			is_ai = no
+		}
+        days_remove = 10
+        cost = 0
+        complete_effect = {
+            add_manpower = 1
+            add_equipment_to_stockpile = {
+                type = convoy_1
+                amount = 1
+            }
+        }
+		
+ 		remove_effect = {
+            add_manpower = -1
+            add_equipment_to_stockpile = {
+                type = convoy_1
+                amount = -1
+            }
+ 		}
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+
+    auto_mech = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        visible = {
+            NOT = {
+                    tag = HOL
+                }
+        }
+        available = {
+                date > 1937.08.01
+            }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = mechanized_equipment_1
+                        version = 1
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+
+     auto_basic_med= {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+
+        available = {
+                date > 1937.01.01
+                tag = SOV
+            }
+        visible = {
+            tag = SOV
+            }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = medium_tank_chassis_1
+                        version = 1
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+
+    
+     auto_improved_med= {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+
+        available = {
+                date > 1938.01.01
+                tag = SOV
+            }
+        visible = {
+            tag = SOV
+            }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = medium_tank_chassis_2
+                        version = 1
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+    hosttool_armored_train = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            
+            available = {
+                tag = SOV
+            }
+            visible = {
+            tag = SOV
+            }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = train_equipment_3
+                            version = 0
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+    }
+        
+    hosttool_aa2 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            
+            available = {
+                AND = {
+                    date > 1938.08.01
+                    
+                }
+            }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_air_equipment_2
+                            version = 0
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+    }
+    hosttool_aa3 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            
+            available = {
+                AND = {
+                    date > 1940.08.01
+                    
+                }
+            }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_air_equipment_3
+                            version = 0
+                            
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+    }
+        
+    hosttool_gun2 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        
+        available = {
+            AND = {
+                date > 1938.02.1
+                
+            }
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = infantry_equipment_2
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+    auto_gun3 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        available = {
+                date > 1939.12.01
+            }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = infantry_equipment_3
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+    auto_AT1 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        
+        available = {
+            tag = SOV
+            }
+        visible = {
+            tag = SOV
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = anti_tank_equipment_1
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+    auto_AT2 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        
+        available = {
+                date > 1938.08.1
+            }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = anti_tank_equipment_2
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+    auto_AT3 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        
+        available = {
+                date > 1940.08.01
+            }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = anti_tank_equipment_3
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+    hosttool_arty2 = {
+        # icon = generic_operation
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+            factor = 0
+        }
+        
+        available = {
+            AND = {
+                date > 1938.02.1
+                
+            }
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                        type = artillery_equipment_2
+                        version = 0
+                        
+                    }
+                    cost_factor = 0
+                }
+            }
+        }
+	}
+
+    hosttool_rocket_arty1 = {
+		allowed = {
+		}
+		fire_only_once = no
+		cost = 0
+		ai_will_do = {
+			factor = 0
+        }
+		available = {
+			date > 1939.06.01
+		}
+		complete_effect = {
+			SWE = {
+				create_production_license = {
+					target = ROOT
+                	equipment = {
+                        type = rocket_artillery_equipment_1
+                        version = 0
+                                    
+                        }
+                    cost_factor = 0
+                }
+            }
+        }
+    }
+
+	hosttool_arty3 = {
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+        	factor = 0
+        }
+                    
+        available = {
+            date > 1941.1.1
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                    	type = artillery_equipment_3
+                    	version = 0                
+                    }
+                    cost_factor = 0
+                }
+			}
+        }
+    }
+
+	hosttool_rocket_arty2 = {
+        allowed = {
+        }
+        fire_only_once = no
+        cost = 0
+        ai_will_do = {
+        	factor = 0
+        }
+                    
+        available = {
+            date > 1941.08.1
+        }
+        complete_effect = {
+            SWE = {
+                create_production_license = {
+                    target = ROOT
+                    equipment = {
+                    	type = rocket_artillery_equipment_2
+                    	version = 0                
+                    }
+                    cost_factor = 0
+                }
+			}
+        }
+    }
+
+    GER_mech_delivery_SPR = {
+	    icon = GFX_decision_generic_industry
+		#fire_only_once = yes
+
+		available = {
+			original_tag = GER
+			SPR = { is_ai = yes }
+			date > 1939.01.01
+            NOT = {
+                OR = {
+                    has_country_flag = annexed_SPR
+                    has_country_flag = GER_started_ll_mech_bul
+                    has_country_flag = GER_started_ll_mech
+                }
+            }
+            OR = {
+                has_game_rule = {
+                    rule = spanish_production
+                    option = ger_mech
+                }
+                has_game_rule = {
+                    rule = spanish_production
+                    option = mixer
+                }
+            }
+		}
+		visible = {
+			original_tag = GER
+			SPR = { is_ai = yes }
+            NOT = {
+                OR = {
+                    has_country_flag = annexed_SPR
+                    has_country_flag = GER_started_ll_mech_bul
+                    has_country_flag = GER_started_ll_mech
+                }
+            }
+			country_exists = SPR
+            OR = {
+                has_game_rule = {
+                    rule = spanish_production
+                    option = ger_mech
+                }
+                has_game_rule = {
+                    rule = spanish_production
+                    option = mixer
+                }
+            }
+		}
+		complete_effect = {
+            activate_mission = GER_recieving_ll_mech_1a
+            set_country_flag = GER_started_ll_mech
+            set_country_flag = no_spain
+			SPR = {	
+				set_technology = {
+				    mechanised_infantry = 1
+				}
+                create_equipment_variant = {
+                    name = "Cheap Mechanised"
+                    type = mechanized_equipment_1
+                    parent_version = 0
+                    upgrades = {
+                        mech_cost_upgrade = 5
+                    }
+                }
+			}
+			SPR = {
+				give_resource_rights = { receiver = ITA state = 792}
+				give_resource_rights = { receiver = ITA state = 791}
+				give_resource_rights = { receiver = ITA state = 790}
+				give_resource_rights = { receiver = ITA state = 788}
+				give_resource_rights = { receiver = ITA state = 166}
+				give_resource_rights = { receiver = ITA state = 174}
+				give_resource_rights = { receiver = ITA state = 173}
+				give_resource_rights = { receiver = ITA state = 170}
+				give_resource_rights = { receiver = ITA state = 165}
+				give_resource_rights = { receiver = ITA state = 41}
+			}
+		}
+	}
+    GER_mech_delivery_SPR_to_BUL = {
+	    icon = GFX_decision_generic_industry
+		#fire_only_once = yes
+
+		available = {
+			original_tag = GER
+			SPR = { is_ai = yes }
+			date > 1939.01.01
+            NOT = {
+                OR = {
+                    has_country_flag = annexed_SPR
+                    has_country_flag = GER_started_ll_mech
+                    has_country_flag = GER_started_ll_mech_bul
+                }
+            }
+            OR = {
+                has_game_rule = {
+                    rule = spanish_production
+                    option = bul_mech
+                }
+                has_game_rule = {
+                    rule = spanish_production
+                    option = mixer
+                }
+            }
+		}
+		visible = {
+			original_tag = GER
+			SPR = { is_ai = yes }
+            NOT = {
+                OR = {
+                    has_country_flag = annexed_SPR
+                    has_country_flag = GER_started_ll_mech
+                    has_country_flag = GER_started_ll_mech_bul
+                }
+            }
+			country_exists = SPR
+            OR = {
+                has_game_rule = {
+                    rule = spanish_production
+                    option = bul_mech
+                }
+                has_game_rule = {
+                    rule = spanish_production
+                    option = mixer
+                }
+            }
+		}
+		complete_effect = {
+            every_possible_country = {
+                limit = {
+                    has_character = SPR_mohamed_meziane
+                }
+                SPR_mohamed_meziane = {
+                    set_nationality = BUL
+                }
+            }
+            BUL = {
+                activate_mission = GER_recieving_ll_mech_bul_1a
+                add_country_leader_trait = bul_caudillo
+
+            }
+            ITA = { 
+                add_offsite_building = { type = industrial_complex level = 4 } 
+                add_offsite_building = { type = arms_factory level = 3 }
+            }
+            set_country_flag = GER_started_ll_mech_bul
+            set_country_flag = no_spain
+			SPR = {	
+				set_technology = {
+				    mechanised_infantry = 1
+				}
+                create_equipment_variant = {
+                    name = "Cheap Mechanised"
+                    type = mechanized_equipment_1
+                    parent_version = 0
+                    upgrades = {
+                        mech_cost_upgrade = 5
+                    }
+                }
+			}
+			SPR = {
+				give_resource_rights = { receiver = ITA state = 792}
+				give_resource_rights = { receiver = ITA state = 791}
+				give_resource_rights = { receiver = ITA state = 790}
+				give_resource_rights = { receiver = ITA state = 788}
+				give_resource_rights = { receiver = ITA state = 166}
+				give_resource_rights = { receiver = ITA state = 174}
+				give_resource_rights = { receiver = ITA state = 173}
+				give_resource_rights = { receiver = ITA state = 170}
+				give_resource_rights = { receiver = ITA state = 165}
+				give_resource_rights = { receiver = ITA state = 41}
+			}
+		}
+	}
+    GER_close_mech_LL = {
+		icon = GFX_decision_generic_industry
+
+        available = {
+			#If youre going to add a button for bulgaria , add a stop gap button
+		}
+
+		visible = {	
+            original_tag = GER
+            SPR = { is_ai = yes }
+            country_exists = SPR
+            has_country_flag = GER_started_ll_mech
+		}
+
+		complete_effect = {
+			clr_country_flag = GER_started_ll_mech
+		}
+	}
+    GER_close_mech_LL_bul = {
+		icon = GFX_decision_generic_industry
+
+        available = {
+			#If youre going to add a button for bulgaria , add a stop gap button
+		}
+
+		visible = {	
+            original_tag = GER
+            SPR = { is_ai = yes }
+            country_exists = SPR
+            has_country_flag = GER_started_ll_mech_bul
+		}
+
+		complete_effect = {
+			clr_country_flag = GER_started_ll_mech_bul
+		}
+	}
+    GER_recieving_ll_mech_bul_1a = {
+        allowed = {  
+            original_tag = BUL
+        }
+        available = {
+            NOT = { GER = { has_country_flag = GER_started_ll_mech_bul } }
+        }
+        icon = generic_army_support
+        is_good = yes
+        activation = { always = no }
+        days_mission_timeout = 30
+    
+        timeout_effect = {
+            SPR = {
+                if = {
+                    limit = { date > 1943.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 6000 }
+                }
+                else_if = {
+                    limit = { date > 1942.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 5800 }
+                }
+                else_if = {
+                    limit = { date > 1941.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 5500 }
+                }
+                else_if = {
+                    limit = { date > 1940.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 5000 }
+                }
+                else_if = {
+                    limit = { date > 1940.5.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3700 }
+                }
+                else_if = {
+                    limit = { date > 1939.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2500 }
+                }
+                else_if = {
+                    limit = { date > 1939.5.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1800 }
+                }
+                else = {
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1200 }
+                }
+            }
+            if = {
+                limit = { date > 1943.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 6000 producer = SPR } }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1942.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 5800 producer = SPR } }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1941.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 5500 producer = SPR } }
+                BUL ={ add_manpower = 100000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1940.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 5000 producer = SPR } }
+                BUL ={ add_manpower = 50000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1940.5.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3700 producer = SPR } }
+                BUL ={ add_manpower = 50000 }
+            }
+            else_if = {
+                limit = { date > 1939.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2500 producer = SPR } }
+                BUL ={ add_manpower = 50000 }
+            }
+            else_if = {
+                limit = { date > 1939.5.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1800 producer = SPR } }
+                BUL ={ add_manpower = 50000 }
+            }
+            else = {
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1200 producer = SPR } }
+            }
+            activate_mission = GER_recieving_ll_mech_bul_2a
+        }
+    }
+    GER_recieving_ll_mech_bul_2a = {
+        allowed = {  
+            original_tag = BUL
+        }
+        available = {
+            NOT = { GER = { has_country_flag = GER_started_ll_mech_bul } }
+        }
+        icon = generic_army_support
+        is_good = yes
+        activation = { always = no }
+        days_mission_timeout = 30
+    
+        timeout_effect = {
+            SPR = {
+                if = {
+                    limit = { date > 1943.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3300 }
+                }
+                else_if = {
+                    limit = { date > 1942.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3300 }
+                }
+                else_if = {
+                    limit = { date > 1941.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3200 }
+                }
+                else_if = {
+                    limit = { date > 1940.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2800 }
+                }
+                else_if = {
+                    limit = { date > 1940.5.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2500 }
+                }
+                else_if = {
+                    limit = { date > 1939.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2000 }
+                }
+                else_if = {
+                    limit = { date > 1939.5.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1300 }
+                }
+                else = {
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 900 }
+                }
+            }
+            if = {
+                limit = { date > 1943.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3300 producer = SPR } }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1942.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3300 producer = SPR } }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1941.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3200 producer = SPR } }
+                BUL ={ add_manpower = 100000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1940.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2900 producer = SPR } }
+                BUL ={ add_manpower = 50000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1940.5.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2500 producer = SPR } }
+                BUL ={ add_manpower = 50000 }
+            }
+            else_if = {
+                limit = { date > 1939.12.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2000 producer = SPR } }
+                BUL ={ add_manpower = 50000 }
+            }
+            else_if = {
+                limit = { date > 1939.5.31 }
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1300 producer = SPR } }
+                BUL ={ add_manpower = 50000 }
+            }
+            else = {
+                BUL = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 900 producer = SPR } }
+            }
+            activate_mission = GER_recieving_ll_mech_bul_1a    
+        }
+    }
+    GER_recieving_ll_mech_1a = {
+        allowed = {  
+            original_tag = GER
+        }
+        available = {
+            NOT = { has_country_flag = GER_started_ll_mech }
+        }
+        icon = generic_army_support
+        is_good = yes
+        activation = { always = no }
+        days_mission_timeout = 30
+    
+        timeout_effect = {
+            SPR = {
+                if = {
+                    limit = { date > 1943.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3200 }
+                }
+                else_if = {
+                    limit = { date > 1942.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3100 }
+                }
+                else_if = {
+                    limit = { date > 1941.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2800 }
+                }
+                else_if = {
+                    limit = { date > 1940.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2100 }
+                }
+                else_if = {
+                    limit = { date > 1939.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1350 }
+                }
+                else = {
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 750 }
+                }
+            }
+            if = {
+                limit = { date > 1943.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3200 producer = SPR } }
+                GER ={ add_manpower = 50000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1942.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3100 producer = SPR } }
+                GER ={ add_manpower = 50000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1941.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2800 producer = SPR } }
+                GER ={ add_manpower = 20000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1940.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2100 producer = SPR } }
+            }
+            else_if = {
+                limit = { date > 1939.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1350 producer = SPR } }
+            }
+            else = {
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 750 producer = SPR } }
+            }
+            activate_mission = GER_recieving_ll_mech_2a    
+        }
+    }
+    GER_recieving_ll_mech_2a = {
+        allowed = {  
+            original_tag = GER
+        }
+        available = {
+            NOT = { has_country_flag = GER_started_ll_mech }
+        }
+        icon = generic_army_support
+        is_good = yes
+        activation = { always = no }
+        days_mission_timeout = 30
+    
+        timeout_effect = {
+            SPR = {
+                if = {
+                    limit = { date > 1943.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3200 }
+                }
+                else_if = {
+                    limit = { date > 1942.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3100 }
+                }
+                else_if = {
+                    limit = { date > 1941.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2800 }
+                }
+                else_if = {
+                    limit = { date > 1940.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2100 }
+                }
+                else_if = {
+                    limit = { date > 1939.12.31 }
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1350 }
+                }
+                else = {
+                    add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 750 }
+                }
+            }
+            if = {
+                limit = { date > 1943.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3200 producer = SPR } }
+                GER ={ add_manpower = 50000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1942.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 3100 producer = SPR } }
+                GER ={ add_manpower = 50000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1941.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2800 producer = SPR } }
+                GER ={ add_manpower = 20000 }
+                ITA = { add_offsite_building = { type = arms_factory level = 1 } }
+            }
+            else_if = {
+                limit = { date > 1940.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 2100 producer = SPR } }
+            }
+            else_if = {
+                limit = { date > 1939.12.31 }
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 1350 producer = SPR } }
+            }
+            else = {
+                GER = { add_equipment_to_stockpile = { type = mechanized_equipment_1 amount = 750 producer = SPR } }
+            }
+            activate_mission = GER_recieving_ll_mech_1a    
+        }
+    }
+    GER_gun_delivery_FIN = {
+	    icon = GFX_decision_generic_industry
+		#fire_only_once = yes
+
+		available = {
+			original_tag = GER
+			FIN = { is_ai = yes }
+			date > 1939.3.01
+            NOT = {
+                OR = {
+                    has_country_flag = GER_started_ll_gun
+                }
+            }
+            has_game_rule = {
+                rule = finish_production
+                option = ger_gun
+            }
+		}
+		visible = {
+			original_tag = GER
+			FIN = { is_ai = yes }
+            NOT = {
+                OR = {
+                    has_country_flag = GER_started_ll_gun
+                }
+            }
+			country_exists = FIN
+            has_game_rule = {
+                rule = finish_production
+                option = ger_gun
+            }
+		}
+		complete_effect = {
+            activate_mission = GER_recieving_ll_gun_1a
+            set_country_flag = GER_started_ll_gun
+            set_country_flag = no_finland
+			FIN = {	
+				set_technology = {
+				    advanced_infantry_weapons = 1
+				    improved_infantry_weapons = 1
+				}
+                create_equipment_variant = {
+                    name = "Gun 3"
+                    type = infantry_equipment_3
+                    parent_version = 0
+                }
+                create_equipment_variant = {
+                    name = "Gun 2"
+                    type = infantry_equipment_2
+                    parent_version = 0
+                }
+			}
+            BUL = {
+                add_country_leader_trait = bul_caudillo
+            }
+		}
+	}
+    GER_close_gun_LL = {
+		icon = GFX_decision_generic_industry
+
+        available = {
+			
+		}
+
+		visible = {	
+            original_tag = GER
+            FIN = { is_ai = yes }
+            country_exists = FIN
+            has_country_flag = GER_started_ll_gun
+		}
+
+		complete_effect = {
+			clr_country_flag = GER_started_ll_gun
+		}
+	}
+    GER_recieving_ll_gun_1a = {
+        allowed = {  
+            original_tag = GER
+        }
+        available = {
+            NOT = { has_country_flag = GER_started_ll_gun }
+        }
+        icon = generic_army_support
+        is_good = yes
+        activation = { always = no }
+        days_mission_timeout = 30
+    
+        timeout_effect = {
+            FIN = {
+            if = {
+                limit = { date > 1942.12.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 30000 }
+            }
+            else_if = {
+                limit = { date > 1942.9.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 24000 }
+            }
+            else_if = {
+                limit = { date > 1942.5.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 22000 }
+            }
+            else_if = {
+                limit = { date > 1941.12.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 18000 }
+            }
+            else_if = {
+                limit = { date > 1941.9.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000 }
+            }
+            else_if = {
+                limit = { date > 1941.5.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 10000 }
+            }
+            else_if = {
+                limit = { date > 1941.1.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 8000 }
+            }
+            else_if = {
+                limit = { date > 1940.9.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 10000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 5000 }
+            }
+            else_if = {
+                limit = { date > 1940.7.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 8000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 3000 }
+            }
+            else_if = {
+                limit = { date > 1940.3.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 7000 } 
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 1000 }
+            }
+            else_if = {
+                limit = { date > 1939.12.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 6000 }
+            }
+            else_if = {
+                limit = { date > 1939.8.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 5000 }
+            }
+            else_if = {
+                limit = { date > 1939.2.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000 }
+            }
+            else = {
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000 }
+            }
+            }
+            if = {
+                limit = { date > 1942.12.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000  } }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 16000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1942.9.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000  } }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 10000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1942.5.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000  } }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 8000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1941.12.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000  } }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 4000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1941.9.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1941.5.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 10000  } }
+            }
+            else_if = {
+                limit = { date > 1941.1.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 8000  } }
+            }
+            else_if = {
+                limit = { date > 1940.9.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 10000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 5000  } }
+            }
+            else_if = {
+                limit = { date > 1940.7.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 8000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 3000  } }
+            }
+            else_if = {
+                limit = { date > 1940.3.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 7000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 1000  } }
+            }
+            else_if = {
+                limit = { date > 1939.12.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 6000  } }
+            }
+            else_if = {
+                limit = { date > 1939.8.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 5000  } }
+            }
+            else_if = {
+                limit = { date > 1939.2.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000  } }
+            }
+            else = {
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000  } }
+            }
+            activate_mission = GER_recieving_ll_gun_2a    
+        }
+    }
+    GER_recieving_ll_gun_2a = {
+        allowed = {  
+            original_tag = GER
+        }
+        available = {
+            NOT = { has_country_flag = GER_started_ll_gun }
+        }
+        icon = generic_army_support
+        is_good = yes
+        activation = { always = no }
+        days_mission_timeout = 30
+    
+        timeout_effect = {
+            FIN = {
+            if = {
+                limit = { date > 1942.12.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 30000 }
+            }
+            else_if = {
+                limit = { date > 1942.9.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 24000 }
+            }
+            else_if = {
+                limit = { date > 1942.5.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 22000 }
+            }
+            else_if = {
+                limit = { date > 1941.12.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 18000 }
+            }
+            else_if = {
+                limit = { date > 1941.9.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000 }
+            }
+            else_if = {
+                limit = { date > 1941.5.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 10000 }
+            }
+            else_if = {
+                limit = { date > 1941.1.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 8000 }
+            }
+            else_if = {
+                limit = { date > 1940.9.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 10000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 5000 }
+            }
+            else_if = {
+                limit = { date > 1940.7.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 8000 }
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 3000 }
+            }
+            else_if = {
+                limit = { date > 1940.3.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 7000 } 
+                add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 1000 }
+            }
+            else_if = {
+                limit = { date > 1939.12.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 6000 }
+            }
+            else_if = {
+                limit = { date > 1939.8.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 5000 }
+            }
+            else_if = {
+                limit = { date > 1939.2.31 }
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000 }
+            }
+            else = {
+                add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000 }
+            }
+            }
+            if = {
+                limit = { date > 1942.12.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000  } }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 16000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1942.9.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000  } }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 10000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1942.5.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000  } }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 8000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1941.12.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 13000  } }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 4000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1941.9.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 14000  } }
+            }
+            else_if = {
+                limit = { date > 1941.5.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 10000  } }
+            }
+            else_if = {
+                limit = { date > 1941.1.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 11000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 8000  } }
+            }
+            else_if = {
+                limit = { date > 1940.9.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 10000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 5000  } }
+            }
+            else_if = {
+                limit = { date > 1940.7.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 8000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 3000  } }
+            }
+            else_if = {
+                limit = { date > 1940.3.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 7000  } }
+                GER = { add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 1000  } }
+            }
+            else_if = {
+                limit = { date > 1939.12.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 6000  } }
+            }
+            else_if = {
+                limit = { date > 1939.8.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 5000  } }
+            }
+            else_if = {
+                limit = { date > 1939.2.31 }
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000  } }
+            }
+            else = {
+                ITA = { add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000  } }
+            }
+            activate_mission = GER_recieving_ll_gun_1a    
+        }
+    }
+}
+
+templates = {
+	Hide_Templates = {
+		icon = decision_generic_decision
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = Clear_Template_Decision
+		}
+	}
+	Show_Templates = {
+		icon = decision_generic_decision
+		visible = {
+			is_ai = no
+			has_country_flag = Clear_Template_Decision
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			clr_country_flag = Clear_Template_Decision
+		}
+	}
+	cav = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "Garrison"
+
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+					cavalry = { x = 0 y = 4 }
+					cavalry = { x = 1 y = 0 }
+					cavalry = { x = 1 y = 1 }
+					cavalry = { x = 1 y = 2 }
+					cavalry = { x = 1 y = 3 }
+					cavalry = { x = 1 y = 4 }
+					cavalry = { x = 2 y = 0 }
+					cavalry = { x = 2 y = 1 }
+					cavalry = { x = 2 y = 2 }
+					cavalry = { x = 2 y = 3 }
+					cavalry = { x = 2 y = 4 }
+					cavalry = { x = 3 y = 0 }
+					cavalry = { x = 3 y = 1 }
+					cavalry = { x = 3 y = 2 }
+					cavalry = { x = 3 y = 3 }
+					cavalry = { x = 3 y = 4 }
+					cavalry = { x = 4 y = 0 }
+					cavalry = { x = 4 y = 1 }
+					cavalry = { x = 4 y = 2 }
+					cavalry = { x = 4 y = 3 }
+					cavalry = { x = 4 y = 4 }
+				}
+			}
+		}
+	}
+	a2cw = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "2W Infantry/FALS division"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }			
+				}
+			}
+		}
+	}
+	a16cw = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "16W Infantry"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+			}
+		}
+	}
+	a50cw = {
+		icon = generic_military
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = Clear_Template_Decision }
+		}
+		
+		fire_only_once = no
+		#days_remove = 7
+		
+		complete_effect = {
+			division_template = {
+				name = "50W Infantry/40 MM Infantry"
+
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+					infantry = { x = 3 y = 3 }
+					infantry = { x = 3 y = 4 }
+					infantry = { x = 4 y = 0 }
+					infantry = { x = 4 y = 1 }
+					infantry = { x = 4 y = 2 }
+					infantry = { x = 4 y = 3 }
+					infantry = { x = 4 y = 4 }
+				}
+			}
+		}
+	}
+}
+
+
+#VP System
+MOD_countdown_to_victory_cat = {
+    MOD_countdown_to_allied_victory_mission = {
+
+        icon = generic_operation
+
+        available = {
+            hidden_trigger = {
+                always = no
+            }
+        }
+        days_mission_timeout = 365
+
+        activation = {
+            check_variable = {
+                global.allies_score > 6
+            }
+        }
+
+        cancel_trigger = {
+            check_variable = {
+                global.allies_score < 7
+            }
+        }
+
+        timeout_effect = {
+            GER = { news_event = { id = hmm.2 } }
+        }
+        is_good = no
+        complete_effect = {
+
+        }
+    }
+    MOD_countdown_to_axis_victory_mission = {
+
+        icon = generic_operation
+
+        available = {
+            hidden_trigger = {
+                always = no
+            }
+        }
+        days_mission_timeout = 365
+
+        activation = {
+            check_variable = {
+                global.axis_score > 6
+            }
+        }
+
+        cancel_trigger = {
+            check_variable = {
+                global.axis_score < 7
+            }
+        }
+
+        timeout_effect = {
+            GER = { news_event = { id = hmm.1 } }
+        }
+        is_good = no
+        complete_effect = {
+
+        }
+    }
+
+
+    add_to_allied_score = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	cost = 0
+    	complete_effect = {
+    		add_to_variable = {
+    			var = global.allies_score
+    			value = 1
+    		}
+    	}
+    }
+    add_to_axis_score = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	cost = 0
+    	complete_effect = {
+    		add_to_variable = {
+    			var = global.axis_score
+    			value = 1
+    		}
+    	}
+    }
+    sub_from_allied_score = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	cost = 0
+    	complete_effect = {
+    		subtract_from_variable = {
+    			var = global.allies_score
+    			value = 1
+    		}
+    	}
+    }
+    sub_from_axis_score = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	cost = 0
+    	complete_effect = {
+    		subtract_from_variable = {
+    			var = global.axis_score
+    			value = 1
+    		}
+    	}
+    }
+    reset_scores = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	cost = 0
+    	complete_effect = {
+    		set_variable = {
+    			var = global.axis_score
+    			value = 0
+    		}
+    		set_variable = {
+    			var = global.allies_score
+    			value = 0
+    		}
+    	}
+    }
+
+    test_start = {
+    	visible = {
+    		is_debug = yes
+    	}
+    	cost = 0
+    	complete_effect = {
+    		initilize_victory_system = yes
+    	}
+    }
+
+}
