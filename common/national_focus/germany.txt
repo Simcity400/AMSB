@@ -10280,18 +10280,7 @@ focus_tree = {
 		relative_position_id = GER_an_invincible_army
 		cost = 5
 		available = {
-			surrender_progress < 0.01
-			custom_trigger_tooltip = {
-				tooltip = GER_an_invincible_army_trigger
-				OR = {
-					num_subjects > 5
-					check_variable = { GER_occupied_states_europe > 49 }
-				}
-			}
-			custom_trigger_tooltip = { 
-				tooltip = GER_the_supreme_leader_trigger
-				check_variable = { GER_capitulated_major_countries > 2 }
-			}
+			date > 1943.1.1
 		}
 
 		search_filters = {}
@@ -13427,8 +13416,12 @@ focus_tree = {
 		}
 
 		will_lead_to_war_with = YUG
-		
+
 		available = {
+			has_game_rule = {
+				rule = Germany_Fate_of_yugo
+				option = Germany_fate_of_yugo
+			}
 			is_subject = no
 			NOT = { has_war_with = YUG }
 			NOT = { is_in_faction_with = YUG }
