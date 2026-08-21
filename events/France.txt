@@ -384,6 +384,21 @@ country_event = {
 	is_triggered_only = yes
 	 
 
+	option = { # Establish Vichy France
+		name = france.14.a
+		ai_chance = {
+			factor = 50
+		}
+		custom_effect_tooltip = amsb_establishing_vichy_tt
+		hidden_effect = {
+			elwolfmod_vichy_france = yes
+			news_event = { id = news.34 hours = 6 }
+		}
+		FROM = {
+			clr_country_flag = GER_dont_seize_gold_reserves_flag
+		}
+	}
+
 	option = { # Conquer everything!
 		name = france.14.b
 		ai_chance = { 
