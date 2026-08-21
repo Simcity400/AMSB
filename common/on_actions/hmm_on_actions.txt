@@ -87,8 +87,14 @@ on_actions = {
 				}
 			}
 			GER = {
-				add_ideas = {
-					axis_fuel
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = axis_fuel
+							option = on
+						}
+					}
+					add_ideas = axis_fuel
 				}
 			}
 			GER = {
