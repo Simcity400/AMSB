@@ -186,6 +186,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_industrial_focus
+		allow_branch = { always = no }
 		text = industrial_effort
 		prerequisite = { focus = shadow_scheme_focus }
 		icon = GFX_goal_generic_construct_civ_factory
@@ -271,10 +272,8 @@ focus_tree = {
 	
 	focus = {
 		id = ENG_parachute_regiments
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_special_air_service }
-		allow_branch = {
-			has_dlc = "Arms Against Tyranny"
-		}
 		continue_if_invalid = yes
 
 		icon = GFX_focus_generic_paratrooper
@@ -895,6 +894,7 @@ focus_tree = {
 	}
 	focus = {
 		id = uk_jet_focus
+		allow_branch = { always = no }
 		prerequisite = { focus = aircraft_production_focus }
 		icon = GFX_goal_generic_build_airforce
 		x = 2
@@ -1027,6 +1027,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_anti_non_contact_committee
+		allow_branch = { always = no }
 		prerequisite = { focus = naval_rearmament_focus }
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 4
@@ -1037,9 +1038,6 @@ focus_tree = {
 			factor = 1
 		}
 
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -1419,15 +1417,12 @@ focus_tree = {
 
 	focus = {
 		id = uk_empire_focus 
-		mutually_exclusive = { focus = ENG_revisit_colonial_policy }
+		allow_branch = { always = no }
 		available = {
 			NOT = { has_government = communism }
 			num_subjects > 0
 		} 
 
-		allow_branch = {
-			
-		}
 
 		icon = GFX_goal_generic_national_unity
 		x = 30
@@ -2991,6 +2986,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_iraq_focus
+		allow_branch = { always = no }
 		available = {
 			IRQ = {
 				exists = yes
@@ -3065,11 +3061,9 @@ focus_tree = {
 	}
 	focus = {
 		id = ENG_embargo_ussr 
+		allow_branch = { always = no }
 		prerequisite = { focus = uk_iran_focus focus = ENG_no_further_appeasement }
 
-		allow_branch = {
-			
-		}
 
 
 		available = {
@@ -3097,6 +3091,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ENG_war_with_ussr 
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_embargo_ussr }
 		available = {
 			has_offensive_war = no
@@ -5018,8 +5013,8 @@ focus_tree = {
 	
 	focus = {
 		id = uk_free_india_focus 
+		allow_branch = { always = no }
 		prerequisite = { focus = uk_india_focus }
-		mutually_exclusive = { focus = ENG_indian_autonomy }
 		available = {
 			if = {
 				limit = { has_dlc = "Together for Victory" }
@@ -5183,6 +5178,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_new_zealand_focus 
+		allow_branch = { always = no }
 		prerequisite = { focus = uk_australia_focus }
 		available = {
 			any_country = {
@@ -5535,23 +5531,9 @@ focus_tree = {
 
 	focus = {
 		id = ENG_indian_autonomy
+		allow_branch = { always = no }
 		prerequisite = { focus = uk_india_focus }
-		mutually_exclusive = { focus = uk_free_india_focus }
 
-		allow_branch = {
-			has_dlc = "Man the Guns"
-			if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
-					}
-				}
-				NOT = {
-					has_completed_focus = ENG_revisit_colonial_policy
-				}
-			}
-		}
 
 		available = { 	
 			RAJ = {
@@ -5714,6 +5696,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_imperial_federation
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_imperial_conference }
 		available = {
 			always = no
@@ -6416,6 +6399,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_every_man_will_do_his_duty
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_global_defense }
 		available = { 
 			
@@ -6439,6 +6423,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_motion_of_no_confidence
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_global_defense }
 		available = { 
 			has_country_leader =  {
@@ -6479,6 +6464,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_no_further_appeasement
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_every_man_will_do_his_duty }
 		prerequisite = { focus = ENG_motion_of_no_confidence }
 		available = { 
@@ -6583,6 +6569,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_secure_the_oil_imports
+		allow_branch = { always = no }
 
 		prerequisite = { focus = ENG_kickstart_the_war_industry }
 
@@ -6662,8 +6649,8 @@ focus_tree = {
 
 	focus = {
 		id = ENG_maintaining_imperial_integrity
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_no_further_appeasement }
-		mutually_exclusive = { focus = ENG_maintaining_the_balance_of_power }
 		available = { 
 			is_subject = no
 		}
@@ -6763,6 +6750,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_enforce_the_naval_treaties
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_maintaining_imperial_integrity }
 		available = { 
 			is_subject = no
@@ -6787,8 +6775,8 @@ focus_tree = {
 
 	focus = {
 		id = ENG_maintaining_the_balance_of_power
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_no_further_appeasement }
-		mutually_exclusive = { focus = ENG_maintaining_imperial_integrity }
 		available = { 
 			is_subject = no
 		}
@@ -6849,6 +6837,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_continental_intervention
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_maintaining_the_balance_of_power }
 		available = { 
 			is_subject = no
@@ -8326,6 +8315,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_royal_malay_regiment_focus
+		allow_branch = { always = no }
 
 		prerequisite = { focus = singapore_focus }
 
@@ -8335,7 +8325,6 @@ focus_tree = {
 		y = 2
 		relative_position_id = singapore_focus
 
-		mutually_exclusive = { focus = ENG_territorial_army_of_malaysia_focus }
 
 		cost = 5
 
@@ -8511,6 +8500,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_sarawakrangers_focus 
+		allow_branch = { always = no }
 
 		prerequisite = { focus = peninsular_focus }
 
@@ -8576,6 +8566,7 @@ focus_tree = {
 
 	focus = {
 		id = hongkong_focus
+		allow_branch = { always = no }
 		prerequisite = { focus = uk_asia_focus }
 		icon = GFX_goal_generic_fortify_city
 		x = 3
@@ -8686,6 +8677,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_south_east_asia_air_command_focus
+		allow_branch = { always = no }
 
 		prerequisite = { focus = hongkong_focus }
 
@@ -8812,6 +8804,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_east_indies_fleet_focus 
+		allow_branch = { always = no }
 
 		prerequisite = { focus = peninsular_focus }
 		prerequisite = { focus = ENG_south_east_asia_air_command_focus }
@@ -11394,6 +11387,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_reclaim_burma
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_imperial_conscription }	
 		available = {
 			is_subject = no
@@ -11420,6 +11414,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_reclaim_the_jewel_in_the_crown
+		allow_branch = { always = no }
 		prerequisite = { focus = ENG_imperial_conscription }	
 		available = {
 			is_subject = no
