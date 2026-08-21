@@ -155,10 +155,10 @@ on_actions = {
 						level = 4
 					}
 				}
-				651 = { 
+				221 = { # Kharkov 
 					add_resource = { 
 						type = coal
-						amount = 78
+						amount = 75
 					}
 				}
 			}
@@ -385,97 +385,93 @@ on_actions = {
 				#	type = arms_factory
 				#	level = 2
 				#}
+				}
 			}
 		}
-
-
-
-
-
-		}
 	}
+} # ON_ACTIONS END HERE, REMOVE IF MORE ARE ADDED LATER, THX
 
-	on_weekly = { 
-		effect = {
+	#on_weekly = { 
+	#	effect = {
 			####  ##### #   # ### #     ### #####  ###  ####  ### ##### ##### ####  
 			#   # #     ## ##  #  #      #    #   #   # #   #  #     #  #     #   # 
 			#   # ####  # # #  #  #      #    #   ##### ####   #    #   ####  #   # 
 			#   # #     #   #  #  #      #    #   #   # #  #   #   #    #     #   # 
 			####  ##### #   # ### ##### ###   #   #   # #   # ### ##### ##### ####
 
-			if = { # No Ethiopia Memes
-				limit = {
-					NOT = { 
-						has_global_flag = fall_of_france
-					} 
-				}
-				550 = {
-					if = { 
-						limit = { 
-							NOT = { 
-								is_demilitarized_zone = no
-							}
-						}
-					} 
-					set_demilitarized_zone = yes
-				}
-				559 = {
-					if = { 
-						limit = {
-							NOT = { 
-								is_demilitarized_zone = no
-							}
-						}
-					}  
-					set_demilitarized_zone = yes
-				}
-				844 = {
-					if = { 
-						limit = {
-							NOT = { 
-								is_demilitarized_zone = no
-							}
-						}
-					}  
-					set_demilitarized_zone = yes
-				}
-			}
+	#		if = { # No Ethiopia Memes 8/18/26 never use flags in on actions unless start up XD
+	#			limit = {
+	#				NOT = { 
+	#					has_global_flag = fall_of_france
+	#				} 
+	#			}
+	#			550 = {
+	#				if = { 
+	#					limit = { 
+	#						NOT = { 
+	#							is_demilitarized_zone = no
+	#						}
+	#					}
+	#				} 
+	#				set_demilitarized_zone = yes
+	#			}
+	#			559 = {
+	#				if = { 
+	#					limit = {
+	#						NOT = { 
+	#							is_demilitarized_zone = no
+	#						}
+	#					}
+	#				}  
+	#				set_demilitarized_zone = yes
+	#			}
+	#			844 = {
+	#				if = { 
+	#					limit = {
+	#						NOT = { 
+	#							is_demilitarized_zone = no
+	#						}
+	#					}
+	#				}  
+	#				set_demilitarized_zone = yes
+	#			}
+	#		}
 
-			if = { # In case italy for some reason joins ww2 before france capitulation
-				limit = {
-					AND = {
-						ITA = { 
-							has_war = yes
-						}
-						has_global_flag = fall_of_france
-					}
-				}
-				550 = {
-					if = { 
-						limit = { 
-							is_demilitarized_zone = yes
-						}
-					} 
-					set_demilitarized_zone = no
-				}
-				559 = {
-					if = { 
-						limit = {
-							is_demilitarized_zone = yes
-						}
-					}  
-					set_demilitarized_zone = no
-				}
-				844 = {
-					if = { 
-						limit = {
-							is_demilitarized_zone = yes
-						}
-					}  
-					set_demilitarized_zone = no
-				}
-			}	
-		}
+	#		if = { # In case italy for some reason joins ww2 before france capitulation
+	#			limit = {
+	#				AND = {
+	#					ITA = { 
+	#						has_war = yes
+	#					}
+	#					has_global_flag = fall_of_france
+	#				}
+	#			}
+	#			550 = {
+	#				if = { 
+	#					limit = { 
+	#						is_demilitarized_zone = yes
+	#					}
+	#				} 
+	#				set_demilitarized_zone = no
+	#			}
+	#			559 = {
+	#				if = { 
+	#					limit = {
+	#						is_demilitarized_zone = yes
+	#					}
+	#				}  
+	#				set_demilitarized_zone = no
+	#			}
+	#			844 = {
+	#				if = { 
+	#					limit = {
+	#						is_demilitarized_zone = yes
+	#					}
+	#				}  
+	#				set_demilitarized_zone = no
+	#			}
+	#		}	
+	#	}
 
 		# ZHM Unused, let's just annex to black nation instead in on_startup.
 
@@ -536,5 +532,4 @@ on_actions = {
 		#		}
 		#	}
 	#	}
-	}
-}
+	#}
