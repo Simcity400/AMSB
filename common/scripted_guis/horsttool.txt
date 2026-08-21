@@ -1286,19 +1286,6 @@ st_country_powers = {
 		}
 	triggers = {
 		observer_click_enabled = { owner = { is_ai = no } NOT = { check_variable = { global.ai_fix_return_country > 0 } } VEN = { is_ai = yes } }
-		# Focus/spirit pickers are not ported to the ZHM rebuild yet - hide their mode buttons.
-		focus_mode_com_visible = { always = no }
-		focus_mode_com_text_visible = { always = no }
-		focus_mode_com_active_visible = { always = no }
-		focus_mode_unc_visible = { always = no }
-		focus_mode_unc_text_visible = { always = no }
-		focus_mode_unc_active_visible = { always = no }
-		spirit_add_mode_visible = { always = no }
-		spirit_add_mode_text_visible = { always = no }
-		spirit_add_mode_active_visible = { always = no }
-		spirit_remove_mode_visible = { always = no }
-		spirit_remove_mode_text_visible = { always = no }
-		spirit_remove_mode_active_visible = { always = no }
 		observer_visible = {}
 		compliance_negative_click_enabled = { check_variable = { ROOT.compl > 0 } }
 		compliance_positive_click_enabled = { check_variable = { ROOT.compl < 100 }  }
