@@ -13,50 +13,20 @@ characters={
 			slot = political_advisor
 			idea_token = ENG_winston_churchill
 			available  = {
-				if = {
-					limit = {
-						original_tag = ENG
+				has_government  = neutrality 
+				always = no 
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
 					}
-					has_government  = neutrality 
-					has_completed_focus  = ENG_the_kings_party 
-					if  = {
-						limit  = {
-							has_dlc = "Man the Guns"
-						}
-						NOT = {
-							has_autonomy_state  = autonomy_supervised_state
-						}
-					}
-				}
-				else_if = {
-					limit = {
-						original_tag = RAJ
-					}
-					OR = {
-						has_government = neutrality
-						has_government = democratic
+					NOT = {
+						has_autonomy_state  = autonomy_supervised_state
 					}
 				}
 			}
 			allowed  = {
-				OR = {
-					AND = {
-						has_dlc = "Man the Guns"
-						original_tag = ENG
-					}
-					AND = {
-						has_dlc = "Graveyard of Empires"
-						original_tag = RAJ
-					}
-				}
-			}
-			visible = {
-				if = {
-					limit = {
-						original_tag = RAJ
-					}
-					NOT = { has_character_flag = RAJ_churchill_as_country_leader_flag }
-				}
+				original_tag  = ENG
+				has_dlc = "Man the Guns"
 			}
 			traits  = {
 				royalist_bulldog 
@@ -66,7 +36,7 @@ characters={
 			}
 		}
 
-		country_leader={ #This country leader role is copied as Non-Aligned if Churchill is sent to RAJ - Changes here should be applied in event GOE_RAJ_loyalist.11
+		country_leader={
 			ideology=conservatism
 			traits = {
 				british_bulldog
@@ -106,7 +76,7 @@ characters={
 			idea_token = ENG_oswald_mosley
 			available  = {
 				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
+				always = no 
 			}
 			allowed  = {
 				original_tag  = ENG
@@ -239,7 +209,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = ENG_eliminate_the_upper_class
+					always = no
 				}
 			}
 			traits = {
@@ -259,25 +229,6 @@ characters={
 			planning_skill=5
 			logistics_skill=3
 			legacy_id=997
-		}
-	}
-
-	ENG_jack_churchill={
-		name = ENG_jack_churchill
-		portraits = {
-			army = {
-				large = GFX_portrait_RAJ_jack_churchill
-				small = GFX_portrait_ENG_jack_churchill_small
-			}
-		}
-		
-		corps_commander={
-			traits={ inspirational_bagpiper }
-			skill=1
-			attack_skill=1
-			defense_skill=1
-			planning_skill=1
-			logistics_skill=1
 		}
 	}
 
@@ -301,7 +252,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = ENG_eliminate_the_upper_class
+					always = no
 				}
 			}
 			
@@ -320,7 +271,7 @@ characters={
 		}
 		
 		field_marshal={
-			traits={ inflexible_strategist trait_cautious media_personality organizer logistics_wizard offensive_doctrine naval_invader }
+			traits={ inflexible_strategist trait_cautious media_personality organizer logistics_wizard offensive_doctrine }
 			skill=4
 			attack_skill=2
 			defense_skill=4
@@ -376,7 +327,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ inflexible_strategist armor_officer politically_connected }
+			traits={ inflexible_strategist armor_officer politically_connected panzer_leader  }
 			skill=4
 			attack_skill=3
 			defense_skill=4
@@ -498,7 +449,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = ENG_eliminate_the_upper_class
+					always = no
 				}
 			}
 			traits = {
@@ -631,7 +582,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = ENG_eliminate_the_upper_class
+					always = no
 				}
 			}
 			traits = {
@@ -725,7 +676,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ harsh_leader armor_officer politically_connected }
+			traits={ harsh_leader armor_officer politically_connected panzer_leader }
 			skill=4
 			attack_skill=4
 			defense_skill=2
@@ -792,7 +743,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = ENG_eliminate_the_upper_class
+					always = no
 				}
 			}
 			traits = {
@@ -1087,10 +1038,10 @@ characters={
 			idea_token = ENG_raymond_briggs
 			ledger = army
 			visible = {
-				has_completed_focus = ENG_eliminate_the_upper_class
+				always = no
 			}
 			available = {
-				has_completed_focus = ENG_eliminate_the_upper_class
+				always = no
 			}
 			allowed = {
 				original_tag = ENG
@@ -1118,7 +1069,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = ENG_eliminate_the_upper_class
+					always = no
 				}
 			}
 			
@@ -1218,7 +1169,7 @@ characters={
 			idea_token = ENG_jfc_fuller
 			ledger = army
 			available = {
-				has_government = fascism
+				has_completed_focus = ENG_adopt_bliztkrieg_tactics
 			}
 			allowed = {
 				original_tag = ENG
@@ -1517,29 +1468,29 @@ characters={
 		}
 	}
 
-	ENG_sholto_douglas={
-		name=ENG_sholto_douglas
-		portraits={
-			army={
-				small="GFX_idea_sholto_douglas"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = sholto_douglas
-			ledger = air
-			allowed = {
-				original_tag = ENG
-			}
-			traits = {
-				air_air_superiority_2
-			}
-			cost = 100
-			ai_will_do = {
-				base = 1
-			}
-		}
-	}
+	#ENG_sholto_douglas={
+	#	name=ENG_sholto_douglas
+	#	portraits={
+	#		army={
+	#			small="GFX_idea_sholto_douglas"
+	#		}
+	#	}
+	#	advisor={
+	#		slot = high_command
+	#		idea_token = sholto_douglas
+	#		ledger = air
+	#		allowed = {
+	#			original_tag = ENG
+	#		}
+	#		traits = {
+	#			air_air_superiority_2
+	#		}
+	#		cost = 100
+	#		ai_will_do = {
+	#			base = 1
+	#		}
+	#	}
+	#}
 
 	ENG_trafford_leigh_mallory={
 		name=ENG_trafford_leigh_mallory
@@ -1605,7 +1556,7 @@ characters={
 			}
 			available = {
 				NOT = {
-					has_completed_focus = ENG_eliminate_the_upper_class
+					always = no
 				}
 			}
 			traits = {
@@ -1694,7 +1645,7 @@ characters={
 						has_dlc = "Man the Guns"
 					}
 					NOT = {
-						has_completed_focus  = ENG_a_change_in_course 
+						always = no 
 					}
 				}
 				if  = {
@@ -1782,7 +1733,7 @@ characters={
 						has_dlc = "Man the Guns"
 					}
 					NOT = {
-						has_completed_focus  = ENG_no_further_appeasement 
+						always = no 
 					}
 					has_government  = democratic 
 				}
@@ -1954,6 +1905,65 @@ characters={
 		}
 	}
 
+	ENG_sylvia_pankhurst={
+		name=ENG_sylvia_pankhurst
+		portraits={
+			army={
+				small="GFX_idea_ENG_sylvia_pankhurst"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = ENG_sylvia_pankhurst
+			available  = {
+				OR = {
+					has_government  = communism 
+					SWE_refuge_for_revolutionaries_trigger = yes
+				}
+			}
+			allowed  = {
+				OR = {
+					AND = {
+						original_tag  = ENG
+						has_dlc = "Man the Guns"
+					}
+					AND = {
+						always = no       
+						has_dlc = "By Blood Alone"
+					}
+
+					AND = {
+						original_tag = SWE
+						has_aat = yes
+					}
+				}
+				
+			}
+			traits  = {
+				red_suffragette 
+			}
+			ai_will_do  = {
+				base = 1
+			}
+			on_add = {
+				owner = {
+					IF = {
+						limit = {
+							has_power_balance = {
+								id = ETH_centralization_balance
+							}
+						}
+						
+						hidden_effect = {
+							ETH_BOP_decentralization_large_effect = yes
+						}
+					}				
+				}
+			}
+		}
+	}
+
 	ENG_david_lloyd_george={
 		name=ENG_david_lloyd_george
 		portraits={
@@ -1966,7 +1976,7 @@ characters={
 			idea_token = ENG_david_lloyd_george
 			available  = {
 				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
+				always = no 
 			}
 			allowed  = {
 				original_tag  = ENG
@@ -2261,7 +2271,7 @@ characters={
 			idea_token = ENG_corgis_1
 			available  = {
 				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
+				always = no 
 				has_country_leader  = {
 					name = "Elizabeth II"
 					ruling_only  = yes 
@@ -2298,7 +2308,7 @@ characters={
 			idea_token = ENG_corgis_2
 			available  = {
 				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
+				always = no 
 				has_country_leader  = {
 					name = "Elizabeth II"
 					ruling_only  = yes 
@@ -2335,7 +2345,7 @@ characters={
 			idea_token = ENG_corgis_3
 			available  = {
 				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
+				always = no 
 				has_country_leader  = {
 					name = "Elizabeth II"
 					ruling_only  = yes 

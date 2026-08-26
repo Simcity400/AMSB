@@ -27035,12 +27035,6 @@ host_tool_focus_category = {
 			GER = { 
 				NOT = { is_justifying_wargoal_against = ROOT }
 			}
-			GER = {
-				has_opinion	= {
-					target = ROOT
-					value > 24
-				}
-			}
 			OR = {
 				is_in_faction = no
 				is_in_faction_with = GER
@@ -65704,6 +65698,10 @@ host_tool_focus_category = {
 							NOT = { has_completed_focus = GER_fate_of_yugoslavia }
 							AND = {
 
+			has_game_rule = {
+				rule = Germany_Fate_of_yugo
+				option = Germany_fate_of_yugo
+			}
 			is_subject = no
 			NOT = { has_war_with = YUG }
 			NOT = { is_in_faction_with = YUG }
@@ -77825,18 +77823,7 @@ host_tool_focus_category = {
 							NOT = { has_completed_focus = GER_the_supreme_leader }
 							AND = {
 
-			surrender_progress < 0.01
-			custom_trigger_tooltip = {
-				tooltip = GER_an_invincible_army_trigger
-				OR = {
-					num_subjects > 5
-					check_variable = { GER_occupied_states_europe > 49 }
-				}
-			}
-			custom_trigger_tooltip = { 
-				tooltip = GER_the_supreme_leader_trigger
-				check_variable = { GER_capitulated_major_countries > 2 }
-			}
+			date > 1943.1.1
 		
 							}
 						}
@@ -189266,6 +189253,46 @@ host_tool_focus_category = {
 			}
 		}
 	}
+	ht_fp_USA_war_plan_gold = {
+		icon = generic_research
+		cost = 0
+		visible = {
+			event_target:ht_focus_state = { owner = { exists = yes } }
+			OR = {
+				AND = {
+					has_country_flag = ht_focus_unc
+					event_target:ht_focus_state = { OWNER = { has_completed_focus = USA_war_plan_gold } }
+				}
+				AND = {
+					has_country_flag = ht_focus_com
+					event_target:ht_focus_state = {
+						OWNER = {
+							has_focus_tree = usa_focus
+							NOT = { has_completed_focus = USA_war_plan_gold }
+						}
+					}
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = { event_target:ht_focus_state = { owner = { exists = yes } } }
+			event_target:ht_focus_state = {
+				owner = {
+					if = {
+						limit = { ROOT = { has_country_flag = ht_focus_unc } }
+						uncomplete_national_focus = { focus = USA_war_plan_gold uncomplete_children = yes refund_political_power = yes }
+					}
+					else = {
+						complete_national_focus = USA_war_plan_gold
+					}
+					save_global_event_target_as = ht_note_a
+				}
+			}
+			if = { limit = { NOT = { has_country_flag = ht_notify_cd } } set_country_flag = { flag = ht_notify_cd days = 1 } news_event = { id = hosttool.73 } }
+			}
+		}
+	}
 	ht_fp_USA_war_plan_gray = {
 		icon = generic_research
 		cost = 0
@@ -194539,6 +194566,58 @@ host_tool_focus_category = {
 			}
 		}
 	}
+	ht_fp_uk_protect_suez = {
+		icon = generic_research
+		cost = 0
+		visible = {
+			event_target:ht_focus_state = { owner = { exists = yes } }
+			OR = {
+				AND = {
+					has_country_flag = ht_focus_unc
+					event_target:ht_focus_state = { OWNER = { has_completed_focus = uk_protect_suez } }
+				}
+				AND = {
+					has_country_flag = ht_focus_com
+					event_target:ht_focus_state = {
+						OWNER = {
+							has_focus_tree = british_focus
+							NOT = { has_completed_focus = uk_protect_suez }
+							AND = {
+
+			447 = {
+				CONTROLLER = {
+					OR = {
+						tag = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
+		
+							}
+						}
+					}
+				}
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = { event_target:ht_focus_state = { owner = { exists = yes } } }
+			event_target:ht_focus_state = {
+				owner = {
+					if = {
+						limit = { ROOT = { has_country_flag = ht_focus_unc } }
+						uncomplete_national_focus = { focus = uk_protect_suez uncomplete_children = yes refund_political_power = yes }
+					}
+					else = {
+						complete_national_focus = uk_protect_suez
+					}
+					save_global_event_target_as = ht_note_a
+				}
+			}
+			if = { limit = { NOT = { has_country_flag = ht_notify_cd } } set_country_flag = { flag = ht_notify_cd days = 1 } news_event = { id = hosttool.73 } }
+			}
+		}
+	}
 	ht_fp_uk_rock_focus = {
 		icon = generic_research
 		cost = 0
@@ -199157,7 +199236,7 @@ host_tool_focus_category = {
 							NOT = { has_completed_focus = wuw_HUN_extensive_licensing_programs }
 							AND = {
 
-
+			always = no
 			IF = {
 				limit = {
 					NOT = {

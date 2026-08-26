@@ -455,9 +455,6 @@ recruit_character = FRA_francois_darlan
 recruit_character = FRA_jeanmarie_charles_abrial
 recruit_character = FRA_jeanpierre_esteva
 recruit_character = FRA_jean_de_laborde
-#recruit_character = FRA_jean_romatet
-#recruit_character = FRA_emile_laure
-#recruit_character = FRA_joseph_doumenc
 # recruit_character = FRA_denis_guillaumat # Has been removed to make way for Charles Maurras, but might be readded
 recruit_character = FRA_philippe_fequant
 recruit_character = FRA_victor_denain
@@ -490,7 +487,6 @@ recruit_character = FRA_felix_gouin
 recruit_character = FRA_paul_baudouin
 recruit_character = FRA_maurice_gauche
 recruit_character = FRA_jacques_duclos
-#recruit_character = FRA_georges_valois
 
 recruit_character = FRA_irene_joliot_curie
 recruit_character = FRA_frederic_joliot_curie
@@ -552,6 +548,12 @@ if = {
 	}
 
 	recruit_character = FRA_rene_nicod
+# AMSB roster restore 2026-08-26: master recruits re-added
+recruit_character = FRA_charles_maurras
+recruit_character = FRA_marcel_bucard
+recruit_character = FRA_marcel_deat
+recruit_character = FRA_maurice_thorez
+recruit_character = FRA_philippe_henriot
 }
 
 ### VARIANTS ###
@@ -1324,3 +1326,6 @@ if = {
 		}
 	}
 }
+
+# AMSB 2026-08-26: SF researched for everyone (owner rule)
+set_technology = { tech_special_forces = 1 }

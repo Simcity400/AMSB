@@ -17,7 +17,11 @@ types = {
 		command_power = 25
 
 		allowed = {
-			has_dlc = "Gotterdammerung"
+			# AMSB 2026-07-26: facility raid targets CTD on hover in 1.19.2 - the engine's
+			# raid_target_map_icon tooltip resolves the facility's special project via
+			# Ref<T>::Get() without a null check, so any facility with no ongoing project
+			# kills the client. Disabled until Paradox guards it. Other raids unaffected.
+			always = no
 		}
 
 		# Raid Type is visible

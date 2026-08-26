@@ -113,10 +113,7 @@ characters={
 				factor  = 10.000
 				modifier  = {
 					is_historical_focus_on  = yes
-					has_game_rule  = {
-						rule  = USA_ai_behavior
-						option  = default
-					}
+					always = no
 					factor  = 0.000
 				}
 				modifier  = {
@@ -155,7 +152,7 @@ characters={
 		advisor={
 			cost = 150
 
-			slot = theorist
+			slot = high_command
 			idea_token = george_patton
 			ledger = army
 				allowed = {
@@ -163,7 +160,7 @@ characters={
 				}
 
 				traits = {
-					mobile_warfare_expert
+					army_armored_2
 				}
 		}
 
@@ -189,7 +186,7 @@ characters={
 			}
 		}
 		advisor={
-			cost = 150
+			cost = 100
 			slot = theorist
 			idea_token = omar_bradley
 			ledger = army
@@ -198,7 +195,7 @@ characters={
 			}
 
 			traits = {
-				superior_firepower_expert
+				military_theorist
 			}
 		}
 
@@ -247,7 +244,7 @@ characters={
 		}
 
 		field_marshal={
-			traits={ trait_cautious armor_officer politically_connected organizer logistics_wizard offensive_doctrine naval_invader }
+			traits={ trait_cautious armor_officer politically_connected organizer logistics_wizard offensive_doctrine }
 			skill=5
 			attack_skill=3
 			defense_skill=3
@@ -372,7 +369,7 @@ characters={
 		}
 
 		field_marshal={
-			traits={ brilliant_strategist career_officer media_personality politically_connected offensive_doctrine naval_invader }
+			traits={ brilliant_strategist career_officer media_personality politically_connected offensive_doctrine }
 			skill=4
 			attack_skill=4
 			defense_skill=3
@@ -767,14 +764,18 @@ characters={
 			allowed = {
 				original_tag = USA
 			}
+			available  = {
+				#has_completed_focus  = USA_reestablish_the_gold_standard
+				#has_completed_focus = USA_war_plan_orange
+			}
 			traits = {
-				navy_chief_reform_2
+				navy_chief_decisive_battle_2
 			}
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
+				}
 			}
-		}
 
 		navy_leader={
 			traits={ navy_career_officer aviation_enthusiast caustic_personality blockade_runner superior_tactician }
@@ -1210,7 +1211,7 @@ characters={
 				original_tag = USA
 			}
 			available = {
-				has_completed_focus = USA_send_lindbergh_to_germany
+				always = no
 			}
 			visible = {
 				has_dlc = "Man the Guns"
@@ -1418,7 +1419,7 @@ characters={
 						has_completed_focus  = USA_reach_out_to_the_ware_group
 					}
 					AND = {
-						#SWE_refuge_for_revolutionaries_trigger = yes
+						SWE_refuge_for_revolutionaries_trigger = yes
 						USA = { has_completed_focus = USA_america_first }
 					}
 				}
@@ -1466,7 +1467,7 @@ characters={
 						has_completed_focus  = USA_reach_out_to_the_ware_group
 					}
 					AND = {
-						#SWE_refuge_for_revolutionaries_trigger = yes
+						SWE_refuge_for_revolutionaries_trigger = yes
 						USA = { has_completed_focus = USA_america_first }
 					}
 				}
@@ -1548,7 +1549,7 @@ characters={
 					limit  = {
 						has_dlc = "Man the Guns"
 					}
-					has_completed_focus  = USA_america_first
+					has_completed_focus  = USA_reestablish_the_gold_standard
 				}
 			}
 			visible  = {
@@ -1557,7 +1558,7 @@ characters={
 			traits  = {
 				captain_of_industry
 			}
-			cost  = 50.000
+			cost  = 0.000
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -1610,12 +1611,12 @@ characters={
 
 	USA_charles_coughlin={
 		name=USA_charles_coughlin
-		portraits={
-			army={
+		portraits	= {
+			army	=	{
 				small="GFX_idea_charles_coughlin"
 			}
 		}
-		advisor={
+		advisor	= {
 			slot = political_advisor
 			idea_token = charles_coughlin
 			allowed  = {
@@ -1661,10 +1662,7 @@ characters={
 				factor  = 10.000
 				modifier  = {
 					is_historical_focus_on  = yes
-					has_game_rule  = {
-						rule  = USA_ai_behavior
-						option  = default
-					}
+					always = no
 					factor  = 0.000
 				}
 				modifier  = {
@@ -1711,14 +1709,14 @@ characters={
 				small="GFX_idea_USA_joseph_mccarthy"
 			}
 		}
-		advisor={
+		advisor	=	{
 			slot = political_advisor
 			idea_token = USA_joseph_mccarthy
 			allowed  = {
 				original_tag  = USA
 			}
 			available  = {
-				has_completed_focus  = USA_empower_the_huac
+				always = no
 			}
 			traits  = {
 				anti_communist_crusader
@@ -1795,7 +1793,7 @@ characters={
 				small=GFX_portrait_USA_henry_stimson_small
 			}
 		}
-		advisor={
+		advisor	= {
 			slot = political_advisor
 			idea_token = USA_henry_stimson
 			allowed  = {
@@ -1803,9 +1801,9 @@ characters={
 			}
 			traits  = {
 				war_industrialist
+					}
+				}
 			}
-		}
-	}
 
 	USA_donald_nelson={
 		name=USA_donald_nelson

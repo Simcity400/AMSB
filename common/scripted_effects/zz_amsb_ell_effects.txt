@@ -1,0 +1,11 @@
+# AMSB port 2026-08-26: effect used by the send_air_to_eng decision
+# (common/decisions/zz_amsb_Ell.txt). Ported from master's hmm_scripted_effects.txt.
+air_to_england = {
+	if = { limit = { tag = USA }
+		send_equipment = { equipment = small_plane_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = small_plane_cas_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = medium_plane_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = medium_plane_fighter_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = large_plane_airframe amount = 100000 target = ENG }
+	}
+}
