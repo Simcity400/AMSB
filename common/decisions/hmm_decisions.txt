@@ -253,7 +253,7 @@ operations = {
 		annex_new_zealand = {
 			# icon = generic_operation
 			allowed = {
-				tag = AST
+				tag = ENG
 			}
 			fire_only_once = yes
 			cost = 0
@@ -278,7 +278,7 @@ operations = {
 			complete_effect = {
 				NZL = {
 					transfer_units_fraction = {
-						target = AST
+						target = ENG
 						size = 1
 						stockpile_ratio = 1
 						army_ratio = 1
@@ -289,7 +289,7 @@ operations = {
 						}
 					}
 				}
-				AST = {
+				ENG = {
 					annex_country = {
 						target = NZL
 						transfer_troops = yes
@@ -298,9 +298,9 @@ operations = {
 				every_state = {
 					limit = {
 						is_core_of = NZL
-						is_controlled_by = AST
+						is_controlled_by = ENG
 					}
-					add_core_of = AST
+					add_core_of = ENG
 				}
 			}
 		}
