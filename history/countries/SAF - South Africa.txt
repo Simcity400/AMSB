@@ -196,6 +196,8 @@ set_popularities = {
 	communism = 5
 }
 
+recruit_character = SAF_j._b._m._hertzog
+recruit_character = SAF_jan_smuts
 recruit_character = SAF_moses_kotane
 recruit_character = SAF_pixley_ka_isaka_seme
 recruit_character = SAF_george_edwin_brink
@@ -213,22 +215,6 @@ recruit_character = SAF_jeannot_de_la_tourier
 recruit_character = SAF_j_f_van_rensburg
 recruit_character = SAF_e_g_jansen
 recruit_character = SAF_sir_patrick_duncan
-
-1939.1.1 = {
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1938.5.18"
-		election_frequency = 60
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 100
-	}
-
-	#retire_character = SAF_j_b_m_hertzog
-	# Took office 5 days after this date
-	recruit_character = SAF_jan_smuts
-# AMSB roster restore 2026-08-26: master recruits re-added
 recruit_character = SAF_Christiaan_du_Toit
 recruit_character = SAF_Dan_Pienaar
 recruit_character = SAF_Evered_Poole
@@ -241,8 +227,22 @@ recruit_character = SAF_j_f_h_Hofmeyer
 recruit_character = SAF_koos_van_rensburg
 recruit_character = SAF_n_c_havenga
 recruit_character = SAF_patrick_duncan
+promote_character = SAF_j._b._m._hertzog
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = democratic
+		last_election = "1938.5.18"
+		election_frequency = 60
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 100
+	}
+
+	# Smuts took office 5 days after this date
 	promote_character = SAF_jan_smuts
-	retire_character = SAF_j_b_m_hertzog
+	retire_character = SAF_j._b._m._hertzog
 }
 
 set_technology = { marines = 1 paratroopers = 1 tech_mountaineers = 1 rangers_tech = 1 }
