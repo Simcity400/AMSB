@@ -3943,7 +3943,12 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			786 = {
+			122 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
 				add_building_construction = {
 					type =  dam
 					level = 1
@@ -7598,139 +7603,6 @@ focus_tree = {
 			}
 		}
 	}
-
-	focus = {
-		id = uk_balkan_strategy
-		prerequisite = { focus = uk_protect_suez }
-		prerequisite = { focus = uk_malta_focus }
-		icon = GFX_goal_generic_improve_relations
-		available = {
-			has_government = democratic
-		}
-		bypass = {
-			NOT = {
-				country_exists = YUG
-				country_exists = GRE
-				country_exists = ROM
-				country_exists = BUL
-				country_exists = HUN
-			}
-		}
-		x = 1
-		y = 1
-		relative_position_id = uk_protect_suez
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		search_filters = {FOCUS_FILTER_POLITICAL}
-		completion_reward = {
-			every_country = {
-				limit = {
-					OR = {
-						tag = YUG
-						tag = GRE
-						tag = ROM
-					}
-					NOT = {
-						OR = {
-							AND = {
-								is_in_faction_with = GER
-								GER = { has_government = fascism }
-							}
-							AND = {
-								is_in_faction_with = ITA
-								ITA = { has_government = fascism }
-							}
-							GRE = { 
-								has_country_flag = GRE_britain_rebuffed
-							}
-						}
-					}
-				}
-				country_event = { id = generic.19 }
-				add_offsite_building = { type = arms_factory level = 2 }
-			}
-			YUG = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_good } }
-			GRE = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_good } }
-			ROM = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_good } }
-			BUL = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_bad } }
-			HUN = { add_opinion_modifier = { target = ENG modifier = balkan_strategy_bad } }
-			hidden_effect = {
-				news_event = {
-					hours = 6 id = news.228
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "Death or Dishonor"
-				}
-				country_event = {
-					id = DOD_yugoslavia.40
-					days = 5
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = uk_sanction_italy_focus
-		available = {
-			ITA = {
-				ENG_focus_available_embargo_sanction = yes
-			}	
-		}
-		bypass = {
-			has_war_with = ITA
-		}
-		prerequisite = { focus = uk_balkan_strategy }
-		icon = GFX_goal_generic_trade
-		x = 0
-		y = 1
-		relative_position_id = uk_balkan_strategy
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			ITA = {
-				add_opinion_modifier = { target = ENG modifier = embargo }
-				add_opinion_modifier = { target = ENG modifier = sanctions_relations } 
-			}
-		}
-	}
-	focus = {
-		id = ENG_war_with_italy
-		available = {
-			has_offensive_war = no
-			ITA = {
-				ENG_focus_available_war = yes
-			}	
-		}
-		bypass = {
-			has_war_with = ITA
-		}
-		will_lead_to_war_with = ITA
-		prerequisite = { focus = uk_sanction_italy_focus }
-		icon = GFX_focus_attack_italy
-		x = 0
-		y = 1
-		relative_position_id = uk_sanction_italy_focus
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = ITA
-				expire = 0
-			} 
-		}
-	}	
 
 	focus = {
 		id = uk_turkey_focus
