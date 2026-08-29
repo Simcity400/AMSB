@@ -634,6 +634,7 @@ recruit_character = ENG_dudley_pound
 recruit_character = ENG_raymond_briggs
 recruit_character = ENG_frederick_bowhill
 recruit_character = ENG_cyril_newall
+recruit_character = ENG_sholto_douglas
 recruit_character = ENG_edward_ellington
 
 
@@ -685,6 +686,7 @@ if = {
 	limit = {
 		has_dlc = "Graveyard of Empires"
 	}
+	recruit_character = ENG_jack_churchill 
 }
 
 
@@ -922,6 +924,46 @@ if = {
 		icon = "GFX_ENG_basic_light_tank_medium"
 	}
 
+	create_equipment_variant = {
+		name = "Vickers 6 ton A"
+		type = light_tank_chassis_0
+		parent_version = 0
+		design_team = mio:ENG_vauxhall_organization
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 3
+			tank_nsb_engine_upgrade = 2
+		}
+		icon = "GFX_ENG_light_BAB_camo"
+		obsolete = yes #export only
+	}
+
+	create_equipment_variant = {
+		name = "Vickers 6 ton B"
+		type = light_tank_chassis_0
+		parent_version = 1
+		design_team = mio:ENG_vauxhall_organization
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 3
+			tank_nsb_engine_upgrade = 2
+		}
+		icon = "GFX_ENG_light_BAB_camo"
+		obsolete = yes #export only
+	}
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
@@ -1779,6 +1821,30 @@ if = {
 				tank_nsb_armor_upgrade = 8
 			}
 			icon = "GFX_ENG_improved_light_tank_medium"
+		}
+
+		create_equipment_variant = {
+			name = "Cruiser Mk. I"
+			type = medium_tank_chassis_1
+			parent_version = 0
+			design_team = mio:ENG_vickers_armstrong_eng_organization
+			show_position = no
+			modules = {
+				main_armament_slot = tank_small_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = secondary_turret_hmg
+				special_type_slot_3 = secondary_turret_hmg
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 3
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_ENG_light_CCA_camo"
 		}
 
 		create_equipment_variant = {

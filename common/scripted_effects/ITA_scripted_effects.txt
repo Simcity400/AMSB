@@ -5483,7 +5483,7 @@ ITA_add_basic_medium_tank_templates = {
 			suspension_type_slot = tank_bogie_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_diesel_engine
-			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_1 = secondary_turret_hmg
 		}
 		upgrades = {
 			tank_nsb_engine_upgrade = 2
@@ -5502,8 +5502,8 @@ ITA_add_basic_medium_tank_templates = {
 			suspension_type_slot = tank_bogie_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_diesel_engine
-			special_type_slot_1 = tank_radio_1
-			special_type_slot_2 = additional_machine_guns
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = tank_radio_1
 		}
 		upgrades = {
 			tank_nsb_engine_upgrade = 2
@@ -5565,8 +5565,8 @@ ITA_add_improved_medium_tank_templates = {
 			suspension_type_slot = tank_bogie_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_diesel_engine
-			special_type_slot_1 = tank_radio_1
-			special_type_slot_2 = additional_machine_guns
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = tank_radio_1
 		}
 		upgrades = {
 			tank_nsb_engine_upgrade = 3
@@ -5585,8 +5585,8 @@ ITA_add_improved_medium_tank_templates = {
 			suspension_type_slot = tank_bogie_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
-			special_type_slot_1 = tank_radio_1
-			special_type_slot_2 = additional_machine_guns
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = tank_radio_1
 		}
 		upgrades = {
 			tank_nsb_engine_upgrade = 4
@@ -5764,6 +5764,39 @@ ITA_add_advanced_heavy_tank_templates = {
 
 ITA_add_il_duce_sh_tank_template_and_production = {
 	#SH template
+	create_equipment_variant = {
+		name = "Il Duce"
+		type = super_heavy_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_super_heavy_cannon
+			turret_type_slot = tank_super_heavy_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = armor_skirts
+			special_type_slot_2 = secondary_turret_small_cannon
+			special_type_slot_3 = secondary_turret_small_cannon
+			special_type_slot_4 = tank_radio_2
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 16
+			tank_nsb_armor_upgrade = 6
+		}
+		icon = "GFX_ITA_super_heavy_tank_medium"
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = super_heavy_tank_chassis_1
+			creator = "ITA"
+			version_name = "Il Duce"
+		}
+
+		requested_factories = 1
+		progress = 0.6
+		efficiency = 50
+	}
 }
 
 ITA_add_modern_musculus_sh_tank_template_and_production = {
@@ -5778,7 +5811,7 @@ ITA_add_modern_musculus_sh_tank_template_and_production = {
 			suspension_type_slot = tank_bogie_suspension
 			armor_type_slot = tank_welded_armor
 			engine_type_slot = tank_gasoline_engine
-			special_type_slot_5 = armor_skirts
+			special_type_slot_1 = armor_skirts
 			special_type_slot_2 = secondary_turret_small_cannon
 			special_type_slot_3 = additional_machine_guns
 			special_type_slot_4 = wet_ammo_storage
@@ -5805,6 +5838,39 @@ ITA_add_modern_musculus_sh_tank_template_and_production = {
 
 ITA_add_hand_of_god_sh_tank_template_and_production = {
 	#SH template
+	create_equipment_variant = {
+		name = "The Hand of God"
+		type = super_heavy_tank_artillery_chassis_1
+		parent_version = 0
+		modules = {
+			turret_type_slot = tank_super_heavy_three_man_tank_turret
+			main_armament_slot = tank_rocket_launcher_2
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = armor_skirts
+			special_type_slot_2 = secondary_turret_small_cannon
+			special_type_slot_3 = secondary_turret_small_cannon
+			special_type_slot_4 = extra_ammo_storage
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 6
+		}
+		icon = "GFX_ITA_super_heavy_tank_medium"
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = super_heavy_tank_artillery_chassis_1
+			creator = "ITA"
+			version_name = "The Hand of God"
+		}
+
+		requested_factories = 1
+		progress = 0.6
+		efficiency = 50
+	}
 }
 
 

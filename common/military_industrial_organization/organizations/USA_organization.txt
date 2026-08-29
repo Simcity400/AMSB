@@ -289,33 +289,6 @@ USA_army_ordnance_department_organization = {
 	}
 }
 
-# AMSB restore 2026-08-26: Fisher Tank Arsenal (deletion reversed a documented AMSB fix)
-USA_fisher_tank_arsenal_organization = {
-	# AMSB 2026-06-13: restored USA infantry/heavy tank designer. MSB defined the infantry-tank
-	# Army Ordnance Dept under the SAME token as the medium-tank one (Duplicate database id); the
-	# 1.18.3 dedup kept medium and dropped infantry/heavy coverage. Re-added here under a unique
-	# token + trait so both designers coexist without re-triggering the duplicate-id crash.
-	include = generic_infantry_tank_organization
-	icon = GFX_idea_army_ordnance_department
-	allowed = {
-		tag = USA
-	}
-
-	add_trait = {
-		token = USA_mio_trait_infantry_tank_armor
-		name = USA_mio_trait_infantry_tank_armor
-		icon = GFX_generic_mio_department_icon_tank_medium_tank_armor
-		special_trait_background = yes
-
-		position = { x=0 y=0 }
-
-		equipment_bonus = {
-			breakthrough = 0.1
-			defense = 0.05
-		}
-	}
-}
-
 USA_detroit_arsenal_organization = {
 	name = detroit_arsenal
 	include = generic_tank_organization
@@ -915,6 +888,10 @@ USA_north_american_aviation_organization = {
 
 	initial_trait = {
 		name = USA_mio_trait_light_long_range_aircraft
+
+		production_bonus = {
+			production_cost_factor = -0.05
+		}
 	}
 	
 	add_trait = {

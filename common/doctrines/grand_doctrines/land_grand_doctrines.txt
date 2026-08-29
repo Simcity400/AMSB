@@ -18,10 +18,6 @@ new_mobile_warfare = {
             factor = 0
             is_major = no
         }
-        modifier = {
-            factor = -10
-            tag = GER
-        }
     }
 
     tracks = {
@@ -32,7 +28,6 @@ new_mobile_warfare = {
     }
 
     # EFFECTS
-	additional_brigade_column_size = 1
 	planning_speed = 0.20
 	army_speed_factor = 0.10
 	enable_tactic = tactic_unexpected_thrust
@@ -80,7 +75,11 @@ new_mobile_warfare = {
         }
         {
             #Armor
+	        additional_brigade_column_size = 1
             enable_tactic = tactic_blitz
+            category_army = {
+                breakthrough = 0.15
+            }
 
             effect = {
                 if = {
@@ -141,10 +140,6 @@ superior_firepower = {
             factor = 0
             is_major = no
         }
-        modifier = {
-            factor = 100
-            tag = GER
-        }
     }
 
     tracks = {
@@ -162,8 +157,6 @@ superior_firepower = {
     category_support_artillery = {
         soft_attack = 0.05
     }
-	additional_brigade_column_size = 1
-
 
 
     milestones = {
@@ -188,6 +181,7 @@ superior_firepower = {
         }
         {
             #Artillery/Support
+            additional_brigade_column_size = 1
             category_support_battalions = {
                 max_organisation = 10
             }
@@ -289,11 +283,11 @@ grand_battleplan = {
     
     max_planning = 0.1
     command_power_gain = 0.25
-	additional_brigade_column_size = 1
 
     milestones = {
         {
             #Infantry 
+            additional_brigade_column_size = 1
             enable_tactic = tactic_elastic_defense
             max_dig_in_factor = 0.05
 
@@ -402,7 +396,6 @@ mass_assault = {
     # EFFECTS
     no_supply_grace = 48
     out_of_supply_factor = -0.10
-	additional_brigade_column_size = 1
     enable_tactic = tactic_relentless_assault
     
 
@@ -410,6 +403,7 @@ mass_assault = {
         {
             #Infantry
             enable_tactic = tactic_human_wave_tactics
+            additional_brigade_column_size = 1
             category_regimental_support_battalions = {
                 supply_consumption = -0.02
                 default_morale = 0.1
@@ -433,7 +427,7 @@ mass_assault = {
             #Artillery/Support
             enable_tactic = tactic_elastic_defense
             out_of_supply_factor = -0.05
-            minimum_training_level = -0.05
+            land_reinforce_rate = 0.02
 
             effect = {
                 if = {
@@ -472,7 +466,7 @@ mass_assault = {
             #Operations
             enable_tactic = tactic_backhand_blow
             weekly_casualties_war_support = 0.001
-            minimum_training_level = -0.05
+            minimum_training_level = -0.1
             dig_in_speed_factor = 0.05
 
             effect = {

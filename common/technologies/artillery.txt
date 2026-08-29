@@ -99,6 +99,9 @@ technologies = {
 		category_self_propelled_artillery = {
 			soft_attack = 0.15
 		}
+		field_guns = {
+			soft_attack = 0.05
+		}
 
 		enable_equipment_modules = {
 			tank_small_cannon_2
@@ -238,7 +241,10 @@ technologies = {
 			soft_attack = 0.1
 		}
 		category_self_propelled_artillery = {
-			soft_attack = 0.1
+			soft_attack = 0.05
+		}
+		field_guns = {
+			soft_attack = 0.05
 		}
 
 		path = {
@@ -299,12 +305,14 @@ technologies = {
 			soft_attack = 0.1
 		}
 		category_self_propelled_artillery = {
+			soft_attack = 0.025
+		}
+		field_guns = {
 			soft_attack = 0.05
 		}
 
 		enable_equipment_modules = {
 			tank_medium_howitzer_2
-			tank_medium_cannon_2
 		}
 		path = {
 			leads_to_tech = artillery4
@@ -350,6 +358,10 @@ technologies = {
 
 		armored_car = {
 			soft_attack = 0.1
+		}
+
+		enable_equipment_modules = {
+			tank_medium_cannon_2
 		}
 
 		path = {
@@ -405,11 +417,13 @@ technologies = {
 			soft_attack = 0.1
 		}
 		category_self_propelled_artillery = {
+			soft_attack = 0.025
+		}
+		field_guns = {
 			soft_attack = 0.05
 		}
 
 		enable_equipment_modules = {
-			tank_medium_cannon_3
 			auto_loader
 			tank_heavy_howitzer
 		}
@@ -480,9 +494,10 @@ technologies = {
 			rocket_artillery_equipment_1
 		}
 
-#		enable_subunits = {
-#			rocket_artillery_brigade
-#		}
+		enable_subunits = {
+			rocket_battery
+			#rocket_artillery_brigade
+		}
 
 		enable_equipment_modules = {
 			tank_rocket_launcher
@@ -533,7 +548,7 @@ technologies = {
 		}
 
 		rocket_battery = {
-			soft_attack = 0.15
+			soft_attack = 0.10
 		}
 
 		path = {
@@ -572,7 +587,7 @@ technologies = {
 			soft_attack = 0.15
 		}
 		rocket_battery = {
-			soft_attack = 0.15
+			soft_attack = 0.10
 		}
 
 		path = {
@@ -658,8 +673,7 @@ technologies = {
 			tank_heavy_cannon
 			lc_light_anti_air_battery #Module for Land Cruiser
 		}
-		static_anti_air_damage_factor = 0.10
-		tech_air_damage_factor = -0.02
+
 		enable_building = {
 			building = anti_air_building
 			level = 5
@@ -685,14 +699,6 @@ technologies = {
 
 		ai_will_do = {
 			factor = 1
-
-			modifier = {
-				factor = 0.5
-
-				OR = {
-					tag = CHI
-				}
-			}
 			modifier = {
 				factor = 2
 				date > "1937.1.1"
@@ -718,23 +724,27 @@ technologies = {
 	}
 
 	antiair1 = {
-
-		anti_air = {
+		category_anti_air = {
 			air_attack = 0.1
 		}
-		anti_air_brigade = {
-			air_attack = 0.1
-		}
-		anti_air_battery = {
-			air_attack = 0.1
-		}
-		mot_anti_air_brigade = {
-			air_attack = 0.1
-		}
+		#anti_air = {
+		#	air_attack = 0.1
+		#}
+		#anti_air_brigade = {
+		#	air_attack = 0.1
+		#}
+		#anti_air_battery = {
+		#	air_attack = 0.05
+		#}
+		#mot_anti_air_brigade = {
+		#	air_attack = 0.1
+		#}
 		category_self_propelled_anti_air = {
 			air_attack = 0.15
 		}
-		static_anti_air_damage_factor = 0.10
+		category_self_propelled_anti_air_regimental_support = {
+			air_attack = 0.05
+		}			
 		tech_air_damage_factor = -0.02
 
 		path = {
@@ -785,7 +795,6 @@ technologies = {
 			hard_attack = 0.1
 		}
 		static_anti_air_damage_factor = 0.1
-		tech_air_damage_factor = -0.02
 
 		enable_equipment_modules = {
 			ship_anti_air_3
@@ -840,25 +849,31 @@ technologies = {
 
 	antiair3 = {
 
-		anti_air = {
+		category_anti_air = {
 			air_attack = 0.1
 		}
-		anti_air_brigade = {
-			air_attack = 0.1
-		}
-		anti_air_battery = {
-			air_attack = 0.1
-		}
-		mot_anti_air_brigade = {
-			air_attack = 0.1
-		}
+		#anti_air = { # THIS CATEGORY NOW INCLUDES THE FOLLOWING UNITS
+		#	air_attack = 0.1
+		#}
+		#anti_air_brigade = {
+		#	air_attack = 0.1
+		#}
+		#anti_air_battery = {
+		#	air_attack = 0.05
+		#}
+		#mot_anti_air_brigade = {
+		#	air_attack = 0.1
+		#}
 		category_self_propelled_anti_air = {
 			air_attack = 0.1
 		}
+		category_self_propelled_anti_air_regimental_support = {
+			air_attack = 0.05
+		}		
 		enable_equipment_modules = {
 			tank_heavy_cannon_2
 		}
-		static_anti_air_damage_factor = 0.1
+
 		tech_air_damage_factor = -0.02
 
 		path = {
@@ -901,23 +916,28 @@ technologies = {
 	}
 
 	antiair4 = {
-
-		anti_air = {
+		category_anti_air = {
 			air_attack = 0.1
 		}
-		anti_air_brigade = {
-			air_attack = 0.1
-		}
-		anti_air_battery = {
-			air_attack = 0.1
-		}
-		mot_anti_air_brigade = {
-			air_attack = 0.1
-		}
+		#anti_air = {
+		#	air_attack = 0.1
+		#}
+		#anti_air_brigade = {
+		#	air_attack = 0.1
+		#}
+		#anti_air_battery = {
+		#	air_attack = 0.05
+		#}
+		#mot_anti_air_brigade = {
+		#	air_attack = 0.1
+		#}
 		category_self_propelled_anti_air = {
 			air_attack = 0.05
 		}
-		static_anti_air_damage_factor = 0.1
+		category_self_propelled_anti_air_regimental_support = {
+			air_attack = 0.05
+		}
+
 		tech_air_damage_factor = -0.02
 
 		path = {
@@ -968,13 +988,11 @@ technologies = {
 			hard_attack = 0.1
 		}
 		static_anti_air_damage_factor = 0.1
-		tech_air_damage_factor = -0.02
 
 		enable_equipment_modules = {
 			ship_anti_air_4
 			tank_heavy_cannon_3
 			tank_anti_air_cannon_3
-			tank_medium_cannon_3
 			auto_loader
 			lc_heavy_anti_air_platform #Module for Land Cruiser
 		}
@@ -1062,15 +1080,7 @@ technologies = {
 
 		ai_will_do = {
 			base = 1
-
-			modifier = {
-				factor = 0.2
-
-				OR = {
-					tag = CHI
-				
-				}
-			}
+			
 			modifier = {
 				tag = JAP
 				not = {
@@ -1128,8 +1138,13 @@ technologies = {
 		}
 
 		category_tank_destroyers = {
-			hard_attack = 0.15
-			ap_attack = 0.2
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+
+		category_tank_destroyer_regimental_support = {
+			hard_attack = 0.025
+			ap_attack = 0.05
 		}
 
 		enable_equipment_modules = {
@@ -1194,10 +1209,10 @@ technologies = {
 
 	antitank2 = {
 
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
+		#mot_anti_tank_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
 		armored_car = {
 			ap_attack = 0.1
 		}	
@@ -1207,8 +1222,6 @@ technologies = {
 		enable_equipment_modules = {
 			tank_heavy_cannon_2
 			tank_buster_2
-			tank_medium_cannon_2
-			tank_high_velocity_cannon_2
 		}
 		path = {
 			leads_to_tech = antitank3
@@ -1276,16 +1289,23 @@ technologies = {
 	}
 
 	antitank3 = {
+		enable_equipment_modules = {
+			tank_medium_cannon_2
+		}
+		
 		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
 
 		category_tank_destroyers = {
-			hard_attack = 0.1
+			hard_attack = 0.05
 			ap_attack = 0.05
 		}
-
+		category_tank_destroyer_regimental_support = {
+			hard_attack = 0.025
+			ap_attack = 0.05
+		}
 		path = {
 			leads_to_tech = antitank4
 			research_cost_coeff = 1
@@ -1359,16 +1379,22 @@ technologies = {
 	}
 
 	antitank4 = {
+		enable_equipment_modules = {
+			tank_high_velocity_cannon_2
+		}
+		
 		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
-
 		category_tank_destroyers = {
 			hard_attack = 0.05
 			ap_attack = 0.05
 		}
-
+		category_tank_destroyer_regimental_support = {
+			hard_attack = 0.025
+			ap_attack = 0.05
+		}
 		path = {
 			leads_to_tech = antitank5
 			research_cost_coeff = 1
@@ -1437,7 +1463,6 @@ technologies = {
 			tank_high_velocity_cannon_3
 			tank_heavy_cannon_3
 			auto_loader
-			tank_medium_cannon_3
 			lc_heavy_high_velocity_cannons #Module for Land Cruiser
 		}
 
@@ -1505,39 +1530,50 @@ technologies = {
 		allow = {
 			always = no
 		}
-
-		anti_tank = {
+		category_anti_tank = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
-		anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
+		category_tank_destroyers = {
+			hard_attack = 0.05
+			ap_attack = 0.05
 		}
-		mot_anti_tank_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
+		category_tank_destroyer_regimental_support = {
+			hard_attack = 0.025
+			ap_attack = 0.05
 		}
-		light_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		medium_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		heavy_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		super_heavy_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
-		modern_tank_destroyer_brigade = {
-			hard_attack = 0.1
-			ap_attack = 0.1
-		}
+		#anti_tank = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
+		#anti_tank_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
+		#mot_anti_tank_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
+		#light_tank_destroyer_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
+		#medium_tank_destroyer_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
+		#heavy_tank_destroyer_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
+		#super_heavy_tank_destroyer_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
+		#modern_tank_destroyer_brigade = {
+		#	hard_attack = 0.1
+		#	ap_attack = 0.1
+		#}
 
 		categories = {
 			cat_anti_tank
@@ -1714,7 +1750,10 @@ technologies = {
 			soft_attack = 0.2
 		}
 		category_self_propelled_artillery = {
-			soft_attack = 0.1
+			soft_attack = 0.05
+		}
+		field_guns = {
+			soft_attack = 0.05
 		}
 
 		force_use_small_tech_layout = yes
@@ -1872,6 +1911,9 @@ technologies = {
 			ap_attack = 0.15
 		}
 		category_tank_destroyers = {
+			ap_attack = 0.05
+		}
+		category_tank_destroyer_regimental_support = {
 			ap_attack = 0.05
 		}
 

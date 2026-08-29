@@ -2856,19 +2856,8 @@ country_event = {
 
 	fire_only_once = yes
 
-	immediate = {
-		hidden_effect = {
-			if = {
-				limit = { 
-					NOT = { has_completed_focus = BUL_the_fatherland_front }
-				}
-				add_popularity = {
-					ideology = communism
-					popularity = 0.2
-				}
-				set_country_flag = BUL_fatherland_front_formed_flag
-			}
-		}
+	immediate = { 
+
 	}
 
 	option = { #When formed by the player
@@ -2887,44 +2876,15 @@ country_event = {
 		trigger = {
 			NOT = { has_completed_focus = BUL_the_fatherland_front }
 		}
-		effect_tooltip = {
-			add_popularity = {
-				ideology = communism
-				popularity = 0.2
-			}
+		effect_tooltip = { 
+			
 		}
 		set_party_name = {
 			ideology = communism
 			long_name = BUL_fatherland_front_party_long
 			name = BUL_fatherland_front_party
 		}
-		add_ideas = BUL_fatherland_front_negative
-		activate_mission_tooltip = BUL_ff_impending_coup_mission
-		random_unit_leader = {
-			limit = {
-				has_id = 1203 #Hadzhipetkov
-			}
-			add_unit_leader_trait = trait_BUL_ff_sympathizer
-		}
-
-		random_list = {
-			50 = {
-				random_unit_leader = {
-					limit = {
-						has_id = 1202 #Popov
-					}
-					add_unit_leader_trait = trait_BUL_ff_sympathizer
-				}
-			}
-			50 = {
-				random_unit_leader = {
-					limit = {
-						has_id = 1211 #Dotsev
-					}
-					add_unit_leader_trait = trait_BUL_ff_sympathizer
-				}
-			}
-		}
+		
 	}
 }
 

@@ -20,7 +20,7 @@ if = {
 starting_train_buffer = 1.5
 
 set_research_slots = 4
-set_stability = 0.6
+set_stability = 0.7 # ZHM was 0.6, adjusted for Ethiopia war events.
 IF = {
 	limit = {
 		has_dlc = "Gotterdammerung"
@@ -280,7 +280,6 @@ set_variable = { ITA_ra_sp_air_intercontinental_bomber_speed_factor = 0 }
 set_variable = { ITA_ra_sp_air_mothership_aircraft_speed_factor = 0 }
 
 # AMSB: Italy has no Regia Aeronautica spirit; it shares the German air spirit instead.
-# scope = GER makes it read Germany's GER_military_air_* variables, so every German air focus upgrade applies to Italy too. (AMSB master 295a9200 / 747ad7fb)
 add_dynamic_modifier = { modifier = GER_airforce_modifier scope = GER }
 
 
@@ -772,6 +771,7 @@ recruit_character = ITA_amedeo_guillet
 recruit_character = ITA_annibale_bergonzoli
 recruit_character = ITA_hamid_idris_awate
 recruit_character = ITA_ibrahim_farag_mohammed
+recruit_character = ITA_mario_ricci
 recruit_character = ITA_norma_barbolini
 recruit_character = ITA_luigi_longo
 recruit_character = ITA_ada_gobetti
@@ -854,6 +854,10 @@ recruit_character = ITA_abba_jofir_doppleganger
 recruit_character = ITA_hailu_tekle_haymanot_doppleganger
 recruit_character = ITA_seyoum_mengesha_doppleganger
 
+recruit_character = ITA_robert_longhi
+recruit_character = ITA_mario_castoldi
+recruit_character = ITA_giovanni_giorgi
+recruit_character = ITA_filippo_bonfiglietti
 recruit_character = ITA_curio_bernardis
 
 

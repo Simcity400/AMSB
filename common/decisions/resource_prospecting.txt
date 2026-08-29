@@ -8481,7 +8481,7 @@ prospect_for_resources = {
 		icon = oil
 
 		allowed = {
-			always = no
+			
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -8496,7 +8496,10 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			always = no
+			has_game_rule = { 
+				rule = axis_fuel_spirit
+				option = off
+			}
 			owns_state = 76
 			controls_state = 76
 			76 = {
@@ -8537,7 +8540,6 @@ prospect_for_resources = {
 		allowed = {
 			original_tag = HUN
 			has_dlc = "Gotterdammerung"
-			always = no
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -8546,7 +8548,10 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			always = no
+			has_game_rule = { 
+				rule = axis_fuel_spirit
+				option = off
+			}
 			original_tag = HUN
 			owns_state = 155
 			controls_state = 155

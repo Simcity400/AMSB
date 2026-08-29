@@ -105,5 +105,4 @@ NDefines.NMapMode.SUPPLY_MAP_MODE_REACH_COLOR = {
 	}
 	
 	
-
-	
+NDefines_Graphics.NGraphics.MAX_MESHES_LOADED_PER_FRAME = 5 -- zhm specific

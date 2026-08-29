@@ -105,6 +105,19 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 		limit = {
 			has_game_rule = {
 				rule = allow_release_nations
+				option = BLOCKED
+			}
+			is_debug = no # Allow us to release nations if we are in debug for save game analysis after the game is over
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_RELEASE_NATIONS_BLOCKED_DESC
+			always = no
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_release_nations
 				option = FREE
 			}
 			OR = {

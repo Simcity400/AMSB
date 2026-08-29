@@ -13,7 +13,6 @@ mobile_infantry = {
 
     ai_will_do = { 
         base = 1
-        
         modifier = {
             factor = 0.5
             is_major = no
@@ -48,6 +47,7 @@ mobile_infantry = {
         combined_arms_planning = {
             category_all_infantry = {
                 max_organisation = 10
+                soft_attack = 0.1
                 maximum_speed = 0.05
             }
         }
@@ -64,7 +64,7 @@ mobile_infantry = {
         delegated_authority = {
             category_vehicle_infantry = {
                 default_morale = 0.1
-                soft_attack = 0.1
+                breakthrough = 0.1
             }
         }
         maneuver_warfare = {
@@ -174,11 +174,8 @@ large_unit_tactics = {
                 original_tag = SOV
                 original_tag = CHI
                 original_tag = JAP
+                original_tag = GER
             }
-        }
-        modifier = {
-            factor = 100
-            tag = GER
         }
         modifier = {
             factor = 0.5
@@ -195,7 +192,7 @@ large_unit_tactics = {
    
     #OTHER BASE REWARDS
     
-    category_all_infantry = {
+    category_light_infantry = {
         supply_consumption = -0.01
     }
 
@@ -218,7 +215,7 @@ large_unit_tactics = {
         }
         large_front_offensive = {
         #4
-            category_all_infantry = {
+            category_light_infantry = {
                 max_organisation = 10
                 soft_attack = 0.1
             }
@@ -729,7 +726,7 @@ peoples_war = {
     xp_cost = 50
     xp_type = army
 
-    available = {
+    available = { 
         has_government = communism
     }
     visible = {
@@ -738,7 +735,7 @@ peoples_war = {
     ai_will_do = {
 
         base = 1
-       
+        
         modifier = {
             factor = 2
             is_major = no

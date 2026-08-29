@@ -5,19 +5,7 @@ ideas = {
 				always = no
 			}
 			cancel = {
-				OR = {
-					has_war = yes
-					AND = {
-						tag = SPR
-						any_country = {
-							has_volunteers_amount_from = {
-								tag = SPR
-								count > 0
-							} 
-						}
-						
-					}
-				}
+				has_war = yes
 			}
 			removal_cost = -1
 			picture = generic_infantry_bonus
@@ -45,15 +33,15 @@ ideas = {
 			modifier = {
 			}
 			on_remove = {
-					add_to_war = {
-						targeted_alliance = GER
-						enemy = ENG
-						hostility_reason = asked_to_join
-					}
+				add_to_war = {
+					targeted_alliance = GER
+					enemy = ENG
+					hostility_reason = asked_to_join
+				}
 			}
-			}
+		}
 
-			no_tradebacks = {
+		no_tradebacks = {
 			cancel = {
 				GER = {
 					has_war = yes
@@ -82,12 +70,6 @@ ideas = {
 				production_speed_arms_factory_factor = -0.2
 			} 
 		}
-		axis_fuel = {
-            picture = generic_stockpile_fuel
-            modifier = {
-                base_fuel_gain = 3122
-            }
-        }
 
 		ai_idea = {
 			cancel = {
@@ -183,9 +165,7 @@ ideas = {
 			removal_cost = -1
 			picture = generic_goods_red_bonus
 			modifier = {
-				trade_laws_cost_factor = 10000
-				conversion_cost_civ_to_mil_factor = 100
-				conversion_cost_mil_to_civ_factor = 100
+				trade_laws_cost_factor = 1000
 				ai_license_acceptance = -1000
 			}
 			
@@ -207,7 +187,7 @@ ideas = {
 			removal_cost = -1
 			picture = generic_goods_red_bonus
 			modifier = {
-				consumer_goods_factor = 100
+				consumer_goods_expected_value = 1
 				industrial_capacity_factory = -10
 				production_factory_max_efficiency_factor = -10
 				industrial_capacity_dockyard = -10

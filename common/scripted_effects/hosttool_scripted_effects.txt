@@ -305,6 +305,7 @@ generic_bonus_2y = {
 		category = cat_ship_light_battery
 		category = cat_ship_medium_battery
 		category = cat_ship_heavy_battery
+		#category = heavy_artillery
 		category = plane_modules_tech
 		category = cat_air_guns
 		category = cat_air_engine
@@ -656,63 +657,29 @@ naval_bonus_2y = {
     }
 }
 
-# Host tool: clears every wargoal type in BOTH directions between event_target:ht_wg_a and event_target:ht_wg_b
-ht_clear_wargoals_both = {
-	event_target:ht_wg_a = {
-		event_target:ht_wg_b = {
-			PREV = {
-				remove_wargoal = { type = annex_everything target = PREV }
-				remove_wargoal = { type = take_state target = PREV }
-				remove_wargoal = { type = take_state_focus target = PREV }
-				remove_wargoal = { type = take_core_state target = PREV }
-				remove_wargoal = { type = take_claimed_state target = PREV }
-				remove_wargoal = { type = puppet_wargoal_focus target = PREV }
-				remove_wargoal = { type = topple_government target = PREV }
-				remove_wargoal = { type = liberate_wargoal target = PREV }
-				remove_wargoal = { type = independence_wargoal target = PREV }
-				remove_wargoal = { type = civil_war target = PREV }
+#Country scope
+ROOT_inherit_current_scope_wars_effect = {
+	custom_effect_tooltip = ROOT_inherit_current_scope_wars_effect
+	hidden_effect = {
+		every_country = {
+			limit = {
+				has_defensive_war_with = PREV
 			}
-			remove_wargoal = { type = annex_everything target = PREV }
-			remove_wargoal = { type = take_state target = PREV }
-			remove_wargoal = { type = take_state_focus target = PREV }
-			remove_wargoal = { type = take_core_state target = PREV }
-			remove_wargoal = { type = take_claimed_state target = PREV }
-			remove_wargoal = { type = puppet_wargoal_focus target = PREV }
-			remove_wargoal = { type = topple_government target = PREV }
-			remove_wargoal = { type = liberate_wargoal target = PREV }
-			remove_wargoal = { type = independence_wargoal target = PREV }
-			remove_wargoal = { type = civil_war target = PREV }
+			ROOT = { declare_war_on = { target = PREV type = annex_everything } }
+		}
+		every_country = {
+			limit = {
+				has_offensive_war_with = PREV
+			}
+			declare_war_on = { target = ROOT type = annex_everything }
 		}
 	}
 }
+on_daily = {
 
-# State scope; ROOT.compl is the host-tool value selected in the scripted GUI.
-ht_set_compliance_from_root_value = {
-	if = { limit = { check_variable = { ROOT.compl < 5 } } set_compliance = 0 }
-	else_if = { limit = { check_variable = { ROOT.compl < 15 } } set_compliance = 10 }
-	else_if = { limit = { check_variable = { ROOT.compl < 25 } } set_compliance = 20 }
-	else_if = { limit = { check_variable = { ROOT.compl < 35 } } set_compliance = 30 }
-	else_if = { limit = { check_variable = { ROOT.compl < 45 } } set_compliance = 40 }
-	else_if = { limit = { check_variable = { ROOT.compl < 55 } } set_compliance = 50 }
-	else_if = { limit = { check_variable = { ROOT.compl < 65 } } set_compliance = 60 }
-	else_if = { limit = { check_variable = { ROOT.compl < 75 } } set_compliance = 70 }
-	else_if = { limit = { check_variable = { ROOT.compl < 85 } } set_compliance = 80 }
-	else_if = { limit = { check_variable = { ROOT.compl < 95 } } set_compliance = 90 }
-	else = { set_compliance = 100 }
 }
 
-# State scope; ROOT.rest is the host-tool value selected in the scripted GUI.
-ht_set_resistance_from_root_value = {
-	if = { limit = { check_variable = { ROOT.rest < 5 } } set_resistance = 0 }
-	else_if = { limit = { check_variable = { ROOT.rest < 15 } } set_resistance = 10 }
-	else_if = { limit = { check_variable = { ROOT.rest < 25 } } set_resistance = 20 }
-	else_if = { limit = { check_variable = { ROOT.rest < 35 } } set_resistance = 30 }
-	else_if = { limit = { check_variable = { ROOT.rest < 45 } } set_resistance = 40 }
-	else_if = { limit = { check_variable = { ROOT.rest < 55 } } set_resistance = 50 }
-	else_if = { limit = { check_variable = { ROOT.rest < 65 } } set_resistance = 60 }
-	else_if = { limit = { check_variable = { ROOT.rest < 75 } } set_resistance = 70 }
-	else_if = { limit = { check_variable = { ROOT.rest < 85 } } set_resistance = 80 }
-	else_if = { limit = { check_variable = { ROOT.rest < 95 } } set_resistance = 90 }
-	else = { set_resistance = 100 }
+leave_the_league_of_nations = {
+	custom_effect_tooltip = leave_the_league_of_nations_tt
+	hidden_effect = { remove_ideas = league_of_nations_member_idea }
 }
-
