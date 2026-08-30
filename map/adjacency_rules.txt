@@ -65,14 +65,23 @@ adjacency_rule =
 {
 	name = "GIBRALTAR_STRAIT"
 
-	# Italy always uses the enemy profile below, even when it controls every
-	# required province. All other countries, including the UK, use the friend
-	# profile so only the Italian surface fleet is barred.
+	# When enabled by game rule, Italy uses the enemy profile even if it controls
+	# every prerequisite. Other countries, including the UK, remain unrestricted.
 	is_enemy = {
 		original_tag = ITA
+		has_game_rule = {
+			rule = amsb_italian_fleet_mediterranean_lock
+			option = restricted
+		}
 	}
 	is_friend = {
-		NOT = { original_tag = ITA }
+		OR = {
+			NOT = { original_tag = ITA }
+			has_game_rule = {
+				rule = amsb_italian_fleet_mediterranean_lock
+				option = unrestricted
+			}
+		}
 	}
 
 	contested =
@@ -393,13 +402,23 @@ adjacency_rule =
 {
 	name = "BAB_EL_MANDEB_STRAIT"
 
-	# As at Gibraltar, Italy is always treated as an enemy while every other
-	# country is treated as a friend. This blocks Italian surface ships only.
+	# This uses the same game rule as Gibraltar. Only Italian surface ships are
+	# restricted; submarines and every other country's navy may pass.
 	is_enemy = {
 		original_tag = ITA
+		has_game_rule = {
+			rule = amsb_italian_fleet_mediterranean_lock
+			option = restricted
+		}
 	}
 	is_friend = {
-		NOT = { original_tag = ITA }
+		OR = {
+			NOT = { original_tag = ITA }
+			has_game_rule = {
+				rule = amsb_italian_fleet_mediterranean_lock
+				option = unrestricted
+			}
+		}
 	}
 
 	contested =
