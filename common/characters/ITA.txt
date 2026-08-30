@@ -178,12 +178,12 @@ characters = {
 		}
 
 		field_marshal = {
-			traits = { organizer trait_cautious politically_connected hill_fighter desert_fox infantry_leader }
-			skill = 6
-			attack_skill = 4
-			defense_skill = 5
-			planning_skill = 3
-			logistics_skill = 8
+			traits = { trait_cautious politically_connected offensive_doctrine desert_fox }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
 			legacy_id = 0
 			visible = { has_government = fascism }
 		}
@@ -331,7 +331,7 @@ characters = {
 					limit = { has_dlc = "By Blood Alone" }
 					OR = {
 						NOT = { has_government = communism }
-						always = no
+						has_completed_focus = ITA_common_ground
 					}
 				}
 			}
@@ -341,11 +341,11 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { armor_officer war_hero infantry_leader organizer panzer_leader brilliant_strategist }
+			traits = { armor_officer war_hero infantry_leader organizer commando trickster }
 			skill = 6
 			attack_skill = 4
-			defense_skill = 3
-			planning_skill = 5
+			defense_skill = 4
+			planning_skill = 4
 			logistics_skill = 4
 			legacy_id = 0
 		}
@@ -396,7 +396,7 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { inflexible_strategist career_officer organizer cavalry_leader trait_engineer infantry_leader skilled_staffer hill_fighter trait_mountaineer }
+			traits = { inflexible_strategist career_officer organizer cavalry_leader trait_engineer infantry_leader commando skilled_staffer }
 			skill = 6
 			attack_skill = 6
 			defense_skill = 6
@@ -416,12 +416,12 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { career_officer trait_cautious }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+			traits = { career_officer trait_cautious infantry_leader commando trickster }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
 			legacy_id = 0
 			visible = { has_government = fascism }
 		}
@@ -437,12 +437,12 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { infantry_officer career_officer }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+			traits = { infantry_officer career_officer infantry_leader commando trickster }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
 			legacy_id = 0
 			visible = { has_government = fascism }
 		}
@@ -640,12 +640,12 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { organizer infantry_leader trait_engineer cavalry_leader trickster panzer_leader commando } #Motorized
-			skill = 6
-			attack_skill = 4
-			defense_skill = 5
-			planning_skill = 4
-			logistics_skill = 4
+			traits = { cavalry_leader combined_arms_expert } #Motorized
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 			legacy_id = 0
 			visible = { has_government = fascism }
 		}
@@ -681,12 +681,12 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { infantry_officer }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
+			traits = { infantry_officer infantry_leader commando trickster }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
 			legacy_id = 0
 		}
 	}
@@ -709,7 +709,7 @@ characters = {
 			logistics_skill = 2
 			legacy_id = 0
 			visible = {
-				always = no
+				has_completed_focus = ITA_paramilitary_training
 			}
 		}
 	}
@@ -785,12 +785,12 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { trait_mountaineer organizer infantry_leader trait_engineer cavalry_leader trickster } # Infantry, Mountaneers, Armor
-			skill = 6
-			attack_skill = 6
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 4
+			traits = { trait_mountaineer } # Infantry, Mountaneers, Armor
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
 			legacy_id = 0
 		}
 	}
@@ -853,7 +853,7 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 3
 			legacy_id = 0
-			visible = { always = no }
+			visible = { has_completed_focus = ITA_comandante_diavolo }
 		}
 	}
 
@@ -891,14 +891,14 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { ascari_officer trickster guerilla_fighter trait_reckless desert_fox } # Ascari
+			traits = { ascari_officer trickster guerilla_fighter reckless desert_fox } # Ascari
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
 			planning_skill = 1
 			logistics_skill = 2
 			legacy_id = 0
-			visible = { always = no }
+			visible = { has_completed_focus = ITA_strengthen_ascari_corps }
 		}
 	}
 
@@ -920,7 +920,7 @@ characters = {
 			logistics_skill = 2
 			legacy_id = 0
 			visible = {
-				always = no
+				has_completed_focus = ITA_strengthen_ascari_corps
 				has_completed_focus = ITA_forza_navale_especiale
 			}
 		}
@@ -1056,9 +1056,9 @@ characters = {
 		}
 
 		navy_leader = {
-			traits = { aviation_enthusiast blockade_runner bold superior_tactician green_water_expert inshore_fighter }
-			skill = 4
-			attack_skill = 5
+			traits = { aviation_enthusiast blockade_runner }
+			skill = 3
+			attack_skill = 2
 			defense_skill = 2
 			maneuvering_skill = 4
 			coordination_skill = 2
@@ -1604,7 +1604,7 @@ characters = {
 					has_government = fascism
 					has_government = neutrality
 				}
-				NOT = { always = no }
+				NOT = { has_completed_focus = ITA_disband_the_blackshirts }
 				has_completed_focus = ITA_army_leaders
 			}
 			traits = {
@@ -1844,7 +1844,7 @@ characters = {
 	ITA_mario_roatta = {
 		name = ITA_mario_roatta
 		portraits = {
-		#TODO_Manu: In the past we were not able to make this work. I hope that you, people from the future who are seeing this, will be able to use your knowledge and sci-fi technology to make this work. Good luck comrades. 
+		#MM: In the past we were not able to make this work. I hope that you, people from the future who are seeing this, will be able to use your knowledge and sci-fi technology to make this work. Good luck comrades. 
 		#Edit: But don't duplicate this character or my cursed spirit will come to haunt you.
 			civilian = {
 				small = GFX_idea_ita_mario_roatta_political_advisor
@@ -2075,7 +2075,7 @@ characters = {
 						limit = {
 							has_dlc = "By Blood Alone"
 						}
-						always = no
+						has_completed_focus = ITA_cooperate_with_moderates
 					}
 				}
 			}
@@ -2117,7 +2117,7 @@ characters = {
 					limit = {
 						has_dlc = "By Blood Alone"
 					}
-					NOT = { always = no }
+					NOT = { has_completed_focus = ITA_revoke_the_acerbo_law }
 				}
 			}
 			traits = {
@@ -2197,8 +2197,8 @@ characters = {
 					}
 					OR = {
 						has_government = fascism
-						always = no
-						always = no
+						has_completed_focus = ITA_utilize_the_blackshirts
+						has_completed_focus = ITA_cooperate_with_moderates
 					}
 				}
 				else = {
@@ -2373,8 +2373,8 @@ characters = {
 			visible = {
 				OR = {
 					has_completed_focus = ITA_the_carabinieri
-					always = no
-					always = no
+					has_completed_focus = ITA_empower_the_carabinieri
+					has_completed_focus = ITA_expand_the_royal_guard
 				}
 			}
 		}
@@ -2402,7 +2402,7 @@ characters = {
 						has_government = democratic
 						has_completed_focus = ITA_army_leaders
 					}
-					always = no
+					has_completed_focus = ITA_meritocracy
 				}
 			}
 			traits = {
@@ -2431,7 +2431,7 @@ characters = {
 						}
 						has_completed_focus = ITA_army_leaders
 					}
-					always = no
+					has_completed_focus = ITA_meritocracy
 				}
 			}
 		}
@@ -2456,8 +2456,8 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					always = no
-					always = no
+					has_completed_focus = ITA_italian_socialism
+					has_completed_focus = ITA_monarchia_d_italia
 				}
 			}
 		}
@@ -2483,7 +2483,7 @@ characters = {
 			visible = { 
 				OR = {
 					has_completed_focus = ITA_the_carabinieri
-					always = no
+					has_completed_focus = ITA_empower_the_carabinieri
 				}
 			}
 		}
@@ -2506,10 +2506,10 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
-					always = no
+					has_completed_focus = ITA_meritocracy
+					has_completed_focus = ITA_monarchia_d_italia
 					AND = {
-						always = no
+						has_completed_focus = ITA_common_ground
 						has_government = democratic
 					}
 				}
@@ -2548,8 +2548,8 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
-					always = no
+					has_completed_focus = ITA_revoke_the_acerbo_law
+					has_completed_focus = ITA_common_ground
 				}
 			}
 			traits = {
@@ -2580,7 +2580,7 @@ characters = {
 				has_dlc = "By Blood Alone"
 			}
 			available = {
-				always = no
+				has_completed_focus = ITA_convene_the_grand_council
 			}
 			traits = {
 				staunch_monarchist
@@ -2616,8 +2616,8 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
-					always = no
+					has_completed_focus = ITA_power_to_the_king
+					has_completed_focus = ITA_cooperate_with_moderates
 				}
 			}
 			traits = {
@@ -2713,10 +2713,10 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
-					always = no
+					has_completed_focus = ITA_revoke_the_acerbo_law
+					has_completed_focus = ITA_disband_the_blackshirts
 					AND = {
-						always = no
+						has_completed_focus = ITA_common_ground
 						has_government = democratic
 					}
 				}
@@ -2758,9 +2758,9 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
+					has_completed_focus = ITA_christian_democracy
 					AND = {
-						always = no
+						has_completed_focus = ITA_common_ground
 						has_government = democratic
 					}
 				}
@@ -2796,10 +2796,10 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
-					always = no
+					has_completed_focus = ITA_cooperate_with_moderates
+					has_completed_focus = ITA_italian_socialism
 					AND = {
-						always = no
+						has_completed_focus = ITA_common_ground
 						has_government = communism
 					}
 				}
@@ -2834,7 +2834,7 @@ characters = {
 				has_dlc = "By Blood Alone"
 			}
 			available = {
-				always = no
+				has_completed_focus = ITA_bring_back_exiled_intellectuals
 			}
 			traits = {
 				captain_of_industry # Ministry of Public Works and later Ambassador to USA
@@ -2863,7 +2863,7 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
+					has_completed_focus = ITA_defy_the_duce
 					ITA_is_in_liberation_war = yes
 				}
 			}
@@ -2908,7 +2908,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					always = no
+					has_completed_focus = ITA_defy_the_duce
 					ITA_is_in_liberation_war = yes
 				}
 				OR = {
@@ -2938,7 +2938,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					always = no
+					has_completed_focus = ITA_defy_the_duce
 					ITA_is_in_liberation_war = yes
 				}
 				OR = {
@@ -2969,7 +2969,7 @@ characters = {
 			logistics_skill = 2
 			legacy_id = 0
 			visible = {
-				always = no
+				has_completed_focus = ITA_gruppi_di_difesa_della_donna
 			}
 		}
 	}
@@ -2993,7 +2993,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					always = no
+					has_completed_focus = ITA_defy_the_duce
 					ITA_is_in_liberation_war = yes
 				}
 				OR = {
@@ -3024,7 +3024,7 @@ characters = {
 				OR = {
 					has_government = communism
 					AND = {
-						always = no
+						has_completed_focus = ITA_common_ground
 						has_government = democratic
 					}
 				}
@@ -3049,7 +3049,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					always = no
+					has_completed_focus = ITA_defy_the_duce
 					ITA_is_in_liberation_war = yes
 				}
 				OR = {
@@ -3121,10 +3121,10 @@ characters = {
 
 			available = {
 				OR = {
-					always = no
+					has_completed_focus = ITA_the_popular_front
 					AND = {
 						has_government = democratic
-						always = no
+						has_completed_focus = ITA_common_ground
 					}
 				}
 			}
@@ -3186,11 +3186,11 @@ characters = {
 				OR = {
 					AND = {
 						OR = {
-							always = no
-							always = no
+							has_completed_focus = ITA_unite_the_opposition
+							has_completed_focus = ITA_defy_the_duce
 						}
 						NOT = { has_completed_focus = ITA_culto_del_duce }
-						NOT = { always = no }
+						NOT = { has_completed_focus = ITA_convene_the_grand_council }
 						NOT = { 
 							has_country_leader = {
 								character = ITA_palmiro_togliatti
@@ -3198,7 +3198,7 @@ characters = {
 							}
 						}
 					}
-					SWE_refuge_for_revolutionaries_trigger = yes
+					#SWE_refuge_for_revolutionaries_trigger = yes
 				}
 			}
 			
@@ -3245,11 +3245,11 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
-					always = no
+					has_completed_focus = ITA_the_abyssinian_fiasco
+					has_completed_focus = ITA_defy_the_duce
 				}
 				NOT = { has_completed_focus = ITA_culto_del_duce }
-				NOT = { always = no }
+				NOT = { has_completed_focus = ITA_convene_the_grand_council }
 				NOT = { 
 					has_country_leader = {
 						character = ITA_sandro_pertini
@@ -3289,10 +3289,10 @@ characters = {
 			}
 			available = {
 				OR = {
-					always = no
+					has_completed_focus = ITA_the_popular_front
 					AND = {
 						has_government = democratic
-						always = no
+						has_completed_focus = ITA_common_ground
 					}
 				}
 			}
@@ -3329,14 +3329,14 @@ characters = {
 				OR = {
 					AND = {
 						OR = {
-							always = no
+							has_completed_focus = ITA_the_popular_front
 							AND = {
 								has_government = democratic
-								always = no
+								has_completed_focus = ITA_common_ground
 							}
 						}
 					}
-					SWE_refuge_for_revolutionaries_trigger = yes
+					#SWE_refuge_for_revolutionaries_trigger = yes
 				}
 			}
 			traits = {
@@ -3365,7 +3365,7 @@ characters = {
 				has_dlc = "By Blood Alone"
 			}
 			available = {
-				always = no
+				has_completed_focus = ITA_the_popular_front
 			}
 			traits = {
 				partisans_organizer
@@ -3399,11 +3399,11 @@ characters = {
 				OR = {
 					AND = {
 						OR = {
-							always = no
-							always = no
+							has_completed_focus = ITA_the_path_to_progress
+							has_completed_focus = ITA_bring_back_exiled_intellectuals
 						}
 					}
-					SWE_refuge_for_revolutionaries_trigger = yes
+					#SWE_refuge_for_revolutionaries_trigger = yes
 				}
 			}
 			traits = {
@@ -3521,189 +3521,7 @@ characters = {
 
 
 	
-  ITA_enrico_fermi = {
-	name = ITA_enrico_fermi
-	portraits = {
-		army = {
-			large = GFX_portrait_ITA_enrico_fermi
-			small = GFX_portrait_ITA_enrico_fermi_small
-		}
-	}
-
-	scientist = {
-		traits = { scientist_trait_nuclear_specialist scientist_trait_gifted_engineer }
-		skills = {
-			specialization_nuclear = 3
-		}
-
-		visible = {
-			owner = {
-				OR = {
-					always = no
-					always = no
-				}
-			}
-		}
-	}
-
-	#advisor = {
-	#	slot = political_advisor
-	#	idea_token = ITA_enrico_fermi
-	#	allowed = {
-	#		original_tag = ITA
-	#		has_dlc = "By Blood Alone"
-	#	}
-	#	available = {
-	#		OR = {
-	#			always = no
-	#			always = no
-	#		}
-	#	}
-	#	research_bonus = {
-	#		nuclear = 0.15
-	#	}
-	#	traits = {
-	#		nuclear_scientist # Nuclear guy
-	#	}
-	#
-	#	ai_will_do = {
-	#		base = 0.100
-	#	}
-	#}
-}
-
-ITA_gaetano_crocco = {
-	name = ITA_gaetano_crocco
-	portraits = {
-		army = {
-			large = GFX_portrait_ITA_gaetano_crocco
-			small = GFX_idea_gaetano_crocco
-		}
-	}
-
-	scientist = {
-		traits = { scientist_trait_rocketry_specialist }
-		skills = {
-			specialization_air = 2
-		}
-	}
-
-	#advisor = {
-	#	cost = 100
-	#	slot = theorist
-	#	idea_token = gaetano_crocco
-	#	ledger = air
-	#	allowed = {
-	#		ITA_is_italian_tag = yes
-	#	}
-	#	research_bonus = {
-	#		rocketry = 0.150
-	#	}
-	#	traits = {
-	#		rocket_scientist
-	#	}
-	#}
-}
-
-ITA_robert_longhi = {
-	name = ITA_robert_longhi
-	portraits = {
-		army = {
-			large = GFX_portrait_ITA_robert_longhi
-		}
-	}
-
-	scientist = {
-		traits = { scientist_trait_jet_expert scientist_trait_gifted_engineer }
-		skills = {
-			specialization_air = 2
-		}
-	}
-}
-
-ITA_mario_castoldi = {
-	name = ITA_mario_castoldi
-	portraits = {
-		army = {
-			large = GFX_portrait_ITA_mario_castoldi
-		}
-	}
-
-	scientist = {
-		traits = { scientist_trait_aircraft_specialist }
-		skills = {
-			specialization_air = 2
-		}
-	}
-}
-
-ITA_giovanni_giorgi = {
-	name = ITA_giovanni_giorgi
-	portraits = {
-		army = {
-			large = GFX_portrait_ITA_giovanni_giorgi
-		}
-	}
-
-	scientist = {
-		traits = { scientist_trait_electronics_specialist }
-		skills = {
-			specialization_air = 2
-		}
-	}
-}
-
-ITA_filippo_bonfiglietti = {
-	name = ITA_filippo_bonfiglietti
-	portraits = {
-		army = {
-			large = GFX_portrait_ITA_filippo_bonfiglietti
-		}
-	}
-
-	scientist = {
-		traits = { scientist_trait_surface_ship_specialist }
-		skills = {
-			specialization_naval = 2
-		}
-	}
-}
-
-ITA_curio_bernardis = {
-	name = ITA_curio_bernardis
-	portraits = {
-		army = {
-			large = GFX_portrait_ITA_curio_bernardis
-		}
-	}
-
-	scientist = {
-		traits = { scientist_trait_submarine_specialist scientist_trait_bright }
-		skills = {
-			specialization_naval = 2
-		}
-	}
-}
-
-	# ZHM-only, kept: referenced by live content
-		ITA_curio_bernardis = {
-		name = ITA_curio_bernardis
-		portraits = {
-			army = {
-				large = GFX_portrait_ITA_curio_bernardis
-			}
-		}
-
-		scientist = {
-			traits = { scientist_trait_submarine_specialist scientist_trait_bright }
-			skills = {
-				specialization_naval = 2
-			}
-		}
-	}
-
-	# ZHM-only, kept: referenced by live content
-		ITA_enrico_fermi = {
+	ITA_enrico_fermi = {
 		name = ITA_enrico_fermi
 		portraits = {
 			army = {
@@ -3754,8 +3572,7 @@ ITA_curio_bernardis = {
 		#}
 	}
 
-	# ZHM-only, kept: referenced by live content
-		ITA_gaetano_crocco = {
+	ITA_gaetano_crocco = {
 		name = ITA_gaetano_crocco
 		portraits = {
 			army = {
@@ -3786,5 +3603,85 @@ ITA_curio_bernardis = {
 		#		rocket_scientist
 		#	}
 		#}
+	}
+
+	ITA_robert_longhi = {
+		name = ITA_robert_longhi
+		portraits = {
+			army = {
+				large = GFX_portrait_ITA_robert_longhi
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_jet_expert scientist_trait_gifted_engineer }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
+
+	ITA_mario_castoldi = {
+		name = ITA_mario_castoldi
+		portraits = {
+			army = {
+				large = GFX_portrait_ITA_mario_castoldi
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
+
+	ITA_giovanni_giorgi = {
+		name = ITA_giovanni_giorgi
+		portraits = {
+			army = {
+				large = GFX_portrait_ITA_giovanni_giorgi
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_electronics_specialist }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
+
+	ITA_filippo_bonfiglietti = {
+		name = ITA_filippo_bonfiglietti
+		portraits = {
+			army = {
+				large = GFX_portrait_ITA_filippo_bonfiglietti
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_surface_ship_specialist }
+			skills = {
+				specialization_naval = 2
+			}
+		}
+	}
+
+	ITA_curio_bernardis = {
+		name = ITA_curio_bernardis
+		portraits = {
+			army = {
+				large = GFX_portrait_ITA_curio_bernardis
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_submarine_specialist scientist_trait_bright }
+			skills = {
+				specialization_naval = 2
+			}
+		}
 	}
 }
