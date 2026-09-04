@@ -65,6 +65,25 @@ adjacency_rule =
 {
 	name = "GIBRALTAR_STRAIT"
 
+	# When enabled by game rule, Italy uses the enemy profile even if it controls
+	# every prerequisite. Other countries, including the UK, remain unrestricted.
+	is_enemy = {
+		original_tag = ITA
+		has_game_rule = {
+			rule = amsb_italian_fleet_mediterranean_lock
+			option = restricted
+		}
+	}
+	is_friend = {
+		OR = {
+			NOT = { original_tag = ITA }
+			has_game_rule = {
+				rule = amsb_italian_fleet_mediterranean_lock
+				option = unrestricted
+			}
+		}
+	}
+
 	contested =
 	{
 		army = no
@@ -74,10 +93,10 @@ adjacency_rule =
 	}
 	enemy =
 	{
-		army = no
+		army = yes
 		navy = no
 		submarine = yes
-		trade = no
+		trade = yes
 	}
 	friend =
 	{
@@ -94,7 +113,9 @@ adjacency_rule =
 		trade = yes
 	}
 	
-	required_provinces = { 4135 9945 }
+	# A single control marker prevents a contested profile from overriding the
+	# country-specific rules above when Britain and Italy are at war.
+	required_provinces = { 4135 }
 	
 	icon = 5407	
 	offset = { -31.0 0.0 -2.0 }
@@ -374,6 +395,66 @@ adjacency_rule =
 		
 	icon = 13369
 	offset = { 2 0 12 }
+}
+
+#Strait of Bab el-Mandeb
+adjacency_rule =
+{
+	name = "BAB_EL_MANDEB_STRAIT"
+
+	# This uses the same game rule as Gibraltar. Only Italian surface ships are
+	# restricted; submarines and every other country's navy may pass.
+	is_enemy = {
+		original_tag = ITA
+		has_game_rule = {
+			rule = amsb_italian_fleet_mediterranean_lock
+			option = restricted
+		}
+	}
+	is_friend = {
+		OR = {
+			NOT = { original_tag = ITA }
+			has_game_rule = {
+				rule = amsb_italian_fleet_mediterranean_lock
+				option = unrestricted
+			}
+		}
+	}
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =
+	{
+		army = yes
+		navy = no
+		submarine = yes
+		trade = yes
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+
+	# One marker prevents the strait becoming contested and blocking the UK.
+	required_provinces = { 8000 }
+
+	icon = 8000
+	offset = { 0 0 0 }
 }
 
 #Strait of Otranto 

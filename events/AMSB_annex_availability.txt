@@ -1,0 +1,63 @@
+add_namespace = amsb_annex_availability
+
+# Player notification when Australia's New Zealand annexation decision unlocks.
+country_event = {
+	id = amsb_annex_availability.1
+	title = amsb_annex_availability.1.t
+	desc = amsb_annex_availability.1.desc
+	picture = GFX_report_event_generic_read_write
+
+	trigger = {
+		tag = AST
+		is_ai = no
+		NOT = { has_country_flag = amsb_nzl_annex_available_notified }
+		NZL = {
+			exists = yes
+			is_ai = yes
+			has_completed_focus = NZL_think_big
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_country_flag = amsb_nzl_annex_available_notified
+	}
+
+	option = {
+		name = amsb_annex_availability.1.a
+	}
+}
+
+# Player notification when Brazil's Mexico annexation decision unlocks.
+country_event = {
+	id = amsb_annex_availability.2
+	title = amsb_annex_availability.2.t
+	desc = amsb_annex_availability.2.desc
+	picture = GFX_report_event_generic_read_write
+
+	trigger = {
+		tag = BRA
+		is_ai = no
+		NOT = { has_country_flag = amsb_mex_annex_available_notified }
+		MEX = {
+			exists = yes
+			is_ai = yes
+			has_completed_focus = MEX_focus_soldaderas
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_country_flag = amsb_mex_annex_available_notified
+	}
+
+	option = {
+		name = amsb_annex_availability.2.a
+	}
+}
